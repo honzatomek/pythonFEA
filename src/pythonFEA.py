@@ -116,16 +116,21 @@ class Nodes:
 
 
 class Beam2D:
-  def __init__(self, id, nid1, nid2, pid, mid, label = None):
+  def __init__(self, id, pid, mid, nid1, nid2, rx1 = False, rz1 = False, rfi1 = False, rx2 = False, rz2 = False, rfi2 = False, label = None, mi = 0.5):
     self.__id = id
     self.__n1 = n1
     self.__n2 = n2
+    self.__r1 = [rx1, rz1, rfi1]
+    self.__r2 = [rx2, rz2, rfi2]
     self.__p = pid
     self.__m = mid
     self.__label = label
 
     self.__l = None
     self.__loc = None
+
+    # ratio between lumped and consistent mass matrix
+    self.__mi = 0.5
 
     self.__nodes_ref = False
     self.__prop_ref = False
@@ -179,6 +184,14 @@ class Beam2D:
   def label(self, label):
     self.__label = label
 
+  @property
+  def mi(self):
+    return self.__mi
+
+  @mi.setter
+  def mi(self, mi):
+    self.__mi = mi
+
   def init_nodes(self, nodes):
     n = nodes.id(self.__n1)
     if n:
@@ -213,6 +226,11 @@ class Beam2D:
 
     self.__mat_ref = True
 
+  def init(self, nodes, props, mats):
+    self.init_nodes(nodes)
+    self.init_prop(props)
+    self.init_mat(mats)
+
   @property
   def n1(self):
     if not self.__nodes_ref:
@@ -244,10 +262,28 @@ class Beam2D:
     return self.__prop.I
 
   @property
+  def nsm(self):
+    if not self.__prop_ref:
+      raise NotInitialised(f'Element ID {self.id} Property has not been initialised.')
+    return self.__prop.nsm
+
+  @property
   def E(self):
     if not self.__mat_ref:
       raise NotInitialised(f'Element ID {self.id} Material has not been initialised.')
     return self.__mat.E
+
+  @property
+  def ro(self):
+    if not self.__mat_ref:
+      raise NotInitialised(f'Element ID {self.id} Material has not been initialised.')
+    return self.__mat.ro
+
+  @property
+  def alpha(self):
+    if not self.__mat_ref:
+      raise NotInitialised(f'Element ID {self.id} Material has not been initialised.')
+    return self.__mat.alpha
 
   @property
   def initialised(self):
@@ -295,11 +331,159 @@ class Beam2D:
 
   @property
   def ke(self):
+    # local element stiffness
     kl = self.k_lcs
+    # transformation matrix
     t = self.t
+    # transformation LCS -> GCS
     ke = t.T @ kl @ t
 
     return ke
+
+  @property
+  def m_lumped(self):
+    # structural mass
+    sm = self.A * self.l * self.ro
+    # nonstructural mass
+    nm = self.l * self.nsm
+    # local lumped element mass matrix
+    mle = np.eye(6, dtype=float) * (sm + nm) / 2
+    mle[2][2] = 0.0
+    mle[5][5] = 0.0
+
+    return mle
+
+  @property
+  def m_consistent(self):
+    l = self.l
+    l2 = l ** l
+    # structural mass
+    sm = self.A * l * self.ro
+    # nonstructural mass
+    nm = l * self.nsm
+    # local lumped element mass matrix
+    mce = np.zeros((6, 6), dtype=float)
+    mce = np.array([[140.0, 0.0, 0.0, 70.0, 0.0, 0.0],
+                    [0.0, 156.0, 22.0 * l, 0.0, 54.0, -13.0 * l],
+                    [0.0, 22.0 * l, 4.0 * l2, 0.0, 13.0 * l, -3.0 * l2],
+                    [70.0, 0.0, 0.0, 140.0, 0.0, 0.0],
+                    [0.0, 54.0, 13.0 * l, 0.0, 156.0, -22.0 * l],
+                    [0.0, -13.0 * l, -3.0 * l2, 0.0, -22.0 * l, 4.0 * l2]], dtype=float)
+    mce *= (sm + nm) / 420.0
+
+    return mce
+
+  @property
+  def m(self):
+    # get mass in LCS
+    ml = (1.0 - self.mi) * self.m_consistent + self.mi * self.m_lumped
+    # transformation matrix
+    t = self.t
+
+    # transformation LCS -> GCS
+    me = t.T @ ml @ t
+
+    return me
+
+  def lf_lcs(self, fx = 0.0, fz = 0.0):
+    l = self.l
+    l2 = l * l
+    # load vector in LCS
+    fl = np.array([fx * l / 2.0,
+                   -fz * l / 2.0,
+                   1 / 12 * fz * l2,
+                   fx * l,
+                   - fz * l / 2.0,
+                   - 1 / 12 * fz * l2],
+                  dtype=float)
+
+    return fl
+
+  def lf(self, fx = 0.0, fz = 0.0):
+    # load vector in LCS
+    fl = self.lf_lcs(fx, fz)
+    # transformation matrix
+    t = self.t
+    # load vector in GCS
+    fe = t.T @ fl
+
+    return fe
+
+  def lt_lcs(self, t = 0.0, t0 = 0.0):
+    EA = self.E * self.A
+    # load vector in LCS
+    ftl = np.array([-EA * a * (t - t0),
+                    0.0,
+                    0.0,
+                    EA * a * (t - t0),
+                    0.0,
+                    0.0],
+                   dtype=float)
+
+    return ftl
+
+  def lt(self, t = 0.0, t0 = 0.0):
+    # load vector in LCS
+    lt_lcs = self.lt_lcs(t, t0)
+    # transformation matrix
+    t = self.t
+    # load vector in GCS
+    fte = t.T @ lt_lcs
+
+    return fte
+
+  def ksig_lcs(self, N = 0.0):
+    l = self.l
+    l2 = l * l
+    # initial stress matrix in LCS
+    kl = (N / l) * np.array([[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                             [0.0, 6.0 / 5.0, -l / 10.0, 0.0, -6.0 / 5.0, -l / 10.0],
+                             [0.0, -l / 10.0, 2.0 * l2 / 15.0, 0.0 , l / 10.0, -l2 / 30.0],
+                             [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                             [0.0, -6.0 / 5.0, l / 10.0, 0.0, 6.0 / 5.0, l / 10.0],
+                             [0.0, -l / 10.0, -l2 / 30.0, 0.0 , l / 10.0, 2.0 * l2 / 15.0]],
+                            dtype=float)
+    kl[0][0] = min(abs(kl[1][1]), abs(kl[2][2])) / 1000.0
+    kl[0][3] = -kl[0][0]
+    kl[3][0] = kl[0][3]
+    kl[3][3] = kl[0][0]
+
+    return kl
+
+  def ksig(self, N = 0.0):
+    # initial stress matrix in LCS
+    ksig_lcs = self.ksig_lcs(N)
+    # transformation matrix
+    t = self.t
+    # initial stress matrix in GCS
+    # ksig = t.T.dot(kl.dot(t))
+    ksig = t.T @ ksig_lcs @ t
+
+    return ksig
+
+  def postpro(self, ue: np.ndarray):
+    '''
+    ue = vector of nodal displacements of the element [1, 6]
+    '''
+    # local element stiffness matrix
+    kl = self.k_lcs
+    # transformation matrix
+    t = self.t
+
+    # element inner forces
+    # se = kl.dot(t.dot(u))
+    se = kl @ t @ ue
+
+    return se
+
+
+class Constraint:
+  def __init__(self, id, ndid, tx = 0.0, ty = 0.0, tz = 0.0, rx = 0.0, ry = 0.0, rz = 0.0,  label = None):
+
+
+
+
+
 
 
 
