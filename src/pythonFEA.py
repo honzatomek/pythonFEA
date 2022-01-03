@@ -1,62 +1,36 @@
 import math
 import numpy as np
 import logging
+# from errors.errors import *
 
 BASIC_FORMAT = logging.Formatter('%(message)s')
 ADVANCED_FORMAT = logging.Formatter('%(asctime)6s *%(levelname).1s* %(message)s', datefmt='%H%M%S')
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)6s *%(levelname).1s* %(message)s', datefmt='%H%M%S')
 
-class BaseError(Exception):
-  def __init__(self, message):
-    self.message = message
-    logging.exception(message)
-    super().__init__(self.message)
-
-class MissingIndex(BaseError):
-  pass
-
-class UsedIndex(BaseError):
-  pass
-
-class WrongType(BaseError):
-  pass
-
-class NotInitialised(BaseError):
-  pass
-
-class NotImplemented(BaseError):
-  pass
-
-class NoEntry(BaseError):
-  pass
-
-class NodeMissing(BaseError):
-  pass
-
-class ElementMissing(BaseError):
-  pass
-
-class LoadMissing(BaseError):
-  pass
-
-class PropertyMissing(BaseError):
-  pass
-
-class MaterialMissing(BaseError):
-  pass
-
-class SituationMissing(BaseError):
-  pass
 
 
 class Node:
+  COMMAND = '$COOR'
+
   def __init__(self, id, x, y, z, label = None):
     self.__id = id
     self.__x = x
     self.__y = y
     self.__z = z
     self.__label = label
+
+  def __str__(self):
+    if self.label:
+      return f'    {self.id:8n} : {self.x:15.4f} {self.y:15.4f} {self.z:15.4f} : \'{self.label}\''
+    else:
+      return f'    {self.id:8n} : {self.x:15.4f} {self.y:15.4f} {self.z:15.4f}'
+
+  def __repr__(self):
+    if self.label:
+      return f'Node {self.id:n} - {self.label:s}'
+    else:
+      return f'Node {self.id:n}'
 
   @property
   def id(self):
@@ -109,7 +83,7 @@ class Nodes:
       pass
     if type(node) is not Node:
       raise WrongType(f'Node is not of type Node, but {type(node)} - {str(node)}.')
-    if node.id not in self.__items:
+    if node.id in self.__items.keys():
       raise UsedIndex(f'Node ID {node.id} already exists.')
     self.__items.setdefault(node.id, node)
     self.__count += 1
@@ -118,17 +92,36 @@ class Nodes:
     self.__count = 0
     self.__items = dict()
 
+  def __str__(self):
+    nodes = ''
+    command = ''
+    for i, n in self.__items.items():
+      if n.COMMAND != command:
+        nodes += '\n' if command != '' else ''
+        command = n.COMMAND
+        nodes += '  ' + command + '\n'
+      nodes += str(n) + '\n'
+    return nodes
+
+  def __repr__(self):
+    return f'Nodes count: {self.count}, min ID: {self.min}, max ID: {self.max}'
+
+  @property
+  def min(self):
+    return math.min(self.__items.keys())
+
+  @property
+  def max(self):
+    return math.max(self.__items.keys())
+
   def id(self, id):
     if id in self.__items:
       return self.__items[id]
     else:
       return False
 
-  def add(self, id = None, x = None, y = None, z = None, label = None, node = None):
-    if id is None or x is None or y is None or z is None:
-      self.__add(node)
-    else:
-      self.__add(Node(id, x, y, z, label))
+  def add(self, node):
+    self.__add(node)
 
   @property
   def count(self):
@@ -137,21 +130,23 @@ class Nodes:
   def distance(self, id1, id2):
     n1 = self.id(id1)
     n2 = self.id(id2)
-    return math.sqrt((n2.x - n1.x) ^ 2 + (n2.y - n1.y) ^ 2 + (n2.z - n1.z) ^ 2)
+    return math.sqrt((n2.x - n1.x) ** 2 + (n2.y - n1.y) ** 2 + (n2.z - n1.z) ** 2)
 
 
 class Beam2D:
+  COMMAND = '$BEAM2D'
+
   def __init__(self, id, pid, mid, nid1, nid2, rx1 = False, rz1 = False, rfi1 = False, rx2 = False, rz2 = False, rfi2 = False, label = None, mi = 0.5):
     self.__id = id
-    self.__n1 = n1
+    self.__n1 = int(nid1)
     self.__r1 = [rx1, rz1, rfi1]
-    self.__n2 = n2
+    self.__n2 = int(nid2)
     self.__r2 = [rx2, rz2, rfi2]
-    self.__p = pid
-    self.__m = mid
+    self.__p = int(pid)
+    self.__m = int(mid)
     self.__label = label
 
-    self.__l = None
+    self.__length = None
     self.__loc = None
 
     # ratio between lumped and consistent mass matrix
@@ -160,6 +155,18 @@ class Beam2D:
     self.__nodes_ref = False
     self.__prop_ref = False
     self.__mat_ref = False
+
+  def __str__(self):
+    if self.label:
+      return f'    {self.id:8n} : {self.pid:8n} {self.mid:8n} : {self.n1id:8n} {self.n2id:8n}\n    &        : {"".join(["{0:4n}".format(int(r)) for r in self.r1])}  {"".join(["{0:4n}".format(int(r)) for r in self.r1])} : \'{self.label}\''
+    else:
+      return f'    {self.id:8n} : {self.pid:8n} {self.mid:8n} : {self.n1id:8n} {self.n2id:8n}\n    &        : {"".join(["{0:4n}".format(int(r)) for r in self.r1])}  {"".join(["{0:4n}".format(int(r)) for r in self.r1])}'
+
+  def __repr__(self):
+    if self.label:
+      return f'{type(self)} {self.id:n} - {self.label:s}'
+    else:
+      return f'{type(self)} {self.id:n}'
 
   @property
   def id(self):
@@ -176,6 +183,14 @@ class Beam2D:
   @n1.setter
   def n1(self, n1):
     self.__n1 = n1
+    self.__nodes_ref = False
+
+  @property
+  def n1id(self):
+    if self.initialised:
+      return self.__n1.id
+    else:
+      return self.__n1
 
   @property
   def n2(self):
@@ -184,6 +199,14 @@ class Beam2D:
   @n2.setter
   def n2(self, n2):
     self.__n2 = n2
+    self.__nodes_ref = False
+
+  @property
+  def n2id(self):
+    if self.initialised:
+      return self.__n2.id
+    else:
+      return self.__n2
 
   @property
   def r1(self):
@@ -194,20 +217,46 @@ class Beam2D:
     return self.__r2
 
   @property
+  def prop(self):
+    if self.initialised:
+      return self.__p
+    else:
+      return None
+
+  @prop.setter
+  def prop(self, prop):
+    self.__p = prop
+
+  @property
   def pid(self):
-    return self.__pid
+    if self.initialised:
+      return self.__p.id
+    else:
+      return self.__p
 
   @pid.setter
   def pid(self, pid):
-    self.__pid = pid
+    self.__p = pid
+    self.__prop_ref = False
+
+  @property
+  def mat(self):
+    if self.initialised:
+      return self._m
+    else:
+      return None
 
   @property
   def mid(self):
-    return self.__mid
+    if self.initialised:
+      return self.__m.id
+    else:
+      return self.__m
 
   @mid.setter
   def mid(self, mid):
-    self.__mid = mid
+    self.__m = mid
+    self.__mat_ref = False
 
   @property
   def label(self):
@@ -280,7 +329,7 @@ class Beam2D:
   def l(self):
     if not self.__nodes_ref:
       raise NotInitialised(f'Element ID {self.id} Nodes have not been initialised.')
-    return self.__l
+    return self.__llength
 
   @property
   def A(self):
@@ -410,7 +459,7 @@ class Beam2D:
     return mce
 
   @property
-  def m(self):
+  def m_gcs(self):
     # get mass in LCS
     ml = (1.0 - self.mi) * self.m_consistent + self.mi * self.m_lumped
     # transformation matrix
@@ -519,7 +568,7 @@ class Elements:
       pass
     if type(element) is not Beam2D:
       raise WrongType(f'Element is not of type Beam2D, but {type(element)} - {str(element)}.')
-    if element.id not in self.__items:
+    if element.id in self.__items.keys():
       raise UsedIndex(f'Element ID {element.id} already exists.')
     self.__items.setdefault(element.id, element)
     self.__count += 1
@@ -529,6 +578,28 @@ class Elements:
     self.__items = dict()
 
     self.__initialised = False
+
+  def __str__(self):
+    elements = ''
+    command = ''
+    for i, e in self.__items.items():
+      if e.COMMAND != command:
+        elements += '\n' if command != '' else ''
+        command = e.COMMAND
+        elements += '  ' + command + '\n'
+      elements += str(e) + '\n'
+    return elements
+
+  def __repr__(self):
+    return f'Elements count: {self.count}, min ID: {self.min}, max ID: {self.max}'
+
+  @property
+  def min(self):
+    return math.min(self.__items.keys())
+
+  @property
+  def max(self):
+    return math.max(self.__items.keys())
 
   def id(self, id):
     if id in self.__items:
@@ -545,7 +616,7 @@ class Elements:
 
   def init(self, nodes, props, mats):
     for id, el in self.__items.items():
-      el.init(nodes, props, mats):
+      el.init(nodes, props, mats)
     self.__initialised = True
 
   @property
@@ -561,16 +632,35 @@ class Elements:
 
 
 class ConstraintNodal:
-  def __init__(self, id, cset, ndid, t1 = 0.0, t2 = 0.0, t3 = 0.0, r1 = 0.0, r2 = 0.0, r3 = 0.0, label = None):
+  COMMAND = '$PRESCRIBE'
+
+  def __init__(self, id, lpat, ndid, dofs, prescribed = None, label = None):
     self.__id = id
-    self.__cset = cset
+    self.__lpat = lpat
     self.__nd = ndid
-    self.__prescribed = np.asarray([tx, ty, tz, rx, ry, rz], dtype=float)
+    if prescribed is None:
+      prescribed = [0.0 for d in dofs]
+    if len(dofs) != len(prescribed):
+      raise ConstraintDOFs(f'Constraint ID {self.__id} DOFs number does not match prescribed values ({str(dofs)} != {str(prescribed)}).')
+    self.__dofs = dofs
+    self.__prescribed = prescribed
     self.__label = label
 
     self.__loc = None
 
     self.__initialised = False
+
+  def __str__(self):
+    if self.label:
+      retval = f'  {self.COMMAND} LPAT = {self.lpat} DOF = {"".join(["{0:n}".format(d) for d in self.__dofs])} NAME = \'{self.label}\'\n'
+    else:
+      retval = f'  {self.COMMAND} LPAT = {self.lpat} DOF = {"".join(["{0:n}".format(d) for d in self.__dofs])}\n'
+    retval += f'      {self.ndid:8n} : {" ".join(["{0:16.8f}".format(p) for p in self.__prescribed])}\n'
+
+    return retval
+
+  def __repr__(self):
+    return 'Nodal Constraint {self.id} - {len(self.__nd)} nodes, dofs = {"".join(["{0:n}".format(d) for self.__dofs])}'
 
   def init(self, nodes):
     n = nodes.id(self.__nd)
@@ -589,12 +679,12 @@ class ConstraintNodal:
     self.__id = id
 
   @property
-  def cset(self):
-    return self.__cset
+  def lpat(self):
+    return self.__lpat
 
-  @cset.settet
-  def cset(self, cset):
-    self.__cset = cset
+  @lpat.setter
+  def lpat(self, lpat):
+    self.__lpat = lpat
 
   @property
   def nd(self):
@@ -603,7 +693,7 @@ class ConstraintNodal:
   @nd.setter
   def nd(self, node):
     self.__nd = node
-    if type(nd) is Node:
+    if type(node) is Node:
       self.__initialised = True
     else:
       self.__initialised = False
@@ -621,7 +711,7 @@ class ConstraintNodal:
     return self.__prescribed
 
   @prescribe.setter
-  def prescribe(self, t1 = 0.0, t2 = 0.0, t3 = 0.0, r1 = 0.0, r2 = 0.0, r3 = 0.0)
+  def prescribe(self, t1 = 0.0, t2 = 0.0, t3 = 0.0, r1 = 0.0, r2 = 0.0, r3 = 0.0):
     self.__prescribed = np.asarray([t1, t2, t3, r1, r2, r3], dtype=float)
 
   @property
@@ -630,6 +720,8 @@ class ConstraintNodal:
 
 
 class Constraints:
+  COMMAD = '$CONSTRAINTS'
+
   def __add(self, constraint):
     if constraint is None:
       pass
@@ -640,11 +732,27 @@ class Constraints:
     self.__items.setdefault(constraint.id, constraint)
     self.__count += 1
 
-  def __init__(self):
+  def __init__(self, label):
     self.__count = 0
     self.__items = dict()
 
+    self.__label = label
+
     self.__initialised = False
+
+  def __str__(self):
+    pass
+
+  def __repr__(self):
+    pass
+
+  @property
+  def label(self):
+    return self.__label
+
+  @label.setter
+  def label(self, label):
+    self.__label = label
 
   def id(self, id):
     if id in self.__items:
@@ -661,14 +769,14 @@ class Constraints:
 
   def init(self, nodes):
     for id, c in self.__items.items():
-      c.init(nodes):
+      c.init(nodes)
     self.__initialised = True
 
   @property
   def initialised(self):
     if not self.__initialised:
       return False
-    for id, c in self.__items.items()
+    for id, c in self.__items.items():
       if not c.initialised:
         self.__initialised = False
         return False
@@ -783,33 +891,33 @@ class LoadNodal:
   def M3(self, M3):
     self.__forces[5] = M3
 
-  @propery
+  @property
   def forces(self):
     return self.__forces
 
   @forces.setter
-  def forces(self, F1 = 0.0, F2 = 0.0, F3 = 0.0, M1 = 0.0, M2 = 0.0, M3 = 0.0)
+  def forces(self, F1 = 0.0, F2 = 0.0, F3 = 0.0, M1 = 0.0, M2 = 0.0, M3 = 0.0):
     self.__forces = np.asarray([F1, F2, F3, M1, M2, M3], dtype=float)
 
 
 class LoadBeam2D:
   type = 'element'
 
-  self.__2gcs(self):
+  def __2gcs(self):
     if self.__dir == 'gcs':
       pass
     else:
       self.__forces = self.t @ self.__forces
       self.__dir = 'gcs'
 
-  self.__2lcs(self):
-    if self.__dir = 'element':
+  def __2lcs(self):
+    if self.__dir == 'element':
       pass
     else:
       self.__forces = self.t.T @ self.__forces
       self.__dir = 'element'
 
-  self.__init__(self, id, lpat, eid, fx = 0.0, fz = 0.0, dir = 'element', label = None):
+  def __init__(self, id, lpat, eid, fx = 0.0, fz = 0.0, dir = 'element', label = None):
     '''
     dir = element/gcs
     '''
@@ -915,7 +1023,7 @@ class Loads:
   def __add(self, load):
     if load is None:
       pass
-    if type(load) is not LoadNodal type(load) is not LoadBeam2D:
+    if type(load) is not LoadNodal or type(load) is not LoadBeam2D:
       raise WrongType(f'Load is not of type Load, but {type(load)} - {str(load)}.')
     if load.id not in self.__items:
       raise UsedIndex(f'Load ID {load.id} already exists.')
@@ -958,9 +1066,9 @@ class Loads:
 
   def init(self, nodes, elements):
     for id, l in self.__items.items():
-      if l.type = 'node':
+      if l.type == 'node':
         l.init(nodes)
-      elif l.type = 'element':
+      elif l.type == 'element':
         l.init(elements)
     return self.initialised
 
@@ -968,7 +1076,7 @@ class Loads:
   def initialised(self):
     if not self.__initialised:
       return False
-    for id, l in self.__items.items()
+    for id, l in self.__items.items():
       if not l.initialised:
         self.__initialised = False
         return False
@@ -1052,7 +1160,7 @@ class Properties:
     self.__add(prop)
 
 
-def MaterialLinear2D:
+class MaterialLinear2D:
   def __init__(self, id, E, ro, alpha, label = None):
     self.__id = id
     self.__E = E
@@ -1068,7 +1176,7 @@ def MaterialLinear2D:
   def id(self, id):
     self.__id = id
 
-  @propery
+  @property
   def E(self):
     return self.__E
 
@@ -1076,7 +1184,7 @@ def MaterialLinear2D:
   def E(self, E):
     self.__E = E
 
-  @propery
+  @property
   def ro(self):
     return self.__ro
 
@@ -1084,7 +1192,7 @@ def MaterialLinear2D:
   def ro(self, ro):
     self.__ro = ro
 
-  @propery
+  @property
   def alpha(self):
     return self.__alpha
 
@@ -1092,7 +1200,7 @@ def MaterialLinear2D:
   def alpha(self, alpha):
     self.__alpha = alpha
 
-  @propery
+  @property
   def label(self):
     return self.__label
 
@@ -1142,7 +1250,7 @@ class Structure:
     self.__structure[situation]['properties'] = props if props else Properties()
     self.__structure[situation]['materials'] = mats if mats else Materials()
 
-  @propery
+  @property
   def label(self):
     return self.__label
 
