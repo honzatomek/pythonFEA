@@ -161,6 +161,14 @@ class Beam2D:
     self.__n2 = n2
 
   @property
+  def r1(self):
+    return self.__r1
+
+  @property
+  def r2(self):
+    return self.__r2
+
+  @property
   def pid(self):
     return self.__pid
 
