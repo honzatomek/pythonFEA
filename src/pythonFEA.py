@@ -485,8 +485,47 @@ class Beam2D:
     return se
 
 
+class Elements:
+  def __add(self, element):
+    if element is None:
+      pass
+    if type(element) is not Beam2D:
+      raise WrongType(f'Element is not of type Beam2D, but {type(element)} - {str(element)}.')
+    if element.id not in self.__items:
+      raise UsedIndex(f'Element ID {element.id} already exists.')
+    self.__items.setdefault(element.id, element)
+    self.__count += 1
+
+  def __init__(self):
+    self.__count = 0
+    self.__items = dict()
+
+    self.__initialised = False
+
+  def id(self, id):
+    if id in self.__items:
+      return self.__items[id]
+    else:
+      return False
+
+  def add(self, element = None):
+    self.__add(element)
+
+  @property
+  def count(self):
+    return self.__count
+
+  def init(self, nodes, props, mats):
+    for i in self.__items:
+      i.init(nodes, props, mats):
+    self.__initialised = True
+
+
 class Constraint:
-  def __init__(self, id, ndid, tx = 0.0, ty = 0.0, tz = 0.0, rx = 0.0, ry = 0.0, rz = 0.0,  label = None):
+  def __init__(self, id, ndid, tx = 0.0, ty = 0.0, tz = 0.0, rx = 0.0, ry = 0.0, rz = 0.0, label = None):
+    self.__id = id
+    self.__nd = ndid
+    self.__prescribed = list(tx, ty, tz, rx, ry, rz)
 
 
 
