@@ -31,7 +31,7 @@ class TestBasic:
 
 
 class TestCollection:
-  def test_add(self):
+  def test_add1(self):
     c = Collection()
     with pytest.raises(WrongType):
       c.add(1)
@@ -44,20 +44,20 @@ class TestCollection:
     with pytest.raises(UsedIndex):
       c.add(b2)
 
-  def test_add2(self):
+  def test_add3(self):
     c = Collection()
     b1 = Basic(1, 'test 1')
     c.add(b1)
     assert c.count == 1
 
-  def test_add3(self):
+  def test_add4(self):
     c = Collection()
     b1 = Basic(1, 'test 1')
     b2 = Basic(2, 'test 2')
     c.add([b1, b2])
     assert c.count == 2
 
-  def test_add4(self):
+  def test_add5(self):
     c = Collection()
     b1 = Basic(1, 'test 1')
     b2 = Basic(2, 'test 2')

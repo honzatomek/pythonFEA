@@ -9,6 +9,25 @@ class Nodes(Collection):
   type = 'Nodes'
   member_types = [Node2D, Node]
 
+  def __init__(self, label = None):
+    super().__init__(label=label)
+    self.__node_type = None
+
+  @property
+  def node_type(self):
+    return self.__node_type
+
+  def add(self, node):
+    first = True if self.count == 0 else False
+    nodes = node if type(node) in (list, tuple) else [node]
+    for n in nodes:
+      if not first and type(n) is not self.__node_type:
+        raise WrongType(f'{type(self).type:s} cannot add {type(n).__name__:s}, type conflict (not {self.node_type.__name__:s})')
+      super().add(n)
+      if first:
+        self.__node_type = type(n)
+        first = False
+
   def distance(self, ndid1, ndid2):
     n1 = self.id(ndid1)
     n2 = self.id(ndid2)
