@@ -1,3 +1,5 @@
+import logging
+
 class BaseError(Exception):
   def __init__(self, message):
     self.message = message
@@ -42,14 +44,18 @@ class SituationMissing(BaseError):
 
 class ConstraintDOFs(BaseError):
   pass
-class MissingEntry(ValueError):
+
+class MissingEntry(BaseError):
     pass
 
-class NotValidID(ValueError):
+class NotValidID(BaseError):
     pass
 
-class NotValidCoor(ValueError):
+class NotValidCoor(BaseError):
     pass
 
-class MissingNode(ValueError):
+class MissingNode(BaseError):
     pass
+
+class MissingCoordinate(BaseError):
+  pass
