@@ -36,6 +36,9 @@ class LoadMissing(BaseError):
 class PropertyMissing(BaseError):
   pass
 
+class InvalidProperty(BaseError):
+  pass
+
 class MaterialMissing(BaseError):
   pass
 
@@ -54,8 +57,5 @@ class NotValidID(BaseError):
 class NotValidCoor(BaseError):
     pass
 
-class MissingNode(BaseError):
-    pass
-
-class MissingCoordinate(BaseError):
+class CoordinateMissing(BaseError):
   pass
