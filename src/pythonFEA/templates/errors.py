@@ -6,6 +6,9 @@ class BaseError(Exception):
     logging.exception(message)
     super().__init__(self.message)
 
+class IDLabelError(BaseError):
+  pass
+
 class MissingIndex(BaseError):
   pass
 
@@ -48,6 +51,9 @@ class InvalidProperty(BaseError):
 class MaterialMissing(BaseError):
   pass
 
+class InvalidMaterial(BaseError):
+  pass
+
 class SituationMissing(BaseError):
   pass
 
@@ -55,13 +61,16 @@ class ConstraintDOFs(BaseError):
   pass
 
 class MissingEntry(BaseError):
-    pass
+  pass
 
 class NotValidID(BaseError):
-    pass
+  pass
+
+class NotValidLable(BaseError):
+  pass
 
 class NotValidCoor(BaseError):
-    pass
+  pass
 
 class CoordinateMissing(BaseError):
   pass

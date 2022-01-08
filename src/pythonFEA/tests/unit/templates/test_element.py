@@ -14,18 +14,18 @@ logging.disable(logging.FATAL)
 class TestElement:
   def test_init(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
     assert e.id == id
-    assert e.matid == mid
+    assert e.matname == mid
     assert e.nodeids == nodes
     assert e.label == label
 
   def test_init2(self):
     id = -1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     with pytest.raises(NotValidID):
@@ -33,7 +33,7 @@ class TestElement:
 
   def test_link_nodes(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -45,7 +45,7 @@ class TestElement:
 
   def test_link_nodes2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -57,7 +57,7 @@ class TestElement:
 
   def test_nodes(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -67,7 +67,7 @@ class TestElement:
 
   def test_nodes2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -78,7 +78,7 @@ class TestElement:
 
   def test_nodes3(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -88,7 +88,7 @@ class TestElement:
 
   def test_t_gcs2lcs(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -98,7 +98,7 @@ class TestElement:
 
   def test_t_gcs2lcs2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -111,7 +111,7 @@ class TestElement:
 
   def test_t_lcs2gcs(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -120,7 +120,7 @@ class TestElement:
 
   def test_t_lcs2gcs2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -133,7 +133,7 @@ class TestElement:
 
   def test_ke(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -142,7 +142,7 @@ class TestElement:
 
   def test_ke2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -155,7 +155,7 @@ class TestElement:
 
   def test_me(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -164,7 +164,7 @@ class TestElement:
 
   def test_me2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -177,7 +177,7 @@ class TestElement:
 
   def test_lf(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -186,7 +186,7 @@ class TestElement:
 
   def test_lf2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -199,7 +199,7 @@ class TestElement:
 
   def test_lt(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -208,7 +208,7 @@ class TestElement:
 
   def test_lt2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test element ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -221,7 +221,7 @@ class TestElement:
 
   def test_ksig(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test eleksignt ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -230,7 +230,7 @@ class TestElement:
 
   def test_ksig2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test eleksignt ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -243,7 +243,7 @@ class TestElement:
 
   def test_postpro(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test elepostpront ' + str(id)
     e = Element(id, mid, nodes, label)
@@ -252,7 +252,7 @@ class TestElement:
 
   def test_postpro2(self):
     id = 1
-    mid = 1
+    mid = 'steel'
     nodes = [1]
     label = 'test elepostpront ' + str(id)
     e = Element(id, mid, nodes, label)

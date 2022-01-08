@@ -5,8 +5,11 @@ import logging
 class Basic:
   command = 'BASIC'
   type = 'Basic'
+  storage_type = 'id'
 
-  def __init__(self, id, label = None):
+  def __init__(self, id = None, label = None):
+    if id is None and label is None:
+        raise IDLabelError(f'Either an id or a label must be specified')
     self.id = id
     self.label = label
 
@@ -27,6 +30,10 @@ class Basic:
 
   @id.setter
   def id(self, id):
+    if id is None:
+      if self.storage_type == 'id':
+        raise NotValidID(f'{type(self).type:s} ID is not an \'int\' ({type(id).__name__:s}).')
+      self.__id = None
     if type(id) is not int:
       raise NotValidID(f'{type(self).type:s} ID is not an \'int\' ({type(id).__name__:s}).')
     if id < 1:
@@ -39,9 +46,11 @@ class Basic:
 
   @label.setter
   def label(self, label = None):
-    if label:
+    if label is not None:
       self.__label = str(label)[0:defaults.DEFAULT_LABEL_LENGTH]
     else:
+      if self.storage_type == 'label':
+        raise NotValidLable(f'{type(self).type:s} Label must be defined.')
       self.__label = None
 
 

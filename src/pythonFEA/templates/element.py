@@ -1,19 +1,19 @@
+import logging
 import defaults
 from .basic import Basic
 from .errors import *
-import logging
 
 class Element(Basic):
   command = 'ELEMENT'
   type = 'Element'
-  material_types = ('Material')
+  material_types = ['Material']
   nodes_number = 1
 
-  def __init__(self, id : int, mid: int, nodes: list, label: str = None):
+  def __init__(self, id : int, material: int, nodes: list, label: str = None):
     super().__init__(id=id, label=label)
     self.__init_node = False
     self.__init_mat = False
-    self.matid = mid
+    self.mat = material
     self.nodeids = nodes
 
   @property
@@ -21,30 +21,25 @@ class Element(Basic):
     if not self.__init_mat:
       raise NotInitialised(f'{repr(self):s} cannot return Material as it was not yet linked.')
     else:
-      return self.__mat
+      return self.__material
 
   @property
-  def matid(self):
-    if not self.__init_mat:
-      return self.__mat
+  def matname(self):
+    if self.__init_mat:
+      return self.__material.label
     else:
-      return self.__mat.id
+      return self.__material
 
   @mat.setter
   def mat(self, material):
-    if type(material).__name__ not in self.material_types:
+    if type(material) is str:
+      self.__material = material
+      self.__init_mat = False
+    elif type(material).__name__ not in self.material_types:
       raise InvalidMaterial(f'{repr(self):s}: {repr(material):s} cannot be linked, must be one of ({", ".join(["{0}".format(m) for m in self.material_types])}).')
     else:
-      self.__mat = material
+      self.__material = material
       self.__init_mat = True
-
-  @matid.setter
-  def matid(self, mid):
-    if type(mid) is int:
-      self.__mat = mid
-      self.__init_mat = False
-    else:
-      raise WrongType(f'{repr(self):s} Material ID must be an int, not {type(mid).__name__} ({mid:s}).')
 
   @property
   def nodeids(self):

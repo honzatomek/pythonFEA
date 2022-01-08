@@ -12,10 +12,10 @@ class Beam2D(Element):
   property_types = ('PBeam2D')
   nodes_number = 2
 
-  def __init__(self, id: int, mid: int, pid: int, nodes: list, releases: list = None, label: str = None):
-    super().__init__(id=id, mid=mid, nodes=nodes, label=label)
+  def __init__(self, id: int, mat: int, prop: int, nodes: list, releases: list = None, label: str = None):
+    super().__init__(id=id, mat=mat, nodes=nodes, label=label)
     self.__init_prop = False
-    self.propid = pid
+    self.prop = prop
     self.releases = releases
 
   @property
@@ -26,27 +26,22 @@ class Beam2D(Element):
       return self.__prop
 
   @property
-  def propid(self):
-    if not self.__init_prop:
-      return self.__prop
+  def propname(self):
+    if self.__init_prop:
+      return self.__property.label
     else:
-      return self.__prop.id
+      return self.__property
 
   @prop.setter
   def prop(self, property):
-    if type(property).__name__ not in self.property_types:
+    if type(property) is str:
+      self.__prop = property
+      self.__init_prop = False
+    elif type(property).__name__ not in self.property_types:
       raise InvalidProperty(f'{repr(self):s}: {repr(property):s} cannot be linked, must be one of ({", ".join(["{0}".format(m) for m in self.property_types])}).')
     else:
       self.__prop = property
       self.__init_prop = True
-
-  @propid.setter
-  def propid(self, pid):
-    if type(pid) is int:
-      self.__prop = pid
-      self.__init_prop = False
-    else:
-      raise WrongType(f'{repr(self):s} Property ID must be an int, not {type(pid).__name__} ({pid:s}).')
 
   @property
   def releases(self):
@@ -117,7 +112,7 @@ class Beam2D(Element):
     '''
     l = self.length
     A = self.prop.A
-    I = self.prop.I
+    I = self.prop.Izz
     E = self.mat.E
 
     EA = E * A
