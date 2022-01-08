@@ -8,16 +8,22 @@ class Node2D(Basic):
   command = 'COOR2D'
   type = 'Node2D'
 
-  def __init__(self, id, x, y, label = None):
+  def __init__(self, id, coor: list, label = None):
     super().__init__(id=id, label=label)
-    self.x = x
-    self.y = y
+    self.x = coor[0]
+    self.y = coor[1]
 
   def __str__(self):
     if self.label is not None:
       return f'{self.id:8n} : {"".join([" {0:15.4f}".format(x) for x in self.coors])} : \'{self.label:s}\''
     else:
       return f'{self.id:8n} : {"".join([" {0:15.4f}".format(x) for x in self.coors])} '
+
+  def __getitem__(self, id):
+    return [self.x, self.y][id]
+
+  def __iter__(self):
+    return iter([self.x, self.y])
 
   @property
   def coors(self):
@@ -60,15 +66,21 @@ class Node(Node2D):
   command = 'COOR'
   type = 'Node'
 
-  def __init__(self, id, x, y, z, label = None):
-    super().__init__(id=id, x=x, y=y, label=label)
-    self.z = z
+  def __init__(self, id, coor: list, label = None):
+    super().__init__(id=id, coor=[coor[0], coor[1]], label=label)
+    self.z = coor[2]
 
   def __str__(self):
     if self.label is not None:
       return f'{self.id:8n} : {"".join([" {0:15.4f}".format(x) for x in self.coors])} : \'{self.label:s}\''
     else:
       return f'{self.id:8n} : {"".join([" {0:15.4f}".format(x) for x in self.coors])} '
+
+  def __getitem__(self, id):
+    return [self.x, self.y, self.z][id]
+
+  def __iter__(self):
+    return iter([self.x, self.y, self.z])
 
   @property
   def coors(self):

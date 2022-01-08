@@ -18,6 +18,9 @@ class WrongType(BaseError):
 class NotInitialised(BaseError):
   pass
 
+class NotLinked(BaseError):
+  pass
+
 class NotImplemented(BaseError):
   pass
 
@@ -25,6 +28,9 @@ class NoEntry(BaseError):
   pass
 
 class NodeMissing(BaseError):
+  pass
+
+class ReleaseMissing(BaseError):
   pass
 
 class ElementMissing(BaseError):

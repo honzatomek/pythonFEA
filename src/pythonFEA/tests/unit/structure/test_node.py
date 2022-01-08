@@ -16,7 +16,7 @@ class TestNode2D:
     x = 0.0
     y = 1.0
     label = 'test ' + str(id)
-    n = Node2D(id, x, y, label)
+    n = Node2D(id, [x, y], label)
     assert n.id == id
     assert n.x == x
     assert n.y == y
@@ -28,7 +28,7 @@ class TestNode2D:
     y = 1.0
     label = 'test ' + str(id)
     with pytest.raises(NotValidID):
-      n = Node2D(id, x, y, label)
+      n = Node2D(id, [x, y], label)
 
   def test_coors(self):
     id = 1
@@ -36,7 +36,7 @@ class TestNode2D:
     y = 2.0
     coors = np.asarray([x, y], dtype=defaults.DEFAULT_FLOAT)
     label = 'test ' + str(id)
-    n = Node2D(id, x, y, label)
+    n = Node2D(id, [x, y], label)
     assert n.coors.any() == coors.any()
 
   def test_coors2(self):
@@ -45,7 +45,7 @@ class TestNode2D:
     y = 2.0
     coors = np.asarray([x + 1.0, y + 2.0], dtype=defaults.DEFAULT_FLOAT)
     label = 'test ' + str(id)
-    n = Node2D(id, x, y, label)
+    n = Node2D(id, [x, y], label)
     n.coors = coors
     assert n.coors.any() == coors.any()
 
@@ -57,7 +57,7 @@ class TestNode:
     y = 1.0
     z = 2.0
     label = 'test ' + str(id)
-    n = Node(id, x, y, z, label)
+    n = Node(id, [x, y, z], label)
     assert n.id == id
     assert n.x == x
     assert n.y == y
@@ -71,7 +71,7 @@ class TestNode:
     z = 2.0
     label = 'test ' + str(id)
     with pytest.raises(NotValidID):
-      n = Node(id, x, y, z, label)
+      n = Node(id, [x, y, z], label)
 
   def test_coors(self):
     id = 1
@@ -80,7 +80,7 @@ class TestNode:
     z = 3.0
     coors = np.asarray([x, y, z], dtype=defaults.DEFAULT_FLOAT)
     label = 'test ' + str(id)
-    n = Node(id, x, y, z, label)
+    n = Node(id, [x, y, z], label)
     assert n.coors.any() == coors.any()
 
   def test_coors2(self):
@@ -90,7 +90,7 @@ class TestNode:
     z = 3.0
     coors = np.asarray([x + 1.0, y + 2.0, z + 3.0], dtype=defaults.DEFAULT_FLOAT)
     label = 'test ' + str(id)
-    n = Node(id, x, y, z, label)
+    n = Node(id, [x, y, z], label)
     n.coors = coors
     assert n.coors.any() == coors.any()
 

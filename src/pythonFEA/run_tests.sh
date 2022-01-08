@@ -2,4 +2,4 @@
 
 source ../../__venv__HONZA-PC/bin/activate
 
-pytest --verbosity=1 ./tests/unit
+  pytest --verbosity=3 ./tests/unit
