@@ -20,7 +20,7 @@ for i in range(100):
 
 aprop.assignment = pa
 
-amat = AssignProperty()
+amat = AssignMaterial()
 ma = dict()
 ma.setdefault('steel', [])
 ma.setdefault('PA6-GF30-I', [])
@@ -31,6 +31,9 @@ for i in range(10):
 
 amat.assignment = ma
 
-s = System('DEFVAR', amat, aprop)
+# s = System('DEFVAR', amat, aprop)
+s = System('DEFVAR')
+s.amat = amat
+s.aprop = aprop
 print(str(s))
 

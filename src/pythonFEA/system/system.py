@@ -15,9 +15,12 @@ class System(Basic):
   def __str__(self):
     out = super().__str__()
     out += '\n'
-    out += '  ' + '\n  '.join(str(self.aprop).split('\n')) + '\n'
-    out += '\n'
-    out += '  ' + '\n  '.join(str(self.amat).split('\n')) + '\n'
+    if self.aprop is not None:
+      out += '  ' + '\n  '.join(str(self.aprop).split('\n')) + '\n'
+      out += '\n'
+    if self.amat is not None:
+      out += '  ' + '\n  '.join(str(self.amat).split('\n')) + '\n'
+      out += '\n'
     out += f'$END {type(self).command:s}'
     return out
 
