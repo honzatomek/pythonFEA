@@ -9,12 +9,8 @@ class System(Basic):
 
   def __init__(self, label, amat = None, aprop = None):
     super().__init__(label=label)
-    self.__aprop = None
-    self.__amat = None
-    if amat is not None:
-      self.amat = amat
-    if aprop is not None:
-      self.aprop = aprop
+    self.amat = amat
+    self.aprop = aprop
 
   def __str__(self):
     out = super().__str__()
