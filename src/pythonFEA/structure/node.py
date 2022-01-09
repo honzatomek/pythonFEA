@@ -38,12 +38,12 @@ class Node2D(Basic):
       else:
         coors = np.asarray(coors, dtype=defaults.DEFAULT_FLOAT)
       if len(coors) != 2:
-        raise MissingCoordinate(f'{self.type:s} ID {self.id:n}: Coordinate is missing, len(coors) = {len(coors):n} ({str(coors)}).')
+        raise MissingCoordinate(f'repr(self): Coordinate is missing, len(coors) = {len(coors):n} ({str(coors)}).')
       else:
         self.x = coors[0]
         self.y = coors[1]
     else:
-      raise WrongType(f'{self.type:s} ID {self.id:n}: Coordinates are not iterable ({type(coors).__name__:s} != list, tuple, np.ndarray).')
+      raise WrongType(f'repr(self): Coordinates are not iterable ({type(coors).__name__:s} != list, tuple, np.ndarray).')
 
   @property
   def x(self):
@@ -95,14 +95,13 @@ class Node(Node2D):
       else:
         coors = np.asarray(coors, dtype=defaults.DEFAULT_FLOAT)
       if len(coors) != 3:
-        raise MissingCoordinate(f'{self.type:s} ID {self.id:n}: Coordinate is missing, len(coors) = {len(coors):n} ({str(coors)}).')
+        raise MissingCoordinate(f'repr(self): Coordinate is missing, len(coors) = {len(coors):n} ({str(coors)}).')
       else:
         self.x = coors[0]
         self.y = coors[1]
         self.z = coors[2]
     else:
-      raise WrongType(f'{self.type:s} ID {self.id:n}: Coordinates are not iterable ({type(coors).__name__:s} != list, tuple, np.ndarray).')
-
+      raise WrongType(f'repr(self): Coordinates are not iterable ({type(coors).__name__:s} != list, tuple, np.ndarray).')
 
   @property
   def z(self):

@@ -5,4 +5,6 @@ from .node import Node2D, Node
 from .nodes import Nodes
 from .element import Beam2D
 
+from .structure import Structure
+
 

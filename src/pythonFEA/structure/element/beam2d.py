@@ -1,18 +1,22 @@
-import defaults
-from templates.element import Element
-from templates.errors import *
 import logging
 import math
 import numpy as np
 
+import defaults
+from templates.element import Element
+from templates.errors import *
+from templates.material import Material
+from property.property import PBeam2D
+
+
 class Beam2D(Element):
   command = 'BEAM2D'
   type = 'Beam2D'
-  material_types = ('Material')
-  property_types = ('PBeam2D')
+  material_types = [Material]
+  property_types = [PBeam2D]
   nodes_number = 2
 
-  def __init__(self, id: int, mat: int, prop: int, nodes: list, releases: list = None, label: str = None):
+  def __init__(self, id: int, mat: str, prop: str, nodes: list, releases: list = None, label: str = None):
     super().__init__(id=id, mat=mat, nodes=nodes, label=label)
     self.__init_prop = False
     self.prop = prop
@@ -27,17 +31,24 @@ class Beam2D(Element):
 
   @property
   def propname(self):
-    if self.__init_prop:
-      return self.__property.label
+    if not self.__init_prop:
+      return self.__prop
     else:
-      return self.__property
+      return self.__prop.label
+
+  @property
+  def propname(self):
+    if self.__init_prop:
+      return self.__prop.label
+    else:
+      return self.__prop
 
   @prop.setter
   def prop(self, property):
     if type(property) is str:
       self.__prop = property
       self.__init_prop = False
-    elif type(property).__name__ not in self.property_types:
+    elif type(property) not in type(self).property_types:
       raise InvalidProperty(f'{repr(self):s}: {repr(property):s} cannot be linked, must be one of ({", ".join(["{0}".format(m) for m in self.property_types])}).')
     else:
       self.__prop = property
@@ -60,7 +71,7 @@ class Beam2D(Element):
       self.__releases = releases
 
   def link_prop(self, properties):
-    self.prop = properties.id(self.prop)
+    self.prop = properties.id(self.propname)
 
   def link(self, nodes, materials, properties):
     super().link(nodes, materials)
@@ -165,7 +176,7 @@ class Beam2D(Element):
     Consistent Mass matrix
     '''
     l = self.length
-    l2 = l ** l
+    l2 = l * l
     # structural mass
     sm = self.prop.A * l * self.mat.ro
     # nonstructural mass
@@ -187,7 +198,7 @@ class Beam2D(Element):
     Mass matrix of Beam2D element as a combination of lumped and consistent mass matrix
     '''
     # get mass in LCS
-    ml = (1.0 - self.mi) * self.m_consistent + self.mi * self.m_lumped
+    ml = (1.0 - mi) * self.m_consistent + mi * self.m_lumped
     # transformation matrix
     t = self.t_gcs2lcs
 

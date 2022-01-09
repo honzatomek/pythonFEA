@@ -1,5 +1,5 @@
 from .errors import *
-from basic import Basic
+from .basic import Basic
 import logging
 
 class Property(Basic):
@@ -8,7 +8,7 @@ class Property(Basic):
   storage_type = 'label'
 
   def __init__(self, label, non_structural_mass = 0.0):
-    super().__init__(id=None, label=label):
+    super().__init__(id=None, label=label)
     self.nsm = non_structural_mass
 
   @property

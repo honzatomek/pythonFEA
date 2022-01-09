@@ -1,19 +1,21 @@
 import logging
 import defaults
 from .basic import Basic
+from templates.material import Material
 from .errors import *
 
 class Element(Basic):
   command = 'ELEMENT'
   type = 'Element'
-  material_types = ['Material']
+  material_types = [Material]
   nodes_number = 1
+  storage_type = 'id'
 
-  def __init__(self, id : int, material: int, nodes: list, label: str = None):
+  def __init__(self, id : int, mat: int, nodes: list, label: str = None):
     super().__init__(id=id, label=label)
     self.__init_node = False
     self.__init_mat = False
-    self.mat = material
+    self.mat = mat
     self.nodeids = nodes
 
   @property
@@ -35,8 +37,8 @@ class Element(Basic):
     if type(material) is str:
       self.__material = material
       self.__init_mat = False
-    elif type(material).__name__ not in self.material_types:
-      raise InvalidMaterial(f'{repr(self):s}: {repr(material):s} cannot be linked, must be one of ({", ".join(["{0}".format(m) for m in self.material_types])}).')
+    # elif type(material).__name__ not in selt.material_types: # isinstance()
+    #   raise InvalidMaterial(f'{repr(self):s}: {repr(material):s} cannot be linked, must be one of ({", ".join(["{0}".format(m) for m in self.material_types])}).')
     else:
       self.__material = material
       self.__init_mat = True
@@ -82,7 +84,7 @@ class Element(Basic):
       self.__init_node = True
 
   def link_mat(self, materials):
-    self.mat = materials.id(self.mat)
+    self.mat = materials.id(self.matname)
 
   def link_nodes(self, nodes):
     for i in range(len(self.__nodes)):

@@ -14,11 +14,15 @@ class PBeam2D(Property):
     self.Izz = A
 
   def __str__(self):
-    return f'{self.label:s}\n{self.A:12.4E} {self.Izz:12.4E} : {self.nsm:12.4E}'
+    out = f'${type(self).command:s} NAME = \'{self.label:s}\'\n'
+    out += f'  $SECTION TYPE = VALUE\n    {self.A:12.4E} {self.Izz:12.4E}\n'
+    out += f'  $MASS TYPE = VALUE\n    {self.nsm:12.4E}\n'
+    out += f'$END {type(self).command:s}'
+    return out
 
   @property
   def A(self):
-    return self.A
+    return self.__A
 
   @A.setter
   def A(self, A: float):
@@ -26,7 +30,7 @@ class PBeam2D(Property):
 
   @property
   def Izz(self):
-    return self.Izz
+    return self.__Izz
 
   @Izz.setter
   def Izz(self, Izz: float):

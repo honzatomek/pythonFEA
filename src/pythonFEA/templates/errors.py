@@ -12,7 +12,13 @@ class IDLabelError(BaseError):
 class MissingIndex(BaseError):
   pass
 
+class MissingLabel(BaseError):
+  pass
+
 class UsedIndex(BaseError):
+  pass
+
+class UsedLabel(BaseError):
   pass
 
 class WrongType(BaseError):
