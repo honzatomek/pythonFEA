@@ -96,6 +96,21 @@ class Collection:
     elif self.storage_type == 'label':
       return f'{type(self).__name__:s}: count = {self.count:n}'
 
+  def __getitem__(self, id):
+    return self.id(id)
+
+  def __iter__(self):
+    return iter(self.__members)
+
+  def keys(self):
+    return self.__members.keys()
+
+  def values(self):
+    return self.__members.values()
+
+  def items(self):
+    return self.__members.items()
+
   @property
   def count(self):
     return self.__count

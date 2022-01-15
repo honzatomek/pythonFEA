@@ -24,7 +24,8 @@ class DummyAssignment(Collection):
           out += '  ' + eids + '\n'
           eids = ''
         eids += f'  {eid:10n}'
-      out += '  ' + eids + '\n'
+      if eids != '':
+        out += '  ' + eids + '\n'
       out += '\n'
     return out[:-2]
 
