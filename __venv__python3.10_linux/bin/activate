@@ -55,9 +55,10 @@ fi
 
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    PS1="(__venv__python3.10_linux) ${PS1:-}"
+    # PS1="(__venv__python3.10_linux) ${PS1:-}"
+    PS1="(python3.10) ${PS1:-}"
     export PS1
-    VIRTUAL_ENV_PROMPT="(__venv__python3.10_linux) "
+    VIRTUAL_ENV_PROMPT="(\033[01;30mpython3.10\033[0m) "
     export VIRTUAL_ENV_PROMPT
 fi
 
