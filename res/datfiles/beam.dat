@@ -1,0 +1,215 @@
+!
+! Jan Tomek
+!
+! Beam model of length 10 m
+$ENTER COMPONENT NAME = BEAM DOFTYPE = DISP PRES MATH
+  ! static simulation with 2 LPATs
+  $SITUATION NAME = STA
+    CONSOLE  CONSTRAINTS = STA  LOADING = STA SYSTEM = NSV
+  $END SITUATION
+!
+  ! static simulation with 2 LPATs and property from database
+  $SITUATION NAME = STA_P
+    CONSOLE  CONSTRAINTS = STA  LOADING = STA SYSTEM = NSV_P
+  $END SITUATION
+!
+  ! static simulation with prescribed DOFs
+  $SITUATION NAME = PREVAL
+    CONSOLE  CONSTRAINTS = PREVAL  LOADING = PREVAL SYSTEM = NSV
+  $END SITUATION
+!
+  ! eigenvalues
+  $SITUATION NAME = EIG
+    CONSOLE  CONSTRAINTS = EMPTY SYSTEM = NSV
+  $END SITUATION
+!
+  ! structure geometry
+  $STRUCTURE
+    ! nodes
+    $COOR
+          1       0.       0.       0.  ! beggining
+          2       0.    1000.       0.
+          3       0.    2000.       0.
+          4       0.    3000.       0.
+          5       0.    4000.       0.
+          6       0.    5000.       0.  ! midpoint
+          7       0.    6000.       0.
+          8       0.    7000.       0.
+          9       0.    8000.       0.
+         10       0.    9000.       0.
+         11       0.   10000.       0.  ! endpoint
+!
+    ! element topology
+    $ELEMENT TYPE = BEAM2D
+          1       1        2 ! start element
+          2       2        3
+          3       3        4
+          4       4        5
+          5       5        6
+          6       6        7
+          7       7        8
+          8       8        9
+          9       9       10
+         10      10       11 ! last element
+!
+    ! node set for DOF = 1 support
+    $NSET NAME = SUP_1
+         1       11  ! begin and end nodes
+!
+    ! node set for DOF = 2 support
+    $NSET NAME = SUP_2
+         1       11  ! begin and end nodes
+!
+    ! node set for DOF = 3 support
+    $NSET NAME = SUP_3
+         1        2        3        4        5        6
+         7        8        9       10       11
+!
+    ! node set for DOF = 6 support
+    $NSET NAME = SUP_6
+         1       11  ! begin and end nodes
+!
+    ! node set of all nodes
+    $NSET NAME = OF_ALLE
+         1        2        3        4        5        6
+         7        8        9       10       11
+!
+    ! element set of all elements
+    $ESET NAME = ET_ALLE
+         1        2        3        4        5        6
+         7        8        9       10
+!
+  $END STRUCTURE
+!
+  ! system variant with property definition
+  $SYSTEM NAME = NSV
+    ! property definition
+    $GEODAT NAME = BEAM2D
+    !    A        I            nsm
+      5380.       8.36E+7
+          &        .001 ! IPE300
+!
+    ! property and material assignment to all elements
+    $ASSIGN
+      ET_ALLE  GEODAT = BEAM2D  MATERIAL = STEEL
+!
+  $SYSTEM NAME = NSV_P
+    ! property and material assignment to all elements
+    $ASSIGN
+      ET_ALLE  PROPERTY = IPE300  MATERIAL = STEEL
+!
+  $END SYSTEM
+!
+  ! static loading
+  $LOADING NAME = STA
+    ! load of 1000 kg at the end in Y direction
+    $CONLOAD LPAT = 101
+         6        2  : 10000.
+!
+    ! load if 100 kg at each node of the beam
+    $CONLOAD LPAT = 201
+      OF_ALLE     2  :  1000.
+!
+  $END LOADING
+!
+  ! constraints for static loading
+  $CONSTRAINTS NAME = STA
+    ! constrain beggining and end in X direction
+    $SUPPRESS  DOFS = 1
+      SUP_1
+!
+    ! constrain beggining and end in Y direction
+    $SUPPRESS  DOFS = 2
+      SUP_2
+!
+    ! constrain all nodes in Z direction
+    $SUPPRESS  DOFS = 3
+      SUP_3
+!
+    ! constrain beggining and end in rotation around Z axis
+    $SUPPRESS  DOFS = 6
+      SUP_6
+!
+  $END CONSTRAINTS
+!
+  ! loading variant for prescribed support
+  $LOADING NAME = PREVAL
+    ! move end node by 10 mm in Y direction
+    $PREVAL LPAT = 101
+      11   2  :   10.
+  $END LOADING
+!
+  $CONSTRAINTS NAME = PREVAL
+    ! constrain beggining and end in X direction
+    $SUPPRESS  DOFS = 1
+      SUP_1
+!
+    ! constrain beggining in Y direction
+    $SUPPRESS  DOFS = 2
+          1
+!
+    ! constrain end in Y direction
+    $PRESCRIBE DOFS = 2
+         11
+!
+    ! constrain all nodes in Z direction
+    $SUPPRESS  DOFS = 3
+      SUP_3
+!
+    ! constrain beggining and end in rotation around Z axis
+    $SUPPRESS  DOFS = 6
+      SUP_6
+!
+  $END CONSTRAINTS
+!
+  ! constraints for eigenvalues
+  $CONSTRAINTS NAME = EMPTY
+  $END CONSTRAINTS
+!
+$EXIT COMPONENT
+!
+! Material Variant
+! and test of
+!
+! multiline description
+$ENTER MATERIAL
+  $MATERIAL NAME = STEEL TYPE = ISO ! steel material
+    ! density
+    $DENSITY
+      9810.
+!
+    ! Youngs Modulus and Poisson's constant
+    $YOUNG
+       210.E3  0.3
+!
+    ! coefficient of thermal expansion
+    $THERMAL
+        12.E6
+!
+  $END MATERIAL
+!
+$EXIT MATERIAL
+!
+$ENTER PROPERTY
+  $PROPERTY NAME = IPE300 TYPE = PBEAM2D
+    $HEIGHT
+       300.
+!
+    $WIDTH
+       150.
+!
+    $WTHICKNESS
+         7.1
+!
+    $FTHICKNESS
+        10.7
+!
+    $NSMASS
+          .001
+!
+  $END PROPERTY
+!
+$EXIT PROPERTY
+!
+$FIN
+

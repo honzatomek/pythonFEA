@@ -1,0 +1,9 @@
+!
+! Jan Tomek
+!
+! Beam model of length 10 m
+$ENTER COMPONENT NAME = BEAM DOFTYPE = DISP PRES MATH
+  ! static simulation with 2 LPATs
+  $SITUATION NAME = STA
+    CONSOLE  CONSTRAINTS = STA  LOADING = STA SYSTEM = NSV
+  $END SITUATION
