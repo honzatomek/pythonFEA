@@ -377,6 +377,22 @@ class DATParser:
       if i == self.buffer.buffline:
         self.err_msg += '\n' + ' ' * 10 + ' ' * line[1].upper().find(find.upper()) + '^'
 
+  def check_regex(self, regex):
+    r = re.compile(regex, re.I)
+    m = r.search(self.buffer.line)
+    if m:
+      return True
+    else:
+      return False
+
+  def check_regex_groups(self, regex):
+    r = re.compile(regex, re.I)
+    m = r.search(self.buffer.line)
+    if m:
+      return m.group
+    else:
+      return None
+
 
 
 #-------------------------------------------------------------------------------------- BASE CLASS ---# {{{1
