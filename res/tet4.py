@@ -1,6 +1,8 @@
 
 import numpy as np
 
+# https://inside.mines.edu/~vgriffit/5th_ed/Software/
+
 
 def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy: float = 0., fz: float = 0.):
     domain = np.array([[1., 0., 0., 0.],
