@@ -3,6 +3,81 @@ import numpy as np
 
 # https://inside.mines.edu/~vgriffit/5th_ed/Software/
 
+def shape_fun(points):
+  ndim = 3 # dimensions R3
+  nod = 4  # number of nodes
+
+  fun = np.zeros((4, points.shape[0]), dtype=float)
+
+  xi = points.T[0]
+  eta = points.T[1]
+  mu = points.T[2]
+
+  fun[0] = xi
+  fun[1] = eta
+  fun[2] = mu
+  fun[3] = 1.0 - xi - eta - mu
+
+  return fun
+
+def shape_der(points):
+  ndim = 3 # dimensions R3
+  nod = 4  # number of nodes
+
+  der = np.zeros((points.shape[0], ndim, nod), dtype=float)
+  der[:,0,0] = 1.0
+  der[:,1,1] = 1.0
+  der[:,2,2] = 1.0
+  der[:,3,:] = -1.0
+
+  return der
+
+def int_points(nip: int=1):
+  if nip == 1:
+    s = np.array([0.25, 0.25, 0.25], dtype=float)
+    w = 1/6
+  elif nip == 4:
+    s = np.zeros((4, 3), dtype=float)
+    w = np.zeros(4, dtype=float)
+    s[0,0] = 0.58541020
+    s[0,1] = 0.13819660
+    s[0,3] = s[0,1]
+    s[1,1] = s[0,0]
+    s[1,2] = s[0,1]
+    s[1,0] = s[0,1]
+    s[2,2] = s[0,0]
+    s[2,0] = s[0,1]
+    s[2,1] = s[0,1]
+    s[3,0] = s[0,1]
+    s[3,1] = s[0,1]
+    s[3,2] = s[0,1]
+    w[0:3] = 0.25 / 6.0
+  elif nip == 5:
+    s = np.zeros((5, 3), dtype=float)
+    w = np.zeros(5, dtype=float)
+    s[0,:] = 0.25
+    s[1,0] = 0.5
+    s[1,1:] = 1. / 6.
+    s[2,1] = 0.5
+    s[2,2] = 1. / 6.
+    s[2,0] = s[2,2]
+    s[3,2] = 0.5
+    s[3,:2] = 1. / 6.
+    s[4,:] = 1. / 6.
+    w[0] = -0.8
+    w[1:] = 9. / 20.
+    w = w / 6.
+  else:
+    raise(f'Wrong number of inegration points for tetrahedron ({iwp} != ' + '{1, 4, 5})')
+
+  return s, w
+
+
+
+def nat_coor(points):
+  pass
+
+
 
 def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy: float = 0., fz: float = 0.):
     domain = np.array([[1., 0., 0., 0.],
@@ -201,12 +276,31 @@ def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     sigmas = (C @ epsilons).T
     epsilons = epsilons.T
 
+def map(coor):
+  domain = [[1., 0., 0., 0.],
+            [0., 1., 0., 0.],
+            [0., 0., 1., 0.],
+            [0., 0., 0., 1.]]
+  domain = np.array(domain, dtype=float)
+
+  c = np.vstack((coor.T, np.ones(4, dtype=float)))
+
+  T = domain.T @ np.linalg.inv(c)
+
+  print(T)
+
+  return T
+
 
 if __name__ == '__main__':
     xyz = np.array([[[0., 0., 0.],
                      [1., 0., 0.],
                      [0., 1., 0.],
                      [0., 0., 1.]]], dtype=float)
+
+    # T = map(xyz[0])
+    # print(T @ np.array([0.5, 0., 0., 1.]).T)
+    # print(T @ np.array([0., 0.5, 0., 1.]).T)
 
     trans = np.array([[1., 1., 1.],
                      [-1., 1., 1.],
@@ -218,6 +312,20 @@ if __name__ == '__main__':
         trans[i,:] /= np.linalg.norm(trans[i,:])
 
     xyz = np.vstack((xyz, [xyz[0] @ trans]))
+
+    for i in range(xyz.shape[0]):
+      el = xyz[i]
+      T = map(el)
+
+      p = np.ones(4, dtype=float)
+      for j in range(3):
+        p[j] = (el[0,j] + el[1,j] + el[2,j] + el[3,j]) / 4.
+
+      print(p)
+      print(T @ p)
+
+    exit()
+
 
     E = 210000.0   # MPa steel
     nu = 0.3       # steel
