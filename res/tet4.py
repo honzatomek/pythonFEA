@@ -315,6 +315,7 @@ if __name__ == '__main__':
 
     for i in range(xyz.shape[0]):
       el = xyz[i]
+      # transform global coordinates to natural
       T = map(el)
 
       p = np.ones(4, dtype=float)
@@ -322,7 +323,10 @@ if __name__ == '__main__':
         p[j] = (el[0,j] + el[1,j] + el[2,j] + el[3,j]) / 4.
 
       print(p)
-      print(T @ p)
+      n = T @ p
+      print(n)
+      p = np.linalg.inv(T) @ n
+      print(p)
 
     exit()
 
