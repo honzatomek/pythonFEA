@@ -326,7 +326,7 @@ class DATBuffer:
     return self.buffline == len(self.line_buffer) - 1
 
 
-class DATParser:
+class DATReader:
   def __init__(self, filename: str, encoding: str = 'utf-8', buffsize: int = 5):
     self.file = DATFile(filename, encoding)
     self.buffer = DATBuffer(buffsize)
@@ -392,6 +392,10 @@ class DATParser:
       return m.group
     else:
       return None
+
+
+def DATParser:
+  re_component = re.compile(r"\$enter\s+component((?P<name_group>\s+name\s*=\s*(?P<name>(['\"]\S+['\"]|\w+)))|(?P<doftype_group>\s+doftype\s*=\s*(?P<doftype>(\s?(disp|pres|pote|math|temp)+)+)))+", re.I)
 
 
 
