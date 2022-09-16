@@ -37,7 +37,8 @@ def shape_der(points):
 def int_points(nip: int=1):
   if nip == 1:
     s = np.array([[0.25, 0.25, 0.25]], dtype=float)
-    w = np.array([1./6.], dtype=float)
+    # w = np.array([1./6.], dtype=float)
+    w = np.array([1.], dtype=float)
   elif nip == 4:
     s = np.zeros((4, 3), dtype=float)
     w = np.zeros(4, dtype=float)
@@ -372,22 +373,29 @@ def tet4_2(coor, E, nu, rho, fx, fy, fz, ipn: int=1):
   print('Element Volume Force Vector: {0}\n{1}'.format(Fe.shape, Fe))
 
 if __name__ == '__main__':
-  xyz = np.array([[
-    [0., 0., 0.],
-    [1., 0., 0.],
-    [0., 1., 0.],
-    [0., 0., 1.]]], dtype=float)
+  # xyz = np.array([[
+  #   [0., 0., 0.],
+  #   [1., 0., 0.],
+  #   [0., 1., 0.],
+  #   [0., 0., 1.]]], dtype=float)
 
-  T = trans_mat_from_3_points(np.array([0., 0., 0.]),
-      np.array([1., 1., 1.]),
-      np.array([1., -1., 1.]))
-  xyz = np.vstack((xyz, [xyz[0] @ T]))
+  xyz = np.array([[
+    [2., 3., 4.],
+    [6., 3., 2.],
+    [2., 5., 1.],
+    [4., 3., 6.]]], dtype=float)
+
+  # T = trans_mat_from_3_points(np.array([0., 0., 0.]),
+  #     np.array([1., 1., 1.]),
+  #     np.array([1., -1., 1.]))
+  # xyz = np.vstack((xyz, [xyz[0] @ T]))
 
   # for i in range(xyz.shape[0]):
   #   transform(xyz[i])
 
-  E, nu, rho = 210000., 0.3, 7.85E-9 # steel
+  # E, nu, rho = 210000., 0.3, 7.85E-9 # steel
+  E, nu, rho = 96., 1./3., 7.85E-9 # steel
   fx, fy, fz = 0., 0., 0. # volumetric continuous load
 
   for i in range(xyz.shape[0]):
-    tet4_2(xyz[i], E, nu, rho, fx, fy, fz, 4)
+    tet4_2(xyz[i], E, nu, rho, fx, fy, fz, 1)
