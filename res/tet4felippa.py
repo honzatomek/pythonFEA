@@ -5,6 +5,75 @@ import numpy as np
 VERBOSE = True
 np.set_printoptions(precision=4, suppress=True)
 
+
+def IsoTetr4Strain(disp):
+    Bx, By, Bz, Nx, Ny, Nz, Jdet = IsoTetr4ShapeFunCarDer(coor)
+
+    Be = np.array([np.array([[Bx[i], 0., 0.] for i in range(coor.shape[0])], dtype=float).flatten(),
+                   np.array([[0., By[i], 0.] for i in range(coor.shape[0])], dtype=float).flatten(),
+                   np.array([[0., 0., Bz[i]] for i in range(coor.shape[0])], dtype=float).flatten(),
+                   np.array([[By[i], Bx[i], 0.] for i in range(coor.shape[0])], dtype=float).flatten(),
+                   np.array([[0., Bz[i], By[i]] for i in range(coor.shape[0])], dtype=float).flatten(),
+                   np.array([[Bz[i], 0., Bx[i]] for i in range(coor.shape[0])], dtype=float).flatten()], dtype=float)
+
+    ue = disp.flatten().T
+    if VERBOSE:
+        print(f'ue =\n{ue}')
+
+    ee = Be @ ue
+    if VERBOSE:
+        print(f'ee =\n{ee}')
+
+    return ee
+
+
+def IsoTetr4Stress(disp, E, nu):
+    Emat = emat3D(E, nu)
+
+    ee = IsoTetr4Strain(disp)
+
+    sig = Emat @ ee.T
+    if VERBOSE:
+        print(f'sig =\n{sig}')
+
+    return sig
+
+
+def HuberMisesHencky(ee):
+    vm = np.sqrt(ee[:3] @ ee[:3].T + 3 * (ee[3:] @ ee[3:].T))
+    if VERBOSE:
+        print(f'vm = {vm:.4f}')
+    return vm
+
+
+def PrincipalStress(sig):
+    S = np.array([[sig[0], sig[3], sig[5]],
+                  [sig[3], sig[1], sig[4]],
+                  [sig[5], sig[4], sig[2]]], dtype=float)
+
+    e_val, e_vec = np.linalg.eigh(S)
+
+    # principal normal stress
+    p3, p2, p1 = np.sort(e_val)
+    e_val_l = e_val.tolist()
+    p1i, p2i, p3i = e_val_l.index(p1), e_val_l.index(p2), e_val_l.index(p3)
+
+    # principal plane
+    p1v, p2v, p3v = e_vec[:,p1i], e_vec[:,p2i], e_vec[:,p3i]
+
+    # principal shear stress
+    t1 = (p1 - p3) / 2
+    t2 = (p1 - p2) / 2
+    t3 = (p2 - p3) / 2
+
+    # principal shear plane
+    t1v = (p1v + p3v) / np.linalg.norm(p1v + p3v)
+    t2v = (p1v + p2v) / np.linalg.norm(p1v + p2v)
+    t3v = (p2v + p3v) / np.linalg.norm(p2v + p3v)
+
+    return p1, p2, p3
+
+
 def IsoTetr4Stiffness(coor, E, nu, rho, F):
     Bx, By, Bz, Nx, Ny, Nz, Jdet = IsoTetr4ShapeFunCarDer(coor)
 
@@ -16,13 +85,6 @@ def IsoTetr4Stiffness(coor, E, nu, rho, F):
     if VERBOSE:
         print(f'Ne =\n{Ne}')
 
-    o = np.zeros(coor.shape[0], dtype=float)
-    # Be = np.array([[*Bx,  *o,  *o],
-    #                [ *o, *By,  *o],
-    #                [ *o,  *o, *Bz],
-    #                [*By, *Bx,  *o],
-    #                [ *o, *Bz, *By],
-    #                [*Bz,  *o, *Bx]], dtype=float)
     Be = np.array([np.array([[Bx[i], 0., 0.] for i in range(coor.shape[0])], dtype=float).flatten(),
                    np.array([[0., By[i], 0.] for i in range(coor.shape[0])], dtype=float).flatten(),
                    np.array([[0., 0., Bz[i]] for i in range(coor.shape[0])], dtype=float).flatten(),
@@ -138,4 +200,14 @@ if __name__ == '__main__':
     E, nu, rho = 96., 1./3., 7.8
     fx, fy, fz = 0., 0., 0.
     Ke = IsoTetr4Stiffness(coor, E, nu, rho, np.array([fx, fy, fz]))
+
+    disp = np.array([[0., 0., 0.],
+                     [0., 0., 0.],
+                     [0., 0., 0.],
+                     [.1, .1, .1]], dtype=float)
+
+    strain = IsoTetr4Strain(disp)
+    stress = IsoTetr4Stress(disp, E, nu)
+    vm = HuberMisesHencky(stress)
+    s1, s2, s3 = PrinicpalStress(stress)
 
