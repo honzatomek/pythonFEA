@@ -79,4 +79,3 @@ function [X,Y,Z,W]=tetraquad(N,vert)
 
         % Quadrature weights
         w=(1/2)^(k1)*ab(1,2)*V(1,I)'.^2;
-

@@ -1,6 +1,7 @@
 
 import numpy as np
 
+np.set_printoptions(precision=2) # , suppress=True)
 
 def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy: float = 0., fz: float = 0.):
     domain = np.array([[-1., -1., -1.],
@@ -42,7 +43,7 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     # Shape Functions in Global Coordinates
     psi_g = psi @ coors
     print('Shape Functions in Global Coordinates: {0}\n{1}'.format(psi_g.shape, psi_g))
-    
+
     # Shape Functions Derivatives in Natural Coordinates
     dpsi = 1 / 8 * np.array([[(eta - 1.0) * (1.0 - mu), (xi - 1) * (1 - mu), -(1 - xi) * (1 - eta)],
                              [(1 - eta) * (1 - mu), (-1 - xi) * (1 - mu), -(1 + xi) * (1 - eta)],
@@ -54,7 +55,7 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
                              [-(1 + eta) * (1 + mu), (1 - xi) * (1 + mu), (1 - xi) * (1 + eta)]])
     dpsi = dpsi.T
     print('Shape Functions Derivatives: {0}\n{1}'.format(dpsi.shape, dpsi))
-    
+
     # Jacobian Matrix
     jacobi = dpsi @ coors
     print('Jacobian Matrix: {0}\n{1}'.format(jacobi.shape, jacobi))
@@ -70,7 +71,7 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     # Shape Function Derivatives in Global Coordinates
     dpsi_g = i_jacobi @ dpsi
     print('Shape Function Derivatives in Global Coordinates: {0}\n{1}'.format(dpsi_g.shape, dpsi_g))
-    
+
     # Material Stiffness Matrix
     C = E / ((1.0 + nu) * (1.0 - 2.0 * nu)) * np.array([[1.0 - nu, nu, nu, 0.0, 0.0, 0.0],
                                                         [nu, 1.0 - nu, nu, 0.0, 0.0, 0.0],
