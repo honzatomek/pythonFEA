@@ -39,8 +39,8 @@ def IsoTetr4Stress(disp, E, nu):
     return sig
 
 
-def HuberMisesHencky(ee):
-    vm = np.sqrt(ee[:3] @ ee[:3].T + 3 * (ee[3:] @ ee[3:].T))
+def HuberMisesHencky(stress):
+    vm = np.sqrt(stress[:3] @ stress[:3].T + 3 * (stress[3:] @ stress[3:].T))
     if VERBOSE:
         print(f'vm = {vm:.4f}')
     return vm
