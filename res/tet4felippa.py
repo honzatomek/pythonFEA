@@ -55,16 +55,21 @@ def PrincipalStress(sig):
 
     # principal normal stress
     p3, p2, p1 = np.sort(e_val)
+    if VERBOSE:
+      print(f'psig = {p1:.2f}, {p2:.2f}, {p3:.2f}')
+
+    # principal plane
     e_val_l = e_val.tolist()
     p1i, p2i, p3i = e_val_l.index(p1), e_val_l.index(p2), e_val_l.index(p3)
 
-    # principal plane
     p1v, p2v, p3v = e_vec[:,p1i], e_vec[:,p2i], e_vec[:,p3i]
 
     # principal shear stress
     t1 = (p1 - p3) / 2
     t2 = (p1 - p2) / 2
     t3 = (p2 - p3) / 2
+    if VERBOSE:
+      print(f'ptau = {t1:.2f}, {t2:.2f}, {t3:.2f}')
 
     # principal shear plane
     t1v = (p1v + p3v) / np.linalg.norm(p1v + p3v)
@@ -209,5 +214,5 @@ if __name__ == '__main__':
     strain = IsoTetr4Strain(disp)
     stress = IsoTetr4Stress(disp, E, nu)
     vm = HuberMisesHencky(stress)
-    s1, s2, s3 = PrinicpalStress(stress)
+    s1, s2, s3 = PrincipalStress(stress)
 
