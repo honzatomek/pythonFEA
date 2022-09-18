@@ -162,7 +162,7 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     exy = du[:, 0, 1] + du[:, 1, 0]
     eyz = du[:, 1, 2] + du[:, 2, 1]
     exz = du[:, 0, 2] + du[:, 2, 0]
-    epsilons = np.array([exx, eyy, ezz, exz, eyz, exy])
+    epsilons = np.array([exx, eyy, ezz, exy, eyz, exz])
 
     sigmas = (C @ epsilons).T
     epsilons = epsilons.T
