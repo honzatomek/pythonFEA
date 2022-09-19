@@ -19,8 +19,8 @@ def cube(width, depth, height, m, n, o):
         coors.append([i*dx, j*dy, k*dz])
   nodes = np.array(nodes, dtype=int)
   coors = np.array(coors, dtype=float)
-  print(nodes)
-  print(coors)
+  # print(nodes)
+  # print(coors)
 
   # connectivity
   lme = np.zeros((m*n*o, 8), dtype=int)
@@ -37,7 +37,7 @@ def cube(width, depth, height, m, n, o):
         n8 = i + (m+1)*(j+1) + (m+1)*(n+1)*(k+1)
         lme[i+m*j+m*n*k] = [n1, n2, n3, n4, n5, n6, n7, n8]
 
-  print(lme)
+  # print(lme)
 
   lm = sparse.lil_matrix((len(nodes), len(nodes)), dtype=int)
   for i in range(lme.shape[0]):
@@ -46,35 +46,35 @@ def cube(width, depth, height, m, n, o):
         lm[lme[i,j], lme[i,k]] = 1
 
   lm = sparse.csr_matrix(lm)
-  print(lm.toarray())
+  # print(lm.toarray())
   mapping = sparse.csgraph.reverse_cuthill_mckee(lm, symmetric_mode=True)
 
-  print(mapping)
+  # print(mapping)
   pmat = sparse.lil_matrix(lm.shape, dtype=int)
   for i in range(mapping.shape[0]):
     pmat[i,mapping[i]] = 1
 
   pmat = sparse.csr_matrix(pmat)
-  print(pmat.toarray())
+  # print(pmat.toarray())
 
   # lm_p = pmat.T @ lm
   lm_p1 = sparse.lil_matrix(lm.shape)
-  print(lm.shape)
-  print(mapping.shape)
+  # print(lm.shape)
+  # print(mapping.shape)
   # lm_p[mapping, mapping] = lm
   lm_p1 = lm[np.ix_(mapping, mapping)]
   lm_p1 = sparse.csr_matrix(lm_p1)
-  print(lm_p1.toarray())
+  # print(lm_p1.toarray())
 
   lm_p2 = sparse.lil_matrix(lm.shape)
   lm_p2 = pmat @ lm @ pmat.T
   lm_p2 = sparse.csr_matrix(lm_p2)
-  print(lm_p2.toarray())
+  # print(lm_p2.toarray())
 
   compare = lm_p1.toarray() == lm_p2.toarray()
-  print(np.array_equal(lm_p1, lm_p2))
+  # print(np.array_equal(lm_p1, lm_p2))
   # print(compare)
-  print(compare.all())
+  # print(compare.all())
 
   return coors, lme
 
