@@ -81,24 +81,35 @@ def cube(width, depth, height, m, n, o):
 
 def generate_unv(nodes, elements, length, scale):
   # nodes
-  print(-1)
-  print(15)
+  # print(f'{-1:6n}')
+  # print(f'{15:6n}')
+  # for i, n in enumerate(nodes):
+  #   print('{0:10n}{1:10n}{2:10n}{3:10n} {4:13.5e} {5:13.5e} {6:13.5e}'.format(i+1, 1, 1, 1, n[0], n[1], n[2]))
+  # print(f'{-1:6n}')
+  print(f'{-1:6n}')
+  print(f'{2411:10n}')
   for i, n in enumerate(nodes):
-    print('{0:10n}{1:10n}{2:10n}{3:10n}{4:13.5e}{5:13.5e}{6:13.5e}'.format(i+1, 0, 0, 1, n[0], n[1], n[2]))
-  print(-1)
+    print('{0:10n}{1:10n}{2:10n}{3:10n}'.format(i+1, 1, 1, 1))
+    print('{0:25.16e}{1:25.16e}{2:25.16e}'.format(n[0], n[1], n[2]).replace('e', 'D'))
+  print(f'{-1:6n}')
 
   # elements
   # print(elements)
-  print(-1)
-  print(2412)
+  print(f'{-1:6n}')
+  print(f'{2412:6n}')
   for i, e in enumerate(elements):
-    print('{0:10n}{1:10n}{2:10n}{3:10n}{4:10n}{5:10n}'.format(i+1, 0, 0, 0, 2, 8))
+    print('{0:10n}{1:10n}{2:10n}{3:10n}{4:10n}{5:10n}'.format(i+1, 115, 0, 0, 2, 8))
     print(''.join([f'{n+1:10n}' for n in e]))
-  print(-1)
+  print(f'{-1:6n}')
 
   # displacement
-  print(-1)
-  print(55)
+  print(f'{-1:6n}')
+  print(f'{55:6n}')
+  print('{0:40s}'.format('None').rstrip())
+  print('{0:40s}'.format('None').rstrip())
+  print('{0:40s}'.format('None').rstrip())
+  print('{0:40s}'.format('None').rstrip())
+  print('{0:40s}'.format('None').rstrip())
   print(''.join([f'{s:10n}' for s in [1, 2, 2, 8, 2, 3]]))
   # 1 -  structural
   # 2 -  normal mode
@@ -109,9 +120,9 @@ def generate_unv(nodes, elements, length, scale):
   print(''.join([f'{s:10n}' for s in [2, 4, 1, 1]]))
   print(''.join([f'{s:13.5e}' for s in [10., 0., 0., 0.]]))
   for i, n in enumerate(nodes):
-    print(i+1)
+    print(f'{i+1:10n}')
     print('{0:13.5e}{1:13.5e}{2:13.5e}'.format(n[0], n[1] +  sin(n[2] / length) * scale, n[2]))
-  print(-1)
+  print(f'{-1:6n}')
 
 
 if __name__ == '__main__':
