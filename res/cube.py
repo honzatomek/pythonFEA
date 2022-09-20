@@ -105,11 +105,11 @@ def generate_unv(nodes, elements, length, scale):
   # displacement
   print(f'{-1:6n}')
   print(f'{55:6n}')
-  print('{0:40s}'.format('None').rstrip())
-  print('{0:40s}'.format('None').rstrip())
-  print('{0:40s}'.format('None').rstrip())
-  print('{0:40s}'.format('None').rstrip())
-  print('{0:40s}'.format('None').rstrip())
+  print('{0:40s}'.format('NONE').rstrip())
+  print('{0:40s}'.format('NONE').rstrip())
+  print('{0:40s}'.format('NONE').rstrip())
+  print('{0:40s}'.format('NONE').rstrip())
+  print('{0:40s}'.format('NONE').rstrip())
   print(''.join([f'{s:10n}' for s in [1, 2, 2, 8, 2, 3]]))
   # 1 -  structural
   # 2 -  normal mode
