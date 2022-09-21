@@ -35,6 +35,7 @@ prescibed = np.zeros((1, 2), dtype = float)
 # material properties
 EA = 1.
 EI = 1.
+rho = 1.
 
 # preparing the global vectors and matrices
 f = np.zeros((ndof, 1), dtype=float)
