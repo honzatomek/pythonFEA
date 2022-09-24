@@ -191,7 +191,7 @@ kru = k[:ndet, ndet:]
 # kur = k[ndet:, :ndet] kur = kru.T
 kuu = k[ndet:, ndet:]
 muu = m[ndet:, ndet:]
-cuu = m[ndet:, ndet:]
+cuu = c[ndet:, ndet:]
 ur = u[:ndet]
 uu = u[ndet:]
 fr = f[:ndet]
@@ -201,7 +201,6 @@ fu = f[ndet:]
 omega, evec = eigh(kuu, muu, eigvals_only=False, subset_by_index=(0, min(ndof - ndet, nmodes) - 1))
 # km = evec.T @ kuu @ evec
 # mm = evec.T @ muu @ evec
-# cm = evec.T @ cuu @ evec
 km = np.diag(evec.T @ kuu @ evec)
 mm = np.diag(evec.T @ muu @ evec)
 cm = np.diag(evec.T @ cuu @ evec)
@@ -218,11 +217,10 @@ q_2 = np.zeros(q_0.shape)  # no initial acceleration
 # print(q_0)
 # print(q_0)
 
-N = 1
+N = 100
 t0 = 0.
-tn = 10.
+tn = 100.
 h = (tn - t0) / N
-# print(h)
 q0 = np.zeros((q_0.shape[0], N + 1), dtype=float)
 q1 = np.zeros((q_1.shape[0], N + 1), dtype=float)
 q2 = np.zeros((q_2.shape[0], N + 1), dtype=float)
@@ -231,55 +229,66 @@ q0[:,0] = q_0[:,0]
 q1[:,0] = q_1[:,0]
 q2[:,0] = q_2[:,0]
 
-# print(q0)
-
-
-A = -(cm/mm).reshape((q0.shape[0], 1))
-B = -(km/mm).reshape((q0.shape[0], 1))
+A = -(cm/mm).flatten()
+B = -(km/mm).flatten()
 print(A)
 print(B)
-for i in range(1):
-  u0 = q0[:,i].reshape((q0.shape[0], 1))
-  v0 = q1[:,i].reshape((q0.shape[0], 1))
+nsteps = N
+for i in range(nsteps):
+  u0 = q0[:,i].flatten()
+  v0 = q1[:,i].flatten()
   a0 = A * v0 + B * u0
 
-  print(f'u0 =\n{u0}')
-  print(f'v0 =\n{v0}')
-  print(f'a0 =\n{a0}')
+  print(f'u0 = {u0}')
+  print(f'v0 = {v0}')
+  print(f'a0 = {a0}')
 
   u1 = u0 + v0 * h / 2
   v1 = v0 + a0 * h / 2
   a1 = A * v1 + B * u1
 
-  print(f'u1 =\n{u1}')
-  print(f'v1 =\n{v1}')
-  print(f'a1 =\n{a1}')
+  print(f'u1 = {u1}')
+  print(f'v1 = {v1}')
+  print(f'a1 = {a1}')
 
   u2 = u0 + v1 * h / 2
   v2 = v0 + a1 * h / 2
   a2 = A * v1 + B * u1
 
-  print(f'u2 =\n{u2}')
-  print(f'v2 =\n{v2}')
-  print(f'a2 =\n{a2}')
+  print(f'u2 = {u2}')
+  print(f'v2 = {v2}')
+  print(f'a2 = {a2}')
 
   u3 = u0 + v2 * h
   v3 = v0 + a2 * h
   a3 = A * v2 + B * u2
 
-  print(f'u3 =\n{u3}')
-  print(f'v3 =\n{v3}')
-  print(f'a3 =\n{a3}')
+  print(f'u3 = {u3}')
+  print(f'v3 = {v3}')
+  print(f'a3 = {a3}')
 
-  print((u0 + h/6 * (v0 + 2 * (v1 + v2) + v3)))
+  ui1 = u0 + h/6 * (v0 + 2 * (v1 + v2) + v3)
+  vi1 = v0 + h/6 * (a0 + 2 * (a1 + a2) + a3)
+  ai1 = A * vi1 + B * ui1
 
-  q0[:,i+1] = (u0 + h/6 * (v0 + 2 * (v1 + v2) + v3))[:,0]
-  q1[:,i+1] = (v0 + h/6 * (a0 + 2 * (a1 + a2) + a3))[:,0]
-  q2[:,i+1] = (A * q1[:,i+1].reshape((q0.shape[0], 1)) + B * q0[:,i+1].reshape((q0.shape[0], 1)))[:,0]
+  print(f'ui1 = {ui1}')
+  print(f'vi1 = {vi1}')
+  print(f'ai1 = {ai1}')
 
-  print(q0[:,:i+1+1])
-  print(q1[:,:i+1+1])
-  print(q2[:,:i+1+1])
+  q0[:,i+1] = ui1
+  q1[:,i+1] = vi1
+  q2[:,i+1] = ai1
+
+# print(f'q0 =\n{q0[:,:nsteps+1]}')
+# print(f'q1 =\n{q1[:,:nsteps+1]}')
+# print(f'q2 =\n{q2[:,:nsteps+1]}')
+
+uu = np.zeros((ndof-ndet, nsteps), dtype=float)
+for i in range(nsteps):
+  for j in range(evec.shape[1]):
+    uu[:,i] += evec[:,j].flatten() * q0[j,i]
+
+print(uu[:,:nsteps+1].T)
 
   # k0 = h * q1[:,i]
   # l0 = h * (A * q1[:,i] + B * q0[:,i])
