@@ -2,6 +2,7 @@
 
 import numpy as np
 np.set_printoptions(precision=4, suppress=True)
+from scipy.linalg import eigh
 
 # nodes
 xz = np.array([[0., 0.],
@@ -111,9 +112,16 @@ fr = f[:ndet]
 fu = f[ndet:]
 
 # check for rigid body modes
-eval, _ = np.linalg.eigh(kuu)
-eval = np.sort(eval)
-print(f'eig(K) = {eval}')
+omega, evec = eigh(kuu, eigvals_only=False, subset_by_value=(-np.inf, 1.0e-3))
+if len(omega) > 0:
+  print(f'[E] Rigid body modes found: {len(omega):n}')
+  for i in range(len(omega)):
+    print(f'  Eigenfrequency: {omega[i] / (2. * math.pi):.3f} Hz')
+    u[ndet:] = evec[:,i].reshape(uu.shape)
+    print(f'  {"dof":^8s} {"disp":^12s}')
+    for j in range(len(u)):
+      print(f'  {j:8n} {u[j,0]:12.3e}')
+  exit()
 
 # solve for displacements
 uu = np.linalg.inv(kuu) @ (fu - kru.T @ ur)
