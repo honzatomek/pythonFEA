@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # from: https://www.ritchievink.com/blog/2017/04/13/writing-a-fourth-order-runga-kutta-solver-for-a-vibrations-problem-in-python-part-3/
 
+import numpy as np
+import matplotlib.pyplot as plt
+
 def runga_kutta_vibrations(t, u0, v0, m, c, k, force):
     """
     :param t: (list/ array)
