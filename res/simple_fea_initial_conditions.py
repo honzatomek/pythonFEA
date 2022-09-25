@@ -122,12 +122,12 @@ for i in range(nelem):
   sin = (xz[el[i, 1], 1] - xz[el[i, 0], 1]) / l
 
   # transformation matrix
-  t = np.array([[ cos,  sin, 0., 0., 0., 0.],
-          [-sin,  cos, 0., 0., 0., 0.],
-          [0., 0., 1., 0., 0., 0.],
-          [0., 0., 0.,  cos,  sin, 0.],
-          [0., 0., 0., -sin,  cos, 0.],
-          [0., 0., 0., 0., 0., 1.]], dtype = float)
+  t = np.array([[ cos,  sin, 0.,   0.,   0., 0.],
+                [-sin,  cos, 0.,   0.,   0., 0.],
+                [0.,     0., 1.,   0.,   0., 0.],
+                [0.,     0., 0.,  cos,  sin, 0.],
+                [0.,     0., 0., -sin,  cos, 0.],
+                [0.,     0., 0.,   0.,   0., 1.]], dtype = float)
 
   tmat.append(t)
 
@@ -199,10 +199,17 @@ fu = f[ndet:]
 
 # transform to modal domain
 omega, evec = eigh(kuu, muu, eigvals_only=False, subset_by_index=(0, min(ndof - ndet, nmodes) - 1))
-# km = evec.T @ kuu @ evec
-# mm = evec.T @ muu @ evec
+
+# if normalise eigenvectors to 1:
+# evec = evec.T
+# for i in range(evec.shape[0]):
+#   evec[i] /= np.linalg.norm(evec[i])
+# evec = evec.T
+
+print(f'omega = {omega}')
+
 km = np.diag(evec.T @ kuu @ evec)
-mm = np.diag(evec.T @ muu @ evec)
+mm = np.diag(evec.T @ muu @ evec) # should be all ones
 cm = np.diag(evec.T @ cuu @ evec)
 if evec.shape[0] == evec.shape[1]:
   eveci = np.linalg.inv(evec)  # inverse
@@ -231,8 +238,8 @@ q2[:,0] = q_2[:,0]
 
 A = -(cm/mm).flatten()
 B = -(km/mm).flatten()
-print(A)
-print(B)
+# print(A)
+# print(B)
 nsteps = N
 for i in range(nsteps):
   u0 = q0[:,i].flatten()
@@ -288,7 +295,7 @@ for i in range(nsteps):
   for j in range(evec.shape[1]):
     uu[:,i] += evec[:,j].flatten() * q0[j,i]
 
-print(uu[:,:nsteps+1].T)
+# print(uu[:,:nsteps+1].T)
 
   # k0 = h * q1[:,i]
   # l0 = h * (A * q1[:,i] + B * q0[:,i])
