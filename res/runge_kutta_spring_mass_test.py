@@ -1,5 +1,7 @@
 #!/usr/bin/python
 # from: https://www.ritchievink.com/blog/2017/04/13/writing-a-fourth-order-runga-kutta-solver-for-a-vibrations-problem-in-python-part-3/
+import numpy as np
+import matplotlib.pyplot as plt
 
 km = np.array([ 0.0078,  0.0721,  0.2981,  0.8803,  4.0676, 61.4224])
 mm = np.array([1., 1., 1., 1., 1., 1.])
@@ -50,7 +52,7 @@ def runge_kutta_vibrations(t, u0, v0, m, c, k, force):
     return u, v
 
 n = 1000
-t = np.linspace(0, 10, n)
+t = np.linspace(0, 1000, n)
 force = np.zeros(n)
 
 # for i in range(100, 150):
@@ -63,12 +65,14 @@ cm =  np.array([  0.0202, 0.0214,  0.026, 0.0376, 0.1014,  1.2484])
 q_0 = np.array([-95.6166,     0.,-1.0865,     0., 0.1696, -0.0301])
 
 # Parameters of the mass spring system
-m = mm[0]
-k = km[0]
-c = cm[0]
+m =  mm[0]
+k =  km[0]
+c =  cm[0]
 u = q_0[0]
 
 u, v = runge_kutta_vibrations(t, u, 0, m, c, k, force)
+
+print(u)
 
 # Plot the result
 fig, ax1 = plt.subplots()
