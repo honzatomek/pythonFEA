@@ -211,10 +211,10 @@ else:
 q_0 = eveci @ uu   # uu = evec @ q0
 q_1 = np.zeros(q_0.shape)  # no initial velocities
 q_2 = np.zeros(q_0.shape)  # no initial acceleration
-# print(km)
-# print(mm)
-# print(cm)
-# print(q_0)
+print(f'km = np.array({km})')
+print(f'mm = np.array({mm})')
+print(f'cm = np.array({cm})')
+print(f'q_0 = np.array({q_0})')
 # print(q_0)
 
 N = 100
@@ -239,41 +239,41 @@ for i in range(nsteps):
   v0 = q1[:,i].flatten()
   a0 = A * v0 + B * u0
 
-  print(f'u0 = {u0}')
-  print(f'v0 = {v0}')
-  print(f'a0 = {a0}')
+  # print(f'u0 = {u0}')
+  # print(f'v0 = {v0}')
+  # print(f'a0 = {a0}')
 
   u1 = u0 + v0 * h / 2
   v1 = v0 + a0 * h / 2
   a1 = A * v1 + B * u1
 
-  print(f'u1 = {u1}')
-  print(f'v1 = {v1}')
-  print(f'a1 = {a1}')
+  # print(f'u1 = {u1}')
+  # print(f'v1 = {v1}')
+  # print(f'a1 = {a1}')
 
   u2 = u0 + v1 * h / 2
   v2 = v0 + a1 * h / 2
   a2 = A * v1 + B * u1
 
-  print(f'u2 = {u2}')
-  print(f'v2 = {v2}')
-  print(f'a2 = {a2}')
+  # print(f'u2 = {u2}')
+  # print(f'v2 = {v2}')
+  # print(f'a2 = {a2}')
 
   u3 = u0 + v2 * h
   v3 = v0 + a2 * h
   a3 = A * v2 + B * u2
 
-  print(f'u3 = {u3}')
-  print(f'v3 = {v3}')
-  print(f'a3 = {a3}')
+  # print(f'u3 = {u3}')
+  # print(f'v3 = {v3}')
+  # print(f'a3 = {a3}')
 
   ui1 = u0 + h/6 * (v0 + 2 * (v1 + v2) + v3)
   vi1 = v0 + h/6 * (a0 + 2 * (a1 + a2) + a3)
   ai1 = A * vi1 + B * ui1
 
-  print(f'ui1 = {ui1}')
-  print(f'vi1 = {vi1}')
-  print(f'ai1 = {ai1}')
+  # print(f'ui1 = {ui1}')
+  # print(f'vi1 = {vi1}')
+  # print(f'ai1 = {ai1}')
 
   q0[:,i+1] = ui1
   q1[:,i+1] = vi1
