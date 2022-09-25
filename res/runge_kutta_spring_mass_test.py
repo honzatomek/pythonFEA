@@ -54,7 +54,7 @@ def runge_kutta_vibrations(t, u0, v0, m, c, k, force):
 # modal damping
 zeta = 0.08
 omega =  np.array([  0.0078, 0.0721, 0.2981, 0.8803, 4.0676,  61.4224])
-f = omega / (2. * np.pi)
+f = np.sqrt(omega) / (2. * np.pi)
 fmax = np.max(f)
 print(f'fmax = {fmax}')
 km =  np.array([  0.0078, 0.0721, 0.2981, 0.8803, 4.0676,  61.4224])
