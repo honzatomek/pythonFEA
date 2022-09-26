@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # from: https://www.ritchievink.com/blog/2017/04/13/writing-a-fourth-order-runga-kutta-solver-for-a-vibrations-problem-in-python-part-3/
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-EPS_ZERO = 1.e-10
 
 def runge_kutta_vibrations(t, u0, v0, m, c, k, force):
     """
@@ -27,11 +27,9 @@ def runge_kutta_vibrations(t, u0, v0, m, c, k, force):
         return (force - c * v - k * u) / m
 
     for i in range(t.size - 1):
-        dt = t[i+1] - t[i]
+        dt = t[i+1] - t[i] # adaptive step size
         # F at time step t / 2
         f_t_05 = (force[i + 1] - force[i]) / 2 + force[i]
-
-        # last 10 steps
 
         u1 = u[i]
         v1 = v[i]

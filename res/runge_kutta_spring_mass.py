@@ -4,6 +4,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def runga_kutta_vibrations(t, u0, v0, m, c, k, force):
     """
     :param t: (list/ array)
