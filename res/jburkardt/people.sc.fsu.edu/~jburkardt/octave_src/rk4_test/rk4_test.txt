@@ -1,0 +1,15 @@
+12-Oct-2020 10:02:13
+
+rk4_test
+  MATLAB/Octave version 4.2.2
+  Test rk4.
+
+rk4_predator_test:
+  Solve predator-prey equations using rk4().
+  Graphics saved as "rk4_predator_plot.png"
+  Graphics saved as "rk4_predator_phase.png"
+
+rk4_test
+  Normal end of execution.
+
+12-Oct-2020 10:02:13

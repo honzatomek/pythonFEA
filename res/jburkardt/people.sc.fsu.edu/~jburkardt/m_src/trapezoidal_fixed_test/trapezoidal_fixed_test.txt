@@ -1,0 +1,30 @@
+08-Jan-2022 10:36:11
+
+trapezoidal_fixed_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test trapezoidal_fixed() on several ODE's.
+  We use a constant stepsize.
+
+predator_prey_trapezoidal_fixed():
+
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using trapezoidal_fixed().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "predator_prey_trapezoidal_fixed.png"
+
+predator_prey_trapezoidal_fixed_test
+  Normal end of execution.
+
+stiff_trapezoidal_fixed()
+  Solve stiff ODE using the trapezoidal + fixed point method.
+  Graphics saved as "stiff_trapezoidal_fixed.png"
+
+stiff_trapezoidal_fixed_test
+  Normal end of execution.
+
+trapezoidal_fixed_test():
+  Normal end of execution.
+
+08-Jan-2022 10:36:16

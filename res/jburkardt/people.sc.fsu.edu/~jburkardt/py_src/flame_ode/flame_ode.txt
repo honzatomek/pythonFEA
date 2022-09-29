@@ -1,0 +1,15 @@
+Sat Jan 29 08:32:01 2022
+
+flame_ode_test():
+  Python version: 3.6.9
+  Solve flame_ode().
+
+  parameters:
+    t0 =     0.0
+    y0 =     [0.01]
+    tstop =  200.0
+  Graphics saved as "flame.png"
+
+flame_ode_test():
+  Normal end of execution.
+Sat Jan 29 08:32:01 2022

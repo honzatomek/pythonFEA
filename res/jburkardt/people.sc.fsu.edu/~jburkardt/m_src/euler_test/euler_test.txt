@@ -1,0 +1,14 @@
+07-Jan-2022 19:20:49
+
+euler_test
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test euler().
+
+humps_euler:
+  Solve the humps ODE using euler().
+  Graphics saved as "humps_euler.png"
+
+euler_test:
+  Normal end of execution.
+
+07-Jan-2022 19:20:53

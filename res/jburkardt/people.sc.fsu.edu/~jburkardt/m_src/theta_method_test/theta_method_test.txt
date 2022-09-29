@@ -1,0 +1,35 @@
+08-Jan-2022 10:32:25
+
+theta_method_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test theta method().
+  We use a constant stepsize.
+
+stiff_theta_method_test():
+  Solve stiff ODE using the theta method + fsolve().
+  Using theta = 0
+  Graphics saved as "stiff_theta_method_0.png"
+
+stiff_theta_method_test
+  Normal end of execution.
+
+stiff_theta_method_test():
+  Solve stiff ODE using the theta method + fsolve().
+  Using theta = 0.5
+  Graphics saved as "stiff_theta_method_0.5.png"
+
+stiff_theta_method_test
+  Normal end of execution.
+
+stiff_theta_method_test():
+  Solve stiff ODE using the theta method + fsolve().
+  Using theta = 1
+  Graphics saved as "stiff_theta_method_1.png"
+
+stiff_theta_method_test
+  Normal end of execution.
+
+theta_method_test():
+  Normal end of execution.
+
+08-Jan-2022 10:32:32

@@ -1,0 +1,54 @@
+26-Jul-2020 15:21:53
+
+predator_prey_ode_test:
+  MATLAB/Octave version 4.2.2
+  Test predator_prey_ode using euler, midpoint, ode23, ode45.
+
+predator_prey_euler 
+
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using euler().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "predator_prey_euler_plot.png"
+  Graphics saved as "predator_prey_euler_phase.png"
+  Graphics saved as "predator_prey_euler_conserved.png"
+
+predator_prey_midpoint 
+
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using midpoint_fixed().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "predator_prey_midpoint_plot.png"
+  Graphics saved as "predator_prey_midpoint_phase.png"
+  Graphics saved as "predator_prey_midpoint_conserved.png"
+
+predator_prey_ode23 
+
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using ode23().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "predator_prey_ode23_plot.png"
+  Graphics saved as "predator_prey_ode23_phase.png"
+  Graphics saved as "predator_prey_ode23_conserved.png"
+
+predator_prey_ode45 
+
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using ode45().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "predator_prey_ode45_plot.png"
+  Graphics saved as "predator_prey_ode45_phase.png"
+  Graphics saved as "predator_prey_ode45_conserved.png"
+
+predator_prey_ode_test:
+  Normal end of execution.
+
+26-Jul-2020 15:21:56

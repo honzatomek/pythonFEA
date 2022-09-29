@@ -1,0 +1,30 @@
+26-Apr-2021 17:50:24
+
+trapezoidal_test:
+  MATLAB/Octave version 4.2.2
+  Test the trapezoidal method on several ODE's.
+  We use a constant stepsize.
+
+predator_prey_trapezoidal():
+
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using trapezoidal().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "predator_prey_trapezoidal.png"
+
+predator_prey_trapezoidal
+  Normal end of execution.
+
+stiff_trapezoidal():
+  Solve stiff ODE using the trapezoidal method.
+  Graphics saved as "stiff_trapezoidal.png"
+
+stiff_trapezoidal
+  Normal end of execution.
+
+trapezoidal_test:
+  Normal end of execution.
+
+26-Apr-2021 17:50:25

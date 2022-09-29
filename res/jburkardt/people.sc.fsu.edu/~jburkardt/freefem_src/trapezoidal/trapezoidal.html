@@ -1,0 +1,102 @@
+<html>
+
+  <head>
+    <title>
+      trapezoidal
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      trapezoidal
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>trapezoidal</b>,
+      a FreeFem++ code which
+      uses the (implicit) trapezoidal method to approximate the solution of a
+      time dependent boundary value problem (BVP).
+    </p>
+
+    <p>
+      Our problem is posed on the unit square, with zero boundary conditions,
+      and having the exact solution
+      <pre>
+        u = sin(pi x) sin(pi y) e^(-t)
+      </pre>
+      The boundary value problem is posed as
+      <pre>
+        du    d^2 u   d^2 u
+        -- -  ----- - ----- = (2 pi^2 - 1 ) sin(pi x) sin(pi y) e^(-t)
+        dt    dx^2    dy^2
+      </pre>
+      with initial condition at t=0:
+      <pre>
+        u(x,y,0) = sin(pi x) sin(pi y)
+      </pre>
+      and boundary condition
+      <pre>
+        u(x,y,t) = 0
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Frederic Hecht,<br>
+          New development in FreeFem++,<br>
+          Journal of Numerical Mathematics,<br>
+          Volume 20, Number 3-4, 2012, pages 251-265.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "trapezoidal.edp">trapezoidal.edp</a>, 
+          the FreeFem++ script;
+        </li>
+        <li>
+          <a href = "trapezoidal.sh">trapezoidal.sh</a>, 
+          a BASH script to run the example;
+        </li>
+        <li>
+          <a href = "trapezoidal.txt">trapezoidal.txt</a>,
+          the output file;
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 26 April 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

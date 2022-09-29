@@ -1,0 +1,59 @@
+07-Jan-2022 17:56:02
+
+cauchy_method_test:
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test the Cauchy method.
+  We use a constant stepsize.
+
+stiff_cauchy_fixed_test
+  Solve stiff ODE using the Cauchy method + fixed point.
+  Using theta = 0.25
+  Graphics saved as "stiff_cauchy_fixed_0.25.png"
+
+stiff_cauchy_fixed_test
+  Normal end of execution.
+
+stiff_cauchy_fixed_test
+  Solve stiff ODE using the Cauchy method + fixed point.
+  Using theta = 0.5
+  Graphics saved as "stiff_cauchy_fixed_0.5.png"
+
+stiff_cauchy_fixed_test
+  Normal end of execution.
+
+stiff_cauchy_fixed_test
+  Solve stiff ODE using the Cauchy method + fixed point.
+  Using theta = 0.75
+  Graphics saved as "stiff_cauchy_fixed_0.75.png"
+
+stiff_cauchy_fixed_test
+  Normal end of execution.
+
+stiff_cauchy_fsolve_test
+  Solve stiff ODE using the Cauchy method + fsolve().
+  Using theta = 0.25
+  Graphics saved as "stiff_cauchy_fsolve_0.25.png"
+
+stiff_cauchy_fsolve_test
+  Normal end of execution.
+
+stiff_cauchy_fsolve_test
+  Solve stiff ODE using the Cauchy method + fsolve().
+  Using theta = 0.5
+  Graphics saved as "stiff_cauchy_fsolve_0.5.png"
+
+stiff_cauchy_fsolve_test
+  Normal end of execution.
+
+stiff_cauchy_fsolve_test
+  Solve stiff ODE using the Cauchy method + fsolve().
+  Using theta = 0.75
+  Graphics saved as "stiff_cauchy_fsolve_0.75.png"
+
+stiff_cauchy_fsolve_test
+  Normal end of execution.
+
+cauchy_method_test:
+  Normal end of execution.
+
+07-Jan-2022 17:56:11
