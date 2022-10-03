@@ -90,7 +90,7 @@ if __name__ == '__main__':
   # a_f = func(m[0], c[0], k[0], f[0])
   # print(a_f(10., 100.))
 
-  t = np.linspace(0., 1., 10000)
+  t = np.linspace(0., .5, 500)
   u = np.zeros((1, t.shape[0]), dtype=float)
   v = np.zeros((1, t.shape[0]), dtype=float)
   a = np.zeros((1, t.shape[0]), dtype=float)
