@@ -1,0 +1,30 @@
+07-Apr-2021 08:14:13
+
+midpoint_fixed_test:
+  MATLAB/Octave version 4.2.2
+  Test midpoint_fixed() on several ODE's.
+  We use a constant stepsize.
+
+predator_prey_midpoint_fixed_test
+
+  A pair of ordinary differential equations for a population
+  of predators and prey are solved using midpoint_fixed().
+
+  The exact solution shows periodic behavior, with a fixed
+  period and amplitude.
+  Graphics saved as "predator_prey_midpoint_fixed.png"
+
+predator_prey_midpoint_fixed_test
+  Normal end of execution.
+
+stiff_midpoint_fixed_test
+  Solve stiff ODE using the midpoint+fixed point method.
+  Graphics saved as "stiff_midpoint_fixed.png"
+
+stiff_midpoint_fixed_test
+  Normal end of execution.
+
+midpoint_fixed_test:
+  Normal end of execution.
+
+07-Apr-2021 08:14:14

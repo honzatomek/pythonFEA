@@ -1,0 +1,219 @@
+//  Discussion:
+//
+//    Solve a time-dependent boundary value problem on the unit square.
+//
+//    Use the forward Euler method to handle the time derivative.
+//
+//    Our problem is posed on the unit square, with zero boundary conditions,
+//    and having the exact solution
+//
+//      u = sin(pi x) sin(pi y) e^(-t)
+//
+//    The boundary value problem is posed as
+//
+//      du    d^2 u   d^2 u
+//      -- -  ----- - ----- = (2 pi^2 - 1 ) sin(pi x) sin(pi y) e^(-t)
+//      dt    dx^2    dy^2
+//
+//    with initial condition at t=0:
+//
+//      u(x,y,0) = sin(pi x) sin(pi y)
+//
+//    and boundary condition
+//
+//      u(x,y,t) = 0
+//
+//    The forward Euler method allows us to take a time step dt,
+//    using the solution uold at the previous step, replacing the
+//    time derivative by (u-uold)/dt.  As a finite element expression,
+//    the problem is to solve the following integral equation for u:
+//
+//      Integral ( u - uold ) v 
+//      + dt ( d/dx uold d/dx v + d/dy uold d/dy v - f(x,y,told,uold) v ) = 0
+//
+//     where v is any finite element space basis vector.
+//
+//     The forward Euler method may require a considerably smaller time
+//     step than implicit methods such as the backward Euler method.
+//
+//  Location:
+//
+//    https://people.sc.fsu.edu/~jburkardt/freefem_src/euler/euler.edp  
+//
+//  Licensing:
+//
+//    This code is distributed under the GNU LGPL license.
+//
+//  Modified:
+//
+//    26 February 2021
+//
+//  Author:
+//
+//    John Burkardt
+//
+cout << endl;
+cout << "euler:" << endl;
+cout << "  FreeFem++ version." << endl;
+cout << "  Solve a time-dependent boundary value problem in a square." << endl;
+cout << "  Use the Forward Euler method to handle the time variation." << endl;
+cout << "  At each time, report the L2 norm, L2 error norm, and L2 relative error norm." << endl;
+cout << "  At the end, report infinity(T) L2(X) and L2(T) L2(X) error norms." << endl;
+
+real a;
+real h;
+real hold;
+int nt = 100;
+real t;
+real tmin = 0.0;
+real tmax = 0.02;
+real told;
+real dt = ( tmax - tmin ) / nt;
+//
+//  Express the number of nodes as (almost) a power of 2.
+{
+  int nlog2 = 4;
+//
+//  n: number of nodes in each spatial direction.
+//
+  int n = pow ( 2.0, nlog2 );
+//
+//  h: spacing between nodes.
+//
+  h = 1.0 / n;
+  cout << "  H =     " << h << endl;
+  cout << "  DT =    " << dt << endl;
+//
+//  Th: the triangulation of the square.
+//
+  mesh Th = square ( n, n );
+//
+//  Define Vh, the finite element space.  "P1" = piecewise linears.
+//
+  fespace Vh ( Th, P1 );
+//
+//  uh: the finite element function that will approximate the solution.
+//  uoldh: the solution at the previous time step.
+//
+  Vh uh;
+  Vh uoldh;
+//
+//  vh: the test functions used to project the error.
+//
+  Vh vh;
+//
+//  f: the right hand side.
+//
+  func f = ( 2.0 * pi^2 - 1.0 ) * sin ( pi * x ) * sin ( pi * y ) * exp ( - t );
+//
+//  Define the problem:
+//
+//  u - uold 
+//  ---------  -  uxx - uyy = f(told,uold)
+//     dt
+//
+//    ( uh - uoldh ) vh + dt * uoldhx vhx + dt * uoldhy vhy - f(x,y,told,uold)= 0
+//
+  problem forwardeulerstep ( uh, vh ) =
+     int2d ( Th ) 
+     ( 
+       uh * vh 
+     )
+     - int2d ( Th )
+     (
+       uoldh * vh
+     )   
+     + int2d ( Th )
+     (
+       + dt * dx ( uoldh ) * dx ( vh )
+       + dt * dy ( uoldh ) * dy ( vh ) 
+     )
+    - int2d ( Th )
+    (
+      dt * ( 2.0 * pi^2 - 1.0 ) * sin ( pi * x ) * sin ( pi * y ) * exp ( - told ) * vh
+    )
+    + on ( 1, 2, 3, 4, uh = 0.0 );
+//
+//  Perform nt timesteps.
+//
+  cout << endl;
+  cout << "  T  ||Exact||   ||Error||  ||Error||/||Exact||" << endl;
+  cout << endl;
+
+  real erroroo0 = 0.0;
+  real error00 = 0.0;
+
+  for ( int it = 0; it <= nt; it++ )
+  {
+    if ( it == 0 )
+    {
+      t = tmin;
+      uh = sin ( pi * x ) * sin ( pi * y ) * exp ( - t );
+    }
+    else
+    {
+      told = t;
+      uoldh = uh;
+      t = ( ( nt - it ) * tmin + it * tmax ) / nt;
+      forwardeulerstep;
+    }
+//
+//  Compute error.
+//
+    real uexactnorm = sqrt 
+    ( 
+      int2d ( Th ) 
+      ( 
+        ( sin ( pi * x ) * sin ( pi * y ) * exp ( - t ) )^2 
+      ) 
+    );
+
+    a = sqrt 
+    ( 
+      int2d ( Th ) 
+      ( 
+        ( uh - sin ( pi * x ) * sin ( pi * y ) * exp ( - t ) )^2 
+      ) 
+    );
+
+    cout << "  " << t 
+         << "  " << uexactnorm 
+         << "  " << a 
+         << "  " << a / uexactnorm << endl;
+
+    if ( it == 0 || it == nt )
+    {
+      error00 = error00 + 0.5 * a^2;
+    }
+    else
+    {
+      error00 = error00 + a^2;
+    }
+    erroroo0 = max ( erroroo0, a );
+  }
+//
+//  Ai = sqrt ( L2 integral over X ( E^2 ) )
+//
+//  ||E|| 0,0  = sqrt ( L2 integral over T ( L2 integral over X ( E^2 ) )
+//  Use trapezoidal rule: 
+//  ||E|| 0,0 = dt * sqrt ( 1/2 A0^2 + A1^2 + A2^2 + ... + An-1^2 + 1/2 An^2 )
+//
+//  ||E|| oo,0 = max over T ( sqrt ( L2 integral over X ( E^2 ) )
+//             = max ( A0, A1, ..., An )
+//
+  error00 = dt * sqrt ( error00 ); 
+  erroroo0 = ( tmax - tmin ) * erroroo0;
+
+  cout << endl;
+  cout << "||error||_oo,0 = " << erroroo0 << endl;  
+  cout << "||error||_0,0 = " << error00 << endl;  
+}
+//
+//  Terminate.
+//
+cout << "\n";
+cout << "euler:\n";
+cout << "  Normal end of execution.\n";
+
+exit ( 0 );
+

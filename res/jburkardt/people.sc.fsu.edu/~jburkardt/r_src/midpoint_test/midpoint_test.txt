@@ -1,0 +1,17 @@
+Wed Apr 28 14:49:07 2021 
+
+midpoint_test()
+  R version 3.4.4 (2018-03-15) 
+  Test midpoint() for solving ordinary differential equations.
+
+hund_midpoint
+  R version 3.4.4 (2018-03-15) 
+  Use midpoint() to solve the Hund ordinary differential equation.
+
+stiff_midpoint
+  R version 3.4.4 (2018-03-15) 
+  Use midpoint() to solve the stiff ordinary differential equation.
+
+midpoint_test():
+  Normal end of execution.
+Wed Apr 28 14:49:07 2021 

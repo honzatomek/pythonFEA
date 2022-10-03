@@ -1,0 +1,147 @@
+<html>
+
+  <head>
+    <title>
+      lorenz_ode
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      lorenz_ode
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>lorenz_ode</b>,
+      a MATLAB code which
+      sets up and solves the Lorenz system of ordinary differential equations
+      (ODE), which exhibit sensitive dependence on the initial conditions.
+    </p>
+    </p>
+
+    <p>
+      The Lorenz system, originally intended as a simplified model of
+      atmospheric convection, has instead become a standard example of
+      sensitive dependence on initial conditions; that is, tiny differences
+      in the starting condition for the system rapidly become magnified.
+      The system also exhibits what is known as the "Lorenz attractor",
+      that is, the collection of trajectories for different starting points
+      tends to approach a peculiar butterfly-shaped region.
+    </p>
+
+    <p>
+      The Lorenz system includes three ordinary differential equations:
+      <pre>
+        dx/dt = sigma ( y - x )
+        dy/dt = x ( rho - z ) - y
+        dz/dt = xy - beta z
+      </pre>
+      where the parameters beta, rho and sigma are usually assumed to be
+      positive.  The classic case uses the parameter values
+      <pre>
+        beta = 8 / 3
+        rho = 28
+        sigma - 10
+      </pre>
+    </p>
+
+    <p>
+      The initial conditions for this system are not often specified; rather,
+      investigators simply note that the trajectories associated with two very
+      close starting points will eventually separate.  However, simply to
+      get started, we can suggest the following starting values at t=0:
+      <pre>
+        x = 8
+        y = 1
+        z = 1
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>lorenz_ode</b> is available in
+      <a href = "../../c_src/lorenz_ode/lorenz_ode.html">a C version</a> and
+      <a href = "../../cpp_src/lorenz_ode/lorenz_ode.html">a C++ version</a> and
+      <a href = "../../f_src/lorenz_ode/lorenz_ode.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/lorenz_ode/lorenz_ode.html">a MATLAB version</a> and
+      <a href = "../../octave_src/lorenz_ode/lorenz_ode.html">an Octave version</a> and
+      <a href = "../../py_src/lorenz_ode/lorenz_ode.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/lorenz_ode_test/lorenz_ode_test.html">
+      lorenz_ode_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/matlab_ode/matlab_ode.html">
+      matlab_ode</a>,
+      MATLAB codes which
+      set up various ordinary differential equations (ODE).
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Edward Lorenz,<br>
+          Deterministic Nonperiodic Flow,<br>
+          Journal of the Atmospheric Sciences,<br>
+          Volume 20, Number 2, 1963, pages 130-141.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "lorenz_deriv.m">lorenz_deriv.m</a>, 
+          defines the right hand side of the ODE.
+        </li>
+        <li>
+          <a href = "lorenz_parameters.m">lorenz_parameters.m</a>, 
+          returns parameters of the ODE.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 April 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

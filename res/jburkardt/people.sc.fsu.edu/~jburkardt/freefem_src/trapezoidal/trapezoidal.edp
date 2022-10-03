@@ -1,0 +1,179 @@
+//  Discussion:
+//
+//    Solve a time-dependent boundary value problem on the unit square.
+//
+//    Use the trapezoid method to handle the time derivative.
+//
+//    Our problem is posed on the unit square, with zero boundary conditions,
+//    and having the exact solution
+//
+//      u = sin(pi x) sin(pi y) e^(-t)
+//
+//    The boundary value problem is posed as
+//
+//      du    d^2 u   d^2 u
+//      -- -  ----- - ----- = (2 pi^2 - 1 ) sin(pi x) sin(pi y) e^(-t)
+//      dt    dx^2    dy^2
+//
+//    with initial condition at t=0:
+//
+//      u(x,y,0) = sin(pi x) sin(pi y)
+//
+//    and boundary condition
+//
+//      u(x,y,t) = 0
+//
+//  Location:
+//
+//    https://people.sc.fsu.edu/~jburkardt/freefem_src/trapezoid/trapezoid.edp  
+//
+//  Licensing:
+//
+//    This code is distributed under the GNU LGPL license.
+//
+//  Modified:
+//
+//    26 February 2021
+//
+//  Author:
+//
+//    John Burkardt
+//
+cout << endl;
+cout << "trapezoid:" << endl;
+cout << "  FreeFem++ version." << endl;
+cout << "  Solve a time-dependent boundary value problem in a square." << endl;
+cout << "  Use the trapezoid method to handle the time variation." << endl;
+cout << "  Report L2 norm, L2 error norm, and L2 relative error norm." << endl;
+
+real a;
+real h;
+real hold;
+int nt = 10;
+real t;
+real tmin = 0.0;
+real tmax = 2.0;
+real told;
+real dt = ( tmax - tmin ) / nt;
+//
+//  Express number of nodes as essentially a power of 2.
+{
+  int nlog2 = 3;
+//
+//  n: number of nodes in each spatial direction.
+//
+  int n = pow ( 2.0, nlog2 );
+//
+//  h: spacing between nodes.
+//
+  h = 1.0 / n;
+  cout << "  H =     " << h << endl;
+  cout << "  DT =    " << dt << endl;
+//
+//  Th: the triangulation of the square.
+//
+  mesh Th = square ( n, n );
+//
+//  Define Vh, the finite element space.  "P1" = piecewise linears.
+//
+  fespace Vh ( Th, P1 );
+//
+//  uh: the finite element function that will approximate the solution.
+//  uoldh: the solution at the previous time step.
+//
+  Vh uh;
+  Vh uoldh;
+//
+//  vh: the test functions used to project the error.
+//
+  Vh vh;
+//
+//  f: the right hand side.
+//
+  func f = ( 2.0 * pi^2 - 1.0 ) * sin ( pi * x ) * sin ( pi * y ) * exp ( - t );
+//
+//  Define the problem:
+//
+  problem trapezoidstep ( uh, vh ) =
+     int2d ( Th ) 
+     ( 
+       uh * vh 
+     )
+     - int2d ( Th )
+     (
+       uoldh * vh
+     )   
+     + int2d ( Th )
+     (
+       + 0.5 * dt * dx ( uh ) * dx ( vh )
+       + 0.5 * dt * dy ( uh ) * dy ( vh ) 
+     )
+     + int2d ( Th )
+     (
+       + 0.5 * dt * dx ( uoldh ) * dx ( vh )
+       + 0.5 * dt * dy ( uoldh ) * dy ( vh ) 
+     )
+    - int2d ( Th )
+    (
+      0.5 * dt * ( 2.0 * pi^2 - 1.0 ) * sin ( pi * x ) * sin ( pi * y ) * exp ( - told ) * vh
+    )
+    - int2d ( Th )
+    (
+      0.5 * dt * ( 2.0 * pi^2 - 1.0 ) * sin ( pi * x ) * sin ( pi * y ) * exp ( - t ) * vh
+    )
+    + on ( 1, 2, 3, 4, uh = 0.0 );
+//
+//  Perform nt timesteps.
+//
+  cout << endl;
+  cout << "  T  ||Exact||   ||Error||  ||Error||/||Exact||" << endl;
+  cout << endl;
+
+  for ( int it = 0; it <= nt; it++ )
+  {
+    if ( it == 0 )
+    {
+      t = tmin;
+      uh = sin ( pi * x ) * sin ( pi * y ) * exp ( - t );
+    }
+    else
+    {
+      told = t;
+      uoldh = uh;
+      t = ( ( nt - it ) * tmin + it * tmax ) / nt;
+      trapezoidstep;
+    }
+//
+//  Compute error.
+//
+    real uexactnorm = sqrt 
+    ( 
+      int2d ( Th ) 
+      ( 
+        ( sin ( pi * x ) * sin ( pi * y ) * exp ( - t ) )^2 
+      ) 
+    );
+
+    a = sqrt 
+    ( 
+      int2d ( Th ) 
+      ( 
+        ( uh - sin ( pi * x ) * sin ( pi * y ) * exp ( - t ) )^2 
+      ) 
+    );
+
+    cout << "  " << t 
+         << "  " << uexactnorm 
+         << "  " << a 
+         << "  " << a / uexactnorm << endl;
+  }
+}
+//
+//  Terminate.
+//
+cout << "\n";
+cout << "trapezoid:\n";
+cout << "  Normal end of execution.\n";
+
+exit ( 0 );
+

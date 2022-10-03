@@ -1,0 +1,117 @@
+<html>
+
+  <head>
+    <title>
+      normal_ode
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      normal_ode
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>normal_ode</b>,
+      a MATLAB code which 
+      sets up and solves an ordinary differential equation (ODE)
+      for the normal probability density function (PDF).
+    </p>
+
+    <p>
+      The normal probability density function (PDF) can be written as
+      <pre>
+        y(t) = 1/sqrt(2 pi) e^(-t^2/2)
+      </pre>
+      The derivative of the normal PDF is
+      <pre>
+        y'(t) = -t/sqrt(2 pi) e^(-t^2/2) = - t * y(t)
+      </pre>
+    </p>
+
+    <p>
+      Thus, along with an initial condition, an ODE for the normal PDF
+      can be written either as:
+      <pre>
+        y'(t) = -t/sqrt(2 pi) e^(-t^2/2)
+      </pre>
+      or
+      <pre>
+        y'(t) = -t * y(t)
+      </pre>
+      While both of these ODE's have the same solution, an ODE solver will
+      generally have more difficulty solving the second version.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>normal_ode</b> is available in
+      <a href = "../../m_src/normal_ode/normal_ode.html">a MATLAB version</a> and
+      <a href = "../../octave_src/normal_ode/normal_ode.html">an Octave version</a> and
+      <a href = "../../py_src/normal_ode/normal_ode.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and codes:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/normal_ode_test/normal_ode_test.html">
+      normal_ode_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/matlab_ode/matlab_ode.html">
+      matlab_ode</a>,
+      MATLAB codes which
+      set up various ordinary differential equations (ODE).
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "normal_deriv.m">normal_deriv.m</a>, 
+          returns the right hand side of the ODE.
+        </li>
+        <li>
+          <a href = "normal_exact.m">normal_exact.m</a>, 
+          returns the exact solution of the ODE.
+        </li>
+        <li>
+          <a href = "normal_parameters.m">normal_parameters.m</a>, 
+          returns the parameters of the ODE.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 04 May 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
