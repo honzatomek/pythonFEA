@@ -1,0 +1,157 @@
+<html>
+
+<head>
+
+<title>Introduction to Nonlinear Finite Element Analysis</title>
+
+<style>
+body
+{
+	font-family: "Times New Roman";	
+	font-weight: normal;	
+	font-size: 12pt;
+	margin-left: 50px;
+	text-align:justify;	
+}
+
+HR
+{
+	color: "#00FFFF";	
+	width: 100%;		
+	height: 1px;
+}
+</style>
+</head>
+
+<body background=../IMAGE/Notebook.jpg>
+
+<h1>Introduction to Nonlinear Finite Element Analysis</h1>
+
+<table cellpadding="0" cellspacing="0">
+ <tbody><tr>
+  <td width="100%">
+   <a name="#FEA2" id="FEA2"></a>
+  </td>
+ </tr>
+ <tr>
+  <td width="100%">
+	<h2 align="left">by N. H. Kim</h2>
+  </td>
+ </tr>
+ <tr>
+  <td width="100%">
+
+<p align="justify">
+The objective of this textbook is to simply introduce the nonlinear finite element 
+analysis procedure and to clearly explain the solution procedure to the reader. 
+In contrast to the traditional textbooks which treat a vast amount of nonlinear 
+theories comprehensively; this textbook only addresses the representative problems, 
+detailed theories, solution procedures, and the computer implementation of the 
+nonlinear FEM. Especially by using the MATLAB programming language to introduce 
+the nonlinear solution procedure; those readers who are not familiar with FORTRAN 
+or C++ programming languages can easily understand and add his/her own modules to 
+the nonlinear analysis program. 
+</p>
+<p>Book in 
+<a href="http://www.amazon.com/Introduction-Nonlinear-Finite-Element-Analysis/dp/1441917454/ref=sr_1_2?ie=UTF8&qid=1407634596&sr=8-2&keywords=introduction+to+nonlinear+finite+element+analysis" TARGET="_blank">amazon.com</a>
+or <a href="http://www.barnesandnoble.com/w/introduction-to-nonlinear-finite-element-analysis-nam-ho-kim/1116913667?ean=9781441917454" TARGET="_blank">Barns and Noble</a>
+</p>
+	<p>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td align="left" width=100%>
+     <IMG src="http://img1.imagesbn.com/p/9781441917454_p0_v1_s260x420.JPG" width="250">
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%">
+    <table>
+	<tbody><tr><td width="97%"><h2 align="center">Contents:</h2></td><td width="5%">&nbsp;</td></tr>
+	<tr><td>Preface</td><td align="right">v</td></tr>
+	<tr><td>1.   Preliminary Concepts</td><td align="right">1</td></tr>
+	<tr><td>2.   Nonlinear Finite Element Analysis Procedure</td><td align="right">81</td></tr>
+	<tr><td>3.   Finite Element Analysis for Nonlinear Elastic Systems</td><td align="right">141</td></tr>
+	<tr><td>4.   Finite Element Analysis for Elastoplastic Problems</td><td align="right">241</td></tr>
+	<tr><td>5.   Finite Element Analysis for Contact Problems</td><td align="right">367</td></tr>
+	<tr><td>Index</td><td align="right">427</td></tr>
+   </tbody></table>
+  </td>
+ </tr>
+</tbody></table>
+
+<hr>
+<p> 
+
+<h2>Lectures</h2>
+
+<ul>
+<li><a href="http://www2.mae.ufl.edu/nkim/INFEM/Chap1.pptx">Chapter 1: Preliminary Concepts and Linear Finite Elements</a>
+<li><a href="http://www2.mae.ufl.edu/nkim/INFEM/Chap2.pptx">Chapter 2: Nonlinear Finite Element Analysis Procedures</a>
+<li><a href="http://www2.mae.ufl.edu/nkim/INFEM/Chap3.pptx">Chapter 3: Finite Element Analysis for Nonlinear Elastic Problems</a>
+<li><a href="http://www2.mae.ufl.edu/nkim/INFEM/Chap4.pptx">Chapter 4: Finite Element Analysis for Elastoplastic Problems</a>
+<li><a href="http://www2.mae.ufl.edu/nkim/INFEM/Chap5.pptx">Chapter 5: Finite Element Analysis of Contact Problems</a>
+</ul>
+
+<h2>MATLAB Code (NLFEA)</h2>
+
+<ol>
+<li> Matlab Programs. Need to change the extension ".txt" to ".m" after download.
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/NLFEA.txt">NLFEA.txt</a> Main program
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/ELAST3D.txt">ELAST3D.txt</a> Linear elastic material model
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/SHAPEL.txt">SHAPEL.txt</a> Shape functions and derivatives
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/One_tension.txt">One_tension.txt</a> One-element example
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/Two_element_example.txt">Two_element_example.txt</a> Two_element_example
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/Mooney.txt">Mooney.txt</a> Mooney-Rivline material model
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/HYPER3D.txt">HYPER3D.txt</a> Hyperelastic material model assembly
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/PLAST3D.txt">PLAST3D.txt</a> Plasticity material model assembly
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/combHard.txt">combHard.txt</a> Linear combined hardening plasticity material
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/combHardTan.txt">combHardTan.txt</a> Algorithmic tangent stiffness for linear combined hardening plasticity material
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/rotatedStress.txt">rotatedStress.txt</a> Objective integration for finite rotation
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/mulPlast.txt">mulPlast.txt</a> Multiplicative plasticity material model
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/mulPlastTan.txt">mulPlastTan.txt</a> Algorithmic tangent stiffness for multiplicative plasticity material model
+<br>
+<br>
+<li> Other Matlab Programs that are not used in NLFEA but used in examples in the textbook.
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/combHard1D.txt">combHard1D.txt</a> 1D Linear combined hardening plasticity material
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/cntelm2d.txt">cntelm2d.txt</a> 2D contact formulation between two flexible bodies
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/cntelm3d.txt">cntelm3d.txt</a> 3D contact formulation between one flexible body and one rigid wall
+
+</li>
+</ol>
+
+<h2>MATLAB Codes in Examples</h2>
+<ol>
+<li> Matlab Programs. Need to change the extension ".txt" to ".m" after download.
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E1_16.txt">E1_16.txt</a> Example 1.16
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E2_3.txt">E2_3.txt</a> Example 2.3 Newton-Raphson method
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E2_4.txt">E2_4.txt</a> Example 2.4 Divergence of the Newton-Raphson method
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E2_5.txt">E2_5.txt</a> Example 2.5 Two nonlinear springs (modified Newton-Raphson method)
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E2_6.txt">E2_6.txt</a> Example 2.6 Nonlinear algebraic equation (secant method)
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E2_7.txt">E2_7.txt</a> Example 2.7 Two nonlinear springs (Secant method)
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E2_8.txt">E2_8.txt</a> Example 2.8 Displacement controlled procedure
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E3_8.txt">E3_8.txt</a> Example 3.8 Uniaxial bar--total Lagrangian formulation
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E3_9.txt">E3_9.txt</a> Example 3.9 Uniaxial bar--updated Lagrangian formulation
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E3_16.txt">E3_16.txt</a> Example 3.16 Hyperelastic tension example
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E4_5.txt">E4_5.txt</a> Example 4.5 Two bars in parallel: updating iteration
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E4_15.txt">E4_15.txt</a> Example 4.15 - Shear deformation of elastoplastic square
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E4_19.txt">E4_19.txt</a> Example 4.19 - Shear deformation of a square (finite rotation)
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/E4_22.txt">E4_22.txt</a> Example 4.22 - Shear deformation of a square
+<br>
+<br> <a href="http://www2.mae.ufl.edu/nkim/INFEM/Bending_5Elem_Linear.txt">Bending_5Elem_Linear.txt</a> Bending of cantilevered beam (five elements, linear elastic)
+</li>
+</ol>
+
+</body>
+
+</html>
