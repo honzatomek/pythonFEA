@@ -271,6 +271,31 @@ class Beam2D(BaseTemplateID):
     super().__init__(id, label)
     self.__nodes = [int(nd1), int(nd2)]
 
+    # gauss points
+    self.n = 2
+
+    self.center = np.array([0.0], dtype=float)
+    self.Z, self.N = np.polynomial.legendre.legauss(self.n)
+    self.domain = np.array([-1., 1.0], dtype=float).reshape((1, 2)) #  + self.Z.tolist() + [1.], dtype=float)
+
+  @property
+  def psi(self):
+    return np.array([0.5 * (1. - self.Z), 0.5 * (1. + self.Z)], dtype=float)
+
+  @property
+  def dpsi(self):
+    dpsi = 1. + (self.Z - self.Z)
+    return np.array([[-0.5 * dpsi], [0.5 * dpsi]], dtype=float)
+
+  def T(self, coors):
+    if type(coors) is not np.ndarray:
+      c = np.array(coors)
+    else:
+      c = coors
+    if c.shape[1] > c.shape[0]:
+      c = c.T
+    return self.psi @ c
+
   @property
   def nodes(self):
     return self.__nodes
