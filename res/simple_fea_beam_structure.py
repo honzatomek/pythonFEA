@@ -296,6 +296,15 @@ class Beam2D(BaseTemplateID):
       c = c.T
     return self.psi @ c
 
+  def J(self, coors)
+    if type(coors) is not np.ndarray:
+      c = np.array(coors)
+    else:
+      c = coors
+    if c.shape[1] > c.shape[0]:
+      c = c.T
+    return self.dpsi @ c
+
   @property
   def nodes(self):
     return self.__nodes
