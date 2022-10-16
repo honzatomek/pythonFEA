@@ -279,6 +279,10 @@ class Beam2D(BaseTemplateID):
     self.domain = np.array([-1., 1.0], dtype=float).reshape((1, 2)) #  + self.Z.tolist() + [1.], dtype=float)
 
   @property
+  def nodes(self):
+    return self.__nodes
+
+  @property
   def psi(self):
     return np.array([0.5 * (1. - self.Z), 0.5 * (1. + self.Z)], dtype=float)
 
@@ -295,10 +299,6 @@ class Beam2D(BaseTemplateID):
     if c.shape[1] > c.shape[0]:
       c = c.T
     return self.psi @ c
-
-  @property
-  def nodes(self):
-    return self.__nodes
 
 
 class Structure:
