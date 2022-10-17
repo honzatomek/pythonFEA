@@ -300,7 +300,6 @@ class Beam2D(BaseTemplateID):
       c = c.T
     return self.psi @ c
 
-<<<<<<< HEAD
   def J(self, coors)
     if type(coors) is not np.ndarray:
       c = np.array(coors)
@@ -310,12 +309,6 @@ class Beam2D(BaseTemplateID):
       c = c.T
     return self.dpsi @ c
 
-  @property
-  def nodes(self):
-    return self.__nodes
-
-=======
->>>>>>> 0dbf52b41d65db3d952eb8f5b66308e62955d9c4
 
 class Structure:
   def __init__(self, name):
