@@ -8,7 +8,7 @@ from scipy.integrate import odeint
 import math
 
 
-def dampimg_ratio(omega, k, m):  # zeta
+def damping_ratio(omega, k, m):  # zeta
   return omega / (2. * (k * m) ** (0.5))
 
 def phase_ext_force(zeta, omega, omegan):
