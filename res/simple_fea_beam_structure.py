@@ -275,7 +275,7 @@ class Beam2D(BaseTemplateID):
     self.n = 2
 
     self.center = np.array([0.0], dtype=float)
-    self.Z, self.N = np.polynomial.legendre.legauss(self.n)
+    self.Z, self.W = np.polynomial.legendre.leggauss(self.n)
     self.domain = np.array([-1., 1.0], dtype=float).reshape((1, 2)) #  + self.Z.tolist() + [1.], dtype=float)
 
   @property
@@ -292,21 +292,11 @@ class Beam2D(BaseTemplateID):
     return np.array([[-0.5 * dpsi], [0.5 * dpsi]], dtype=float)
 
   def T(self, coors):
-    if type(coors) is not np.ndarray:
-      c = np.array(coors)
-    else:
-      c = coors
-    if c.shape[1] > c.shape[0]:
-      c = c.T
+    coords = np.array(coords).reshape([len(coords), 1])
     return self.psi @ c
 
   def J(self, coors)
-    if type(coors) is not np.ndarray:
-      c = np.array(coors)
-    else:
-      c = coors
-    if c.shape[1] > c.shape[0]:
-      c = c.T
+    coords = np.array(coords).reshape([len(coords), 1])
     return self.dpsi @ c
 
 

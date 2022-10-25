@@ -49,7 +49,7 @@ def runga_kutta_vibrations(t, u0, v0, m, c, k, force):
     return u, v
 
 n = 1000
-t = np.linspace(0, 10, n)
+t = np.linspace(0, 10, n+1)
 force = np.zeros(n)
 
 for i in range(100, 150):

@@ -3,37 +3,45 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def iterate(h, y0, func, rhs):
+def iterate(h, y0, y, func, rhs):
     num_of_odes = y0.shape[0]
     y1 = np.zeros(num_of_odes, dtype = float)
     for i in range(num_of_odes-1):
-        y1[i] = y0[i] + y0[i+1] * h
+        y1[i] = y0[i] + y[i+1] * h
     y1[-1] = func(y1, rhs)
     return y1
 
 
-def euler(t, y, func, rhs):
+def runge_kutta_4(t, y, func, rhs):
     N = t.shape[0]
     for j in range(N-1):
         dt = t[j+1] - t[j]
-        y[j+1,:] = iterate(dt, y[j,:], func, rhs[j])
-        # print(y[j+1,:])
+        y1 = iterate(0., y[j,:], y[j,:], func, rhs[j])
+        y2 = iterate(dt/2, y[j,:], y1, func, 0.5 * (rhs[j+1] + rhs[j]))
+        y3 = iterate(dt/2, y[j,:], y2, func, 0.5 * (rhs[j+1] + rhs[j]))
+        y4 = iterate(dt, y[j,:], y3, func, rhs[j+1])
+
+        # next step solution
+        for i in range(y.shape[1]-1):
+            y[j+1,i] = y[j,i] + dt/6 * (y1[i+1] + 2 * y2[i+1] + 2 * y3[i+1] + y4[i+1])
+        y[j+1,-1] = func(y[j+1,:], rhs[j+1])
     return y
 
 
-def euler_vibration():
+def rk4_vibration():
     m = 10.   # tonnes
     c = 5.    # Ns/mm
     k = 50.   # N/mm
 
     freq = np.sqrt(k / m) / (2 * np.pi)
+    print(f'f = {freq}')
 
     # equation to solve
     # m * a + c * v + k * u = f
     # a = (f - c * v - k * u) / m
     acceleration = lambda u, f: (f - c * u[1] - k * u[0]) / m
 
-    T = 10.0    # seconds
+    T = 10.     # seconds
     dt = 0.01   # timestep s
     u_0 = 0.    # mm of initial displacement
     v_0 = 0.    # mm/s of initial velocity
@@ -43,7 +51,7 @@ def euler_vibration():
 
     # force vector
     F = 1.    # N of max impulse
-    t0 = 1.0  # impulse start time
+    t0 = 1.   # impulse start time
     t1 = 1.5  # impuls end time
     f = np.zeros(t.shape[0], dtype=float)
     # create a half sine impulse of force
@@ -57,7 +65,7 @@ def euler_vibration():
     uva[0,0] = u_0
     uva[0,1] = v_0
 
-    uva = euler(t, uva, acceleration, f)
+    uva = runge_kutta_4(t, uva, acceleration, f)
 
     fig, axu = plt.subplots()
     axu.plot(t, uva[:,0], label='displacement', color='red')
@@ -65,12 +73,14 @@ def euler_vibration():
     axf.plot(t, f, label='force', color='violet')
     # axv = axu.twinx()
     # axv.plot(t, uva[:,1], label='velocity', color='blue')
+    axu.plot(t, uva[:,1], label='velocity', color='blue')
     # axa = axu.twinx()
     # axa.plot(t, uva[:,2], label='acceleration', color='green')
+    axu.plot(t, uva[:,2], label='acceleration', color='green')
     fig.legend()
 
     plt.show()
 
 if __name__ == '__main__':
-    euler_vibration()
+    rk4_vibration()
 
