@@ -59,15 +59,26 @@ def euler_vibration():
 
     uva = euler(t, uva, acceleration, f)
 
-    fig, axu = plt.subplots()
-    axu.plot(t, uva[:,0], label='displacement', color='red')
-    axf = axu.twinx()
-    axf.plot(t, f, label='force', color='violet')
-    # axv = axu.twinx()
-    # axv.plot(t, uva[:,1], label='velocity', color='blue')
-    # axa = axu.twinx()
-    # axa.plot(t, uva[:,2], label='acceleration', color='green')
-    fig.legend()
+    fig, axf = plt.subplots()
+    fig.subplots_adjust(right=0.60)
+
+    p1, = axf.plot(t, f, label='force', color='violet')
+    axu = axf.twinx()
+    p2, = axu.plot(t, uva[:,0], label='displacement', color='red')
+    axv = axf.twinx()
+    axv.spines.right.set_position(('axes', 1.20))
+    p3, = axv.plot(t, uva[:,1], label='velocity', color='blue')
+    axa = axf.twinx()
+    axa.spines.right.set_position(('axes', 1.40))
+    p4, = axa.plot(t, uva[:,2], label='acceleration', color='green')
+
+    axf.set_xlabel('Time [s]')
+    axf.set_ylabel('Force [N]')
+    axu.set_ylabel('Displacement [mm]')
+    axv.set_ylabel('Velocity [mm/s]')
+    axa.set_ylabel('Acceleration [mm/s2]')
+
+    axf.legend(handles=[p1, p2, p3, p4])
 
     plt.show()
 
