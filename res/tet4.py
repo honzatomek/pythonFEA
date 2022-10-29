@@ -168,18 +168,48 @@ def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     Ke = np.zeros((domain.shape[0] * 3, domain.shape[0] * 3), dtype=float)
     Me = np.zeros((domain.shape[0] * 3, domain.shape[0] * 3), dtype=float)
     Fe = np.zeros((domain.shape[0] * 3, 1), dtype=float)
-    o = np.zeros(domain.shape[0], dtype=float)
+    # o = np.zeros(domain.shape[0], dtype=float)
 
-    for i in range(integration_points.shape[0]):  # iterate over Gauss points of domain, * means unpack values
-        B = np.array([[*dpsi_g[i, 0, :], *o, *o],
-                      [*o, *dpsi_g[i, 1, :], *o],
-                      [*o, *o, *dpsi_g[i, 2, :]],
-                      [*dpsi_g[i, 2, :], *o, *dpsi_g[i, 0, :]],
-                      [*o, *dpsi_g[i, 2, :], *dpsi_g[i, 1, :]],
-                      [*dpsi_g[i, 1, :], *dpsi_g[i, 0, :], *o]], dtype=float)
-        N = np.array([[*psi[i], *o, *o],
-                      [*o, *psi[i], *o],
-                      [*o, *o, *psi[i]]], dtype=float)
+    # iterate over Gauss points of domain, * means unpack values
+    for i in range(integration_points.shape[0]):
+        # this is smart but arranges dofs by component, not by node
+        # component-wise dof ordering (x1, .. , y1, .. y4, z1, .. , z4)
+        # B = np.array([
+        #   [*dpsi_g[i, 0, :], *o, *o],
+        #   [*o, *dpsi_g[i, 1, :], *o],
+        #   [*o, *o, *dpsi_g[i, 2, :]],
+        #   [*dpsi_g[i, 2, :], *o, *dpsi_g[i, 0, :]],
+        #   [*o, *dpsi_g[i, 2, :], *dpsi_g[i, 1, :]],
+        #   [*dpsi_g[i, 1, :], *dpsi_g[i, 0, :], *o]], dtype=float)
+
+        # dofs ordered by node
+        # node wise dof ordering (x1, y1, z1, .. , x4, y4, z4)
+        dpx = dpsi_g[i,0,:]
+        dpy = dpsi_g[i,1,:]
+        dpz = dpsi_g[i,2,:]
+        B = np.array(
+            [[dpx[0], 0, 0, dpx[1], 0, 0, dpx[2], 0, 0, dpx[3], 0, 0],
+             [0, dpy[0], 0, 0, dpy[1], 0, 0, dpy[2], 0, 0, dpy[3], 0],
+             [0, 0, dpz[0], 0, 0, dpz[1], 0, 0, dpz[2], 0, 0, dpz[3]],
+             [dpy[0], dpx[0], 0, dpy[1], dpx[1], 0, dpy[2], dpx[2], 0, dpy[3], dpx[3], 0],
+             [0, dpz[0], dpy[0], 0, dpz[1], dpy[1], 0, dpz[2], dpy[2], 0, dpz[3], dpy[3]],
+             [dpz[0], 0, dpx[0], dpz[1], 0, dpx[1], dpz[2], 0, dpx[2], dpz[3], 0, dpx[3]]],
+             dtype=float)
+
+        # this is smart but arranges dofs by component, not by node
+        # component-wise dof ordering (x1, .. , y1, .. y4, z1, .. , z4)
+        # N = np.array([
+        #   [*psi[i], *o, *o],
+        #   [*o, *psi[i], *o],
+        #   [*o, *o, *psi[i]]],
+        #   dtype=float)
+
+        # node wise dof ordering (x1, y1, z1, .. , x4, y4, z4)
+        N = np.array([[psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3], 0, 0],
+                      [0, psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3], 0],
+                      [0, 0, psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3]]],
+                      dtype=float)
+
         F = np.array([[fx], [fy], [fz]], dtype=float)
 
         print((B.T @ C @ B).shape)
@@ -296,18 +326,44 @@ def tet4_2(coor, E, nu, rho, fx, fy, fz, ipn: int=1):
     o = np.zeros(coor.shape[0], dtype=float)
 
     for i in range(ip.shape[0]):  # iterate over Gauss points of domain, * means unpack values
-        B = np.array([
-          [*dpsi_g[i, 0, :], *o, *o],
-          [*o, *dpsi_g[i, 1, :], *o],
-          [*o, *o, *dpsi_g[i, 2, :]],
-          [*dpsi_g[i, 2, :], *o, *dpsi_g[i, 0, :]],
-          [*o, *dpsi_g[i, 2, :], *dpsi_g[i, 1, :]],
-          [*dpsi_g[i, 1, :], *dpsi_g[i, 0, :], *o]], dtype=float)
-        N = np.array([
-          [*psi[i], *o, *o],
-          [*o, *psi[i], *o],
-          [*o, *o, *psi[i]]],
-          dtype=float)
+        # this is smart but arranges dofs by component, not by node
+        # component-wise dof ordering (x1, .. , y1, .. y4, z1, .. , z4)
+        # B = np.array([
+        #   [*dpsi_g[i, 0, :], *o, *o],
+        #   [*o, *dpsi_g[i, 1, :], *o],
+        #   [*o, *o, *dpsi_g[i, 2, :]],
+        #   [*dpsi_g[i, 2, :], *o, *dpsi_g[i, 0, :]],
+        #   [*o, *dpsi_g[i, 2, :], *dpsi_g[i, 1, :]],
+        #   [*dpsi_g[i, 1, :], *dpsi_g[i, 0, :], *o]], dtype=float)
+
+        # dofs ordered by node
+        # node wise dof ordering (x1, y1, z1, .. , x4, y4, z4)
+        dpx = dpsi_g[i,0,:]
+        dpy = dpsi_g[i,1,:]
+        dpz = dpsi_g[i,2,:]
+        B = np.array(
+            [[dpx[0], 0, 0, dpx[1], 0, 0, dpx[2], 0, 0, dpx[3], 0, 0],
+             [0, dpy[0], 0, 0, dpy[1], 0, 0, dpy[2], 0, 0, dpy[3], 0],
+             [0, 0, dpz[0], 0, 0, dpz[1], 0, 0, dpz[2], 0, 0, dpz[3]],
+             [dpy[0], dpx[0], 0, dpy[1], dpx[1], 0, dpy[2], dpx[2], 0, dpy[3], dpx[3], 0],
+             [0, dpz[0], dpy[0], 0, dpz[1], dpy[1], 0, dpz[2], dpy[2], 0, dpz[3], dpy[3]],
+             [dpz[0], 0, dpx[0], dpz[1], 0, dpx[1], dpz[2], 0, dpx[2], dpz[3], 0, dpx[3]]],
+             dtype=float)
+
+        # this is smart but arranges dofs by component, not by node
+        # component-wise dof ordering (x1, .. , y1, .. y4, z1, .. , z4)
+        # N = np.array([
+        #   [*psi[i], *o, *o],
+        #   [*o, *psi[i], *o],
+        #   [*o, *o, *psi[i]]],
+        #   dtype=float)
+
+        # node wise dof ordering (x1, y1, z1, .. , x4, y4, z4)
+        N = np.array([[psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3], 0, 0],
+                      [0, psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3], 0],
+                      [0, 0, psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3]]],
+                      dtype=float)
+
         F = np.array([[fx], [fy], [fz]], dtype=float)
 
         # print(ip)
