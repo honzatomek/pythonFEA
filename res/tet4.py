@@ -37,8 +37,8 @@ def shape_der(points):
 def int_points(nip: int=1):
   if nip == 1:
     s = np.array([[0.25, 0.25, 0.25]], dtype=float)
-    # w = np.array([1./6.], dtype=float)
-    w = np.array([1.], dtype=float)
+    w = np.array([1./6.], dtype=float)
+    # w = np.array([1.], dtype=float)
   elif nip == 4:
     s = np.zeros((4, 3), dtype=float)
     w = np.zeros(4, dtype=float)
@@ -54,7 +54,7 @@ def int_points(nip: int=1):
     s[3,0] = s[0,1]
     s[3,1] = s[0,1]
     s[3,2] = s[0,1]
-    w[0:3] = 0.25 / 6.0
+    w[0:4] = 0.25 / 6.0
   elif nip == 5:
     s = np.zeros((5, 3), dtype=float)
     w = np.zeros(5, dtype=float)
@@ -75,7 +75,7 @@ def int_points(nip: int=1):
 
   return s, w
 
-def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy: float = 0., fz: float = 0.):
+def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy: float = 0., fz: float = 0., gauss_points = 4):
     domain = np.array([[1., 0., 0., 0.],
                        [0., 1., 0., 0.],
                        [0., 0., 1., 0.],
@@ -83,55 +83,30 @@ def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     print('Domain: {0}\n{1}'.format(domain.shape, domain))
 
     # gaussian interpolation
-    gauss_points = 4
-    g_points, g_weights = np.polynomial.legendre.leggauss(gauss_points)
-    print(g_points)
-    gp = (g_points + 1.) / 2.
-    print(gp)
-    print(g_weights)
-    exit()
-    ip = np.zeros((4, 4), dtype=float)
-    w = np.zeros(4, dtype=float)
-    for i in range(4):
-      ip[i,:] = gp[0]
-      ip[i,i] = gp[1]
-      w[i] = g_weights[1] * 3 * g_weights[0]
-    print(ip)
+    integration_points = None
+    integration_weights = None
+    if gauss_points == 1:
+        integration_points = np.array([1/4, 1/4, 1/4, 1/4], dtype=float).reshape(1, 4)
+        integration_weights = np.array([1 * 1 * 1 * 1], dtype=float) * 1/6
 
-    # shape functions in natural coordinates
-    xi = ip.T[0]
-    eta = ip.T[1]
-    mu = ip.T[2]
-    zeta = ip.T[3]
-    psi = np.zeros((ip.shape[0], ip.shape[0]), dtype=float)
-    for i in range(4):
-      psi[i] = (xi * domain[i, 0]) * (eta * domain[i, 1]) * (mu * domain[i, 2])* (zeta * domain[i, 2])
-    print(psi)
+    elif gauss_points == 4:
+        a = 0.58541020
+        b = 0.13819660
+        integration_points = np.array([[a, b, b, b],
+                                       [b, a, b, b],
+                                       [b, b, a, b],
+                                       [b, b, b, a]], dtype=float)
+        integration_weights = np.array([1/4, 1/4, 1/4, 1/4], dtype=float) * 1/6
 
+    elif gauss_points == 5:
+        integration_points = np.array([[1/4, 1/4, 1/4, 1/4],
+                                       [1/2, 1/6, 1/6, 1/6],
+                                       [1/6, 1/2, 1/6, 1/6],
+                                       [1/6, 1/6, 1/2, 1/6],
+                                       [1/6, 1/6, 1/6, 1/2]], dtype=float)
+        integration_weights = np.array([-4/5, 9/20, 9/20, 9/20, 9/20], dtype=float) * 1/6
 
-
-    exit()
-    integration_points = []
-    interpolation_weights = []
-    gp = (g_points + 1.) / 2.
-    ip = []
-    ip.append([gp[2], gp[0], gp[2], gp[2]])
-    ip.append([gp[1], gp[1], gp[2], gp[2]])
-    ip.append([gp[0], gp[2], gp[2], gp[2]])
-    ip.append([gp[2], gp[0], gp[1], gp[2]])
-    ip.append([gp[1], gp[1], gp[1], gp[2]])
-    ip.append([gp[0], gp[2], gp[1], gp[2]])
-    ip.append([gp[2], gp[0], gp[0], gp[2]])
-    ip.append([gp[1], gp[1], gp[0], gp[2]])
-    ip.append([gp[0], gp[2], gp[0], gp[2]])
-    for i, xi in enumerate(g_points):
-        for j, eta in enumerate(g_points):
-            for k, mu in enumerate(g_points):
-                integration_points.append([xi, eta, mu])
-                interpolation_weights.append(g_weights[i] * g_weights[j] * g_weights[k])
-    integration_points = np.array(integration_points, dtype=float)
-    interpolation_weights = np.array(interpolation_weights, dtype=float)
-    print('Gauss Integration {0}:\n{1}\nWeights:\n{2}'.format(gauss_points, integration_points, interpolation_weights))
+    print('Gauss Integration {0}:\n{1}\nWeights:\n{2}'.format(gauss_points, integration_points, integration_weights))
 
     full_domain = np.vstack((domain, integration_points))
 
@@ -139,9 +114,15 @@ def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     xi = integration_points.T[0]
     eta = integration_points.T[1]
     mu = integration_points.T[2]
-    psi = np.zeros((8, integration_points.shape[0]), dtype=float)
-    for i in range(8):
-        psi[i] = 1/8 * (1 + xi * domain[i, 0]) * (1 + eta * domain[i, 1]) * (1 + mu * domain[i, 2])
+    zeta = integration_points.T[3] # zeta is not used to enforce (1 - xi - eta - mu - zeta) = 0
+    psi = np.zeros((4, integration_points.shape[0]), dtype=float)
+    # another way of writing that psi = [xi, eta, mu, zeta]
+    # for i in range(4):
+    #     psi[i] = (1 + xi * domain[i, 0]) * (1 + eta * domain[i, 1]) * (1 + mu * domain[i, 2]) * (1 + zeta * domain[i, 3])
+    psi[0] = xi
+    psi[1] = eta
+    psi[2] = mu
+    psi[3] = 1 - xi - eta - mu  # = zeta
     psi = psi.T
     print('Shape Functions: {0}\n{1}'.format(psi.shape, psi))
 
@@ -150,15 +131,12 @@ def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     print('Shape Functions in Global Coordinates: {0}\n{1}'.format(psi_g.shape, psi_g))
 
     # Shape Functions Derivatives in Natural Coordinates
-    dpsi = 1 / 8 * np.array([[(eta - 1.0) * (1.0 - mu), (xi - 1) * (1 - mu), -(1 - xi) * (1 - eta)],
-                             [(1 - eta) * (1 - mu), (-1 - xi) * (1 - mu), -(1 + xi) * (1 - eta)],
-                             [(1 + eta) * (1 - mu), (1 + xi) * (1 - mu), -(1 + xi) * (1 + eta)],
-                             [(-1.0 - eta) * (1 - mu), (1 - xi) * (1 - mu), -(1 - xi) * (1 + eta)],
-                             [(1 - eta) * (-1 - mu), -(1 - xi) * (1 + mu), (1 - xi) * (1 - eta)],
-                             [(1 - eta) * (1 + mu), -(1 + xi) * (1 + mu), (1 + xi) * (1 - eta)],
-                             [(1 + eta) * (1 + mu), (1 + xi) * (1 + mu), (1 + xi) * (1 + eta)],
-                             [-(1 + eta) * (1 + mu), (1 - xi) * (1 + mu), (1 - xi) * (1 + eta)]])
-    dpsi = dpsi.T
+    dpsi = np.zeros((integration_points.shape[0], 4, 3), dtype=float)
+    dpsi[:,0,0] = 1
+    dpsi[:,1,1] = 1
+    dpsi[:,2,2] = 1
+    dpsi[:,3,:] = -1
+    dpsi = dpsi.transpose((0, 2, 1))
     print('Shape Functions Derivatives: {0}\n{1}'.format(dpsi.shape, dpsi))
 
     # Jacobian Matrix
@@ -187,9 +165,9 @@ def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     print('Material Stiffness Matrix: {0}\n{1}'.format(C.shape, C))
 
     # Create Element Stiffness and Mass Matrix
-    Ke = np.zeros((domain.size, domain.size), dtype=float)
-    Me = np.zeros((domain.size, domain.size), dtype=float)
-    Fe = np.zeros((domain.size, 1), dtype=float)
+    Ke = np.zeros((domain.shape[0] * 3, domain.shape[0] * 3), dtype=float)
+    Me = np.zeros((domain.shape[0] * 3, domain.shape[0] * 3), dtype=float)
+    Fe = np.zeros((domain.shape[0] * 3, 1), dtype=float)
     o = np.zeros(domain.shape[0], dtype=float)
 
     for i in range(integration_points.shape[0]):  # iterate over Gauss points of domain, * means unpack values
@@ -204,9 +182,11 @@ def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
                       [*o, *o, *psi[i]]], dtype=float)
         F = np.array([[fx], [fy], [fz]], dtype=float)
 
-        Ke += (B.T @ C @ B) * d_jacobi[i] * interpolation_weights[i]
-        Me += rho * (N.T @ N) * d_jacobi[i] * interpolation_weights[i]
-        Fe += (N.T @ F) * d_jacobi[i] * interpolation_weights[i]
+        print((B.T @ C @ B).shape)
+        print(Ke.shape)
+        Ke += (B.T @ C @ B) * d_jacobi[i] * integration_weights[i]
+        Me += rho * (N.T @ N) * d_jacobi[i] * integration_weights[i]
+        Fe += (N.T @ F) * d_jacobi[i] * integration_weights[i]
 
     print('Element Stiffness Matrix: {0}\n{1}'.format(Ke.shape, Ke))
     print('Element Mass Matrix: {0}\n{1}'.format(Me.shape, Me))
@@ -215,46 +195,8 @@ def tet4(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
     # Get Element Stresses and Strains in Nodes and Integration Points
     evaluation_points = full_domain  # integration_points / domain
 
-    # Shape Functions in Natural Coordinates
-    xi = evaluation_points.T[0]
-    eta = evaluation_points.T[1]
-    mu = evaluation_points.T[2]
-    psi = np.zeros((8, evaluation_points.shape[0]), dtype=float)
-    for i in range(8):
-        psi[i] = 1 / 8 * (1 + xi * domain[i, 0]) * (1 + eta * domain[i, 1]) * (1 + mu * domain[i, 2])
-    psi = psi.T
-
-    # Shape Functions in Global Coordinates
-    psi_g = psi @ coors
-
-    # Shape Functions Derivatives in Natural Coordinates
-    dpsi = 1 / 8 * np.array([[(eta - 1.0) * (1.0 - mu), (xi - 1) * (1 - mu), -(1 - xi) * (1 - eta)],
-                             [(1 - eta) * (1 - mu), (-1 - xi) * (1 - mu), -(1 + xi) * (1 - eta)],
-                             [(1 + eta) * (1 - mu), (1 + xi) * (1 - mu), -(1 + xi) * (1 + eta)],
-                             [(-1.0 - eta) * (1 - mu), (1 - xi) * (1 - mu), -(1 - xi) * (1 + eta)],
-                             [(1 - eta) * (-1 - mu), -(1 - xi) * (1 + mu), (1 - xi) * (1 - eta)],
-                             [(1 - eta) * (1 + mu), -(1 + xi) * (1 + mu), (1 + xi) * (1 - eta)],
-                             [(1 + eta) * (1 + mu), (1 + xi) * (1 + mu), (1 + xi) * (1 + eta)],
-                             [-(1 + eta) * (1 + mu), (1 - xi) * (1 + mu), (1 - xi) * (1 + eta)]])
-    dpsi = dpsi.T
-
-    # Jacobian Matrix
-    jacobi = dpsi @ coors
-
-    # Jacobian Determinants
-    d_jacobi = np.linalg.det(jacobi)
-
-    # Inverse Jacobian
-    i_jacobi = np.linalg.inv(jacobi)
-
-    # Shape Function Derivatives in Global Coordinates
-    dpsi_g = i_jacobi @ dpsi
 
     Ue = np.array([[0., 0., 0.],     # x y z displacements in corner nodes
-                   [0., 0., 0.],
-                   [0., 0., 0.],
-                   [0., 0., 0.],
-                   [0., 0., 0.01],
                    [0., 0., 0.01],
                    [0., 0., 0.01],
                    [0., 0., 0.01]], dtype=float)
@@ -313,64 +255,69 @@ def trans_mat_from_3_points(origin, x_axis, xy_plane):
     return T
 
 def tet4_2(coor, E, nu, rho, fx, fy, fz, ipn: int=1):
-  domain = np.array([[1., 0., 0., 0.],
-                     [0., 1., 0., 0.],
-                     [0., 0., 1., 0.],
-                     [0., 0., 0., 1.]], dtype=float)
-  ip, w = int_points(ipn)
-  # print(ip.shape)
-  psi = shape_fun(ip).T
-  # print(psi.shape)
-  # print(coor.shape)
-  psi_g = psi @ coor
-  dpsi = shape_der(ip).transpose((0,2,1))
-  # print(dpsi.shape)
-  # print(coor.shape)
-  jacobi = []
-  for i in range(dpsi.shape[0]):
-    jacobi.append(dpsi[i] @ coor)
-  jacobi = np.array(jacobi, dtype=float)
-  d_jacobi = np.linalg.det(jacobi)
-  i_jacobi = np.linalg.inv(jacobi)
-  dpsi_g = i_jacobi @ dpsi
+    domain = np.array([[1., 0., 0., 0.],
+                       [0., 1., 0., 0.],
+                       [0., 0., 1., 0.],
+                       [0., 0., 0., 1.]], dtype=float)
+    print('Domain: {0}\n{1}'.format(domain.shape, domain))
+    ip, w = int_points(ipn)
+    print('Gauss Integration {0}:\n{1}\nWeights:\n{2}'.format(ipn, ip, w))
+    psi = shape_fun(ip).T
+    print('Shape Functions: {0}\n{1}'.format(psi.shape, psi))
+    psi_g = psi @ coor
+    print('Shape Functions in Global Coordinates: {0}\n{1}'.format(psi_g.shape, psi_g))
+    dpsi = shape_der(ip).transpose((0,2,1))
+    print('Shape Functions Derivatives: {0}\n{1}'.format(dpsi.shape, dpsi))
+    # print(coor.shape)
+    jacobi = []
+    for i in range(dpsi.shape[0]):
+        jacobi.append(dpsi[i] @ coor)
+    jacobi = np.array(jacobi, dtype=float)
+    print('Jacobian Matrix: {0}\n{1}'.format(jacobi.shape, jacobi))
+    d_jacobi = np.linalg.det(jacobi)
+    print('Determinant of Jacobian: {0}\n{1}'.format(d_jacobi.shape, d_jacobi))
+    i_jacobi = np.linalg.inv(jacobi)
+    dpsi_g = i_jacobi @ dpsi
+    print('Shape Function Derivatives in Global Coordinates: {0}\n{1}'.format(dpsi_g.shape, dpsi_g))
 
-  # Material Stiffness Matrix
-  C = E / ((1.0 + nu) * (1.0 - 2.0 * nu)) * np.array([[1.0 - nu, nu, nu, 0.0, 0.0, 0.0],
-                                                      [nu, 1.0 - nu, nu, 0.0, 0.0, 0.0],
-                                                      [nu, nu, 1.0 - nu, 0.0, 0.0, 0.0],
-                                                      [0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0, 0.0, 0.0],
-                                                      [0.0, 0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0, 0.0],
-                                                      [0.0, 0.0, 0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0]], dtype=float)
+    # Material Stiffness Matrix
+    C = E / ((1.0 + nu) * (1.0 - 2.0 * nu)) * np.array([[1.0 - nu, nu, nu, 0.0, 0.0, 0.0],
+                                                        [nu, 1.0 - nu, nu, 0.0, 0.0, 0.0],
+                                                        [nu, nu, 1.0 - nu, 0.0, 0.0, 0.0],
+                                                        [0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0, 0.0, 0.0],
+                                                        [0.0, 0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0, 0.0],
+                                                        [0.0, 0.0, 0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0]], dtype=float)
+    print('Material Stiffness Matrix: {0}\n{1}'.format(C.shape, C))
 
-  # Create Element Stiffness and Mass Matrix
-  Ke = np.zeros((coor.size, coor.size), dtype=float)
-  Me = np.zeros((coor.size, coor.size), dtype=float)
-  Fe = np.zeros((coor.size, 1), dtype=float)
-  o = np.zeros(coor.shape[0], dtype=float)
+    # Create Element Stiffness and Mass Matrix
+    Ke = np.zeros((coor.size, coor.size), dtype=float)
+    Me = np.zeros((coor.size, coor.size), dtype=float)
+    Fe = np.zeros((coor.size, 1), dtype=float)
+    o = np.zeros(coor.shape[0], dtype=float)
 
-  for i in range(ip.shape[0]):  # iterate over Gauss points of domain, * means unpack values
-    B = np.array([
-      [*dpsi_g[i, 0, :], *o, *o],
-      [*o, *dpsi_g[i, 1, :], *o],
-      [*o, *o, *dpsi_g[i, 2, :]],
-      [*dpsi_g[i, 2, :], *o, *dpsi_g[i, 0, :]],
-      [*o, *dpsi_g[i, 2, :], *dpsi_g[i, 1, :]],
-      [*dpsi_g[i, 1, :], *dpsi_g[i, 0, :], *o]], dtype=float)
-    N = np.array([
-      [*psi[i], *o, *o],
-      [*o, *psi[i], *o],
-      [*o, *o, *psi[i]]],
-      dtype=float)
-    F = np.array([[fx], [fy], [fz]], dtype=float)
+    for i in range(ip.shape[0]):  # iterate over Gauss points of domain, * means unpack values
+        B = np.array([
+          [*dpsi_g[i, 0, :], *o, *o],
+          [*o, *dpsi_g[i, 1, :], *o],
+          [*o, *o, *dpsi_g[i, 2, :]],
+          [*dpsi_g[i, 2, :], *o, *dpsi_g[i, 0, :]],
+          [*o, *dpsi_g[i, 2, :], *dpsi_g[i, 1, :]],
+          [*dpsi_g[i, 1, :], *dpsi_g[i, 0, :], *o]], dtype=float)
+        N = np.array([
+          [*psi[i], *o, *o],
+          [*o, *psi[i], *o],
+          [*o, *o, *psi[i]]],
+          dtype=float)
+        F = np.array([[fx], [fy], [fz]], dtype=float)
 
-    # print(ip)
-    Ke += (B.T @ C @ B) * d_jacobi[i] * w[i]
-    Me += rho * (N.T @ N) * d_jacobi[i] * w[i]
-    Fe += (N.T @ F) * d_jacobi[i] * w[i]
+        # print(ip)
+        Ke += (B.T @ C @ B) * d_jacobi[i] * w[i]
+        Me += rho * (N.T @ N) * d_jacobi[i] * w[i]
+        Fe += (N.T @ F) * d_jacobi[i] * w[i]
 
-  print('Element Stiffness Matrix: {0}\n{1}'.format(Ke.shape, Ke))
-  print('Element Mass Matrix: {0}\n{1}'.format(Me.shape, Me))
-  print('Element Volume Force Vector: {0}\n{1}'.format(Fe.shape, Fe))
+    print('Element Stiffness Matrix: {0}\n{1}'.format(Ke.shape, Ke))
+    print('Element Mass Matrix: {0}\n{1}'.format(Me.shape, Me))
+    print('Element Volume Force Vector: {0}\n{1}'.format(Fe.shape, Fe))
 
 if __name__ == '__main__':
   # xyz = np.array([[
@@ -398,4 +345,4 @@ if __name__ == '__main__':
   fx, fy, fz = 0., 0., 0. # volumetric continuous load
 
   for i in range(xyz.shape[0]):
-    tet4_2(xyz[i], E, nu, rho, fx, fy, fz, 1)
+    tet4(xyz[i], E, nu, rho, fx, fy, fz, 4)
