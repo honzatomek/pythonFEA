@@ -1,0 +1,19 @@
+#  sobol_02_00010_a.txt
+#  created by SOBOL_DATASET.
+#
+#  File generated on April 14 2003  10:06:24.459 AM
+#
+#  Spatial dimension M =      2
+#  Number of points N =     10
+#  Initial values skipped =     16
+#
+  0.593750  0.968750
+  0.093750  0.468750
+  0.343750  0.718750
+  0.843750  0.218750
+  0.968750  0.593750
+  0.468750  0.093750
+  0.218750  0.843750
+  0.718750  0.343750
+  0.656250  0.656250
+  0.156250  0.156250

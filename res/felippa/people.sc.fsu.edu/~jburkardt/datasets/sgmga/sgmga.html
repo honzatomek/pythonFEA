@@ -1,0 +1,801 @@
+<html>
+
+  <head>
+    <title>
+      SGMGA - Sparse Grids, Mixed Rules, Growth Rate, Anisotropic Weights
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      SGMGA <br> Sparse Grids, Mixed Rules, Growth Rate, Anisotropic Weights
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>SGMGA</b>
+      is a dataset directory which
+      contains some examples of sparse grids in which different 1D quadrature
+      rules may be used for each spatial dimension, the growth rate for each
+      1D family is user-specified, and there are anistropic weights specified
+      for each dimension.
+    </p>
+
+    <p>
+      The default growth rate depends on the rule.  Thus:
+      <ul>
+        <li>
+          <i>exponential growth rate</i> is reserved, by default, for
+          "CC", "F2" and "GP" rules.
+          linear growth rate for other rules (
+        </li>
+        <li>
+          <i>linear growth rate</i> of 2*L+1, where L is the level,
+          is reserved for "GL", "GH", "GGH", "LG", "GLG", "GJ" and "GW" rules.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The following list includes 1D quadrature rules that may be specified
+      as factors.  A few rules are not yet supported.
+      <ul>
+        <li>
+          <b>CC</b>, Clenshaw-Curtis:<br>
+           defined on [-1,+1], with w(x)=1,<br>
+           a closed, fully nested rule.
+        </li>
+        <li>
+          <b>F2</b>, Fejer Type 2: <br>
+          defined on (-1,+1), with w(x)=1,<br>
+          an open, fully nested rule.
+        </li>
+        <li>
+          <b>GP</b>, Gauss Patterson: <br>
+          defined on (-1,+1), with w(x)=1,<br>
+          a family of the midpoint rule, the 3 point
+          Gauss Legendre rule, and then successive Patterson refinements,<br>
+          an open, fully nested rule.
+        </li>
+        <li>
+          <b>GL</b>, Gauss Legendre: <br>
+          defined on (-1,+1), with w(x)=1,<br>
+          an open, weakly nested rule.
+        </li>
+        <li>
+          <b>GH</b>, Gauss Hermite: <br>
+          defined on (-oo,+oo), with w(x)=exp(-x*x),<br>
+          an open, weakly nested rule.
+        </li>
+        <li>
+          <b>GGH</b>, Generalized Gauss Hermite: <br>
+          defined on (-oo,+oo), with w(x)=|x|^alpha * exp(-x*x),<br>
+          an open, weakly nested rule.
+        </li>
+        <li>
+          <b>LG</b>, Gauss Laguerre: <br>
+          defined on (0,+oo) with w(x)=exp(-x),<br>
+          an open, non-nested rule.
+        </li>
+        <li>
+          <b>GLG</b>, Generalized Gauss Laguerre: <br>
+          defined on (0,+oo) with w(x)=x^alpha * exp(-x),<br>
+          an open, non-nested rule.
+        </li>
+        <li>
+          <b>GJ</b>, Gauss Jacobi: <br>
+          defined on [-1,+1] with w(x)=(1-x)^alpha (1+x)^beta<br>
+          an open, non-nested rule.
+        </li>
+        <li>
+          <b>GW</b>, Golub Welsch: <br>
+          a rule defined by the user based on the Golub-Welsch algorithm,<br>
+          with points and weights supplied by external routines,<br>
+          presumably an open, non-nested rule.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Each sparse grid is stored using the "weighted quadrature rule" format,
+      that is, as 6 files:
+      <ul>
+        <li>
+          an "A" or "anisotropy" file, which lists the anisotropic weights for
+          each dimension;
+        </li>
+        <li>
+          an "N" or "number of parameters" file, which lists the number of parameters
+         (such as ALPHA and BETA) for each dimension;
+        </li>
+        <li>
+          an "P" or "parameter" file, which lists all the parameter values in one list;
+        </li>
+        <li>
+          an "R" or "region" file, which lists two points that bound the region;
+        </li>
+        <li>
+          a "W" or "weight" file, which lists the weight for each abscissa;
+        </li>
+        <li>
+          an "X" or "abscissa" file, which lists the abscissas of the rule.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The abscissas are ordered to respect the natural nesting of the
+      sparse grids by level.  That is, the file of level 3 points begins by
+      listing the points in the level 2 grid.
+    </p>
+
+    <h3 align = "center">
+      Example:
+    </h3>
+
+    <p>
+      The "R" file stores two points that define the
+      "corners" of the region.  Here is the R file for a 2D rule based on
+      1D rules that both are defined in [-1,+1].
+      <pre><code>
+     -1.000000     -1.000000
+      1.000000     +1.000000
+      </code></pre>
+      In cases where one or both endpoints are infinite, the infinite value
+      is suggested by using the value 1.0E+30.
+    </p>
+ 
+    <p>
+      Here is the text of a "W" file, which stores the weights of rule:
+      <pre><code>
+     -0.444444
+      1.111111
+      1.111111
+      1.111111
+      1.111111
+      </code></pre>
+    </p>
+    
+    <p>
+      Here is the text of an "X" file storing the abscissas of a 
+      rule of dimension 2:
+      <pre><code>
+      0.000000      0.000000
+     -0.774596      0.000000
+      0.774596      0.000000
+      0.000000     -0.774596
+      0.000000      0.774596
+      </code></pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/grid_display/grid_display.html">
+      GRID_DISPLAY</a>, 
+      a MATLAB program which
+      reads a file of points on a grid, displays the grid and 
+      saves the image in a PNG file;
+    </p>
+
+    <p>
+      <a href = "../../m_src/grids_display/grids_display.html">
+      GRIDS_DISPLAY</a>, 
+      a MATLAB program which
+      reads two files of grids, displays the first with
+      hollow blue dots, the second with red dots.
+    </p>
+
+    <p>
+      <a href = "../../datasets/quadrature_rules/quadrature_rules.html">
+      QUADRATURE_RULES</a>, 
+      a dataset directory which 
+      contains quadrature rules for 1D intervals,
+      2D rectangles or multidimensional rectangular regions,
+      stored as a file of abscissas, a file of weights,
+      and a file of region limits.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/sgmga/sgmga.html">
+      SGMGA</a>, 
+      a C++ library which
+      creates sparse grids based on a mixture of 1D quadrature rules, 
+      allowing anisotropic weights for each dimension.
+    </p>
+
+    <p>
+      <a href = "../../f_src/sgmga/sgmga.html">
+      SGMGA</a>, 
+      a FORTRAN90 library which
+      creates sparse grids based on a mixture of 1D quadrature rules, 
+      allowing anisotropic weights for each dimension.
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_cc/sparse_grid_cc.html">
+      SPARSE_GRID_CC</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids
+      based on the 1D Clenshaw Curtis rule;
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_f2/sparse_grid_f2.html">
+      SPARSE_GRID_F2</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids 
+      based on the 1D Fejer type 2 rule;
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_gl/sparse_grid_gl.html">
+      SPARSE_GRID_GL</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids 
+      based on the 1D Gauss-Legendre rule;
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_gp/sparse_grid_gp.html">
+      SPARSE_GRID_GP</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids 
+      based on the 1D Gauss-Patterson rule;
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_hermite/sparse_grid_hermite.html">
+      SPARSE_GRID_HERMITE</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids 
+      based on the 1D Gauss-Hermite rule;
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_mixed/sparse_grid_mixed.html">
+      SPARSE_GRID_MIXED</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids 
+      based on a mixed set of 1D factor rules.
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_mixed_growth/sparse_grid_mixed_growth.html">
+      SPARSE_GRID_MIXED_GROWTH</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids 
+      based on a mixed set of 1D factor rules and a choice of exponential or linear growth rates.
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_ncc/sparse_grid_ncc.html">
+      SPARSE_GRID_NCC</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids 
+      based on the 1D Newton Cotes Closed rule;
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_nco/sparse_grid_nco.html">
+      SPARSE_GRID_NCO</a>, 
+      a dataset directory which 
+      contains multidimensional Smolyak sparse grids 
+      based on the 1D Newton Cotes Open rule;
+    </p>
+
+    <h3 align = "center">
+      Sample Files:
+    </h3>
+
+    <p>
+      SGMGA_D2_L1_CCXCC_ANISO is a sparse grid in 2D, at level 1,
+      whose 1D factors are [Clenshaw Curtis, Clenshaw Curtis], with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l1_ccxcc_aniso_a.txt">sgmga_d2_l1_ccxcc_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l1_ccxcc_aniso_n.txt">sgmga_d2_l1_ccxcc_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l1_ccxcc_aniso_p.txt">sgmga_d2_l1_ccxcc_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l1_ccxcc_aniso_r.txt">sgmga_d2_l1_ccxcc_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l1_ccxcc_aniso_w.txt">sgmga_d2_l1_ccxcc_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l1_ccxcc_aniso_x.txt">sgmga_d2_l1_ccxcc_aniso_x.txt</a>, 
+          the X file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l1_ccxcc_aniso_x.png">sgmga_d2_l1_ccxcc_aniso_x.png</a>, 
+          a PNG image of the X file by GRID_DISPLAY.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L2_CCXCC_ANISO is a sparse grid in 2D, at level 2,
+      whose 1D factors are [Clenshaw Curtis, Clenshaw Curtis], with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_aniso_a.txt">sgmga_d2_l2_ccxcc_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_aniso_n.txt">sgmga_d2_l2_ccxcc_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_aniso_p.txt">sgmga_d2_l2_ccxcc_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_aniso_r.txt">sgmga_d2_l2_ccxcc_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_aniso_w.txt">sgmga_d2_l2_ccxcc_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_aniso_x.txt">sgmga_d2_l2_ccxcc_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L2_CCXCC_ISO is a sparse grid in 2D, at level 2,
+      whose 1D factors are [Clenshaw Curtis, Clenshaw Curtis], with isotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_iso_a.txt">sgmga_d2_l2_ccxcc_iso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_iso_n.txt">sgmga_d2_l2_ccxcc_iso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_iso_p.txt">sgmga_d2_l2_ccxcc_iso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_iso_r.txt">sgmga_d2_l2_ccxcc_iso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_iso_w.txt">sgmga_d2_l2_ccxcc_iso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxcc_iso_x.txt">sgmga_d2_l2_ccxcc_iso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L2_CCXGL_ANISO is a sparse grid in 2D, at level 2,
+      whose 1D factors are [Clenshaw Curtis, Gauss Legendre] with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l2_ccxgl_aniso_a.txt">sgmga_d2_l2_ccxgl_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxgl_aniso_n.txt">sgmga_d2_l2_ccxgl_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxgl_aniso_p.txt">sgmga_d2_l2_ccxgl_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxgl_aniso_r.txt">sgmga_d2_l2_ccxgl_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxgl_aniso_w.txt">sgmga_d2_l2_ccxgl_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxgl_aniso_x.txt">sgmga_d2_l2_ccxgl_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L2_CCXGLG_ANISO is a sparse grid in 2D, at level 2,
+      whose 1D factors are [Clenshaw Curtis, Generalized Gauss Laguerre (alpha = 1.5)], with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l2_ccxglg_aniso_a.txt">sgmga_d2_l2_ccxglg_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxglg_aniso_n.txt">sgmga_d2_l2_ccxglg_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxglg_aniso_p.txt">sgmga_d2_l2_ccxglg_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxglg_aniso_r.txt">sgmga_d2_l2_ccxglg_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxglg_aniso_w.txt">sgmga_d2_l2_ccxglg_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxglg_aniso_x.txt">sgmga_d2_l2_ccxglg_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L2_CCXLG_ANISO is a sparse grid in 2D, at level 2,
+      whose 1D factors are [Clenshaw Curtis, Gauss Laguerre] with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l2_ccxlg_aniso_a.txt">sgmga_d2_l2_ccxlg_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxlg_aniso_n.txt">sgmga_d2_l2_ccxlg_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxlg_aniso_p.txt">sgmga_d2_l2_ccxlg_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxlg_aniso_r.txt">sgmga_d2_l2_ccxlg_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxlg_aniso_w.txt">sgmga_d2_l2_ccxlg_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_ccxlg_aniso_x.txt">sgmga_d2_l2_ccxlg_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L2_F2XGJ_ANISO is a sparse grid in 2D, at level 2,
+      whose 1D factors are [Fejer Type 2, Gauss Jacobi (alpha = 0.5, beta = 1.5) ] with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l2_f2xgj_aniso_a.txt">sgmga_d2_l2_f2xgj_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_f2xgj_aniso_n.txt">sgmga_d2_l2_f2xgj_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_f2xgj_aniso_p.txt">sgmga_d2_l2_f2xgj_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_f2xgj_aniso_r.txt">sgmga_d2_l2_f2xgj_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_f2xgj_aniso_w.txt">sgmga_d2_l2_f2xgj_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_f2xgj_aniso_x.txt">sgmga_d2_l2_f2xgj_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L2_GGHXGL_ANISO is a sparse grid in 2D, at level 2,
+      whose 1D factors are [Generalized Gauss Hermite ( alpha = 2 ), Gauss Legendre] with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l2_gghxgl_aniso_a.txt">sgmga_d2_l2_gghxgl_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_gghxgl_aniso_n.txt">sgmga_d2_l2_gghxgl_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_gghxgl_aniso_p.txt">sgmga_d2_l2_gghxgl_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_gghxgl_aniso_r.txt">sgmga_d2_l2_gghxgl_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_gghxgl_aniso_w.txt">sgmga_d2_l2_gghxgl_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l2_gghxgl_aniso_x.txt">sgmga_d2_l2_gghxgl_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L3_CCXCC_ANISO is a sparse grid in 2D, at level 3,
+      whose 1D factors are [Clenshaw Curtis, Clenshaw Curtis], with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l3_ccxcc_aniso_a.txt">sgmga_d2_l3_ccxcc_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxcc_aniso_n.txt">sgmga_d2_l3_ccxcc_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxcc_aniso_p.txt">sgmga_d2_l3_ccxcc_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxcc_aniso_r.txt">sgmga_d2_l3_ccxcc_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxcc_aniso_w.txt">sgmga_d2_l3_ccxcc_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxcc_aniso_x.txt">sgmga_d2_l3_ccxcc_aniso_x.txt</a>, 
+          the X file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxcc_aniso_x.png">sgmga_d2_l3_ccxcc_aniso_x.png</a>, 
+          a PNG image of the X file by GRID_DISPLAY.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L3_CCXGP_ANISO is a sparse grid in 2D, at level 3,
+      whose 1D factors are [Clenshaw Curtis, Gauss Patterson] with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l3_ccxgp_aniso_a.txt">sgmga_d2_l3_ccxgp_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxgp_aniso_n.txt">sgmga_d2_l3_ccxgp_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxgp_aniso_p.txt">sgmga_d2_l3_ccxgp_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxgp_aniso_r.txt">sgmga_d2_l3_ccxgp_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxgp_aniso_w.txt">sgmga_d2_l3_ccxgp_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l3_ccxgp_aniso_x.txt">sgmga_d2_l3_ccxgp_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L4_CCXCC_ANISO is a sparse grid in 2D, at level 4,
+      whose 1D factors are [Clenshaw Curtis, Clenshaw Curtis], with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l4_ccxcc_aniso_a.txt">sgmga_d2_l4_ccxcc_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l4_ccxcc_aniso_n.txt">sgmga_d2_l4_ccxcc_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l4_ccxcc_aniso_p.txt">sgmga_d2_l4_ccxcc_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l4_ccxcc_aniso_r.txt">sgmga_d2_l4_ccxcc_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l4_ccxcc_aniso_w.txt">sgmga_d2_l4_ccxcc_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l4_ccxcc_aniso_x.txt">sgmga_d2_l4_ccxcc_aniso_x.txt</a>, 
+          the X file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l4_ccxcc_aniso_x.png">sgmga_d2_l4_ccxcc_aniso_x.png</a>, 
+          a PNG image of the X file by GRID_DISPLAY.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D2_L5_CCXCC_ANISO is a sparse grid in 2D, at level 5,
+      whose 1D factors are [Clenshaw Curtis, Clenshaw Curtis], with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d2_l5_ccxcc_aniso_a.txt">sgmga_d2_l5_ccxcc_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l5_ccxcc_aniso_n.txt">sgmga_d2_l5_ccxcc_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l5_ccxcc_aniso_p.txt">sgmga_d2_l5_ccxcc_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l5_ccxcc_aniso_r.txt">sgmga_d2_l5_ccxcc_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l5_ccxcc_aniso_w.txt">sgmga_d2_l5_ccxcc_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l5_ccxcc_aniso_x.txt">sgmga_d2_l5_ccxcc_aniso_x.txt</a>, 
+          the X file.
+        </li>
+        <li>
+          <a href = "sgmga_d2_l5_ccxcc_aniso_x.png">sgmga_d2_l5_ccxcc_aniso_x.png</a>, 
+          a PNG image of the X file by GRID_DISPLAY.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D3_L2_CCXCCXCC_ANISO is a sparse grid in 3D, at level 2,
+      whose 1D factors are [Clenshaw Curtis, Clenshaw Curtis, Clenshaw Curtis], with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_aniso_a.txt">sgmga_d3_l2_ccxccxcc_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_aniso_n.txt">sgmga_d3_l2_ccxccxcc_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_aniso_p.txt">sgmga_d3_l2_ccxccxcc_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_aniso_r.txt">sgmga_d3_l2_ccxccxcc_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_aniso_w.txt">sgmga_d3_l2_ccxccxcc_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_aniso_x.txt">sgmga_d3_l2_ccxccxcc_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D3_L2_CCXCCXCC_ISO is a sparse grid in 3D, at level 2,
+      whose 1D factors are [Clenshaw Curtis, Clenshaw Curtis, Clenshaw Curtis], with isotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_iso_a.txt">sgmga_d3_l2_ccxccxcc_iso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_iso_n.txt">sgmga_d3_l2_ccxccxcc_iso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_iso_p.txt">sgmga_d3_l2_ccxccxcc_iso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_iso_r.txt">sgmga_d3_l2_ccxccxcc_iso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_iso_w.txt">sgmga_d3_l2_ccxccxcc_iso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxccxcc_iso_x.txt">sgmga_d3_l2_ccxccxcc_iso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      SGMGA_D3_L2_CCXGLXGH_ANISO is a sparse grid in 3D, at level 2,
+      whose 1D factors are [Clenshaw Curtis, Gauss Legendre, Gauss Hermite] with anisotropic weights.
+      <ul>
+        <li>
+          <a href = "sgmga_d3_l2_ccxglxgh_aniso_a.txt">sgmga_d3_l2_ccxglxgh_aniso_a.txt</a>, 
+          the A file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxglxgh_aniso_n.txt">sgmga_d3_l2_ccxglxgh_aniso_n.txt</a>, 
+          the N file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxglxgh_aniso_p.txt">sgmga_d3_l2_ccxglxgh_aniso_p.txt</a>, 
+          the P file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxglxgh_aniso_r.txt">sgmga_d3_l2_ccxglxgh_aniso_r.txt</a>, 
+          the R file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxglxgh_aniso_w.txt">sgmga_d3_l2_ccxglxgh_aniso_w.txt</a>, 
+          the W file.
+        </li>
+        <li>
+          <a href = "sgmga_d3_l2_ccxglxgh_aniso_x.txt">sgmga_d3_l2_ccxglxgh_aniso_x.txt</a>, 
+          the X file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to 
+      <a href = "../datasets.html">the DATASETS page.</a>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 14 September 2009.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

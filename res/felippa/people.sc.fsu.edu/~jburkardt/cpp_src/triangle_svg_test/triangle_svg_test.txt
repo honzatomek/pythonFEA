@@ -1,0 +1,12 @@
+04 March 2022 08:17:24 AM
+
+TRIANGLE_SVG_TEST
+  C++ version
+  Test the TRIANGLE_SVG library.
+
+  Graphics data written to file "test01.svg"
+
+TRIANGLE_SVG_TEST
+  Normal end of execution.
+
+04 March 2022 08:17:24 AM

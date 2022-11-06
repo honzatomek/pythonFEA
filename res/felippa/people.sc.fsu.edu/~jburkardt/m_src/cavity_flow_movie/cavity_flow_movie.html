@@ -1,0 +1,213 @@
+<html>
+
+  <head>
+    <title>
+      cavity_flow_movie
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      cavity_flow_movie
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>cavity_flow_movie</b>,
+      a MATLAB code which 
+      produces an animation of the velocity solutions to a time-dependent
+      incompressible parameterized flow problem in a 2D driven cavity.
+    </p>
+
+    <p>
+      The "CAVITY" region is the unit square, [0,1]x[0,1], open on the top, 
+      along which a tangential flow is specified, with walls along the
+      sides and bottom.
+      <pre>
+
+          --> --> --> --> --> 
+
+        ++                    ++
+        ||                    ||
+        ||                    ||
+        ||                    ||
+        ||                    ||
+        ||                    ||
+        ||                    ||
+        ||                    ||
+        ||                    ||
+        ||                    ||
+        |+--------------------+|
+        +----------------------+
+      </pre>
+      An evenly spaced grid of 41x41 = 1,681 nodes, is used.
+      These nodes are organized into 800 6-node triangular elements
+      which are quadratic in velocity and linear in pressure. 
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>cavity_flow_movie</b> is available in
+      <a href = "../../m_src/cavity_flow_movie/cavity_flow_movie.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../datasets/cavity_flow/cavity_flow.html">
+      cavity_flow</a>,
+      a dataset directory which 
+      contains 500 solutions of the driven cavity flow problem.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cavity_flow_display/cavity_flow_display.html">
+      cavity_flow_display</a>,
+      a MATLAB code which
+      displays a single solution of the cavity flow problem.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cavity_flow_movie_test/cavity_flow_movie_test.html">
+      cavity_flow_movie_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1_movie/cvt_1_movie.html">
+      cvt_1_movie</a>,
+      a MATLAB code which
+      creates an animation of the evolution of a 
+      Centroidal Voronoi Tessellation (CVT) in the unit square.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_2_movie/cvt_2_movie.html">
+      cvt_2_movie</a>,
+      a MATLAB code which
+      animates the generation of a Centroidal Voronoi Tessellation (CVT)
+      in the unit square, which includes a random "rebirth" at every iteration.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_3_movie/cvt_3_movie.html">
+      cvt_3_movie</a>,
+      a MATLAB code which
+      animates the generation of a Centroidal Voronoi Tessellation 
+      (CVT) for the "holey pie" region.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_4_movie/cvt_4_movie.html">
+      cvt_4_movie</a>,
+      a MATLAB code which
+      creates a Centroidal Voronoi Tessellation (CVT) movie in a square, 
+      with a density function that drives points to the corners;
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_corn_movie/cvt_corn_movie.html">
+      cvt_corn_movie</a>,
+      a MATLAB code which 
+      makes a movie in which the growth of a corn kernel is simulated
+      using a Centroidal Voronoi Tessellation (CVT).
+    </p>
+
+    <p>
+      <a href = "../../m_src/gray_scott_movie/gray_scott_movie.html">
+      gray_scott_movie</a>,
+      a MATLAB code which
+      solves versions of the partial differential equation (PDE) known
+      as the Gray-Scott reaction diffusion equation, converting the
+      solutions to a sequence of graphics frames, which are then 
+      assembled into a movie.
+    </p>
+
+    <p>
+      <a href = "../../m_src/peak_movie/peak_movie.html">
+      peak_movie</a>,
+      a MATLAB code which
+      creates a sequence of frames, and then an animation or movie
+      from the data displayed by the peaks() function.
+    </p>
+
+    <p>
+      <a href = "../../m_src/shallow_water_1d_movie/shallow_water_1d_movie.html">
+      shallow_water_1d_movie</a>, 
+      a MATLAB code which 
+      solves the partial differential equation (PDE) known
+      as the shallow water equations (SWE), converting the
+      solutions to a sequence of graphics frames, which are then 
+      assembled into a movie.
+    </p>
+
+    <p>
+      <a href = "../../m_src/spiral_pde_movie/spiral_pde_movie.html">
+      spiral_pde_movie</a>,
+      a MATLAB code which
+      solves a pair of reaction-diffusion partial differential equations
+      (PDE) over a rectangular domain with periodic boundary condition,
+      whose solution is known to evolve into a pair of spirals.
+      The sequence of solutions is bundled into a movie.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_slice_movie/tetrahedron_slice_movie.html">
+      tetrahedron_slice_movie</a>,
+      a MATLAB code which
+      is given a tetrahedron and a vector, 
+      displays an evenly spaced sequence
+      of planes that intersect the tetrahedron and are normal to the vector,
+      and creates a movie of the process.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cavity_flow_movie.m">cavity_flow_movie.m</a>, 
+          reads the XY coordinate file and
+          all the time dependent velocity files, and creates an animation
+          of the velocity field.
+        </li>
+        <li>
+          <a href = "filename_inc.m">filename_inc.m</a>, 
+          increments a partially numeric filename.
+        </li>
+        <li>
+          <a href = "thin_index.m">thin_index.m</a>, 
+          determines thinning indices for X, Y data.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 December 2020.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

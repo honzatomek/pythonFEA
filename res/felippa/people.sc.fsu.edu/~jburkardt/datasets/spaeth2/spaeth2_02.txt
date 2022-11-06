@@ -1,0 +1,34 @@
+# spaeth2_02.txt
+#
+#  Discussion:
+#
+#    Data matrix with 15 rows and 1 column.
+#
+#    This is the same data as in SPAETH2_01.TXT, but is unsorted.
+#
+#  Modified:
+#
+#    29 April 2002
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Cluster Analysis Algorithms 
+#    for Data Reduction and Classification of Objects,
+#    Ellis Horwood, 1980, page 41.
+#
+11.0
+ 2.5
+ 8.0
+ 3.2
+ 5.0
+ 0.1
+10.0
+ 2.1
+ 3.0
+ 0.5
+ 2.0
+ 6.0
+ 0.0
+ 0.2
+ 4.0

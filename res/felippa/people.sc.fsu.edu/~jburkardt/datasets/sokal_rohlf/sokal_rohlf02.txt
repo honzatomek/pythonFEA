@@ -1,0 +1,18 @@
+# Title: Frequency of infected insects in 2423 samples of 5, assuming 40% infection rate
+# 1: Number of infected insects per sample
+# 2: Expected frequency
+# 3: Observed frequency
+# 4: Clumped frequency
+# 5: Repulsed frequency
+#
+#  Reference:
+#  R Sokal, J Rohlf,
+#  Introduction to Biostatistics,
+#  Dover, 2009.
+#
+5   24.8   29   47   14
+4  186.1  197  227  157
+3  558.3  535  558  548
+2  837.4  817  663  943
+1  628.0  643  703  618
+0  188.4  202  225  143

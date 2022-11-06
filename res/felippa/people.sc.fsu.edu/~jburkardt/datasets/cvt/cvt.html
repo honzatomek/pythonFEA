@@ -1,0 +1,658 @@
+<html>
+
+  <head>
+    <title>
+      CVT - Centroidal Voronoi Tessellation Datasets
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      CVT <br> Centroidal Voronoi Tessellation Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>CVT</b>
+      is a dataset directory which
+      contains points generated
+      by an M-dimensional Centroidal Voronoi Tessellation.
+    </p>
+
+    <p>
+      Each dataset contains N points in M-dimensions, with the
+      points having the property that they are (approximately)
+      the centroids of the Voronoi regions that they generate.
+    </p>
+
+    <p>
+      The datasets are distinguished by the values of the following
+      parameters:
+      <ul>
+        <li>
+          <b>M</b>, the spatial dimension;
+        </li>
+        <li>
+          <b>N</b>, the number of points to generate;
+        </li>
+        <li>
+          <b>SEED</b>, the initial seed for the random number routine;
+        </li>
+        <li>
+          <b>INITIALIZE</b>, UNIFORM/HALTON/GRID/FILE, the method of 
+          initializing the generators;
+        </li>
+        <li>
+          <b>SAMPLE</b>, UNIFORM/HALTON/GRID, the method of sampling 
+          the Voronoi diagram;
+        </li>
+        <li>
+          <b>SAMPLE_NUM</b>, the number of points used to sample the 
+          Voronoi diagram;
+        </li>
+        <li>
+          <b>ITERATIONS</b>, the number of CVT iteration steps;
+        </li>
+      </ul>
+      The values of M and N are specified in the dataset file names.
+    </p>
+
+    <p>
+      The dataset also lists <b>CHANGE</b>, the L2 norm of the dataset 
+      change on the last step, that is the square root of the sum of 
+      the squares of the differences between the coordinates of the 
+      points before and after the last iterative step.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/cvt/cvt.html">
+      CVT</a>,
+      a C++ library which
+      computes elements of a Centroidal Voronoi Tessellation (CVT).
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/cvt_dataset/cvt_dataset.html">
+      CVT_DATASET</a>,
+      a C++ program which
+      computes a Centroidal Voronoi Tessellation (CVT) and writes it to a file.
+    </p>
+
+    <p>
+      <a href = "../../f_src/plot_points/plot_points.html">
+      PLOT_POINTS</a>,
+      a FORTRAN90 program which
+      can plot two dimensional
+      datasets, making Encapsulated PostScript images.
+    </p>
+
+    <p>
+      <a href = "../../f_src/table_top/table_top.html">
+      TABLE_TOP</a>,
+      a FORTRAN90 program which
+      can be used to analyze 
+      datasets of any dimension, by creating images of pairwise
+      coordinates.
+    </p>
+
+    <h3 align = "center">
+      Example dataset:
+    </h3>
+
+    <p>
+      A typical (but small) CVT dataset looks like this:
+      <pre>
+# cvt_02_00010.txt
+# created by CVT_DATASET
+# at April 11 2003  12:04:56.303 PM
+#
+#  Spatial dimension M =   2
+#  Number of points N =  10
+#
+#  Initial SEED =    123456789
+#  Initialization by UNIFORM.
+#  Sampling by UNIFORM.
+#  Number of sample points =       500000
+#  Number of sampling iterations =    100
+#  L2 norm of dataset change on last step =   0.001501
+#
+   0.168259       0.878328    
+   0.834417       0.833004    
+   0.521361       0.499896    
+   0.506248       0.165244    
+   0.180542       0.627410    
+   0.179467       0.372410    
+   0.505360       0.833925    
+   0.834464       0.166314    
+   0.841834       0.499935    
+   0.169745       0.122347    
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          John Burkardt, Max Gunzburger, Janet Peterson and Rebecca Brannon,<br>
+          User Manual and Supporting Information for Library of Codes
+          for Centroidal Voronoi Placement and Associated Zeroth,
+          First, and Second Moment Determination,<br>
+          Sandia National Laboratories Technical Report SAND2002-0099,<br>
+          February 2002.
+        </li>
+        <li>
+          Qiang Du, Vance Faber, and Max Gunzburger,<br>
+          Centroidal Voronoi Tessellations: Applications and Algorithms,<br>
+          SIAM Review, Volume 41, 1999, pages 637-676.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      <b>CVT_02_00100_CIRCLE</b> is a set of 100 points generated in a circle:
+      <ul>
+        <li>
+          <a href = "cvt_02_00100_circle.txt">cvt_02_00100_circle.txt</a>, 
+          the coordinates of 100 CVT points in a circle;
+        </li>
+        <li>
+          <a href = "cvt_02_00100_circle.png">cvt_02_00100_circle.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_NONUNI_01</b>, <b>CVT_NONUNI_02</b>, and <b>CVT_NONUNI_03</b> are
+      a set of CVT's using nonuniform density function.
+      The three sets are distinguished by different starting data
+      for the CVT iteration, generated by a Monte Carlo process.
+      <ul>
+        <li>
+          <a href = "cvt_nonuni_01.txt">cvt_nonuni_01.txt</a>, 
+          data set #1;
+        </li>
+        <li>
+          <a href = "cvt_nonuni_01.png">cvt_nonuni_01.png</a>
+        </li>
+        <li>
+          <a href = "cvt_nonuni_02.txt">cvt_nonuni_02.txt</a>, 
+          data set #2;
+        </li>
+        <li>
+          <a href = "cvt_nonuni_02.png">cvt_nonuni_02.png</a>
+        </li>
+        <li>
+          <a href = "cvt_nonuni_03.txt">cvt_nonuni_03.txt</a>, 
+          data set #3;
+        </li>
+        <li>
+          <a href = "cvt_nonuni_03.png">cvt_nonuni_03.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_NONUNI_04</b>, <b>CVT_NONUNI_05</b>, and <b>CVT_NONUNI_06</b> are
+      a set of CVT's using nonuniform density function.
+      The three sets are distinguished by different starting data
+      for the CVT iteration, generated by a Latin hypercube process.
+      <ul>
+        <li>
+          <a href = "cvt_nonuni_04.txt">cvt_nonuni_04.txt</a>, 
+          data set #4;
+        </li>
+        <li>
+          <a href = "cvt_nonuni_04.png">cvt_nonuni_04.png</a>
+        </li>
+        <li>
+          <a href = "cvt_nonuni_05.txt">cvt_nonuni_05.txt</a>, 
+          data set #5;
+        </li>
+        <li>
+          <a href = "cvt_nonuni_05.png">cvt_nonuni_05.png</a>
+        </li>
+        <li>
+          <a href = "cvt_nonuni_06.txt">cvt_nonuni_06.txt</a>, 
+          data set #6;
+        </li>
+        <li>
+          <a href = "cvt_nonuni_06.png">cvt_nonuni_06.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_02_00010</b>, <b>CVT_02_00100</b>, <b>CVT_02_01000</b>
+      and <b>CVT_02_10000</b> are a family of datasets in M = 2 
+      dimensions:
+      <ul>
+        <li>
+          <a href = "cvt_02_00010.inp">cvt_02_00010.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_00010.txt">cvt_02_00010.txt</a>, 
+          M = 2, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.001501;
+        </li>
+        <li>
+          <a href = "cvt_02_00010.png">cvt_02_00010.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of 
+          the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_00100.inp">cvt_02_00100.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_00100.txt">cvt_02_00100.txt</a>, 
+          M = 2, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.007545;
+        </li>
+        <li>
+          <a href = "cvt_02_00100.png">cvt_02_00100.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of 
+          the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_01000.inp">cvt_02_01000.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_01000.txt">cvt_02_01000.txt</a>, 
+          M = 2, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.020973;
+        </li>
+        <li>
+          <a href = "cvt_02_01000.png">cvt_02_01000.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of 
+          the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_10000.inp">cvt_02_10000.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_10000.txt">cvt_02_10000.txt</a>, 
+          M = 2, N = 10000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.066559;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_02_00010_a</b>, <b>CVT_02_00100_a</b>, and <b>CVT_02_01000_a</b>
+      are a second family of datasets in M = 2 dimensions, with
+      50 iterations, and 100 times as many sampling points 
+      as family 1:
+      <ul>
+        <li>
+          <a href = "cvt_02_00010_a.inp">cvt_02_00010_a.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_00010_a.txt">cvt_02_00010_a.txt</a>, 
+          M = 2, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 50000000, ITERATIONS = 50,
+          CHANGE = 0.000412;
+        </li>
+        <li>
+          <a href = "cvt_02_00100_a.inp">cvt_02_00100_a.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_02_00100_a.txt">cvt_02_00100_a.txt</a>, 
+          M = 2, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 50000000, ITERATIONS = 50,
+          CHANGE = 0.003668;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_07_00010</b>, <b>CVT_07_00100</b>, <b>CVT_07_01000</b>
+      and <b>CVT_07_10000</b> is a family of datasets in M = 7 dimensions:
+      <ul>
+        <li>
+          <a href = "cvt_07_00010.inp">cvt_07_00010.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_07_00010.txt">cvt_07_00010.txt</a>, 
+          M = 7, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.009351;
+        </li>
+        <li>
+          <a href = "cvt_07_00100.inp">cvt_07_00100.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_07_00100.txt">cvt_07_00100.txt</a>, 
+          M = 7, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.073011;
+        </li>
+        <li>
+          <a href = "cvt_07_01000.inp">cvt_07_01000.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_07_01000.txt">cvt_07_01000.txt</a>, 
+          M = 7, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.442472;
+        </li>
+        <li>
+          <a href = "cvt_07_10000.inp">cvt_07_10000.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_07_10000.txt">cvt_07_10000.txt</a>, 
+          M = 7, N = 10000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 3.126749;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_07_00010_a</b>, <b>CVT_07_00100_a</b> and <b>CVT_07_01000_a</b>
+      is a second family of datasets in M = 7 dimensions, with
+      50 iterations, and 100 times as many sampling points 
+      as family 1:
+      <ul>
+        <li>
+          <a href = "cvt_07_00010_a.inp">cvt_07_00010_a.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_07_00010_a.txt">cvt_07_00010_a.txt</a>, 
+          M = 7, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 50000000, ITERATIONS = 50,
+          CHANGE = 0.006636;
+        </li>
+        <li>
+          <a href = "cvt_07_00100_a.inp">cvt_07_00100_a.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_07_00100_a.txt">cvt_07_00100_a.txt</a>, 
+          M = 7, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 50000000, ITERATIONS = 50,
+          CHANGE = 0.022791;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_16_00010</b>, <b>CVT_16_00100</b>, <b>CVT_16_01000</b>
+      and <b>CVT_16_10000</b> is a family of datasets in M = 16 dimensions:
+      <ul>
+        <li>
+          <a href = "cvt_16_00010.inp">cvt_16_00010.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00010.txt">cvt_16_00010.txt</a>, 
+          M = 16, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.020893;
+        </li>
+        <li>
+          <a href = "cvt_16_00100.inp">cvt_16_00100.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00100.txt">cvt_16_00100.txt</a>, 
+          M = 16, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.138740;
+        </li>
+        <li>
+          <a href = "cvt_16_01000.inp">cvt_16_01000.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_01000.txt">cvt_16_01000.txt</a>, 
+          M = 16, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 1.181824;
+        </li>
+        <li>
+          <a href = "cvt_16_10000.inp">cvt_16_10000.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_10000.txt">cvt_16_10000.txt</a>, 
+          M = 16, N = 10000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 9.991355;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_16_00010_a</b> and <b>CVT_16_00100_a</b> is a second family of
+      datasets in M = 16 dimensions, with
+      50 iterations, and 100 times as many sampling points 
+      as family 1:
+      <ul>
+        <li>
+          <a href = "cvt_16_00010_a.inp">cvt_16_00010_a.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00010_a.txt">cvt_16_00010_a.txt</a>, 
+          M = 16, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 50000000, ITERATIONS = 50,
+          CHANGE = 0.014803;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_a.inp">cvt_16_00100_a.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_a.txt">cvt_16_00100_a.txt</a>, 
+          M = 16, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 50000000, ITERATIONS = 50,
+          CHANGE = 0.046703;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_16_00010_b</b>, <b>CVT_16_00100_b</b> and <b>CVT_16_01000_b</b>
+      is a third family of datasets in M = 16 dimensions, with 200
+      iterations:
+      <ul>
+        <li>
+          <a href = "cvt_16_00010_b.inp">cvt_16_00010_b.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00010_b.txt">cvt_16_00010_b.txt</a>, 
+          M = 16, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 200,
+          CHANGE = 0.014970;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_b.inp">cvt_16_00100_b.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_b.txt">cvt_16_00100_b.txt</a>, 
+          M = 16, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 200,
+          CHANGE = 0.134247;
+        </li>
+        <li>
+          <a href = "cvt_16_01000_b.inp">cvt_16_01000_b.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_01000_b.txt">cvt_16_01000_b.txt</a>, 
+          M = 16, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 200,
+          CHANGE = 1.180174;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_07_00010_c</b>, <b>CVT_07_00100_c</b> and <b>CVT_07_01000_c</b>
+      is a fourth family of datasets in M = 16 dimensions, which uses the
+      idea of GRID sampling rather than Monte Carlo:
+      <ul>
+        <li>
+          <a href = "cvt_16_00010_c.inp">cvt_16_00010_c.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00010_c.txt">cvt_16_00010_c.txt</a>, 
+          M = 16, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = GRID, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.003192;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_c.inp">cvt_16_00100_c.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_c.txt">cvt_16_00100_c.txt</a>, 
+          M = 16, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = GRID, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.024957;
+        </li>
+        <li>
+          <a href = "cvt_16_01000_c.inp">cvt_16_01000_c.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_01000_c.txt">cvt_16_01000_c.txt</a>, 
+          M = 16, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = GRID, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.037693;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_16_00010_d</b>, <b>CVT_16_00100_d</b> and <b>CVT_16_01000_d</b>
+      is a fifth family of datasets in M = 16 dimensions, which uses 
+      a different initial seed for the random number generator, includes:
+      <ul>
+        <li>
+          <a href = "cvt_16_00010_d.inp">cvt_16_00010_d.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00010_d.txt">cvt_16_00010_d.txt</a>, 
+          M = 16, N = 10, SEED = 987654321, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.016081;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_d.inp">cvt_16_00100_d.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_d.txt">cvt_16_00100_d.txt</a>, 
+          M = 16, N = 100, SEED = 987654321, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.140741;
+        </li>
+        <li>
+          <a href = "cvt_16_01000_d.inp">cvt_16_01000_d.inp</a>, 
+          the input file to CVT_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_01000_d.txt">cvt_16_01000_d.txt</a>, 
+          M = 16, N = 1000, SEED = 987654321, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 1.184108;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CVT_16_00010_e</b>, <b>CVT_16_00100_e</b> and <b>CVT_16_01000_e</b>
+      is a sixth family of datasets in M = 16 dimensions, which uses 
+      double precision arithmetic:
+      <ul>
+        <li>
+          <a href = "cvt_16_00010_e.inp">cvt_16_00010_e.inp</a>, 
+          the input file to CVTD_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00010_e.txt">cvt_16_00010_e.txt</a>, 
+          M = 16, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.021418;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_e.inp">cvt_16_00100_e.inp</a>, 
+          the input file to CVTD_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_00100_e.txt">cvt_16_00100_e.txt</a>, 
+          M = 16, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 0.139808;
+        </li>
+        <li>
+          <a href = "cvt_16_01000_e.inp">cvt_16_01000_e.inp</a>, 
+          the input file to CVTD_DATASET used to create the dataset;
+        </li>
+        <li>
+          <a href = "cvt_16_01000_e.txt">cvt_16_01000_e.txt</a>, 
+          M = 16, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500000, ITERATIONS = 100,
+          CHANGE = 1.182070;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 February 2006.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

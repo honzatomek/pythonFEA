@@ -1,0 +1,178 @@
+<html>
+
+  <head>
+    <title>
+      stla_to_tri_surface
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      stla_to_tri_surface
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>stla_to_tri_surface</b>,
+      a MATLAB code which
+      reads data from an ASCII STLA file describing a triangular
+      mesh of a 3D surface, and converts it to a pair of arrays
+      describing a triangular mesh or <b>TRI_SURFACE</b>.
+    </p>
+
+    <p>
+      Especially if you are reading large ASCII STL files, you might want
+      to consider the "fast" version of the program, which uses the routines
+      <b>STLA_SIZE_FAST</b> and <b>STLA_READ_FAST</b>,
+      provided by Bill Seufzer of NASA Langley.
+    </p>
+
+    <p>
+      An ASCII <b>STL</b> file contains a description of the surface of a solid
+      that has been decomposed into triangles.  The vertices of the triangles should
+      be listed in counterclockwise order, as viewed from outside the surface.
+      A normal vector for the triangle may also be listed.
+    </p>
+
+    <p>
+      A <b>TRI_SURFACE</b> or triangulated mesh surface, is described by a
+      pair of arrays:
+      <ul>
+        <li>
+          a <b>node coordinate</b> array containing the coordinates of nodes;
+        </li>
+        <li>
+          a <b>triangle node</b> array containing triples of the indices
+          of the nodes used to form each triangle;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>stla_to_tri_surface</b> is available in
+      <a href = "../../m_src/stla_to_tri_surface/stla_to_tri_surface.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/obj_to_tri_surface/obj_to_tri_surface.html">
+      obj_to_tri_surface</a>,
+      a MATLAB code which
+      reads an OBJ file and extracts
+      the surface mesh data as a TRI_SURFACE dataset.
+    </p>
+
+    <p>
+      <a href = "../../data/stla/stla.html">
+      stla</a>,
+      a data directory which
+      contains a description and examples of <b>STLA</b> files.
+    </p>
+
+    <p>
+      <a href = "../../m_src/stla_display/stla_display.html">
+      stla_display</a>,
+      a MATLAB code which
+      reads an ASCII STL file and displays it.
+    </p>
+
+    <p>
+      <a href = "../../m_src/stla_io/stla_io.html">
+      stla_io</a>,
+      a MATLAB code which
+      reads or writes a an ASCII STL file.
+    </p>
+
+    <p>
+      <a href = "../../m_src/stla_to_tri_surface_test/stla_to_tri_surface_test.html">
+      stla_to_tri_surface_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/stla_to_tri_surface_fast/stla_to_tri_surface_fast.html">
+      stla_to_tri_surface_fast</a>,
+      a MATLAB code which
+      is a faster version of stla_to_tri_surface().
+    </p>
+
+    <p>
+      <a href = "../../data/tri_surface/tri_surface.html">
+      tri_surface</a>,
+      a data directory which
+      contains examples of TRI_SURFACE files.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tri_surface_display/tri_surface_display.html">
+      tri_surface_display</a>,
+      a MATLAB code which
+      displays a TRI_SURFACE dataset.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tri_surface_to_stla/tri_surface_to_stla.html">
+      tri_surface_to_stla</a>,
+      a MATLAB code which
+      reads a TRI_SURFACE dataset and extracts
+      the surface mesh data as an ASCII STL file.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          3D Systems, Inc,<br>
+          Stereolithography Interface Specification,<br>
+          October 1989.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "stla_to_tri_surface.m">stla_to_tri_surface.m</a>
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 24 March 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

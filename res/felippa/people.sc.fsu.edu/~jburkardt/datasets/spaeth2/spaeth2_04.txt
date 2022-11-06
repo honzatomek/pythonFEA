@@ -1,0 +1,29 @@
+# spaeth2_04.txt
+#
+#  Discussion:
+#
+#    Data matrix with 10 rows and 2 columns
+#
+#    This data represents 10 points in the plane.
+#
+#  Modified:
+#
+#    25 April 2002
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Cluster Analysis Algorithms 
+#    for Data Reduction and Classification of Objects,
+#    Ellis Horwood, 1980, page 69.
+#
+ 0.0  1.0
+ 1.0  2.0
+ 2.0  0.0
+ 4.0  8.0
+ 5.0  7.0
+ 5.0  9.0
+ 6.0  7.0
+ 8.0  4.0
+ 9.0  3.0
+10.0  5.0

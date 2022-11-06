@@ -1,0 +1,4 @@
+This a stack of 36 surface renderings of the "T1 Head"
+volume. It was created using the "Render Cine-mode" 
+option in VolumeJ (http://bij.isi.uu.nl/vr.htm), using the 
+default settings.

@@ -1,0 +1,65 @@
+# spaeth2_03.txt
+#
+#  Discussion:
+#
+#    Data matrix with 22 rows and 2 columns
+#
+#    This data represents the Cartesian coordinates of 22 towns
+#    in West Germany:
+#
+#     1 Aachen,
+#     2 Augsburg
+#     3 Braunschweig
+#     4 Bremen
+#     5 Essen
+#     6 Freiburg
+#     7 Hamburg
+#     8 Hof
+#     9 Karlsruhe
+#    10 Kassel
+#    11 Kiel
+#    12 Koeln
+#    13 Mannheim
+#    14 Muenchen
+#    15 Nuernberg
+#    16 Passau
+#    17 Regensburg
+#    18 Saarbruecken
+#    19 Wuerzburg
+#    20 Bielefeld
+#    21 Luebeck
+#    22 Muenster
+#
+#  Modified:
+#
+#    21 April 2002
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Cluster Analysis Algorithms 
+#    for Data Reduction and Classification of Objects,
+#    Ellis Horwood, 1980, page 43.
+#
+-57.0   28.0
+ 54.0  -65.0
+ 46.0   79.0
+  8.0  111.0
+-36.0   52.0
+-22.0  -76.0
+ 34.0  129.0
+ 74.0    6.0
+ -6.0  -41.0
+ 21.0   45.0
+ 37.0  155.0
+-38.0   35.0
+ -5.0  -24.0
+ 70.0  -74.0
+ 59.0  -26.0
+114.0  -56.0
+ 83.0  -41.0
+-40.0  -28.0
+ 21.0  -12.0
+  0.0   71.0
+ 50.0  140.0
+-20.0   70.0

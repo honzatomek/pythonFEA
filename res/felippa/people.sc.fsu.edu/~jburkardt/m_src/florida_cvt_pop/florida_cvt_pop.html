@@ -1,0 +1,318 @@
+<html>
+
+  <head>
+    <title>
+      florida_cvt_pop
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      florida_cvt_pop
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>florida_cvt_pop</b>,
+      a MATLAB code which
+      creates a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based on population density.
+    </p>
+
+    <p>
+      florida_cvt_pop() requires access to the MATLAB Mapping Toolbox.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>florida_cvt_pop</b> is available in
+      <a href = "../../m_src/florida_cvt_pop/florida_cvt_pop.html">a MATLAB version</a> and
+      <a href = "../../py_src/florida_cvt_pop/florida_cvt_pop.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/cvt_box/cvt_box.html">
+      cvt_box</a>,
+      a MATLAB code which 
+      constructs a modified cvt in which some points are forced to
+      lie on the boundary.
+    </p>
+
+    <p>
+      <a href = "../../m_src/ccvt_reflect/ccvt_reflect.html">
+      ccvt_reflect</a>,
+      a MATLAB code which 
+      tries to construct a modified cvt in which some points are forced to
+      lie on the boundary, using a reflection idea.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_nonuniform/cvt_1d_nonuniform.html">
+      cvt_1d_nonuniform</a>,
+      a MATLAB code which 
+      constructs a cvt in one dimension, 
+      under a nonuniform density function.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_sampling/cvt_1d_sampling.html">
+      cvt_1d_sampling</a>,
+      a MATLAB code which 
+      computes an n-point centroidal voronoi tessellation (cvt)
+      within the interval [0,1], under a uniform density, 
+      using sampling to estimate the voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_2d_sampling/cvt_2d_sampling.html">
+      cvt_2d_sampling</a>,
+      a MATLAB code which
+      computes an n-point centroidal voronoi tessellation (cvt)
+      within the unit square [0,1]x[0,1], under a uniform density,
+      using sampling to estimate the voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_3d_sampling/cvt_3d_sampling.html">
+      cvt_3d_sampling</a>,
+      a MATLAB code which
+      computes an n-point centroidal voronoi tessellation (cvt)
+      within the unit cube [0,1]x[0,1]x[0,1], under a uniform density,
+      using sampling to estimate the voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_circle_nonuniform/cvt_circle_nonuniform.html">
+      cvt_circle_nonuniform</a>,
+      a MATLAB code which
+      calculates a nonuniform centroidal voronoi tessellation (cvt) 
+      over a circle.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_corn/cvt_corn.html">
+      cvt_corn</a>,
+      a MATLAB code which
+      studies a 2d model of the growth of a corn kernel, by treating
+      the surface and interior biological cells as points to be 
+      organized by a centroidal voronoi tessellation (cvt)
+      with a nonuniform density; during a sequence of growth steps,
+      new biological cells are randomly added to the surface and interior.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_ellipse_uniform/cvt_ellipse_uniform.html">
+      cvt_ellipse_uniform</a>,
+      a MATLAB code which
+      iteratively calculates a centroidal voronoi tessellation (cvt)
+      over an ellipse, with a uniform density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1_movie/cvt_1_movie.html">
+      cvt_1_movie</a>,
+      a MATLAB code which
+      creates an animation of the evolution of a 
+      centroidal voronoi tessellation (cvt);
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_2_movie/cvt_2_movie.html">
+      cvt_2_movie</a>,
+      a MATLAB code which
+      creates a centroidal voronoi tessellation (cvt) movie;
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_3_movie/cvt_3_movie.html">
+      cvt_3_movie</a>,
+      a MATLAB code which
+      creates a centroidal voronoi tessellation (cvt) movie in 
+      a region of unusual shape;
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_4_movie/cvt_4_movie.html">
+      cvt_4_movie</a>,
+      a MATLAB code which
+      creates a centroidal voronoi tessellation (cvt) movie in a square, 
+      with a density function that drives points to the corners;
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_square_pdf_discrete/cvt_square_pdf_discrete.html">
+      cvt_square_pdf_discrete</a>,
+      a MATLAB code which
+      iteratively calculates a centroidal voronoi tessellation (cvt)
+      over a square, with a density derived from a discrete pdf.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_square_uniform/cvt_square_uniform.html">
+      cvt_square_uniform</a>,
+      a MATLAB code which
+      iteratively calculates a centroidal voronoi tessellation (cvt)
+      over a square, with a uniform density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_triangle_uniform/cvt_triangle_uniform.html">
+      cvt_triangle_uniform</a>,
+      a MATLAB code which
+      iteratively calculates a centroidal voronoi tessellation (cvt)
+      over a triangle, with a uniform density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/florida_cvt_geo/florida_cvt_geo.html">
+      florida_cvt_geo</a>,
+      MATLAB codes which
+      explore the creation of a centroidal voronoi tessellation (cvt) of
+      the state of florida, based solely on geometric considerations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/florida_cvt_pop_test/florida_cvt_pop_test.html">
+      florida_cvt_pop_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/line_cvt_lloyd/line_cvt_lloyd.html">
+      line_cvt_lloyd</a>,
+      a MATLAB code which
+      applies lloyd's iteration repeatedly to a set of n points,
+      to compute a centroidal voronoi tessellation (cvt)
+      over the interior of a line segment in 1d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_boundary/maple_boundary.html">
+      maple_boundary</a>,
+      MATLAB codes which
+      start with an image of a maple leaf, and try to construct a polygonal
+      boundary for the leaf, after which various interesting computational
+      tasks can be carried out.
+    </p>
+
+    <p>
+      <a href = "../../m_src/MATLAB_map/MATLAB_map.html">
+      MATLAB_map</a>,
+      MATLAB codes which
+      illustrate the use of the MATLAB mapping toolbox.
+    </p>
+
+    <p>
+      <a href = "../../m_src/sphere_cvt/sphere_cvt.html">
+      sphere_cvt</a>,
+      a MATLAB code which
+      uses a centroidal voronoi tessellation to
+      create a mesh of well-separated points
+      on the surface of the unit sphere in 3d.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Qiang Du, Vance Faber, Max Gunzburger,<br>
+          Centroidal Voronoi Tessellations: Applications and Algorithms,<br>
+          SIAM Review,<br>
+          Volume 41, Number 4, December 1999, pages 637-676.
+        </li>
+        <li>
+          Lili Ju, Qiang Du, Max Gunzburger,<br>
+          Probabilistic methods for centroidal Voronoi tessellations
+          and their parallel implementations,<br>
+          Parallel Computing,<br>
+          Volume 28, 2002, pages 1477-1500.
+        </li>
+        <li>
+          The Mathworks,<br>
+          Mapping Toolbox User's Guide, R2016a.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "florida_cdf_pop.m">florida_cdf_pop.m</a>
+          converts a table of population counts into a CDF vector.
+        </li>
+        <li>
+          <a href = "florida_census.csv">florida_census.csv</a>
+          4,245 records defining census tracts in Florida.
+        </li>
+        <li>
+          <a href = "florida_census.txt">florida_census.txt</a>
+          a cut-down version of florida_census.csv containing just
+          a location id, population, longitude and latitude.
+        </li>
+        <li>
+          <a href = "florida_census_reader.m">florida_census_reader.m</a>
+          reads the Florida census tract data.
+        </li>
+        <li>
+          <a href = "florida_centroid_pop.m">florida_centroid_pop.m</a>
+          estimates population centroids of Voronoi regions, given generators.
+        </li>
+        <li>
+          <a href = "florida_cvt_pop.m">florida_cvt_pop.m</a>
+          estimates a population-based centroidal Voronoi Tessellation of Florida.
+        </li>
+        <li>
+          <a href = "florida_pdf_pop.m">florida_pdf_pop.m</a>
+          converts a table of population counts into a PDF vector.
+        </li>
+        <li>
+          <a href = "florida_point_display.m">florida_point_display.m</a>
+          displays points within the boundaries of Florida.
+        </li>
+        <li>
+          <a href = "florida_sample_pop.m">florida_sample_pop.m</a>
+          randomly samples Florida districts based on population.
+        </li>
+        <li>
+          <a href = "florida_voronoi_display.m">florida_voronoi_display.m</a>
+          displays generators, and their Voronoi diagram.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 13 January 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

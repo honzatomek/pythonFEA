@@ -1,0 +1,280 @@
+<html>
+
+  <head>
+    <title>
+      QUADRATURE_RULES_CHEBYSHEV2 - Gauss-Chebyshev Type 2 Quadrature Rules
+    </title>
+  </head>
+
+  <body alink="#ff3300" bgcolor="#eeeeee" link="#cc0000" vlink="#000055">
+
+    <h1 align="center">
+      QUADRATURE_RULES_CHEBYSHEV2 <br> Gauss-Chebyshev Type 2 Quadrature Rules
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>QUADRATURE_RULES_CHEBYSHEV2</b>
+      is a dataset directory which
+      contains examples of quadrature rules of Gauss-Chebyshev type 2.  
+    </p>
+
+    <p>
+      The Gauss-Chebyshev type 2 quadrature rule is designed 
+      to approximate integrals on the interval [-1,1], with a weight function of the
+      form <b>sqrt (1-x^2)</b>. 
+    </p>
+
+    <p>
+      Gauss-Chebyshev type 2 quadrature assumes that the integrand we are
+      considering has a form like:
+      </p><pre>        Integral ( -1 &lt;= x &lt;= +1 ) f(x) * sqrt(1-x^2) dx
+      </pre>
+    <p></p>
+
+    <p>
+      The <i>standard Gauss-Chebyshev type 2 quadrature rule </i> is used as follows:
+      </p>
+      <pre>
+        Integral ( -1 &lt;= x &lt;= +1 ) f(x) * sqrt(1-x^2) dx
+      </pre>
+      is to be approximated by
+      <pre>
+        Sum ( 1 &lt;= i &lt;= order ) w(i) * f(x(i)) 
+      </pre>
+    <p></p>
+
+    <p>
+      For this directory, a quadrature rule is stored as three files,
+      containing the weights, the points, and a file containing two
+      points defining the endpoints of the region.
+    </p>
+
+    <h3 align="center">
+      Example:
+    </h3>
+
+    <p>
+      We consider a Gauss-Chebyshev type 2 quadrature rule of order 4.
+    </p>
+
+    <p>
+      Here is the text of the "W" file storing the weights of such a rule:
+      </p><pre><code>
+  0.2170787134227061    
+  0.5683194499747424    
+  0.5683194499747423    
+  0.2170787134227060   
+      </code></pre>
+    <p></p>
+
+    <p>
+      Here is the text of the "X" file storing the abscissas of such a rule:
+      </p><pre><code>
+ -0.8090169943749473    
+ -0.3090169943749473    
+  0.3090169943749475    
+  0.8090169943749475       
+      </code></pre>
+    <p></p>
+
+    <p>
+      Here is the text of the "R" file storing the lower and upper limits of
+      the region:
+      <pre><code>
+        -1.0
+        +1.0
+      </code></pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align="center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/chebyshev2_rule/chebyshev2_rule.html">
+      CHEBYSHEV2_RULE</a>,
+      a C++ program which
+      computes and prints a Gauss-Chebyshev type 2 quadrature rule.
+    </p>
+
+    <p>
+      <a href="../../f_src/int_exactness_chebyshev2/int_exactness_chebyshev2.html">
+      INT_EXACTNESS_CHEBYSHEV2</a>,
+      a FORTRAN90 program which 
+      reads files defining a Gauss-Chebyshev type 2 quadrature rule, and test it for
+      exactness against monomial integrands.
+    </p>
+
+    <p>
+      <a href = "../../datasets/quadrature_rules_chebyshev1/quadrature_rules_chebyshev1.html">
+      QUADRATURE_RULES_CHEBYSHEV1</a>,
+      a dataset directory which
+      contains quadrature rules for integration on [-1,+1],
+      using a Gauss-Chebyshev type 1 rule.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/test_int/test_int.html">
+      TEST_INT</a>,
+      a C++ library which
+      defines test integrands for 1D quadrature rules.
+    </p>
+
+    <h3 align="center">
+      Sample Files:
+    </h3>
+
+    <p>
+      Gauss-Chebyshev Type 2 Rule, Order 1.
+      <ul>
+        <li>
+          <a href="cheby2_o1_x.txt">
+          cheby2_o1_x.txt</a>, 
+          the abscissas for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o1_w.txt">
+          cheby2_o1_w.txt</a>, 
+          the weights for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o1_r.txt">
+          cheby2_o1_r.txt</a>, 
+          the range for the rule.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Chebyshev Type 2 Rule, Order 2.
+      <ul>
+        <li>
+          <a href="cheby2_o2_x.txt">
+          cheby2_o2_x.txt</a>, 
+          the abscissas for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o2_w.txt">
+          cheby2_o2_w.txt</a>, 
+          the weights for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o2_r.txt">
+          cheby2_o2_r.txt</a>, 
+          the range for the rule.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Chebyshev Type 2 Rule, Order 4.
+      <ul>
+        <li>
+          <a href="cheby2_o4_x.txt">
+          cheby2_o4_x.txt</a>, 
+          the abscissas for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o4_w.txt">
+          cheby2_o4_w.txt</a>, 
+          the weights for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o4_r.txt">
+          cheby2_o4_r.txt</a>, 
+          the range for the rule.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Chebyshev Type 2 Rule, Order 8.
+      <ul>
+        <li>
+          <a href="cheby2_o8_x.txt">
+          cheby2_o8_x.txt</a>, 
+          the abscissas for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o8_w.txt">
+          cheby2_o8_w.txt</a>, 
+          the weights for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o8_r.txt">
+          cheby2_o8_r.txt</a>, 
+          the range for the rule.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Chebyshev Type 2 Rule, Order 16.
+      <ul>
+        <li>
+          <a href="cheby2_o16_x.txt">
+          cheby2_o16_x.txt</a>, 
+          the abscissas for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o16_w.txt">
+          cheby2_o16_w.txt</a>, 
+          the weights for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o16_r.txt">
+          cheby2_o16_r.txt</a>, 
+          the range for the rule.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Chebyshev Type 2 Rule, Order 32.
+      <ul>
+        <li>
+          <a href="cheby2_o32_x.txt">
+          cheby2_o32_x.txt</a>, 
+          the abscissas for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o32_w.txt">
+          cheby2_o32_w.txt</a>, 
+          the weights for the rule.
+        </li>
+        <li>
+          <a href="cheby2_o32_r.txt">
+          cheby2_o32_r.txt</a>, 
+          the range for the rule.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to 
+      <a href="../../datasets/datasets.html">the DATASETS page.</a>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 February 2008.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

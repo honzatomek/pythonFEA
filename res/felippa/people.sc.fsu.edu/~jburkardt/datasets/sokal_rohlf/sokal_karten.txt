@@ -1,0 +1,16 @@
+# Title: Mean dry weights (mg) of three genotypes of beetles
+# 1: ++
+# 2: +b
+# 3: bb
+#
+#  Reference:
+#  Sokal, Karten,
+#  Competition among genotypes in Tribolium castaneum at varying densities
+#  and gen frequencies (the black locust),
+#  Genetics,
+#  Volume 49, pages 149-211.
+#
+0.958  0.986  0.925
+0.971  1.051  0.952
+0.927  0.891  0.829
+0.971  1.010  0.955

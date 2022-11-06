@@ -1,0 +1,27 @@
+# Title: Birth order and birth weight
+# 1: Birth weight in pounds
+# 2: Frequency, over 1932 first borns
+# 3: Frequency, over 307 8-th borns
+#
+#  Reference:
+#  J Millis, Y Seng,
+#  The effect of age and parity of the mother on birth weight of the offspring,
+#  Annals of Human Genetics,
+#  Volume 19, pages 58-73, 1954.
+#
+ 3.25    0   0
+ 3.75    2   0
+ 4.25    3   4
+ 4.75    7   5
+ 5.25  111  19
+ 5.75  267  52
+ 6.25  457  55
+ 6.75  485  61
+ 7.25  363  48
+ 7.75  162  39
+ 8.25   64  19
+ 8.75    6   4
+ 9.25    5   0
+ 9.75    0   1
+10.25    0   0
+10.75    0   0

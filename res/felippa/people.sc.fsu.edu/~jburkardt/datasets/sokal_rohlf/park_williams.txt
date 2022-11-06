@@ -1,0 +1,14 @@
+# Title: Number of bacteria in 1cc of milk from three cows at three periods
+# 1: Cow number
+# 2: Bacteria at time of milking
+# 3: After 24 hours
+# 4: After 48 hours
+#
+#  Reference:
+#  Park, Williams, Krumweide,
+#  Pathogenic Microorganisms,
+#  Lee and Febiger, 1924.
+#
+1  12000  14000   57000
+2  13000  20000   65000
+3  21500  31000  106000

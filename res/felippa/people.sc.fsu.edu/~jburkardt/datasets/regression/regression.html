@@ -1,0 +1,662 @@
+<html>
+
+  <head>
+    <title>
+      REGRESSION - Linear Regression Datasets
+    </title>
+  <head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      REGRESSION <br> Linear Regression Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>REGRESSION</b> 
+      is a dataset directory which
+      contains test data for 
+      linear regression.
+    </p>
+
+    <p>
+      The simplest kind of linear regression involves taking a
+      set of data <b>(x<sub>i</sub>,y<sub>i</sub>)</b>, and trying 
+      to determine the "best" linear relationship
+      <pre><b>
+        y = a * x + b
+      </b></pre>
+      Commonly, we look at the vector of <i>errors</i>:
+      <pre><b>
+        e<sub>i</sub> = y<sub>i</sub> - a * x<sub>i</sub> - b
+      </b></pre>
+      and look for values <b>(a,b)</b> that minimize the L1,
+      L2 or L-infinity norm of the errors.  For problems
+      involving multivariate sets of data, the number <b>a</b>
+      becomes a matrix, and <b>b</b> a vector, but the idea
+      is similar.
+    </p>
+
+    <p>
+      The data files have a simple format:  
+      <ul>
+        <li> 
+          initial comment lines, each beginning with a "#".
+        </li>
+        <li>
+          the number of columns of data;
+        </li>
+        <li>
+          the number of rows of data;
+        </li>
+        <li>
+          for each column of data, a line containing a column label;
+          the first column is always "Index" and counts the rows;
+          if there is a column labeled "A0" it usually contains the
+          value 1.0;
+        </li>
+        <li>
+          each row of data, on a separate line, with data separated by spaces.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      There are also some extended examples, which involve an M by N linear
+      system, a set of linear constraints to be solved exactly, and
+      a set of linear inequalities.  In that case, a master file
+      lists the sizes of the three sets of data, and the name of
+      the first file, which contains the linear system.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../datasets/hartigan/hartigan.html">
+      HARTIGAN</a>,
+      a dataset directory which
+      contains datasets for testing clustering algorithms;
+    </p>
+
+    <p>
+      <a href = "../../datasets/iswr/iswr.html">
+      ISWR</a>,
+      a dataset directory which
+      contains datasets used for statistical analysis, particularly with the R language.
+    </p>
+
+    <p>
+      <a href = "../../datasets/martinez/martinez.html">
+      MARTINEZ</a>,
+      a dataset directory which
+      contains datasets for computational statistics,
+      including cluster analysis;
+    </p>
+
+    <p>
+      <a href = "../../datasets/mds/mds.html">
+      MDS</a>,
+      a dataset directory which
+      contains datasets for M-dimensional scaling;
+    </p>
+
+    <p>
+      <a href = "../../datasets/sokal_rohlf/sokal_rohlf.html">
+      SOKAL_ROHLF</a>,
+      a dataset directory which
+      contains biological datasets considered by Sokal and Rohlf.
+    </p>
+
+    <p>
+      <a href = "../../datasets/stats/stats.html">
+      STATS</a>,
+      a dataset directory which
+      contains datasets for computational statistics;
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          I Barrodale, F Roberts,<br>
+          Algorithm 552:
+          Solution of the Constrained L1 Approximation Problem,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 6, Number 2, pages 231-235, 1980.
+        </li>
+        <li>
+          Richard Gunst, Robert Mason,<br>
+          Regression Analysis and Its Applications: a data-oriented approach,<br>
+          Dekker, 1980, <br>
+          ISBN: 0824769937,<br>
+          LC: QA278.2.G85.
+        </li>
+        <li>
+          David Kahaner, Cleve Moler, Steven Nash,<br>
+          Numerical Methods and Software,<br>
+          Prentice Hall, 1989,<br>
+          ISBN: 0-13-627258-4,<br>
+          LC: TA345.K34.
+        </li>
+        <li>
+          Helmuth Spaeth,<br>
+          Mathematical Algorithms for Linear Regression,<br>
+          Academic Press, 1991,<br>
+          ISBN: 0-12-656460-4.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "x01.txt">x01.txt</a>, brain and body weight, 62 rows,
+          3 columns;
+        </li>
+        <li>
+          <a href = "x02.txt">x02.txt</a>, height, weight, catheter length,
+          12 rows, 4 columns;
+        </li>
+        <li>
+          <a href = "x03.txt">x03.txt</a>, age, blood pressure, 30 rows,
+          4 columns;
+        </li>
+        <li>
+          <a href = "x04.txt">x04.txt</a>, catalog print run versus orders,
+          38 rows, 4 columns;
+        </li>
+        <li>
+          <a href = "x05.txt">x05.txt</a>, catalog print run versus orders,
+          38 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x06.txt">x06.txt</a>, age, water temperature, length
+          of fish, 44 rows, 4 columns;
+        </li>
+        <li>
+          <a href = "x07.txt">x07.txt</a>, retardation, doctor distrust,
+          degree of illness, 53 rows, 4 columns;
+        </li>
+        <li>
+          <a href = "x08.txt">x08.txt</a>, poverty, unemployment, murder
+          rate, 20 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x09.txt">x09.txt</a>, age, weight, blood fat, 
+          25 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x10.txt">x10.txt</a>,factory operation parameters,
+          percent of unprocessed ammonia, 21 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x11.txt">x11.txt</a>, pasturage properties and price,
+          67 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x12.txt">x12.txt</a>, electrical utility data, 
+          16 rows, 6 columns;
+        </li>
+        <li>
+          <a href = "x13.txt">x13.txt</a>, production, imports, and
+          consumption data, 18 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x14.txt">x14.txt</a>, gas tank temperature and 
+          pressure, 32 rows, 6 columns;
+        </li>
+        <li>
+          <a href = "x15.txt">x15.txt</a>, gas consumption versus
+          local conditions, 48 rows, 6 columns;
+        </li>
+        <li>
+          <a href = "x16.txt">x16.txt</a>, gas consumption versus
+          local conditions, 48 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x17.txt">x17.txt</a>, octane rating versus
+          raw materials, 82 rows, 6 columns;
+        </li>
+        <li>
+          <a href = "x18.txt">x18.txt</a>, octane rating versus
+          raw materials, 82 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x19.txt">x19.txt</a>, livestock market expenses,
+          19 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x20.txt">x20.txt</a>, population and drinking data,
+          46 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x21.txt">x21.txt</a>, economic and employment data,
+          16 rows, 8 columns;
+        </li>
+        <li>
+          <a href = "x22.txt">x22.txt</a>, economic and employment data,
+          16 rows, 9 columns;
+        </li>
+        <li>
+          <a href = "x23.txt">x23.txt</a>, office worker satisfaction,
+          30 rows, 8 columns;
+        </li>
+        <li>
+          <a href = "x24.txt">x24.txt</a>, office worker satisfaction,
+          30 rows, 9 columns;
+        </li>
+        <li>
+          <a href = "x25.txt">x25.txt</a>, ground evaporation versus
+          conditions, 25 rows, 9 columns;
+        </li>
+        <li>
+          <a href = "x26.txt">x26.txt</a>, selling price of houses,
+          28 rows, 13 columns;
+        </li>
+        <li>
+          <a href = "x27.txt">x27.txt</a>, selling price of houses,
+          28 rows, 14 columns;
+        </li>
+        <li>
+          <a href = "x28.txt">x28.txt</a>, the death rate as a function
+          of other variables, 60 rows, 17 columns;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      More data files you may copy, involving overdetermined linear 
+      systems, include:
+      <ul>
+        <li>
+          <a href = "x29.txt">x29.txt</a>, points in the plane, 9 rows, 
+          4 columns;
+        </li>
+        <li>
+          <a href = "x30.txt">x30.txt</a>, a linear system, 4 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x31.txt">x31.txt</a>, a linear system, 10 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x32.txt">x32.txt</a>, a linear system, 13 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x33.txt">x33.txt</a>, a linear system, 96 rows, 6 columns;
+        </li>
+        <li>
+          <a href = "x34.txt">x34.txt</a>, a linear system, 20 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x35.txt">x35.txt</a>, a linear system, 30 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x36.txt">x36.txt</a>, a linear system, 6 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x37.txt">x37.txt</a>, a linear system, 6 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x38.txt">x38.txt</a>, a linear system, 6 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x39.txt">x39.txt</a>, a linear system, 6 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x40.txt">x40.txt</a>, a linear system, 6 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x41.txt">x41.txt</a>, a linear system, 6 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x42.txt">x42.txt</a>, a linear system, 16 rows, 11 columns;
+        </li>
+        <li>
+          <a href = "x60.txt">x60.txt</a>, a linear system, 3 rows, 5 columns;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      More data files you may copy, involving overdetermined linear systems with
+      equality and inequality constraints, include:
+      <ul>
+        <li>
+          <a href = "x43.txt">x43.txt</a>, a linear system made up of  
+          3 subsystems, 12 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x43_01.txt">x43_01.txt</a>, subsystem #1, 
+          4 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x43_02.txt">x43_02.txt</a>, subsystem #2, 
+          5 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x43_03.txt">x43_03.txt</a>, subsystem #3, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x44.txt">x44.txt</a>, a linear system made up of  
+          3 subsystems, 12 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x44_01.txt">x44_01.txt</a>, subsystem #1, 
+          4 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x44_02.txt">x44_02.txt</a>, subsystem #2, 
+          5 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x44_03.txt">x44_03.txt</a>, subsystem #3, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x45.txt">x45.txt</a>, a linear system made up of  
+          3 subsystems, 12 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x45_01.txt">x45_01.txt</a>, subsystem #1, 
+          4 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x45_02.txt">x45_02.txt</a>, subsystem #2, 
+          5 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x45_03.txt">x45_03.txt</a>, subsystem #3, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x46.txt">x46.txt</a>, a linear system, 3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x47.txt">x47.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          5 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x47_01.txt">x47_01.txt</a>, the linear system, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x47_02.txt">x47_02.txt</a>, the equality constraints, 
+          0 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x47_03.txt">x47_03.txt</a>, the inequality constraints, 
+          2 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x48.txt">x48.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          5 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x48_01.txt">x48_01.txt</a>, the linear system, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x48_02.txt">x48_02.txt</a>, the equality constraints, 
+          0 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x48_03.txt">x48_03.txt</a>, the inequality constraints, 
+          2 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x49.txt">x49.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          4 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x49_01.txt">x49_01.txt</a>, the linear system, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x49_02.txt">x49_02.txt</a>, the equality constraints, 
+          1 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x49_03.txt">x49_03.txt</a>, the inequality constraints, 
+          0 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x50.txt">x50.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          4 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x50_01.txt">x50_01.txt</a>, the linear system, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x50_02.txt">x50_02.txt</a>, the equality constraints, 
+          1 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x50_03.txt">x50_03.txt</a>, the inequality constraints, 
+          0 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x51.txt">x51.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          6 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x51_01.txt">x51_01.txt</a>, the linear system, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x51_02.txt">x51_02.txt</a>, the equality constraints, 
+          1 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x51_03.txt">x51_03.txt</a>, the inequality constraints, 
+          2 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x52.txt">x52.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          6 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x52_01.txt">x52_01.txt</a>, the linear system, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x52_02.txt">x52_02.txt</a>, the equality constraints, 
+          1 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x52_03.txt">x52_03.txt</a>, the inequality constraints, 
+          2 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x53.txt">x53.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          6 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x53_01.txt">x53_01.txt</a>, the linear system, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x53_02.txt">x53_02.txt</a>, the equality constraints, 
+          1 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x53_03.txt">x53_03.txt</a>, the inequality constraints, 
+          2 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x54.txt">x54.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          13 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x54_01.txt">x54_01.txt</a>, the linear system, 
+          8 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x54_02.txt">x54_02.txt</a>, the equality constraints, 
+          3 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x54_03.txt">x54_03.txt</a>, the inequality constraints, 
+          2 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x55.txt">x55.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          14 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x55_01.txt">x55_01.txt</a>, the linear system, 
+          9 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x55_02.txt">x55_02.txt</a>, the equality constraints, 
+          0 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x55_03.txt">x55_03.txt</a>, the inequality constraints, 
+          5 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x56.txt">x56.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          11 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x56_01.txt">x56_01.txt</a>, the linear system, 
+          6 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x56_02.txt">x56_02.txt</a>, the equality constraints, 
+          0 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x56_03.txt">x56_03.txt</a>, the inequality constraints, 
+          5 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x57.txt">x57.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          11 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x57_01.txt">x57_01.txt</a>, the linear system, 
+          6 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x57_02.txt">x57_02.txt</a>, the equality constraints, 
+          0 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x57_03.txt">x57_03.txt</a>, the inequality constraints, 
+          5 rows, 5 columns;
+        </li>
+        <li>
+          <a href = "x58.txt">x58.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          5 rows, 3 columns;
+        </li>
+        <li>
+          <a href = "x58_01.txt">x58_01.txt</a>, the linear system, 
+          3 rows, 3 columns;
+        </li>
+        <li>
+          <a href = "x58_02.txt">x58_02.txt</a>, the equality constraints, 
+          0 rows, 3 columns;
+        </li>
+        <li>
+          <a href = "x58_03.txt">x58_03.txt</a>, the inequality constraints, 
+          2 rows, 3 columns;
+        </li>
+        <li>
+          <a href = "x59.txt">x59.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          6 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x59_01.txt">x59_01.txt</a>, the linear system, 
+          3 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x59_02.txt">x59_02.txt</a>, the equality constraints, 
+          1 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x59_03.txt">x59_03.txt</a>, the inequality constraints, 
+          2 rows, 2 columns;
+        </li>
+        <li>
+          <a href = "x61.txt">x61.txt</a>, a system made up of  
+          a linear system, equality and inequality constraints, 
+          13 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x61_01.txt">x61_01.txt</a>, the linear system, 
+          8 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x61_02.txt">x61_02.txt</a>, the equality constraints, 
+          3 rows, 7 columns;
+        </li>
+        <li>
+          <a href = "x61_03.txt">x61_03.txt</a>, the inequality constraints, 
+          2 rows, 7 columns;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Miscellaneous data files:
+      <ul>
+        <li>
+          <a href = "x62.txt">x62.txt</a>, 12 measurements of dye concentration
+          in a liquid over time, 12 rows, 3 columns;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 15 July 2011.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

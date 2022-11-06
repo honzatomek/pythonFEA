@@ -1,0 +1,188 @@
+<html>
+
+  <head>
+    <title>
+      maple_area
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      maple_area
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>maple_area</b>,
+      a MATLAB code which
+      uses several approaches to estimate the area of a maple leaf
+      using an image.
+    </p>
+
+    <p>
+      For a discussion of quasirandom sampling, Brian Hayes published a 
+      picture of a maple leaf and considered how its area could be
+      estimated using a regular grid of points, random sampling, or
+      quasirandom sampling.
+    </p>
+
+    <p>
+      The MAPLE_BOUNDARY functions used various MATLAB procedures to 
+      turn the maple leaf image into a polygonal curve definining the 
+      boundary.  The functions in MAPLE_AREA use various sampling
+      techniques to estimate the area of the maple leaf.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>maple_area</b> is available in
+      <a href = "../../m_src/maple_area/maple_area.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/convex_hull/convex_hull.html">
+      convex_hull</a>,
+      a MATLAB code which
+      demonstrates the computation of the convex hull of a set of 2D points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/florida_cvt_geo/florida_cvt_geo.html">
+      florida_cvt_geo</a>,
+      MATLAB codes which
+      explore the creation of a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based solely on geometric considerations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/florida_cvt_pop/florida_cvt_pop.html">
+      florida_cvt_pop</a>,
+      MATLAB codes which
+      explore the creation of a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based on population density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_area/hand_area.html">
+      hand_area</a>,
+      a MATLAB code which
+      estimates the area of a curve which outlines a person's hand.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_data/hand_data.html">
+      hand_data</a>,
+      MATLAB codes which
+      carry out some numerical exercises based on data that came from
+      tracing several points on a person's hand.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_mesh2d/hand_mesh2d.html">
+      hand_mesh2d</a>,
+      a MATLAB code which
+      reads in points which outline a human hand,
+      and calls mesh2d(), which creates a fine triangular
+      mesh of the region outlined by the points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_area_test/maple_area_test.html">
+      maple_area_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_boundary/maple_boundary.html">
+      maple_boundary</a>,
+      a MATLAB code which
+      reads an image of a maple leaf and extracts the list of pixels
+      that form the boundary.
+    </p>
+
+    <p>
+      <a href = "../../datasets/polygon/polygon.html">
+      polygon</a>,
+      a dataset directory which
+      contains examples of polygons.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulate/triangulate.html">
+      triangulate</a>,
+      a MATLAB code which
+      triangulates a polygonal region.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Brian Hayes,<br>
+          Quasirandom Ramblings,<br>
+          American Scientist,<br>
+          Volume 99, Number 4, July-August 2011, pages 282-287.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "maple_area_estimate_grid.m">maple_area_estimate_grid.m</a>,
+          estimates the relative area of a maple leaf using a regular grid.
+        </li>
+        <li>
+          <a href = "maple_area_estimate_mc.m">maple_area_estimate_mc.m</a>,
+          estimates the relative area of a maple leaf using Monte Carlo points.
+        </li>
+        <li>
+          <a href = "maple_area_estimate_qmc.m">maple_area_estimate_qmc.m</a>,
+          estimates the relative area of a maple leaf using Quasi Monte 
+          Carlo points.
+        </li>
+        <li>
+          <a href = "maple_boundary.m">
+          maple_boundary.m</a>,
+          returns the coordinates of 1776 (x,y) points along the boundary of
+          the maple leaf.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 14 October 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

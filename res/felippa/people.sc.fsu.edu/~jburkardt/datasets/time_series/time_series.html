@@ -1,0 +1,462 @@
+<html>
+
+  <head>
+    <title>
+      TIME_SERIES - Files Describing Time Series Data
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TIME_SERIES <br> Files Describing Time Series Data
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TIME_SERIES</b> 
+      is a data directory which
+      contains examples of files describing time series.
+    </p>
+
+    <p>
+      A time series is simply a sequence of values of a time dependent
+      quantity.  Often, the samples are taken at a constant time interval.
+      Examples of time series include the Dow-Jones stock index, 
+      the daily noon temperature reading at the Roanoke airport or
+      the yearly estimate of Mexico's population.
+    </p>
+
+    <p>
+      Given a time series, there are some natural tasks that might arise,
+      including interpolation (estimating values at intermediate points),
+      integration (estimating the area below the curve from which the
+      samples were taken) or Fourier analysis (searching for underlying
+      "rhythms" or "tides" or natural cycles that compose a significant portion of
+      the observed data).
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../f_src/fftpack5/fftpack5.html">
+      FFTPACK5</a>, 
+      a FORTRAN90 library which
+      implements the Fast Fourier Transform.
+    </p>
+
+    <p>
+      <a href = "../../c_src/fftw3/fftw3.html">
+      FFTW3</a>,
+      C programs which 
+      illustrate the use of the FFTW3 library for Fast Fourier Transforms.
+    </p>
+
+    <p>
+      <a href = "../../f_src/nms/nms.html">
+      NMS</a>,
+      a FORTRAN90 library which
+      includes a wide variety of numerical software, including 
+      solvers for linear systems of equations, interpolation of data,
+      numerical quadrature, linear least squares data fitting,
+      the solution of nonlinear equations, ordinary differential equations,
+      optimization and nonlinear least squares, simulation and random numbers,
+      trigonometric approximation and Fast Fourier Transforms.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/sftpack/sftpack.html">
+      SFTPACK</a>,
+      a C++ library which
+      implements the "slow" Fourier transform, intended as a teaching
+      tool and comparison with the fast Fourier transform.
+    </p>
+
+    <p>
+      <a href = "../../datasets/stats/stats.html">
+      STATS</a>,
+      a dataset directory which
+      contains datasets for computational statistics;
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Hossein Arsham, Stephen Shao,<br>
+          Seasonal and cyclic forecasting for the small firm,<br>
+          American Journal of Small Business,<br>
+          Volume 9, Number 4, Spring 1985, pages 46-57.
+        </li>
+        <li>
+          W H Beveridge,<br>
+          Weather and Harvest Cycles,<br>
+          The Economic Journal,<br>
+          Volume 31, pages 429-452, 1921.
+        </li>
+        <li>
+          George Box, Gwilym Jenkins,<br>
+          Time Series Analysis: Forecasting and Control,<br>
+          Prentice Hall, 1991,<br>
+          ISBN: 0139051007,<br>
+          LC: QA280.B67.
+        </li>
+        <li>
+          David Kahaner, Cleve Moler, Steven Nash,<br>
+          Numerical Methods and Software,<br>
+          Prentice Hall, 1989,<br>
+          ISBN: 0-13-627258-4,<br>
+          LC: TA345.K34.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Files:
+    </h3>
+
+    <p>
+      <b>MAKE_PLOTS</b> is a MATLAB script that generates some of the plots.
+      <ul>
+        <li>
+          <a href = "make_plots.m">make_plots.m</a>,
+          the MATLAB plotting script.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>AIRLINE_PASSENGERS</b> is a table of 3 columns and 144 rows.  
+      Column 1 is the year, from 1949 to 1960, column 2 is the month,
+      from 1 to 12, and column 3 is the number of international 
+      airline passengers in thousands.  This data was presented as
+      series G by Box, Jenkins and Reinsel, 1976.
+      <ul>
+        <li>
+          <a href = "airline_passengers.txt">airline_passengers.txt</a>
+        </li>
+        <li>
+          <a href = "airline_passengers.png">airline_passengers.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>BEVERIDGE_WHEAT</b> is a table of two columns.  Column 1 is the year,
+      from 1500 to 1869.  Column two is an averaged price for wheat.
+      This data was presented by Beveridge, 1921.
+      <ul>
+        <li>
+          <a href = "beveridge_wheat.txt">beveridge_wheat.txt</a>
+        </li>
+        <li>
+          <a href = "beveridge_wheat.png">beveridge_wheat.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CO2</b> is a table of three columns.  Column 1 is a month index
+      which simply runs from 1 to 216; column 2 is the measured level
+      of carbon dioxide; column 3 is the month and year of the reading,
+      from 1/58 to 12/75.
+      This data was derived from the
+      book by David Kahaner, Cleve Moler, and Stephen Nash, 
+      "Numerical Methods and Software".
+      <ul>
+        <li>
+          <a href = "co2.txt">co2.txt</a>
+        </li>
+        <li>
+          <a href = "co2.png">co2.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>ECG</b> is a list of 4096 simulated measurements of an electrocardiogram
+      signal, over 8 cycles.  The data was generated in MATLAB using the commands
+      x = ecg(512); x = repmat ( x, 1, 8 ); x = x + 0.1 * randn ( 1, length ( x ) );
+      <ul>
+        <li>
+          <a href = "ecg.txt">ecg.txt</a>
+        </li>
+        <li>
+          <a href = "ecg.png">ecg.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>EL_NINO</b> is a table of two columns.  Column 1 is a month index
+      which simply runs from 1 to 168; column 2 is the difference in atmospheric
+      pressure between Easter Island and Darwin, Australia, measured at sea
+      level at the same moment each month.  This data was derived from the
+      book by David Kahaner, Cleve Moler, and Stephen Nash, 
+      "Numerical Methods and Software".
+      <ul>
+        <li>
+          <a href = "el_nino.txt">el_nino.txt</a>
+        </li>
+        <li>
+          <a href = "el_nino.png">el_nino.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>GNP</b> is a list of 258 estimates of the quarterly gross national product
+      for the United States, from 1947 to 2011.
+      Column 1 is the data, presented as a decimal year, from 1947.00 to 2011.25.  
+      Column 2 is the quarterly GNP estimate in billions of dollars,
+      not adjusted for inflation.  The data comes from the US Department of
+      Commerce, and is explained at http://www.bea.gov/national/pdf/nipaguid.pdf.
+      <ul>
+        <li>
+          <a href = "gnp_original.txt">gnp_original.txt</a>, the original
+          data file, with some initial text, and with dates given in a 
+          traditional format.
+        </li>
+        <li>
+          <a href = "gnp.txt">gnp.txt</a>, the datafile after the initial text was
+          removed and the quarterly 7dates were reformatted as decimal years.
+        </li>
+        <li>
+          <a href = "gnp.png">gnp.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>HOG_PRICE</b> is a table of 2 columns and 82 rows.  
+      Column 1 is the year, from 1867 to 1948, and column 2 is the 1000 times
+      the logarithm of the price per head on January 1.  This data was presented as
+      series Q by Box, Jenkins and Reinsel, 1976.
+      <ul>
+        <li>
+          <a href = "hog_price.txt">hog_price.txt</a>
+        </li>
+        <li>
+          <a href = "hog_price.png">hog_price.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>HURRICANES</b> is a table of two columns.  Column 1 is the year,
+      between 1870 and 2010, and column 2 is the number of Atlantic hurricanes.
+      <ul>
+        <li>
+          <a href = "hurricanes.txt">hurricanes.txt</a>
+        </li>
+        <li>
+          <a href = "hurricanes.png">hurricanes.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>IBM_STOCK</b> is a table of 1 columns and 369 rows, listing the closing
+      price of IBM Common Stock for each trading data from 17 May 1961 to 2 
+      November 1962.  This data was presented as series B by Box, Jenkins and 
+      Reinsel, 1976.
+      <ul>
+        <li>
+          <a href = "ibm_stock.txt">ibm_stock.txt</a>
+        </li>
+        <li>
+          <a href = "ibm_stock.png">ibm_stock.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>LYNX</b> is a table of two columns.  Column 1 is a year index
+      from 1821 to 1934; column 2 is a count of the number of lynx captured
+      that year in the Mackenzie River district of Canada, to be sold
+      by the Hudson's Bay Company.
+      <ul>
+        <li>
+          <a href = "lynx.txt">lynx.txt</a>
+        </li>
+        <li>
+          <a href = "lynx.png">lynx.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>MEASLES_NYC</b> is a table of two columns.  Column 1 lists months from
+      January 1, 1928 to November 1, 1963, as decimal values.  Column 2 lists
+      the number of measles cases reported over that month.
+      <ul>
+        <li>
+          <a href = "measles_nyc.txt">measles_nyc.txt</a>
+        </li>
+        <li>
+          <a href = "measles_nyc.png">measles_nyc.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>NILE</b> is a table of one column, namely 570 readings for the
+      flow volume of the Nile river.
+      <ul>
+        <li>
+          <a href = "nile.txt">nile.txt</a>
+        </li>
+        <li>
+          <a href = "nile.png">nile.png</a>,
+          a time plot of the data, using MATLAB's "plot" command.
+        </li>
+        <li>
+          <a href = "nile_hist.png">nile_hist.png</a>,
+          a histogram of the data, using MATLAB's "hist" command
+          and 30 bins.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>SNOWFALL</b> is a table of 10 columns.  Column 1 is the winter year
+      identifier, ranging from 1890-1891 to 2015-2016.  Columns 2 through 9 
+      are the snowfall in inches for October, November, December, January, 
+      February, March, April and May.  Column 10 is the total snowfall.
+      These measurements were taken near Michigan Tech.
+      <ul>
+        <li>
+          <a href = "snowfall.txt">snowfall.txt</a>
+        </li>
+        <li>
+          <a href = "snowfall.png">snowfall.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>SUNSPOT</b> is a table of two columns.  Column 1 is a year index
+      which runs from 1700 to 2014; column 2 is a count of the number of
+      sunspots observed that year. 
+      <ul>
+        <li>
+          <a href = "sunspot.txt">sunspot.txt</a>
+        </li>
+        <li>
+          <a href = "sunspot.png">sunspot.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>US_POPULATION_CENSUS</b> is a table of two columns.  Column 1 is a census 
+      year index which runs from 1790 to 2010 by 10's; column 2 is a count 
+      of the US population in that year.
+      <ul>
+        <li>
+          <a href = "us_population_census.txt">us_population_census.txt</a>
+        </li>
+        <li>
+          <a href = "us_population_census.png">us_population_census.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>US_POPULATION_1900S</b> is a table of two columns.  Column 1 is a
+      year index which runs from 1900 to 1999; column 2 is an estimate
+      of the US population in that year.
+      <ul>
+        <li>
+          <a href = "us_population_1900s_original.txt">us_population_1900s_original.txt</a>,
+          the original form of the data, which includes initial and final text,
+          headers, four columns of data, a blank every ten years, commas in the
+          population figures, and starts with 1999, counting down to 1900.
+        </li>
+        <li>
+          <a href = "us_population_1900s.txt">us_population_1900s.txt</a>,
+          which starts at 1900 and proceeds to 1999, has two columns of data
+          and nothing else, and has no internal commas in the population counts.
+        </li>
+        <li>
+          <a href = "us_population_1900s.png">us_population_1900s.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>WING_OSCILLATION</b> contains 329 observations of the Y coordinate
+      of the wing tip of a Boeing 737 over time, as reported by Rhett Allain,
+      in Wired Magazine, "The physics of why airplane wings oscillate in 
+      turbulence".
+      <ul>
+        <li>
+          <a href = "wing_oscillation.txt">wing_oscillation.txt</a>
+        </li>
+        <li>
+          <a href = "wing_oscillation.png">wing_oscillation.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>WOMETCO_SALES</b> is a table of two columns, listing 3 years of
+      sales data for a company, computed every four weeks.
+      <ul>
+        <li>
+          <a href = "wometco_sales.txt">wometco_sales.txt</a>
+        </li>
+        <li>
+          <a href = "wometco_sales.png">wometco_sales.png</a>,
+          a plot of the data, using MATLAB's "plot" command.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../data.html">
+      the DATA directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 06 May 2016.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

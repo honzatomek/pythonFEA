@@ -1,0 +1,19 @@
+# Title: Measurements of 5 individuals in each of 7 mouse litters
+#  1: Litter 1
+#  2: Litter 2
+#  3: Litter 3
+#  4: Litter 4
+#  5: Litter 5
+#  6: Litter 6
+#  7: Litter 7
+#
+#  Reference:
+#  R Sokal, J Rohlf,
+#  Introduction to Biostatistics,
+#  Dover, 2009.
+#
+19.49  22.94  23.06  15.90  16.72  20.00  21.52
+20.62  22.15  20.05  21.48  19.22  19.79  20.37
+19.51  19.16  21.47  22.48  26.62  21.15  21.93
+18.09  20.98  14.90  18.79  20.74  14.88  20.14
+22.75  23.13  19.72  19.70  21.82  19.79  22.28

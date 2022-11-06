@@ -1,0 +1,41 @@
+function icos_shape_test ( )
+
+%*****************************************************************************80
+%
+%% icos_shape_test() tests icos_shape().
+%
+%  Licensing:
+%
+%    This code is distributed under the GNU LGPL license.
+%
+%  Modified:
+%
+%    14 February 2003
+%
+%  Author:
+%
+%    John Burkardt
+%
+  fprintf ( 1, '\n' );
+  fprintf ( 1, 'icos_shape_test():\n' );
+  fprintf ( 1, '  For the icosahedron,\n' );
+  fprintf ( 1, '  icos_size() returns dimension information;\n' );
+  fprintf ( 1, '  icos_shape() returns face and order information.\n' );
+  fprintf ( 1, '  shape_print() prints this information.\n' );
+
+  [ point_num, edge_num, face_num, face_order_max ] = icos_size ( );
+
+  fprintf ( 1, '\n' );
+  fprintf ( 1, '  Number of points =   %d\n', point_num );
+  fprintf ( 1, '  Number of edges =    %d\n', edge_num );
+  fprintf ( 1, '  Number of faces =    %d\n', face_num );
+  fprintf ( 1, '  Maximum face order = %d\n', face_order_max );
+
+  [ point_coord, edge_point, face_order, face_point ] = icos_shape ( ...
+    point_num, edge_num, face_num, face_order_max );
+
+  shape_print ( point_num, face_num, face_order_max, ...
+    point_coord, face_order, face_point );
+
+  return
+end

@@ -1,0 +1,12 @@
+ 1  100  Jan
+ 2   23  Feb
+ 3   37  Mar
+ 4   43  Apr
+ 5  156  May
+ 6  237  Jun
+ 7  255  Jul
+ 8  314  Aug
+ 9   12  Sep
+10   20  Oct
+11   34  Nov
+12   67  Dec

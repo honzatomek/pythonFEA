@@ -1,0 +1,221 @@
+<html>
+
+  <head>
+    <title>
+      log_normal_truncated_ab
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      log_normal_truncated_ab
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>log_normal_truncated_ab</b>,
+      a MATLAB code which 
+      can evaluate quantities associated with the log normal Probability
+      Density Function (PDF) truncated to the interval [A,B].
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>log_normal_truncated_ab</b> is available in
+      <a href = "../../c_src/log_normal_truncated_ab/log_normal_truncated_ab.html">a C version</a> and
+      <a href = "../../cpp_src/log_normal_truncated_ab/log_normal_truncated_ab.html">a C++ version</a> and
+      <a href = "../../f_src/log_normal_truncated_ab/log_normal_truncated_ab.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/log_normal_truncated_ab/log_normal_truncated_ab.html">a MATLAB version</a> and
+      <a href = "../../py_src/log_normal_truncated_ab/log_normal_truncated_ab.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/log_normal/log_normal.html">
+      log_normal</a>, 
+      a MATLAB code which
+      samples the log normal distribution.
+    </p>
+
+    <p>
+      <a href = "../../m_src/log_normal_truncated_ab_test/log_normal_truncated_ab_test.html">
+      log_normal_truncated_ab_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/normal/normal.html">
+      normal</a>, 
+      a MATLAB code which
+      samples the normal distribution.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pdflib/pdflib.html">
+      pdflib</a>,
+      a MATLAB code which
+      evaluates Probability Density Functions (PDF's)
+      and produces random samples from them,
+      including beta, binomial, chi, exponential, gamma, inverse chi,
+      inverse gamma, multinomial, normal, scaled inverse chi, and uniform.
+    </p>
+
+    <p>
+      <a href = "../../m_src/prob/prob.html">
+      prob</a>,
+      a MATLAB code which
+      evaluates, samples, inverts, and characterizes a number of 
+      Probability Density Functions (PDF's) 
+      and Cumulative Density Functions (CDF's), including anglit, arcsin,
+      benford, birthday, bernoulli, beta_binomial, beta, binomial, bradford,
+      burr, cardiod, cauchy, chi, chi squared, circular, cosine, deranged,
+      dipole, dirichlet mixture, discrete, empirical, english sentence and
+      word length, error, exponential, extreme values, f, fisk, folded normal,
+      frechet, gamma, generalized logistic, geometric, gompertz, gumbel,
+      half normal, hypergeometric, inverse gaussian, laplace, levy, logistic,
+      log normal, log series, log uniform, lorentz, maxwell, multinomial,
+      nakagami, negative binomial, normal, pareto, planck, poisson,
+      power, quasigeometric, rayleigh, reciprocal, runs, sech, semicircular,
+      student t, triangle, uniform, von mises, weibull, zipf.
+    </p>
+
+    <p>
+      <a href = "../../m_src/truncated_normal/truncated_normal.html">
+      truncated_normal</a>,
+      a MATLAB code which 
+      works with the truncated normal distribution over [A,B], or
+      [A,+oo) or (-oo,B], returning the probability density function (PDF),
+      the cumulative density function (CDF), the inverse CDF, the mean,
+      the variance, and sample values.
+    </p>
+
+    <p>
+      <a href = "../../m_src/uniform/uniform.html">
+      uniform</a>,
+      a MATLAB code which
+      samples the uniform distribution.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Paul Soederlind,<br>
+          Lecture Notes - Econometrics: Some Statistics,<br>
+          8 July 2013.
+        <li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "log_normal_cdf.m">log_normal_cdf.m</a> 
+          evaluates the Log Normal CDF.
+        </li>
+        <li>
+          <a href = "log_normal_cdf_inv.m">log_normal_cdf_inv.m</a> 
+          inverts the Log Normal CDF.
+        </li>
+        <li>
+          <a href = "log_normal_pdf.m">log_normal_pdf.m</a> 
+          evaluates the Log Normal PDF.
+        </li>
+        <li>
+          <a href = "log_normal_truncated_ab_cdf.m">log_normal_truncated_ab_cdf.m</a> 
+          evaluates the Log Normal Truncated AB CDF.
+        </li>
+        <li>
+          <a href = "log_normal_truncated_ab_cdf_inv.m">
+          log_normal_truncated_ab_cdf_inv.m</a> 
+          inverts the Log Normal Truncated AB CDF.
+        </li>
+        <li>
+          <a href = "log_normal_truncated_ab_check.m">
+          log_normal_truncated_ab_check.m</a> 
+          checks the parameters of the Log Normal Truncated AB PDF.
+        </li>
+        <li>
+          <a href = "log_normal_truncated_ab_mean.m">log_normal_truncated_ab_mean.m</a> 
+          returns the mean of the Log Normal Truncated AB PDF.
+        </li>
+        <li>
+          <a href = "log_normal_truncated_ab_pdf.m">log_normal_truncated_ab_pdf.m</a> 
+          evaluates the Log Normal Truncated AB PDF.
+        </li>
+        <li>
+          <a href = "log_normal_truncated_ab_sample.m">
+          log_normal_truncated_ab_sample.m</a> 
+          samples the Log Normal Truncated AB PDF.
+        </li>
+        <li>
+          <a href = "log_normal_truncated_ab_variance.m">
+          log_normal_truncated_ab_variance.m</a> 
+          returns the variance of the Log Normal Truncated AB PDF.
+        </li>
+        <li>
+          <a href = "normal_01_cdf.m">normal_01_cdf.m</a> 
+          evaluates the Normal 01 CDF.
+        </li>
+        <li>
+          <a href = "normal_01_cdf_inv.m">normal_01_cdf_inv.m</a> 
+          inverts the Normal 01 CDF.
+        </li>
+        <li>
+          <a href = "normal_cdf.m">normal_cdf.m</a> 
+          evaluates the Normal CDF.
+        </li>
+        <li>
+          <a href = "normal_cdf_inv.m">normal_cdf_inv.m</a> 
+          inverts the Normal CDF.
+        </li>
+        <li>
+          <a href = "r8poly_value_horner.m">r8poly_value_horner.m</a> 
+          evaluates a polynomial.
+        </li>
+        <li>
+          <a href = "r8vec_mean.m">r8vec_mean.m</a> 
+          returns the mean of an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_variance.m">r8vec_variance.m</a> 
+          returns the variance of an R8VEC.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 February 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

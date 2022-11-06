@@ -1,0 +1,205 @@
+<html>
+
+  <head>
+    <title>
+      quad_mesh_order1_display
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      quad_mesh_order1_display
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>quad_mesh_order1_display</b>,
+      a MATLAB code which 
+      can make a 3D plot of piecewise constant data defined on a quadrilateral mesh.
+    </p>
+
+    <p>
+      The input from the user includes:
+      <ul>
+        <li>
+          <b>NODE_XY(1:2,1:NODE_NUM)</b>, a list of the coordinates of nodes;
+        </li>
+        <li>
+          <b>ELEMENT_NODE(1:4,1:ELEMENT_NUM)</b>, a list of the nodes that
+          make up each element in the mesh;
+        </li>
+        <li>
+          <b>VALUE(1:TRIANGLE_NUM)</b>, the value associated with each element;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>quad_mesh_order1_display</b> ( <i>'prefix'</i> )
+      </blockquote>
+      where <i>'prefix'</i> is the common file prefix:
+      <ul>
+        <li>
+          <i>'prefix'</i>_nodes.txt, lists the node coordinates;
+        </li>
+        <li>
+          <i>'prefix'</i>_elements.txt lists the indices of nodes that form elements.
+        </li>
+        <li>
+          <i>'prefix'</i>_values.txt lists the value to be assigned each element.
+        </li>
+      </ul>
+      reads the data and makes a plot.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>quad_mesh_order1_display</b> is available in
+      <a href = "../../m_src/quad_mesh_order1_display/quad_mesh_order1_display.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/bezier_surface_display/bezier_surface_display.html">
+      bezier_surface_display</a>,
+      a MATLAB code which
+      reads two files defining a bezier surface and displays it
+      within MATLAB.
+    </p>
+
+    <p>
+      <a href = "../../m_src/mesh_display/mesh_display.html">
+      mesh_display</a>, 
+      a MATLAB code which 
+      reads data defining a polygonal mesh and displays it, 
+      with optional numbering.
+    </p>
+
+    <p>
+      <a href = "../../m_src/obj_display/obj_display.html">
+      obj_display</a>,
+      a MATLAB code which
+      reads an obj file defining a 3d object and displays it within MATLAB.
+    </p>
+
+    <p>
+      <a href = "../../m_src/polygonal_surface_display/polygonal_surface_display.html">
+      polygonal_surface_display</a>,
+      a MATLAB code which
+      reads two files defining a polygonal surface and displays it
+      within MATLAB.
+    </p>
+
+    <p>
+      <a href = "../../m_src/quad_mesh/quad_mesh.html">
+      quad_mesh</a>,
+      a MATLAB code which
+      handles meshes of quadrilaterals over a 2d region;
+    </p>
+
+    <p>
+      <a href = "../../data/quad_mesh_order1/quad_mesh_order1.html">
+      quad_mesh_order1</a>,
+      a data directory which
+      defines a format for storing meshes of quadrilaterals over a 2d region,
+      and an associated data value which is constant over each quadrilateral element.
+    </p>
+
+    <p>
+      <a href = "../../m_src/quad_mesh_order1_display/quad_mesh_order1_display.html">
+      quad_mesh_order1_display</a>,
+      a MATLAB code which
+      plots piecewise constant data associated with a mesh of quadrilaterals;
+    </p>
+
+    <p>
+      <a href = "../../m_src/quad_mesh_order1_display_test/quad_mesh_order1_display_test.html">
+      quad_mesh_order1_display_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/quad_surface_display/quad_surface_display.html">
+      quad_surface_display</a>,
+      a MATLAB code which
+      reads files defining a 3d quadrilateral mesh surface and displays it
+      within MATLAB.
+    </p>
+
+    <p>
+      <a href = "../../m_src/stla_display/stla_display.html">
+      stla_display</a>,
+      a MATLAB code which
+      reads an ascii stl file defining a 3d object and displays it within MATLAB.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tet_mesh_display/tet_mesh_display.html">
+      tet_mesh_display</a>, 
+      a MATLAB code
+      which reads files defining a tet mesh and displays an image
+      within MATLAB.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tri_surface_display/tri_surface_display.html">
+      tri_surface_display</a>, 
+      a MATLAB code which reads data defining a triangular mesh
+      of a 3d surface and displays it.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_order1_display/triangulation_order1_display.html">
+      triangulation_order1_display</a>,
+      a MATLAB code which
+      plots piecewise constant data associated with a triangulation;
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "quad_mesh_order1_display.m">
+          quad_mesh_order1_display.m</a>, 
+          displays a 3D plot of piecewise data on a quadrilateral mesh.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 March 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+ 

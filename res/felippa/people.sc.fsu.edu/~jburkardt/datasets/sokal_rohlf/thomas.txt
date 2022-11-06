@@ -1,0 +1,22 @@
+# Title: Width of scutum of tick larvae sampled from 4 different cottontail rabbits.
+# 1: Host 1
+# 2: Host 2
+# 3: Host 3
+# 4: Host 4
+#
+#  Reference:
+#  P A Thomas
+#
+380  350  354  376
+376  356  360  344
+360  358  362  342
+368  376  352  372
+372  338  366  374
+366  342  372  360
+374  366  362
+382  350  344
+     344  342
+     364  358
+          351
+          348
+          348

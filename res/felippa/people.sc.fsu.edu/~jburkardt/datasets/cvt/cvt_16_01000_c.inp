@@ -1,0 +1,15 @@
+#  cvt_16_01000_c.inp
+#
+#  Same as baseline, but sample function is GRID.
+#
+m = 16
+n = 1000
+seed = 123456789
+#
+initialize uniform
+sample_function_cvt = grid
+sample_num_cvt = 500000
+iterate 100
+write cvt_16_01000_c.txt
+#
+quit

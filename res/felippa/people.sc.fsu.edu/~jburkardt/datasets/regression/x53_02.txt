@@ -1,0 +1,20 @@
+#  x53_02.txt
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Mathematical Algorithms for Linear Regression,
+#    Academic Press, 1991, page 322,
+#    ISBN 0-12-656460-4.
+#
+#  Discussion:
+#
+#    Linear system C * X = D to be satisfied exactly.
+#
+4 columns
+1 rows
+Index
+C1
+C2
+D
+1  1  1  2.0

@@ -1,0 +1,74 @@
+07-Jan-2022 21:46:25
+
+hypersphere_integrals_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test hypersphere_integrals().
+
+hypersphere_integrals_test01
+  Estimate monomial integrals using Monte Carlo
+  over the surface of the unit hypersphere in 3D.
+
+  Number of sample points used is 4192
+
+  If any exponent is odd, the integral is zero.
+  We will restrict this test to randomly chosen even exponents.
+
+  Ex  Ey  Ez     MC-Estimate           Exact      Error
+
+   4   8   4     0.000333486     0.000344615    1.11e-05
+   0   8   6       0.0101641      0.00976408    4.00e-04
+   6   8   4     8.52452e-05      9.0688e-05    5.44e-06
+   8   0   6      0.00995484      0.00976408    1.91e-04
+   4   6   6     0.000233924     0.000246153    1.22e-05
+   2   4   8      0.00190296      0.00195282    4.99e-05
+   8   4   6     8.32489e-05      9.0688e-05    7.44e-06
+   2   8   6     0.000584257     0.000574358    9.90e-06
+   6   4   8       8.321e-05      9.0688e-05    7.48e-06
+   0   6   4       0.0560345       0.0543999    1.63e-03
+   0   2   0         4.28036         4.18879    9.16e-02
+   0   8   8      0.00419929       0.0040205    1.79e-04
+   2   2   0        0.830844        0.837758    6.91e-03
+   6   4   8       8.321e-05      9.0688e-05    7.48e-06
+   8   8   8     1.65531e-06     1.84005e-06    1.85e-07
+   4   6   6     0.000233924     0.000246153    1.22e-05
+   0   8   0         1.47485         1.39626    7.86e-02
+   0   2   6        0.197316        0.199466    2.15e-03
+   0   6   2        0.204769        0.199466    5.30e-03
+   4   6   0       0.0548545       0.0543999    4.55e-04
+
+hypersphere_integrals_test02
+  Estimate monomial integrals using Monte Carlo
+  over the surface of the unit hypersphere in 6D.
+
+  Number of sample points used is 4192
+
+  If any exponent is odd, the integral is zero.
+  We will restrict this test to randomly chosen even exponents.
+
+  E1  E2  E3  E4  E5  E6     MC-Estimate           Exact      Error
+
+   0   6   6   0   4   2     1.91599e-06     2.04813e-06    1.32e-07
+   6   2   6   4   4   2     3.66594e-10     3.51671e-10    1.49e-11
+   6   6   6   2   4   4     6.39573e-12     5.49486e-12    9.01e-13
+   4   6   4   4   6   0     9.84471e-10     1.05501e-09    7.05e-11
+   6   4   4   2   2   2     1.93536e-08     1.70678e-08    2.29e-09
+   6   2   4   2   0   6     8.47742e-08     8.53388e-08    5.65e-10
+   6   4   2   4   0   2      4.4955e-07     4.09626e-07    3.99e-08
+   4   4   0   2   6   0     8.99843e-06     9.01178e-06    1.33e-08
+   6   6   4   0   6   6     3.26973e-11     2.74743e-11    5.22e-12
+   6   0   0   0   0   6      0.00529552      0.00540707    1.12e-04
+   4   0   4   2   2   6     4.23194e-07     4.09626e-07    1.36e-08
+   2   0   2   2   6   0     0.000370357     0.000360471    9.89e-06
+   0   0   6   4   6   4      2.5258e-07     2.56016e-07    3.44e-09
+   6   4   0   2   4   0     8.68236e-06     9.01178e-06    3.29e-07
+   2   4   0   0   2   2      0.00123373      0.00115351    8.02e-05
+   0   0   6   6   2   6     3.98236e-07     4.26694e-07    2.85e-08
+   6   0   2   2   6   6     1.53035e-08     1.64113e-08    1.11e-09
+   2   2   4   4   0   2      1.1829e-05     1.20157e-05    1.87e-07
+   6   6   2   4   0   6     2.07679e-09     1.75835e-09    3.18e-10
+   0   0   6   6   2   2     1.34547e-05     1.50196e-05    1.56e-06
+
+hypersphere_integrals_test():
+  Normal end of execution.
+
+07-Jan-2022 21:46:25

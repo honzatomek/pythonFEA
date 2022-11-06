@@ -1,0 +1,206 @@
+<html>
+
+  <head>
+    <title>
+      toms886
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      toms886
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>toms886</b>,
+      a MATLAB code which
+      implements an interpolation procedure based on "Padua points",
+      defined in the square [-1,+1]^2, whose interpolating power 
+      is especially good.  It is possible to map these points to the
+      general rectangle, ellipse or triangle to do interpolation on these
+      regions as well.
+    </p>
+
+    <p>
+      The text of many ACM TOMS algorithms is available online
+      through ACM:
+              <a href = "https://calgo.acm.org">
+                         https://calgo.acm.org/</a> 
+      or NETLIB:
+      <a href = "https://www.netlib.org/toms/index.html">
+      https://www.netlib.org/toms/index.html</a>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>toms886</b> is available in
+      <a href = "../../c_src/toms886/toms886.html">a C version</a> and
+      <a href = "../../cpp_src/toms886/toms886.html">a C++ version</a> and
+      <a href = "../../f_src/toms886/toms886.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/toms886/toms886.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/toms886_test/toms886_test.html">
+      toms886_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/lagrange_interp_2d/lagrange_interp_2d.html">
+      lagrange_interp_2d</a>,
+      a MATLAB code which
+      defines and evaluates the lagrange polynomial p(x,y) 
+      which interpolates a set of data depending on a 2d argument
+      that was evaluated on a product grid,
+      so that p(x(i),y(j)) = z(i,j).
+    </p>
+
+    <p>
+      <a href = "../../m_src/pwl_interp_2d/pwl_interp_2d.html">
+      pwl_interp_2d</a>,
+      a MATLAB code which
+      evaluates a piecewise linear interpolant to data defined on
+      a regular 2d grid.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pwl_interp_2d_scattered/pwl_interp_2d_scattered.html">
+      pwl_interp_2d_scattered</a>,
+      a MATLAB code which
+      evaluates a piecewise linear interpolant to data which is available
+      at an irregularly arranged set of points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/rbf_interp_2d/rbf_interp_2d.html">
+      rbf_interp_2d</a>,
+      a MATLAB code which
+      defines and evaluates radial basis function (rbf) interpolants to 2d data.
+    </p>
+
+    <p>
+      <a href = "../../m_src/shepard_interp_2d/shepard_interp_2d.html">
+      shepard_interp_2d</a>,
+      a MATLAB code which
+      defines and evaluates shepard interpolants to scattered 2d data,
+      based on inverse distance weighting.
+    </p>
+
+    <p>
+      <a href = "../../m_src/test_interp_2d/test_interp_2d.html">
+      test_interp_2d</a>,
+      a MATLAB code which
+      defines test problems for interpolation of regular 
+      or scattered data z(x,y), depending on a 2d argument.
+    </p>
+
+    <p>
+      <a href = "../../m_src/vandermonde_interp_2d/vandermonde_interp_2d.html">
+      vandermonde_interp_2d</a>,
+      a MATLAB code which
+      finds a polynomial interpolant to data z(x,y) of a 2d argument by
+      setting up and solving a linear system for the polynomial coefficients,
+      involving the vandermonde matrix.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Marco Caliari, Stefano de Marchi, Marco Vianello.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Marco Caliari, Stefano de Marchi, Marco Vianello,<br>
+          Bivariate interpolation on the square at new nodal sets,<br>
+          Applied Mathematics and Computation,<br>
+          Volume 165, Number 2, 2005, pages 261-274.
+        </li>
+        <li>
+          Marco Caliari, Stefano de Marchi, Marco Vianello,<br>
+          Algorithm 886:
+          Padua2D: Lagrange Interpolation at Padua Points on Bivariate Domains,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 35, Number 3, October 2008, Article 21, 11 pages.
+        </li>
+        <li>
+          Richard Franke,<br>
+          Scattered Data Interpolation: Tests of Some Methods,<br>
+          Mathematics of Computation,<br>
+          Volume 38, Number 157, January 1982, pages 181-200.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cheb.m">cheb.m</a>, computes normalized Chebyshev polynomials.
+        </li>
+        <li>
+          <a href = "dgemm.m">dgemm.m</a>, computes C = alpha * A * B and related operations.
+        </li>
+        <li>
+          <a href = "franke.m">franke.m</a>, returns the value of the Franke function #1.
+        </li>
+        <li>
+          <a href = "padua2.m">padua2.m</a>, 
+          computes the Padua interpolation coefficient matrix.
+        </li>
+        <li>
+          <a href = "pd2val.m">pd2val.m</a>, evaluates the Padua2 interpolant.
+        </li>
+        <li>
+          <a href = "pdpts.m">pdpts.m</a>, 
+          returns the points and weights for Padua interpolation.
+        </li>
+        <li>
+          <a href = "r8_sign.m">r8_sign.m</a>, returns the sign of an R8.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 March 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

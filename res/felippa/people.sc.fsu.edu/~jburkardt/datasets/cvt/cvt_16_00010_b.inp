@@ -1,0 +1,15 @@
+#  cvt_16_00010_b.inp
+#
+#  Use more iterations that the baseline family.
+#
+m = 16
+n = 10
+seed = 123456789
+#
+initialize uniform
+sample_function_cvt = uniform
+sample_num_cvt = 500000
+iterate 200
+write cvt_16_00010_b.txt
+#
+quit

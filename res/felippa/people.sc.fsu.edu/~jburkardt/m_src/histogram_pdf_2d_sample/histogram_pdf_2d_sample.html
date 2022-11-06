@@ -1,0 +1,196 @@
+<html>
+
+  <head>
+    <title>
+      histogram_pdf_2d_sample
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      histogram_pdf_2d_sample
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>histogram_pdf_2d_sample</b>,
+      a MATLAB code which
+      demonstrates how uniform sampling of a 2D region with respect to some
+      known Probability Density Function (PDF) can be approximated by 
+      decomposing the region into rectangles, approximating the PDF by
+      a piecewise constant function, constructing a histogram for the CDF, 
+      and then sampling.
+    </p>
+
+    <p>
+      The 2D region is assumed to be a rectangle, because this makes it
+      easy to decompose the region.  However, a similar approach could be
+      applied to any 2D region that could be, for instance, triangulated.
+    </p>
+
+    <p>
+      The PDF's considered in the examples here are separable, that is
+      <pre>
+        PDF(X,Y) = F(X) * G(Y)
+      </pre>
+      but that is simply a common feature of many scientific models,
+      and is by no means necessary.
+    </p>
+
+    <p>
+      The purpose of this program is to enable the region to be sampled
+      uniformly with respect to the PDF.  In the ideal case, this would
+      be done analytically, that is, by determining a function iCDF(u)
+      which, given a random value u between 0 and 1, would specify a point
+      (X,Y) in the region with a probability corresponding to the PDF.
+      While this is often not difficult for a 1D problem, the task of
+      constructing an inverse CDF in 2D is often impractical.   
+    </p>
+
+    <p>
+      The approach taken here is simply to use discretization.  The region
+      is discretized, into rectangles.  The PDF is discretized, replaced
+      by a function which is constant over each rectangle, amounting to
+      a sort of 2D histogram.  The CDF can be determined by ordering these
+      rectangles and then forming the running sum of the piecewise constant
+      PDF integrated successively over each rectangle (usually a normalization
+      is necessary so that the CDF runs exactly between 0 and 1).
+      Once the CDF is constructed, it is then easy to do sampling.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>histogram_pdf_2d_sample</b> is available in
+      <a href = "../../m_src/histogram_pdf_2d_sample/histogram_pdf_2d_sample.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/fem1d_sample/fem1d_sample.html">
+      fem1d_sample</a>,
+      a MATLAB code which
+      samples a scalar or vector finite element function of one variable,
+      defined by FEM files,
+      returning interpolated values at the sample points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem2d_sample/fem2d_sample.html">
+      fem2d_sample</a>,
+      a MATLAB code which
+      evaluates a finite element function defined on an order 3 or order 
+      6 triangulation.
+    </p>
+
+    <p>
+      <a href = "../../m_src/histogram_data_2d_sample/histogram_data_2d_sample.html">
+      histogram_data_2d_sample</a>,
+      a MATLAB code which
+      demonstrates how to construct a Probability Density Function (PDF)
+      from a frequency table over a 2D domain, and then to use that PDF 
+      to create new samples.
+    </p>
+
+    <p>
+      <a href = "../../m_src/histogram_pdf_sample/histogram_pdf_sample.html">
+      histogram_pdf_sample</a>,
+      a MATLAB code which
+      demonstrates how sampling can be done by starting with the
+      formula for a PDF, creating a histogram, constructing a
+      histogram for the CDF, and then sampling.
+    </p>
+
+    <p>
+      <a href = "../../m_src/histogram_pdf_2d_sample_test/histogram_pdf_2d_sample_test.html">
+      histogram_pdf_2d_sample_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/prob/prob.html">
+      prob</a>,
+      a MATLAB code which
+      evaluates and inverts a number of probabilistic distributions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/random_data/random_data.html">
+      random_data</a>,
+      a MATLAB code which
+      generates sample points for 
+      various probability distributions, spatial dimensions, and geometries;
+    </p>
+
+    <p>
+      <a href = "../../m_src/rejection_sample/rejection_sample.html">
+      rejection_sample</a>,
+      a MATLAB code which
+      demonstrates acceptance/rejection sampling.
+    </p>
+
+    <p>
+      <a href = "../../m_src/walker_sample/walker_sample.html">
+      walker_sample</a>,
+      a MATLAB code which
+      efficiently samples a discrete probability vector using
+      Walker sampling.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "discrete_cdf_to_xy.m">discrete_cdf_to_xy.m</a>,
+          the source code.
+        </li>
+        <li>
+          <a href = "r8mat_write.m">r8mat_write.m</a>,
+          writes an R8MAT to a file.
+        </li>
+        <li>
+          <a href = "r8vec_linspace2.m">r8vec_linspace2.m</a>,
+          creates a vector of linearly spaced values.
+        </li>
+        <li>
+          <a href = "r8vec_linspace3.m">r8vec_linspace3.m</a>,
+          creates a vector of linearly spaced values.
+        </li>
+        <li>
+          <a href = "set_discrete_cdf.m">set_discrete_cdf.m</a>,
+          sets a CDF from a discrete PDF.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 30 January 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+ 

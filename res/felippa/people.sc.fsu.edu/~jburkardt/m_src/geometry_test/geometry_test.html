@@ -1,0 +1,1103 @@
+<html>
+
+  <head>
+    <title>
+      geometry_test
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      geometry_test
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>geometry_test</b>,
+      a MATLAB code which
+      calls geometry(), which
+      carries out geometric calculations in 2, 3 and N space.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/geometry/geometry.html">
+      geometry</a>,
+      a MATLAB code which
+      performs geometric calculations in 2, 3 and M dimensional space,
+      including the computation of angles, areas, containment, distances,
+      intersections, lengths, and volumes.
+    </p>
+
+    <h3 align = "center">
+      Source code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "geometry_test.m">geometry_test.m</a>,
+          calls all the tests;
+        </li>
+        <li>
+          <a href = "geometry_test.sh">geometry_test.sh</a>,
+          runs all the tests;
+        </li>
+        <li>
+          <a href = "geometry_test.txt">geometry_test.txt</a>,
+          the output file;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "angle_box_2d_test.m">
+          angle_box_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "angle_contains_point_2d_test.m">
+          angle_contains_point_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "angle_deg_2d_test.m">
+          angle_deg_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "angle_half_2d_test.m">
+          angle_half_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "angle_rad_test.m">
+          angle_rad_test.m</a>
+        </li>
+        <li>
+          <a href = "angle_rad_3d_test.m">
+          angle_rad_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "angle_rad_nd_test.m">
+          angle_rad_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "angle_turn_2d_test.m">
+          angle_turn_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "annulus_area_2d_test.m">
+          annulus_area_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "annulus_sector_area_2d_test.m">
+          annulus_sector_area_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "annulus_sector_centroid_2d_test.m">
+          annulus_sector_centroid_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "ball01_sample_2d_test.m">
+          ball01_sample_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "ball01_sample_3d_test.m">
+          ball01_sample_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "ball01_sample_nd_test.m">
+          ball01_sample_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "ball01_volume_test.m">
+          ball01_volume_test.m</a>
+        </li>
+        <li>
+          <a href = "basis_map_3d_test.m">
+          basis_map_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "box_ray_int_2d_test.m">
+          box_ray_int_2d_test.m</a>,
+        </li>
+        <li>
+          <a href = "box_segment_clip_2d_test.m">
+          box_segment_clip_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_area_2d_test.m">
+          circle_area_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_dia2imp_2d_test.m">
+          circle_dia2imp_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_imp_point_dist_2d_test.m">
+          circle_imp_point_dist_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_imp_print_2d_test.m">
+          circle_imp_print_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_imp_segment_intersect_test.m">
+          circle_imp_segment_intersect_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_exp2imp_2d_test.m">
+          circle_exp2imp_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_lune_angle_by_height_2d_test.m">
+          circle_lune_angle_by_height_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_lune_area_by_angle_2d_test.m">
+          circle_lune_area_by_angle_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_lune_area_by_height_2d_test.m">
+          circle_lune_area_by_height_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_lune_centroid_2d_test.m">
+          circle_lune_centroid_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_lune_height_by_angle_2d_test.m">
+          circle_lune_height_by_angle_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_sector_area_2d_test.m">
+          circle_sector_area_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_sector_centroid_2d_test.m">
+          circle_sector_centroid_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_triangle_area_2d_test.m">
+          circle_triangle_area_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circles_intersect_area_2d_test.m">
+          circles_intersect_area_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "circles_intersect_points_2d_test.m">
+          circles_intersect_points_2d_test.m</a>,
+        </li>
+        <li>
+          <a href = "circle_exp_contains_point_2d_test.m">
+          circle_exp_contains_point_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test015.m">geometry_test015.m</a>,
+          tests CIRCLE_EXP2IMP_2D and TRIANGLE_CIRCUMCIRCLE_2D;
+        </li>
+        <li>
+          <a href = "geometry_test0155.m">geometry_test0155.m</a>,
+          tests CIRCLE_EXP2IMP_2D;
+        </li>
+        <li>
+          <a href = "geometry_test0156.m">geometry_test0156.m</a>,
+          tests CIRCLE_EXP2IMP_2D and CIRCLE_IMP2EXP_2D;
+        </li>
+        <li>
+          <a href = "circle_imp_points_test.m">
+          circle_imp_points_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_imp_points_3d_test.m">
+          circle_imp_points_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "circle_imp_points_arc_test.m">
+          circle_imp_points_arc_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test0183.m">geometry_test0183.m</a>,
+          tests CIRCLE_LLR2IMP_3D;
+        </li>
+        <li>
+          <a href = "geometry_test0185.m">geometry_test0185.m</a>,
+          tests CIRCLE_PPPR2IMP_3D;
+        </li>
+        <li>
+          <a href = "geometry_test019.m">geometry_test019.m</a>,
+          tests CIRCLE_PPR2IMP_2D;
+        </li>
+        <li>
+          <a href = "cone_volume_test.m">
+          cone_volume_test.m</a>
+        </li>
+        <li>
+          <a href = "cube_shape_test.m">
+          cube_shape_test.m</a>
+        </li>
+        <li>
+          <a href = "cylinder_point_dist_test.m">
+          cylinder_point_dist_test.m</a>
+        </li>
+        <li>
+          <a href = "cylinder_point_dist_signed_test.m">
+          cylinder_point_dist_signed_test.m</a>
+        </li>
+        <li>
+          <a href = "cylinder_point_inside_test.m">
+          cylinder_point_inside_test.m</a>
+        </li>
+        <li>
+          <a href = "cylinder_point_near_test.m">
+          cylinder_point_near_test.m</a>
+        </li>
+        <li>
+          <a href = "cylinder_sample_test.m">
+          cylinder_sample_test.m</a>
+        </li>
+        <li>
+          <a href = "cylinder_volume_test.m">
+          cylinder_volume_test.m</a>
+        </li>
+        <li>
+          <a href = "degrees_to_radians_test.m">
+          degrees_to_radians_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test021.m">geometry_test021.m</a>,
+          tests DIRECTION_PERT_3D;
+        </li>
+        <li>
+          <a href = "direction_uniform_3d_test.m">
+          direction_uniform_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "direction_uniform_nd_test.m">
+          direction_uniform_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "disk_point_dist_3d_test.m">
+          disk_point_dist_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "dms_to_radians_test.m">
+          dms_to_radians_test.m</a>
+        </li>
+        <li>
+          <a href = "dodec_shape_test.m">
+          dodec_shape_test.m</a>
+        </li>
+        <li>
+          <a href = "dual_shape_test.m">
+          dual_shape_test.m</a>
+        </li>
+        <li>
+          <a href = "dual_size_test.m">
+          dual_size_test.m</a>
+        </li>
+        <li>
+          <a href = "halfplane_contains_point_2d_test.m">
+          halfplane_contains_point_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test029.m">geometry_test029.m</a>,
+          tests HALFSPACE_IMP_TRIANGLE_INT_3D;
+        </li>
+        <li>
+          <a href = "geometry_test030.m">geometry_test030.m</a>,
+          tests HALFSPACE_NORMAL_TRIANGLE_INT_3D;
+        </li>
+        <li>
+          <a href = "geometry_test0315.m">geometry_test0315.m</a>,
+          tests HEXAGON_CONTAINS_POINT_2D;
+        </li>
+        <li>
+          <a href = "geometry_test032.m">geometry_test032.m</a>,
+          tests HEXAGON_SHAPE_2D;
+        </li>
+        <li>
+          <a href = "hexagon01_vertices_test.m">
+          hexagon01_vertices_test.m</a>
+        </li>
+        <li>
+          <a href = "hyperball01_volume_test.m">
+          hyperball01_volume_test.m</a>
+        </li>
+        <li>
+          <a href = "hyperball01_volume_pnorm_test.m">
+          hyperball01_volume_pnorm_test.m</a>
+        </li>
+        <li>
+          <a href = "i4_wrap_test.m">
+          i4_wrap_test.m</a>
+        </li>
+        <li>
+          <a href = "i4vec_heap_d_test.m">
+          i4vec_heap_d_test.m</a>
+        </li>
+        <li>
+          <a href = "i4vec_indicator1_test.m">
+          i4vec_indicator1_test.m</a>
+        </li>
+        <li>
+          <a href = "i4vec_lcm_test.m">
+          i4vec_lcm_test.m</a>
+        </li>
+        <li>
+          <a href = "i4vec_print_test.m">
+          i4vec_print_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test0322.m">geometry_test0322.m</a>,
+          tests I4COL_FIND_ITEM;
+        </li>
+        <li>
+          <a href = "geometry_test0323.m">geometry_test0323.m</a>,
+          tests I4COL_FIND_PAIR_WRAP;
+        </li>
+        <li>
+          <a href = "icos_shape_test.m">
+          icos_shape_test.m</a>
+        </li>
+        <li>
+          <a href = "i4vec_uniform_ab_test.m">
+          i4vec_uniform_ab_test.m</a>
+        </li>
+        <li>
+          <a href = "line_exp_perp_2d_test.m">
+          line_exp_perp_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "line_exp_normal_test.m">
+          line_exp_normal_test.m</a>
+        </li>
+        <li>
+          <a href = "line_exp_point_dist_test.m">
+          line_exp_point_dist_test.m</a>
+        </li>
+        <li>
+          <a href = "line_exp_point_dist_3d_test.m">
+          line_exp_point_dist_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "line_exp_point_dist_signed_test.m">
+          line_exp_point_dist_signed_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test034.m">geometry_test034.m</a>,
+          tests LINE_EXP_POINT_NEAR_2D;
+        </li>
+        <li>
+          <a href = "line_exp2imp_2d_test.m">
+          line_exp2imp_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test0346.m">geometry_test0346.m</a>,
+          tests LINE_EXP2PAR_2D and LINE_PAR2EXP_2D;
+        </li>
+        <li>
+          <a href = "geometry_test035.m">geometry_test035.m</a>,
+          tests LINE_IMP_POINT_DIST_2D;
+        </li>
+        <li>
+          <a href = "geometry_test0351.m">geometry_test0351.m</a>,
+          tests LINE_IMP_POINT_NEAR_2D;
+        </li>
+        <li>
+          <a href = "geometry_test0352.m">geometry_test0352.m</a>,
+          tests LINE_IMP_POINT_NEAR_3D;
+        </li>
+        <li>
+          <a href = "line_imp2exp_2d_test.m">
+          line_imp2exp_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "lines_exp_angle_3d_test.m">
+          lines_exp_angle_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "lines_exp_int_2d_test.m">
+          lines_exp_int_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "lines_imp_int_2d_test.m">
+          lines_imp_int_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test0385.m">geometry_test0385.m</a>,
+          tests LINES_EXP_DIST_3D and LINES_EXP_DIST_3D_2;
+        </li>
+        <li>
+          <a href = "geometry_test03855.m">geometry_test03855.m</a>,
+          tests LINES_EXP_NEAR_3D;
+        </li>
+        <li>
+          <a href = "geometry_test0386.m">geometry_test0386.m</a>,
+          tests LINES_EXP_EQUAL_2D;
+        </li>
+        <li>
+          <a href = "geometry_test040.m">geometry_test040.m</a>,
+          tests LINES_IMP_ANGLE_2D;
+        </li>
+        <li>
+          <a href = "geometry_test041.m">geometry_test041.m</a>,
+          tests LINES_IMP_DIST_2D;
+        </li>
+        <li>
+          <a href = "geometry_test0416.m">geometry_test0416.m</a>,
+          tests LINES_PAR_INT_2D;
+        </li>
+        <li>
+          <a href = "geometry_test046.m">geometry_test046.m</a>,
+          tests MINABS;
+        </li>
+        <li>
+          <a href = "geometry_test047.m">geometry_test047.m</a>,
+          tests MINQUAD;
+        </li>
+        <li>
+          <a href = "octahedron_shape_test.m">
+          octahedron_shape_test.m</a>
+        </li>
+        <li>
+          <a href = "parallelogram_area_test.m">
+          parallelogram_area_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test0478.m">geometry_test0478.m</a>,
+          tests PARALLELOGRAM_AREA_3D.
+        </li>
+        <li>
+          <a href = "geometry_test048.m">geometry_test048.m</a>,
+          tests PARALLELOGRAM_CONTAINS_POINT_2D.
+        </li>
+        <li>
+          <a href = "geometry_test0485.m">geometry_test0485.m</a>,
+          tests PARALLELOGRAM_CONTAINS_POINT_2D.
+        </li>
+        <li>
+          <a href = "geometry_test049.m">geometry_test049.m</a>,
+          tests PARALLELOGRAM_CONTAINS_POINT_3D.
+        </li>
+        <li>
+          <a href = "geometry_test0493.m">geometry_test0493.m</a>,
+          tests PARABOLA_EX and PARABOLA_EX2.
+        </li>
+        <li>
+          <a href = "geometry_test0495.m">geometry_test0495.m</a>,
+          tests PARALLELEPIPED_POINT_DIST_3D.
+        </li>
+        <li>
+          <a href = "plane_exp_normal_test.m">
+          plane_exp_normal_test.m</a>
+        </li>
+        <li>
+          <a href = "plane_exp_project_test.m">
+          plane_exp_project_test.m</a>
+        </li>
+        <li>
+          <a href = "plane_exp2imp_3d_test.m">
+          plane_exp2imp_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test052.m">geometry_test052.m</a>,
+          tests PLANE_EXP2NORMAL_3D.
+        </li>
+        <li>
+          <a href = "geometry_test054.m">geometry_test054.m</a>,
+          tests PLANE_IMP2EXP_3D.
+        </li>
+        <li>
+          <a href = "geometry_test055.m">geometry_test055.m</a>,
+          tests PLANE_IMP2NORMAL_3D.
+        </li>
+        <li>
+          <a href = "geometry_test056.m">geometry_test056.m</a>,
+          tests PLANE_IMP_LINE_PAR_INT_3D.
+        </li>
+        <li>
+          <a href = "geometry_test057.m">geometry_test057.m</a>,
+          tests PLANE_IMP_SEGMENT_NEAR_3D.
+        </li>
+        <li>
+          <a href = "geometry_test058.m">geometry_test058.m</a>,
+          tests PLANE_IMP_POINT_DIST_3D and PLANE_IMP_POINT_DIST_SIGNED_3D.
+        </li>
+        <li>
+          <a href = "geometry_test059.m">geometry_test059.m</a>,
+          tests PLANE_IMP_TRIANGLE_NEAR_3D.
+        </li>
+        <li>
+          <a href = "geometry_test060.m">geometry_test060.m</a>,
+          tests PLANE_IMP_TRIANGLE_INT_3D.
+        </li>
+        <li>
+          <a href = "geometry_test061.m">geometry_test061.m</a>,
+          tests PLANE_NORMAL_BASIS_3D.
+        </li>
+        <li>
+          <a href = "geometry_test0615.m">geometry_test0615.m</a>,
+          tests PLANE_NORMAL_LINE_EXP_INT_3D;
+        </li>
+        <li>
+          <a href = "geometry_test0616.m">geometry_test0616.m</a>,
+          tests PLANE_NORMAL_QR_TO_XYZ and PLANE_NORMAL_XYZ_TO_QR;
+        </li>
+        <li>
+          <a href = "geometry_test0617.m">geometry_test0617.m</a>,
+          tests PLANE_NORMAL_TETRAHEDRON_INTERSECT;
+        </li>
+        <li>
+          <a href = "plane_normal_triangle_int_3d_test.m">
+          plane_normal_triangle_int_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test063.m">geometry_test063.m</a>,
+          tests PLANE_NORMAL2EXP_3D;
+        </li>
+        <li>
+          <a href = "geometry_test064.m">geometry_test064.m</a>,
+          tests PLANE_NORMAL2IMP_3D;
+        </li>
+        <li>
+          <a href = "plane_exp_pro3_test.m">
+          plane_exp_pro3_test.m</a>
+        </li>
+        <li>
+          <a href = "points_centroid_2d_test.m">
+          points_centroid_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "points_colin_2d_test.m">
+          points_colin_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "polar_to_xy_test.m">
+          polar_to_xy_test.m</a>
+        </li>
+        <li>
+          <a href = "polyhedron_area_3d_test.m">
+          polyhedron_area_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "polyhedron_centroid_3d_test.m">
+          polyhedron_centroid_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "polyhedron_contains_point_3d_test.m">
+          polyhedron_contains_point_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "polyhedron_volume_3d_test.m">
+          polyhedron_volume_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "polyhedron_volume_3d_2_test.m">
+          polyhedron_volume_3d_2_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test084.m">geometry_test084.m</a>,
+          tests POLYLINE_INDEX_POINT_ND and POLYLINE_ARCLENGTH_ND;
+        </li>
+        <li>
+          <a href = "geometry_test0844.m">geometry_test0844.m</a>,
+          tests POLYLINE_POINTS_ND;
+        </li>
+        <li>
+          <a href = "geometry_test0845.m">geometry_test0845.m</a>,
+          tests POLYLOOP_ARCLENGTH_ND;
+        </li>
+        <li>
+          <a href = "geometry_test0846.m">geometry_test0846.m</a>,
+          tests POLYLOOP_POINTS_ND;
+        </li>
+        <li>
+          <a href = "provec_test.m">
+          provec_test.m</a>
+        </li>
+        <li>
+          <a href = "pyramid_volume_3d_test.m">
+          pyramid_volume_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "pyramid01_volume_3d_test.m">
+          pyramid01_volume_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "r8_haversine_test.m">
+          r8_haversine_test.m</a>
+        </li>
+        <li>
+          <a href = "r8vec3_print_test.m">
+          r8vec3_print_test.m</a>
+        </li>
+        <li>
+          <a href = "r82vec_part_quick_a_test.m">
+          r82vec_part_quick_a_test.m</a>
+        </li>
+        <li>
+          <a href = "r82vec_permute_test.m">
+          r82vec_permute_test.m</a>
+        </li>
+        <li>
+          <a href = "r82vec_print_test.m">
+          r82vec_print_test.m</a>
+        </li>
+        <li>
+          <a href = "r82vec_sort_heap_index_a_test.m">
+          r82vec_sort_heap_index_a_test.m</a>
+        </li>
+        <li>
+          <a href = "r82vec_sort_quick_a_test.m">
+          r82vec_sort_quick_a_test.m</a>
+        </li>
+        <li>
+          <a href = "r8mat_inverse_3d_test.m">
+          r8mat_inverse_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "r8vec_any_normal_test.m">
+          r8vec_any_normal_test.m</a>
+        </li>
+        <li>
+          <a href = "r8vec_normal_01_test.m">
+          r8vec_normal_01_test.m</a>
+        </li>
+        <li>
+          <a href = "r8vec_scalar_triple_product_test.m">
+          r8vec_scalar_triple_product_test.m</a>
+        </li>
+        <li>
+          <a href = "radec_distance_3d_test.m">
+          radec_distance_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "radec_to_xyz_test.m">
+          radec_to_xyz_test.m</a>
+        </li>
+        <li>
+          <a href = "radians_to_degrees_test.m">
+          radians_to_degrees_test.m</a>
+        </li>
+        <li>
+          <a href = "radians_to_dms_test.m">
+          radians_to_dms_test.m</a>
+        </li>
+        <li>
+          <a href = "rtp_to_xyz_test.m">
+          rtp_to_xyz_test.m</a>,
+          converts (R,Theta,Phi) coordinates to XYZ coordinates;
+        </li>
+        <li>
+          <a href = "segment_point_dist_2d_test.m">
+          segment_point_dist_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "segment_contains_point_1d_test.m">
+          segment_contains_point_1d_test.m</a>
+        </li>
+        <li>
+          <a href = "segment_point_dist_test.m">
+          segment_point_dist_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test0366.m">geometry_test0366.m</a>,
+          tests SEGMENT_POINT_DIST_3D;
+        </li>
+        <li>
+          <a href = "segment_point_near_test.m">
+          segment_point_near_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test0368.m">geometry_test0368.m</a>,
+          tests SEGMENT_POINT_NEAR_3D;
+        </li>
+        <li>
+          <a href = "geometry_test037.m">geometry_test037.m</a>,
+          tests SEGMENT_POINT_NEAR_3D;
+        </li>
+        <li>
+          <a href = "geometry_test0418.m">geometry_test0418.m</a>,
+          tests SEGMENTS_CURVATURE_2D;
+        </li>
+        <li>
+          <a href = "geometry_test042.m">geometry_test042.m</a>,
+          tests SEGMENTS_DIST_2D;
+        </li>
+        <li>
+          <a href = "geometry_test043.m">geometry_test043.m</a>,
+          tests SEGMENTS_DIST_3D;
+        </li>
+        <li>
+          <a href = "geometry_test044.m">geometry_test044.m</a>,
+          tests SEGMENTS_INT_1D;
+        </li>
+        <li>
+          <a href = "geometry_test045.m">geometry_test045.m</a>,
+          tests SEGMENTS_INT_2D;
+        </li>
+        <li>
+          <a href = "geometry_test196.m">geometry_test196.m</a>,
+          tests SHAPE_POINT_DIST_2D;
+        </li>
+        <li>
+          <a href = "geometry_test197.m">geometry_test197.m</a>,
+          tests SHAPE_POINT_DIST_2D;
+        </li>
+        <li>
+          <a href = "geometry_test198.m">geometry_test198.m</a>,
+          tests SHAPE_POINT_NEAR_2D;
+        </li>
+        <li>
+          <a href = "geometry_test199.m">geometry_test199.m</a>,
+          tests SHAPE_RAY_INT_2D;
+        </li>
+        <li>
+          <a href = "geometry_test1788.m">geometry_test1788.m</a>,
+          tests SIMPLEX_LATTICE_LAYER_POINT_NEXT;
+        </li>
+        <li>
+          <a href = "geometry_test1789.m">geometry_test1789.m</a>,
+          tests SIMPLEX_LATTICE_POINT_NEXT;
+        </li>
+        <li>
+          <a href = "simplex_volume_nd_test.m">
+          simplex_volume_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "simplex01_volume_nd_test.m">
+          simplex01_volume_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "soccer_shape_test.m">
+          soccer_shape_test.m</a>
+        </li>
+        <li>
+          <a href = "sort_heap_external_test.m">
+          sort_heap_external_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere_cap_volume_3d_test.m">
+          sphere_cap_volume_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test0127.m">geometry_test0127.m</a>,
+          tests SPHERE_CAP_AREA_3D and SPHERE_CAP_AREA_ND;
+        </li>
+        <li>
+          <a href = "sphere_dia2imp_3d_test.m">
+          sphere_dia2imp_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test068.m">geometry_test068.m</a>,
+          tests SPHERE_DISTANCE routines;
+        </li>
+        <li>
+          <a href = "geometry_test182.m">geometry_test182.m</a>,
+          tests SPHERE_EXP_CONTAINS_POINT_3D;
+        </li>
+        <li>
+          <a href = "geometry_test183.m">geometry_test183.m</a>,
+          tests SPHERE_EXP_POINT_NEAR_3D and SPHERE_IMP_POINT_NEAR_3D;
+        </li>
+        <li>
+          <a href = "geometry_test1835.m">geometry_test1835.m</a>,
+          tests SPHERE_EXP2IMP_3D and SPHERE_IMP2EXP_3D;
+        </li>
+        <li>
+          <a href = "geometry_test1836.m">geometry_test1836.m</a>,
+          tests SPHERE_EXP2IMP_ND;
+        </li>
+        <li>
+          <a href = "sphere_imp_area_nd_test.m">
+          sphere_imp_area_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere_imp_contains_point_3d_test.m">
+          sphere_imp_contains_point_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere_imp_gridfaces_3d_test.m">
+          sphere_imp_gridfaces_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere_imp_point_project_3d_test.m">
+          sphere_imp_point_project_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere_imp_volume_nd_test.m">
+          sphere_imp_volume_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere_triangle_sides_to_angles_test.m">
+          sphere_triangle_sides_to_angles_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere01_area_nd_test.m">
+          sphere01_area_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere01_sample_2d_test.m">
+          sphere01_sample_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "sphere01_sample_3d_test.m">
+          sphere01_sample_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test192.m">geometry_test192.m</a>,
+          tests SPHERE01_SAMPLE_3D_2;
+        </li>
+        <li>
+          <a href = "geometry_test193.m">geometry_test193.m</a>,
+          tests SPHERE01_SAMPLE_ND;
+        </li>
+        <li>
+          <a href = "geometry_test194.m">geometry_test194.m</a>,
+          tests SPHERE01_SAMPLE2_ND;
+        </li>
+        <li>
+          <a href = "geometry_test195.m">geometry_test195.m</a>,
+          tests SPHERE01_SAMPLE3_ND;
+        </li>
+        <li>
+          <a href = "sphere01_volume_nd_test.m">
+          sphere01_volume_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "string_2d_test.m">
+          string_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "super_ellipse_points_2d_test.m">
+          super_ellipse_points_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test204.m">geometry_test204.m</a>,
+          tests TMAT_INIT, TMAT_ROT_AXIS, TMAT_ROT_VECTOR, TMAT_SCALE,
+          TMAT_SHEAR and TMAT_TRANS;
+        </li>
+        <li>
+          <a href = "tmat_mxp2_test.m">
+          tmat_mxp2_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_angles_2d_test.m">
+          triangle_angles_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_angles_3d_test.m">
+          triangle_angles_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_area_test.m">
+          triangle_area_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_area_3d_test.m">
+          triangle_area_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_area_heron_test.m">
+          triangle_area_heron_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_barycentric_test.m">
+          triangle_barycentric_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_centroid_test.m">
+          triangle_centroid_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_centroid_3d_test.m">
+          triangle_centroid_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_circumcenter_test.m">
+          triangle_circumcenter_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_circumcenter_nd_test.m">
+          triangle_circumcenter_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test2067.m">geometry_test2067.m</a>,
+          tests TRIANGLE_CIRCUMCIRCLE_2D and TRIANGLE_CIRCUMCIRCLE_2D_2;
+        </li>
+        <li>
+          <a href = "triangle_circumradius_test.m">
+          triangle_circumradius_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test2068.m">geometry_test2068.m</a>,
+          tests TRIANGLE_CONTAINS_LINE_EXP_3D;
+        </li>
+        <li>
+          <a href = "geometry_test2069.m">geometry_test2069.m</a>,
+          tests TRIANGLE_CONTAINS_LINE_PAR_3D;
+        </li>
+        <li>
+          <a href = "geometry_test207.m">geometry_test207.m</a>,
+          tests TRIANGLE_CONTAINS_POINT_2D_1, TRIANGLE_CONTAINS_POINT_2D_2,
+          TRIANGLE_CONTAINS_POINT_2D_3;
+        </li>
+        <li>
+          <a href = "triangle_diameter_test.m">
+          triangle_diameter_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_gridpoints_test.m">
+          triangle_gridpoints_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_incenter_test.m">
+          triangle_incenter_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_incircle_test.m">
+          triangle_incircle_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_inradius_test.m">
+          triangle_inradius_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_lattice_layer_point_next_test.m">
+          triangle_lattice_layer_point_next_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_lattice_point_next_test.m">
+          triangle_lattice_point_next_test.m</a>
+        </li>
+        <li>
+          <a href = "triangle_orientation_test.m">
+          triangle_orientation_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test2103.m">geometry_test2103.m</a>,
+          tests TRIANGLE_ORTHOCENTER_2D;
+        </li>
+        <li>
+          <a href = "triangle_point_dist_test.m">
+          triangle_point_dist_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test20715.m">geometry_test20715.m</a>,
+          tests TRIANGLE_POINT_DIST_SIGNED_2D;
+        </li>
+        <li>
+          <a href = "geometry_test2095.m">geometry_test2095.m</a>,
+          tests TRIANGLE_POINT_DIST_3D;
+        </li>
+        <li>
+          <a href = "triangle_point_near_test.m">
+          triangle_point_near_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test2115.m">geometry_test2115.m</a>,
+          tests TRIANGLE_QUALITY_2D;
+        </li>
+        <li>
+          <a href = "triangle_sample_test.m">
+          triangle_sample_test.m</a>
+        </li>
+        <li>
+          <a href = "geometry_test213.m">geometry_test213.m</a>,
+          tests TRIANGLE_XSI_TO_XY,
+          and TRIANGLE_XY_TO_XSI;
+        </li>
+        <li>
+          <a href = "geometry_test219.m">geometry_test219.m</a>,
+          tests TUBE_2D;
+        </li>
+        <li>
+          <a href = "geometry_test220.m">geometry_test220.m</a>,
+          tests VECTOR_DIRECTIONS_ND;
+        </li>
+        <li>
+          <a href = "geometry_test221.m">geometry_test221.m</a>,
+          tests VECTOR_DIRECTIONS_ND;
+        </li>
+        <li>
+          <a href = "geometry_test2225.m">geometry_test2225.m</a>,
+          tests VECTOR_ROTATE_3D;
+        </li>
+        <li>
+          <a href = "vector_rotate_base_2d_test.m">
+          vector_rotate_base_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "vector_separation_nd_test.m">
+          vector_separation_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "xy_to_polar_test.m">
+          xy_to_polar_test.m</a>
+        </li>
+        <li>
+          <a href = "xyz_to_radec_test.m">
+          xyz_to_radec_test.m</a>
+        </li>
+        <li>
+          <a href = "vector_unit_nd_test.m">
+          vector_unit_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "voxels_dist_l1_nd_test.m">
+          voxels_dist_l1_nd_test.m</a>
+        </li>
+        <li>
+          <a href = "voxels_line_3d_test.m">
+          voxels_line_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "voxels_region_3d_test.m">
+          voxels_region_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "voxels_step_3d_test.m">
+          voxels_step_3d_test.m</a>
+        </li>
+        <li>
+          <a href = "vector_rotate_2d_test.m">
+          vector_rotate_2d_test.m</a>
+        </li>
+        <li>
+          <a href = "wedge01_volume_test.m">
+          wedge01_volume_test.m</a>
+        </li>
+        <li>
+          <a href = "xyz_to_rtp_test.m">
+          xyz_to_rtp_test.m</a>
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 April 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

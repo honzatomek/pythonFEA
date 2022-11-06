@@ -1,0 +1,46 @@
+07-Jan-2022 19:15:57
+
+ellipse_grid_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test ellipse_grid().
+
+ellipse_grid_test01():
+  ellipse_grid() defines a grid of points
+  with N+1 points on the minor half axis,
+  based on any ellipse.
+
+  We use N = 8
+  Radius R = (2.000000,1.000000)
+  Center C = (1.000000,2.000000)
+
+  Number of grid points will be 455
+
+  Part of the grid point array:
+
+     1               1               2
+     2         1.11765               2
+     3        0.882353               2
+     4         1.23529               2
+     5        0.764706               2
+     6         1.35294               2
+     7        0.647059               2
+     8         1.47059               2
+     9        0.529412               2
+    10         1.58824               2
+    11        0.411765               2
+    12         1.70588               2
+    13        0.294118               2
+    14         1.82353               2
+    15        0.176471               2
+    16         1.94118               2
+    17       0.0588235               2
+    18         2.05882               2
+  ....  ..............  ..............
+   455        0.411765         1.05882
+
+  Data written to the file "ellipse_grid_test01.xy".
+
+ellipse_grid_test():
+  Normal end of execution.
+
+07-Jan-2022 19:15:57

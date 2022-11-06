@@ -1,0 +1,512 @@
+<html>
+
+  <head>
+    <title>
+      quadrule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      quadrule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>quadrule</b>,
+      a MATLAB code which
+      sets quadrature rules, used to approximate the integral of a function
+      over various domains.
+    </p>
+
+    <p>
+      QUADRULE returns the abscissas and weights for a variety of
+      one dimensional quadrature rules for approximating the integral
+      of a function.  The best rule is generally Gauss-Legendre quadrature,
+      but other rules offer special features, including the ability to
+      handle certain weight functions, to approximate an integral
+      on an infinite integration region, or to estimate the approximation
+      error.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>quadrule</b> is available in
+      <a href = "../../c_src/quadrule/quadrule.html">a C version</a> and
+      <a href = "../../cpp_src/quadrule/quadrule.html">a C++ version</a> and
+      <a href = "../../f_src/quadrule/quadrule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/quadrule/quadrule.html">a MATLAB version</a> and
+      <a href = "../../py_src/quadrule/quadrule.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/alpert_rule/alpert_rule.html">
+      alpert_rule</a>,
+      a MATLAB code which
+      can set up an alpert quadrature rule for functions which are 
+      regular, log(x) singular, or 1/sqrt(x) singular.
+    </p>
+
+    <p>
+      <a href = "../../m_src/clenshaw_curtis_rule/clenshaw_curtis_rule.html">
+      clenshaw_curtis_rule</a>,
+      a MATLAB code which
+      defines a multiple dimension clenshaw curtis quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/line_felippa_rule/line_felippa_rule.html">
+      line_felippa_rule</a>,
+      a MATLAB code which
+      returns the points and weights of a felippa quadrature rule
+      over the interior of a line segment in 1d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/quadmom/quadmom.html">
+      quadmom</a>,
+      a MATLAB code which
+      computes a gaussian quadrature rule for a weight function rho(x)
+      based on the golub-welsch procedure that only requires knowledge
+      of the moments of rho(x).
+    </p>
+
+    <p>
+      <a href = "../../datasets/quadrature_rules/quadrature_rules.html">
+      quadrature_rules</a>,
+      a dataset directory which
+      contains sets of files that define quadrature
+      rules over various 1d intervals or multidimensional hypercubes.
+    </p>
+
+    <p>
+      <a href = "../../m_src/quadrule_test/quadrule_test.html">
+      quadrule_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/quadrule_fast/quadrule_fast.html">
+      quadrule_fast</a>,
+      a MATLAB code which
+      defines efficient versions of a few 1d quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../../m_src/test_int/test_int.html">
+      test_int</a>,
+      a MATLAB code which
+      defines test integrands for 1d quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../../m_src/toms655/toms655.html">
+      toms655</a>,
+      a MATLAB code which
+      computes the weights for interpolatory quadrature rule;<br>
+      this library is commonly called <b>iqpack</b>;<br>
+      this is a MATLAB version of acm toms algorithm 655.
+    </p>
+
+    <p>
+      <a href = "../../m_src/truncated_normal_rule/truncated_normal_rule.html">
+      truncated_normal_rule</a>,
+      a MATLAB code which 
+      computes a quadrature rule for a normal probability density function (pdf),
+      also called a gaussian distribution, that has been
+      truncated to [a,+oo), (-oo,b] or [a,b].
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cdgqf.m">cdgqf.m</a>
+          computes a Gauss quadrature formula with default A, B and simple knots.
+        </li>
+        <li>
+          <a href = "cgqf.m">cgqf.m</a>
+          computes knots and weights of a Gauss quadrature formula.
+        </li>
+        <li>
+          <a href = "chebyshev_set.m">chebyshev_set.m</a>,
+          sets abscissas and weights for Chebyshev quadrature.
+        </li>
+        <li>
+          <a href = "chebyshev1_compute.m">chebyshev1_compute.m</a>
+          computes a Gauss-Chebyshev type 1 quadrature rule.
+        </li>
+        <li>
+          <a href = "chebyshev1_integral.m">chebyshev1_integral.m</a>
+          evaluates a monomial Chebyshev type 1 integral.
+        </li>
+        <li>
+          <a href = "chebyshev1_set.m">chebyshev1_set.m</a>,
+          sets a Chebyshev Type 1 rule.
+        </li>
+        <li>
+          <a href = "chebyshev2_compute.m">chebyshev2_compute.m</a>
+          computes a Gauss-Chebyshev type 2 quadrature rule.
+        </li>
+        <li>
+          <a href = "chebyshev2_integral.m">chebyshev2_integral.m</a>
+          evaluates a monomial Chebyshev type 2 integral.
+        </li>
+        <li>
+          <a href = "chebyshev2_set.m">chebyshev2_set.m</a>,
+          sets a Chebyshev Type 2 rule.
+        </li>
+        <li>
+          <a href = "chebyshev3_compute.m">chebyshev3_compute.m</a>,
+          computes a Gauss-Chebyshev type 3 quadrature rule.
+        </li>
+        <li>
+          <a href = "chebyshev3_integral.m">chebyshev3_integral.m</a>
+          evaluates a monomial Chebyshev type 3 integral.
+        </li>
+        <li>
+          <a href = "chebyshev3_set.m">chebyshev3_set.m</a>,
+          sets a Chebyshev Type 3 rule.
+        </li>
+        <li>
+          <a href = "class_matrix.m">class_matrix.m</a>
+          computes the Jacobi matrix for a quadrature rule.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_compute.m">clenshaw_curtis_compute.m</a>,
+          computes a Clenshaw-Curtis quadrature rule.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_set.m">clenshaw_curtis_set.m</a>,
+          sets up Clenshaw-Curtis quadrature.
+        </li>
+        <li>
+          <a href = "fejer1_compute.m">fejer1_compute.m</a>,
+          computes a Fejer type 1 quadrature rule.
+        </li>
+        <li>
+          <a href = "fejer1_set.m">fejer1_set.m</a>,
+          sets a Fejer type 1 quadrature rule.
+        </li>
+        <li>
+          <a href = "fejer2_compute.m">fejer2_compute.m</a>,
+          computes a Fejer type 2 quadrature rule.
+        </li>
+        <li>
+          <a href = "fejer2_set.m">fejer2_set.m</a>,
+          sets a Fejer type 2 quadrature rule.
+        </li>
+        <li>
+          <a href = "gegenbauer_integral.m">gegenbauer_integral.m</a>
+          evaluates the integral of a monomial with Gegenbauer weight.
+        </li>
+        <li>
+          <a href = "gegenbauer_ek_compute.m">gegenbauer_ek_compute.m</a>
+          computes a Gauss-Gegenbauer quadrature rule.
+        </li>
+        <li>
+          <a href = "gegenbauer_ss_compute.m">gegenbauer_ss_compute.m</a>
+          computes a Gauss-Gegenbauer quadrature rule.
+        </li>
+        <li>
+          <a href = "gegenbauer_ss_recur.m">gegenbauer_ss_recur.m</a>
+          finds the value and derivative of a Gegenbauer polynomial.
+        </li>
+        <li>
+          <a href = "gegenbauer_ss_root.m">gegenbauer_ss_root.m</a>
+          improves an approximate root of a Gegenbauer polynomial.
+        </li>
+        <li>
+          <a href = "gen_hermite_dr_compute.m">gen_hermite_dr_compute.m</a>,
+          computes a generalized Gauss-Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "gen_hermite_ek_compute.m">gen_hermite_ek_compute.m</a>,
+          computes a generalized Gauss-Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "gen_hermite_integral.m">gen_hermite_integral.m</a>,
+          evaluates a monomial generalized Hermite integral.
+        </li>
+        <li>
+          <a href = "gen_laguerre_ek_compute.m">gen_laguerre_ek_compute.m</a>,
+          computes a generalized Gauss-Laguerre quadrature rule.
+        </li>
+        <li>
+          <a href = "gen_laguerre_integral.m">gen_laguerre_integral.m</a>,
+          evaluates a monomial generalized Laguerre integral.
+        </li>
+        <li>
+          <a href = "gen_laguerre_ss_compute.m">gen_laguerre_ss_compute.m</a>,
+          computes a generalized Gauss-Laguerre quadrature rule.
+        </li>
+        <li>
+          <a href = "gen_laguerre_ss_recur.m">gen_laguerre_ss_recur.m</a>,
+          finds the value and derivative of a generalized Laguerre polynomial.
+        </li>
+        <li>
+          <a href = "gen_laguerre_ss_root.m">gen_laguerre_ss_root.m</a>,
+          improves an approximate root of a generalized Laguerre polynomial.
+        </li>
+        <li>
+          <a href = "hermite_ek_compute.m">hermite_ek_compute.m</a>,
+          computes a Gauss-Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_gk16_set.m">hermite_gk16_set.m</a>,
+          sets a Genz-Keister Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_gk18_set.m">hermite_gk18_set.m</a>,
+          sets a Genz-Keister Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_gk22_set.m">hermite_gk22_set.m</a>,
+          sets a Genz-Keister Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_gk24_set.m">hermite_gk24_set.m</a>,
+          sets a Genz-Keister Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_integral.m">hermite_integral.m</a>,
+          returns the value of a Hermite integral.
+        </li>
+        <li>
+          <a href = "hermite_probabilist_set.m">hermite_probabilist_set.m</a>,
+          sets abscissas and weights for Hermite probabilist quadrature.
+        </li>
+        <li>
+          <a href = "hermite_set.m">hermite_set.m</a>,
+          sets abscissas and weights for Hermite quadrature
+          with density exp(-x^2).
+        </li>
+        <li>
+          <a href = "hermite_1_set.m">hermite_1_set.m</a>,
+          sets abscissas and weights for Hermite quadrature
+          with density 1.
+        </li>
+        <li>
+          <a href = "hermite_ss_compute.m">hermite_ss_compute.m</a>,
+          computes a Gauss-Hermite quadrature rule.
+        </li>
+        <li>
+          <a href = "hermite_ss_recur.m">hermite_ss_recur.m</a>,
+          finds the value and derivative of a Hermite polynomial.
+        </li>
+        <li>
+          <a href = "hermite_ss_root.m">hermite_ss_root.m</a>,
+          improves an approximate root of a Hermite polynomial.
+        </li>
+        <li>
+          <a href = "imtqlx.m">imtqlx.m</a>
+          diagonalizes a symmetric tridiagonal matrix.
+        </li>
+        <li>
+          <a href = "jacobi_ek_compute.m">jacobi_ek_compute.m</a>,
+          computes a Gauss-Jacobi quadrature rule.
+        </li>
+        <li>
+          <a href = "jacobi_integral.m">jacobi_integral.m</a>,
+          evaluates the integral of a monomial with Jacobi weight.
+        </li>
+        <li>
+          <a href = "jacobi_ss_compute.m">jacobi_ss_compute.m</a>,
+          computes a Gauss-Jacobi quadrature rule.
+        </li>
+        <li>
+          <a href = "jacobi_ss_recur.m">jacobi_ss_recur.m</a>,
+          finds the value and derivative of a Jacobi polynomial.
+        </li>
+        <li>
+          <a href = "jacobi_ss_root.m">jacobi_ss_root.m</a>,
+          improves an approximate root of a Jacobi polynomial.
+        </li>
+        <li>
+          <a href = "kronrod_set.m">kronrod_set.m</a>,
+          sets abscissas and weights for Gauss-Kronrod quadrature.
+        </li>
+        <li>
+          <a href = "laguerre_ek_compute.m">laguerre_ek_compute.m</a>,
+          computes a Gauss-Laguerre quadrature rule.
+        </li>
+        <li>
+          <a href = "laguerre_integral.m">laguerre_integral.m</a>,
+          evaluates a monomial Laguerre integral.
+        </li>
+        <li>
+          <a href = "laguerre_set.m">laguerre_set.m</a>,
+          sets abscissas and weights for Laguerre quadrature
+          with density rho(x)=exp(-x).
+        </li>
+        <li>
+          <a href = "laguerre_1_set.m">laguerre_1_set.m</a>,
+          sets abscissas and weights for Laguerre quadrature
+          with density rho(x)=1.
+        </li>
+        <li>
+          <a href = "laguerre_ss_compute.m">laguerre_ss_compute.m</a>,
+          computes a Gauss-Laguerre quadrature rule.
+        </li>
+        <li>
+          <a href = "laguerre_ss_recur.m">laguerre_ss_recur.m</a>,
+          finds the value and derivative of a Laguerre polynomial.
+        </li>
+        <li>
+          <a href = "laguerre_ss_root.m">laguerre_ss_root.m</a>,
+          improves an approximate root of a Laguerre polynomial.
+        </li>
+        <li>
+          <a href = "laguerre_sum.m">laguerre_sum.m</a>,
+          carries out Laguerre quadrature over [ A, +oo ).
+        </li>
+        <li>
+          <a href = "legendre_dr_compute.m">legendre_dr_compute.m</a>,
+          Gauss-Legendre quadrature by Davis-Rabinowitz method.
+        </li>
+        <li>
+          <a href = "legendre_ek_compute.m">legendre_ek_compute.m</a>,
+          Gauss-Legendre quadrature by Elhay-Kautsky method.
+        </li>
+        <li>
+          <a href = "legendre_integral.m">legendre_integral.m</a>,
+          evaluates a monomial Legendre integral.
+        </li>
+        <li>
+          <a href = "legendre_ss_compute.m">legendre_ss_compute.m</a>,
+          Gauss-Legendre quadrature by Stroud-Secrest method.
+        </li>
+        <li>
+          <a href = "legendre_ss_recur.m">legendre_ss_recur.m</a>,
+          finds the value and derivative of a Legendre polynomial.
+        </li>
+        <li>
+          <a href = "legendre_ss_root.m">legendre_ss_root.m</a>,
+          improves an approximate root of a Legendre polynomial.
+        </li>
+        <li>
+          <a href = "legendre_set.m">legendre_set.m</a>,
+          sets abscissas and weights for Gauss-Legendre quadrature.
+        </li>
+        <li>
+          <a href = "lobatto_compute.m">lobatto_compute.m</a>,
+          computes abscissas and weights for Lobatto quadrature.
+        </li>
+        <li>
+          <a href = "lobatto_set.m">lobatto_set.m</a>,
+          sets abscissas and weights for Lobatto quadrature.
+        </li>
+        <li>
+          <a href = "nc_compute_weights.m">nc_compute_weights.m</a>,
+          computes weights for a Newton-Cotes quadrature rule.
+        </li>
+        <li>
+          <a href = "ncc_compute.m">ncc_compute.m</a>,
+          computes a Newton-Cotes Closed quadrature rule.
+        </li>
+        <li>
+          <a href = "ncc_set.m">ncc_set.m</a>,
+          sets abscissas and weights for Newton-Cotes Closed quadrature.
+        </li>
+        <li>
+          <a href = "nco_compute.m">nco_compute.m</a>,
+          computes a Newton-Cotes Open quadrature rule.
+        </li>
+        <li>
+          <a href = "nco_set.m">nco_set.m</a>,
+          sets abscissas and weights for Newton-Cotes Open quadrature.
+        </li>
+        <li>
+          <a href = "ncoh_compute.m">ncoh_compute.m</a>,
+          computes a Newton-Cotes "open half" quadrature rule.
+        </li>
+        <li>
+          <a href = "ncoh_compute_set.m">ncoh_compute_set.m</a>
+        </li>
+        <li>
+          <a href = "ncoh_set.m">ncoh_set.m</a>,
+          sets abscissas and weights for Newton-Cotes "open-half" quadrature.
+        </li>
+        <li>
+          <a href = "parchk.m">parchk.m</a>
+          checks parameters ALPHA and BETA for classical weight functions. 
+        </li>
+        <li>
+          <a href = "patterson_set.m">patterson_set.m</a>,
+          sets abscissas and weights for Patterson quadrature.
+        </li>
+        <li>
+          <a href = "psi_values.m">psi_values.m</a>,
+          returns selected values of the psi function.
+        </li>
+        <li>
+          <a href = "r8_factorial2.m">r8_factorial2.m</a>,
+          evaluates the double factorial function.
+        </li>
+        <li>
+          <a href = "r8_hyper_2f1.m">r8_hyper_2f1.m</a>,
+          evaluates the hypergeometric function F(A,B,C,X).
+        </li>
+        <li>
+          <a href = "r8_psi.m">r8_psi.m</a>,
+          evaluates the Psi function.
+        </li>
+        <li>
+          <a href = "r8_sign.m">r8_sign.m</a>
+          returns the sign of an R8.
+        </li>
+        <li>
+          <a href = "r8vec_reverse.m">r8vec_reverse.m</a>,
+          reverses the elements of an R8VEC.
+        </li>
+        <li>
+          <a href = "radau_compute.m">radau_compute.m</a>,
+          computes abscissas and weights for Radau quadrature.
+        </li>
+        <li>
+          <a href = "radau_set.m">radau_set.m</a>,
+          sets abscissas and weights for Radau quadrature.
+        </li>
+        <li>
+          <a href = "scqf.m">scqf.m</a>
+          scales a quadrature formula to a nonstandard interval.
+        </li>
+        <li>
+          <a href = "sgqf.m">sgqf.m</a>
+          computes knots and weights of a Gauss Quadrature formula.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 March 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

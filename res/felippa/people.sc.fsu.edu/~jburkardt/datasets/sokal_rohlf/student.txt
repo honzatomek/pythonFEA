@@ -1,0 +1,21 @@
+# Title: Yeast cells in 400 squares of a hemacytometer
+# 1: Number of cells per square
+# 2: Observed frequency
+# 3: Expected frequency
+#
+#  Reference:
+#  Student (W Gossett),
+#  On the error of counting with a haemacytometer,
+#  Biometrika,
+#  Volume 5, pages 351-360, 1907.
+#
+0   75   66.1
+1  103  119.0
+2  121  107.1
+3   54   64.3
+4   30   28.9
+5   13   10.4
+6    2    3.1
+7    1    0.8
+8    0    0.2
+9    1    0.0

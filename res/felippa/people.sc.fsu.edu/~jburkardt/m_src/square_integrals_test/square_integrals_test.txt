@@ -1,0 +1,72 @@
+08-Jan-2022 10:03:51
+
+square_integrals_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test square_integrals().
+
+SQUARE01_MONOMIAL_INTEGRAL_TEST
+  SQUARE01_MONOMIAL_INTEGRAL reports the integral of a
+  monomial over the unit square.
+  Compare exact and estimated integrals
+  over the interior of the unit square in 2D.
+
+  Number of sample points used is 4192
+
+  Ex  Ey     MC-Estimate           Exact      Error
+
+   0   0               1               1    0.00e+00
+   1   1        0.250518            0.25    5.18e-04
+   4   4       0.0395067            0.04    4.93e-04
+   3   1         0.12377           0.125    1.23e-03
+   5   0        0.162365        0.166667    4.30e-03
+   6   1       0.0696073       0.0714286    1.82e-03
+   6   3        0.034845       0.0357143    8.69e-04
+   0   7        0.124939           0.125    6.07e-05
+   2   7       0.0419597       0.0416667    2.93e-04
+   4   4       0.0395067            0.04    4.93e-04
+   6   2       0.0464663        0.047619    1.15e-03
+   5   1       0.0816061       0.0833333    1.73e-03
+   4   0        0.195557             0.2    4.44e-03
+   2   3       0.0832931       0.0833333    4.02e-05
+   3   2        0.082733       0.0833333    6.00e-04
+   4   2       0.0657738       0.0666667    8.93e-04
+   5   7       0.0206775       0.0208333    1.56e-04
+   2   4       0.0666707       0.0666667    4.04e-06
+   6   1       0.0696073       0.0714286    1.82e-03
+   5   3       0.0408713       0.0416667    7.95e-04
+
+SQUARESYM_MONOMIAL_INTEGRAL_TEST
+  SQUARESYM_MONOMIAL_INTEGRAL reports the integral of a
+  monomial over the symmetric unit square.
+  Compare exact and estimated integrals
+  over the interior of the symmetric unit square in 2D.
+
+  Number of sample points used is 4192
+
+  Ex  Ey     MC-Estimate           Exact      Error
+
+   0   6        0.562318        0.571429    9.11e-03
+   5   0      -0.0279524               0    2.80e-02
+   0   0               4               4    0.00e+00
+   1   3       0.0164293               0    1.64e-02
+   2   6        0.188225        0.190476    2.25e-03
+   4   4        0.160378            0.16    3.78e-04
+   1   6      -0.0179502               0    1.80e-02
+   6   5     -0.00384083               0    3.84e-03
+   5   5      0.00653193               0    6.53e-03
+   6   4        0.116003        0.114286    1.72e-03
+   1   0      -0.0148145               0    1.48e-02
+   1   1       0.0364771               0    3.65e-02
+   6   1     -0.00780515               0    7.81e-03
+   2   2        0.444139        0.444444    3.05e-04
+   3   3       0.0117177               0    1.17e-02
+   5   5      0.00653193               0    6.53e-03
+   5   4      -0.0156381               0    1.56e-02
+   6   2        0.194792        0.190476    4.32e-03
+   5   7      0.00460055               0    4.60e-03
+   5   7      0.00460055               0    4.60e-03
+
+square_integrals_test():
+  Normal end of execution.
+
+08-Jan-2022 10:03:51

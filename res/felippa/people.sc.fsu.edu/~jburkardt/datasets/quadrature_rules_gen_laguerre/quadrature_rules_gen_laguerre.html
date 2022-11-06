@@ -1,0 +1,557 @@
+<html>
+
+  <head>
+    <title>
+      QUADRATURE_RULES_GEN_LAGUERRE - Quadrature Rules of Generalized Gauss-Laguerre Type
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      QUADRATURE_RULES_GEN_LAGUERRE <br> Quadrature Rules <br> Generalized Gauss-Laguerre Type
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>QUADRATURE_RULES_GEN_LAGUERRE</b>
+      is a dataset directory which
+      contains examples of quadrature rules of Generalized Gauss-Laguerre type.  
+    </p>
+
+    <p>
+      Generalized Gauss-Legendre quadrature rules are a generalization of the
+      basic Gauss-Legendre quadrature rule.  The generalization involves 
+      including a factor of <b>x<sup>alpha</sup></b> in the weight factor.
+      (The parameter <b>alpha</b> is a real value which may take on any value
+      greater than -1.)
+    </p>
+
+    <p>
+      Generalized Gauss-Laguerre quadrature rules are designed to approximate integrals on
+      semi-infinite intervals.  By default, this interval is [0,oo) but
+      in some cases, the interval may be specified with a different initial
+      point, which we will suggest by [A,oo).  
+    </p>
+
+    <p>
+      In the following discussion, we will represent the left endpoint by
+      <b>A</b>, while understanding that it is usually taken to be 0.
+    </p>
+
+    <p>
+      Standard generalized Gauss-Laguerre quadrature assumes that the integrand we are
+      considering has a form like:
+      <pre>
+        Integral ( A &lt;= x &lt; oo ) x<sup>alpha</sup> * exp(-x) * f(x) dx
+      </pre>
+      where the factor <b>x<sup>alpha</sup> * exp(-x)</b> is regarded as a weight factor.
+    </p>
+
+    <p>
+      A <i>standard generalized Gauss-Laguerre quadrature rule</i> is a set of <b>n</b>
+      positive weights <b>w</b> and abscissas <b>x</b> so that
+      <pre>
+        Integral ( A &lt;= x &lt; oo ) x<sup>alpha</sup> * exp(-x) * f(x) dx
+      </pre>
+      may be approximated by
+      <pre>
+        Sum ( 1 &lt;= I &lt;= N ) w(i) * f(x(i))
+      </pre>
+    </p>
+
+    <p>
+      It is often convenient to consider approximating integrals in which
+      the weighting factor <b>x<sup>alpha</sup> * exp(-x)</b> is implicit.  
+      In that case, we are looking at approximating
+      <pre>
+        Integral ( A &lt;= x &lt; oo ) f(x) dx
+      </pre>
+      and it is easy to modify a standard generalized Gauss-Laguerre quadrature rule
+      to handle this case directly.
+    </p>
+
+    <p>
+      A <i>modified generalized Gauss-Laguerre quadrature rule</i> is a set of <b>n</b>
+      positive weights <b>w</b> and abscissas <b>x</b> so that
+      <pre>
+        Integral ( A &lt;= x &lt; oo ) f(x) dx
+      </pre>
+      may be approximated by
+      <pre>
+        Sum ( 1 &lt;= I &lt;= N ) w(i) * f(x(i))
+      </pre>
+    </p>
+
+    <p>
+      When using a generalized Gauss-Laguerre quadrature rule, it's important to know 
+      whether the rule has been developed for the standard or modified cases.
+      Basically, the only change is that the weights of the modified rule have 
+      been multiplied by the inverse of the weight function evaluated at the 
+      corresponding abscissa.
+    </p>
+
+    <p>
+      For this directory, a quadrature rule is stored as three files,
+      containing the weights, the points, and a file containing two
+      points defining the endpoints of the region.  The first endpoint
+      is either 0 or A; the second endpoint is really infinity, and
+      we will simply place a "large" value here, trusting that the user
+      will already know that this is merely a placeholder for infinity.
+    </p>
+
+    <h3 align = "center">
+      Example:
+    </h3>
+
+    <p>
+      We consider a standard generalized Gauss-Laguerre quadrature rule of order 4,
+      with ALPHA = 0.5.
+    </p>
+
+    <p>
+      Here is the text of the "W" file storing the weights of such a rule:
+      <pre><code>
+        0.4530087825780014    
+        0.3816169905147275    
+        0.5079463161099657E-01
+        0.8065912142432840E-03
+      </code></pre>
+    </p>
+
+    <p>
+      Here is the text of the "X" file storing the abscissas of such a rule:
+      <pre><code>
+        0.5235260767382691    
+        2.156648763269094    
+        5.137387546176711    
+        10.18243761381592    
+      </code></pre>
+    </p>
+
+    <p>
+      Here is the text of the "R" file storing the lower and upper limits of
+      the region:
+      <pre><code>
+        0.0
+        1.0E+30
+      </code></pre>
+    </p>
+
+    <p>
+      The modified rule of order 4 and ALPHA = 0.5 has the same values of X and R,
+      but the modified weights are now:
+      <pre><code>
+        1.056822251392305    
+        2.245735732700531    
+        3.815800963697504    
+        6.681963149567727  
+      </code></pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/gen_laguerre_rule/gen_laguerre_rule.html">
+      GEN_LAGUERRE_RULE</a>,
+      a C++ program which
+      can compute and print a generalized Gauss-Laguerre quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/int_exactness_gen_laguerre/int_exactness_gen_laguerre.html">
+      INT_EXACTNESS_GEN_LAGUERRE</a>,
+      a C++ program which
+      tests the polynomial exactness of generalized Gauss-Laguerre quadrature rules.
+    </p>
+
+    <h3 align = "center">
+      Sample Files:
+    </h3>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 4, ALPHA = -0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_am0.5_x.txt">
+          gen_lag_o4_am0.5_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_am0.5_w.txt">
+          gen_lag_o4_am0.5_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_am0.5_r.txt">
+          gen_lag_o4_am0.5_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 4, ALPHA = 0.0:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_a0.0_x.txt">
+          gen_lag_o4_a0.0_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a0.0_w.txt">
+          gen_lag_o4_a0.0_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a0.0_r.txt">
+          gen_lag_o4_a0.0_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 1, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o1_a0.5_x.txt">
+          gen_lag_o1_a0.5_x.txt</a>, 
+          the abscissas for the order 1 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o1_a0.5_w.txt">
+          gen_lag_o1_a0.5_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o1_a0.5_r.txt">
+          gen_lag_o1_a0.5_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 2, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o2_a0.5_x.txt">
+          gen_lag_o2_a0.5_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o2_a0.5_w.txt">
+          gen_lag_o2_a0.5_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o2_a0.5_r.txt">
+          gen_lag_o2_a0.5_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 4, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_a0.5_x.txt">
+          gen_lag_o4_a0.5_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a0.5_w.txt">
+          gen_lag_o4_a0.5_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a0.5_r.txt">
+          gen_lag_o4_a0.5_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 8, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o8_a0.5_x.txt">
+          gen_lag_o8_a0.5_x.txt</a>, 
+          the abscissas for the order 8 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o8_a0.5_w.txt">
+          gen_lag_o8_a0.5_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o8_a0.5_r.txt">
+          gen_lag_o8_a0.5_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 16, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o16_a0.5_x.txt">
+          gen_lag_o16_a0.5_x.txt</a>, 
+          the abscissas for the order 16 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o16_a0.5_w.txt">
+          gen_lag_o16_a0.5_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o16_a0.5_r.txt">
+          gen_lag_o16_a0.5_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 4, ALPHA = 1.0:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_a1.0_x.txt">
+          gen_lag_o4_a1.0_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a1.0_w.txt">
+          gen_lag_o4_a1.0_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a1.0_r.txt">
+          gen_lag_o4_a1.0_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 4, ALPHA = 2.0:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_a2.0_x.txt">
+          gen_lag_o4_a2.0_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a2.0_w.txt">
+          gen_lag_o4_a2.0_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a2.0_r.txt">
+          gen_lag_o4_a2.0_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Standard Generalized Gauss-Laguerre Rule, Order 4, ALPHA = 3.0:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_a3.0_x.txt">
+          gen_lag_o4_a3.0_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a3.0_w.txt">
+          gen_lag_o4_a3.0_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a3.0_r.txt">
+          gen_lag_o4_a3.0_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Modified Generalized Gauss-Laguerre Rule, Order 4, ALPHA = 0.0:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_a0.0_modified_x.txt">
+          gen_lag_o4_a0.0_modified_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a0.0_modified_w.txt">
+          gen_lag_o4_a0.0_modified_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a0.0_modified_r.txt">
+          gen_lag_o4_a0.0_modified_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Modified Generalized Gauss-Laguerre Rule, Order 1, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o1_a0.5_modified_x.txt">
+          gen_lag_o1_a0.5_modified_x.txt</a>, 
+          the abscissas for the order 1 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o1_a0.5_modified_w.txt">
+          gen_lag_o1_a0.5_modified_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o1_a0.5_modified_r.txt">
+          gen_lag_o1_a0.5_modified_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Modified Generalized Gauss-Laguerre Rule, Order 2, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o2_a0.5_modified_x.txt">
+          gen_lag_o2_a0.5_modified_x.txt</a>, 
+          the abscissas for the order 2 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o2_a0.5_modified_w.txt">
+          gen_lag_o2_a0.5_modified_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o2_a0.5_modified_r.txt">
+          gen_lag_o2_a0.5_modified_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Modified Generalized Gauss-Laguerre Rule, Order 4, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_a0.5_modified_x.txt">
+          gen_lag_o4_a0.5_modified_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a0.5_modified_w.txt">
+          gen_lag_o4_a0.5_modified_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a0.5_modified_r.txt">
+          gen_lag_o4_a0.5_modified_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Modified Generalized Gauss-Laguerre Rule, Order 8, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o8_a0.5_modified_x.txt">
+          gen_lag_o8_a0.5_modified_x.txt</a>, 
+          the abscissas for the order 8 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o8_a0.5_modified_w.txt">
+          gen_lag_o8_a0.5_modified_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o8_a0.5_modified_r.txt">
+          gen_lag_o8_a0.5_modified_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Modified Generalized Gauss-Laguerre Rule, Order 16, ALPHA = 0.5:
+      <ul>
+        <li>
+          <a href = "gen_lag_o16_a0.5_modified_x.txt">
+          gen_lag_o16_a0.5_modified_x.txt</a>, 
+          the abscissas for the order 16 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o16_a0.5_modified_w.txt">
+          gen_lag_o16_a0.5_modified_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o16_a0.5_modified_r.txt">
+          gen_lag_o16_a0.5_modified_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Modified Generalized Gauss-Laguerre Rule, Order 4, ALPHA = 1.0:
+      <ul>
+        <li>
+          <a href = "gen_lag_o4_a1.0_modified_x.txt">
+          gen_lag_o4_a1.0_modified_x.txt</a>, 
+          the abscissas for the order 4 rule.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a1.0_modified_w.txt">
+          gen_lag_o4_a1.0_modified_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "gen_lag_o4_a1.0_modified_r.txt">
+          gen_lag_o4_a1.0_modified_r.txt</a>, 
+          the range of the integration region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to 
+      <a href = "../datasets.html">the DATASETS page.</a>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 04 September 2007.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

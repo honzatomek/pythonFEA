@@ -1,0 +1,17 @@
+# Title: Rabbit temperature after rinderpest inoculation
+# 1: Hours, h
+# 2: Temperature in degrees Fahrenheit, F
+#
+#  Reference:
+#  G Carter, C Mitchell,
+#  Methods for adapting the virus of rinderpest to rabbits,
+#  Science,
+#  Volume 28, pages 252-253, 1958.
+#
+24  102.8
+32  104.5
+48  106.5
+56  107.0
+72  103.9
+80  103.2
+96  103.1

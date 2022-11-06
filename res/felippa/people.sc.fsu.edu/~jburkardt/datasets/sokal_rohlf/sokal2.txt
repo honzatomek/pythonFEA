@@ -1,0 +1,18 @@
+# Title: Fertility of eggs of the CP strain of Drosophila melanogaster
+# 1: Number of eggs hatched
+# 2: Frequency
+#
+#  Reference:
+#  R Sokal
+#
+ 0   1
+ 1   3
+ 2   8
+ 3  10
+ 4   6
+ 5  15
+ 6  14
+ 7  12
+ 8  13
+ 9   9
+10   9

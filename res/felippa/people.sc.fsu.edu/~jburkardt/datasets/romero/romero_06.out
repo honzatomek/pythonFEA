@@ -1,0 +1,279 @@
+March  9 2003   2:15:28.859 PM
+ 
+CVT_MAIN
+  A sample problem for the probabilistic
+  Centroidal Voronoi Tessellation algorithm.
+ 
+  Given a region in ND, the problem is to determine
+  GENERATORS, a set of points which define a division
+  of the region into Voronoi cells, which are also
+  CENTROIDS of the Voronoi cells.
+ 
+RANDOM_INITIALIZE
+  Initialize RANDOM_NUMBER with arbitrary SEED =   1260820377
+  Enter command:>
+#  romero_06.inp
+#
+ 
+Command echo has been enabled.
+  Enter command:>
+generator_read = romero_06_lhs.txt
+ 
+FILE_ROW_COUNT:
+  Number of records:             17
+  Number of data records:        13
+  Number of comment records:      4
+ 
+POINTS_READ:
+  Read coordinate data from file.
+  Enter command:>
+sample_random
+ 
+  The region will be sampled using a random sequence.
+  Enter command:>
+generator_print
+ 
+Current cell generators:
+ 
+           1  0.8430000      5.3300001E-02
+           2  6.9700003E-02  0.6083000    
+           3  0.9701000      0.8278000    
+           4  0.5461000      0.6901000    
+           5  0.4088000      0.7358000    
+           6  0.1258000      0.5184000    
+           7  0.5107000      8.6099997E-02
+           8  0.8940000      0.1935000    
+           9  0.7201000      0.8560000    
+          10  0.6512000      0.3664000    
+          11  0.2536000      0.9885000    
+          12  0.3477000      0.4267000    
+          13  0.1939000      0.2615000    
+  Enter command:>
+maxit = 100
+  Enter command:>
+ns_cvt = 5000
+  Enter command:>
+print
+ 
+ 
+Geometry parameters:
+-------------------
+ 
+  The spatial dimension is NDIM =      2
+ 
+  The minimum corner of the bounding box is:
+   0.00000       0.00000    
+  The maximum corner of the bounding box is:
+   1.00000       1.00000    
+  A simple user routine determines the region.
+ 
+CVT Algorithm parameters:
+-------------------------
+ 
+  The number of Voronoi cells to generate:     13
+  Number of iterations to determine CVT:    100
+  Number of sampling points per Voronoi cell:   5000
+  The initial generator positions will be 
+  assigned using a vector Halton sequence.
+  The region will be sampled with a random sequence.
+ 
+ 
+Moment parameters:
+------------------
+ 
+  Number of sampling points per Voronoi cell:   5000
+ 
+  The volume of the region is given.
+  It is specified as REGION_VOLUME =    1.00000    
+ 
+ 
+Nearest Neighbor Search parameters:
+-----------------------------------
+ 
+ 
+  The nearest neighbor search is not speeded up.
+  The nearest neighbor search is done by exhaustion.
+ 
+ 
+Miscellaneous parameters:
+------------------------
+ 
+  Generator and moment output files will NOT be written.
+  The random number seed is   1260820377
+ 
+  Enter command:>
+iterate
+ 
+  STEP  L2 Change
+ 
+  1  0.210670
+  2  0.081809
+  3  0.042474
+  4  0.038137
+  5  0.032186
+  6  0.034118
+  7  0.030522
+  8  0.024902
+  9  0.023854
+ 10  0.019212
+ 11  0.016783
+ 12  0.013977
+ 13  0.011621
+ 14  0.011803
+ 15  0.009354
+ 16  0.009668
+ 17  0.006940
+ 18  0.008884
+ 19  0.008291
+ 20  0.008229
+ 21  0.005710
+ 22  0.008249
+ 23  0.007285
+ 24  0.007768
+ 25  0.006610
+ 26  0.008952
+ 27  0.006819
+ 28  0.005888
+ 29  0.007614
+ 30  0.008641
+ 31  0.006333
+ 32  0.007659
+ 33  0.006937
+ 34  0.005976
+ 35  0.005709
+ 36  0.008256
+ 37  0.006132
+ 38  0.007990
+ 39  0.006076
+ 40  0.005232
+ 41  0.007003
+ 42  0.008640
+ 43  0.005927
+ 44  0.007006
+ 45  0.008336
+ 46  0.008677
+ 47  0.007351
+ 48  0.007927
+ 49  0.007714
+ 50  0.006908
+ 51  0.008198
+ 52  0.008069
+ 53  0.007200
+ 54  0.007474
+ 55  0.006311
+ 56  0.008364
+ 57  0.006962
+ 58  0.005468
+ 59  0.007990
+ 60  0.008623
+ 61  0.005637
+ 62  0.006378
+ 63  0.005844
+ 64  0.006488
+ 65  0.006548
+ 66  0.007010
+ 67  0.007826
+ 68  0.009270
+ 69  0.006972
+ 70  0.006928
+ 71  0.006935
+ 72  0.006127
+ 73  0.006059
+ 74  0.005971
+ 75  0.005933
+ 76  0.006742
+ 77  0.005967
+ 78  0.006784
+ 79  0.007121
+ 80  0.007067
+ 81  0.008591
+ 82  0.007217
+ 83  0.005729
+ 84  0.006953
+ 85  0.008504
+ 86  0.005731
+ 87  0.006552
+ 88  0.004871
+ 89  0.006043
+ 90  0.006876
+ 91  0.007304
+ 92  0.008413
+ 93  0.007715
+ 94  0.007782
+ 95  0.004811
+ 96  0.007318
+ 97  0.007370
+ 98  0.004134
+ 99  0.006296
+100  0.006818
+  Enter command:>
+generator_print
+ 
+Current cell generators:
+ 
+           1  0.8496626      0.1416382    
+           2  0.1484725      0.6229141    
+           3  0.8785386      0.8278943    
+           4  0.6230598      0.6214546    
+           5  0.3823161      0.8168838    
+           6  0.1329349      0.3598482    
+           7  0.4858867      0.1277611    
+           8  0.8858253      0.4873529    
+           9  0.6285384      0.8851358    
+          10  0.6536242      0.3367997    
+          11  0.1304094      0.8792613    
+          12  0.3900401      0.4481144    
+          13  0.1663470      0.1212166    
+  Enter command:>
+maxit = 5
+  Enter command:>
+ns_cvt = 20000
+  Enter command:>
+iterate
+ 
+  STEP  L2 Change
+ 
+  1  0.004589
+  2  0.004096
+  3  0.003441
+  4  0.002498
+  5  0.003417
+  Enter command:>
+maxit = 5
+  Enter command:>
+ns_cvt = 80000
+  Enter command:>
+iterate
+ 
+  STEP  L2 Change
+ 
+  1  0.002077
+  2  0.001964
+  3  0.001654
+  4  0.001476
+  5  0.001480
+  Enter command:>
+maxit = 5
+  Enter command:>
+ns_cvt = 320000
+  Enter command:>
+iterate
+ 
+  STEP  L2 Change
+ 
+  1  0.001021
+  2  0.000816
+  3  0.000825
+  4  0.001116
+  5  0.000834
+  Enter command:>
+generator_write = romero_06_cvt.txt
+  Enter command:>
+quit
+ 
+  QUIT requested.
+ 
+CVT_MAIN
+  Normal end of execution.
+ 
+March  9 2003   2:15:53.351 PM

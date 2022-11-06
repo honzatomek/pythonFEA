@@ -1,0 +1,343 @@
+<html>
+
+  <head>
+    <title>
+      triangulation_triangle_neighbors
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      triangulation_triangle_neighbors
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>triangulation_triangle_neighbors</b>,
+      a MATLAB code which
+      computes the three
+      neighboring triangles of each triangle in a triangulation.
+    </p>
+
+    <p>
+      The user supplies a node file and a triangle file, containing
+      the coordinates of the nodes, and the indices of the nodes that
+      make up each triangle.  Either 3-node or 6-node triangles may
+      be used.
+    </p>
+
+    <p>
+      The program reads the data, computes the triangle neighbor information,
+      and writes out the information to a file.  In cases where one side
+      of a triangle has no triangle neighbor, a value of -1 is assigned.
+    </p>
+
+    <p>
+      The triangle neighbor array is useful if the triangulation has
+      to be searched to find the triangle containing a given point.
+      It is also useful when analyzing the bandwidth of the adjacency
+      matrix, or of a finite element matrix derived from the triangulation.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>triangulation_triangle_neighbors</b> ( <i>'prefix'</i> )
+      </blockquote>
+      where <i>'prefix'</i> is the common prefix for the node and triangle files,
+      and will also be used to name the output file:
+      <ul>
+        <li>
+          <i>'prefix'</i><b>_nodes.txt</b>,    the node coordinates (input);
+        </li>
+        <li>
+          <i>'prefix'</i><b>_elements.txt</b>,    the triangulation (input);
+        </li>
+        <li>
+          <i>'prefix'</i><b>_element_neighbors.txt</b>,  the triangle neighbors (output);
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>triangulation_triangle_neighbors</b> is available in
+      <a href = "../../c_src/triangulation_triangle_neighbors/triangulation_triangle_neighbors.html">a C version</a> and
+      <a href = "../../cpp_src/triangulation_triangle_neighbors/triangulation_triangle_neighbors.html">a C++ version</a> and
+      <a href = "../../f_src/triangulation_triangle_neighbors/triangulation_triangle_neighbors.html">a FORTRAN90 version</a>  and
+      <a href = "../../m_src/triangulation_triangle_neighbors/triangulation_triangle_neighbors.html"> a MATLAB version.</a> 
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/mesh_bandwidth/mesh_bandwidth.html">
+      mesh_bandwidth</a>, 
+      a MATLAB code which
+      returns the geometric bandwidth associated with a mesh of
+      elements of any order and in a space of arbitrary dimension.
+    </p>
+
+    <p>
+      <a href = "../../m_src/mesh_to_xml/mesh_to_xml.html">
+      mesh_to_xml</a>,
+      a MATLAB code which
+      reads information defining a 1d, 2d or 3d mesh, namely
+      a file of node coordinates and a file of elements defined by
+      node indices, and creates a corresponding xml file for input
+      to dolfin or fenics.
+    </p>
+
+    <p>
+      <a href = "../../m_src/neighbors_to_metis_graph/neighbors_to_metis_graph.html">
+      neighbors_to_metis_graph</a>,
+      a MATLAB code which 
+      reads a triangle mesh neighbor file created by <b>triangulation_triangle_neighbors</b>
+      and writes a modified version of the same data suitable for input
+      to the mesh partitioning program metis.
+    </p>
+
+    <p>
+      <a href = "../../m_src/rcm/rcm.html">
+      rcm</a>,
+      a MATLAB code which
+      uses the reverse cuthill-mckee method for mesh renumbering.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tet_mesh_rcm/tet_mesh_rcm.html">
+      tet_mesh_rcm</a>,
+      a MATLAB code which 
+      applies the reverse cuthill-mckee reordering to a tetrahedral
+      mesh of nodes in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation/triangulation.html">
+      triangulation</a>, 
+      a MATLAB code which
+      carries out various operations on order 3 ("linear") or order 6 
+      ("quadratic") triangulations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_boundary_edges/triangulation_boundary_edges.html">
+      triangulation_boundary_edges</a>,
+      a MATLAB code which
+      reads data defining a triangulation, determines which edges
+      lie on the boundary, organizes them into connected components,
+      and writes this information to a file.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_boundary_nodes/triangulation_boundary_nodes.html">
+      triangulation_boundary_nodes</a>, 
+      a MATLAB code which
+      reads data defining a triangulation, determines which nodes
+      lie on the boundary, and writes their coordinates to a file.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_corner/triangulation_corner.html">
+      triangulation_corner</a>,
+      a MATLAB code which 
+      patches triangulations so that no triangle has two sides on the boundary.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_delaunay_discrepancy/triangulation_delaunay_discrepancy.html">
+      triangulation_delaunay_discrepancy</a>, 
+      a MATLAB code which 
+      measures the amount by which a triangulation fails the local delaunay test;
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_display/triangulation_display.html">
+      triangulation_display</a>, 
+      a MATLAB code which 
+      displays the nodes and elements of a triangulation on the MATLAB graphics screen;
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_histogram/triangulation_histogram.html">
+      triangulation_histogram</a>, 
+      a MATLAB code which 
+      computes histograms of data over a triangulation.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_l2q/triangulation_l2q.html">
+      triangulation_l2q</a>, 
+      a MATLAB code which
+      reads data defining a 3-node triangulation and generates
+      midside nodes and writes out the corresponding 6-node triangulation.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_mask/triangulation_mask.html">
+      triangulation_mask</a>, 
+      a MATLAB code which
+      takes an existing triangulation and deletes triangles and
+      their corresponding nodes as requested by the user.
+    </p>
+
+    <p>
+      <a href = "../../data/triangulation_order3/triangulation_order3.html">
+      triangulation_order3</a>, 
+      a directory which 
+      contains a description and
+      examples of order 3 triangulations.
+    </p>
+
+    <p>
+      <a href = "../../data/triangulation_order6/triangulation_order6.html">
+      triangulation_order6</a>, 
+      a directory which 
+      contains a description and
+      examples of order 6 triangulations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_orient/triangulation_orient.html">
+      triangulation_orient</a>, 
+      a MATLAB code which
+      reads data defining a triangulation, makes sure that
+      every triangle has positive orientation, and if not, writes a
+      corrected triangle file.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_plot/triangulation_plot.html">
+      triangulation_plot</a>, 
+      a MATLAB code which
+      reads data defining a triangulation and creates a
+      postscript image of the nodes and triangles.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_q2l/triangulation_q2l.html">
+      triangulation_q2l</a>, 
+      a MATLAB code which
+      reads data defining a 6-node triangulation, and subdivides
+      each triangle into 4 3-node triangles, writing the resulting
+      triangulation to a file.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_quad/triangulation_quad.html">
+      triangulation_quad</a>,
+      a MATLAB code which
+      estimates the integral of a function over a triangulated region.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_quality/triangulation_quality.html">
+      triangulation_quality</a>, 
+      a MATLAB code which
+      reads data defining a triangulation and computes a number
+      of quality measures.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_rcm/triangulation_rcm.html">
+      triangulation_rcm</a>, 
+      a MATLAB code which 
+      can reorder the nodes of
+      a triangulation so that the bandwidth of the associated adjacency
+      matrix is reduced.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_refine/triangulation_refine.html">
+      triangulation_refine</a>, 
+      a MATLAB code which
+      reads data defining a triangulation, replaces each triangle
+      by four congruent smaller ones, and writes the new triangulation
+      information to a file.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulation_triangle_neighbors_test/triangulation_triangle_neighbors_test.html">
+      triangulation_triangle_neighbors_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/voronoi_neighbors/voronoi_neighbors.html">
+      voronoi_neighbors</a>,
+      a MATLAB code which
+      is given a set of points in the plane and determines the
+      voronoi adjacency structure, that is, which points share an
+      edge of the voronoi diagram.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Marc deBerg, Marc Krevald, Mark Overmars, 
+          Otfried Schwarzkopf,<br>
+          Computational Geometry,<br>
+          Springer, 2000,<br>
+          ISBN: 3-540-65620-0.
+        </li>
+        <li>
+          Joseph ORourke,<br>
+          Computational Geometry,<br>
+          Second Edition,<br>
+          Cambridge, 1998,<br>
+          ISBN: 0521649765,<br>
+          LC: QA448.D38.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "triangulation_triangle_neighbors.m">
+          triangulation_triangle_neighbors.m</a>, 
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 11 April 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

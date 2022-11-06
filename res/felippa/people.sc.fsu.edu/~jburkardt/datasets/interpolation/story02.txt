@@ -1,0 +1,6 @@
+This example is due to ETY Lee of Boeing.
+
+Data near the corners is more dense than in regions of small curvature.
+A local interpolation method will produce a more plausible
+interpolant than a nonlocal interpolation method, such as
+cubic splines.

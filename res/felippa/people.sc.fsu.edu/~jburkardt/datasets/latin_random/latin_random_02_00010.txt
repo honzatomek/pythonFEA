@@ -1,0 +1,19 @@
+#  latin_random_02_00010.txt
+#  created by LATIN_RANDOM_DATASET.
+#
+#  File generated on March 20 2003  11:43:51.082 AM
+#
+#  Spatial dimension M =      2
+#  Number of points N =     10
+#  Initial seed for UNIFORM =    123456789
+#
+  0.821842  0.606173
+  0.095632  0.044954
+  0.282951  0.840131
+  0.356170  0.175467
+  0.541531  0.979729
+  0.906612  0.700184
+  0.625758  0.389750
+  0.110996  0.435075
+  0.404383  0.209454
+  0.763397  0.501362

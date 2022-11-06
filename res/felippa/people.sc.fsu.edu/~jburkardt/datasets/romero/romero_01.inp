@@ -1,0 +1,22 @@
+#  romero_01.inp
+#
+echo
+generator_read = romero_01_lhs.txt
+sample_random
+generator_print
+maxit = 100
+ns_cvt = 5000
+print
+iterate
+generator_print
+maxit = 5
+ns_cvt = 20000
+iterate
+maxit = 5
+ns_cvt = 80000
+iterate
+maxit = 5
+ns_cvt = 320000
+iterate
+generator_write = romero_01_cvt.txt
+quit

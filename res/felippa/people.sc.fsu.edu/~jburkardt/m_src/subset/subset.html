@@ -1,0 +1,1543 @@
+<html>
+
+  <head>
+    <title>
+      subset
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      subset <br>
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>subset</b>,
+      a MATLAB code which
+      enumerates, generates, randomizes, ranks and unranks combinatorial objects
+      including combinations, compositions, Gray codes, index sets, partitions, 
+      permutations, polynomials, subsets, and Young tables.  Backtracking 
+      routines are included to solve some combinatorial problems.  Other
+      routines handle continued fractions, Diophantine equations, and
+      Pythagorean triples.
+    </p>
+
+    <p>
+      Combinatorial operations include the enumeration, generation, random
+      selection, ranking and unranking of
+      <ul>
+        <li>
+          <b>COMP</b>, compositions of an integer;
+        </li>
+        <li>
+          <b>COMPNZ</b>, compositions of an integer with no zero parts;
+        </li>
+        <li>
+          <b>EQUIV</b>'s, partitions of a set of N objects;
+        </li>
+        <li>
+          <b>I4_PARTITION</b>'s, partitions of an integer;
+        </li>
+        <li>
+          <b>I4POLY</b>'s, integer polynomials in factorial, Newton,
+          power sum, or Taylor form;
+        </li>
+        <li>
+          <b>I4VEC</b>'s, integer vectors;
+        </li>
+        <li>
+          <b>KSUB</b>'s, subsets of size K, from a set of N objects;
+        </li>
+        <li>
+          <b>MULTIPERM</b>'s, permutations of the N objects, some of which
+          are indistinguishable.
+        </li>
+        <li>
+          <b>PERM</b>'s, permutations of the first N integers;
+        </li>
+        <li>
+          <b>R8POLY</b>'s, real polynomials in factorial, Newton,
+          power sum, or Taylor form;
+        </li>
+        <li>
+          subsets of a set of N objects;
+        </li>
+        <li>
+          vectors whose entries range from 1 to N;
+        </li>
+        <li>
+          <b>YTB</b>'s, Young tables;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Other objects considered include
+      <ul>
+        <li>
+          the Bell numbers,
+        </li>
+        <li>
+          Catalan numbers,
+        </li>
+        <li>
+          congruence equations.
+        </li>
+        <li>
+          continued fractions,
+        </li>
+        <li>
+          <b>DEC</b>'s, decimal numbers represented as a mantissa and a power of 10;
+        </li>
+        <li>
+          <b>DERANGE</b>'s, derangements (permutations that leave no element in place),
+        </li>
+        <li>
+          <b>DVEC</b>'s, decimal numbers represented as a vector of digits;
+        </li>
+        <li>
+          falling factorials (20*19*18...),
+        </li>
+        <li>
+          <b>GRAY</b>, Gray codes,
+        </li>
+        <li>
+          matrix permanents (similar to determinants, but harder to compute,
+          if you can believe that),
+        </li>
+        <li>
+          Morse-Thue numbers,
+        </li>
+        <li>
+          pentagonal numbers,
+        </li>
+        <li>
+          primitive Pythagorean triples: relatively prime integers such that a^2 + b^2 = c^2
+        </li>
+        <li>
+          <b>RAT</b>'s, rational numbers represented as a pair of integers;
+        </li>
+        <li>
+          rising factorials (7*8*9...).
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>subset</b> is available in
+      <a href = "../../c_src/subset/subset.html">a C version</a> and
+      <a href = "../../cpp_src/subset/subset.html">a C++ version</a> and
+      <a href = "../../f_src/subset/subset.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/subset/subset.html">a MATLAB version</a> and
+      <a href = "../../octave_src/subset/subset.html">an Octave version</a> and
+      <a href = "../../py_src/subset/subset.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/backtrack_binary_rc/backtrack_binary_rc.html">
+      backtrack_binary_rc</a>,
+      a MATLAB code which
+      carries out a backtrack search for a set of binary decisions, using
+      reverse communication.
+    </p>
+
+    <p>
+      <a href = "../../m_src/change_making/change_making.html">
+      change_making</a>,
+      a MATLAB code which
+      considers the change making problem,
+      in which a given sum is to be formed using coins of various denominations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/combination_lock/combination_lock.html">
+      combination_lock</a>,
+      a MATLAB code which
+      simulates the process of determining the secret combination of a lock.
+    </p>
+
+    <p>
+      <a href = "../../m_src/combo/combo.html">
+      combo</a>,
+      a MATLAB code which
+      contains many combinatorial routines.
+    </p>
+
+    <p>
+      <a href = "../../m_src/gray_code_display/gray_code_display.html">
+      gray_code_display</a>,
+      a MATLAB code which
+      computes the hamming distance tables for both the binary and gray codes,
+      and displays 3d plots that illustrate how the gray code does a better job
+      of providing nearby representations for nearby numbers.
+    </p>
+
+    <p>
+      <a href = "../../m_src/monomial/monomial.html">
+      monomial</a>,
+      a MATLAB code which
+      enumerates, lists, ranks, unranks and randomizes multivariate monomials 
+      in a space of m dimensions, with total degree less than n,
+      equal to n, or lying within a given range.
+    </p>
+
+    <p>
+      <a href = "../../m_src/partition_problem/partition_problem.html">
+      partition_problem</a>,
+      a MATLAB code which
+      seeks solutions of the partition problem, splitting a set of integers into
+      two subsets with equal sum.
+    </p>
+
+    <p>
+      <a href = "../../m_src/polynomial/polynomial.html">
+      polynomial</a>,
+      a MATLAB code which
+      adds, multiplies, differentiates, evaluates and prints multivariate 
+      polynomials in a space of m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/set_theory/set_theory.html">
+      set_theory</a>,
+      a MATLAB code which
+      demonstrates MATLAB commands that implement various set theoretic operations.
+    </p>
+
+    <p>
+      <a href = "../../py_src/subset_test/subset_test.html">
+      subset_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/subset_sum/subset_sum.html">
+      subset_sum</a>,
+      a MATLAB code which
+      seeks solutions of the subset sum problem.
+    </p>
+
+    <p>
+      <a href = "../../m_src/toms515/toms515.html">
+      toms515</a>,
+      a MATLAB code which
+      can select subsets of size k from a set of size n.
+      this is a version of acm toms algorithm 515,
+      by bill buckles, matthew lybanon.
+    </p>
+
+    <p>
+      <a href = "../../m_src/unicycle/unicycle.html">
+      unicycle</a>,
+      a MATLAB code which
+      considers permutations containing a single cycle, sometimes called 
+      cyclic permutations.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "asm_enum.m">asm_enum.m</a>,
+          returns the number of alternating sign matrices of a given order.
+        </li>
+        <li>
+          <a href = "asm_triangle.m">asm_triangle.m</a>,
+          returns a row of the alternating sign matrix triangle.
+        </li>
+        <li>
+          <a href = "bell.m">bell.m</a>,
+          computes the Bell numbers.
+        </li>
+        <li>
+          <a href = "bell_values.m">bell_values.m</a>,
+          returns some values of the Bell numbers.
+        </li>
+        <li>
+          <a href = "boolean_to_string.m">boolean_to_string.m</a>,
+          returns "True" or "False", given a boolean value.
+        </li>
+        <li>
+          <a href = "catalan.m">catalan.m</a>,
+          computes the Catalan numbers.
+        </li>
+        <li>
+          <a href = "catalan_row_next.m">catalan_row_next.m</a>,
+          returns the next row of the Catalan matrix.
+        </li>
+        <li>
+          <a href = "catalan_values.m">catalan_values.m</a>,
+          returns some values of the Catalan numbers.
+        </li>
+        <li>
+          <a href = "cfrac_to_rat.m">cfrac_to_rat.m</a>,
+          converts a continued fraction to a rational.
+        </li>
+        <li>
+          <a href = "cfrac_to_rfrac.m">cfrac_to_rfrac.m</a>,
+          converts a continued polynomial fraction to a rational
+          polynomial fraction.
+        </li>
+        <li>
+          <a href = "ch_to_digit.m">ch_to_digit.m</a>
+          converts a character to a digit;
+        </li>
+        <li>
+          <a href = "change_greedy.m">change_greedy.m</a>,
+          makes change using a greedy algorithm.
+        </li>
+        <li>
+          <a href = "change_next.m">change_next.m</a>,
+          computes the next set of change for a given total.
+        </li>
+        <li>
+          <a href = "chinese_check.m">chinese_check.m</a>,
+          checks a set of Chinese remainder moduluses.
+        </li>
+        <li>
+          <a href = "chinese_to_i4.m">chinese_to_i4.m</a>,
+          converts a set of Chinese remainders to an equivalent integer.
+        </li>
+        <li>
+          <a href = "comb_next.m">comb_next.m</a>,
+          returns the next combination of K things out of N.
+        </li>
+        <li>
+          <a href = "comb_row_next.m">comb_row_next.m</a>,
+          computes the next row of Pascal's triangle.
+        </li>
+        <li>
+          <a href = "comb_unrank.m">comb_unrank.m</a>,
+          returns the RANK-th combination of N things out of M things.
+        </li>
+        <li>
+          <a href = "comp_enum.m">comp_enum.m</a>,
+          enumerates the compositions of an integer into K parts.
+        </li>
+        <li>
+          <a href = "comp_next.m">comp_next.m</a>,
+          returns the next composition of an integer into K parts.
+        </li>
+        <li>
+          <a href = "comp_random.m">comp_random.m</a>,
+          returns a random composition of an integer into K parts.
+        </li>
+        <li>
+          <a href = "comp_next_grlex.m">comp_next_grlex.m</a>,
+          returns the next composition of an integer into K parts,
+          using grlex order.
+        </li>
+        <li>
+          <a href = "comp_random_grlex.m">comp_random_grlex.m</a>,
+          returns a random composition of an integer into K parts,
+          with the integer between 0 and N.
+        </li>
+        <li>
+          <a href = "comp_rank_grlex.m">comp_rank_grlex.m</a>,
+          ranks a composition of an integer into K parts,
+          using grlex order.
+        </li>
+        <li>
+          <a href = "comp_unrank_grlex.m">comp_unrank_grlex.m</a>,
+          returns the composition of an integer into K parts of
+          a given rank, using grlex order.
+        </li>
+        <li>
+          <a href = "comp_to_ksub.m">comp_to_ksub.m</a>,
+          returns the K-subset corresponding to a composition.
+        </li>
+        <li>
+          <a href = "compnz_enum.m">compnz_enum.m</a>,
+          enumerates the compositions of an integer into K nonzero parts.
+        </li>
+        <li>
+          <a href = "compnz_next.m">compnz_next.m</a>,
+          returns the next composition of an integer into K nonzero parts.
+        </li>
+        <li>
+          <a href = "compnz_random.m">compnz_random.m</a>,
+          returns a random composition of an integer into K nonzero parts.
+        </li>
+        <li>
+          <a href = "compnz_to_ksub.m">compnz_to_ksub.m</a>,
+          returns the K-subset corresponding to a composition into K 
+          nonzero parts.
+        </li>
+        <li>
+          <a href = "congruence.m">congruence.m</a>,
+          solves a congruence of the form A * X = C (mod B).
+        </li>
+        <li>
+          <a href = "count_pose_random.m">count_pose_random.m</a>,
+          poses a random problem for the game "The Count is Good".
+        </li>
+        <li>
+          <a href = "debruijn.m">debruijn.m</a>,
+          constructs a de Bruijn string.
+        </li>
+        <li>
+          <a href = "dec_add.m">dec_add.m</a>,
+          adds two decimal values.
+        </li>
+        <li>
+          <a href = "dec_div.m">dec_div.m</a>,
+          divides two decimal values.
+        </li>
+        <li>
+          <a href = "dec_mul.m">dec_mul.m</a>,
+          multiplies two decimal values.
+        </li>
+        <li>
+          <a href = "dec_round.m">dec_round.m</a>,
+          rounds a decimal value to a given number of digits.
+        </li>
+        <li>
+          <a href = "dec_to_r8.m">dec_to_r8.m</a>,
+          converts a decimal to a real value.
+        </li>
+        <li>
+          <a href = "dec_to_rat.m">dec_to_rat.m</a>,
+          converts a decimal to a rational value.
+        </li>
+        <li>
+          <a href = "dec_to_s.m">dec_to_s.m</a>,
+          returns a string representation of a decimal.
+        </li>
+        <li>
+          <a href = "dec_width.m">dec_width.m</a>,
+          returns the "width" of a decimal.
+        </li>
+        <li>
+          <a href = "decmat_det.m">decmat_det.m</a>,
+          computes the determinant of a decimal matrix.
+        </li>
+        <li>
+          <a href = "decmat_print.m">decmat_print.m</a>,
+          prints a decimal matrix.
+        </li>
+        <li>
+          <a href = "derange_enum.m">derange_enum.m</a>,
+          returns the number of derangements of N objects.
+        </li>
+        <li>
+          <a href = "derange_enum2.m">derange_enum2.m</a>,
+          returns the number of derangements of 0 through N objects.
+        </li>
+        <li>
+          <a href = "derange_enum3.m">derange_enum3.m</a>,
+          returns the number of derangements of N objects.
+        </li>
+        <li>
+          <a href = "derange1_back_candidate.m">derange1_back_candidate.m</a>,
+          finds possible values for the K-th entry of a derangement.
+        </li>
+        <li>
+          <a href = "derange1_back_next.m">derange1_back_next.m</a>,
+          returns the next derangement of N items.
+        </li>
+        <li>
+          <a href = "derange1_check.m">derange1_check.m</a>,
+          checks whether a permutation of (1,...,N) is a derangement.
+        </li>
+        <li>
+          <a href = "derange1_weed_next.m">derange1_weed_next.m</a>,
+          returns next derangements of (1,...,N).
+        </li>
+        <li>
+          <a href = "digit_to_ch.m">digit_to_ch.m</a>,
+          converts a digit to a character;
+        </li>
+        <li>
+          <a href = "digraph_arc_euler.m">digraph_arc_euler.m</a>,
+          returns an Euler circuit in a directed graph.
+        </li>
+        <li>
+          <a href = "digraph_arc_print.m">digraph_arc_print.m</a>,
+          prints out a digraph from an edge list.
+        </li>
+        <li>
+          <a href = "diophantine.m">diophantine.m</a>,
+          solves a Diophantine equation A * X + B * Y = C.
+        </li>
+        <li>
+          <a href = "diophantine_solution_minimize.m">
+          diophantine_solution_minimize.m</a>,
+          seeks a minimal solution of a Diophantine equation.
+        </li>
+        <li>
+          <a href = "dvec_add.m">dvec_add.m</a>,
+          adds two decimal vectors.
+        </li>
+        <li>
+          <a href = "dvec_complementx.m">dvec_complementx.m</a>,
+          returns the complement of a decimal vector.
+        </li>
+        <li>
+          <a href = "dvec_mul.m">dvec_mul.m</a>,
+          multiplies two decimal vectors.
+        </li>
+        <li>
+          <a href = "dvec_print.m">dvec_print.m</a>,
+          prints a decimal vector.
+        </li>
+        <li>
+          <a href = "dvec_sub.m">dvec_sub.m</a>,
+          subtracts two decimal vectors.
+        </li>
+        <li>
+          <a href = "dvec_to_i4.m">dvec_to_i4.m</a>,
+          converts a (signed) decimal vector to an integer.
+        </li>
+        <li>
+          <a href = "equiv_next.m">equiv_next.m</a>,
+          returns the next partition of a set.
+        </li>
+        <li>
+          <a href = "equiv_next2.m">equiv_next2.m</a>,
+          returns the next partition of a set.
+        </li>
+        <li>
+          <a href = "equiv_print.m">equiv_print.m</a>,
+          prints a partition of a set.
+        </li>
+        <li>
+          <a href = "equiv_print2.m">equiv_print2.m</a>,
+          prints a partition of a set using parentheses for grouping.
+        </li>
+        <li>
+          <a href = "equiv_random.m">equiv_random.m</a>,
+          returns a random partition of a set.
+        </li>
+        <li>
+          <a href = "euler_row.m">euler_row.m</a>,
+          returns the N-th row of Euler's triangle.
+        </li>
+        <li>
+          <a href = "frobenius_number_order.m">frobenius_number_order2.m</a>,
+          computes the Frobenius number for the order 2 case.
+        </li>
+        <li>
+          <a href = "frobenius_number_order_values.m">
+          frobenius_number_order2_values.m</a>,
+          returns some values of the Frobenius number for the order 2 case.
+        </li>
+        <li>
+          <a href = "gamma_log_values.m">gamma_log_values.m</a>,
+          returns some values of the logarithm of the Gamma function.
+        </li>
+        <li>
+          <a href = "gray_next.m">gray_next.m</a>,
+          returns the next Gray code by switching one item at a time.
+        </li>
+        <li>
+          <a href = "gray_rank2.m">gray_rank2.m</a>,
+          returns the rank of a given Gray code.
+        </li>
+        <li>
+          <a href = "gray_unrank2.m">gray_unrank2.m</a>,
+          returns the Gray code of a given rank.
+        </li>
+        <li>
+          <a href = "i4_bclr.m">i4_bclr.m</a>,
+          sets a given bit of an I4 to 0.
+        </li>
+        <li>
+          <a href = "i4_bset.m">i4_bset.m</a>,
+          sets a given bit of an I4 to 1.
+        </li>
+        <li>
+          <a href = "i4_btest.m">i4_btest.m</a>,
+          returns TRUE if bit POS of I is a 1.
+        </li>
+        <li>
+          <a href = "i4_factor.m">i4_factor.m</a>,
+          factors an I4 into a product of primes.
+        </li>
+        <li>
+          <a href = "i4_fall.m">i4_fall.m</a>,
+          computes the falling factorial.
+        </li>
+        <li>
+          <a href = "i4_fall_values.m">i4_fall_values.m</a>,
+          returns selected values of the falling factorial.
+        </li>
+        <li>
+          <a href = "i4_log_10.m">i4_log_10.m</a>,
+          returns the integer part of the logarithm of an I4.
+        </li>
+        <li>
+          <a href = "i4_modp.m">i4_modp.m</a>,
+          returns the nonnegative remainder of integer division.
+        </li>
+        <li>
+          <a href = "i4_moebius.m">i4_moebius.m</a>,
+          evaluates the Moebius function.
+        </li>
+        <li>
+          <a href = "i4_partition_conj.m">i4_partition_conj.m</a>,
+          computes the conjugate of a partition of an integer.
+        </li>
+        <li>
+          <a href = "i4_partition_count.m">i4_partition_count.m</a>,
+          returns the number of partitions of an integer.
+        </li>
+        <li>
+          <a href = "i4_partition_count2.m">i4_partition_count2.m</a>,
+          returns the number of partitions of an integer.
+        </li>
+        <li>
+          <a href = "i4_partition_count_values.m">i4_partition_count_values.m</a>,
+          returns some values of the partition count function.
+        </li>
+        <li>
+          <a href = "i4_partition_next.m">i4_partition_next.m</a>,
+          computes the next partition of an integer.
+        </li>
+        <li>
+          <a href = "i4_partition_next2.m">i4_partition_next2.m</a>,
+          computes the next partition of an integer.
+        </li>
+        <li>
+          <a href = "i4_partition_print.m">i4_partition_print.m</a>,
+          prints a partition of an integer.
+        </li>
+        <li>
+          <a href = "i4_partition_random.m">i4_partition_random.m</a>,
+          returns a random partition of an integer.
+        </li>
+        <li>
+          <a href = "i4_partitions_next.m">
+          i4_partitions_next.m</a>,
+          returns the next partition of an integer, and
+          when there are no more, it increases the integer and continues.
+        </li>
+        <li>
+          <a href = "i4_rise.m">i4_rise.m</a>,
+          computes the rising factorial.
+        </li>
+        <li>
+          <a href = "i4_rise_values.m">i4_rise_values.m</a>,
+          returns selected values of the rising factorial.
+        </li>
+        <li>
+          <a href = "i4_sign.m">i4_sign.m</a>,
+          returns the sign of an I4.
+        </li>
+        <li>
+          <a href = "i4_sqrt.m">i4_sqrt.m</a>,
+          finds the integer square root of an I4.
+        </li>
+        <li>
+          <a href = "i4_sqrt_cf.m">i4_sqrt_cf.m</a>,
+          finds the continued fraction square root of an integer.
+        </li>
+        <li>
+          <a href = "i4_to_chinese.m">i4_to_chinese.m</a>,
+          converts an integer to its Chinese remainder form.
+        </li>
+        <li>
+          <a href = "i4_to_dvec.m">i4_to_dvec.m</a>,
+          converts an integer to a (signed) decimal vector.
+        </li>
+        <li>
+          <a href = "i4_to_i4poly.m">i4_to_ipoly.m</a>,
+          converts an integer to an integer polynomial in a given base.
+        </li>
+        <li>
+          <a href = "i4_to_van_der_corput.py">i4_to_van_der_corput.py</a>,
+          computes an element of a van der Corput sequence.
+        </li>
+        <li>
+          <a href = "i4mat_01_rowcolsum.m">i4mat_01_rowcolsum.m</a>,
+          creates a 0/1 matrix with given row and column sums.
+        </li>
+        <li>
+          <a href = "i4mat_perm1.m">i4mat_perm1.m</a>,
+          applies a permutation to the rows and columns of a square I4MAT.
+        </li>
+        <li>
+          <a href = "i4mat_2perm1.m">i4mat_2perm1.m</a>,
+          applies permutations to the rows and columns of a rectangular I4MAT.
+        </li>
+        <li>
+          <a href = "i4mat_print.m">i4mat_print.m</a>,
+          prints an I4MAT.
+        </li>
+        <li>
+          <a href = "i4mat_print_some.m">i4mat_print_some.m</a>,
+          prints some of an I4MAT.
+        </li>
+        <li>
+          <a href = "i4mat_u1_inverse.m">i4mat_u1_inverse.m</a>,
+          computes the inverse of a unit upper triangular integer matrix.
+        </li>
+        <li>
+          <a href = "i4poly.m">i4poly.m</a>,
+          performs operations on an I4POLY.
+        </li>
+        <li>
+          <a href = "i4poly_add.m">i4poly_add.m</a>,
+          adds two I4POLY's.
+        </li>
+        <li>
+          <a href = "i4poly_cyclo.m">i4poly_cyclo.m</a>,
+          computes a cyclotomic polynomial.
+        </li>
+        <li>
+          <a href = "i4poly_degree.m">i4poly_degree.m</a>,
+          returns the degree of an I4POLY.
+        </li>
+        <li>
+          <a href = "i4poly_dif.m">i4poly_dif.m</a>,
+          differentiates an I4POLY.
+        </li>
+        <li>
+          <a href = "i4poly_div.m">i4poly_div.m</a>,
+          divides one I4POLY by another.
+        </li>
+        <li>
+          <a href = "i4poly_mul.m">i4poly_mul.m</a>,
+          multiplies two I4POLY's.
+        </li>
+        <li>
+          <a href = "i4poly_print.m">i4poly_print.m</a>,
+          prints an I4POLY.
+        </li>
+        <li>
+          <a href = "i4poly_to_i4.m">i4poly_to_i4.m</a>,
+          converts an I4POLY to an I4.
+        </li>
+        <li>
+          <a href = "i4vec_backtrack.m">i4vec_backtrack.m</a>,
+          supervises a backtrack search for an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_frac.m">i4vec_frac.m</a>,
+          searches for the K-th smallest entry in an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_index.m">i4vec_index.m</a>,
+          returns the location of the first occurrence of a given value in an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_indicator0.m">i4vec_indicator0.m</a>,
+          sets an I4VEC to the indicator vector.
+        </li>
+        <li>
+          <a href = "i4vec_indicator1.m">i4vec_indicator1.m</a>,
+          sets an I4VEC to the indicator vector.
+        </li>
+        <li>
+          <a href = "i4vec_is_ascending.m">i4vec_is_ascending.m</a>,
+          is TRUE if an I4VEC is increasing.
+        </li>
+        <li>
+          <a href = "i4vec_is_descending.m">i4vec_is_descending.m</a>,
+          is TRUE if an I4VEC is decreasing.
+        </li>
+        <li>
+          <a href = "i4vec_max_index_last.m">i4vec_max_index_last.m</a>,
+          returns the index of the last maximal element of an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_pairwise_prime.m">i4vec_pairwise_prime.m</a>,
+          returns TRUE if the elements of an I4VEC are pairwise prime.
+        </li>
+        <li>
+          <a href = "i4vec_print.m">i4vec_print.m</a>,
+          prints an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_reverse.m">i4vec_reverse.m</a>,
+          reverses the elements of an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_sort_bubble_a.m">i4vec_sort_bubble_a.m</a>,
+          ascending sorts an I4VEC using bubble sort.
+        </li>
+        <li>
+          <a href = "i4vec_sort_heap_index_d.m">i4vec_sort_heap_index_d.m</a>,
+          produces an index vector that descending sorts an integer array,
+          using heapsort.
+        </li>
+        <li>
+          <a href = "i4vec_transpose_print.m">i4vec_transpose_print.m</a>,
+          prints the "transpose" of an integer vector.
+        </li>
+        <li>
+          <a href = "index_box_next_2d.m">index_box_next_2d.m</a>,
+          produces index vectors on the surface of a box in 2D.
+        </li>
+        <li>
+          <a href = "index_box_next_3d.m">index_box_next_3d.m</a>,
+          produces index vectors on the surface of a box in 3D.
+        </li>
+        <li>
+          <a href = "index_box2_next_2d.m">index_box2_next_2d.m</a>,
+          produces index vectors on the surface of a box in 2D.
+        </li>
+        <li>
+          <a href = "index_box2_next_3d.m">index_box2_next_3d.m</a>,
+          produces index vectors on the surface of a box in 3D.
+        </li>
+        <li>
+          <a href = "index_next0.m">index_next0.m</a>,
+          generates all index vectors with given upper limits.
+        </li>
+        <li>
+          <a href = "index_next1.m">index_next1.m</a>,
+          generates all index vectors with given upper limits.
+        </li>
+        <li>
+          <a href = "index_next2.m">index_next2.m</a>,
+          generates all index vectors with given lower and upper limits.
+        </li>
+        <li>
+          <a href = "index_rank0.m">index_rank0.m</a>,
+          ranks an index vector with given upper limits.
+        </li>
+        <li>
+          <a href = "index_rank1.m">index_rank1.m</a>,
+          ranks an index vector with given upper limits.
+        </li>
+        <li>
+          <a href = "index_rank2.m">index_rank2.m</a>,
+          ranks an index vector with given lower and upper limits.
+        </li>
+        <li>
+          <a href = "index_unrank0.m">index_unrank0.m</a>,
+          unranks an index vector with given upper limits.
+        </li>
+        <li>
+          <a href = "index_unrank1.m">index_unrank1.m</a>,
+          unranks an index vector with given upper limits.
+        </li>
+        <li>
+          <a href = "index_unrank2.m">index_unrank2.m</a>,
+          unranks an index vector with given upper and lower limits.
+        </li>
+        <li>
+          <a href = "inverse_mod_n.m">inverse_mod_n.m</a>,
+          computes the inverse of B mod N.
+        </li>
+        <li>
+          <a href = "inversion_to_perm1.m">inversion_to_perm1.m</a>,
+          computes a permutation of (1,...,N) from its inversion sequence.
+        </li>
+        <li>
+          <a href = "involute_enum.m">involute_enum.m</a>,
+          returns the number of involutions of N objects.
+        </li>
+        <li>
+          <a href = "jfrac_to_rfrac.m">jfrac_to_rfrac.m</a>,
+          converts a J-fraction to a rational polynomial fraction.
+        </li>
+        <li>
+          <a href = "josephus.m">josephus.m</a>,
+          returns the position of the K-th man to be executed.
+        </li>
+        <li>
+          <a href = "ksub_next.m">ksub_next.m</a>,
+          selects the next subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_next2.m">ksub_next2.m</a>,
+          selects the next subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_next3.m">ksub_next3.m</a>,
+          selects the next subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_next4.m">ksub_next4.m</a>,
+          selects the next subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_random.m">ksub_random.m</a>,
+          selects a random subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_random2.m">ksub_random2.m</a>,
+          selects a random subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_random3.m">ksub_random3.m</a>,
+          selects a random subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_random4.m">ksub_random4.m</a>,
+          selects a random subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_random5.m">ksub_random5.m</a>,
+          selects a random subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_rank.m">ksub_rank.m</a>,
+          returns the rank of a subset of size K from a set of size N.
+        </li>
+        <li>
+          <a href = "ksub_to_comp.m">ksub_to_comp.m</a>,
+          returns the composition corresponding to a given K-subset.
+        </li>
+        <li>
+          <a href = "ksub_to_compnz.m">ksub_to_compnz.m</a>,
+          returns the composition into K nonzero parts corresponding 
+          to a given K-subset.
+        </li>
+        <li>
+          <a href = "ksub_unrank.m">ksub_unrank.m</a>,
+          returns a subset of size K from a set of size N, of given rank.
+        </li>
+        <li>
+          <a href = "l4vec_next.m">l4vec_next.m</a>,
+          returns the next logical vector.
+        </li>
+        <li>
+          <a href = "matrix_product_opt.m">matrix_product_opt.m</a>,
+          determines the optimal cost of a matrix product.
+        </li>
+        <li>
+          <a href = "moebius_matrix.m">moebius_matrix.m</a>,
+          finds the Moebius matrix from a covering relation.
+        </li>
+        <li>
+          <a href = "moebius_values.m">moebius_values.m</a>,
+          returns selected values of the Moebius function.
+        </li>
+        <li>
+          <a href = "monomial_count.m">monomial_count.m</a>,
+          counts the number of monomials up to a given degree.
+        </li>
+        <li>
+          <a href = "monomial_counts.m">monomial_counts.m</a>,
+          counts the number of monomials up to a given degree.
+        </li>
+        <li>
+          <a href = "morse_thue.m">morse_thue.m</a>,
+          generates a Morse-Thue number.
+        </li>
+        <li>
+          <a href = "multinomial_coef1.m">multinomial_coef1.m</a>,
+          computes a multinomial coefficient.
+        </li>
+        <li>
+          <a href = "multinomial_coef2.m">multinomial_coef2.m</a>,
+          computes a multinomial coefficient.
+        </li>
+        <li>
+          <a href = "multiperm_enum.m">multiperm_enum.m</a>,
+          enumerates multipermutations.
+        </li>
+        <li>
+          <a href = "multiperm_next.m">multiperm_next.m</a>,
+          computes the next multipermutation.
+        </li>
+        <li>
+          <a href = "nim_sum.m">nim_sum.m</a>,
+          computes the Nim sum of two integers.
+        </li>
+        <li>
+          <a href = "padovan.m">padovan.m</a>,
+          computes the Padovan numbers.
+        </li>
+        <li>
+          <a href = "pell_basic.m">pell_basic.m</a>,
+          returns the basic solution of Pell's equation.
+        </li>
+        <li>
+          <a href = "pell_next.m">pell_next.m</a>,
+          returns the next solution of Pell's equation.
+        </li>
+        <li>
+          <a href = "pent_enum.m">pent_enum.m</a>,
+          computes the N-th pentagonal number.
+        </li>
+        <li>
+          <a href = "perm_ascend.m">perm_ascend.m</a>,
+          returns the longest ascending subsequence of a permutation.
+        </li>
+        <li>
+          <a href = "perm_fixed_enum.m">perm_fixed_enum.m</a>,
+          enumerates the permutations of N objects with M of them unchanged.
+        </li>
+        <li>
+          <a href = "perm0_check.m">perm0_check.m</a>,
+          checks a permutation of (0,...,N-1);
+        </li>
+        <li>
+          <a href = "perm0_lex_next.m">perm0_lex_next.m</a>,
+          generates the next permutation of (0,...,N-1), in lexical order.
+        </li>
+        <li>
+          <a href = "perm0_print.m">perm0_print.m</a>,
+          prints a permutation of (0,...,N-1).
+        </li>
+        <li>
+          <a href = "perm1_break_count.m">perm1_break_count.m</a>
+          counts breaks in a permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_canon_to_cycle.m">perm1_canon_to_cycle.m</a>,
+          converts a permutation of (1,...,N) from canonical to cycle form.
+        </li>
+        <li>
+          <a href = "perm1_check.m">perm1_check.m</a>,
+          checks a permutation of (1,...,N);
+        </li>
+        <li>
+          <a href = "perm1_cycle.m">perm1_cycle.m</a>,
+          analyzes a permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_cycle_to_canon.m">perm1_cycle_to_canon.m</a>,
+          converts a permutation of (1,...,N) from cycle to canonical format.
+        </li>
+        <li>
+          <a href = "perm1_cycle_to_index.m">perm1_cycle_to_index.m</a>,
+          converts a permutation of (1,...,N) from cycle to standard index format.
+        </li>
+        <li>
+          <a href = "perm1_distance.m">perm1_distance.m</a>,
+          computes the distance of two permutations of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_free.m">perm1_free.m</a>,
+          reports the unused items in a partial permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_index_to_cycle.m">perm1_index_to_cycle.m</a>,
+          converts a permutation of (1,...,N) from standard index to cycle form.
+        </li>
+        <li>
+          <a href = "perm1_inverse.m">perm1_inverse.m</a>,
+          inverts a permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_inverse2.m">perm1_inverse2.m</a>,
+          inverts a permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_inverse3.m">perm1_inverse3.m</a>,
+          inverts a permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_lex_next.m">perm1_lex_next.m</a>,
+          generates the next permutation of (1,...,N) in lexical order.
+        </li>
+        <li>
+          <a href = "perm1_mul.m">perm1_mul.m</a>,
+          multiplies two permutations of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_next.m">perm1_next.m</a>,
+          computes the next permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_next2.m">perm1_next2.m</a>,
+          computes the next permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_next3.m">perm1_next3.m</a>,
+          computes the next permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_print.m">perm1_print.m</a>,
+          prints a permutation.
+        </li>
+        <li>
+          <a href = "perm1_random.m">perm1_random.m</a>,
+          returns a random permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_random2.m">perm1_random2.m</a>,
+          returns a random permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_rank.m">perm1_rank.m</a>,
+          ranks a permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_sign.m">perm1_sign.m</a>,
+          returns the sign of a permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_to_equiv.m">perm1_to_equiv.m</a>,
+          converts a permutation of (1,...,N) to an equivalence relation.
+        </li>
+        <li>
+          <a href = "perm1_to_inversion.m">perm1_to_inversion.m</a>,
+          returns the inversion sequence of a permutation of (1,...,N).
+        </li>
+        <li>
+          <a href = "perm1_to_ytb.m">perm1_to_ytb.m</a>,
+          converts a permutation of (1,...,N) to a Young tableau.
+        </li>
+        <li>
+          <a href = "perm1_unrank.m">perm1_unrank.m</a>,
+          unranks a permutation of (1,..,N).
+        </li>
+        <li>
+          <a href = "perrin.m">perrin.m</a>,
+          computes the Perrin numbers.
+        </li>
+        <li>
+          <a href = "pord_check.m">pord_check.m</a>,
+          checks a matrix representing a partial ordering.
+        </li>
+        <li>
+          <a href = "power_mod.m">power_mod.m</a>,
+          computes mod ( A^N, M ).
+        </li>
+        <li>
+          <a href = "power_series1.m">power_series1.m</a>,
+          computes the power series for (1+F(Z))^ALPHA.
+        </li>
+        <li>
+          <a href = "power_series2.m">power_series2.m</a>,
+          computes the power series for exp(F(Z))-1.
+        </li>
+        <li>
+          <a href = "power_series3.m">power_series3.m</a>,
+          computes the power series for G(F(Z)).
+        </li>
+        <li>
+          <a href = "power_series4.m">power_series4.m</a>,
+          computes the power series for G(1/F(Z)).
+        </li>
+        <li>
+          <a href = "prime.m">prime.m</a>,
+          returns any of the first MAXPRIME prime numbers.
+        </li>
+        <li>
+          <a href = "pythag_triple_ijk.m">pythag_triple_ijk.m</a>,
+          computes a Pythagorean triple from (i,j,k) coordinates.
+        </li>
+        <li>
+          <a href = "pythag_triple_next.m">pythag_triple_next.m</a>,
+          computes the next Pythagorean triple.
+        </li>
+        <li>
+          <a href = "r8_agm.m">r8_agm.m</a>,
+          finds the arithmetic-geometric mean of two real numbers.
+        </li>
+        <li>
+          <a href = "r8_fall.m">r8_fall.m</a>,
+          computes the falling factorial.
+        </li>
+        <li>
+          <a href = "r8_fall_values.m">r8_fall_values.m</a>,
+          returns selected values of the falling factorial function.
+        </li>
+        <li>
+          <a href = "r8_rise.m">r8_rise.m</a>,
+          computes the rising factorial.
+        </li>
+        <li>
+          <a href = "r8_rise_values.m">r8_rise_values.m</a>,
+          returns selected values of the rising factorial function.
+        </li>
+        <li>
+          <a href = "r8_to_cfrac.m">r8_to_cfrac.m</a>,
+          converts an R8 to a continued fraction.
+        </li>
+        <li>
+          <a href = "r8_to_dec.m">r8_to_dec.m</a>,
+          converts an R8 to a decimal value;
+        </li>
+        <li>
+          <a href = "r8_to_rat.m">r8_to_rat.m</a>,
+          converts an R8 to a rational value.
+        </li>
+        <li>
+          <a href = "r8mat_det.m">r8mat_det.m</a>,
+          computes the determinant of a real array.
+        </li>
+        <li>
+          <a href = "r8mat_perm1.m">r8mat_perm1.m</a>,
+          applies a permutation to the rows and columns of a square matrix.
+        </li>
+        <li>
+          <a href = "r8mat_2perm1.m">r8mat_2perm1.m</a>,
+          applies a permutation to the rows and columns of a rectangular matrix.
+        </li>
+        <li>
+          <a href = "r8mat_permanent.m">r8mat_permanent.m</a>,
+          computes the permanent of a square matrix.
+        </li>
+        <li>
+          <a href = "r8mat_print.m">r8mat_print.m</a>,
+          prints a real matrix.
+        </li>
+        <li>
+          <a href = "r8mat_print_some.m">r8mat_print_some.m</a>,
+          prints some of an R8MAT.
+        </li>
+        <li>
+          <a href = "r8poly.m">r8poly.m</a>,
+          performs operations on an R8POLY.
+        </li>
+        <li>
+          <a href = "r8poly_f2p.m">r8poly_f2p.m</a>,
+          converts an R8POLY from factorial to standard form.
+        </li>
+        <li>
+          <a href = "r8poly_fval.m">r8poly_fval.m</a>,
+          evaluates an R8POLY in factorial form.
+        </li>
+        <li>
+          <a href = "r8poly_n2p.m">r8poly_n2p.m</a>,
+          converts an R8POLY from Newton to standard form.
+        </li>
+        <li>
+          <a href = "r8poly_nval.m">r8poly_nval.m</a>,
+          evaluates an R8POLY in Newton form.
+        </li>
+        <li>
+          <a href = "r8poly_nx.m">r8poly_nx.m</a>,
+          replaces one of the base points in the Newton form of a polynomial.
+        </li>
+        <li>
+          <a href = "r8poly_p2f.m">r8poly_p2f.m</a>,
+          converts an R8POLY from standard to factorial form.
+        </li>
+        <li>
+          <a href = "r8poly_p2n.m">r8poly_p2n.m</a>,
+          converts an R8POLY from standard to Newton form.
+        </li>
+        <li>
+          <a href = "r8poly_p2t.m">r8poly_p2t.m</a>,
+          converts an R8POLY from standard to Taylor form.
+        </li>
+        <li>
+          <a href = "r8poly_print.m">r8poly_print.m</a>,
+          prints an R8POLY.
+        </li>
+        <li>
+          <a href = "r8poly_pval.m">r8poly_pval.m</a>,
+          evaluates an R8POLY.
+        </li>
+        <li>
+          <a href = "r8poly_t2p.m">r8poly_t2p.m</a>,
+          converts an R8POLY from Taylor to standard form.
+        </li>
+        <li>
+          <a href = "r8vec_backtrack.m">r8vec_backtrack.m</a>,
+          supervises a backtrack search for a real vector.
+        </li>
+        <li>
+          <a href = "r8vec_frac.m">r8vec_frac.m</a>,
+          searches for the K-th smallest entry in an N vector.
+        </li>
+        <li>
+          <a href = "r8vec_indicator1.m">r8vec_indicator1.m</a>,
+          sets a real vector to the indicator1 vector.
+        </li>
+        <li>
+          <a href = "r8vec_mirror_next.m">r8vec_mirror_next.m</a>,
+          steps through all sign variations of a real vector.
+        </li>
+        <li>
+          <a href = "r8vec_print.m">r8vec_print.m</a>,
+          prints a real vector.
+        </li>
+        <li>
+          <a href = "rat_add.m">rat_add.m</a>,
+          adds two rational values.
+        </li>
+        <li>
+          <a href = "rat_div.m">rat_div.m</a>,
+          carries out division of rational values.
+        </li>
+        <li>
+          <a href = "rat_farey.m">rat_farey.m</a>,
+          returns a row of the Farey fraction table.
+        </li>
+        <li>
+          <a href = "rat_farey2.m">rat_farey2.m</a>,
+          returns the next row of the Farey fraction table.
+        </li>
+        <li>
+          <a href = "rat_mul.m">rat_mul.m</a>,
+          multiplies two rational values.
+        </li>
+        <li>
+          <a href = "rat_normalize.m">rat_normalize.m</a>,
+          normalizes a rational value.
+        </li>
+        <li>
+          <a href = "rat_sum_formula.m">rat_sum_formula.m</a>,
+          computes the formulas for sums of powers of integers.
+        </li>
+        <li>
+          <a href = "rat_to_cfrac.m">rat_to_cfrac.m</a>,
+          converts a rational to a continued fraction.
+        </li>
+        <li>
+          <a href = "rat_to_dec.m">rat_to_dec.m</a>,
+          converts a rational to a decimal value.
+        </li>
+        <li>
+          <a href = "rat_to_r8.m">rat_to_r8.m</a>,
+          converts a rational to a real value.
+        </li>
+        <li>
+          <a href = "rat_to_s.m">rat_to_s.m</a>,
+          converts a rational to a left-justified string.
+        </li>
+        <li>
+          <a href = "rat_width.m">rat_width.m</a>,
+          returns the "width" of a rational number.
+        </li>
+        <li>
+          <a href = "ratmat_det.m">ratmat_det.m</a>,
+          computes the determinant of a rational matrix.
+        </li>
+        <li>
+          <a href = "ratmat_print.m">ratmat_print.m</a>,
+          prints a rational matrix.
+        </li>
+        <li>
+          <a href = "regro_next.m">regro_next.m</a>,
+          computes the next restricted growth function.
+        </li>
+        <li>
+          <a href = "rfrac_to_cfrac.m">rfrac_to_cfrac.m</a>,
+          converts a rational polynomial fraction to continued fraction form.
+        </li>
+        <li>
+          <a href = "rfrac_to_jfrac.m">rfrac_to_jfrac.m</a>,
+          converts a rational polynomial fraction to a J fraction.
+        </li>
+        <li>
+          <a href = "s_len_trim.m">s_len_trim.m</a>,
+          returns the length of a string to the last nonblank.
+        </li>
+        <li>
+          <a href = "schroeder.m">schroeder.m</a>,
+          generates the Schroeder numbers.
+        </li>
+        <li>
+          <a href = "sort_heap_external.m">sort_heap_external.m</a>,
+          externally sorts a list of items into ascending order.
+        </li>
+        <li>
+          <a href = "sort_heap_external_noglobal.m">
+          sort_heap_external_noglobal.m</a>,
+          externally sorts a list of items into ascending order, and
+          does not use global memory.
+        </li>
+        <li>
+          <a href = "subcomp_next.m">subcomp_next.m</a>,
+          computes the next subcomposition of N into K parts;
+        </li>
+        <li>
+          <a href = "subcompnz_next.m">subcompnz_next.m</a>,
+          computes the next subcomposition of N into K nonzero parts;
+        </li>
+        <li>
+          <a href = "subcompnz2_next.m">subcompnz2_next.m</a>,
+          computes the next composition of N into K nonzero parts
+          for N between N_LO and N_HI;
+        </li>
+        <li>
+          <a href = "subset_by_size_next.m">subset_by_size_next.m</a>,
+          returns all the subsets of an N set, in decreasing order of size.
+        </li>
+        <li>
+          <a href = "subset_gray_next.m">subset_gray_next.m</a>,
+          generates the next subset of an N set.
+        </li>
+        <li>
+          <a href = "subset_gray_rank.m">subset_gray_rank.m</a>,
+          ranks a subset of an N set using the Gray ordering.
+        </li>
+        <li>
+          <a href = "subset_gray_unrank.m">subset_gray_unrank.m</a>,
+          returns a subset of an N set with the given Gray ranking.
+        </li>
+        <li>
+          <a href = "subset_lex_next.m">subset_lex_next.m</a>,
+          returns the next subset of an N set, in lexicographic order.
+        </li>
+        <li>
+          <a href = "subset_random.m">subset_random.m</a>,
+          selects a random subset of an N set.
+        </li>
+        <li>
+          <a href = "subtriangle_next.m">subtriangle_next.m</a>,
+          returns the next subtriangle in a triangle whose edges have
+          each been subdivided into N parts.
+        </li>
+        <li>
+          <a href = "thue_binary_next.m">thue_binary_next.m</a>,
+          returns the next element in a binary Thue sequence.
+        </li>
+        <li>
+          <a href = "thue_ternary_next.m">thue_ternary_next.m</a>,
+          returns the next element in a ternary Thue sequence.
+        </li>
+        <li>
+          <a href = "triang.m">triang.m</a>,
+          renumbers items in accordance with a partial ordering.
+        </li>
+        <li>
+          <a href = "tuple_next.m">tuple_next.m</a>,
+          computes the next element of a tuple space.
+        </li>
+        <li>
+          <a href = "tuple_next2.m">tuple2_next.m</a>,
+          computes the next element of a tuple space.
+        </li>
+        <li>
+          <a href = "tuple_next_fast.m">tuple_next_fast.m</a>,
+          computes the next element of a tuple space, "fast".
+        </li>
+        <li>
+          <a href = "tuple_next_ge.m">tuple_next_ge.m</a>,
+          computes the next "nondecreasing" element of a tuple space.
+        </li>
+        <li>
+          <a href = "ubvec_add.m">ubvec_add.m</a>,
+          adds two unsigned binary vectors.
+        </li>
+        <li>
+          <a href = "ubvec_print.m">ubvec_print.m</a>,
+          prints a UBVEC.
+        </li>
+        <li>
+          <a href = "ubvec_to_ui4.m">ubvec_to_ui4.m</a>,
+          converts an unsigned binary vector to an unsigned integer.
+        </li>
+        <li>
+          <a href = "ubvec_xor.m">ubvec_xor.m</a>,
+          applies an exclusive OR to two unsigned binary vectors.
+        </li>
+        <li>
+          <a href = "ui4_to_ubvec.m">ui4_to_ubvec.m</a>,
+          converts an integer to an unsigned binary vector.
+        </li>
+        <li>
+          <a href = "vec_colex_next.m">vec_colex_next.m</a>,
+          generates vectors in colex order.
+        </li>
+        <li>
+          <a href = "vec_colex_next2.m">vec_colex_next2.m</a>,
+          generates vectors in colex order.
+        </li>
+        <li>
+          <a href = "vec_colex_next3.m">vec_colex_next3.m</a>,
+          generates vectors in colex order.
+        </li>
+        <li>
+          <a href = "vec_gray_next.m">vec_gray_next.m</a>,
+          generates the elements of a product space.
+        </li>
+        <li>
+          <a href = "vec_gray_rank.m">vec_gray_rank.m</a>,
+          returns the rank of an N-vectors of integers modulo a given base.
+        </li>
+        <li>
+          <a href = "vec_gray_unrank.m">vec_gray_unrank.m</a>,
+          computes the product space element of a given rank.
+        </li>
+        <li>
+          <a href = "vec_lex_next.m">vec_lex_next.m</a>,
+          generates all N-vectors of integers modulo a given base.
+        </li>
+        <li>
+          <a href = "vec_random.m">vec_random.m</a>,
+          selects a random N-vectors of integers modulo a given base.
+        </li>
+        <li>
+          <a href = "vector_constrained_next.m">vector_constrained_next.m</a>,
+          computes the "next" vector that lies in a given range and satisfies
+          a particular constraint.
+        </li>
+        <li>
+          <a href = "vector_constrained_next2.m">vector_constrained_next2.m</a>,
+          computes the "next" vector that lies in a given range and satisfies
+          a particular constraint.
+        </li>
+        <li>
+          <a href = "vector_constrained_next3.m">vector_constrained_next3.m</a>,
+          computes the "next" vector that lies in a given range and satisfies
+          a particular constraint.
+        </li>
+        <li>
+          <a href = "vector_constrained_next4.m">vector_constrained_next4.m</a>,
+          computes the "next" vector that lies in a given range and satisfies
+          a particular constraint.
+        </li>
+        <li>
+          <a href = "vector_constrained_next5.m">vector_constrained_next5.m</a>,
+          computes the "next" vector that lies in a given range and satisfies
+          a particular constraint.
+        </li>
+        <li>
+          <a href = "vector_constrained_next6.m">vector_constrained_next6.m</a>,
+          computes the "next" vector that lies in a given range and satisfies
+          a particular constraint.
+        </li>
+        <li>
+          <a href = "vector_constrained_next7.m">vector_constrained_next7.m</a>,
+          returns the "next" vector that lies in a given range and satisfies
+          a particular constraint.
+        </li>
+        <li>
+          <a href = "vector_next.m">vector_next.m</a>,
+          returns the "next" integer vector between two ranges.
+        </li>
+        <li>
+          <a href = "ytb_enum.m">ytb_enum.m</a>,
+          enumerates the Young tableaus of size N.
+        </li>
+        <li>
+          <a href = "ytb_next.m">ytb_next.m</a>,
+          returns the next Young tableau of size N.
+        </li>
+        <li>
+          <a href = "ytb_print.m">ytb_print.m</a>,
+          prints a Young tableau.
+        </li>
+        <li>
+          <a href = "ytb_random.m">ytb_random.m</a>,
+          returns a random Young tableau.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 11 January 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

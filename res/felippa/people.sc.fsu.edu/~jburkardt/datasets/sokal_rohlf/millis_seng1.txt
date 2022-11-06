@@ -1,0 +1,27 @@
+# Title: Birth weights of male Chinese in ounces
+# 1: Weight in ounces, "Y"
+# 2: Observed frequency "f"
+# 3: Cumulative frequency "F"
+# 4: Reverse cumulative frequency "F"
+#
+#  Reference:
+#  J Millis, Y Seng,
+#  The effect of age and parity of the mother on birth weight of the offspring,
+#  Annals of Human Genetics,
+#  Volume 19, pages 58-73, 1954.
+#
+ 59.5     2     2  9465
+ 67.5     6     8  9463
+ 75.5    39    47  9457
+ 83.5   385   432  9418
+ 91.5   888  1320  9033
+ 99.5  1729  3049  8145
+107.5  2240  5289  6416
+115.5  2007  7296  4176
+123.5  1233  8529  2169
+131.5   641  9170   936
+139.5   201  9371   295
+147.5    74  9445    94
+155.5    14  9459    20
+163.5     5  9464     6
+171.5     1  9465     1

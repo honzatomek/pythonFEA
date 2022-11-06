@@ -1,0 +1,21 @@
+# Title: Effect of different sugars on length of pea sections
+# 1: Observation index
+# 2: Control
+# 3: 2% Glucose
+# 4: 2% Fructose
+# 5: 1% Glucose + 1% Fructose
+# 6: 2% Sucrose
+#
+#   Reference:
+#   William Purves
+#
+ 1  75  57  58  58  62
+ 2  67  58  61  59  66
+ 3  70  60  56  58  65
+ 4  75  59  58  61  63
+ 5  65  62  57  57  64
+ 6  71  60  56  56  62
+ 7  67  60  61  58  65
+ 8  67  57  60  57  65
+ 9  76  59  57  57  62
+10  68  61  58  59  67

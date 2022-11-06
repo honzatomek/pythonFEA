@@ -1,0 +1,8 @@
+read halton_40_02000_3940.txt
+box 0,0,1,1
+shadow
+title halton_40_02000_3940.txt
+output halton_40_02000_3940.eps
+dot
+#
+quit

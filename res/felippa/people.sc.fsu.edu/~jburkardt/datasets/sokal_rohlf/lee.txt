@@ -1,0 +1,17 @@
+# Title: Melanoma cases over body regions of men and women
+# 1: Anatomic site
+# 2: Frequency in men
+# 3: Frequency in women
+#
+#  Reference:
+#  J Lee,
+#  Melanoma and exposure to sunlight,
+#  Epidemiology Review,
+#  Volume 14, pages 110-136, 1982.
+#
+"Head and neck",                   949,  645
+"Trunk and limbs",                3243, 3645
+"Buccal cavity",                     8,   11
+"Rest of gastrointestinal tract",    5,   21
+"Genital tract",                    12    93
+"Eye",                             382,  371

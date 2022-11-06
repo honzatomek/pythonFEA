@@ -1,0 +1,26 @@
+#  cvt_mod_02_00010.txt
+#  created by routine CVT_MOD_WRITE in CVT_MOD_DATASET.F90
+#  at December  7 2003  12:21:31.463 PM
+#
+#  Spatial dimension M =   2
+#  Number of points N =     10
+#  EPSILON (unit roundoff) =   0.119209E-06
+#
+#  Initial SEED =    123456789
+#
+#  Initialization by UNIFORM.
+#  Sampling by UNIFORM.
+#  Number of sample points =       500000
+#  Number of sampling iterations =    100
+#  L2 norm of dataset change on last step =   0.004655
+#
+  0.378753  0.919641
+  0.725977  0.572210
+  0.551973  0.246525
+  0.264802  0.248364
+  0.052727  0.745158
+  0.057432  0.457647
+  0.395623  0.587517
+  0.710814  0.904034
+  0.839889  0.240473
+  0.046507  0.033340

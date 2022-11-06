@@ -1,0 +1,281 @@
+<html>
+
+  <head>
+    <title>
+      BURGERS - 40 Solutions of the Burgers Equation
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      BURGERS <br> 40 Solutions of the Burgers Equation
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>BURGERS</b>
+      is a dataset directory which
+      contains solutions to the time-dependent
+      Burgers equation in one dimension.
+    </p>
+
+    <p>
+      The Burgers equation has the form:
+      <blockquote><b>
+        u<sub>t</sub> + u &nbsp; u<sub>x</sub> = nu &nbsp; u<sub>xx</sub>
+      </b></blockquote>
+    </p>
+
+    <p>
+      The Burgers equations is sometimes called "the poor man's
+      Navier Stokes equation"; it can be regarded as a cousin of that
+      equation, which still includes nonlinearity controlled by the
+      magnitude of a viscosity parameter <b>nu</b>, and whose solution
+      exhibits wave-like behavior.
+    </p>
+
+    <p>
+      Each solution in this dataset contains data evaluated at 41 equally 
+      spaced nodes in the interval from 0.0 to 1.0; successive solutions
+      represent snapshots of the data at 40 equally spaced times from 0 to 1.
+    </p>
+
+    <p>
+      The initial condition is a square wave which is equal to 1 from 0
+      to 1/2, and to 0 from 1/2 to 1.  As time progresses, the wave
+      travels and smooths out.
+    </p>
+
+    <p>
+      This data was computed, and graciously supplied, by
+      Professor Hyung-Chun Lee of Ajou University, Korea.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../f_src/burgers_solution/burgers_solution.html">
+      BURGERS_SOLUTION</a>,
+      a FORTRAN90 library which
+      evaluates an exact solution of the time-dependent 1D Burgers equation.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/svd_basis/svd_basis.html">
+      SVD_BASIS</a>,
+      a C++ program which
+      applies the Singular Value Decomposition (SVD) to a collection of data vectors,
+      extracting dominant modes;
+    </p>
+
+    <p>
+      <a href = "../../f_src/svd_basis_weight/svd_basis_weight.html">
+      SVD_BASIS_WEIGHT</a>,
+      a FORTRAN90 program which
+      is similar to SVD_BASIS, but which allows the user to
+      assign weights to each data vector.
+    </p>
+
+    <h3 align = "center">
+      Tar File:
+    </h3>
+
+    <p>
+      A GZIP'ed TAR file of the contents of this directory is available.
+      <ul>
+        <li>
+          <a href = "burgers.tar.sh">burgers.tar.sh</a>
+          the commands used to create the GZIP'ed TAR file.
+        </li>
+        <li>
+          <a href = "burgers.tar.gz">burgers.tar.gz</a> 
+          the GZIP'ed TAR file.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      The full data set is available in a single file of 41 rows
+      and 40 columns, which is awkward to read, but good for loading
+      into MATLAB with a single <b>load</b> statement:
+      <a href = "burgers_full.txt">burgers_full.txt</a>.
+    </p>
+
+    <p>
+      MATLAB can be used to display the full data set using commands like
+      <pre>
+        data = load ( 'burgers_full.txt' );
+        [ t, x ] = meshgrid ( 1:40, 1:41 );
+        surf ( t, x, data );
+        shading interp
+      </pre>
+      The results of such a series of commands can be viewed in
+      <a href = "burgers_full.png">burgers_full.png</a>, which is 
+      a <a href = "../../data/png/png.html">PNG</a> image.
+    </p>
+
+    <p>
+      The data is also available as one X coordinate file, and 40
+      "snapshots" of the solution at a sequence of times.
+      <ul>
+        <li>
+          <a href = "burgers_x.txt">burgers_x.txt</a>, 
+          the spatial coordinates of the 41 nodes between 0.0 and 1.0.
+        </li>
+        <li>
+          <a href = "burgers_01.txt">burgers_01.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_02.txt">burgers_02.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_03.txt">burgers_03.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_04.txt">burgers_04.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_05.txt">burgers_05.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_06.txt">burgers_06.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_07.txt">burgers_07.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_08.txt">burgers_08.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_09.txt">burgers_09.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_10.txt">burgers_10.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_11.txt">burgers_11.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_12.txt">burgers_12.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_13.txt">burgers_13.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_14.txt">burgers_14.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_15.txt">burgers_15.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_16.txt">burgers_16.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_17.txt">burgers_17.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_18.txt">burgers_18.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_19.txt">burgers_19.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_20.txt">burgers_20.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_21.txt">burgers_21.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_22.txt">burgers_22.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_23.txt">burgers_23.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_24.txt">burgers_24.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_25.txt">burgers_25.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_26.txt">burgers_26.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_27.txt">burgers_27.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_28.txt">burgers_28.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_29.txt">burgers_29.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_30.txt">burgers_30.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_31.txt">burgers_31.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_32.txt">burgers_32.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_33.txt">burgers_33.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_34.txt">burgers_34.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_35.txt">burgers_35.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_36.txt">burgers_36.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_37.txt">burgers_37.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_38.txt">burgers_38.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_39.txt">burgers_39.txt</a>.
+        </li>
+        <li>
+          <a href = "burgers_40.txt">burgers_40.txt</a>.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 22 September 2006.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

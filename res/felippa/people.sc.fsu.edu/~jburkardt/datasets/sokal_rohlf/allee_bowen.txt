@@ -1,0 +1,23 @@
+# Title: Survival time in goldfish in colloidal silver suspension
+# 1: Experiment 9, 5 repetitions
+# 2: Experiment 10, 10 repetitions
+# 3: Experiment with urea and salts added, 10 replications
+#
+#  Reference:
+#  Allee, Bowen,
+#  Studies in animal aggregations: Mass protection against colloidal
+#  silver among goldfishes,
+#  Journal of Experimental Zoology,
+#  Volume 61, pages 185-207.
+# 
+210, 150, 330
+180, 180, 300
+240, 210, 300
+210, 240, 420
+210, 240, 360
+   , 120, 270
+   , 180, 360
+   , 240, 360
+   , 120, 300
+   , 150, 120
+

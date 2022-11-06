@@ -1,0 +1,113 @@
+<html>
+
+  <head>
+    <title>
+      disk01_quarter_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      disk01_quarter_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>disk01_quarter_rule</b>,
+      a MATLAB code which
+      demonstrates how to compute a quadrature rule of a particular precision 
+      to estimate integrals over the interior of the unit quarter disk in 2D.
+    </p>
+
+    <p>
+      The unit quarter disk in 2D is the set of points (X,Y) such that
+      0 <= X, 0 <= Y, and X^2+Y^2 <= 1.
+    </p>
+
+    <p>
+      The program sets up the nonlinear equations that characterize the
+      points and weights of the rule, and then calls MATLAB's fsolve()
+      function to solve the nonlinear system.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>disk01_quarter_rule</b> is available in
+      <a href = "../../m_src/disk01_quarter_rule/disk01_quarter_rule.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/annulus_rule/annulus_rule.html">
+      annulus_rule</a>,
+      a MATLAB code which
+      computes a quadrature rule for estimating integrals of a function 
+      over the interior of a circular annulus in 2D.
+    </p>
+
+    <p>
+      <a href = "../../m_src/disk01_quarter_monte_carlo/disk01_quarter_monte_carlo.html">
+      disk01_quarter_monte_carlo</a>,
+      a MATLAB code which
+      uses the Monte Carlo method to estimate integrals over the unit quarter
+      disk in 2D.
+    </p>
+
+    <p>
+      <a href = "../../m_src/disk01_quarter_rule_test/disk01_quarter_rule_test.html">
+      disk01_quarter_rule_test</a>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "disk01_quarter_area.m">disk01_quarter_area.m</a>, 
+          returns the area of the unit quarter disk.
+        </li>
+        <li>
+          <a href = "disk01_quarter_monomial_integral.m">
+          disk01_quarter_monomial_integral.m</a>, 
+          returns the exact integral of a monomial over the unit quarter disk
+        </li>
+        <li>
+          <a href = "disk01_quarter_rule.m">disk01_quarter_rule.m</a>, 
+          computes a quadrature rule of precision 2 for the unit quarter disk.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 09 January 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

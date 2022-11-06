@@ -1,0 +1,396 @@
+<html>
+
+  <head>
+    <title>
+      QUADRATURE_RULES_LAGUERRE - Quadrature Rules of Gauss-Laguerre Type
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      QUADRATURE_RULES_LAGUERRE <br> Quadrature Rules of Gauss-Laguerre Type
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>QUADRATURE_RULES_LAGUERRE</b>
+      is a dataset directory which
+      contains examples of quadrature rules of Gauss-Laguerre type.  
+    </p>
+
+    <p>
+      Gauss-Laguerre quadrature rules are designed to approximate integrals on
+      semi-infinite intervals.  By default, this interval is [0,+oo) but
+      in some cases, the interval may be specified with a different initial
+      point, which we will suggest by [A,+oo).  
+    </p>
+
+    <p>
+      In the following discussion, we will represent the left endpoint by
+      <b>A</b>, while understanding that it is usually taken to be 0.
+    </p>
+
+    <p>
+      Standard Gauss-Laguerre quadrature assumes that the integrand we are
+      considering has a form like:
+      <pre>
+        Integral ( A &lt;= x &lt; +oo ) exp(-x) f(x) dx
+      </pre>
+      where the factor <b>exp(-x)</b> is regarded as a weight factor.
+    </p>
+
+    <p>
+      A <i>standard Gauss-Laguerre quadrature rule</i> is a set of <b>n</b>
+      positive weights <b>w</b> and abscissas <b>x</b> so that
+      <pre>
+        Integral ( A &lt;= x &lt; +oo ) exp(-x) f(x) dx
+      </pre>
+      may be approximated by
+      <pre>
+        Sum ( 1 &lt;= I &lt;= N ) w(i) * f(x(i))
+      </pre>
+    </p>
+
+    <p>
+      It is often convenient to consider approximating integrals in which
+      the weighting factor <b>exp(-x)</b> is implicit.  In that case, we
+      are looking at approximating
+      <pre>
+        Integral ( A &lt;= x &lt; +oo ) f(x) dx
+      </pre>
+      and it is easy to modify a standard Gauss-Laguerre quadrature rule
+      to handle this case directly.
+    </p>
+
+    <p>
+      A <i>modified Gauss-Laguerre quadrature rule</i> is a set of <b>n</b>
+      positive weights <b>w</b> and abscissas <b>x</b> so that
+      <pre>
+        Integral ( A &lt;= x &lt; +oo ) f(x) dx
+      </pre>
+      may be approximated by
+      <pre>
+        Sum ( 1 &lt;= I &lt;= N ) w(i) * f(x(i))
+      </pre>
+    </p>
+
+    <p>
+      When using a Gauss-Laguerre quadrature rule, it's important to know whether
+      the rule has been developed for the standard or modified cases.
+      Basically, the only change is that the weights of the modified rule have 
+      been multiplied by an exponential factor evaluated at the corresponding abscissa.
+    </p>
+
+    <p>
+      For this directory, a quadrature rule is stored as three files,
+      containing the weights, the points, and a file containing two
+      points defining the endpoints of the region.  The first endpoint
+      is either 0 or A; the second endpoint is really infinity, and
+      we will simply place a "large" value here, trusting that the user
+      will already know that this is merely a placeholder for infinity.
+    </p>
+
+    <h3 align = "center">
+      Example:
+    </h3>
+
+    <p>
+      We consider a modified Gauss-Laguerre quadrature rule of order 4.
+    </p>
+
+    <p>
+      Here is the text of the "W" file storing the weights of such a rule:
+      <pre><code>
+        0.60315
+        0.35741
+        0.03888
+        0.00053
+      </code></pre>
+      (We have reduced the number of digits printed in this presentation)
+    </p>
+
+    <p>
+      Here is the text of the "X" file storing the abscissas of such a rule:
+      <pre><code>
+        0.32254
+        1.74576
+        4.53662
+        9.39507
+      </code></pre>
+    </p>
+
+    <p>
+      Here is the text of the "R" file storing the lower and upper limits of
+      the region:
+      <pre><code>
+        0.0
+        1.0E+30
+      </code></pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/int_exactness_laguerre/int_exactness_laguerre.html">
+      INT_EXACTNESS_LAGUERRE</a>,
+      a C++ program which
+      tests the polynomial exactness of Gauss-Laguerre quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/laguerre_polynomial/laguerre_polynomial.html">
+      LAGUERRE_POLYNOMIAL</a>,
+      a C++ library which
+      evaluates the Laguerre polynomial, the generalized Laguerre polynomial,
+      and the Laguerre function.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/laguerre_rule/laguerre_rule.html">
+      LAGUERRE_RULE</a>,
+      a C++ program which
+      can compute and print a Gauss-Laguerre quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../datasets/quadrature_rules_gen_laguerre/quadrature_rules_gen_laguerre.html">
+      QUADRATURE_RULES_GEN_LAGUERRE</a>,
+      a dataset directory which
+      contains quadrature rules for integration on a semi-infinite interval,
+      using a generalized Gauss-Laguerre rule.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/test_int_laguerre/test_int_laguerre.html">
+      TEST_INT_LAGUERRE</a>,
+      a C++ library which
+      defines test integrands for integration over [A,+oo).
+    </p>
+
+    <h3 align = "center">
+      Sample Files:
+    </h3>
+
+    <p>
+      Standard Gauss-Laguerre Rules, Order 1 through 10, 16, 32, 64:
+      <ul>
+        <li>
+          <a href = "lag_o01_x.txt">lag_o01_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o01_w.txt">lag_o01_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o01_r.txt">lag_o01_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o02_x.txt">lag_o02_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o02_w.txt">lag_o02_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o02_r.txt">lag_o02_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o03_x.txt">lag_o03_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o03_w.txt">lag_o03_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o03_r.txt">lag_o03_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o04_x.txt">lag_o04_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o04_w.txt">lag_o04_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o04_r.txt">lag_o04_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o05_x.txt">lag_o05_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o05_w.txt">lag_o05_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o05_r.txt">lag_o05_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o06_x.txt">lag_o06_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o06_w.txt">lag_o06_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o06_r.txt">lag_o06_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o07_x.txt">lag_o07_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o07_w.txt">lag_o07_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o07_r.txt">lag_o07_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o08_x.txt">lag_o08_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o08_w.txt">lag_o08_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o08_r.txt">lag_o08_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o09_x.txt">lag_o09_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o09_w.txt">lag_o09_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o09_r.txt">lag_o09_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o10_x.txt">lag_o10_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o10_w.txt">lag_o10_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o10_r.txt">lag_o10_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o16_x.txt">lag_o16_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o16_w.txt">lag_o16_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o16_r.txt">lag_o16_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o32_x.txt">lag_o32_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o32_w.txt">lag_o32_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o32_r.txt">lag_o32_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o64_x.txt">lag_o64_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o64_w.txt">lag_o64_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o64_r.txt">lag_o64_r.txt</a>, the range.
+        </li>
+      </ul>
+    </p>
+
+
+    <p>
+      Modified Gauss-Laguerre Rules, Order 1, 2, 4, 8, 16, 32, 64:
+      <ul>
+        <li>
+          <a href = "lag_o01_modified_x.txt">lag_o01_modified_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o01_modified_w.txt">lag_o01_modified_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o01_modified_r.txt">lag_o01_modified_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o02_modified_x.txt">lag_o02_modified_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o02_modified_w.txt">lag_o02_modified_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o02_modified_r.txt">lag_o02_modified_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o04_modified_x.txt">lag_o04_modified_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o04_modified_w.txt">lag_o04_modified_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o04_modified_r.txt">lag_o04_modified_r.txt</a>, the range.
+        </li>
+         <li>
+          <a href = "lag_o08_modified_x.txt">lag_o08_modified_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o08_modified_w.txt">lag_o08_modified_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o08_modified_r.txt">lag_o08_modified_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o16_modified_x.txt">lag_o16_modified_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o16_modified_w.txt">lag_o16_modified_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o16_modified_r.txt">lag_o16_modified_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o32_modified_x.txt">lag_o32_modified_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o32_modified_w.txt">lag_o32_modified_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o32_modified_r.txt">lag_o32_modified_r.txt</a>, the range.
+        </li>
+        <li>
+          <a href = "lag_o64_modified_x.txt">lag_o64_modified_x.txt</a>, the abscissas.
+        </li>
+        <li>
+          <a href = "lag_o64_modified_w.txt">lag_o64_modified_w.txt</a>, the weights.
+        </li>
+        <li>
+          <a href = "lag_o64_modified_r.txt">lag_o64_modified_r.txt</a>, the range.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to 
+      <a href = "../datasets.html">the DATASETS page.</a>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 13 May 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

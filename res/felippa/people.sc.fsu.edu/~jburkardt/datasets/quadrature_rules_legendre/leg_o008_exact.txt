@@ -1,0 +1,84 @@
+22 January 2009   9:23:04.630 AM                                                
+ 
+INT_EXACTNESS_LEGENDRE
+  FORTRAN90 version
+ 
+  Investigate the polynomial exactness of a Gauss-Legendre
+  quadrature rule by integrating weighted 
+  monomials up to a given degree over the [-1,+1] interval.
+ 
+INT_EXACTNESS_LEGENDRE: User input:
+  Quadrature rule X file = "leg_o8_x.txt".
+  Quadrature rule W file = "leg_o8_w.txt".
+  Quadrature rule R file = "leg_o8_r.txt".
+  Maximum degree to check =       18
+ 
+  Spatial dimension =        1
+  Number of points  =        8
+ 
+  The quadrature rule to be tested is
+  a Gauss-Legendre rule
+  ORDER =        8
+ 
+  Standard rule:
+    Integral ( -1 <= x <= +1 ) f(x) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+ 
+  Weights W:
+ 
+  w( 1) =   0.1012285362903761    
+  w( 2) =   0.2223810344533745    
+  w( 3) =   0.3137066458778873    
+  w( 4) =   0.3626837833783620    
+  w( 5) =   0.3626837833783620    
+  w( 6) =   0.3137066458778873    
+  w( 7) =   0.2223810344533745    
+  w( 8) =   0.1012285362903761    
+ 
+  Abscissas X:
+ 
+  x( 1) =  -0.9602898564975364    
+  x( 2) =  -0.7966664774136267    
+  x( 3) =  -0.5255324099163290    
+  x( 4) =  -0.1834346424956498    
+  x( 5) =   0.1834346424956498    
+  x( 6) =   0.5255324099163290    
+  x( 7) =   0.7966664774136267    
+  x( 8) =   0.9602898564975364    
+ 
+  Region R:
+ 
+  r( 1) =  -1.0000000000000000    
+  r( 2) =   1.0000000000000000    
+ 
+  A Gauss-Legendre rule would be able to exactly
+  integrate monomials up to and including degree =       15
+ 
+          Error                      Error           Degree
+         (This rule)                (Trapezoid)
+ 
+        0.0000000000000000         0.0000000000000002   0
+        0.0000000000000000         0.0000000000000001   1
+        0.0000000000000000         0.0408163265306121   2
+        0.0000000000000000         0.0000000000000000   3
+        0.0000000000000003         0.1349437734277384   4
+        0.0000000000000000         0.0000000000000000   5
+        0.0000000000000002         0.2780304124981938   6
+        0.0000000000000000         0.0000000000000000   7
+        0.0000000000000001         0.4628822399940606   8
+        0.0000000000000000         0.0000000000000000   9
+        0.0000000000000003         0.6807392105352211  10
+        0.0000000000000000         0.0000000000000000  11
+        0.0000000000000005         0.9228001872701588  12
+        0.0000000000000000         0.0000000000000000  13
+        0.0000000000000010         1.1814556860179242  14
+        0.0000000000000000         0.0000000000000000  15
+        0.0003956606287597         1.4508791292288041  16
+        0.0000000000000000         0.0000000000000000  17
+        0.0018727936427998         1.7270038958037262  18
+ 
+INT_EXACTNESS_LEGENDRE:
+  Normal end of execution.
+ 
+22 January 2009   9:23:04.633 AM                                                

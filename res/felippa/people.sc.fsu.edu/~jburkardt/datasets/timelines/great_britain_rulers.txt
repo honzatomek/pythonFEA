@@ -1,0 +1,68 @@
+"Name", "House", "ReignBegin", "ReignEnd"
+"Egbert", "Wessex", 802, 839
+"Aethelwulf", "Wessex", 839, 858
+"Aethelbald", "Wessex", 858, 860
+"Aethelbert", "Wessex", 860, 866
+"Aethelred", "Wessex", 866, 871
+"Alfred the Great", "Wessex", 871, 899
+"Edward the Elder", "Wessex", 899, 925
+"Athelstan", "Wessex", 925, 940
+"Edmund the Magnificent", "Wessex", 940, 946
+"Eadred", "Wessex", 946, 955
+"Eadwig (Edwy) All-Fair", "Wessex", 955, 959
+"Edgar the Peaceable", "Wessex", 959, 975
+"Edward the Martyr", "Wessex", 975, 978
+"Aethelred II (Ethelred the Unready)", "Wessex", 979, 1013
+"Aethelred II (Ethelred the Unready)", "Wessex", 1014, 1016
+"Edmund II (Ironside)", "Wessex", 1016, 1016
+"Svein Forkbeard", "Denmark", 1014, 1014
+"Cnut (Canute)", "Denmark", 1016, 1035
+"Harold I", "Denmark", 1035, 1040
+"Hardicnut", "Denmark", 1040, 1042
+"Edward (the Confessor)", "Saxony", 1042, 1066
+"Harold II", "Saxony", 1066, 1066
+"William I", "Normandy", 1066, 1087
+"William II", "Normandy", 1087, 1100
+"Henry I", "Normandy", 1100, 1135
+"Stephen", "Normandy", 1135, 1154
+"Empress Matilda (Queen Maud)", "Normandy", 1141, 1141
+"Henry II", "Plantagenet", 1154, 1189
+"Richard I", "Plantagenet", 1189, 1199
+"John", "Plantagenet", 1199, 1216
+"Henry III", "Plantagenet", 1216, 1272
+"Edward I", "Plantagenet", 1272, 1307
+"Edward II", "Plantagenet", 1307, 1327
+"Edward III", "Plantagenet", 1327, 1377
+"Richard II", "Plantagenet", 1377, 1399
+"Henry IV", "Lancaster", 1399, 1413
+"Henry V", "Lancaster", 1413, 1422
+"Henry VI", "Lancaster", 1422, 1461
+"Edward IV", "York", 1461, 1483
+"Edward V", "York", 1483, 1483
+"Richard III", "York", 1483, 1485
+"Henry VII", "Tudor", 1485, 1509
+"Henry VIII", "Tudor", 1509, 1547
+"Edward VI", "Tudor", 1547, 1553
+"Lady Jane Grey", "none", 1553, 1553
+"Mary I", "Tudor", 1553, 1558
+"Elizabeth I", "Tudor", 1558, 1603
+"James I", "Stuart", 1603, 1625
+"Charles I", "Stuart", 1625, 1649
+"Oliver Cromwell", "Commonwealth", 1649, 1658
+"Richard Cromwell", "Commonwealth", 1658, 1659
+"Charles II", "Stuart", 1660, 1685
+"James II", "Stuart", 1685, 1688
+"Mary II", "Stuart", 1689, 1694
+"William III", "Orange", 1689, 1702
+"Anne", "Stuart", 1702, 1714
+"George I", "Hanover", 1714, 1727
+"George II", "Hanover", 1727, 1760
+"George III", "Hanover", 1760, 1820
+"George IV", "Hanover", 1820, 1830
+"William IV", "Hanover", 1830, 1837
+"Victoria", "Hanover", 1837, 1901
+"Edward VII", "Saxe-Coburg-Gotha", 1901, 1910
+"George V", "Windsor", 1910, 1936
+"Edward VIII", "Windsor", 1936, 1936
+"George VI", "Windsor", 1936, 1952
+"Elizabeth II", "Windsor", 1952, 2016"

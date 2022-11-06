@@ -1,0 +1,531 @@
+<html>
+
+  <head>
+    <title>
+      LCVT - Latinized CVT Datasets
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      LCVT <br> Latinized CVT Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>LCVT</b>
+      is a dataset directory which
+      contains points generated
+      by "Latinizing" an M-dimensional Centroidal Voronoi Tessellation.
+    </p>
+
+    <p>
+      Each dataset contains N points in M-dimensions, contained with
+      the unit hypercube, and with the centered Latin hypercube property,
+      namely, that for each coordinate 1 <= I <= M, and each of the N
+      intervals of the form [(J-1)/N,J/N], for 1 <= J <= N, there is
+      exactly one point K whose I-th coordinate lies at the center of
+      that interval.
+    </p>
+
+    <p>
+      It's actually pretty easy to generate datasets with this property.
+      For example, there is a "diagonal dataset" that works, and whose
+      first point has all coordinates equal to 1/(2*N), the second point
+      has all coordinates equal to 3/(2*N) and so on.  Other examples
+      abound, but they usually do relatively poorly in terms of point
+      distribution in the original M-dimensional space.
+    </p>
+
+    <p>
+      A Latinized CVT attempts to achieve good dispersion in two
+      opposing senses, first in the Latin hypercube sense (which
+      considers each dimension separately, and which is achieved 
+      exactly by these datasets), and secondly in the CVT sense, 
+      which considers dispersion in the original M-dimensional space,
+      and is approximately achieved by the starting CVT dataset 
+      used to begin the Latin computation, but which we can only 
+      hope the final Latinized set roughly "inherits".  
+    </p>
+
+    <p>
+      The datasets are distinguished by the values of the following
+      parameters:
+      <ul>
+        <li>
+          <b>M</b>, the spatial dimension;
+        </li>
+        <li>
+          <b>N</b>, the number of points to generate;
+        </li>
+        <li>
+          <b>SEED</b>, the initial seed for the random number routine;
+        </li>
+        <li>
+          <b>INITIALIZE</b>, UNIFORM/RANDOM/HALTON/GRID/FILE, the method of 
+          initializing the generators;
+        </li>
+        <li>
+          <b>SAMPLE</b>, UNIFORM/RANDOM/HALTON/GRID, the method of sampling 
+          the Voronoi diagram;
+        </li>
+        <li>
+          <b>SAMPLE_NUM</b>, the number of points used to sample the 
+          region to estimate area, energy, and the Voronoi diagram;
+        </li>
+        <li>
+          <b>CVT_IT</b>, the number of CVT iteration steps;
+        </li>
+        <li>
+          <b>CVT_ENERGY</b>, the clustering energy of the CVT dataset used to
+          initialize the final Latin computation;
+        </li>
+        <li>
+          <b>LATIN_IT</b>, the number of Latin iteration steps;
+        </li>
+        <li>
+          <b>LATIN_ENERGY</b>, the clustering energy of the final Latinized
+          CVT dataset;
+        </li>
+      </ul>
+      The values of M and N are specified in the dataset file names.
+    </p>
+
+    <p>
+      The values of the clustering energy are approximated by averaging
+      the squared distance between each sampling point and the nearest
+      element of the dataset.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../datasets/cvt/cvt.html">
+      CVT</a>,
+      a dataset directory which 
+      contains examples of CVT (Centroidal
+      Voronoi Tessellation) datasets.
+    </p>
+
+    <p>
+      <a href = "../../datasets/latin_center/latin_center.html">
+      LATIN_CENTER</a>,
+      a dataset directory which
+      contains examples of 
+      Latin Center datasets.
+    </p>
+
+    <p>
+      <a href = "../../datasets/latin_edge/latin_edge.html">
+      LATIN_EDGE</a>,
+      a dataset directory which
+      contains examples of 
+      Latin Edge datasets.
+    </p>
+
+    <p>
+      <a href = "../../datasets/latin_random/latin_random.html">
+      LATIN_RANDOM</a>,
+      a dataset directory which
+      contains examples of 
+      Latin Random datasets.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/lcvt/lcvt.html">
+      LCVT</a>,
+      a C++ library which
+      computes a Latinized Centroidal Voronoi Tessellation (CVT).
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/lcvt_dataset/lcvt_dataset.html">
+      LCVT_DATASET</a>,
+      a C++ program which
+      computes a Latinized Centroidal Voronoi Tessellation (CVT) and writes it to a file.
+    </p>
+
+    <p>
+      <a href = "../../datasets/lcvtp/lcvtp.html">
+      LCVTP</a>,
+      a dataset directory which
+      contains examples of 
+      Latinized CVT's on periodic regions.
+    </p>
+
+    <p>
+      <a href = "../../f_src/plot_points/plot_points.html">
+      PLOT_POINTS</a>, 
+      a FORTRAN90 program which
+      can plot two dimensional
+      datasets, making Encapsulated PostScript images.
+    </p>
+
+    <p>
+      <a href = "../../f_src/table_latinize/table_latinize.html">
+      TABLE_LATINIZE</a>,
+      a FORTRAN90 program which
+      can
+      read a TABLE file of points and "latinize" the points,
+      that is, "gently" rearranging them so that they are regularly
+      spaced in every coordinate direction.
+    </p>
+
+    <p>
+      <a href = "../../f_src/table_top/table_top.html">
+      TABLE_TOP</a>,
+      a FORTRAN90 program which
+      can be used to analyze 
+      datasets of any dimension, by creating images of pairwise
+      coordinates.
+    </p>
+
+    <h3 align = "center">
+      Example dataset:
+    </h3>
+
+    <p>
+      A typical (but small) dataset looks like this:
+      <pre>
+#  lcvt_02_00010.txt
+#  created by routine LCVT_WRITE in LCVT_DATASET.F90
+#  at November 12 2003   4:33:43.028 PM
+#
+#  Spatial dimension M =   2
+#  Number of points N =     10
+#  EPSILON (unit roundoff) =   0.119209E-06
+#
+#  Initial SEED =    123456789
+#
+#  Initialization by UNIFORM.
+#  Sampling by UNIFORM.
+#  Number of sample points =        500000
+#  Number of CVT iterations =     25
+#  Energy of CVT dataset =   0.168880E-01
+#  Number of Latin iterations =     10
+#  Energy of Latinized CVT dataset =   0.192302E-01
+#
+  0.150000  0.250000
+  0.450000  0.050000
+  0.750000  0.150000
+  0.650000  0.650000
+  0.250000  0.550000
+  0.850000  0.850000
+  0.350000  0.950000
+  0.950000  0.450000
+  0.550000  0.350000
+  0.050000  0.750000
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          John Burkardt, Max Gunzburger, Janet Peterson and Rebecca Brannon,<br>
+          User Manual and Supporting Information for Library of Codes
+          for Centroidal Voronoi Placement and Associated Zeroth,
+          First, and Second Moment Determination,<br>
+          Sandia National Laboratories Technical Report SAND2002-0099,<br>
+          February 2002.<br>
+          <a href = "http://www.ntis.gov/ordering.htm">Online ordering</a>
+        </li>
+        <li>
+          Charles Colbourn, Jeffrey Dinitz,<br>
+          CRC Handbook of Combinatorial Designs,<br>
+          CRC Press, 1996,<br>
+          ISBN: 0849389488.
+        </li>
+        <li>
+          Qiang Du, Vance Faber, Max Gunzburger,<br>
+          Centroidal Voronoi Tessellations: Applications and Algorithms,<br>
+          SIAM Review,<br>
+          Volume 41, Number 4, December 1999, pages 637-676.
+        </li>
+        <li>
+          Michael McKay, William Conover, Richard Beckman,<br>
+          A Comparison of Three Methods for Selecting Values of Input
+          Variables in the Analysis of Output From a Computer Code,<br>
+          Technometrics,<br>
+          Volume 21, 1979, pages 239-245.
+        </li>
+        <li>
+          Herbert Ryser,<br>
+          Combinatorial Mathematics,<br>
+          Mathematical Association of America, 1963,<br>
+          ISBN: 0883850141,<br>
+          LC: QA165.R95.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      The first family of datasets in M = 2 dimensions include:
+      <ul>
+        <li>
+          <a href = "lcvt_02_00010.txt">lcvt_02_00010.txt</a>, 
+          M = 2, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000, 
+          CVT_IT = 25, CVT_ENERGY = 0.017054, 
+          LATIN_IT = 5, LATIN_ENERGY = 0.019797;
+        </li>
+        <li>
+          <a href = "lcvt_02_00010.png">lcvt_02_00010.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100.txt">lcvt_02_00100.txt</a>, 
+          M = 2, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.001694, 
+          LATIN_IT = 5, LATIN_ENERGY = 0.001847;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100.png">lcvt_02_00100.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "lcvt_02_01000.txt">lcvt_02_01000.txt</a>, 
+          M = 2, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.000164, 
+          LATIN_IT = 5, LATIN_ENERGY = 0.000169;
+        </li>
+        <li>
+          <a href = "lcvt_02_01000.png">lcvt_02_01000.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "lcvt_02_10000.txt">lcvt_02_10000.txt</a>, 
+          M = 2, N = 10000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.000017, 
+          LATIN_IT = 5, LATIN_ENERGY = 0.000017;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      A second family of datasets in M = 2 dimensions was computed
+      using different seeds:
+      <ul>
+        <li>
+          <a href = "lcvt_02_00100_a.inp">lcvt_02_00100_a.inp</a>, 
+          the LCVT_DATASET input file used to create the dataset;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_a_cvt.txt">lcvt_02_00100_a_cvt.txt</a>, 
+          the CVT points used for initialization;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_a_cvt.png">lcvt_02_00100_a_cvt.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the CVT points;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_a.txt">lcvt_02_00100_a.txt</a>, 
+          M = 2, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.162748E-02, 
+          LATIN_IT = 5, LATIN_ENERGY = 0.173777E-02;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_a.png">lcvt_02_00100_a.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the Latinized CVT points;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_b.inp">lcvt_02_00100_b.inp</a>, 
+          the LCVT_DATASET input file used to create the dataset;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_b_cvt.txt">lcvt_02_00100_b_cvt.txt</a>, 
+          the CVT points used for initialization;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_b_cvt.png">lcvt_02_00100_b_cvt.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the CVT points;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_b.txt">lcvt_02_00100_b.txt</a>, 
+          M = 2, N = 100, SEED = 987654321, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.168769E-02, 
+          LATIN_IT = 5, LATIN_ENERGY = 0.188205E-02;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_b.png">lcvt_02_00100_b.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the Latinized CVT points;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_c.inp">lcvt_02_00100_c.inp</a>, 
+          the LCVT_DATASET input file used to create the dataset;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_c_cvt.txt">lcvt_02_00100_c_cvt.txt</a>, 
+          the CVT points used for initialization;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_c_cvt.png">lcvt_02_00100_c_cvt.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the CVT points;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_c.txt">lcvt_02_00100_c.txt</a>, 
+          M = 2, N = 100, SEED = 192837465, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.165052E-02, 
+          LATIN_IT = 5, LATIN_ENERGY = 0.179708E-02;
+        </li>
+        <li>
+          <a href = "lcvt_02_00100_c.png">lcvt_02_00100_c.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the Latinized CVT points;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The first family of datasets in M = 3 dimensions include:
+      <ul>
+        <li>
+          <a href = "lcvt_03_00010.txt">lcvt_03_00010.txt</a>, 
+          M = 3, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000, 
+          CVT_IT = 25, CVT_ENERGY = 0.066311, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.068743;
+        </li>
+        <li>
+          <a href = "lcvt_03_00100.txt">lcvt_03_00100.txt</a>, 
+          M = 3, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.011400, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.013140;
+        </li>
+        <li>
+          <a href = "lcvt_03_01000.txt">lcvt_03_01000.txt</a>, 
+          M = 3, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.002437, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.002592;
+        </li>
+        <li>
+          <a href = "lcvt_03_10000.txt">lcvt_03_10000.txt</a>, 
+          M = 3, N = 10000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.000529, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.000543;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The first family of datasets in M = 7 dimensions include:
+      <ul>
+        <li>
+          <a href = "lcvt_07_00010.txt">lcvt_07_00010.txt</a>, 
+          M = 7, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000, 
+          CVT_IT = 25, CVT_ENERGY = 0.343148, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.445605;
+        </li>
+        <li>
+          <a href = "lcvt_07_00100.txt">lcvt_07_00100.txt</a>, 
+          M = 7, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.155165, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.229383;
+        </li>
+        <li>
+          <a href = "lcvt_07_01000.txt">lcvt_07_01000.txt</a>, 
+          M = 7, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.079601, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.094108;
+        </li>
+        <li>
+          <a href = "lcvt_07_10000.txt">lcvt_07_10000.txt</a>, 
+          M = 7, N = 10000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.040774, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.045106;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The first family of datasets in M = 16 dimensions include:
+      <ul>
+        <li>
+          <a href = "lcvt_16_00010.txt">lcvt_16_00010.txt</a>, 
+          M = 16, N = 10, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000, 
+          CVT_IT = 25, CVT_ENERGY = 1.057923, 
+          LATIN_IT = 2, LATIN_ENERGY = 1.451406;
+        </li>
+        <li>
+          <a href = "lcvt_16_00100.txt">lcvt_16_00100.txt</a>, 
+          M = 16, N = 100, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.828592, 
+          LATIN_IT = 2, LATIN_ENERGY = 1.042796;
+        </li>
+        <li>
+          <a href = "lcvt_16_01000.txt">lcvt_16_01000.txt</a>, 
+          M = 16, N = 1000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.590259, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.714075;
+        </li>
+        <li>
+          <a href = "lcvt_16_10000.txt">lcvt_16_10000.txt</a>, 
+          M = 16, N = 10000, SEED = 123456789, INITIALIZE = UNIFORM,
+          SAMPLE = UNIFORM, SAMPLE_NUM = 500,000,
+          CVT_IT = 25, CVT_ENERGY = 0.415456, 
+          LATIN_IT = 2, LATIN_ENERGY = 0.502405;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 November 2005.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

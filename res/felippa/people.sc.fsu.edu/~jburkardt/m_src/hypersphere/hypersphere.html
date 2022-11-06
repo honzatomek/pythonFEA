@@ -1,0 +1,224 @@
+<html>
+
+  <head>
+    <title>
+      hypersphere
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      hypersphere
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>hypersphere</b>,
+      a MATLAB code which
+      carries out various operations for an M-dimensional hypersphere, including 
+      converting between Cartesian and spherical coordinates, 
+      stereographic projection, sampling the surface of the sphere, and
+      computing the surface area and volume.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>hypersphere</b> is available in
+      <a href = "../../c_src/hypersphere/hypersphere.html">a C version</a> and
+      <a href = "../../cpp_src/hypersphere/hypersphere.html">a C++ version</a> and
+      <a href = "../../f_src/hypersphere/hypersphere.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/hypersphere/hypersphere.html">a MATLAB version.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/hypersphere_test/hypersphere_test.html">
+      hypersphere_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/geometry/geometry.html">
+      geometry</a>,
+      a MATLAB code which
+      performs geometric calculations in 2, 3 and M dimensional space.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypersphere_angle/hypersphere_angle.html">
+      hypersphere_angle</a>,
+      a MATLAB code which 
+      considers the problem of describing the typical value of the angle
+      between a pair of points randomly selected on the unit hypersphere
+      in M dimensions.  Since by symmetry, this will be zero, we instead look
+      at the average of the absolute value of the dot product, and the
+      corresponding angle.  This starts out at 1 for dimension 1, and
+      rapidly decreases as the spatial dimension increases.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypersphere_distance/hypersphere_distance.html">
+      hypersphere_distance</a>,
+      a MATLAB code which
+      computes the expected value of the distance
+      between a pair of points randomly selected on the unit hypersphere
+      in M dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypersphere_integrals/hypersphere_integrals.html">
+      hypersphere_integrals</a>,
+      a MATLAB code which
+      returns the exact value of the integral of any monomial
+      over the surface of the unit hypersphere in M dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypersphere_monte_carlo/hypersphere_monte_carlo.html">
+      hypersphere_monte_carlo</a>,
+      a MATLAB code which
+      applies a Monte Carlo method to estimate the integral of a function
+      on the surface of the unit sphere in M dimensions;
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypersphere_surface/hypersphere_surface.html">
+      hypersphere_surface</a>,
+      a MATLAB code which
+      illustrates a procedure for estimating the location of a hypersurface
+      defined by a characteristic function or a signed function.
+    </p>
+
+    <p>
+      <a href = "../../m_src/random_data/random_data.html">
+      random_data</a>,
+      a MATLAB code which
+      generates sample points for
+      various probability distributions, spatial dimensions, and geometries,
+      including the M-dimensional cube, ellipsoid, simplex and sphere.
+    </p>
+
+    <p>
+      <a href = "../../m_src/sphere_stereograph/sphere_stereograph.html">
+      sphere_stereograph</a>,
+      a MATLAB code which
+      computes the stereographic mapping between points on the unit sphere
+      and points on the plane Z = 1; a generalized mapping is also available
+    </p>
+
+    <p>
+      <a href = "../../m_src/sphere_stereograph_display/sphere_stereograph_display.html">
+      sphere_stereograph_display</a>,
+      a MATLAB code which
+      computes and displays the results of several stereographic projections
+      between a sphere and a plane.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        George Marsaglia,<br>
+        Choosing a point from the surface of a sphere,<br>
+        Annals of Mathematical Statistics,<br>
+        Volume 43, Number 2, April 1972, pages 645-646.
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cartesian_to_hypersphere.m">cartesian_to_hypersphere.m</a>
+          converts from a cartesian to a hypersphere coordinate system.
+        </li>
+        <li>
+          <a href = "hypersphere_01_area.m">hypersphere_01_area.m</a>
+          computes the area of the unit hypersphere.
+        </li>
+        <li>
+          <a href = "hypersphere_01_area_values.m">hypersphere_01_area_values.m</a>
+          returns selected values of the area of the unit hypersphere.
+        </li>
+        <li>
+          <a href = "hypersphere_01_surface_uniform.m">hypersphere_01_surface_uniform.m</a>
+          samples points uniformly from the surface of the unit hypersphere.
+        </li>
+        <li>
+          <a href = "hypersphere_01_interior_uniform.m">hypersphere_01_interior_uniform.m</a>
+          samples points uniformly inside the unit hypersphere.
+        </li>
+        <li>
+          <a href = "hypersphere_01_volume.m">hypersphere_01_volume.m</a>
+          computes the volume of the unit hypersphere.
+        </li>
+        <li>
+          <a href = "hypersphere_01_volume_values.m">hypersphere_01_volume_values.m</a>
+          returns selected values of the volume of the unit hypersphere.
+        </li>
+        <li>
+          <a href = "hypersphere_area.m">hypersphere_area.m</a>
+          computes the area of a hypersphere.
+        </li>
+        <li>
+          <a href = "hypersphere_to_cartesian.m">hypersphere_to_cartesian.m</a>
+          converts from a hypersphere to a cartesian coordinate system.
+        </li>
+        <li>
+          <a href = "hypersphere_surface_uniform.m">hypersphere_surface_uniform.m</a>
+          samples points uniformly from the surface of a hypersphere.
+        </li>
+        <li>
+          <a href = "hypersphere_volume.m">hypersphere_volume.m</a>
+          computes the volume of a hypersphere.
+        </li>
+        <li>
+          <a href = "r8vec_transpose_print.m">r8vec_transpose_print.m</a>
+          prints an R8VEC, transposed.
+        </li>
+        <li>
+          <a href = "hypersphere_stereograph.m">hypersphere_stereograph.m</a>
+          stereographically maps points on the hypersphere to the plane.
+        </li>
+        <li>
+          <a href = "hypersphere_stereograph_inverse.m">hypersphere_stereograph_inverse.m</a>
+          inverse stereographically maps points in the plane to the hypersphere.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 01 February 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

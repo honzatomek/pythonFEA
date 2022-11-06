@@ -1,0 +1,182 @@
+<html>
+
+  <head>
+    <title>
+      hand_mesh2d
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      hand_mesh2d
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>hand_mesh2d</b>,
+      a MATLAB code which
+      reads in points which outline a human hand,
+      and calls mesh2d(), which creates a fine triangular
+      mesh of the region outlined by the points.
+    </p>
+
+    <p>
+      The original proposer of the hand data exercise was Cleve Moler, in the
+      textbook <i>Numerical Computing with MATLAB</i>.
+    </p>
+
+    <p>
+      MESH2D is a powerful and easy-to-use program, by Darren Engwirda,
+      for creating a good quality mesh of a region when the polygonal 
+      outline of its boundary is given.
+    </p>
+
+    <p>
+      The point of this exercise is simply to emphasize that a fairly
+      general shape region can easily be triangulated, requiring little
+      work from the user.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>hand_mesh2d</b> is available in
+      <a href = "../../m_src/hand_mesh2d/hand_mesh2d.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/convex_hull/convex_hull.html">
+      convex_hull</a>,
+      a MATLAB code which
+      demonstrates the computation of the convex hull of a set of 2D points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_data/hand_data.html">
+      hand_data</a>,
+      a MATLAB code which
+      carries out some numerical exercises based on data that came from
+      tracing several points on a person's hand.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_mesh2d_test/hand_mesh2d_test.html">
+      hand_mesh2d_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_area/maple_area.html">
+      maple_area</a>,
+      a MATLAB code which
+      takes the list of pixels that form the boundary of the image
+      of a maple leaf within a picture, and uses grid, Monte Carlo,
+      and Quasi Monte Carlo sampling to estimate the area of the leaf.
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_boundary/maple_boundary.html">
+      maple_boundary</a>,
+      a MATLAB code which
+      reads an image of a maple leaf and extracts the list of pixels
+      that form the boundary.
+    </p>
+
+    <p>
+      <a href = "../../m_src/mesh2d/mesh2d.html">
+      mesh2d</a>,
+      a MATLAB code which
+      can automatically create a triangular mesh for a given polygonal region,
+      by Darren Engwirda.
+    </p>
+
+    <p>
+      <a href = "../../m_src/mesh2d_write/mesh2d_write.html">
+      mesh2d_write</a>,
+      a MATLAB code which
+      demonstrates how MESH2D node and element data can be written to files.
+    </p>
+
+    <p>
+      <a href = "../../datasets/polygon/polygon.html">
+      polygon</a>,
+      a dataset directory which
+      contains examples of polygons.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulate/triangulate.html">
+      triangulate</a>,
+      a MATLAB code which
+      triangulates a polygonal region.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Cleve Moler,<br>
+          Numerical Computing with MATLAB,<br>
+          SIAM, 2004,<br>
+          ISBN13: 978-0-898716-60-3,<br>
+          LC: QA297.M625. 
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hand_mesh2d.m">hand_mesh2d.m</a>, 
+          a function which reads the hand vertex data, calls MESH2D
+          to determine and display the triangulation, and writes the
+          node and element data to files.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hand_vertices.txt">hand_vertices.txt</a>,
+          the original hand data, which simply lists the X and Y locations
+          of 59 points that outline a hand.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 05 February 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

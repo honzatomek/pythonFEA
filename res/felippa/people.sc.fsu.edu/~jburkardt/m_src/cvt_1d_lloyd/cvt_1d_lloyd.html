@@ -1,0 +1,210 @@
+<html>
+
+  <head>
+    <title>
+      cvt_1d_lloyd
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      cvt_1d_lloyd
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>cvt_1d_lloyd</b>,
+      a MATLAB code which 
+      allows the user to carry out Lloyd's algorithm for a 
+      Centroidal Voronoi Tessellation (CVT) in the interval [0,1].
+    </p>
+
+    <p>
+      The determination of the Voronoi regions is carried out using
+      exact techniques.
+    </p>
+
+    <p>
+      For <b>n</b> generators, the solution is known in advance:
+      <blockquote>
+        x(i) = ( 2 * i - 1 ) / ( 2 * n )
+      </blockquote>
+      Lloyd's iterative algorithm starts from an arbitrary vector <b>x</b>, 
+      however, so it is interesting to see how the approximate solution 
+      evolves toward the correct answer.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>cvt_1d_lloyd</b> ( <i>n</i>, <i>it_num</i>, <i>init</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>n</i> is the number of generators;
+        </li>
+        <li>
+          <i>it_num</i> is the number of iterative steps to take.
+        </li>
+        <li>
+          <i>init</i> is 0 for random initialization, 1 for a "squashed" in which the
+          starting values are confined to a small region.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>cvt_1d_lloyd</b> is available in
+      <a href = "../../m_src/cvt_1d_lloyd/cvt_1d_lloyd.html">a MATLAB version</a> and
+      <a href = "../../py_src/cvt_1d_lloyd/cvt_1d_lloyd.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/ccvt_reflect/ccvt_reflect.html">
+      ccvt_reflect</a>,
+      a MATLAB code which
+      tries to construct a constrained Centroidal Voronoi Tessellation (CCVT) 
+      in which some points are forced to lie on the boundary, using a reflection idea.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt/cvt.html">
+      cvt</a>,
+      a MATLAB code which
+      computes a Centroidal Voronoi Tessellation (CVT).
+    </p>
+
+    <p>
+      <a href = "../../datasets/cvt/cvt.html">
+      cvt</a>,
+      a dataset directory which 
+      contains a variety of examples of Centroidal Voronoi Tessellations (CVT).
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_lloyd_test/cvt_1d_lloyd_test.html">
+      cvt_1d_lloyd_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_nonuniform/cvt_1d_nonuniform.html">
+      cvt_1d_nonuniform</a>,
+      a MATLAB code which 
+      computes an N-point Centroidal 
+      Voronoi Tessellation (CVT) in 1 dimension, under a nonuniform density,
+      and plots the evolution of the locations of the generators
+      during the iteration;
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_sampling/cvt_1d_sampling.html">
+      cvt_1d_sampling</a>,
+      a MATLAB code which 
+      computes an N-point Centroidal Voronoi Tessellation (CVT)
+      within the interval [0,1], under a uniform density, 
+      using sampling to estimate the Voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_2d_sampling/cvt_2d_sampling.html">
+      cvt_2d_sampling</a>,
+      a MATLAB code which
+      computes an N-point Centroidal Voronoi Tessellation (CVT)
+      within the unit square [0,1]x[0,1], under a uniform density,
+      using sampling to estimate the Voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_3d_sampling/cvt_3d_sampling.html">
+      cvt_3d_sampling</a>,
+      a MATLAB code which
+      computes an N-point Centroidal Voronoi Tessellation (CVT)
+      within the unit cube [0,1]x[0,1]x[0,1], under a uniform density,
+      using sampling to estimate the Voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_circle_uniform/cvt_circle_uniform.html">
+      cvt_circle_uniform</a>,
+      a MATLAB code which
+      calculates a Centroidal Voronoi Tessellation (CVT) over a circle
+      with uniform density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvtm_1d/cvtm_1d.html">
+      cvtm_1d</a>,
+      a MATLAB code which 
+      estimates a mirror-periodic Centroidal Voronoi Tessellation (CVTM) in the 
+      periodic interval [0,1], using a version of Lloyd's iteration.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Franz Aurenhammer,<br>
+          Voronoi diagrams - 
+          a study of a fundamental geometric data structure,<br>
+          ACM Computing Surveys,<br>
+          Volume 23, Number 3, pages 345-405, September 1991.
+        </li>
+        <li>
+          Qiang Du, Vance Faber, Max Gunzburger,<br>
+          Centroidal Voronoi Tessellations: Applications and Algorithms,<br>
+          SIAM Review, Volume 41, 1999, pages 637-676.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cvt_1d_lloyd.m">cvt_1d_lloyd.m</a>,
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 December 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

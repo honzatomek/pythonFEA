@@ -1,0 +1,162 @@
+<html>
+
+  <head>
+    <title>
+      box_display
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      box_display
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>box_display</b>,
+      a MATLAB code which 
+      creates a plot over a range of integer boxes, whose default color is
+      gray, but some of which can be painted red (new stuff) and some painted
+      blue (old stuff)
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>box_display</b> ( <i>m</i>, <i>n</i>, <i>@blue</i>, <i>@red</i>, <i>title</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>m</i> and <i>n</i> are the number of rows and columns of boxes
+          (actually, the range will include one extra box in each direction, labeled "0");
+        </li>
+        <li>
+          <i>@blue</i> a function handle, or an anonymous function, returning a logical value.
+          If blue(x,y) is true, the box will be colored blue.
+        </li>
+        <li>
+          <i>@red</i> a function handle, or an anonymous function, returning a logical value.
+          If red(x,y) is true, the box will be colored red, unless it was already blue.
+          Thus, the red boxes indicate "new" information.
+        </li>
+        <li>
+          <i>title</i> is a title for the plot.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>box_display</b> is available in
+      <a href = "../../m_src/box_display/box_display.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/box_display_test/box_display_test.html">
+      box_display_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/box_plot/box_plot.html">
+      box_plot</a>,
+      a MATLAB code which
+      displays a box plot of data that consists of pairs of integers;
+    </p>
+
+    <p>
+      <a href = "../../m_src/cc_display/cc_display.html">
+      cc_display</a>,
+      a MATLAB code which 
+      displays the abscissas
+      used in various kinds of Clenshaw Curtis quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../../m_src/circle_grid_display/circle_grid_display.html">
+      circle_grid_display</a>,
+      a MATLAB code which reads a matrix of integers, and draws a corresponding
+      grid of circles filled with color.
+    </p>
+
+    <p>
+      <a href = "../../m_src/gl_display/gl_display.html">
+      gl_display</a>,
+      a MATLAB code which 
+      displays the abscissas
+      used in various kinds of Gauss Legendre quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../../m_src/gridlines/gridlines.html">
+      gridlines</a>,
+      a MATLAB code which 
+      gives the user more control over drawing gridlines on a graph
+      than the builtin "grid on" command.
+    </p>
+
+    <p>
+      <a href = "../../m_src/prime_plot/prime_plot.html">
+      prime_plot</a>
+      a MATLAB code which 
+      displays a box plot of the prime and composite numbers.
+    </p>
+
+    <p>
+      <a href = "../../m_src/usa_box_plot/usa_box_plot.html">
+      usa_box_plot</a>,
+      a MATLAB code which
+      can create simplified maps of the USA in which each state
+      appears as a box, and the placement of the boxes only 
+      roughly corresponds to the relative locations of states on 
+      an accurate map.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "box_display.m">box_display.m</a> 
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 02 December 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

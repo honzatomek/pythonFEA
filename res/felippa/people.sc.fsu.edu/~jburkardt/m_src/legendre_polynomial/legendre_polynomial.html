@@ -1,0 +1,355 @@
+<html>
+
+  <head>
+    <title>
+      legendre_polynomial
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      legendre_polynomial
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>legendre_polynomial</b>,
+      a MATLAB code which
+      evaluates the Legendre polynomial and associated functions.
+    </p>
+
+    <p>
+      The Legendre polynomial P(n,x) can be defined by:
+      <pre>
+        P(0,x) = 1
+        P(1,x) = x
+        P(n,x) = (2*n-1)/n * x * P(n-1,x) - (n-1)/n * P(n-2,x)
+      </pre>
+      where n is a nonnegative integer.
+    </p>
+
+    <p>
+      The N zeroes of P(n,x) are the abscissas used for Gauss-Legendre
+      quadrature of the integral of a function F(X) with weight function 1
+      over the interval [-1,1].
+    </p>
+
+    <p>
+      The Legendre polynomials are orthogonal under the inner product defined
+      as integration from -1 to 1:
+      <pre>
+        Integral ( -1 <= x <= 1 ) P(i,x) * P(j,x) dx 
+          = 0 if i =/= j
+          = 2 / ( 2*i+1 ) if i = j.
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>legendre_polynomial</b> is available in
+      <a href = "../../c_src/legendre_polynomial/legendre_polynomial.html">a C version</a> and
+      <a href = "../../cpp_src/legendre_polynomial/legendre_polynomial.html">a C++ version</a> and
+      <a href = "../../f_src/legendre_polynomial/legendre_polynomial.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/legendre_polynomial/legendre_polynomial.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/bernstein_polynomial/bernstein_polynomial.html">
+      bernstein_polynomial</a>,
+      a MATLAB code which
+      evaluates the bernstein polynomials, 
+      useful for uniform approximation of functions;
+    </p>
+
+    <p>
+      <a href = "../../m_src/chebyshev_polynomial/chebyshev_polynomial.html">
+      chebyshev_polynomial</a>,
+      a MATLAB code which
+      considers the chebyshev polynomials t(i,x), u(i,x), v(i,x) and w(i,x).
+      functions are provided to evaluate the polynomials, determine their
+      zeros, produce their polynomial coefficients, produce related 
+      quadrature rules, project other functions onto these polynomial bases,
+      and integrate double and triple products of the polynomials.
+    </p>
+
+    <p>
+      <a href = "../../m_src/gegenbauer_polynomial/gegenbauer_polynomial.html">
+      gegenbauer_polynomial</a>,
+      a MATLAB code which
+      evaluates the Gegenbauer polynomial and associated functions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hermite_polynomial/hermite_polynomial.html">
+      hermite_polynomial</a>,
+      a MATLAB code which
+      evaluates the physicist's hermite polynomial, 
+      the probabilist's hermite polynomial,
+      the hermite function, and related functions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/jacobi_polynomial/jacobi_polynomial.html">
+      jacobi_polynomial</a>,
+      a MATLAB code which
+      evaluates the jacobi polynomial and associated functions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/laguerre_polynomial/laguerre_polynomial.html">
+      laguerre_polynomial</a>,
+      a MATLAB code which
+      evaluates the laguerre polynomial, the generalized laguerre polynomial,
+      and the laguerre function.
+    </p>
+
+    <p>
+      <a href = "../../m_src/legendre_polynomial_test/legendre_polynomial_test.html">
+      legendre_polynomial_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/legendre_product_polynomial/legendre_product_polynomial.html">
+      legendre_product_polynomial</a>,
+      a MATLAB code which
+      defines legendre product polynomials, creating a multivariate 
+      polynomial as the product of univariate legendre polynomials.
+    </p>
+
+    <p>
+      <a href = "../../m_src/legendre_rule/legendre_rule.html">
+      legendre_rule</a>,
+      a MATLAB code which
+      computes a 1d gauss-legendre quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/legendre_shifted_polynomial/legendre_shifted_polynomial.html">
+      legendre_shifted_polynomial</a>,
+      a MATLAB code which
+      evaluates the shifted legendre polynomial, with domain [0,1].
+    </p>
+
+    <p>
+      <a href = "../../m_src/lobatto_polynomial/lobatto_polynomial.html">
+      lobatto_polynomial</a>,
+      a MATLAB code which
+      evaluates lobatto polynomials, similar to legendre polynomials
+      except that they are zero at both endpoints.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pce_legendre/pce_legendre.html">
+      pce_legendre</a>,
+      a MATLAB code which
+      assembles the system matrix of a 2d stochastic pde, 
+      using a polynomal chaos expansion in terms of legendre polynomials;
+    </p>
+
+    <p>
+      <a href = "../../m_src/polpak/polpak.html">
+      polpak</a>,
+      a MATLAB code which
+      evaluates a variety of mathematical functions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/test_values/test_values.html">
+      test_values</a>,
+      a MATLAB code which
+      supplies test values of various mathematical functions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Theodore Chihara,<br>
+          An Introduction to Orthogonal Polynomials,<br>
+          Gordon and Breach, 1978,<br>
+          ISBN: 0677041500,<br>
+          LC: QA404.5 C44.
+        </li>
+        <li>
+          Walter Gautschi,<br>
+          Orthogonal Polynomials: Computation and Approximation,<br>
+          Oxford, 2004,<br>
+          ISBN: 0-19-850672-4,<br>
+          LC: QA404.5 G3555.
+        </li>
+        <li>
+          Frank Olver, Daniel Lozier, Ronald Boisvert, Charles Clark,<br>
+          NIST Handbook of Mathematical Functions,<br>
+          Cambridge University Press, 2010,<br>
+          ISBN: 978-0521192255,<br>
+          LC: QA331.N57.
+        </li>
+        <li>
+          Gabor Szego,<br>
+          Orthogonal Polynomials,<br>
+          American Mathematical Society, 1992,<br>
+          ISBN: 0821810235,<br>
+          LC: QA3.A5.v23.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "imtqlx.m">imtqlx.m</a>,
+          diagonalizes a symmetric tridiagonal matrix;
+        </li>
+        <li>
+          <a href = "legendre_to_monomial_matrix.m">legendre_to_monomial_matrix.m</a>,
+          returns a matrix that transforms a polynomial expansion from Legendre
+          to monomial form.
+        </li>
+        <li>
+          <a href = "monomial_to_legendre_matrix.m">
+          monomial_to_legendre_matrix.m</a>,
+          returns a matrix that transforms a polynomial expansion from monomial
+          to Legendre form.
+        </li>
+        <li>
+          <a href = "p_exponential_product.m">p_exponential_product.m</a>,
+          exponential products for P(n,x).
+        </li>
+        <li>
+          <a href = "p_integral.m">p_integral.m</a>,
+          evaluates a monomial integral associated with P(n,x).
+        </li>
+        <li>
+          <a href = "p_polynomial_coefficients.m">p_polynomial_coefficients.m</a>,
+          coefficients of Legendre polynomials P(n,x).
+        </li>
+        <li>
+          <a href = "p_polynomial_plot.m">p_polynomial_plot.m</a>,
+          plots one or more Legendre polynomials P(n,x).
+        </li>
+        <li>
+          <a href = "p_polynomial_prime.m">p_polynomial_prime.m</a>,
+          evaluates the derivative of Legendre polynomials P(n,x).
+        </li>
+        <li>
+          <a href = "p_polynomial_prime2.m">p_polynomial_prime2.m</a>,
+          evaluates the second derivative of Legendre polynomials P(n,x).
+        </li>
+        <li>
+          <a href = "p_polynomial_value.m">p_polynomial_value.m</a>,
+          evaluates the Legendre polynomials P(n,x).
+        </li>
+        <li>
+          <a href = "p_polynomial_values.m">p_polynomial_values.m</a>,
+          selected values of the Legendre polynomials P(n,x).
+        </li>
+        <li>
+          <a href = "p_polynomial_zeros.m">p_polynomial_zeros.m</a>,
+          zeros of Legendre function P(n,x).
+        </li>
+        <li>
+          <a href = "p_power_product.m">p_power_product.m</a>,
+          power products for Legendre polynomial P(n,x).
+        </li>
+        <li>
+          <a href = "p_quadrature_rule.m">p_quadrature_rule.m</a>,
+          quadrature for Legendre function P(n,x).
+        </li>
+        <li>
+          <a href = "pm_polynomial_value.m">pm_polynomial_value.m</a>,
+          evaluates the Legendre polynomials Pm(n,m,x).
+        </li>
+        <li>
+          <a href = "pm_polynomial_values.m">pm_polynomial_values.m</a>,
+          returns values of Legendre polynomials Pm(n,m,x).
+        </li>
+        <li>
+          <a href = "pmn_polynomial_value.m">pmn_polynomial_value.m</a>,
+          evaluates the normalized Legendre polynomials Pmn(n,m,x).
+        </li>
+        <li>
+          <a href = "pmns_polynomial_value.m">pmns_polynomial_value.m</a>,
+          evaluates the sphere normalized Legendre polynomials Pmns(n,m,x).
+        </li>
+        <li>
+          <a href = "pn_pair_product.m">pn_pair_product.m</a>,
+          pair products for normalized Legendre polynomial Pn(n,x).
+        </li>
+        <li>
+          <a href = "pn_polynomial_coefficients.m">pn_polynomial_coefficients.m</a>,
+          coefficients of the normalized Legendre polynomials Pn(n,x).
+        </li>
+        <li>
+          <a href = "pn_polynomial_value.m">pn_polynomial_value.m</a>,
+          evaluates the normalized Legendre polynomials Pn(n,x).
+        </li>
+        <li>
+          <a href = "pn_polynomial_values.m">pn_polynomial_values.m</a>,
+          selected values of the normalized Legendre polynomials Pn(n,x).
+        </li>
+        <li>
+          <a href = "r8_sign.m">r8_sign.m</a>,
+          returns the sign of an R8.
+        </li>
+        <li>
+          <a href = "r8mat_print.m">r8mat_print.m</a>,
+          prints an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_print_some.m">r8mat_print_some.m</a>,
+          prints some of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8vec_linspace.m">r8vec_linspace.m</a>,
+          creates a column vector of linearly spaced values.
+        </li>
+        <li>
+          <a href = "r8vec_print.m">r8vec_print.m</a>,
+          prints an R8VEC;
+        </li>
+        <li>
+          <a href = "r8vec2_print.m">r8vec2_print.m</a>,
+          prints a pair of R8VEC's;
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 January 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

@@ -1,0 +1,584 @@
+<html>
+
+  <head>
+    <title>
+      triangle_symq_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      triangle_symq_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>triangle_symq_rule</b>,
+      a MATLAB code which
+      returns symmetric quadrature rules, 
+      with exactness up to total degree 50,
+      over the interior of an arbitrary triangle in 2D,
+      by Hong Xiao and Zydrunas Gimbutas.
+    </p>
+
+    <p>
+      The original source code, from which this library was developed,
+      is available from the Courant Mathematics and Computing Laboratory, at
+      <a href = "https://www.cims.nyu.edu/cmcl/quadratures/quadratures.html">
+                 https://www.cims.nyu.edu/cmcl/quadratures/quadratures.html </a>,
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>triangle_symq_rule</b> is available in
+      <a href = "../../c_src/triangle_symq_rule/triangle_symq_rule.html">a C version</a> and
+      <a href = "../../cpp_src/triangle_symq_rule/triangle_symq_rule.html">a C++ version</a> and
+      <a href = "../../f_src/triangle_symq_rule/triangle_symq_rule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/triangle_symq_rule/triangle_symq_rule.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/annulus_rule/annulus_rule.html">
+      annulus_rule</a>,
+      a MATLAB code which
+      computes a quadrature rule for estimating integrals of a function 
+      over the interior of a circular annulus in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_felippa_rule/cube_felippa_rule.html">
+      cube_felippa_rule</a>,
+      a MATLAB code which
+      returns the points and weights of a felippa quadrature rule
+      over the interior of a cube in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/gnuplot_test/gnuplot_test.html">
+      gnuplot_test</a>,
+      a MATLAB code which
+      illustrates how a program can write data and command files
+      so that gnuplot can create plots of the program results.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pyramid_felippa_rule/pyramid_felippa_rule.html">
+      pyramid_felippa_rule</a>,
+      a MATLAB code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a pyramid in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/simplex_gm_rule/simplex_gm_rule.html">
+      simplex_gm_rule</a>,
+      a MATLAB code which
+      defines grundmann-moeller quadrature rules 
+      over the interior of a simplex in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/square_felippa_rule/square_felippa_rule.html">
+      square_felippa_rule</a>,
+      a MATLAB code which
+      returns the points and weights of a felippa quadrature rule
+      over the interior of a square in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/square_symq_rule/square_symq_rule.html">
+      square_symq_rule</a>,
+      a MATLAB code which
+      returns symmetric quadrature rules, 
+      with exactness up to total degree 20,
+      over the interior of the symmetric square in 2d,
+      by hong xiao and zydrunas gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../m_src/stroud/stroud.html">
+      stroud</a>,
+      a MATLAB code which
+      defines quadrature rules for a variety of m-dimensional regions, 
+      including the interior of the square, cube and hypercube, the pyramid,
+      cone and ellipse, the hexagon, the m-dimensional octahedron,
+      the circle, sphere and hypersphere, the triangle, tetrahedron and simplex,
+      and the surface of the circle, sphere and hypersphere.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_felippa_rule/tetrahedron_felippa_rule.html">
+      tetrahedron_felippa_rule</a>,
+      a MATLAB code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/toms886/toms886.html">
+      toms886</a>,
+      a MATLAB code which
+      defines the padua points for interpolation in a 2d region,
+      including the rectangle, triangle, and ellipse,
+      by marco caliari, stefano de marchi, marco vianello.
+      this is a version of acm toms algorithm 886.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_dunavant_rule/triangle_dunavant_rule.html">
+      triangle_dunavant_rule</a>,
+      a MATLAB code which 
+      sets up a dunavant quadrature rule
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_fekete_rule/triangle_fekete_rule.html">
+      triangle_fekete_rule</a>,
+      a MATLAB code which
+      defines fekete rules for quadrature or interpolation 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_felippa_rule/triangle_felippa_rule.html">
+      triangle_felippa_rule</a>,
+      a MATLAB code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_integrals/triangle_integrals.html">
+      triangle_integrals</a>,
+      a MATLAB code which
+      returns the exact value of the integral of any monomial
+      over the interior of the unit triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_lyness_rule/triangle_lyness_rule.html">
+      triangle_lyness_rule</a>,
+      a MATLAB code which
+      returns lyness-jespersen quadrature rules 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_monte_carlo/triangle_monte_carlo.html">
+      triangle_monte_carlo</a>,
+      a MATLAB code which
+      uses the monte carlo method to estimate the integral of a function
+      over the interior of the unit triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_ncc_rule/triangle_ncc_rule.html">
+      triangle_ncc_rule</a>, 
+      a MATLAB code which
+      defines newton-cotes closed quadrature
+      rules on a triangle.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_nco_rule/triangle_nco_rule.html">
+      triangle_nco_rule</a>, 
+      a MATLAB code which 
+      defines newton-cotes open quadrature rules 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_symq_rule_test/triangle_symq_rule_test.html">
+      triangle_symq_rule_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_wandzura_rule/triangle_wandzura_rule.html">
+      triangle_wandzura_rule</a>, 
+      a MATLAB code which 
+      sets up a quadrature rule of exactness 5, 10, 15, 20, 25 or 30
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/wedge_felippa_rule/wedge_felippa_rule.html">
+      wedge_felippa_rule</a>,
+      a MATLAB code which
+      returns quadratures rules for approximating integrals
+      over the interior of the unit wedge in 3d.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Hong Xiao, Zydrunas Gimbutas, <br>
+          A numerical algorithm for the construction of efficient quadrature 
+          rules in two and higher dimensions,<br>
+          Computers and Mathematics with Applications,<br>
+          Volume 59, 2010, pages 663-676.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "kjacopols2.m">kjacopols2.m</a>,
+          evaluates Jacobi polynomials and derivatives.
+        </li>
+        <li>
+          <a href = "kjacopols.m">kjacopols.m</a>,
+          evaluates Jacobi polynomials.
+        </li>
+        <li>
+          <a href = "klegeypols3.m">klegeypols3.m</a>,
+          evaluate scaled Legendre polynomials and derivatives.
+        </li>
+        <li>
+          <a href = "klegeypols.m">klegeypols.m</a>,
+          evaluates scaled Legendre polynomials.
+        </li>
+        <li>
+          <a href = "ortho2eva0.m">ortho2eva0.m</a>,
+          evaluates the orthonormal polynomials on the triangle.
+        </li>
+        <li>
+          <a href = "ortho2eva30.m">ortho2eva30.m</a>,
+          orthonormal polynomials and derivatives on triangle.
+        </li>
+        <li>
+          <a href = "ortho2eva3.m">ortho2eva3.m</a>,
+          orthogonal polynomial values and derivatives, reference triangle.
+        </li>
+        <li>
+          <a href = "ortho2eva.m">ortho2eva.m</a>,
+          evaluates orthogonal polynomials on the reference triangle.
+        </li>
+        <li>
+          <a href = "quaecopy2.m">quaecopy2.m</a>,
+          copies a quadrature rule into a user arrays X, Y, and W.
+        </li>
+        <li>
+          <a href = "quaecopy.m">quaecopy.m</a>,
+          copies a quadrature rule into user arrays Z and W.
+        </li>
+        <li>
+          <a href = "quaeinside.m">quaeinside.m</a>,
+          checks whether a point is inside a triangle.
+        </li>
+        <li>
+          <a href = "quaenodes2.m">quaenodes2.m</a>,
+          expands nodes from 1/6 to 1/3 of the triangle.
+        </li>
+        <li>
+          <a href = "quaenodes.m">quaenodes.m</a>,
+          expands nodes to the reference triangle.
+        </li>
+        <li>
+          <a href = "quaequad0.m">quaequad0.m</a>,
+          returns the requested quadrature rule.
+        </li>
+        <li>
+          <a href = "quaequad.m">quaequad.m</a>,
+          returns a symmetric quadrature formula for a reference triangle.
+        </li>
+        <li>
+          <a href = "quaerotate.m">quaerotate.m</a>,
+          applies a rotation.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_01.m">r8vec_uniform_01.m</a>,
+          returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "ref_to_koorn.m">ref_to_koorn.m</a>,
+          maps points from the reference to Koornwinder's triangle.
+        </li>
+        <li>
+          <a href = "ref_to_triangle.m">ref_to_triangle.m</a>,
+          maps points from the reference triangle to a triangle.
+        </li>
+        <li>
+          <a href = "rule_compressed_size.m">rule_compressed_size.m</a>,
+          returns the compressed size of the requested quadrature rule.
+        </li>
+        <li>
+          <a href = "rule_full_size.m">rule_full_size.m</a>,
+          returns the full size of the requested quadrature rule.
+        </li>
+        <li>
+          <a href = "rule01.m">rule01.m</a>,
+          returns the rule of degree 1.
+        </li>
+        <li>
+          <a href = "rule02.m">rule02.m</a>,
+          returns the rule of degree 2.
+        </li>
+        <li>
+          <a href = "rule03.m">rule03.m</a>,
+          returns the rule of degree 3.
+        </li>
+        <li>
+          <a href = "rule04.m">rule04.m</a>,
+          returns the rule of degree 4.
+        </li>
+        <li>
+          <a href = "rule05.m">rule05.m</a>,
+          returns the rule of degree 5.
+        </li>
+        <li>
+          <a href = "rule06.m">rule06.m</a>,
+          returns the rule of degree 6.
+        </li>
+        <li>
+          <a href = "rule07.m">rule07.m</a>,
+          returns the rule of degree 7.
+        </li>
+        <li>
+          <a href = "rule08.m">rule08.m</a>,
+          returns the rule of degree 8.
+        </li>
+        <li>
+          <a href = "rule09.m">rule09.m</a>,
+          returns the rule of degree 9.
+        </li>
+        <li>
+          <a href = "rule10.m">rule10.m</a>,
+          returns the rule of degree 10.
+        </li>
+        <li>
+          <a href = "rule11.m">rule11.m</a>,
+          returns the rule of degree 11.
+        </li>
+        <li>
+          <a href = "rule12.m">rule12.m</a>,
+          returns the rule of degree 12.
+        </li>
+        <li>
+          <a href = "rule13.m">rule13.m</a>,
+          returns the rule of degree 13.
+        </li>
+        <li>
+          <a href = "rule14.m">rule14.m</a>,
+          returns the rule of degree 14.
+        </li>
+        <li>
+          <a href = "rule15.m">rule15.m</a>,
+          returns the rule of degree 15.
+        </li>
+        <li>
+          <a href = "rule16.m">rule16.m</a>,
+          returns the rule of degree 16.
+        </li>
+        <li>
+          <a href = "rule17.m">rule17.m</a>,
+          returns the rule of degree 17.
+        </li>
+        <li>
+          <a href = "rule18.m">rule18.m</a>,
+          returns the rule of degree 18.
+        </li>
+        <li>
+          <a href = "rule19.m">rule19.m</a>,
+          returns the rule of degree 19.
+        </li>
+        <li>
+          <a href = "rule20.m">rule20.m</a>,
+          returns the rule of degree 20.
+        </li>
+        <li>
+          <a href = "rule21.m">rule21.m</a>,
+          returns the rule of degree 21.
+        </li>
+        <li>
+          <a href = "rule22.m">rule22.m</a>,
+          returns the rule of degree 22.
+        </li>
+        <li>
+          <a href = "rule23.m">rule23.m</a>,
+          returns the rule of degree 23.
+        </li>
+        <li>
+          <a href = "rule24.m">rule24.m</a>,
+          returns the rule of degree 24.
+        </li>
+        <li>
+          <a href = "rule25.m">rule25.m</a>,
+          returns the rule of degree 25.
+        </li>
+        <li>
+          <a href = "rule26.m">rule26.m</a>,
+          returns the rule of degree 26.
+        </li>
+        <li>
+          <a href = "rule27.m">rule27.m</a>,
+          returns the rule of degree 29.
+        </li>
+        <li>
+          <a href = "rule28.m">rule28.m</a>,
+          returns the rule of degree 28.
+        </li>
+        <li>
+          <a href = "rule29.m">rule29.m</a>,
+          returns the rule of degree 29.
+        </li>
+        <li>
+          <a href = "rule30.m">rule30.m</a>,
+          returns the rule of degree 30.
+        </li>
+        <li>
+          <a href = "rule31.m">rule31.m</a>,
+          returns the rule of degree 31.
+        </li>
+        <li>
+          <a href = "rule32.m">rule32.m</a>,
+          returns the rule of degree 32.
+        </li>
+        <li>
+          <a href = "rule33.m">rule33.m</a>,
+          returns the rule of degree 33.
+        </li>
+        <li>
+          <a href = "rule34.m">rule34.m</a>,
+          returns the rule of degree 34.
+        </li>
+        <li>
+          <a href = "rule35.m">rule35.m</a>,
+          returns the rule of degree 35.
+        </li>
+        <li>
+          <a href = "rule36.m">rule36.m</a>,
+          returns the rule of degree 36.
+        </li>
+        <li>
+          <a href = "rule37.m">rule37.m</a>,
+          returns the rule of degree 37.
+        </li>
+        <li>
+          <a href = "rule38.m">rule38.m</a>,
+          returns the rule of degree 38.
+        </li>
+        <li>
+          <a href = "rule39.m">rule39.m</a>,
+          returns the rule of degree 39.
+        </li>
+        <li>
+          <a href = "rule40.m">rule40.m</a>,
+          returns the rule of degree 40.
+        </li>
+        <li>
+          <a href = "rule41.m">rule41.m</a>,
+          returns the rule of degree 41.
+        </li>
+        <li>
+          <a href = "rule42.m">rule42.m</a>,
+          returns the rule of degree 42.
+        </li>
+        <li>
+          <a href = "rule43.m">rule43.m</a>,
+          returns the rule of degree 43.
+        </li>
+        <li>
+          <a href = "rule44.m">rule44.m</a>,
+          returns the rule of degree 44.
+        </li>
+        <li>
+          <a href = "rule45.m">rule45.m</a>,
+          returns the rule of degree 45.
+        </li>
+        <li>
+          <a href = "rule46.m">rule46.m</a>,
+          returns the rule of degree 46.
+        </li>
+        <li>
+          <a href = "rule47.m">rule47.m</a>,
+          returns the rule of degree 47.
+        </li>
+        <li>
+          <a href = "rule48.m">rule48.m</a>,
+          returns the rule of degree 48.
+        </li>
+        <li>
+          <a href = "rule49.m">rule49.m</a>,
+          returns the rule of degree 49.
+        </li>
+        <li>
+          <a href = "rule50.m">rule50.m</a>,
+          the rule of degree 50.
+        </li>
+        <li>
+          <a href = "simplex_to_triangle.m">simplex_to_triangle.m</a>,
+          maps points from the simplex to a triangle.
+        </li>
+        <li>
+          <a href = "triangle_area.m">triangle_area.m</a>,
+          returns the area of a triangle.
+        </li>
+        <li>
+          <a href = "triangle_to_ref.m">triangle_to_ref.m</a>,
+          maps points from any triangle to the reference triangle.
+        </li>
+        <li>
+          <a href = "triangle_to_simplex.m">triangle_to_simplex.m</a>,
+          maps points from any triangle to the simplex.
+        </li>
+        <li>
+          <a href = "trianmap.m">trianmap.m</a>,
+          maps rules from the reference triangle to the user triangle.
+        </li>
+        <li>
+          <a href = "triasimp.m">triasimp.m</a>,
+          maps a point from the reference triangle to the simplex.
+        </li>
+        <li>
+          <a href = "triasymq.m">triasymq.m</a>,
+          returns a symmetric quadrature formula for a user triangle.
+        </li>
+        <li>
+          <a href = "triasymq_gnuplot.m">triasymq_gnuplot.m</a>,
+          set up a GNUPLOT plot of the triangle quadrature rule.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 07 April 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

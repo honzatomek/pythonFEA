@@ -1,0 +1,21 @@
+This is a 16-bits/channel composite color image of HeLa cells
+with red lysosomes, green mitochondria and red nucleus. Image
+courtesy of Tony Collins, creator of the ImageJ for Microscopy
+collection of plugins at <http://www.macbiophotonics.ca/imagej/>.
+
+Use the slider under the image to select the channel to be
+processed or analyzed. Note how the color of the subtitle 
+changes when you switch to a different channel. Use the B&C 
+tool (press shift-c) to adjust the brightness and contrast of the 
+current channel. Use the Image>Duplicate command to extract
+a channel or to convert from a composite image to an ordinary 
+stack. Use Image>Color> Convert Stack to RGB to convert to 
+24-bit RGB. Use File>Save As>Tiff to save as a 48-bit TIFF.
+
+These two lines of macro code
+
+    info = File.openAsString("");
+    setMetadata("Info:"+info);
+
+were used to copy this information from a text file to the image.
+

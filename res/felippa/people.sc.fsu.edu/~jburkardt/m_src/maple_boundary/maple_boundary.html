@@ -1,0 +1,191 @@
+<html>
+
+  <head>
+    <title>
+      maple_boundary
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      maple_boundary
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>maple_boundary</b>,
+      a MATLAB code which
+      takes an image of a maple leaf and determines the pixels that form
+      the boundary.
+    </p>
+
+    <p>
+      For a discussion of quasirandom sampling, Brian Hayes published a 
+      picture of a maple leaf and considered how its area could be
+      estimated using a regular grid of points, random sampling, or
+      quasirandom sampling.
+    </p>
+
+    <p>
+      For various reasons, it will be interesting to have a copy of this
+      maple leaf image accessible.  The MAPLE_BOUNDARY functions use various
+      MATLAB procedures to turn the maple leaf image into a polygonal
+      curve definining the boundary, following which various calculations
+      may be made.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>maple_boundary</b> is available in
+      <a href = "../../m_src/maple_boundary/maple_boundary.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/convex_hull/convex_hull.html">
+      convex_hull</a>,
+      a MATLAB code which
+      demonstrates the computation of the convex hull of a set of 2D points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/florida_cvt_geo/florida_cvt_geo.html">
+      florida_cvt_geo</a>,
+      MATLAB codes which
+      explore the creation of a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based solely on geometric considerations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/florida_cvt_pop/florida_cvt_pop.html">
+      florida_cvt_pop</a>,
+      MATLAB codes which
+      explore the creation of a centroidal Voronoi Tessellation (CVT) of
+      the state of Florida, based on population density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_area/hand_area.html">
+      hand_area</a>,
+      a MATLAB code which
+      estimates the area of a curve which outlines a person's hand.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_data/hand_data.html">
+      hand_data</a>,
+      a MATLAB code which
+      carries out some numerical exercises based on data that came from
+      tracing several points on a person's hand.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_mesh2d/hand_mesh2d.html">
+      hand_mesh2d</a>,
+      a MATLAB code which
+      reads in points which outline a human hand,
+      and calls mesh2d(), which creates a fine triangular
+      mesh of the region outlined by the points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/human_data/human_data.html">
+      human_data</a>,
+      a MATLAB code which
+      starts with an image of simple outline of a human body,
+      tabulates a sequence of points on the outline, 
+      creating numerical data defining the boundary.  It is then able
+      to fill the region with mesh points and triangulate the region.
+      This allows the region to be analyzed by the finite element method (FEM).
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_area/maple_area.html">
+      maple_area</a>,
+      a MATLAB code which
+      takes the list of pixels that form the boundary of the image
+      of a maple leaf within a picture, and uses grid, Monte Carlo,
+      and Quasi Monte Carlo sampling to estimate the area of the leaf.
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_boundary_test/maple_boundary_test.html">
+      maple_boundary_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulate/triangulate.html">
+      triangulate</a>,
+      a MATLAB code which
+      triangulates a polygonal region.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Brian Hayes,<br>
+          Quasirandom Ramblings,<br>
+          American Scientist,<br>
+          Volume 99, Number 4, July-August 2011, pages 282-287.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "i4mat_transpose_write.m">i4mat_transpose_write.m</a>,
+          writes the transpose of an I4MAT to a file.
+        </li>
+        <li>
+          <a href = "maple_boundary.m">maple_boundary.m</a>,
+          extracts a boundary between black exterior and white interior.
+        </li>
+        <li>
+          <a href = "maple_boundary_plot.m">maple_boundary_plot.m</a>
+          makes a plot of the boundary lines of the maple leaf.
+        </li>
+        <li>
+          <a href = "maple_boundary_vertex_plot.m">maple_boundary_vertex_plot.m</a>
+          makes a plot of the boundary vertices of the maple leaf.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 10 February 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

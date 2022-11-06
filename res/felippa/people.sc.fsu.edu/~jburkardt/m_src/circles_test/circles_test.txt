@@ -1,0 +1,164 @@
+07-Jan-2022 18:09:38
+
+circles_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2.
+  Test CIRCLES.
+
+circles_test01():
+  Draw one circle.
+  Here we draw one circle of radius 3, centered at (5,10).
+  Matlab doesn't set axes equal by default, so circles may not
+  look like circles until you declare |axis equal|.
+
+  cla
+  circles ( 5, 10, 3 )
+  axis equal
+
+  Image saved as "circles_test01.png"
+
+circles_test02():
+  Draw 10 circles at x = 1:10, y = 5, of radius 2.
+  They will automatically be of varying colors.
+
+  cla
+  circles ( 1:10, 5, 2 )
+  axis equal
+
+  Image saved as "circles_test02.png"
+
+circles_test03():
+  Draw 5 circles at x = 5, y = 15, of radiuses 1:5
+  specifying FaceColor None, resulting in hollow or open circles.
+
+  cla
+  circles ( 3, 15, 1:5, 'FaceColor', 'None' )
+  axis equal
+
+  Image saved as "circles_test03.png"
+
+circles_test04():
+  Draw green circles of various locations and sizes.
+
+  x = 22:27;
+  y = [5,15,12,25,3,18];
+  r = [3 4 5 5 7 3]; 
+  cla
+  circles ( x, y, r, 'FaceColor', 'Green' )
+  axis equal
+
+  Image saved as "circles_test04.png"
+
+circles_test05():
+  Draw a circle at x = 5, y = 10, of radius 3.
+  Specify the edge color and linewidth.
+
+  cla
+  circles ( 5, 10, 3, 'edgecolor', [.5 .2 .9], ...
+    'linewidth', 4 )
+  axis equal
+
+  Image saved as "circles_test05.png"
+
+circles_test06():
+  Draw a grid of circles.
+
+  cla
+  lat = repmat ( (10:-1:1)', 1, 10 );
+  lon = repmat ( 1:10, 10, 1 );
+  r = rand ( size ( lat ) ); 
+  circles ( lon, lat, r, 'edgecolor', 'b', ...
+    'facecolor', [0.7255 0.6353 0.5059] );
+  axis equal
+
+  Image saved as "circles_test06.png"
+
+circles_test07():
+  Overlay a parabolic line of semitransparent circles
+  on a grid of circles.
+
+  cla
+  lat = repmat ( (10:-1:1)', 1, 10 );
+  lon = repmat ( 1:10, 10, 1 );
+  r = rand ( size ( lat ) ); 
+  circles ( lon, lat, r, 'edgecolor', 'b', ...
+    'facecolor', [0.7255 0.6353 0.5059] );
+  x = 1:.5:10; 
+  y = ( x / 4 ) .^ 2;  
+  circles ( x, y, .3, 'edgecolor', 'k', ...
+    'facecolor', [0.0078 0.5765 0.5255], 'facealpha', .4 );
+  axis equal
+
+  Image saved as "circles_test07.png"
+
+circles_test08():
+  Circles have corners.
+  This script approximates circles as polygons with.
+  1000 vertices.  If all those corners are too complex
+  for your picture, you can reduce the number of points
+  used to make each circle.  Or if 1000 points is not 
+  high enough resolution, you can increase the number
+  of points.  Or if you'd like to draw triangles or squares
+  or pentagons, you can significantly reduce the number of 
+  points.  Let's try drawing an 8-sided stop sign:
+
+  cla
+  h = circles ( 1, 1, 10, 'vertices', 8, 'color', 'red' ); 
+  axis equal
+
+  Image saved as "circles_test08.png"
+
+circles_test09():
+  The stop sign in the previous test needs to be rotated.
+
+  cla
+  h = circles ( 1, 1, 10, 'vertices', 8, ..
+    'color', 'red', 'rot', 45/2 );
+  text ( 1, 1, 'STOP', 'fontname','helvetica CY', ...
+    'horizontalalignment', 'center', 'fontsize', 120, ...
+    'color', 'w', 'fontweight', 'bold' ) 
+  axis equal
+
+  Image saved as "circles_test09.png"
+
+circles_test10():
+  Rotation can be a scalar or a matrix.
+  Plot some squares declaring arbitrary rotation
+  corresponding to each square
+
+  cla
+  circles ( [1 3 5 7], 2, 1, 'vertices', 4, ...
+    'rot', [0 45 35 23.1] );
+  axis equal
+
+  Image saved as "circles_test10.png"
+
+circles_test11():
+  Draw a grid of circles, use a color map, and color
+  each circle according to sqrt(x^2+y^2).
+
+  cla
+  c = colormap ( 'jet' );
+  [ m, ~ ] = size ( c );
+  r = 0.075; 
+  r = 0.075; 
+  zmin = 0.0; 
+  zmax = sqrt ( 8.0 ); 
+  hold on; 
+  for i = 0 : 8; 
+    x = i / 4.0; 
+    for j = 0 : 8; 
+      y = j / 4.0; 
+      z = sqrt ( x * x + y * y );
+      indx = fix ( ( m - 1 ) * ( z - zmin ) / ( zmax - zmin ) ) + 1;
+      circles ( x, y, r, 'facecolor', c(indx,1:3) );
+    end
+  end
+  axis equal
+  hold off
+
+  Image saved as "circles_test11.png"
+
+circles_test():
+  Normal end of execution.
+
+07-Jan-2022 18:10:43

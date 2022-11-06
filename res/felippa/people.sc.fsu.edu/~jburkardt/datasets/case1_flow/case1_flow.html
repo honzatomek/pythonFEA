@@ -1,0 +1,1404 @@
+<html>
+
+  <head>
+    <title>
+      CASE1_FLOW - 2D Navier Stokes Flow Datasets
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      CASE1_FLOW <br> 2D Navier Stokes Flow Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>CASE1_FLOW</b>
+      is a dataset directory which
+      contains solutions to a parameter-dependent PDE.
+    </p>
+
+    <p>
+      Specifically, a partial differential equation (PDE) has been
+      defined, specifying the time dependent flow of a fluid through
+      a region.  The PDE specification includes a parameter ALPHA
+      whose value strongly affects the behavior of the flow.  The
+      steady state solution S0 is computed for a particular value
+      of ALPHA.  Then the time dependent problem is solved over a
+      fixed time interval, with ALPHA varying from time to time.
+      A set of several hundred solutions S(T(I),ALPHA(I)) are saved.
+    </p>
+
+    <p>
+      The need is to try to extract from this solution data the
+      typical modes of behavior of the solution.  Such a set of modes
+      may then be used as a finite element basis that is highly tuned
+      to the physics of the problem, so that a very small set of
+      basis functions can be used to closely approximate the behavior
+      of the solution over a range of values of ALPHA.
+    </p>
+
+    <p>
+      The method of extracting information from the solution data 
+      uses a form of K-Means clustering.
+    </p>
+
+    <p>
+      The data to be examined is assumed to be stored in a file.
+      The file is assumed to contain a number of records, with each
+      record stored on its own line.
+      Each record, in turn, contains a fixed number of data values
+      that describe a particular gene expression experiment.
+      Each record will be regarded as a point in N dimensional space.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../datasets/cavity_flow/cavity_flow.html">
+      CAVITY_FLOW</a>,
+      a dataset directory which
+      contains 500 time steps of Navier-Stokes flow in a driven cavity;
+    </p>
+
+    <p>
+      <a href = "../../f_src/cvt_basis_flow/cvt_basis_flow.html">
+      CVT_BASIS_FLOW</a>,
+      a FORTRAN90 program which 
+      can be used to analyze this data, and compute
+      a small set of "basis vectors" using CVT techniques.
+    </p>
+
+    <p>
+      <a href = "../../datasets/inout_flow/inout_flow.html">
+      INOUT_FLOW</a>,
+      a dataset directory which
+      contains 500 time steps of Navier-Stokes flow in a region with
+      specified inflow and outflow;
+    </p>
+
+    <p>
+      <a href = "../../datasets/inout_flow2/inout_flow2.html">
+      INOUT_FLOW2</a>,
+      a dataset directory which
+      contains 800 time steps of Navier-Stokes flow in a region with
+      specified inflow and outflow;
+    </p>
+
+    <p>
+      <a href = "../../f_src/pod_basis_flow/pod_basis_flow.html">
+      POD_BASIS_FLOW</a>,
+      a FORTRAN90 program which
+      can be used to analyze this data, and compute
+      a small set of "basis vectors" using POD techniques.
+    </p>
+
+    <p>
+      <a href = "../../datasets/tcell_flow/tcell_flow.html">
+      TCELL_FLOW</a>,
+      a dataset directory which
+      contains 500 time steps of Navier-Stokes flow in a 2D T-shaped region.
+    </p>
+
+    <p>
+      <a href = "../../f_src/triangulation_plot/triangulation_plot.html">
+      TRIANGULATION_PLOT</a>, 
+      a FORTRAN90 program which
+      can be used to draw
+      an image of the nodes and elements used in the triangulation of
+      the region.
+    </p>
+    
+    <p>
+      <a href = "../../f_src/vector_plot/vector_plot.html">
+      VECTOR_PLOT</a>, 
+      a FORTRAN90 program which
+      can be used to draw
+      an image of the velocity vector field over the region.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          John Burkardt, Max Gunzburger, Hyung-Chun Lee,<br>
+          Centroidal Voronoi Tessellation-Based Reduced-Order
+          Modelling of Complex Systems,<br>
+          SIAM Journal on Scientific Computing,<br>
+          Volume 28, Number 2, 2006, pages 459-484.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "xy.dat">xy.dat</a>, the XY coordinates associated
+          with the nodes.
+        </li>
+        <li>
+          <a href = "steady.dat">steady.dat</a>, 
+          the steady state velocity field.
+        </li>
+        <li>
+          <a href = "case1_flow.png">case1_flow.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the steady state velocity field.
+        </li>
+        <li>
+          <a href = "case1_flow_direction.png">case1_flow_direction.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the steady state direction field.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      There are 401 files containing solutions of the time-dependent
+      PDE with varying values of the parameter.  The solutions are
+      ordered by time step, but no information is supplied about the
+      value of ALPHA at any time.
+      <ul>
+        <li>
+          <a href = "up000.dat">up000.dat</a>.
+        </li>
+        <li>
+          <a href = "up001.dat">up001.dat</a>.
+        </li>
+        <li>
+          <a href = "up002.dat">up002.dat</a>.
+        </li>
+        <li>
+          <a href = "up003.dat">up003.dat</a>.
+        </li>
+        <li>
+          <a href = "up004.dat">up004.dat</a>.
+        </li>
+        <li>
+          <a href = "up005.dat">up005.dat</a>.
+        </li>
+        <li>
+          <a href = "up006.dat">up006.dat</a>.
+        </li>
+        <li>
+          <a href = "up007.dat">up007.dat</a>.
+        </li>
+        <li>
+          <a href = "up008.dat">up008.dat</a>.
+        </li>
+        <li>
+          <a href = "up009.dat">up009.dat</a>.
+        </li>
+        <li>
+          <a href = "up010.dat">up010.dat</a>.
+        </li>
+        <li>
+          <a href = "up011.dat">up011.dat</a>.
+        </li>
+        <li>
+          <a href = "up012.dat">up012.dat</a>.
+        </li>
+        <li>
+          <a href = "up013.dat">up013.dat</a>.
+        </li>
+        <li>
+          <a href = "up014.dat">up014.dat</a>.
+        </li>
+        <li>
+          <a href = "up015.dat">up015.dat</a>.
+        </li>
+        <li>
+          <a href = "up016.dat">up016.dat</a>.
+        </li>
+        <li>
+          <a href = "up017.dat">up017.dat</a>.
+        </li>
+        <li>
+          <a href = "up018.dat">up018.dat</a>.
+        </li>
+        <li>
+          <a href = "up019.dat">up019.dat</a>.
+        </li>
+        <li>
+          <a href = "up020.dat">up020.dat</a>.
+        </li>
+        <li>
+          <a href = "up021.dat">up021.dat</a>.
+        </li>
+        <li>
+          <a href = "up022.dat">up022.dat</a>.
+        </li>
+        <li>
+          <a href = "up023.dat">up023.dat</a>.
+        </li>
+        <li>
+          <a href = "up024.dat">up024.dat</a>.
+        </li>
+        <li>
+          <a href = "up025.dat">up025.dat</a>.
+        </li>
+        <li>
+          <a href = "up026.dat">up026.dat</a>.
+        </li>
+        <li>
+          <a href = "up027.dat">up027.dat</a>.
+        </li>
+        <li>
+          <a href = "up028.dat">up028.dat</a>.
+        </li>
+        <li>
+          <a href = "up029.dat">up029.dat</a>.
+        </li>
+        <li>
+          <a href = "up030.dat">up030.dat</a>.
+        </li>
+        <li>
+          <a href = "up031.dat">up031.dat</a>.
+        </li>
+        <li>
+          <a href = "up032.dat">up032.dat</a>.
+        </li>
+        <li>
+          <a href = "up033.dat">up033.dat</a>.
+        </li>
+        <li>
+          <a href = "up034.dat">up034.dat</a>.
+        </li>
+        <li>
+          <a href = "up035.dat">up035.dat</a>.
+        </li>
+        <li>
+          <a href = "up036.dat">up036.dat</a>.
+        </li>
+        <li>
+          <a href = "up037.dat">up037.dat</a>.
+        </li>
+        <li>
+          <a href = "up038.dat">up038.dat</a>.
+        </li>
+        <li>
+          <a href = "up039.dat">up039.dat</a>.
+        </li>
+        <li>
+          <a href = "up040.dat">up040.dat</a>.
+        </li>
+        <li>
+          <a href = "up041.dat">up041.dat</a>.
+        </li>
+        <li>
+          <a href = "up042.dat">up042.dat</a>.
+        </li>
+        <li>
+          <a href = "up043.dat">up043.dat</a>.
+        </li>
+        <li>
+          <a href = "up044.dat">up044.dat</a>.
+        </li>
+        <li>
+          <a href = "up045.dat">up045.dat</a>.
+        </li>
+        <li>
+          <a href = "up046.dat">up046.dat</a>.
+        </li>
+        <li>
+          <a href = "up047.dat">up047.dat</a>.
+        </li>
+        <li>
+          <a href = "up048.dat">up048.dat</a>.
+        </li>
+        <li>
+          <a href = "up049.dat">up049.dat</a>.
+        </li>
+        <li>
+          <a href = "up050.dat">up050.dat</a>.
+        </li>
+        <li>
+          <a href = "up051.dat">up051.dat</a>.
+        </li>
+        <li>
+          <a href = "up052.dat">up052.dat</a>.
+        </li>
+        <li>
+          <a href = "up053.dat">up053.dat</a>.
+        </li>
+        <li>
+          <a href = "up054.dat">up054.dat</a>.
+        </li>
+        <li>
+          <a href = "up055.dat">up055.dat</a>.
+        </li>
+        <li>
+          <a href = "up056.dat">up056.dat</a>.
+        </li>
+        <li>
+          <a href = "up057.dat">up057.dat</a>.
+        </li>
+        <li>
+          <a href = "up058.dat">up058.dat</a>.
+        </li>
+        <li>
+          <a href = "up059.dat">up059.dat</a>.
+        </li>
+        <li>
+          <a href = "up060.dat">up060.dat</a>.
+        </li>
+        <li>
+          <a href = "up061.dat">up061.dat</a>.
+        </li>
+        <li>
+          <a href = "up062.dat">up062.dat</a>.
+        </li>
+        <li>
+          <a href = "up063.dat">up063.dat</a>.
+        </li>
+        <li>
+          <a href = "up064.dat">up064.dat</a>.
+        </li>
+        <li>
+          <a href = "up065.dat">up065.dat</a>.
+        </li>
+        <li>
+          <a href = "up066.dat">up066.dat</a>.
+        </li>
+        <li>
+          <a href = "up067.dat">up067.dat</a>.
+        </li>
+        <li>
+          <a href = "up068.dat">up068.dat</a>.
+        </li>
+        <li>
+          <a href = "up069.dat">up069.dat</a>.
+        </li>
+        <li>
+          <a href = "up070.dat">up070.dat</a>.
+        </li>
+        <li>
+          <a href = "up071.dat">up071.dat</a>.
+        </li>
+        <li>
+          <a href = "up072.dat">up072.dat</a>.
+        </li>
+        <li>
+          <a href = "up073.dat">up073.dat</a>.
+        </li>
+        <li>
+          <a href = "up074.dat">up074.dat</a>.
+        </li>
+        <li>
+          <a href = "up075.dat">up075.dat</a>.
+        </li>
+        <li>
+          <a href = "up076.dat">up076.dat</a>.
+        </li>
+        <li>
+          <a href = "up077.dat">up077.dat</a>.
+        </li>
+        <li>
+          <a href = "up078.dat">up078.dat</a>.
+        </li>
+        <li>
+          <a href = "up079.dat">up079.dat</a>.
+        </li>
+        <li>
+          <a href = "up080.dat">up080.dat</a>.
+        </li>
+        <li>
+          <a href = "up081.dat">up081.dat</a>.
+        </li>
+        <li>
+          <a href = "up082.dat">up082.dat</a>.
+        </li>
+        <li>
+          <a href = "up083.dat">up083.dat</a>.
+        </li>
+        <li>
+          <a href = "up084.dat">up084.dat</a>.
+        </li>
+        <li>
+          <a href = "up085.dat">up085.dat</a>.
+        </li>
+        <li>
+          <a href = "up086.dat">up086.dat</a>.
+        </li>
+        <li>
+          <a href = "up087.dat">up087.dat</a>.
+        </li>
+        <li>
+          <a href = "up088.dat">up088.dat</a>.
+        </li>
+        <li>
+          <a href = "up089.dat">up089.dat</a>.
+        </li>
+        <li>
+          <a href = "up090.dat">up090.dat</a>.
+        </li>
+        <li>
+          <a href = "up091.dat">up091.dat</a>.
+        </li>
+        <li>
+          <a href = "up092.dat">up092.dat</a>.
+        </li>
+        <li>
+          <a href = "up093.dat">up093.dat</a>.
+        </li>
+        <li>
+          <a href = "up094.dat">up094.dat</a>.
+        </li>
+        <li>
+          <a href = "up095.dat">up095.dat</a>.
+        </li>
+        <li>
+          <a href = "up096.dat">up096.dat</a>.
+        </li>
+        <li>
+          <a href = "up097.dat">up097.dat</a>.
+        </li>
+        <li>
+          <a href = "up098.dat">up098.dat</a>.
+        </li>
+        <li>
+          <a href = "up099.dat">up099.dat</a>.
+        </li>
+        <li>
+          <a href = "up100.dat">up100.dat</a>.
+        </li>
+        <li>
+          <a href = "up101.dat">up101.dat</a>.
+        </li>
+        <li>
+          <a href = "up102.dat">up102.dat</a>.
+        </li>
+        <li>
+          <a href = "up103.dat">up103.dat</a>.
+        </li>
+        <li>
+          <a href = "up104.dat">up104.dat</a>.
+        </li>
+        <li>
+          <a href = "up105.dat">up105.dat</a>.
+        </li>
+        <li>
+          <a href = "up106.dat">up106.dat</a>.
+        </li>
+        <li>
+          <a href = "up107.dat">up107.dat</a>.
+        </li>
+        <li>
+          <a href = "up108.dat">up108.dat</a>.
+        </li>
+        <li>
+          <a href = "up109.dat">up109.dat</a>.
+        </li>
+        <li>
+          <a href = "up110.dat">up110.dat</a>.
+        </li>
+        <li>
+          <a href = "up111.dat">up111.dat</a>.
+        </li>
+        <li>
+          <a href = "up112.dat">up112.dat</a>.
+        </li>
+        <li>
+          <a href = "up113.dat">up113.dat</a>.
+        </li>
+        <li>
+          <a href = "up114.dat">up114.dat</a>.
+        </li>
+        <li>
+          <a href = "up115.dat">up115.dat</a>.
+        </li>
+        <li>
+          <a href = "up116.dat">up116.dat</a>.
+        </li>
+        <li>
+          <a href = "up117.dat">up117.dat</a>.
+        </li>
+        <li>
+          <a href = "up118.dat">up118.dat</a>.
+        </li>
+        <li>
+          <a href = "up119.dat">up119.dat</a>.
+        </li>
+        <li>
+          <a href = "up120.dat">up120.dat</a>.
+        </li>
+        <li>
+          <a href = "up121.dat">up121.dat</a>.
+        </li>
+        <li>
+          <a href = "up122.dat">up122.dat</a>.
+        </li>
+        <li>
+          <a href = "up123.dat">up123.dat</a>.
+        </li>
+        <li>
+          <a href = "up124.dat">up124.dat</a>.
+        </li>
+        <li>
+          <a href = "up125.dat">up125.dat</a>.
+        </li>
+        <li>
+          <a href = "up126.dat">up126.dat</a>.
+        </li>
+        <li>
+          <a href = "up127.dat">up127.dat</a>.
+        </li>
+        <li>
+          <a href = "up128.dat">up128.dat</a>.
+        </li>
+        <li>
+          <a href = "up129.dat">up129.dat</a>.
+        </li>
+        <li>
+          <a href = "up130.dat">up130.dat</a>.
+        </li>
+        <li>
+          <a href = "up131.dat">up131.dat</a>.
+        </li>
+        <li>
+          <a href = "up132.dat">up132.dat</a>.
+        </li>
+        <li>
+          <a href = "up133.dat">up133.dat</a>.
+        </li>
+        <li>
+          <a href = "up134.dat">up134.dat</a>.
+        </li>
+        <li>
+          <a href = "up135.dat">up135.dat</a>.
+        </li>
+        <li>
+          <a href = "up136.dat">up136.dat</a>.
+        </li>
+        <li>
+          <a href = "up137.dat">up137.dat</a>.
+        </li>
+        <li>
+          <a href = "up138.dat">up138.dat</a>.
+        </li>
+        <li>
+          <a href = "up139.dat">up139.dat</a>.
+        </li>
+        <li>
+          <a href = "up140.dat">up140.dat</a>.
+        </li>
+        <li>
+          <a href = "up141.dat">up141.dat</a>.
+        </li>
+        <li>
+          <a href = "up142.dat">up142.dat</a>.
+        </li>
+        <li>
+          <a href = "up143.dat">up143.dat</a>.
+        </li>
+        <li>
+          <a href = "up144.dat">up144.dat</a>.
+        </li>
+        <li>
+          <a href = "up145.dat">up145.dat</a>.
+        </li>
+        <li>
+          <a href = "up146.dat">up146.dat</a>.
+        </li>
+        <li>
+          <a href = "up147.dat">up147.dat</a>.
+        </li>
+        <li>
+          <a href = "up148.dat">up148.dat</a>.
+        </li>
+        <li>
+          <a href = "up149.dat">up149.dat</a>.
+        </li>
+        <li>
+          <a href = "up150.dat">up150.dat</a>.
+        </li>
+        <li>
+          <a href = "up151.dat">up151.dat</a>.
+        </li>
+        <li>
+          <a href = "up152.dat">up152.dat</a>.
+        </li>
+        <li>
+          <a href = "up153.dat">up153.dat</a>.
+        </li>
+        <li>
+          <a href = "up154.dat">up154.dat</a>.
+        </li>
+        <li>
+          <a href = "up155.dat">up155.dat</a>.
+        </li>
+        <li>
+          <a href = "up156.dat">up156.dat</a>.
+        </li>
+        <li>
+          <a href = "up157.dat">up157.dat</a>.
+        </li>
+        <li>
+          <a href = "up158.dat">up158.dat</a>.
+        </li>
+        <li>
+          <a href = "up159.dat">up159.dat</a>.
+        </li>
+        <li>
+          <a href = "up160.dat">up160.dat</a>.
+        </li>
+        <li>
+          <a href = "up161.dat">up161.dat</a>.
+        </li>
+        <li>
+          <a href = "up162.dat">up162.dat</a>.
+        </li>
+        <li>
+          <a href = "up163.dat">up163.dat</a>.
+        </li>
+        <li>
+          <a href = "up164.dat">up164.dat</a>.
+        </li>
+        <li>
+          <a href = "up165.dat">up165.dat</a>.
+        </li>
+        <li>
+          <a href = "up166.dat">up166.dat</a>.
+        </li>
+        <li>
+          <a href = "up167.dat">up167.dat</a>.
+        </li>
+        <li>
+          <a href = "up168.dat">up168.dat</a>.
+        </li>
+        <li>
+          <a href = "up169.dat">up169.dat</a>.
+        </li>
+        <li>
+          <a href = "up170.dat">up170.dat</a>.
+        </li>
+        <li>
+          <a href = "up171.dat">up171.dat</a>.
+        </li>
+        <li>
+          <a href = "up172.dat">up172.dat</a>.
+        </li>
+        <li>
+          <a href = "up173.dat">up173.dat</a>.
+        </li>
+        <li>
+          <a href = "up174.dat">up174.dat</a>.
+        </li>
+        <li>
+          <a href = "up175.dat">up175.dat</a>.
+        </li>
+        <li>
+          <a href = "up176.dat">up176.dat</a>.
+        </li>
+        <li>
+          <a href = "up177.dat">up177.dat</a>.
+        </li>
+        <li>
+          <a href = "up178.dat">up178.dat</a>.
+        </li>
+        <li>
+          <a href = "up179.dat">up179.dat</a>.
+        </li>
+        <li>
+          <a href = "up180.dat">up180.dat</a>.
+        </li>
+        <li>
+          <a href = "up181.dat">up181.dat</a>.
+        </li>
+        <li>
+          <a href = "up182.dat">up182.dat</a>.
+        </li>
+        <li>
+          <a href = "up183.dat">up183.dat</a>.
+        </li>
+        <li>
+          <a href = "up184.dat">up184.dat</a>.
+        </li>
+        <li>
+          <a href = "up185.dat">up185.dat</a>.
+        </li>
+        <li>
+          <a href = "up186.dat">up186.dat</a>.
+        </li>
+        <li>
+          <a href = "up187.dat">up187.dat</a>.
+        </li>
+        <li>
+          <a href = "up188.dat">up188.dat</a>.
+        </li>
+        <li>
+          <a href = "up189.dat">up189.dat</a>.
+        </li>
+        <li>
+          <a href = "up190.dat">up190.dat</a>.
+        </li>
+        <li>
+          <a href = "up191.dat">up191.dat</a>.
+        </li>
+        <li>
+          <a href = "up192.dat">up192.dat</a>.
+        </li>
+        <li>
+          <a href = "up193.dat">up193.dat</a>.
+        </li>
+        <li>
+          <a href = "up194.dat">up194.dat</a>.
+        </li>
+        <li>
+          <a href = "up195.dat">up195.dat</a>.
+        </li>
+        <li>
+          <a href = "up196.dat">up196.dat</a>.
+        </li>
+        <li>
+          <a href = "up197.dat">up197.dat</a>.
+        </li>
+        <li>
+          <a href = "up198.dat">up198.dat</a>.
+        </li>
+        <li>
+          <a href = "up199.dat">up199.dat</a>.
+        </li>
+        <li>
+          <a href = "up200.dat">up200.dat</a>.
+        </li>
+        <li>
+          <a href = "up201.dat">up201.dat</a>.
+        </li>
+        <li>
+          <a href = "up202.dat">up202.dat</a>.
+        </li>
+        <li>
+          <a href = "up203.dat">up203.dat</a>.
+        </li>
+        <li>
+          <a href = "up204.dat">up204.dat</a>.
+        </li>
+        <li>
+          <a href = "up205.dat">up205.dat</a>.
+        </li>
+        <li>
+          <a href = "up206.dat">up206.dat</a>.
+        </li>
+        <li>
+          <a href = "up207.dat">up207.dat</a>.
+        </li>
+        <li>
+          <a href = "up208.dat">up208.dat</a>.
+        </li>
+        <li>
+          <a href = "up209.dat">up209.dat</a>.
+        </li>
+        <li>
+          <a href = "up210.dat">up210.dat</a>.
+        </li>
+        <li>
+          <a href = "up211.dat">up211.dat</a>.
+        </li>
+        <li>
+          <a href = "up212.dat">up212.dat</a>.
+        </li>
+        <li>
+          <a href = "up213.dat">up213.dat</a>.
+        </li>
+        <li>
+          <a href = "up214.dat">up214.dat</a>.
+        </li>
+        <li>
+          <a href = "up215.dat">up215.dat</a>.
+        </li>
+        <li>
+          <a href = "up216.dat">up216.dat</a>.
+        </li>
+        <li>
+          <a href = "up217.dat">up217.dat</a>.
+        </li>
+        <li>
+          <a href = "up218.dat">up218.dat</a>.
+        </li>
+        <li>
+          <a href = "up219.dat">up219.dat</a>.
+        </li>
+        <li>
+          <a href = "up220.dat">up220.dat</a>.
+        </li>
+        <li>
+          <a href = "up221.dat">up221.dat</a>.
+        </li>
+        <li>
+          <a href = "up222.dat">up222.dat</a>.
+        </li>
+        <li>
+          <a href = "up223.dat">up223.dat</a>.
+        </li>
+        <li>
+          <a href = "up224.dat">up224.dat</a>.
+        </li>
+        <li>
+          <a href = "up225.dat">up225.dat</a>.
+        </li>
+        <li>
+          <a href = "up226.dat">up226.dat</a>.
+        </li>
+        <li>
+          <a href = "up227.dat">up227.dat</a>.
+        </li>
+        <li>
+          <a href = "up228.dat">up228.dat</a>.
+        </li>
+        <li>
+          <a href = "up229.dat">up229.dat</a>.
+        </li>
+        <li>
+          <a href = "up230.dat">up230.dat</a>.
+        </li>
+        <li>
+          <a href = "up231.dat">up231.dat</a>.
+        </li>
+        <li>
+          <a href = "up232.dat">up232.dat</a>.
+        </li>
+        <li>
+          <a href = "up233.dat">up233.dat</a>.
+        </li>
+        <li>
+          <a href = "up234.dat">up234.dat</a>.
+        </li>
+        <li>
+          <a href = "up235.dat">up235.dat</a>.
+        </li>
+        <li>
+          <a href = "up236.dat">up236.dat</a>.
+        </li>
+        <li>
+          <a href = "up237.dat">up237.dat</a>.
+        </li>
+        <li>
+          <a href = "up238.dat">up238.dat</a>.
+        </li>
+        <li>
+          <a href = "up239.dat">up239.dat</a>.
+        </li>
+        <li>
+          <a href = "up240.dat">up240.dat</a>.
+        </li>
+        <li>
+          <a href = "up241.dat">up241.dat</a>.
+        </li>
+        <li>
+          <a href = "up242.dat">up242.dat</a>.
+        </li>
+        <li>
+          <a href = "up243.dat">up243.dat</a>.
+        </li>
+        <li>
+          <a href = "up244.dat">up244.dat</a>.
+        </li>
+        <li>
+          <a href = "up245.dat">up245.dat</a>.
+        </li>
+        <li>
+          <a href = "up246.dat">up246.dat</a>.
+        </li>
+        <li>
+          <a href = "up247.dat">up247.dat</a>.
+        </li>
+        <li>
+          <a href = "up248.dat">up248.dat</a>.
+        </li>
+        <li>
+          <a href = "up249.dat">up249.dat</a>.
+        </li>
+        <li>
+          <a href = "up250.dat">up250.dat</a>.
+        </li>
+        <li>
+          <a href = "up251.dat">up251.dat</a>.
+        </li>
+        <li>
+          <a href = "up252.dat">up252.dat</a>.
+        </li>
+        <li>
+          <a href = "up253.dat">up253.dat</a>.
+        </li>
+        <li>
+          <a href = "up254.dat">up254.dat</a>.
+        </li>
+        <li>
+          <a href = "up255.dat">up255.dat</a>.
+        </li>
+        <li>
+          <a href = "up256.dat">up256.dat</a>.
+        </li>
+        <li>
+          <a href = "up257.dat">up257.dat</a>.
+        </li>
+        <li>
+          <a href = "up258.dat">up258.dat</a>.
+        </li>
+        <li>
+          <a href = "up259.dat">up259.dat</a>.
+        </li>
+        <li>
+          <a href = "up260.dat">up260.dat</a>.
+        </li>
+        <li>
+          <a href = "up261.dat">up261.dat</a>.
+        </li>
+        <li>
+          <a href = "up262.dat">up262.dat</a>.
+        </li>
+        <li>
+          <a href = "up263.dat">up263.dat</a>.
+        </li>
+        <li>
+          <a href = "up264.dat">up264.dat</a>.
+        </li>
+        <li>
+          <a href = "up265.dat">up265.dat</a>.
+        </li>
+        <li>
+          <a href = "up266.dat">up266.dat</a>.
+        </li>
+        <li>
+          <a href = "up267.dat">up267.dat</a>.
+        </li>
+        <li>
+          <a href = "up268.dat">up268.dat</a>.
+        </li>
+        <li>
+          <a href = "up269.dat">up269.dat</a>.
+        </li>
+        <li>
+          <a href = "up270.dat">up270.dat</a>.
+        </li>
+        <li>
+          <a href = "up271.dat">up271.dat</a>.
+        </li>
+        <li>
+          <a href = "up272.dat">up272.dat</a>.
+        </li>
+        <li>
+          <a href = "up273.dat">up273.dat</a>.
+        </li>
+        <li>
+          <a href = "up274.dat">up274.dat</a>.
+        </li>
+        <li>
+          <a href = "up275.dat">up275.dat</a>.
+        </li>
+        <li>
+          <a href = "up276.dat">up276.dat</a>.
+        </li>
+        <li>
+          <a href = "up277.dat">up277.dat</a>.
+        </li>
+        <li>
+          <a href = "up278.dat">up278.dat</a>.
+        </li>
+        <li>
+          <a href = "up279.dat">up279.dat</a>.
+        </li>
+        <li>
+          <a href = "up280.dat">up280.dat</a>.
+        </li>
+        <li>
+          <a href = "up281.dat">up281.dat</a>.
+        </li>
+        <li>
+          <a href = "up282.dat">up282.dat</a>.
+        </li>
+        <li>
+          <a href = "up283.dat">up283.dat</a>.
+        </li>
+        <li>
+          <a href = "up284.dat">up284.dat</a>.
+        </li>
+        <li>
+          <a href = "up285.dat">up285.dat</a>.
+        </li>
+        <li>
+          <a href = "up286.dat">up286.dat</a>.
+        </li>
+        <li>
+          <a href = "up287.dat">up287.dat</a>.
+        </li>
+        <li>
+          <a href = "up288.dat">up288.dat</a>.
+        </li>
+        <li>
+          <a href = "up289.dat">up289.dat</a>.
+        </li>
+        <li>
+          <a href = "up290.dat">up290.dat</a>.
+        </li>
+        <li>
+          <a href = "up291.dat">up291.dat</a>.
+        </li>
+        <li>
+          <a href = "up292.dat">up292.dat</a>.
+        </li>
+        <li>
+          <a href = "up293.dat">up293.dat</a>.
+        </li>
+        <li>
+          <a href = "up294.dat">up294.dat</a>.
+        </li>
+        <li>
+          <a href = "up295.dat">up295.dat</a>.
+        </li>
+        <li>
+          <a href = "up296.dat">up296.dat</a>.
+        </li>
+        <li>
+          <a href = "up297.dat">up297.dat</a>.
+        </li>
+        <li>
+          <a href = "up298.dat">up298.dat</a>.
+        </li>
+        <li>
+          <a href = "up299.dat">up299.dat</a>.
+        </li>
+        <li>
+          <a href = "up300.dat">up300.dat</a>.
+        </li>
+        <li>
+          <a href = "up301.dat">up301.dat</a>.
+        </li>
+        <li>
+          <a href = "up302.dat">up302.dat</a>.
+        </li>
+        <li>
+          <a href = "up303.dat">up303.dat</a>.
+        </li>
+        <li>
+          <a href = "up304.dat">up304.dat</a>.
+        </li>
+        <li>
+          <a href = "up305.dat">up305.dat</a>.
+        </li>
+        <li>
+          <a href = "up306.dat">up306.dat</a>.
+        </li>
+        <li>
+          <a href = "up307.dat">up307.dat</a>.
+        </li>
+        <li>
+          <a href = "up308.dat">up308.dat</a>.
+        </li>
+        <li>
+          <a href = "up309.dat">up309.dat</a>.
+        </li>
+        <li>
+          <a href = "up310.dat">up310.dat</a>.
+        </li>
+        <li>
+          <a href = "up311.dat">up311.dat</a>.
+        </li>
+        <li>
+          <a href = "up312.dat">up312.dat</a>.
+        </li>
+        <li>
+          <a href = "up313.dat">up313.dat</a>.
+        </li>
+        <li>
+          <a href = "up314.dat">up314.dat</a>.
+        </li>
+        <li>
+          <a href = "up315.dat">up315.dat</a>.
+        </li>
+        <li>
+          <a href = "up316.dat">up316.dat</a>.
+        </li>
+        <li>
+          <a href = "up317.dat">up317.dat</a>.
+        </li>
+        <li>
+          <a href = "up318.dat">up318.dat</a>.
+        </li>
+        <li>
+          <a href = "up319.dat">up319.dat</a>.
+        </li>
+        <li>
+          <a href = "up320.dat">up320.dat</a>.
+        </li>
+        <li>
+          <a href = "up321.dat">up321.dat</a>.
+        </li>
+        <li>
+          <a href = "up322.dat">up322.dat</a>.
+        </li>
+        <li>
+          <a href = "up323.dat">up323.dat</a>.
+        </li>
+        <li>
+          <a href = "up324.dat">up324.dat</a>.
+        </li>
+        <li>
+          <a href = "up325.dat">up325.dat</a>.
+        </li>
+        <li>
+          <a href = "up326.dat">up326.dat</a>.
+        </li>
+        <li>
+          <a href = "up327.dat">up327.dat</a>.
+        </li>
+        <li>
+          <a href = "up328.dat">up328.dat</a>.
+        </li>
+        <li>
+          <a href = "up329.dat">up329.dat</a>.
+        </li>
+        <li>
+          <a href = "up330.dat">up330.dat</a>.
+        </li>
+        <li>
+          <a href = "up331.dat">up331.dat</a>.
+        </li>
+        <li>
+          <a href = "up332.dat">up332.dat</a>.
+        </li>
+        <li>
+          <a href = "up333.dat">up333.dat</a>.
+        </li>
+        <li>
+          <a href = "up334.dat">up334.dat</a>.
+        </li>
+        <li>
+          <a href = "up335.dat">up335.dat</a>.
+        </li>
+        <li>
+          <a href = "up336.dat">up336.dat</a>.
+        </li>
+        <li>
+          <a href = "up337.dat">up337.dat</a>.
+        </li>
+        <li>
+          <a href = "up338.dat">up338.dat</a>.
+        </li>
+        <li>
+          <a href = "up339.dat">up339.dat</a>.
+        </li>
+        <li>
+          <a href = "up340.dat">up340.dat</a>.
+        </li>
+        <li>
+          <a href = "up341.dat">up341.dat</a>.
+        </li>
+        <li>
+          <a href = "up342.dat">up342.dat</a>.
+        </li>
+        <li>
+          <a href = "up343.dat">up343.dat</a>.
+        </li>
+        <li>
+          <a href = "up344.dat">up344.dat</a>.
+        </li>
+        <li>
+          <a href = "up345.dat">up345.dat</a>.
+        </li>
+        <li>
+          <a href = "up346.dat">up346.dat</a>.
+        </li>
+        <li>
+          <a href = "up347.dat">up347.dat</a>.
+        </li>
+        <li>
+          <a href = "up348.dat">up348.dat</a>.
+        </li>
+        <li>
+          <a href = "up349.dat">up349.dat</a>.
+        </li>
+        <li>
+          <a href = "up350.dat">up350.dat</a>.
+        </li>
+        <li>
+          <a href = "up351.dat">up351.dat</a>.
+        </li>
+        <li>
+          <a href = "up352.dat">up352.dat</a>.
+        </li>
+        <li>
+          <a href = "up353.dat">up353.dat</a>.
+        </li>
+        <li>
+          <a href = "up354.dat">up354.dat</a>.
+        </li>
+        <li>
+          <a href = "up355.dat">up355.dat</a>.
+        </li>
+        <li>
+          <a href = "up356.dat">up356.dat</a>.
+        </li>
+        <li>
+          <a href = "up357.dat">up357.dat</a>.
+        </li>
+        <li>
+          <a href = "up358.dat">up358.dat</a>.
+        </li>
+        <li>
+          <a href = "up359.dat">up359.dat</a>.
+        </li>
+        <li>
+          <a href = "up360.dat">up360.dat</a>.
+        </li>
+        <li>
+          <a href = "up361.dat">up361.dat</a>.
+        </li>
+        <li>
+          <a href = "up362.dat">up362.dat</a>.
+        </li>
+        <li>
+          <a href = "up363.dat">up363.dat</a>.
+        </li>
+        <li>
+          <a href = "up364.dat">up364.dat</a>.
+        </li>
+        <li>
+          <a href = "up365.dat">up365.dat</a>.
+        </li>
+        <li>
+          <a href = "up366.dat">up366.dat</a>.
+        </li>
+        <li>
+          <a href = "up367.dat">up367.dat</a>.
+        </li>
+        <li>
+          <a href = "up368.dat">up368.dat</a>.
+        </li>
+        <li>
+          <a href = "up369.dat">up369.dat</a>.
+        </li>
+        <li>
+          <a href = "up370.dat">up370.dat</a>.
+        </li>
+        <li>
+          <a href = "up371.dat">up371.dat</a>.
+        </li>
+        <li>
+          <a href = "up372.dat">up372.dat</a>.
+        </li>
+        <li>
+          <a href = "up373.dat">up373.dat</a>.
+        </li>
+        <li>
+          <a href = "up374.dat">up374.dat</a>.
+        </li>
+        <li>
+          <a href = "up375.dat">up375.dat</a>.
+        </li>
+        <li>
+          <a href = "up376.dat">up376.dat</a>.
+        </li>
+        <li>
+          <a href = "up377.dat">up377.dat</a>.
+        </li>
+        <li>
+          <a href = "up378.dat">up378.dat</a>.
+        </li>
+        <li>
+          <a href = "up379.dat">up379.dat</a>.
+        </li>
+        <li>
+          <a href = "up380.dat">up380.dat</a>.
+        </li>
+        <li>
+          <a href = "up381.dat">up381.dat</a>.
+        </li>
+        <li>
+          <a href = "up382.dat">up382.dat</a>.
+        </li>
+        <li>
+          <a href = "up383.dat">up383.dat</a>.
+        </li>
+        <li>
+          <a href = "up384.dat">up384.dat</a>.
+        </li>
+        <li>
+          <a href = "up385.dat">up385.dat</a>.
+        </li>
+        <li>
+          <a href = "up386.dat">up386.dat</a>.
+        </li>
+        <li>
+          <a href = "up387.dat">up387.dat</a>.
+        </li>
+        <li>
+          <a href = "up388.dat">up388.dat</a>.
+        </li>
+        <li>
+          <a href = "up389.dat">up389.dat</a>.
+        </li>
+        <li>
+          <a href = "up390.dat">up390.dat</a>.
+        </li>
+        <li>
+          <a href = "up391.dat">up391.dat</a>.
+        </li>
+        <li>
+          <a href = "up392.dat">up392.dat</a>.
+        </li>
+        <li>
+          <a href = "up393.dat">up393.dat</a>.
+        </li>
+        <li>
+          <a href = "up394.dat">up394.dat</a>.
+        </li>
+        <li>
+          <a href = "up395.dat">up395.dat</a>.
+        </li>
+        <li>
+          <a href = "up396.dat">up396.dat</a>.
+        </li>
+        <li>
+          <a href = "up397.dat">up397.dat</a>.
+        </li>
+        <li>
+          <a href = "up398.dat">up398.dat</a>.
+        </li>
+        <li>
+          <a href = "up399.dat">up399.dat</a>.
+        </li>
+        <li>
+          <a href = "up400.dat">up400.dat</a>.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 August 2005.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

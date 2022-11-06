@@ -1,0 +1,19 @@
+# Title: Mean developmental period (days) for three strains of houseflies
+# 1: Density per container
+# 2: OL
+# 3: BELL
+# 4: bwb
+#
+#  Reference:
+#  Sullivan, Sokal,
+#  The effects of larval density on several strains of the housefly,
+#  Ecology,
+#  Volume 44, pages 120-130.
+#
+  60   9.6   9.3   9.3
+  80  10.6   9.1   9.2
+ 160   9.8   9.3   9.5
+ 320  10.7   9.1  10.0
+ 640  11.1  11.1  10.4
+1280  10.9  11.8  10.8
+2560  12.8  10.6  10.7

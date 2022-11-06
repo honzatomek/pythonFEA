@@ -1,0 +1,33 @@
+12 August 2007   2:12:43.312 PM
+ 
+QUADRATURE_TEST_GENZ_ONLY
+  FORTRAN90 version
+ 
+  THIS IS A SPECIAL CUT DOWN VERSION THAT ONLY
+  CHECKS THE GENZ INTEGRALS.
+  CREATED FOR ONE TIME USE 01 AUGUST 2007.
+ 
+  Investigate the accuracy of a multidimensional
+  quadrature rule by integrating test functions.
+ 
+QUADRATURE_TEST_GENZ_ONLY: User input:
+  Quadrature rule X file = "lc_d10_01581_x.txt".
+  Quadrature rule W file = "lc_d10_01581_w.txt".
+  Quadrature rule R file = "lc_d10_01581_r.txt".
+ 
+  Spatial dimension =       10
+  Number of points  =     1581
+ 
+  Prob   Dim      Points       Approx          Exact           Error
+ 
+    27    10        1581    -.724254        -.724125        0.128703E-03
+    28    10        1581     .470123         .470089        0.337550E-04
+    29    10        1581    0.190568E-01    0.192139E-01    0.157112E-03
+    30    10        1581     .991704         .991704        0.878904E-08
+    31    10        1581    0.102176E-01    0.101859E-01    0.317042E-04
+    32    10        1581     53.6873         53.1655         .521772    
+ 
+QUADRATURE_TEST_GENZ_ONLY:
+  Normal end of execution.
+ 
+12 August 2007   2:12:43.551 PM

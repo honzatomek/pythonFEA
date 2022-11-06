@@ -1,0 +1,22 @@
+# Title: Rate of growth of Ameiurus melas in conditioned and unconditioned well water
+# 1: Replicate
+# 2: Average increase in fish length, conditioned water
+# 3: Average increase in fish length, unconditioned water
+#
+#  Reference:
+#  Allee, Bowen, Welty, Oesting,
+#  The effect of homotypic conditioning of water on the growth of fishes,
+#  and chemical studies of the factors involved,
+#  Journal of Experimental Zoology,
+#  Volume 68, 1934, pages 183-213.
+#
+ 1   2.20   1.06
+ 2   1.05   0.06
+ 3   3.25   3.55
+ 4   2.60   1.00
+ 5   1.90   1.10
+ 6   1.50   0.60
+ 7   2.25   1.30
+ 8   1.00   0.90
+ 9  -0.09  -0.59
+10   0.83   0.58

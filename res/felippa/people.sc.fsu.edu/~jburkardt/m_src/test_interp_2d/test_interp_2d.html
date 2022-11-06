@@ -1,0 +1,518 @@
+<html>
+
+  <head>
+    <title>
+      test_interp_2d
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      test_interp_2d
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>test_interp_2d</b>,
+      a MATLAB code which
+      defines test problems for interpolation of data z(x,y)
+      depending on a 2D argument.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>test_interp_2d</b> is available in
+      <a href = "../../c_src/test_interp_2d/test_interp_2d.html">a C version</a> and
+      <a href = "../../cpp_src/test_interp_2d/test_interp_2d.html">a C++ version</a> and
+      <a href = "../../f_src/test_interp_2d/test_interp_2d.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/test_interp_2d/test_interp_2d.html">a MATLAB version</a> and
+      <a href = "../../py_src/test_interp_2d/test_interp_2d.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/lagrange_interp_2d/lagrange_interp_2d.html">
+      lagrange_interp_2d</a>,
+      a MATLAB code which
+      defines and evaluates the lagrange polynomial p(x,y) 
+      which interpolates a set of data depending on a 2d argument
+      that was evaluated on a product grid,
+      so that p(x(i),y(j)) = z(i,j).
+    </p>
+
+    <p>
+      <a href = "../../m_src/MATLAB_surf/MATLAB_surf.html">
+      MATLAB_surf</a>,
+      a MATLAB code which
+      demonstrates the MATLAB surf() function for displaying a 3d surface
+      of the form z=f(x,y).
+    </p>
+
+    <p>
+      <a href = "../../m_src/padua/padua.html">
+      padua</a>,
+      a MATLAB code which
+      returns the points and weights for padu sets, useful for interpolation
+      in 2d.  MATLAB graphics are used to plot the points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pwl_interp_2d/pwl_interp_2d.html">
+      pwl_interp_2d</a>,
+      a MATLAB code which
+      evaluates a piecewise linear interpolant to data defined on
+      a regular 2d grid.
+    </p>
+
+    <p>
+      <a href = "../../m_src/r8lib/r8lib.html">
+      r8lib</a>, 
+      a MATLAB code which
+      contains many utility routines, using double precision real (r8) arithmetic.
+    </p>
+
+    <p>
+      <a href = "../../m_src/rbf_interp_2d/rbf_interp_2d.html">
+      rbf_interp_2d</a>,
+      a MATLAB code which
+      defines and evaluates radial basis function (rbf) interpolants to 2d data.
+    </p>
+
+    <p>
+      <a href = "../../m_src/shepard_interp_2d/shepard_interp_2d.html">
+      shepard_interp_2d</a>,
+      a MATLAB code which
+      defines and evaluates shepard interpolants to 2d data,
+      which are based on inverse distance weighting.
+    </p>
+
+    <p>
+      <a href = "../../m_src/test_interp/test_interp.html">
+      test_interp</a>,
+      a MATLAB code which
+      defines a number of test problems for interpolation, 
+      provided as a set of (x,y(x)) data.
+    </p>
+
+    <p>
+      <a href = "../../m_src/test_interp_1d/test_interp_1d.html">
+      test_interp_1d</a>,
+      a MATLAB code which
+      defines test problems for interpolation of data y(x),
+      depending on a 2d argument.
+    </p>
+
+    <p>
+      <a href = "../../m_src/test_interp_2d_test/test_interp_2d_test.html">
+      test_interp_2d_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/test_interp_nd/test_interp_nd.html">
+      test_interp_nd</a>,
+      a MATLAB code which
+      defines test problems for interpolation of data z(x),
+      depending on an m-dimensional argument.
+    </p>
+
+    <p>
+      <a href = "../../m_src/toms886/toms886.html">
+      toms886</a>,
+      a MATLAB code which
+      defines the padua points for interpolation in a 2d region,
+      including the rectangle, triangle, and ellipse,
+      by marco caliari, stefano de marchi, marco vianello.
+      this is a MATLAB version of acm toms algorithm 886.
+    </p>
+
+    <p>
+      <a href = "../../m_src/vandermonde_approx_2d/vandermonde_approx_2d.html">
+      vandermonde_approx_2d</a>,
+      a MATLAB code which
+      finds a polynomial approximant p(x,y) to data of a 2d argument by setting up and
+      solving an overdetermined linear system for the polynomial coefficients 
+      involving the vandermonde matrix.
+    </p>
+
+    <p>
+      <a href = "../../m_src/vandermonde_interp_2d/vandermonde_interp_2d.html">
+      vandermonde_interp_2d</a>,
+      a MATLAB code which
+      finds a polynomial interpolant to data z(x,y) of a 2d argument
+      by setting up and solving a linear system for the polynomial coefficients,
+      involving the vandermonde matrix.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Richard Franke,<br>
+          A Critical Comparison of Some Methods for Interpolation 
+          of Scattered Data,<br>
+          Naval Postgraduate School Technical Report,<br>
+          NPS-53-79-003, 1979.
+        </li>
+        <li>
+          Robert Renka, Ron Brown,<br>
+          Algorithm 792:
+          Accuracy Tests of ACM Algorithms for Interpolation of Scattered Data in the Plane,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 25, Number 1, March 1999, pages 78-94.
+        </li>
+        <li>
+          Donald Shepard,<br>
+          A two-dimensional interpolation function for irregularly spaced data,<br>
+          ACM '68: Proceedings of the 1968 23rd ACM National Conference,<br>
+          ACM, pages 517-524, 1969.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "f00_f0.m">f00_f0.m</a>
+          returns the value of any function.
+        </li>
+        <li>
+          <a href = "f00_f1.m">f00_f1.m</a>
+          returns first derivatives of any function.
+        </li>
+        <li>
+          <a href = "f00_f2.m">f00_f2.m</a>
+          returns second derivatives of any function.
+        </li>
+        <li>
+          <a href = "f00_num.m">f00_num.m</a>
+          returns the number of test functions available.
+        </li>
+        <li>
+          <a href = "f00_title.m">f00_title.m</a>
+          returns the title for any function.
+        </li>
+        <li>
+          <a href = "f01_f0.m">f01_f0.m</a>
+          returns the value of function 1.
+        </li>
+        <li>
+          <a href = "f01_f1.m">f01_f1.m</a>
+          returns first derivatives of function 1.
+        </li>
+        <li>
+          <a href = "f01_f2.m">f01_f2.m</a>
+          returns second derivatives of function 1.
+        </li>
+        <li>
+          <a href = "f01_title.m">f01_title.m</a>
+          returns the title for function 1.
+        </li>
+        <li>
+          <a href = "f02_f0.m">f02_f0.m</a>
+          returns the value of function 2.
+        </li>
+        <li>
+          <a href = "f02_f1.m">f02_f1.m</a>
+          returns first derivatives of function 2.
+        </li>
+        <li>
+          <a href = "f02_f2.m">f02_f2.m</a>
+          returns second derivatives of function 2.
+        </li>
+        <li>
+          <a href = "f02_title.m">f02_title.m</a>
+          returns the title for function 2.
+        </li>
+        <li>
+          <a href = "f03_f0.m">f03_f0.m</a>
+          returns the value of function 3.
+        </li>
+        <li>
+          <a href = "f03_f1.m">f03_f1.m</a>
+          returns first derivatives of function 3.
+        </li>
+        <li>
+          <a href = "f03_f2.m">f03_f2.m</a>
+          returns second derivatives of function 3.
+        </li>
+        <li>
+          <a href = "f03_title.m">f03_title.m</a>
+          returns the title for function 3.
+        </li>
+        <li>
+          <a href = "f04_f0.m">f04_f0.m</a>
+          returns the value of function 4.
+        </li>
+        <li>
+          <a href = "f04_f1.m">f04_f1.m</a>
+          returns first derivatives of function 4.
+        </li>
+        <li>
+          <a href = "f04_f2.m">f04_f2.m</a>
+          returns second derivatives of function 4.
+        </li>
+        <li>
+          <a href = "f04_title.m">f04_title.m</a>
+          returns the title for function 4.
+        </li>
+        <li>
+          <a href = "f05_f0.m">f05_f0.m</a>
+          returns the value of function 5.
+        </li>
+        <li>
+          <a href = "f05_f1.m">f05_f1.m</a>
+          returns first derivatives of function 5.
+        </li>
+        <li>
+          <a href = "f05_f2.m">f05_f2.m</a>
+          returns second derivatives of function 5.
+        </li>
+        <li>
+          <a href = "f05_title.m">f05_title.m</a>
+          returns the title for function 5.
+        </li>
+        <li>
+          <a href = "f06_f0.m">f06_f0.m</a>
+          returns the value of function 6.
+        </li>
+        <li>
+          <a href = "f06_f1.m">f06_f1.m</a>
+          returns first derivatives of function 6.
+        </li>
+        <li>
+          <a href = "f06_f2.m">f06_f2.m</a>
+          returns second derivatives of function 6.
+        </li>
+        <li>
+          <a href = "f06_title.m">f06_title.m</a>
+          returns the title for function 6.
+        </li>
+        <li>
+          <a href = "f07_f0.m">f07_f0.m</a>
+          returns the value of function 7.
+        </li>
+        <li>
+          <a href = "f07_f1.m">f07_f1.m</a>
+          returns first derivatives of function 7.
+        </li>
+        <li>
+          <a href = "f07_f2.m">f07_f2.m</a>
+          returns second derivatives of function 7.
+        </li>
+        <li>
+          <a href = "f07_title.m">f07_title.m</a>
+          returns the title for function 7.
+        </li>
+        <li>
+          <a href = "f08_f0.m">f08_f0.m</a>
+          returns the value of function 8.
+        </li>
+        <li>
+          <a href = "f08_f1.m">f08_f1.m</a>
+          returns first derivatives of function 8.
+        </li>
+        <li>
+          <a href = "f08_f2.m">f08_f2.m</a>
+          returns second derivatives of function 8.
+        </li>
+        <li>
+          <a href = "f08_title.m">f08_title.m</a>
+          returns the title for function 8.
+        </li>
+        <li>
+          <a href = "f09_f0.m">f09_f0.m</a>
+          returns the value of function 9.
+        </li>
+        <li>
+          <a href = "f09_f1.m">f09_f1.m</a>
+          returns first derivatives of function 9.
+        </li>
+        <li>
+          <a href = "f09_f2.m">f09_f2.m</a>
+          returns second derivatives of function 9.
+        </li>
+        <li>
+          <a href = "f09_title.m">f09_title.m</a>
+          returns the title for function 9.
+        </li>
+        <li>
+          <a href = "f10_f0.m">f10_f0.m</a>
+          returns the value of function f10.
+        </li>
+        <li>
+          <a href = "f10_f1.m">f10_f1.m</a>
+          returns first derivatives of function f10.
+        </li>
+        <li>
+          <a href = "f10_f2.m">f10_f2.m</a>
+          returns second derivatives of function f10.
+        </li>
+        <li>
+          <a href = "f10_title.m">f10_title.m</a>
+          returns the title for function f10.
+        </li>
+        <li>
+          <a href = "f11_f0.m">f11_f0.m</a>
+          returns the value of function f11.
+        </li>
+        <li>
+          <a href = "f11_f1.m">f11_f1.m</a>
+          returns first derivatives of function f11.
+        </li>
+        <li>
+          <a href = "f11_f2.m">f11_f2.m</a>
+          returns second derivatives of function f11.
+        </li>
+        <li>
+          <a href = "f11_title.m">f11_title.m</a>
+          returns the title for function f11.
+        </li>
+        <li>
+          <a href = "f12_f0.m">f12_f0.m</a>
+          returns the value of function f12.
+        </li>
+        <li>
+          <a href = "f12_f1.m">f12_f1.m</a>
+          returns first derivatives of function f12.
+        </li>
+        <li>
+          <a href = "f12_f2.m">f12_f2.m</a>
+          returns second derivatives of function f12.
+        </li>
+        <li>
+          <a href = "f12_title.m">f12_title.m</a>
+          returns the title for function f12.
+        </li>
+        <li>
+          <a href = "f13_f0.m">f13_f0.m</a>
+          returns the value of function f13.
+        </li>
+        <li>
+          <a href = "f13_f1.m">f13_f1.m</a>
+          returns first derivatives of function f13.
+        </li>
+        <li>
+          <a href = "f13_f2.m">f13_f2.m</a>
+          returns second derivatives of function f13.
+        </li>
+        <li>
+          <a href = "f13_title.m">f13_title.m</a>
+          returns the title for function f13.
+        </li>
+        <li>
+          <a href = "g00_num.m">g00_num.m</a>
+          returns the number of grids available.
+        </li>
+        <li>
+          <a href = "g00_size.m">g00_size.m</a>
+          returns the size for any grid.
+        </li>
+        <li>
+          <a href = "g00_title.m">g00_title.m</a>
+          returns the title for any grid.
+        </li>
+        <li>
+          <a href = "g00_xy.m">g00_xy.m</a>
+          returns the grid points for any grid.
+        </li>
+        <li>
+          <a href = "g01_size.m">g01_size.m</a>
+          returns the size for grid 1.
+        </li>
+        <li>
+          <a href = "g01_title.m">g01_title.m</a>
+          returns the title for grid 1.
+        </li>
+        <li>
+          <a href = "g01_xy.m">g01_xy.m</a>
+          returns the grid points for grid 1.
+        </li>
+        <li>
+          <a href = "g02_size.m">g02_size.m</a>
+          returns the size for grid 2.
+        </li>
+        <li>
+          <a href = "g02_title.m">g02_title.m</a>
+          returns the title for grid 2.
+        </li>
+        <li>
+          <a href = "g02_xy.m">g02_xy.m</a>
+          returns the grid points for grid 2.
+        </li>
+        <li>
+          <a href = "g03_size.m">g03_size.m</a>
+          returns the size for grid 3.
+        </li>
+        <li>
+          <a href = "g03_title.m">g03_title.m</a>
+          returns the title for grid 3.
+        </li>
+        <li>
+          <a href = "g03_xy.m">g03_xy.m</a>
+          returns the grid points for grid 3.
+        </li>
+        <li>
+          <a href = "g04_size.m">g04_size.m</a>
+          returns the size for grid 4.
+        </li>
+        <li>
+          <a href = "g04_title.m">g04_title.m</a>
+          returns the title for grid 4.
+        </li>
+        <li>
+          <a href = "g04_xy.m">g04_xy.m</a>
+          returns the grid points for grid 4.
+        </li>
+        <li>
+          <a href = "g05_size.m">g05_size.m</a>
+          returns the size for grid 5.
+        </li>
+        <li>
+          <a href = "g05_title.m">g05_title.m</a>
+          returns the title for grid 5.
+        </li>
+        <li>
+          <a href = "g05_xy.m">g05_xy.m</a>
+          returns the grid points for grid 5.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 March 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

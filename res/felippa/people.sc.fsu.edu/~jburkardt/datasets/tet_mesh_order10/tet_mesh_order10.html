@@ -1,0 +1,396 @@
+<html>
+
+  <head>
+    <title>
+      TET_MESH_ORDER10 - Quadratic Tet Mesh Definition
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      TET_MESH_ORDER10 <br> Quadratic Tet Mesh Definition
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TET_MESH_ORDER10</b>
+      is a dataset directory which
+      contains examples of 10-node "tet meshes"
+      (meshes of tetrahedrons).  In such a mesh, the fundamental shape
+      is a tetrahedron, but each tetrahedron is described by 10 nodes,
+      namely, the four vertices, and the six midside nodes.
+    </p>
+
+    <p>
+      Typically, such a mesh is <i>not</i> generated directly from
+      arbitrary data, since the midside nodes are expected to be the
+      averages of pairs of vertices, or nearly so.  It is more typical
+      that a linear mesh, using 4-node tetrahedrons, is generated,
+      and then a quadratic mesh is derived from the linear mesh.
+    </p>
+
+    <p>
+      A 10-node tet mesh is called <i>quadratic</i> since it easily allows
+      for piecewise quadratic interpolation of data values defined
+      at the nodes.
+    </p>
+
+    <p>
+      The definition of an order 10 tet mesh requires two files:
+      <ul>
+        <li>
+          the <i>node file</i> lists the coordinates of
+          a set of points.
+        </li>
+        <li>
+          the <i>element file</i> lists groups of 10 node indices, which
+          form each element.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      There is little agreement about how to order the nodes that describe
+      a 10-node tetrahedron.  The first four nodes are always the vertices.
+      We might label them as "A", "B", "C", and "D".  Then the six remaining
+      nodes are each halfway between a pair of vertices, and in fact can be
+      uniquely identified by that pair.  Thus, the node between vertices
+      B and D could be called "BD".  One way to order these six nodes
+      is to sort the two bracketing vertices and list the pairs in order.
+      In that case, the full set of 10 nodes might be listed as
+      <blockquote>
+        A, B, C, D, AB, AC, AD, BC, BD, CD.
+      </blockquote>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Example of a node file:
+    </h3>
+
+    <p>
+      Here is an example of a node file:
+      <pre>
+        #  Node file for the vertices of a cube.
+        #
+        0.0  0.0  0.0
+        0.0  0.0  1.0
+        0.0  1.0  0.0
+        0.0  1.0  1.0
+        1.0  0.0  0.0
+        1.0  0.0  1.0
+        1.0  1.0  0.0
+        1.0  1.0  1.0
+        0.0  0.0  0.5
+        0.0  0.5  0.0
+        0.0  0.5  0.5
+        0.5  0.0  0.0
+        0.0  0.5  1.0
+        0.5  0.0  0.5
+        0.5  0.0  1.0
+        0.0  1.0  0.5
+        0.5  0.5  0.0
+        0.5  1.0  0.0
+        0.5  0.5  0.5
+        0.5  0.5  1.0
+        0.5  1.0  0.5
+        0.5  1.0  1.0
+        1.0  0.0  0.5
+        1.0  0.5  0.0
+        1.0  0.5  0.5
+        1.0  0.5  1.0
+        1.0  1.0  0.5
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Example of a tet element file:
+    </h3>
+
+    <p>
+      Each tetrahedron will be described by a list of 10 nodes.
+      An arbitrary ordering for these nodes must be imposed.  It
+      is natural to list the four vertices first, but the 6 midside
+      nodes have no natural ordering.  Here, then, is one ordering
+      that we use, where we have indicated the position of the midside
+      nodes by listing the two "parent" vertices:
+      <pre>
+        1, 2, 3, 4, (1+2), (1+3), (1+4), (2+3), (2+4), (3+4)
+      </pre>
+    </p>
+
+    <p>
+      A possible tet mesh of these nodes would be described
+      by the following element file:
+      <pre>
+       4   3   5   1  16  19  11  17   10  12
+       4   2   5   1  13  19  11  14    9  12
+       4   7   3   5  21  16  19  18   24  17
+       4   7   8   5  21  22  19  27   24  25
+       4   6   2   5  20  13  19  15   23  14
+       4   6   8   5  20  22  19  26   23  25
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../f_src/table_tet_mesh/table_tet_mesh.html">
+      TABLE_TET_MESH</a>,
+      a FORTRAN90 program which
+      reads a TABLE file
+      of N points in 3 dimensions and produces a tet mesh;
+    </p>
+
+    <p>
+      <a href = "../../f_src/test_tet_mesh/test_tet_mesh.html">
+      TEST_TET_MESH</a>,
+      a FORTRAN90 library which
+      implements test problems for
+      tetrahedralization or meshing of arbitrary regions in 3 dimensions.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh/tet_mesh.html">
+      TET_MESH</a>,
+      a C++ library which
+      carries out various operations on tetrahedral meshes.
+    </p>
+
+    <p>
+      <a href = "../../f_src/tet_mesh_boundary/tet_mesh_boundary.html">
+      TET_MESH_BOUNDARY</a>,
+      a FORTRAN90 program which
+      returns the nodes and faces of the boundary of a tetrahedral mesh,
+      which themselves form a 3D triangular mesh or "TRI_SURFACE".
+    </p>
+
+    <p>
+      <a href = "../../m_src/tet_mesh_display/tet_mesh_display.html">
+      TET_MESH_DISPLAY</a>,
+      a MATLAB program which
+      reads in the node and element files defining a tet mesh
+      and displays a wireframe image.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh_display_opengl/tet_mesh_display_opengl.html">
+      TET_MESH_DISPLAY_OPENGL</a>,
+      a C++ program which
+      reads a 3D tet mesh and displays the nodes and edges using OpenGL.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh_l2q/tet_mesh_l2q.html">
+      TET_MESH_L2Q</a>,
+      a C++ program which
+      reads information about a 4-node (linear) tet mesh and
+      creates data defining a corresponding 10-node (quadratic)
+      tet mesh;
+    </p>
+
+    <p>
+      <a href = "../../datasets/tet_mesh_order4/tet_mesh_order4.html">
+      TET_MESH_ORDER4</a>,
+      a dataset directory which
+      contains a description of a linear tet mesh of a
+      set of 3D points, using a pair of files to list the node coordinates
+      and the 4 nodes that make up each tetrahedron;
+    </p>
+
+    <p>
+      <a href = "../../datasets/tet_mesh_order20/tet_mesh_order20.html">
+      TET_MESH_ORDER20</a>,
+      a dataset directory which
+      contains a description of a cubic tet mesh of a
+      set of 3D points, using a pair of files to list the node coordinates
+      and the 20 nodes that make up each tetrahedron;
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh_q2l/tet_mesh_q2l.html">
+      TET_MESH_Q2L</a>,
+      a C++ program which
+      reads information about a 10-node (quadratic) tet mesh and
+      creates data defining a corresponding 4-node (linear)
+      tet mesh;
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh_quality/tet_mesh_quality.html">
+      TET_MESH_QUALITY</a>,
+      a C++ program which
+      computes quality measures of a tetrahedral mesh.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh_rcm/tet_mesh_rcm.html">
+      TET_MESH_RCM</a>,
+      a C++ program which
+      computes the reverse Cuthill-McKee reordering for the nodes
+      of a tet mesh that uses 4-node or 10-node tetrahedrons;
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh_refine/tet_mesh_refine.html">
+      TET_MESH_REFINE</a>,
+      a C++ program which
+      refines a tet mesh;
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh_tet_neighbors/tet_mesh_tet_neighbors.html">
+      TET_MESH_TET_NEIGHBORS</a>,
+      a C++ program which
+      reads information about a tet mesh and writes out a list of the
+      tetrahedrons that are adjacent to a given tetrahedron;
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/tet_mesh_volumes/tet_mesh_volumes.html">
+      TET_MESH_VOLUMES</a>,
+      a C++ program which
+      computes the volume of each tetrahedron in a tet mesh;
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Herbert Edelsbrunner,<br>
+          Geometry and Topology for Mesh Generation,<br>
+          Cambridge, 2001,<br>
+          ISBN: 0-521-79309-2,<br>
+          LC: QA377.E36.
+        </li>
+        <li>
+          Barry Joe,<br>
+          GEOMPACK - a software package for the generation of meshes
+          using geometric algorithms,<br>
+          Advances in Engineering Software,<br>
+          Volume 13, Number 5, 1991, pages 325-331.
+        </li>
+        <li>
+          Per-Olof Persson, Gilbert Strang,<br>
+          A Simple Mesh Generator in MATLAB,<br>
+          SIAM Review,<br>
+          Volume 46, Number 2, June 2004, pages 329-345.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Sample Files:
+    </h3>
+
+    <p>
+      <b>CUBE_ORDER10</b> is the 8 vertices of a cube, plus 19 midside points,
+      making a mesh of 6 tetrahedrons of order 10.
+      The ordering of nodes in the element file is
+      1, 2, 3, 4, (1+2), (1+3), (1+4), (2+3), (2+4), (3+4).
+      <ul>
+        <li>
+          <a href = "cube_order10_nodes.txt">cube_order10_nodes.txt</a>,
+          the node file;
+        </li>
+        <li>
+          <a href = "cube_order10_elements.txt">cube_order10_elements.txt</a>,
+          the tetra file;
+        </li>
+        <li>
+          <a href = "cube_order10.png">cube_order10.png</a>,
+          a PNG image.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>ONEONEEIGHT_ORDER10</b> is 118 nodes forming 70 order-10
+      tetrahedrons (derived by applying <b>TET_MESH_L2Q</b> to the
+      order-4 dataset "TWENTY_ORDER4".)
+      The ordering of nodes in the element file is
+      1, 2, 3, 4, (1+2), (1+3), (1+4), (2+3), (2+4), (3+4).
+      <ul>
+        <li>
+          <a href = "oneoneeight_order10_nodes.txt">
+          oneoneeight_order10_nodes.txt</a>,
+          the node file;
+        </li>
+        <li>
+          <a href = "oneoneeight_order10_elements.txt">
+          oneoneeight_order10_elements.txt</a>,
+          the tetra file;
+        </li>
+        <li>
+          <a href = "oneoneeight_order10.png">oneoneeight_order10.png</a>,
+          a PNG image.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>TETRA_RHOMBIC_ORDER10</b> is the 4 vertices of a tetrahedron,
+      plus the 6 midside points, making a mesh of 1 tetrahedron of order 10.
+      This tetrahedron has some nice properties under a subdivision algorithm.
+      The ordering of nodes in the element file is
+      1, 2, 3, 4, (1+2), (1+3), (1+4), (2+3), (2+4), (3+4).
+      <ul>
+        <li>
+          <a href = "tetra_rhombic_order10_nodes.txt">
+          tetra_rhombic_order10_nodes.txt</a>,
+          the node file;
+        </li>
+        <li>
+          <a href = "tetra_rhombic_order10_elements.txt">
+          tetra_rhombic_order10_elements.txt</a>,
+          the tetra file;
+        </li>
+        <li>
+          <a href = "tetra_rhombic_order10.png">tetra_rhombic_order10.png</a>,
+          a PNG image.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to
+      <a href = "../datasets.html">the DATASETS page.</a>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 21 December 2010.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

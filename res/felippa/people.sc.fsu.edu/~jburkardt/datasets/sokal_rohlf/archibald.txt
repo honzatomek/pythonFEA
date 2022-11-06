@@ -1,0 +1,20 @@
+# Title: Number of plants of the sedge Carex flacca found in 500 quadrants
+# 1: Number of plants per quadrat "Y"
+# 2: Observed frequency "F"
+#
+#  Reference:
+#  E Archibald,
+#  Plant populations.  II.  The estimation of the number of individuals per unit
+#  area of speceis in heterogeneous plant populations,
+#  Annals of Botany, New Series,
+#  Volume 14, pages 7-21, 1950.
+#
+0  181
+1  118
+2   97 
+3   54
+4   32
+5    9
+6    5
+7    3
+8    1

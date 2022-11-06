@@ -1,0 +1,28 @@
+29-Oct-2022 20:16:39
+
+circle_arc_grid_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2.
+  Test circle_arc_grid().
+
+circle_arc_grid_test01():
+  Compute points on a 90 degree arc.
+
+  Radius =           2.000000
+  Center =           5.000000  5.000000
+  Angle 1 =          0.000000
+  Angle 2 =          90.000000
+  Number of points = 10
+
+  A few of the points:
+    7.0000    5.0000
+    6.9696    5.3473
+    6.8794    5.6840
+    6.7321    6.0000
+    6.5321    6.2856
+
+  Data saved as "arc.txt"
+
+circle_arc_grid_test()
+  Normal end of execution.
+
+29-Oct-2022 20:16:39

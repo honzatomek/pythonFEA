@@ -1,0 +1,34 @@
+# Title: Femur lengths of the aphid Pemphigus
+# 1: femur length in tenths of a millimeter
+#
+#  Reference:
+#  R Sokal,
+#  Variation in a local population of Pemphigus,
+#  Evolution,
+#  Volume 6, pages 296-315, 1952.
+#
+3.8
+3.6
+4.3
+3.5
+4.3
+3.3
+4.3
+3.9
+4.3
+3.8
+3.9
+4.4
+3.8
+4.7
+3.6
+4.1
+4.4
+4.5
+3.6
+3.8
+4.4
+4.1
+3.6
+4.2
+3.9

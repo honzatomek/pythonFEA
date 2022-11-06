@@ -1,0 +1,24 @@
+# Title: Blood neutrophil counts, divided by 1000, per microliter
+# 1: Blood neutrophil counts
+#
+#  Reference:
+#  Y Liu, R Kosfeld, V Koo,
+#  Marrow neutrophil mass in patients with nonhematological tumor,
+#  Journal of Laboratory and Clinical Medicine,
+#  Volume 101, pages 561-568, 1983.
+#
+ 4.9
+ 4.6
+ 5.5
+ 9.1
+16.3
+12.7
+ 6.4
+ 7.1
+ 2.3
+ 3.6
+18.0
+ 3.7
+ 7.3
+ 4.4
+ 9.8

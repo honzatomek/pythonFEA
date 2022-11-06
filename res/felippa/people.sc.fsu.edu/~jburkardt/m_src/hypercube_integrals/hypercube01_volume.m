@@ -1,0 +1,30 @@
+function volume = hypercube01_volume ( m )
+
+%*****************************************************************************80
+%
+%% hypercube01_volume() returns the volume of the unit hypercube in M dimensions.
+%
+%  Licensing:
+%
+%    This code is distributed under the GNU LGPL license. 
+%
+%  Modified:
+%
+%    18 January 2014
+%
+%  Author:
+%
+%    John Burkardt
+%
+%  Input:
+%
+%    integer M, the spatial dimension.
+%
+%  Output:
+%
+%    real VOLUME, the volume.
+%
+  volume = 1.0;
+
+  return
+end

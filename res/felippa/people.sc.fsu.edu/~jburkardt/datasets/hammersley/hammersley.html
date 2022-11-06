@@ -1,0 +1,396 @@
+<html>
+
+  <head>
+    <title>
+      HAMMERSLEY - Hammersley Quasirandom Datasets
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      HAMMERSLEY <br> Hammersley Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>HAMMERSLEY</b>
+      is a dataset directory which
+      contains points generated
+      by the M-dimensional Hammersley sequence.
+    </p>
+
+    <p>
+      Routines in this library select elements of a "leaped" subsequence of 
+      the Hammersley sequence.  The subsequence elements are indexed by a
+      quantity called STEP, which starts at 0.  The STEP-th subsequence 
+      element is simply the Hammersley sequence element with index  
+      <pre>
+        SEED(1:NDIM) + STEP * LEAP(1:NDIM).
+      </pre>
+    </p>
+
+    <p>
+      The arguments that the user may set include:
+      <ul>
+        <li>
+          NDIM, the spatial dimension, <br>
+          default: NDIM = 1, <br>
+          required: 1 &lt;= NDIM;
+        </li>
+        <li>
+          STEP, the subsequence index.<br>
+          default: STEP = 0,<br>
+          required: 0 &lt;= STEP.
+        </li>
+        <li>
+          SEED(1:NDIM), the Hammersley sequence index corresponding 
+          to STEP = 0.<br>
+          default: SEED(1:NDIM) = (0, 0, ... 0),<br>
+          required: 0 &lt;= SEED(1:NDIM);
+        </li>
+        <li>
+          LEAP(1:NDIM), the succesive jumps in the Hammersley sequence.<br>
+          default: LEAP(1:NDIM) = (1, 1, ..., 1).<br>
+          required: 1 &lt;= LEAP(1:NDIM).
+        </li>
+        <li>
+          BASE(1:NDIM), the Hammersley bases.<br>
+          default: BASE(1:NDIM) = (2, 3, 5, 7, 11... ),<br>
+          or (-N, 2, 3, 5, 7, 11,...) if <b>N</b> is known;<br>
+          required: 1 &lt; BASE(I) for any van der Corput dimension I, or
+            BASE(I) &lt; 0 to generate the fractional sequence J/|BASE(I)|.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      In the standard NDIM-dimensional Hammersley sequence, it is assumed
+      that <b>N</b>, the number of values to be generated, is known
+      beforehand.  The first dimension of entries in the sequence 
+      will have the form <b>J/N</b> for J from 1 to N.  The remaining
+      dimensions are computed using the 1-dimensional
+      <a href = "../van_der_corput/van_der_corput.html">
+      van der Corput sequence</a>, using successive primes as bases.
+    </p>
+
+    <p>
+      In a generalized Hammersley sequence, each coordinate is allowed
+      to be a fractional or van der Corput sequence.  For any fractional
+      sequence, the denominator is arbitrary.  However, it is extremely
+      desirable that the values in all coordinates stay between 0 and 1.
+      This happens automatically for any van der Corput sequence, but
+      for fractional sequences, this criterion is enforced using an 
+      appropriate <i>modulus</i> function.  The consequence is that if
+      you specify a small "base" for a fractional sequence, your sequence
+      will soon wrap around and you will get repeated values.
+    </p>
+
+    <p>
+      If you drop the first dimension of the standard NDIM-dimensional
+      Hammersley sequence, you get the standard 
+      <a href = "../halton/halton.html">Halton sequence</a> of dimension NDIM-1.
+    </p>
+
+    <p>
+      The standard Hammersley sequence has slightly better dispersion 
+      properties than the standard Halton sequence.  However, it suffers 
+      from the problem that you must know, beforehand, the number of points you
+      are going to generate.  Thus, if you have computed a Hammersley
+      sequence of length <b>N</b> = 100, and you want to compute a
+      Hammersley sequence of length 200, you must discard your current 
+      values and start over.  By contrast, you can compute 100 points of 
+      a Halton sequence, and then 100 more, and this will be the same 
+      as computing the first 200 points of the Halton sequence in 
+      one calculation.
+    </p>
+
+    <p>
+      In low dimensions, the multidimensional Hammersley sequence quickly
+      "fills up" the space in a well-distributed pattern.  However,
+      for higher dimensions (such as NDIM = 40) for instance, the initial
+      elements of the Hammersley sequence can be very poorly distributed;
+      it is only when N, the number of sequence elements, is large 
+      enough relative to the spatial dimension, that the sequence is 
+      properly behaved.  Remedies for this problem were suggested
+      by Kocis and Whiten.
+    </p>
+
+    <p>
+      In some cases, it is recommended that the initial portion of
+      the sequence be skipped over.  A general suggestion is to
+      let STEP be the first power of 2 that is equal to or
+      greater than N, the number of points to generate.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/hammersley_dataset/hammersley_dataset.html">
+      HAMMERSLEY_DATASET</a>,
+      a C++ program which
+      creates a Hammersley sequence and writes it to a file.
+    </p>
+
+    <p>
+      <a href = "../../f_src/plot_points/plot_points.html">
+      PLOT_POINTS</a>, 
+      a FORTRAN90 program which
+      can create Encapsulated PostScript
+      images (EPS) of some of the two dimensional datasets.
+    </p>
+
+    <p>
+      <a href = "../../data/table/table.html">
+      TABLE</a>,
+      a file format which
+      is used to store the data.
+    </p>
+
+    <p>
+      <a href =  "../../f_src/table_top/table_top.html">
+      TABLE_TOP</a>, 
+      a FORTRAN90 program which
+      can display pairwise coordinate plots of higher dimensional datasets.
+    </p>
+
+    <h3 align = "center">
+      Example dataset:
+    </h3>
+
+    <p>
+      A typical (but small) dataset looks like this:
+      <pre>
+#  hammersley_2_10.txt
+#  created by routine HAMMERSLEY_WRITE.CC
+#  at 21 July 2004 08:34:27 AM
+#
+#  NDIM =            2
+#  N =              10
+#  STEP =            0
+#  SEED =            1           0
+#  LEAP =            1           1
+#  BASE =          -10           2
+#  EPSILON (unit roundoff) = 2.22045e-16
+#
+       0.1           0  
+       0.2         0.5  
+       0.3        0.25  
+       0.4        0.75  
+       0.5       0.125  
+       0.6       0.625  
+       0.7       0.375  
+       0.8       0.875  
+       0.9      0.0625  
+         0      0.5625  
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>  
+          J M Hammersley,<br>
+          Monte Carlo methods for solving multivariable problems,<br>
+          Proceedings of the New York Academy of Science,<br>
+          Volume 86, pages 844-874, 1960.
+        </li>
+        <li>  
+          Ladislav Kocis and William Whiten,<br>
+          Computational Investigations of Low-Discrepancy Sequences,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 23, Number 2, June 1997, pages 266-294.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      Datasets in M = 2 dimensions, with 0 skipping, include:
+      <ul>
+        <li>
+          <a href = "hammersley_02_00010.txt">hammersley_02_00010.txt</a>, 
+          M = 2, N = 10, STEP = 0, SEED = (1,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_02_00010.png">hammersley_02_00010.png</a>,
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "hammersley_02_00100.txt">hammersley_02_00100.txt</a>, 
+          M = 2, N = 100, STEP = 0, SEED = (1,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_02_00100.png">hammersley_02_00100.png</a>,
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "hammersley_02_01000.txt">hammersley_02_01000.txt</a>, 
+          M = 2, N = 1000, STEP = 0, SEED = (1,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_02_01000.png">hammersley_02_01000.png</a>,
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "hammersley_02_10000.txt">hammersley_02_10000.txt</a>, 
+          M = 2, N = 10000, STEP = 0, SEED = (1,0), BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 2 dimensions, with power of 2 skipping, include:
+      <ul>
+        <li>
+          <a href = "hammersley_02_00010_a.txt">hammersley_02_00010_a.txt</a>, 
+          M = 2, N = 10, STEP = 0, SEED = (1,16), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_02_00100_a.txt">hammersley_02_00100_a.txt</a>, 
+          M = 2, N = 100, STEP = 0, SEED = (1,128), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_02_01000_a.txt">hammersley_02_01000_a.txt</a>, 
+          M = 2, N = 1000, STEP = 0, SEED = (1,1024), 
+          BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_02_10000_a.txt">hammersley_02_10000_a.txt</a>, 
+          M = 2, N = 10000, STEP = 0, SEED = (1,16384), 
+          BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 7 dimensions, with 0 skipping, include:
+      <ul>
+        <li>
+          <a href = "hammersley_07_00010.txt">hammersley_07_00010.txt</a>, 
+          M = 7, N = 10, STEP = 0, SEED = (1,0,...,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_07_00100.txt">hammersley_07_00100.txt</a>, 
+          M = 7, N = 100, STEP = 0, SEED = (1,0,...,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_07_01000.txt">hammersley_07_01000.txt</a>, 
+          M = 7, N = 1000, STEP = 0, SEED = (1,0,...,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_07_10000.txt">hammersley_07_10000.txt</a>, 
+          M = 7, N = 10000, STEP = 0, SEED = (1,0,...,0), BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 7 dimensions, with power of 2 skipping, include:
+      <ul>
+        <li>
+          <a href = "hammersley_07_00010_a.txt">hammersley_07_00010_a.txt</a>, 
+          M = 7, N = 10, STEP = 0, SEED = (1,16,...,16), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_07_00100_a.txt">hammersley_07_00100_a.txt</a>, 
+          M = 7, N = 100, STEP = 0, SEED = (1,128,...,128), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_07_01000_a.txt">hammersley_07_01000_a.txt</a>, 
+          M = 7, N = 1000, STEP = 0, SEED = (1,1024,...,1024),
+          BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_07_10000_a.txt">hammersley_07_10000_a.txt</a>, 
+          M = 7, N = 10000, STEP = 0, SEED = (1,16384,...,16384), 
+          BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 16 dimensions, with 0 skipping, include:
+      <ul>
+        <li>
+          <a href = "hammersley_16_00010.txt">hammersley_16_00010.txt</a>, 
+          M = 16, N = 10, STEP = 0, SEED = (1,0,...,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_16_00100.txt">hammersley_16_00100.txt</a>, 
+          M = 16, N = 100, STEP = 0, SEED = (1,0,...,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_16_01000.txt">hammersley_16_01000.txt</a>, 
+          M = 16, N = 1000, STEP = 0, SEED = (1,0,...,0), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_16_10000.txt">hammersley_16_10000.txt</a>, 
+          M = 16, N = 10000, STEP = 0, SEED = (1,0,...,0), 
+          BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 16 dimensions, with power of 2 skipping, include:
+      <ul>
+        <li>
+          <a href = "hammersley_16_00010_a.txt">hammersley_16_00010_a.txt</a>, 
+          M = 16, N = 10, STEP = 0, SEED = (1,16,...,16), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_16_00100_a.txt">hammersley_16_00100_a.txt</a>, 
+          M = 16, N = 100, STEP = 0, SEED = (1,128,...,128), BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_16_01000_a.txt">hammersley_16_01000_a.txt</a>, 
+          M = 16, N = 1000, STEP = 0, SEED = (1,1024,...,1024), 
+          BASE = default;
+        </li>
+        <li>
+          <a href = "hammersley_16_10000_a.txt">hammersley_16_10000_a.txt</a>, 
+          M = 16, N = 10000, STEP = 0, SEED = (1,16384,...,16384),  
+          BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 26 September 2005.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,824 @@
+March  5 2003   5:13:49.312 PM
+ 
+PLOT_POINTS
+  Given a file of 2D points, make a dot plot, and
+  a Delaunay triangulation plot.
+ 
+Enter command (H for help):
+ 
+#  An input file to PLOT_POINTS
+#
+#  All the input files have the X values in column 2, the Y values in column 3.
+#
+#  We want a box around the data cornered at (0,0) X (1,1)
+#
+#  We want the "shadow" of X and Y to be marked on the axes.
+#
+X index set to      2
+ 
+Enter command (H for help):
+ 
+Y index set to      3
+ 
+Enter command (H for help):
+ 
+ 
+  Enter lower left (x,y), then upper right (x,y):
+ 
+  Lower left box corner  =    0.0000   0.0000
+  Upper right box corner =     1.0000   1.0000
+ 
+Enter command (H for help):
+ 
+ 
+SHADOWING is turned ON.
+  Each point makes a small mark on X and Y axis.
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_01_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             13
+  Number of point records:        9
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000    9.0000
+  2    0.0475    0.9594
+  3    0.1003    0.9465
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "01: Romero LHS 9 point set, seed 1"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_01_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_01_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_01_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_01_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_02_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             17
+  Number of point records:       13
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   13.0000
+  2    0.0329    0.9583
+  3    0.0376    0.9451
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "02: Romero LHS 13 point set, seed 1"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_02_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_02_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_02_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_02_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_03_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             29
+  Number of point records:       25
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   25.0000
+  2    0.0171    0.9874
+  3    0.0115    0.9962
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "03: Romero LHS 25 point set, seed 1"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_03_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_03_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_03_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_03_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_04_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             45
+  Number of point records:       41
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   41.0000
+  2    0.0104    0.9848
+  3    0.0127    0.9861
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "04: Romero LHS 41 point set, seed 1"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_04_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_04_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_04_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_04_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_05_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             13
+  Number of point records:        9
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000    9.0000
+  2    0.1006    0.9406
+  3    0.0402    0.9738
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "05: Romero LHS 9 point set, seed 2"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_05_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_05_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_05_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_05_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_06_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             17
+  Number of point records:       13
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   13.0000
+  2    0.0697    0.9701
+  3    0.0533    0.9885
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "06: Romero LHS 13 point set, seed 2"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_06_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_06_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_06_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_06_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_07_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             29
+  Number of point records:       25
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   25.0000
+  2    0.0362    0.9651
+  3    0.0340    0.9631
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "07: Romero LHS 25 point set, seed 2"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_07_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_07_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_07_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_07_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_08_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             45
+  Number of point records:       41
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   41.0000
+  2    0.0221    0.9816
+  3    0.0071    0.9936
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "08: Romero LHS 41 point set, seed 2"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_08_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_08_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_08_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_08_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_09_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             13
+  Number of point records:        9
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000    9.0000
+  2    0.0034    0.9069
+  3    0.0532    0.9916
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "09: Romero LHS 9 point set, seed 3"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_09_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_09_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_09_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_09_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_10_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             15
+  Number of point records:       11
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   11.0000
+  2    0.0028    0.9457
+  3    0.0497    0.9395
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "10: Romero LHS 13 point set, seed 3"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_10_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_10_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_10_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_10_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_11_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             29
+  Number of point records:       25
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   25.0000
+  2    0.0012    0.9843
+  3    0.0136    0.9859
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "11: Romero LHS 25 point set, seed 3"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_11_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_11_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_11_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_11_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+DATA_READ
+  Read point data from "romero_12_lhs.txt".
+ 
+  Points are assumed to have dimension      3
+ 
+POINTS_COUNT:
+  Number of records:             45
+  Number of point records:       41
+  Number of comment records:      4
+  Number of bad records:          0
+ 
+POINTS_READ:
+  Read coordinate data from file.
+ 
+ Coord  Min  Max
+ 
+  1    1.0000   41.0000
+  2    0.0008    0.9772
+  3    0.0068    0.9937
+ 
+DATA_READ
+  The data has been read.
+ 
+Enter command (H for help):
+ 
+ 
+TITLE:
+  "12: Romero LHS 41 point set, seed 3"
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_12_lhs_dot.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write dot data to "romero_12_lhs_dot.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+ 
+  Next output file is romero_12_lhs_cir.eps
+ 
+Enter command (H for help):
+ 
+ 
+  Write circle data to "romero_12_lhs_cir.eps".
+ 
+        Plot Plot
+ Coord  Min  Max
+ 
+  1   -0.0500    1.0500
+  2   -0.0500    1.0500
+ 
+Enter command (H for help):
+ 
+#
+ 
+PLOT_POINTS
+  Normal end of execution.
+ 
+March  5 2003   5:13:51.382 PM

@@ -1,0 +1,32 @@
+#  x57.txt
+#
+#  Discussion:
+#
+#    This is simply a list of the total system size,
+#    and the files that describe the subsystems.
+#
+#    The first subsystem is a matrix A and right hand side B
+#    whose residual norm || A * X - B || is to be minimized.
+#
+#    The second subsystem is a matrix C and right hand side D
+#    which represent constraints, that is, it must be the
+#    case that C * X = D exactly.
+#
+#    The third subsystem is a matrix E and right hand side H
+#    which represent positivity constraints, that is, it must be the
+#    case that E * X >= H.
+#
+#    The L2 solution is ( 1, 2, -1, 3, -4 ).
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Mathematical Algorithms for Linear Regression,
+#    Academic Press, 1991, page 324,
+#    ISBN 0-12-656460-4.
+#
+7 columns
+11 rows
+3 subsystems
+x57_01.txt
+

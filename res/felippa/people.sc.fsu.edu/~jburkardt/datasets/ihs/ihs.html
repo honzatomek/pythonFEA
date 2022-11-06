@@ -1,0 +1,209 @@
+<html>
+
+  <head>
+    <title>
+      IHS - Improved Distributed Hypercube Sampling Datasets
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      IHS <br> Improved Distributed Hypercube Sampling Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>IHS</b> 
+      is a dataset directory which
+      contains points generated
+      by the M-dimensional Improved Distributed Hypercube Sampling process.
+    </p>
+
+    <p>
+      A Latin hypercube, in <b>M</b> dimensional space, with <b>N</b> points,
+      can be thought of as being constructed by dividing each of the 
+      <b>M</b> coordinate dimensions into <b>N</b> equal intervals.  The 
+      J-th coordinate of the I-th point can be constructed by choosing, in 
+      the J-th dimension, an interval that has not been used, and then
+      choosing any value in that interval.
+    </p>
+
+    <p>
+      This algorithm differs in that it tries to pick a solution 
+      which has the property that the points are "spread out"
+      as evenly as possible.  It does this by determining an optimal
+      even spacing, and using the duplication factor D to allow it
+      to choose the best of the various options available to it
+      (the more duplication, the better chance of optimization).
+    </p>
+
+    <p>
+      The IHS algorithm, at least as currently programmed, uses
+      time that is quadratic in the number of points.  This means
+      that, for large N, it is much slower than most quasirandom 
+      sequence methods.  
+    </p>
+
+    <p>
+      The datasets are distinguished by the values of the following
+      parameters:
+      <ul>
+        <li>
+          <b>M</b>, the spatial dimension;
+        </li>
+        <li>
+          <b>N</b>, the number of points to generate;
+        </li>
+        <li>
+          <b>D</b>, the duplication factor, which controls how
+          many "chances" the algorithm has to find good candidates;
+        </li>
+        <li>
+          <b>SEED</b>, the initial value of the seed used for
+          UNIFORM, a portable uniform random number generator;
+        </li>
+      </ul>
+      The values of M, N, D and SEED are specified as part of the 
+      dataset file names.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/ihs/ihs.html">
+      IHS</a>,
+      a C++ library which
+      computes an Improved Hypercube Sampling (IHS) quasirandom sequence;
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/ihs_dataset/ihs_dataset.html">
+      IHS_DATASET</a>,
+      a C++ program which
+      creates an improved distributed Latin Hypercube dataset and writes it to a file.
+    </p>
+
+    <h3 align = "center">
+      Example dataset:
+    </h3>
+
+    <p>
+      A typical (but small) dataset looks like this:
+      <pre>
+      0.75        0.25  
+      0.35        0.05  
+      0.05        0.35  
+      0.95        0.85  
+      0.65        0.15  
+      0.85        0.55  
+      0.55        0.45  
+      0.45        0.75  
+      0.15        0.65  
+      0.25        0.95  
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Brian Beachkofski, Ramana Grandhi,<br>
+          Improved Distributed Hypercube Sampling,<br>
+          American Institute of Aeronautics and Astronautics Paper 2002-1274.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ihs_2_10_5_123456789.txt">ihs_2_10_5_123456789.txt</a>.
+        </li>
+        <li>
+          <a href = "ihs_2_100_5_123456789.txt">ihs_2_100_5_123456789.txt</a>
+        </li>
+        <li>
+          <a href = "ihs_2_1000_5_123456789.txt">ihs_2_1000_5_123456789.txt</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ihs_2_10_5_987654321.txt">ihs_2_10_5_987654321.txt</a>.
+        </li>
+        <li>
+          <a href = "ihs_2_100_5_987654321.txt">ihs_2_100_5_987654321.txt</a>
+        </li>
+        <li>
+          <a href = "ihs_2_1000_5_987654321.txt">ihs_2_1000_5_987654321.txt</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ihs_7_10_5_123456789.txt">ihs_7_10_5_123456789.txt</a>.
+        </li>
+        <li>
+          <a href = "ihs_7_100_5_123456789.txt">ihs_7_100_5_123456789.txt</a>
+        </li>
+        <li>
+          <a href = "ihs_7_1000_5_123456789.txt">ihs_7_1000_5_123456789.txt</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ihs_16_10_5_123456789.txt">ihs_16_10_5_123456789.txt</a>.
+        </li>
+        <li>
+          <a href = "ihs_16_100_5_123456789.txt">ihs_16_100_5_123456789.txt</a>
+        </li>
+        <li>
+          <a href = "ihs_16_1000_5_123456789.txt">ihs_16_1000_5_123456789.txt</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 04 November 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

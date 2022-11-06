@@ -1,0 +1,20 @@
+#  niederreiter2_02_00010.txt
+#  created by NIEDERREITER2_DATASET.
+#
+#  File generated on March 20 2003   5:02:35.609 PM
+#
+#  Spatial dimension M =      2
+#  Number of points N =     10
+#  Base:      2
+#  Initial values skipped =   4096
+#
+  0.000366  0.470581
+  0.500366  0.970581
+  0.750366  0.220581
+  0.250366  0.720581
+  0.375366  0.095581
+  0.875366  0.595581
+  0.625366  0.345581
+  0.125366  0.845581
+  0.187866  0.158081
+  0.687866  0.658081

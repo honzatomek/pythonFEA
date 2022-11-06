@@ -1,0 +1,22 @@
+#  x59_01.txt
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Mathematical Algorithms for Linear Regression,
+#    Academic Press, 1991, page 324,
+#    ISBN 0-12-656460-4.
+#
+#  Discussion:
+#
+#    Linear system A * X = B whose residual norm is to be minimized
+#
+4 columns
+3 rows
+Index
+A1
+A2
+B
+1  1  -1  2
+2  1   0  2
+3  1   2  1

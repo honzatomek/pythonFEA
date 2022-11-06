@@ -1,0 +1,18 @@
+#  lcvt_02_00100_b.inp
+#
+#  Modified:
+#
+#    11 January 2004
+#
+m = 2
+n = 100
+initialize uniform
+sample = uniform
+seed = 987654321
+sample_num = 500000
+cvt_it = 25
+latin_it = 5
+iterate
+writecvt lcvt_02_00100_b_cvt.txt
+writelatin lcvt_02_00100_b.txt
+quit

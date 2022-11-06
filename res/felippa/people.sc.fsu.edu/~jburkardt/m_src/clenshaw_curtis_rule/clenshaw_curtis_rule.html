@@ -1,0 +1,270 @@
+<html>
+
+  <head>
+    <title>
+      clenshaw_curtis_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      clenshaw_curtis_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>clenshaw_curtis_rule</b>,
+      a MATLAB code which
+      generates a Clenshaw Curtis quadrature rule based on user input.
+    </p>
+
+    <p>
+      The rule is written to three files for easy use as input
+      to other programs.
+    </p>
+
+    <p>
+      The <i>standard Clenshaw Curtis quadrature rule </i> is used as follows:
+      <pre>
+        Integral ( A &lt;= x &lt;= B ) f(x) dx
+      </pre>
+      is to be approximated by
+      <pre>
+        Sum ( 1 &lt;= i &lt;= order ) w(i) * f(x(i))
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>clenshaw_curtis_rule</b> ( <i>order</i>, <i>a</i>, <i>b</i>, <i>'filename'</i> )
+      </blockquote>
+      where
+      <ul>
+        <li>
+          <i>order</i> is the number of points in the quadrature rule;
+        </li>
+        <li>
+          <i>a</i> is the left endpoint;
+        </li>
+        <li>
+          <i>b</i> is the right endpoint;
+        </li>
+        <li>
+          <i>filename</i> specifies the output filenames:
+          name<i>file</i><b>_w.txt</b>,
+          <i>filename</i><b>_x.txt</b>, and <i>filename</i><b>_r.txt</b>,
+          containing the weights, abscissas, and interval limits.
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>clenshaw_curtis_rule</b> is available in
+      <a href = "../../c_src/clenshaw_curtis_rule/clenshaw_curtis_rule.html">a C version</a> and
+      <a href = "../../cpp_src/clenshaw_curtis_rule/clenshaw_curtis_rule.html">a C++ version</a> and
+      <a href = "../../f_src/clenshaw_curtis_rule/clenshaw_curtis_rule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/clenshaw_curtis_rule/clenshaw_curtis_rule.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/alpert_rule/alpert_rule.html">
+      alpert_rule</a>,
+      a MATLAB code which
+      can set up an alpert quadrature rule for functions which are 
+      regular, log(x) singular, or 1/sqrt(x) singular.
+    </p>
+
+    <p>
+      <a href = "../../m_src/ccn_rule/ccn_rule.html">
+      ccn_rule</a>,
+      a MATLAB code which
+      defines a nested clenshaw curtis quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/chebyshev1_rule/chebyshev1_rule.html">
+      chebyshev1_rule</a>,
+      a MATLAB code which
+      can compute and print a gauss-chebyshev type 1 quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/chebyshev2_rule/chebyshev2_rule.html">
+      chebyshev2_rule</a>,
+      a MATLAB code which
+      can compute and print a gauss-chebyshev type 2 quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/clenshaw_curtis_rule_test/clenshaw_curtis_rule_test.html">
+      clenshaw_curtis_rule_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/gegenbauer_rule/gegenbauer_rule.html">
+      gegenbauer_rule</a>,
+      a MATLAB code which
+      can compute and print a gauss-gegenbauer quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/gen_hermite_rule/gen_hermite_rule.html">
+      gen_hermite_rule</a>,
+      a MATLAB code which
+      can compute and print a generalized gauss-hermite quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/gen_laguerre_rule/gen_laguerre_rule.html">
+      gen_laguerre_rule</a>,
+      a MATLAB code which
+      can compute and print a generalized gauss-laguerre quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hermite_rule/hermite_rule.html">
+      hermite_rule</a>,
+      a MATLAB code which
+      can compute and print a gauss-hermite quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/jacobi_rule/jacobi_rule.html">
+      jacobi_rule</a>,
+      a MATLAB code which
+      can compute and print a gauss-jacobi quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/laguerre_rule/laguerre_rule.html">
+      laguerre_rule</a>,
+      a MATLAB code which
+      can compute and print a gauss-laguerre quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/legendre_rule/legendre_rule.html">
+      legendre_rule</a>,
+      a MATLAB code which
+      can compute and print a gauss-legendre quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/line_felippa_rule/line_felippa_rule.html">
+      line_felippa_rule</a>,
+      a MATLAB code which
+      returns the points and weights of a felippa quadrature rule
+      over the interior of a line segment in 1d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/patterson_rule/patterson_rule.html">
+      patterson_rule</a>,
+      a MATLAB code which
+      computes a gauss-patterson quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/power_rule/power_rule.html">
+      power_rule</a>,
+      a MATLAB code which
+      constructs a power rule, that is, a product quadrature rule 
+      from identical 1d factor rules.
+    </p>
+
+    <p>
+      <a href = "../../datasets/quadrature_rules_clenshaw_curtis/quadrature_rules_clenshaw_curtis.html">
+      quadrature_rules_clenshaw_curtis</a>,
+      a dataset directory which
+      contains quadrature rules for integration on [-1,+1],
+      using a clenshaw curtis rule.
+    </p>
+
+    <p>
+      <a href = "../../m_src/truncated_normal_rule/truncated_normal_rule.html">
+      truncated_normal_rule</a>,
+      a MATLAB code which 
+      computes a quadrature rule for a normal probability density function (pdf),
+      also called a gaussian distribution, that has been
+      truncated to [a,+oo), (-oo,b] or [a,b].
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Milton Abramowitz, Irene Stegun,<br>
+          Handbook of Mathematical Functions,<br>
+          National Bureau of Standards, 1964,<br>
+          ISBN: 0-486-61272-4,<br>
+          LC: QA47.A34.
+        </li>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+        <li>
+          Arthur Stroud, Don Secrest,<br>
+          Gaussian Quadrature Formulas,<br>
+          Prentice Hall, 1966,<br>
+          LC: QA299.4G3S7.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "clenshaw_curtis_rule.m">clenshaw_curtis_rule.m</a>
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 December 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

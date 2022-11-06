@@ -1,0 +1,6 @@
+This example is due to Hans-Joerg Wenz.
+
+It is an example of good data, which is dense enough in areas
+where the expected curvature of the interpolant is large.
+Good results can be expected with almost any reasonable
+interpolation method.

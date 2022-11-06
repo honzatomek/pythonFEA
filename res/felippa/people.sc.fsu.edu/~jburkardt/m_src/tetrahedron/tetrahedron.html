@@ -1,0 +1,375 @@
+<html>
+
+  <head>
+    <title>
+      tetrahedron
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      tetrahedron
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>tetrahedron</b>,
+      a MATLAB code which
+      carries out geometric calculations involving a general tetrahedron,
+      including solid and facial angles, face areas,
+      point containment, distances to a point, circumsphere and insphere,
+      measures of shape quality, centroid, barycentric coordinates,
+      edges and edge lengths, random sampling, and volumes.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>tetrahedron</b> is available in
+      <a href = "../../c_src/tetrahedron/tetrahedron.html">a C version</a> and
+      <a href = "../../cpp_src/tetrahedron/tetrahedron.html">a C++ version</a> and
+      <a href = "../../f_src/tetrahedron/tetrahedron.html">a Fortran90 version</a> and
+      <a href = "../../m_src/tetrahedron/tetrahedron.html">a MATLAB version</a> and
+      <a href = "../../py_src/tetrahedron/tetrahedron.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_test/tetrahedron_test.html">
+      tetrahedron_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/ellipse/ellipse.html">
+      ellipse</a>,
+      a MATLAB code which 
+      carries out geometric calculations for ellipses and ellipsoids, including
+      area, distance to a point, eccentricity, perimeter, points along the 
+      perimeter, random sampling, conversion between standard and quadratic forms.
+    </p>
+
+    <p>
+      <a href = "../../m_src/geometry/geometry.html">
+      geometry</a>,
+      a MATLAB code which
+      performs geometric calculations in 2, 3 and M dimensional space,
+      including the computation of angles, areas, containment, distances,
+      intersections, lengths, and volumes.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypersphere/hypersphere.html">
+      hypersphere</a>,
+      a MATLAB code which
+      carries out various operations for a D-dimensional hypersphere, including 
+      converting between Cartesian and spherical coordinates, 
+      stereographic projection, sampling the surface of the sphere, and
+      computing the surface area and volume.
+    </p>
+
+    <p>
+      <a href = "../../m_src/polygon/polygon.html">
+      polygon</a>,
+      a MATLAB code which
+      carries out geometric calculations on polygons, including angles, area,
+      centroid, containment of a point, diameter, integrals of monomials,
+      convexity, distance to a point.
+    </p>
+
+    <p>
+      <a href = "../../m_src/quadrilateral/quadrilateral.html">
+      quadrilateral</a>,
+      a MATLAB code which
+      carries out geometric calculations on quadrilaterals, including
+      angles, area, distances, nearest point, point containment, perimeter,
+      and random generation.
+    </p>
+
+    <p>
+      <a href = "../../m_src/random_data/random_data.html">
+      random_data</a>,
+      a MATLAB code which
+      uses a random number generator (RNG) to sample points corresponding
+      to various probability density functions (PDF), spatial dimensions, 
+      and geometries, including the annulus, circle, ellipse, ellipsoid, 
+      hypercube, hypersphere, simplex, tetrahedron and triangle.
+    </p>
+
+    <p>
+      <a href = "../../m_src/simplex_coordinates/simplex_coordinates.html">
+      simplex_coordinates</a>,
+      a MATLAB code which
+      computes the Cartesian coordinates of the vertices of a regular
+      simplex in M dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/stroud/stroud.html">
+      stroud</a>,
+      a MATLAB code which
+      defines quadrature rules for a variety of M-dimensional regions, 
+      including the interior of the square, cube and hypercube, the pyramid,
+      cone and ellipse, the hexagon, the M-dimensional octahedron,
+      the circle, sphere and hypersphere, the triangle, tetrahedron and simplex,
+      and the surface of the circle, sphere and hypersphere.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tet_mesh/tet_mesh.html">
+      tet_mesh</a>,
+      a MATLAB code which
+      carries out various operations on meshes formed
+      from tetrahedrons.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_arbq_rule/tetrahedron_arbq_rule.html">
+      tetrahedron_arbq_rule</a>,
+      a MATLAB code which
+      returns quadrature rules, 
+      with exactness up to total degree 15,
+      over the interior of a tetrahedron in 3D,
+      by Hong Xiao and Zydrunas Gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_exactness/tetrahedron_exactness.html">
+      tetrahedron_exactness</a>,
+      a MATLAB code which
+      computes the monomial exactness of a quadrature rule 
+      over the interior of a tetrahedron in 3D.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_grid/tetrahedron_grid.html">
+      tetrahedron_grid</a>,
+      a MATLAB code which
+      computes a grid of points 
+      over the interior of a tetrahedron in 3D.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_integrals/tetrahedron_integrals.html">
+      tetrahedron_integrals</a>,
+      a MATLAB code which
+      returns the exact value of the integral of any monomial
+      over the interior of the unit tetrahedron in 3D.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_monte_carlo/tetrahedron_monte_carlo.html">
+      tetrahedron_monte_carlo</a>,
+      a MATLAB code which
+      uses the Monte Carlo method to estimate integrals 
+      over the interior of a general tetrahedron in 3D.
+    </p>
+
+    <p>
+      <a href = "../../datasets/tetrahedrons/tetrahedrons.html">
+      tetrahedrons</a>,
+      a dataset directory which
+      contains examples of tetrahedrons;
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle/triangle.html">
+      triangle</a>,
+      a MATLAB code which
+      computes properties, including angles, area, centroid, circumcircle,
+      edge lengths, incircle, orientation, orthocenter, and quality, 
+      of a triangle in 2D.
+    </p>
+
+    <h3 align = "center">
+      Source code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "i4vec_lcm.m">
+          i4vec_lcm.m</a>,
+          returns the least common multiple of an I4VEC;
+        </li>
+        <li>
+          <a href = "polygon_area_3d.m">
+          polygon_area_3d.m</a>,
+          computes the area of a polygon in 3D;
+        </li>
+        <li>
+          <a href = "r8vec_angle_3d.m">
+          r8vec_angle_3d.m</a>,
+          computes the angle between two vectors in 3D;
+        </li>
+        <li>
+          <a href = "shape_print.m">
+          shape_print.m</a>,
+          prints information about a shape;
+        </li>
+        <li>
+          <a href = "tetrahedron_barycentric.m">
+          tetrahedron_barycentric.m</a>,
+          returns the barycentric coordinates of a point 
+          with respect to a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_centroid.m">
+          tetrahedron_centroid.m</a>,
+          returns the centroid of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_circumsphere.m">
+          tetrahedron_circumsphere.m</a>,
+          returns the circumsphere of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_contains_point.m">
+          tetrahedron_contains_point.m</a>,
+          is TRUE if a tetrahedron contains a point;
+        </li>
+        <li>
+          <a href = "tetrahedron_dihedral_angles.m">
+          tetrahedron_dihedral_angles.m</a>,
+          returns the 6 dihedral angles of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_edge_length.m">
+          tetrahedron_edge_length.m</a>,
+          returns the edge lengths of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_edges.m">
+          tetrahedron_edges.m</a>,
+          returns the edges of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_face_angles.m">
+          tetrahedron_face_angles.m</a>,
+          returns the 4 sets of 3 face angles of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_face_areas.m">
+          tetrahedron_face_areas.m</a>,
+          returns the 4 face areas of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_insphere.m">
+          tetrahedron_insphere.m</a>,
+          returns the insphere of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_lattice_layer_point_next.m">
+          tetrahedron_lattice_layer_point_next.m</a>,
+          next tetrahedron lattice layer point;
+        </li>
+        <li>
+          <a href = "tetrahedron_lattice_point_next.m">
+          tetrahedron_lattice_point_next.m</a>,
+          returns the next tetrahedron lattice point;
+        </li>
+        <li>
+          <a href = "tetrahedron_quality1.m">
+          tetrahedron_quality1.m</a>,
+          returns the quality of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_quality2.m">
+          tetrahedron_quality2.m</a>,
+          returns the quality of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_quality3.m">
+          tetrahedron_quality3.m</a>,
+          returns the quality of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_quality4.m">
+          tetrahedron_quality4.m</a>,
+          returns the quality of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_rhombic_shape.m">
+          tetrahedron_rhombic_shape.m</a>,
+          describes the shape of a rhombic tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_rhombic_size.m">
+          tetrahedron_rhombic_size.m</a>,
+          gives "sizes" for a rhombic tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_sample.m">
+          tetrahedron_sample.m</a>,
+          returns a random point from a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_shape.m">
+          tetrahedron_shape.m</a>,
+          describes the shape of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_size.m">
+          tetrahedron_size.m</a>,
+          gives "sizes" for a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_solid_angles.m">
+          tetrahedron_solid_angles.m</a>,
+          returns the 4 solid angles of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron_volume.m">
+          tetrahedron_volume.m</a>,
+          computes the volume of a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron01_lattice_point_num.m">
+          tetrahedron01_lattice_point_num.m</a>,
+          counts lattice points inside a tetrahedron;
+        </li>
+        <li>
+          <a href = "tetrahedron01_volume.m">
+          tetrahedron01_volume.m</a>
+          returns the volume of the unit tetrahedron.
+        </li>
+        <li>
+          <a href = "triangle_angles_3d.m">
+          triangle_angles_3d.m</a>,
+          returns the angles of a triangle in 3D;
+        </li>
+        <li>
+          <a href = "triangle_area_3d.m">
+          triangle_area_3d.m</a>,
+          returns the area of a triangle in 3D;
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 April 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

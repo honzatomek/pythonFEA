@@ -1,0 +1,26 @@
+# spaeth2_12.txt
+#
+#  Discussion:
+#
+#    Data matrix with 4 rows and 4 columns
+#
+#    The data values are 0 and 1.
+#
+#    The data is to to symmetrically permuted so that the 1's
+#    form blocks.
+#
+#  Modified:
+#
+#    30 April 2002
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Cluster Analysis Algorithms 
+#    for Data Reduction and Classification of Objects,
+#    Ellis Horwood, 1980, page 201.
+#
+1 0 1 0
+0 1 0 1
+1 0 1 0
+0 1 0 1

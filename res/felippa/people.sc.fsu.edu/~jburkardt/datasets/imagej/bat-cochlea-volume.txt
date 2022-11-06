@@ -1,0 +1,16 @@
+bat-cochlea-volume.zip
+----------------------
+This is a thresholded stack of the scala media volume within the
+cochlea of the moustached bat.  The scale is 40 pixels per millimeter.
+The original data set is from a uniform serial section of high
+reslolution MRI done at the Duke Center for inVivo Microscopy
+with tissue from the Dept. of Cell Biology and Anatomy at the
+University of North Carolina.
+
+Art Keating (keatinga@med.unc.edu)
+
+To create a movie from this volume, first threshold the stack using
+Image/Adjust/Threshold then perform Nearest Point projection using
+Image/Stacks/Render.
+
+Wayne Rasband (wayne@codon.nih.gov)

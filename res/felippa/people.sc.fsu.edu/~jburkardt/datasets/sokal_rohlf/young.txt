@@ -1,0 +1,15 @@
+# Title: Age of striped bass caught in Hudson River
+# 1: Age in years
+# 2: Number of bass
+#
+#  Reference:
+#  B Young,
+#  A study of striped bass in the marine district of New York State,
+#  Annual Report, New York State Department of Enviromental Conservation, 1981.
+#
+1  13
+2  49
+3  96
+4  28
+5  16
+6   8

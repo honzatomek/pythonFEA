@@ -1,0 +1,19 @@
+# Title: S-PLP content of blood serum before and after ingestion of alcohol
+# 1: Before alcohol ingestion
+# 2: Immediately after alcohol ingesion
+# 3: 12 hours after alcohol ingestion.
+#
+#  Reference:
+#  J Leinert, I Simon, D Hoetze,
+#  Methods and their evaluation to estimate the vitamin B6 status in human subjects,
+#  International Journal of Vitamin and Nutrition Research,
+#  Volume 53, pages 166-178, 1960.
+#
+20.00  12.34  17.45
+17.62  16.72  18.25
+11.77   9.84  11.45
+30.78  20.25  28.70
+11.25   9.70  12.50
+19.17  15.67  20.04
+ 9.33   8.06  10.00
+32.96  19.10  30.45

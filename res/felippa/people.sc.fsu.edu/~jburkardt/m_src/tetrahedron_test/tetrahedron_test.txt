@@ -1,0 +1,664 @@
+11-May-2022 19:10:42
+
+tetrahedron_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  tetrahedron() computes tetrahedron quantities.
+
+tetrahedron_barycentric_test():
+  tetrahedron_barycentric() converts XYZ to XSI.
+  We are computing the XSI coordinates just to verify
+  that the points are inside the tetrahedron.
+
+  tetrahedron vertices:
+     1     2     1     1
+     4     4     6     4
+     3     3     3     4
+
+
+  (X,Y,Z)   (XSI1,XSI2,XSI3,XSI4):
+
+  1.062835  4.000809  3.002782    0.933978  0.062835  0.000405  0.002782
+  1.023658  4.001189  3.005498    0.970249  0.023658  0.000594  0.005498
+  1.256581  4.173075  3.003840    0.653042  0.256581  0.086537  0.003840
+  1.004702  4.013863  3.000210    0.988156  0.004702  0.006932  0.000210
+  1.010093  4.007033  3.000878    0.985513  0.010093  0.003516  0.000878
+  1.310707  4.307178  3.014133    0.521571  0.310707  0.153589  0.014133
+  1.073178  4.002005  3.000526    0.925294  0.073178  0.001002  0.000526
+  1.618030  4.098370  3.003476    0.329309  0.618030  0.049185  0.003476
+  1.105485  4.023327  3.004031    0.878820  0.105485  0.011663  0.004031
+  1.216975  4.017469  3.042288    0.732002  0.216975  0.008734  0.042288
+
+tetrahedron_centroid_test():
+  tetrahedron_centroid() computes the centroid of a tetrahedron;
+
+  tetrahedron vertices:
+         0   -0.8165    0.8165         0
+    0.9428   -0.8165   -0.8165         0
+   -0.3333   -0.3333   -0.3333    1.0000
+
+
+  tetrahedron centroid:
+         0   -0.1725    0.0000
+
+
+tetrahedron_circumsphere_test():
+  tetrahedron_circumsphere() computes the circumsphere
+  of a tetrahedron.
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0         0    0.8165
+
+
+  tetrahedron circumsphere center:
+    0.0000
+         0
+    0.2041
+
+
+  Circumsphere radius is 0.612372
+
+tetrahedron_contains_point_test():
+  tetrahedron_contains_point() finds if a point
+  is inside a tetrahderon;
+
+  tetrahedron vertices:
+         0   -0.8165    0.8165         0
+    0.9428   -0.8165   -0.8165         0
+   -0.3333   -0.3333   -0.3333    1.0000
+
+
+  P, Inside_Tetra?
+
+      0.081650     -0.244949      0.600000  1
+     -1.469693     -3.021943     -0.200000  0
+     -0.898146      0.672598     -0.200000  0
+
+tetrahedron_dihedral_angles_test():
+  tetrahedron_dihedral_angles() computes the dihedral angles
+  of a tetrahedron.
+
+  tetrahedron1 vertices:
+         0   -0.8165    0.8165         0
+    0.9428   -0.8165   -0.8165         0
+   -0.3333   -0.3333   -0.3333    1.0000
+
+
+  Dihedral angles:
+    1.2815    1.2815    1.0337    1.0213    1.3744    1.3744
+
+
+  tetrahedron2 vertices:
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+
+
+  Dihedral angles:
+    1.5708    1.5708    1.5708    0.9553    0.9553    0.9553
+
+
+  tetrahedron3 vertices:
+     0     1     0     0
+     0     0     2     0
+     0     0     0     4
+
+
+  Dihedral angles:
+    1.5708    1.5708    1.5708    1.3508    1.1192    0.5097
+
+
+  tetrahedron4 vertices:
+     0     1     0     1
+     0     0     1     1
+     0     0     0     1
+
+
+  Dihedral angles:
+    0.7854    0.7854    2.0944    2.1863    0.6155    0.6155
+
+
+tetrahedron_edge_length_test():
+  tetrahedron_edge_length() computes the edge lengths;
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0         0    0.8165
+
+
+  Edge lengths:
+    1.0000
+    1.0000
+    1.0000
+    1.0000
+    1.0000
+    1.0000
+
+
+tetrahedron_edges_test():
+  tetrahedron_edges() computes the edges;
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0         0    0.8165
+
+
+  Edges:
+   -0.8660    0.5000         0
+
+
+tetrahedron_face_angles_test():
+  tetrahedron_face_angles() computes the 6 pairwise angles
+  of the 4 faces of a tetrahedron.
+
+  tetrahedron1 vertices:
+         0   -0.8165    0.8165         0
+    0.9428   -0.8165   -0.8165         0
+   -0.3333   -0.3333   -0.3333    1.0000
+
+
+  Face angles:
+    0.8690    1.0196    1.0196    1.0895
+    1.1363    0.9087    0.9087    1.0895
+    1.1363    1.2133    1.2133    0.9626
+
+
+  tetrahedron2 vertices:
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+
+
+  Face angles:
+    1.5708    1.5708    1.5708    1.0472
+    0.7854    0.7854    0.7854    1.0472
+    0.7854    0.7854    0.7854    1.0472
+
+
+  tetrahedron3 vertices:
+     0     1     0     0
+     0     0     2     0
+     0     0     0     4
+
+
+  Face angles:
+    1.5708    1.5708    1.5708    1.4621
+    1.1071    1.3258    1.1071    1.1593
+    0.4636    0.2450    0.4636    0.5202
+
+
+  tetrahedron4 vertices:
+     0     1     0     1
+     0     0     1     1
+     0     0     0     1
+
+
+  Face angles:
+    1.5708    0.9553    0.9553    1.0472
+    0.7854    1.5708    1.5708    1.0472
+    0.7854    0.6155    0.6155    1.0472
+
+
+tetrahedron_face_areas_test():
+  tetrahedron_face_areas() computes the areas of the
+  4 faces of a tetrahedron.
+
+  tetrahedron1 vertices:
+         0   -0.8165    0.8165         0
+    0.9428   -0.8165   -0.8165         0
+   -0.3333   -0.3333   -0.3333    1.0000
+
+
+  Face areas:
+    1.4365    1.3491    1.3491    1.2766
+
+
+  tetrahedron2 vertices:
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+
+
+  Face areas:
+    0.5000    0.5000    0.5000    0.8660
+
+
+  tetrahedron3 vertices:
+     0     1     0     0
+     0     0     2     0
+     0     0     0     4
+
+
+  Face areas:
+    1.0000    2.0000    4.0000    4.5826
+
+
+  tetrahedron4 vertices:
+     0     1     0     1
+     0     0     1     1
+     0     0     0     1
+
+
+  Face areas:
+    0.5000    0.7071    0.7071    0.8660
+
+
+tetrahedron_insphere_test():
+  tetrahedron_insphere() computes the insphere
+  of a tetrahedron.
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0         0    0.8165
+
+
+  insphere center:
+   -0.0000
+         0
+    0.2041
+
+
+  Insphere radius is 0.204124
+
+tetrahedron_lattice_layer_point_next_test():
+  tetrahedron_lattice_layer_point_next() returns the next
+  point in a tetrahedron lattice layer defined by:
+
+    C(4) - 1 < X(1)/C(1) + X(2)/C(2) +X(3)/C(3) <= C(4).
+
+  N = 3
+  C =            2     3     4
+
+  Layer 0
+
+     1     0     0     0
+  No more.
+
+  Layer 1
+
+     1     1     0     0
+     2     2     0     0
+     3     0     1     0
+     4     1     1     0
+     5     0     2     0
+     6     0     3     0
+     7     0     0     1
+     8     1     0     1
+     9     0     1     1
+    10     0     2     1
+    11     0     0     2
+    12     1     0     2
+    13     0     1     2
+    14     0     0     3
+    15     0     0     4
+  No more.
+
+  Layer 2
+
+     1     3     0     0
+     2     4     0     0
+     3     2     1     0
+     4     3     1     0
+     5     1     2     0
+     6     2     2     0
+     7     1     3     0
+     8     2     3     0
+     9     0     4     0
+    10     1     4     0
+    11     0     5     0
+    12     0     6     0
+    13     2     0     1
+    14     3     0     1
+    15     1     1     1
+    16     2     1     1
+    17     1     2     1
+    18     2     2     1
+    19     0     3     1
+    20     1     3     1
+    21     0     4     1
+    22     0     5     1
+    23     2     0     2
+    24     3     0     2
+    25     1     1     2
+    26     2     1     2
+    27     0     2     2
+    28     1     2     2
+    29     0     3     2
+    30     1     3     2
+    31     0     4     2
+    32     1     0     3
+    33     2     0     3
+    34     0     1     3
+    35     1     1     3
+    36     0     2     3
+    37     1     2     3
+    38     0     3     3
+    39     1     0     4
+    40     2     0     4
+    41     0     1     4
+    42     1     1     4
+    43     0     2     4
+    44     0     3     4
+    45     0     0     5
+    46     1     0     5
+    47     0     1     5
+    48     0     2     5
+    49     0     0     6
+    50     1     0     6
+    51     0     1     6
+    52     0     0     7
+    53     0     0     8
+  No more.
+
+tetrahedron_lattice_point_next_test():
+  tetrahedron_lattice_point_next() returns the next lattice
+  point in a tetrahedron defined by:
+
+    0 <= X(1)/C(1) + X(2)/C(2) + X(3)/C(3) <= C(4).
+
+  N = 3
+  C =      4     3     2     1
+
+     1     0     0     0
+     2     1     0     0
+     3     2     0     0
+     4     0     1     0
+     5     1     1     0
+  No more.
+
+tetrahedron_quality1_test():
+  tetrahedron_quality1() computes quality measure #1
+  for a tetrahedron.
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0    0.8165    0.8165
+
+
+  Tetrahedron quality is 0.580468
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0         0    0.4082
+
+
+  Tetrahedron quality is 0.732051
+
+tetrahedron_quality2_test():
+  tetrahedron_quality2() computes quality measure #2
+  for a tetrahedron.
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0    0.8165    0.8165
+
+
+  Tetrahedron quality is 0.565770
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0         0    0.4082
+
+
+  Tetrahedron quality is 0.732051
+
+tetrahedron_quality3_test():
+  tetrahedron_quality3() computes quality measure #3
+  for a tetrahedron.
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0    0.8165    0.8165
+
+
+  Tetrahedron quality is 0.686829
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0         0    0.4082
+
+
+  Tetrahedron quality is 0.839947
+
+tetrahedron_quality4_test():
+  tetrahedron_quality4() computes quality measure #4
+  for a tetrahedron.
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0    0.8165    0.8165
+
+
+  Tetrahedron quality is 0.476642
+
+  tetrahedron vertices:
+    0.5774   -0.2887   -0.2887         0
+         0    0.5000   -0.5000         0
+         0         0         0    0.4082
+
+
+  Tetrahedron quality is 0.621320
+
+tetrahedron_rhombic_shape_test():
+  tetrahedron_rhombic_size() returns dimension information;
+  tetrahedron_rhombic_shape() returns face and order info.
+
+  We will use this information to compute the
+  areas and centers of each face.
+
+  Number of points =   10
+  Number of edges =    6
+  Number of faces =    4
+  Maximum face order = 6
+
+shape_print():
+  Information about a polytope.
+
+  The number of vertices is 10
+
+  Vertices:
+
+     Index          X               Y               Z
+
+         1         -0.816497        0.000000        0.000000
+         2          0.000000       -0.577350        0.000000
+         3          0.000000        0.577350        0.000000
+         4          0.000000        0.000000        0.816497
+         5         -0.408248       -0.288675        0.000000
+         6         -0.408248        0.288675        0.000000
+         7         -0.408248        0.000000        0.408248
+         8          0.000000        0.000000        0.000000
+         9          0.000000       -0.288675        0.408248
+        10          0.000000        0.288675        0.408248
+
+  The number of faces is 4
+  The maximum order of any face is 6
+
+     Index     Order         Indices of Nodes in Face
+                             1       2       3       4       5       6
+
+         1         6         1       5       2       9       4       7
+         2         6         2       8       3      10       4       9
+         3         6         3       6       1       7       4      10
+         4         6         1       6       3       8       2       5
+
+  Face  Order  Area
+
+       1      6  0.471405
+       2      6  0.471405
+       3      6  0.471405
+       4      6  0.471405
+
+  Face  Center
+
+       1   -0.272166   -0.192450    0.272166
+       2    0.000000    0.000000    0.272166
+       3   -0.272166    0.192450    0.272166
+       4   -0.272166    0.000000    0.000000
+
+tetrahedron_sample_test():
+  tetrahedron_sample() samples a tetrahedron.
+  We are computing the XSI coordinates just to verify
+  that the points are inside the tetrahedron.
+
+  tetrahedron vertices:
+     1     2     1     1
+     4     4     6     4
+     3     3     3     4
+
+
+  (X,Y,Z)   (XSI1,XSI2,XSI3,XSI4):
+
+  1.019545  4.049847  3.065078    0.890453  0.019545  0.024924  0.065078
+  1.199852  4.726946  3.077925    0.358749  0.199852  0.363473  0.077925
+  1.064357  4.094890  3.002485    0.885712  0.064357  0.047445  0.002485
+  1.446859  4.173815  3.140862    0.325372  0.446859  0.086907  0.140862
+  1.075991  4.003448  3.007502    0.914783  0.075991  0.001724  0.007502
+  1.141350  4.091005  3.024901    0.788247  0.141350  0.045502  0.024901
+  1.093956  4.007838  3.010279    0.891846  0.093956  0.003919  0.010279
+  1.097743  4.007486  3.019276    0.879238  0.097743  0.003743  0.019276
+  1.358717  4.286805  3.006015    0.491865  0.358717  0.143403  0.006015
+  1.230872  4.031741  3.055040    0.698217  0.230872  0.015871  0.055040
+
+tetrahedron_shape_test():
+  tetrahedron_size() returns dimension information;
+  tetrahedron_shape() returns face and order info.
+
+  We will use this information to compute the
+  areas and centers of each face.
+
+  Number of points =   4
+  Number of edges =    6
+  Number of faces =    4
+  Maximum face order = 3
+
+shape_print():
+  Information about a polytope.
+
+  The number of vertices is 4
+
+  Vertices:
+
+     Index          X               Y               Z
+
+         1          0.942809        0.000000       -0.333333
+         2         -0.471405        0.816497       -0.333333
+         3         -0.471405       -0.816497       -0.333333
+         4          0.000000        0.000000        1.000000
+
+  The number of faces is 4
+  The maximum order of any face is 3
+
+     Index     Order         Indices of Nodes in Face
+                             1       2       3
+
+         1         3         1       3       2
+         2         3         1       2       4
+         3         3         1       4       3
+         4         3         2       3       4
+
+  Face  Order  Area
+
+       1      3  1.154701
+       2      3  1.154701
+       3      3  1.154701
+       4      3  1.154701
+
+  Face  Center
+
+       1   -0.000000    0.000000   -0.333333
+       2    0.157135    0.272166    0.111111
+       3    0.157135   -0.272166    0.111111
+       4   -0.314270    0.000000    0.111111
+
+tetrahedron_solid_angles_test():
+  tetrahedron_solid_angles() computes the solid angles
+  associated with the vertices of a tetrahedron.
+
+  tetrahedron1 vertices:
+         0   -0.8165    0.8165         0
+    0.9428   -0.8165   -0.8165         0
+   -0.3333   -0.3333   -0.3333    1.0000
+
+
+  solid angles:
+    0.4551    0.5357    0.5357    0.6410
+
+
+  tetrahedron2 vertices:
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+
+
+  solid angles:
+    1.5708    0.3398    0.3398    0.3398
+
+
+  tetrahedron3 vertices:
+     0     1     0     0
+     0     0     2     0
+     0     0     0     4
+
+
+  solid angles:
+    1.5708    0.3398    0.3398    0.3398
+
+
+  tetrahedron4 vertices:
+     0     1     0     1
+     0     0     1     1
+     0     0     0     1
+
+
+  solid angles:
+    0.5236    0.4456    0.4456    0.1838
+
+
+tetrahedron_volume_test():
+  tetrahedron_volume() computes the volume of a tetrahedron;
+
+  tetrahedron vertices:
+         0   -0.8165    0.8165         0
+    0.9428   -0.8165   -0.8165         0
+   -0.3333   -0.3333   -0.3333    1.0000
+
+
+  Volume = 0.638429
+
+tetrahedron01_lattice_point_num_test():
+  tetrahedron01_lattice_point_num() counts
+  lattice points inside the unit tetrahedron.
+
+       0       1
+       1       4
+       2      10
+       3      20
+       4      35
+       5      56
+       6      84
+       7     120
+       8     165
+       9     220
+      10     286
+
+tetrahedron01_volume_test():
+  tetrahedron01_volume() returns the volume of the unit tetrahedron.
+
+  Unit tetrahedron volume = 0.166667
+
+tetrahedron_test():
+  Normal end of execution.
+
+11-May-2022 19:10:42

@@ -1,0 +1,495 @@
+<html>
+
+  <head>
+    <title>
+      uniform
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      uniform
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>uniform</b>,
+      a MATLAB code which
+      returns a sequence of uniformly distributed pseudorandom numbers.
+    </p>
+
+    <p>
+      The fundamental underlying random number generator
+      is based on a simple, old, and limited linear congruential random
+      number generator originally used in the IBM System 360.  If you want
+      state of the art random number generation, look elsewhere!
+    </p>
+
+    <p>
+      MATLAB already has the rand() function, and
+      it is not the purpose of this library to replace it.
+    </p>
+
+    <p>
+      However, this library makes it possible to compare certain computations
+      that use uniform random numbers, written in C, C++, FORTRAN77,
+      FORTRAN90, Mathematica, MATLAB or Python.
+    </p>
+
+    <p>
+      Various types of random data can be computed.  The routine names
+      are chosen to indicate the corresponding type:
+      <ul>
+        <li>
+          <b>B</b>, an integer binary value of 0 or 1.
+        </li>
+        <li>
+          <b>C8</b>, complex ( double precision )
+        </li>
+        <li>
+          <b>CH</b>, character
+        </li>
+        <li>
+          <b>I4</b>, integer ( single precision )
+        </li>
+        <li>
+          <b>L4</b>, a logical value.
+        </li>
+        <li>
+          <b>R8</b>, real ( double precision )
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      In some cases, a one dimension vector or two dimensional
+      array of values is to be generated, and part of the name
+      will therefore include:
+      <ul>
+        <li>
+          <b>VEC</b>, vector;
+        </li>
+        <li>
+          <b>MAT</b>, a matrix of data;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The underlying random numbers are generally defined over some
+      unit interval or region.  Routines are available which return
+      these "unit" values, while other routines allow the user to
+      specify limits between which the unit values are rescaled.
+      The name of a routine will usually include a tag
+      suggestig which is the case:
+      <ul>
+        <li>
+          <b>01</b>, the data lies in a nit interval or region;
+        </li>
+        <li>
+          <b>AB</b>, the data  lies in a scaled interval or region;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The random number generator embodied here is not very sophisticated.
+      It will not have the best properties of distribution, noncorrelation
+      and long period.  It is not the purpose of this library to achieve
+      such worthy goals.  This is simply a reasonably portable library
+      that can be implemented in various languages, on various machines,
+      and for which it is possible, for instance, to regard the output
+      as a function of the seed, and moreover, to work directly with
+      the sequence of seeds, if necessary.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>uniform</b> is available in
+      <a href = "../../c_src/uniform/uniform.html">a C version</a> and
+      <a href = "../../cpp_src/uniform/uniform.html">a C++ version</a> and
+      <a href = "../../f_src/uniform/uniform.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/uniform/uniform.html">a MATLAB version</a> and
+      <a href = "../../py_src/uniform/uniform.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/asa183/asa183.html">
+      asa183</a>,
+      a MATLAB code which
+      implements the Wichman-Hill random number generator (RNG).
+    </p>
+
+    <p>
+      <a href = "../../m_src/faure/faure.html">
+      faure</a>,
+      a MATLAB code which
+      computes elements of a Faure quasirandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../m_src/halton/halton.html">
+      halton</a>,
+      a MATLAB code which
+      computes elements of a Halton quasirandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hammersley/hammersley.html">
+      hammersley</a>,
+      a MATLAB code which
+      computes elements of a Hammersley quasirandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../m_src/niederreiter2/niederreiter2.html">
+      niederreiter2</a>,
+      a MATLAB code which
+      computes elements of a
+      Niederreiter quasirandom sequence with base 2.
+    </p>
+
+    <p>
+      <a href = "../../m_src/normal/normal.html">
+      normal</a>,
+      a MATLAB code which
+      computes a sequence of pseudorandom normally distributed values.
+    </p>
+
+    <p>
+      <a href = "../../m_src/random_sorted/random_sorted.html">
+      random_sorted</a>,
+      a MATLAB code which
+      generates vectors of random values which are already sorted.
+    </p>
+
+    <p>
+      <a href = "../../m_src/ranlib/ranlib.html">
+      ranlib</a>,
+      a MATLAB code which
+      produces random samples from Probability Density Functions (PDF's), 
+      including Beta, Chi-square Exponential, F, Gamma, Multivariate normal,
+      Noncentral chi-square, Noncentral F, Univariate normal, random permutations,
+      Real uniform, Binomial, Negative Binomial, Multinomial, Poisson
+      and Integer uniform,
+      by Barry Brown and James Lovato.
+    </p>
+
+    <p>
+      <a href = "../../m_src/rnglib/rnglib.html">
+      rnglib</a>,
+      a MATLAB code which
+      implements a random number generator (RNG) with splitting facilities,
+      allowing multiple independent streams to be computed,
+      by L'Ecuyer and Cote.
+    </p>
+
+    <p>
+      <a href = "../../m_src/sobol/sobol.html">
+      sobol</a>,
+      a MATLAB code which
+      computes elements of a Sobol quasirandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../m_src/uniform_test/uniform_test.html">
+      uniform_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/van_der_corput/van_der_corput.html">
+      van_der_corput</a>,
+      a MATLAB code which
+      computes elements of a van der Corput quasirandom sequence.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Paul Bratley, Bennett Fox, Linus Schrage,<br>
+          A Guide to Simulation,<br>
+          Second Edition,<br>
+          Springer, 1987,<br>
+          ISBN: 0387964673,<br>
+          LC: QA76.9.C65.B73.
+        </li>
+        <li>
+          Bennett Fox,<br>
+          Algorithm 647:
+          Implementation and Relative Efficiency of Quasirandom
+          Sequence Generators,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 12, Number 4, December 1986, pages 362-376.
+        </li>
+        <li>
+          Donald Knuth,<br>
+          The Art of Computer Programming,<br>
+          Volume 2, Seminumerical Algorithms,<br>
+          Third Edition,<br>
+          Addison Wesley, 1997,<br>
+          ISBN: 0201896842,<br>
+          LC: QA76.6.K64.
+        </li>
+        <li>
+          Pierre LEcuyer,<br>
+          Random Number Generation,<br>
+          in Handbook of Simulation,<br>
+          edited by Jerry Banks,<br>
+          Wiley, 1998,<br>
+          ISBN: 0471134031,<br>
+          LC: T57.62.H37.
+        </li>
+        <li>
+          Peter Lewis, Allen Goodman, James Miller,<br>
+          A Pseudo-Random Number Generator for the System/360,<br>
+          IBM Systems Journal,<br>
+          Volume 8, Number 2, 1969, pages 136-143.
+        </li>
+        <li>
+          Stephen Park, Keith Miller,<br>
+          Random Number Generators: Good Ones are Hard to Find,<br>
+          Communications of the ACM,<br>
+          Volume 31, Number 10, October 1988, pages 1192-1201.
+        </li>
+        <li>
+          Eric Weisstein,<br>
+          CRC Concise Encyclopedia of Mathematics,<br>
+          CRC Press, 2002,<br>
+          Second edition,<br>
+          ISBN: 1584883472,<br>
+          LC: QA5.W45.
+        </li>
+        <li>
+          Barry Wilkinson, Michael Allen,<br>
+          Parallel Programming:
+          Techniques and Applications Using Networked Workstations and Parallel Computers,<br>
+          Prentice Hall,<br>
+          ISBN: 0-13-140563-2,<br>
+          LC: QA76.642.W54.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "bvec_print.m">bvec_print.m</a>,
+          prints a BVEC.
+        </li>
+        <li>
+          <a href = "bvec_uniform.m">bvec_uniform.m</a>,
+          returns a random BVEC (a binary vector).
+        </li>
+        <li>
+          <a href = "c8_uniform_01.m">c8_uniform_01.m</a>,
+          returns a unit pseudorandom C8.
+        </li>
+        <li>
+          <a href = "c8mat_print.m">c8mat_print.m</a>, 
+          prints a C8MAT.
+        </li>
+        <li>
+          <a href = "c8mat_print_some.m">c8mat_print_some.m</a>, 
+          prints some of a C8MAT.
+        </li>
+        <li>
+          <a href = "c8mat_uniform_01.m">c8mat_uniform_01.m</a>,
+          returns an array of unit pseudorandom double precision
+          complex numbers.
+        </li>
+        <li>
+          <a href = "c8vec_print.m">c8vec_print.m</a>, 
+          prints a C8VEC.
+        </li>
+        <li>
+          <a href = "c8vec_uniform_01.m">c8vec_uniform_01.m</a>,
+          returns a unit pseudorandom C8VEC.
+        </li>
+        <li>
+          <a href = "ch_uniform_ab.m">ch_uniform_ab.m</a>,
+          returns a scaled pseudorandom CH.
+        </li>
+        <li>
+          <a href = "congruence.m">congruence.m</a>,
+          solves a congruence of the form A * X = C ( mod B ).
+        </li>
+        <li>
+          <a href = "i4_key_advance.m">i4_key_advance.m</a>,
+          "advances" the key.
+        </li>
+        <li>
+          <a href = "i4_sign.m">i4_sign.m</a>,
+          returns the sign of an I4.
+        </li>
+        <li>
+          <a href = "i4_uniform_0i.m">i4_uniform_0i.m</a>,
+          returns a pseudorandom I4 between 1 and 2^(31)-1.
+        </li>
+        <li>
+          <a href = "i4_uniform_ab.m">i4_uniform_ab.m</a>,
+          returns a scaled random I4 between A and B.
+        </li>
+        <li>
+          <a href = "i4mat_print.m">i4mat_print.m</a>,
+          prints an I4MAT;
+        </li>
+        <li>
+          <a href = "i4mat_print_some.m">i4mat_print_some.m</a>,
+          prints some of an I4MAT;
+        </li>
+        <li>
+          <a href = "i4mat_uniform_ab.m">i4mat_uniform_ab.m</a>,
+          returns a scaled pseudorangom I4MAT.
+        </li>
+        <li>
+          <a href = "i4vec_print.m">i4vec_print.m</a>,
+          prints an I4VEC.
+        </li>
+        <li>
+          <a href = "i4vec_uniform_ab.m">i4vec_uniform_ab.m</a>,
+          returns a scaled pseudorandom I4VEC.
+        </li>
+        <li>
+          <a href = "l4_uniform.m">l4_uniform.m</a>,
+          returns a scaled random L4 (a logical value).
+        </li>
+        <li>
+          <a href = "l4mat_print.m">l4mat_print.m</a>,
+          prints an L4MAT;
+        </li>
+        <li>
+          <a href = "l4mat_print_some.m">l4mat_print_some.m</a>,
+          prints some of an L4MAT;
+        </li>
+        <li>
+          <a href = "l4mat_uniform.m">l4mat_uniform.m</a>,
+          returns a random L4MAT (a logical matrix).
+        </li>
+        <li>
+          <a href = "l4vec_print.m">l4vec_print.m</a>,
+          prints an L4VEC.
+        </li>
+        <li>
+          <a href = "l4vec_uniform.m">l4vec_uniform.m</a>,
+          returns a random L4VEC (a logical vector).
+        </li>
+        <li>
+          <a href = "lcrg_anbn.m">lcrg_anbn.m</a>,
+          computes the "N-th power" of a linear congruential generator.
+        </li>
+        <li>
+          <a href = "lcrg_evaluate.m">lcrg_evaluate.m</a>,
+          evaluates an LCRG, y = ( A * x + B ) mod C.
+        </li>
+        <li>
+          <a href = "lcrg_key.m">lcrg_key.m</a>,
+          computes the N-th key of a linear congruential random
+          number generator.
+        </li>
+        <li>
+          <a href = "power_mod.m">power_mod.m</a>,
+          computes mod ( A^N, M ).
+        </li>
+        <li>
+          <a href = "r8_uniform_01.m">r8_uniform_01.m</a>,
+          returns a unit pseudorandom R8.
+        </li>
+        <li>
+          <a href = "r8_uniform_ab.m">r8_uniform_ab.m</a>,
+          returns a scaled pseudorandom R8.
+        </li>
+        <li>
+          <a href = "r8col_uniform_abvec.m">
+          r8col_uniform_abvec.m</a>,
+          fills an R8COL with scaled pseudorandom numbers.
+        </li>
+        <li>
+          <a href = "r8mat_print.m">r8mat_print.m</a>,
+          prints an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_print_some.m">r8mat_print_some.m</a>,
+          prints some of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_uniform_01.m">r8mat_uniform_01.m</a>,
+          returns a unit pseudorandom R8MAT.
+        </li>
+        <li>
+          <a href = "r8mat_uniform_ab.m">r8mat_uniform_ab.m</a>,
+          returns a scaled pseudorandom R8MAT.
+        </li>
+        <li>
+          <a href = "r8row_uniform_abvec.m">
+          r8row_uniform_abvec.m</a>,
+          fills an R8ROW with scaled pseudorandom numbers.
+        </li>
+        <li>
+          <a href = "r8vec_normal_01.m">r8vec_normal_01.m</a>,
+          returns a unit normal random R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_print.m">r8vec_print.m</a>,
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_01.m">r8vec_uniform_01.m</a>,
+          returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_ab.m">r8vec_uniform_ab.m</a>,
+          returns a scaled pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_abvec.m">r8vec_uniform_abvec.m</a>,
+          returns a scaled pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_unit.m">r8vec_uniform_unit.m</a>, 
+          returns a random unit vector.
+        </li>
+        <li>
+          <a href = "s_len_trim.m">s_len_trim.m</a>,
+          returns the length of a string to the last nonblank.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 19 November 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

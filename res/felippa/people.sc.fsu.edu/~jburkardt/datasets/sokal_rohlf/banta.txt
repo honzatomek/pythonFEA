@@ -1,0 +1,16 @@
+# Title: Average age of reproduction in Daphnia longispina
+# 1: Genetic cross 1
+# 2: Genetic cross 2
+#
+#  Reference:
+#  A M Banta,
+#  Studies on the physiology, genetics, and evolution of some Cladocera,
+#  Carnegie Institute oF Washington, Dept. Genetics, Paper 39.
+#
+7.2  8.8
+7.1  7.5
+9.1  7.7
+7.2  7.6
+7.3  7.4
+7.2  6.7
+7.5  7.2

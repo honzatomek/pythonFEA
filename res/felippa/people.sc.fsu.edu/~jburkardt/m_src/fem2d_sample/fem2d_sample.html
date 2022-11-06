@@ -1,0 +1,220 @@
+<html>
+
+  <head>
+    <title>
+      fem2d_sample
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      fem2d_sample
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>fem2d_sample</b>,
+      a MATLAB code which
+      evaluates a finite element function of a 2D argument.
+    </p>
+
+    <p>
+      The current version of the program can only handle finite element
+      meshes which are made of piecewise linear triangles of order 3 or 6.
+    </p>
+
+    <h3 align = "center">
+      Usage:
+    </h3>
+
+    <p>
+      <blockquote>
+        <b>fem2d_sample</b> ( <i>'fem_prefix'</i>, <i>'sample_prefix'</i> )
+      </blockquote>
+      where <i>'fem_prefix'</i> is the common prefix for the FEM files:
+      <ul>
+        <li>
+          <i>'fem_prefix'</i><b>_nodes.txt</b>,    the node coordinates.
+        </li>
+        <li>
+          <i>'fem_prefix'</i><b>_elements.txt</b>, the nodes that make up each element;
+        </li>
+        <li>
+          <i>'fem_prefix'</i><b>_values.txt</b>,   the values defined at each node.
+        </li>
+      </ul>
+      and <i>'sample_prefix'</i> is the common prefix for the SAMPLE files,
+      for which the node file is input, and the values file is created by the program:
+      <ul>
+        <li>
+          <i>'sample_prefix'</i><b>_nodes.txt</b>,  the node coordinates where samples are desired.
+        </li>
+        <li>
+          <i>'sample_prefix'</i><b>_values.txt</b>, the values computed at each sample node.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>fem2d_sample</b> is available in
+      <a href = "../../cpp_src/fem2d_sample/fem2d_sample.html">a C++ version</a> and
+      <a href = "../../f_src/fem2d_sample/fem2d_sample.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/fem2d_sample/fem2d_sample.html">a MATLAB version.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/fem2d_sample_test/fem2d_sample_test.html">
+      fem2d_sample_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_sample/fem1d_sample.html">
+      fem1d_sample</a>,
+      a MATLAB code which
+      samples a scalar or vector finite element function of one variable,
+      defined by FEM files,
+      returning interpolated values at the sample points.
+    </p>
+
+    <p>
+      <a href = "../../data/fem2d/fem2d.html">
+      fem2d</a>,
+      a data directory which
+      contains examples of 2D FEM files,
+      text files that describe a 2D finite element geometry
+      and associated nodal values;
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem2d_heat/fem2d_heat.html">
+      fem2d_heat</a>,
+      a MATLAB code which
+      solves the 2D time dependent heat equation on the unit square.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem2d_pack/fem2d_pack.html">
+      fem2d_pack</a>,
+      a MATLAB code which
+      is useful for 2D finite element calculations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem2d_project/fem2d_project.html">
+      fem2d_project</a>,
+      a MATLAB code which
+      projects a function F(X,Y) into a given finite element space
+      of piecewise linear triangular elements.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem3d_sample/fem3d_sample.html">
+      fem3d_sample</a>,
+      a MATLAB code which
+      evaluates a finite element function defined on 3D tetrahedral mesh.
+    </p>
+
+    <p>
+      <a href = "../../m_src/histogram_data_2d_sample/histogram_data_2d_sample.html">
+      histogram_data_2d_sample</a>,
+      a MATLAB code which
+      demonstrates how to construct a Probability Density Function (PDF)
+      from a frequency table over a 2D domain, and then to use that PDF 
+      to create new samples.
+    </p>
+
+    <p>
+      <a href = "../../m_src/histogram_pdf_2d_sample/histogram_pdf_2d_sample.html">
+      histogram_pdf_2d_sample</a>,
+      a MATLAB code which
+      demonstrates how uniform sampling of a 2D region with respect to some
+      known Probability Density Function (PDF) can be approximated by 
+      decomposing the region into rectangles, approximating the PDF by
+      a piecewise constant function, constructing a histogram for the CDF, 
+      and then sampling.
+    </p>
+
+    <p>
+      <a href = "../../m_src/rejection_sample/rejection_sample.html">
+      rejection_sample</a>,
+      a MATLAB code which
+      demonstrates acceptance/rejection sampling.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Hans Rudolf Schwarz,<br>
+          Finite Element Methods,<br>
+          Academic Press, 1988,<br>
+          ISBN: 0126330107,<br>
+          LC: TA347.F5.S3313..
+        </li>
+        <li>
+          Gilbert Strang, George Fix,<br>
+          An Analysis of the Finite Element Method,<br>
+          Cambridge, 1973,<br>
+          ISBN: 096140888X,<br>
+          LC: TA335.S77.
+        </li>
+        <li>
+          Olgierd Zienkiewicz,<br>
+          The Finite Element Method,<br>
+          Sixth Edition,<br>
+          Butterworth-Heinemann, 2005,<br>
+          ISBN: 0750663200,<br>
+          LC: TA640.2.Z54.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "fem2d_sample.m">fem2d_sample.m</a>,
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 October 2022.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

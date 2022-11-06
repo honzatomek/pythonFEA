@@ -1,0 +1,6 @@
+This example is due to Fred Fritsch and Ralph Carlson.
+
+This data can cause problems for interpolation methods.
+There are sudden changes in direction, and at the same time,
+sparsely-placed data.  This can cause an interpolant to overshoot
+the data in a way that seems implausible.

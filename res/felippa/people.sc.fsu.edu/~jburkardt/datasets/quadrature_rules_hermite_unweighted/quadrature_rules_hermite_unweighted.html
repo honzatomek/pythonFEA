@@ -1,0 +1,326 @@
+<html>
+
+  <head>
+    <title>
+      QUADRATURE_RULES_HERMITE_UNWEIGHTED - Gauss-Hermite Quadrature Rules, Weight 1
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055" >
+
+    <h1 align = "center">
+      QUADRATURE_RULES_HERMITE_UNWEIGHTED <br> Gauss-Hermite Quadrature Rules, Weight 1
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>QUADRATURE_RULES_HERMITE_UNWEIGHTED</b>
+      is a dataset directory which
+      contains examples of quadrature rules of Gauss-Hermite type
+      using weight 1.  
+    </p>
+
+    <p>
+      Gauss-Hermite quadrature rules are designed to approximate integrals on
+      the infinite interval (-oo,+oo).
+    </p>
+
+    <p>
+      The Gauss Hermite quadrature assumes that the integrand we are
+      considering has a form like:
+      <pre>
+        Integral ( -oo &lt; x &lt; +oo ) w(x) * f(x) dx
+      </pre>
+      where the factor <b>w(x)</b> is regarded as a weight factor.
+    </p>
+
+    <p>
+      There are three common variations of the rule, depending on the
+      form of the weight factor w(x):
+      <ul>
+        <li>
+          <b>option</b> = 0, the unweighted (or "weight 1") rule:
+          <pre>
+            Integral ( -oo &lt; x &lt; +oo ) f(x) dx
+          </pre>
+        </li>
+        <li>
+          <b>option</b> = 1, the physicist weighted rule:
+          <pre>
+            Integral ( -oo &lt; x &lt; +oo ) exp(-x*x) f(x) dx
+          </pre>
+        <li>
+          <b>option</b> = 2, the probabilist weighted rule:
+          <pre>
+            Integral ( -oo &lt; x &lt; +oo ) exp(-x*x/2) f(x) dx
+          </pre>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The corresponding Gauss-Hermite rule that uses <b>order</b> points
+      will approximate the integral by
+      <pre>
+        sum ( 1 &lt;= i &lt;= order ) w(i) * f(x(i)) 
+      </pre>
+      where, confusingly, <b>w(i)</b> is a vector of quadrature weights, which has no
+      connection with the <b>w(x)</b> weight function.
+    </p>
+
+    <p>
+      For this directory, a quadrature rule is stored as three files,
+      containing the weights, the points, and a file containing two
+      points defining the endpoints of the region.  Since the Hermite rules
+      are defined on an infinite region, we set the endpoints to a very
+      large negative and positive values respectively, and hope the program
+      will understand what we mean.
+    </p>
+
+    <p>
+      If an unweighted Gauss-Hermite rule of order <b>n</b> is computed and evaluated 
+      with no numerical error, then it should produce the exact integral of any integrand,
+      having the form of the product of a polynomial of degree <b>2*n-1</b> or less 
+      times exp(-x^2).
+    </p>
+
+    <h3 align = "center">
+      Example:
+    </h3>
+
+    <p>
+      We consider an unweighted weighted Gauss-Hermite quadrature rule of order 4.
+    </p>
+
+    <p>
+      Here is the text of the "W" file storing the weights of such a rule:
+      <pre><code>
+   1.240225817691956    
+   1.059964482891671    
+   1.059964482891671    
+   1.240225817691956    
+       </code></pre>
+    </p>
+
+    <p>
+      Here is the text of the "X" file storing the abscissas of such a rule:
+      <pre><code> 
+  -1.650680123885785    
+ -0.5246476232752904    
+  0.5246476232752904    
+   1.650680123885785    
+      </code></pre>
+    </p>
+
+    <p>
+      Here is the text of the "R" file storing the lower and upper limits of
+      the region.  These are formally -oo and +oo, but here we simply give
+      them as large values.
+      <pre><code>
+ -0.1000000000000000E+31
+  0.1000000000000000E+31
+      </code></pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/hermite_polynomial/hermite_polynomial.html">
+      HERMITE_POLYNOMIAL</a>,
+      a C++ library which
+      evaluates the physicist's Hermite polynomial, the probabilist's Hermite polynomial,
+      the Hermite function, and related functions.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/hermite_rule/hermite_rule.html">
+      HERMITE_RULE</a>,
+      a C++ program which
+      can compute and print a Gauss-Hermite quadrature rule.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/int_exactness_hermite/int_exactness_hermite.html">
+      INT_EXACTNESS_HERMITE</a>,
+      a C++ program which
+      tests the polynomial exactness of Gauss-Hermite quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../../datasets/quadrature_rules_gen_hermite/quadrature_rules_gen_hermite.html">
+      QUADRATURE_RULES_GEN_HERMITE</a>,
+      a dataset directory which
+      contains quadrature rules for integration on an infinite interval,
+      using a generalized Gauss-Hermite rule.
+    </p>
+
+    <p>
+      <a href = "../../datasets/quadrature_rules_hermite_physicist/quadrature_rules_hermite_physicist.html">
+      QUADRATURE_RULES_HERMITE_PHYSICIST</a>,
+      a dataset directory which
+      contains Gauss-Hermite quadrature rules, for integration
+      on the interval (-oo,+oo), with weight function exp(-x^2).
+    </p>
+
+    <p>
+      <a href = "../../datasets/quadrature_rules_hermite_probabilist/quadrature_rules_hermite_probabilist.html">
+      QUADRATURE_RULES_HERMITE_PROBABILIST</a>,
+      a dataset directory which
+      contains Gauss-Hermite quadrature rules, for integration
+      on the interval (-oo,+oo), with weight function exp(-x^2/2).
+    </p>
+
+    <p>
+      <a href = "../../datasets/sparse_grid_hermite/sparse_grid_hermite.html">
+      SPARSE_GRID_HERMITE</a>,
+      a dataset directory which
+      contains M-dimensional Smolyak sparse grids
+      based on the 1D Gauss-Hermite rule;
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/test_int_hermite/test_int_hermite.html">
+      TEST_INT_HERMITE</a>,
+      a C++ library which
+      defines test integrands for integration over (-oo,+oo).
+    </p>
+
+
+    <h3 align = "center">
+      Sample Files:
+    </h3>
+
+    <p>
+      Gauss-Hermite Quadrature Rule, Unweighted, Order 1:
+      <ul>
+        <li>
+          <a href = "hermite_unweighted_001_x.txt">
+          hermite_unweighted_001_x.txt</a>, 
+          the abscissas.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_001_w.txt">
+          hermite_unweighted_001_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_001_r.txt">
+          hermite_unweighted_001_r.txt</a>, 
+          the range.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Hermite Quadrature Rule, Unweighted, Order 2:
+      <ul>
+        <li>
+          <a href = "hermite_unweighted_002_x.txt">
+          hermite_unweighted_002_x.txt</a>, 
+          the abscissas.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_002_w.txt">
+          hermite_unweighted_002_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_002_r.txt">
+          hermite_unweighted_002_r.txt</a>, 
+          the range.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Hermite Quadrature Rule, Unweighted, Order 4:
+      <ul>
+        <li>
+          <a href = "hermite_unweighted_004_x.txt">
+          hermite_unweighted_004_x.txt</a>, 
+          the abscissas.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_004_w.txt">
+          hermite_unweighted_004_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_004_r.txt">
+          hermite_unweighted_004_r.txt</a>, 
+          the range.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Hermite Quadrature Rule, Unweighted, Order 8:
+      <ul>
+        <li>
+          <a href = "hermite_unweighted_08_x.txt">
+          hermite_unweighted_08_x.txt</a>, 
+          the abscissas.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_08_w.txt">
+          hermite_unweighted_08_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_08_r.txt">
+          hermite_unweighted_08_r.txt</a>, 
+          the range.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Gauss-Hermite Quadrature Rule, Unweighted, Order 16:
+      <ul>
+        <li>
+          <a href = "hermite_unweighted_016_x.txt">
+          hermite_unweighted_016_x.txt</a>, 
+          the abscissas.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_016_w.txt">
+          hermite_unweighted_016_w.txt</a>, 
+          the weights.
+        </li>
+        <li>
+          <a href = "hermite_unweighted_016_r.txt">
+          hermite_unweighted_016_r.txt</a>, 
+          the range.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to 
+      <a href = "../datasets.html">the DATASETS page.</a>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 18 November 2011.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,57 @@
+22 January 2009   9:22:47.942 AM                                                
+ 
+INT_EXACTNESS_LEGENDRE
+  FORTRAN90 version
+ 
+  Investigate the polynomial exactness of a Gauss-Legendre
+  quadrature rule by integrating weighted 
+  monomials up to a given degree over the [-1,+1] interval.
+ 
+INT_EXACTNESS_LEGENDRE: User input:
+  Quadrature rule X file = "leg_o1_x.txt".
+  Quadrature rule W file = "leg_o1_w.txt".
+  Quadrature rule R file = "leg_o1_r.txt".
+  Maximum degree to check =        5
+ 
+  Spatial dimension =        1
+  Number of points  =        1
+ 
+  The quadrature rule to be tested is
+  a Gauss-Legendre rule
+  ORDER =        1
+ 
+  Standard rule:
+    Integral ( -1 <= x <= +1 ) f(x) dx
+    is to be approximated by
+    sum ( 1 <= I <= ORDER ) w(i) * f(x(i)).
+ 
+  Weights W:
+ 
+  w( 1) =    2.000000000000000    
+ 
+  Abscissas X:
+ 
+  x( 1) =    0.000000000000000    
+ 
+  Region R:
+ 
+  r( 1) =  -1.0000000000000000    
+  r( 2) =   1.0000000000000000    
+ 
+  A Gauss-Legendre rule would be able to exactly
+  integrate monomials up to and including degree =        1
+ 
+          Error                      Error           Degree
+         (This rule)                (Trapezoid)
+ 
+        0.0000000000000000         0.0000000000000000   0
+        0.0000000000000000         0.0000000000000000   1
+        1.0000000000000000         1.0000000000000000   2
+        0.0000000000000000         0.0000000000000000   3
+        1.0000000000000000         1.0000000000000000   4
+        0.0000000000000000         0.0000000000000000   5
+ 
+INT_EXACTNESS_LEGENDRE:
+  Normal end of execution.
+ 
+22 January 2009   9:22:47.944 AM                                                

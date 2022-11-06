@@ -1,0 +1,582 @@
+<html>
+
+  <head>
+    <title>
+      HALTON - Halton Datasets
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      HALTON <br> Halton Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>HALTON</b>
+      is a dataset directory which
+      contains points generated
+      by the M-dimensional Halton sequence.
+    </p>
+
+    <p>
+      The NDIM-dimensional Halton sequence is derived from the 1-dimensional
+      <a href = "../van_der_corput/van_der_corput.html">
+      van der Corput sequence</a>.  Each dimension typically uses a different
+      prime number as the base of the calculation.
+    </p>
+
+    <p>
+      The <b>HALTON_DATASET</b> programs select elements of a "leaped"
+      subsequence of  the Halton sequence.  The subsequence elements are 
+      indexed by a quantity called STEP, which starts at 0.  The STEP-th
+      subsequence element is simply the Halton sequence element with index  
+      <pre>
+        SEED(1:NDIM) + STEP * LEAP(1:NDIM).
+      </pre>
+    </p>
+
+    <p>
+      The arguments that the user may set include:
+      <ul>
+        <li>
+          NDIM, the spatial dimension, <br>
+          default: NDIM = 1, <br>
+          required: 1 &lt;= NDIM;
+        </li>
+        <li>
+          STEP, the subsequence index.<br>
+          default: STEP = 0,<br>
+          required: 0 &lt;= STEP.
+        </li>
+        <li>
+          SEED(1:NDIM), the Halton sequence index corresponding 
+          to STEP = 0.<br>
+          default: SEED(1:NDIM) = (0, 0, ... 0),<br>
+          required: 0 &lt;= SEED(1:NDIM);
+        </li>
+        <li>
+          LEAP(1:NDIM), the succesive jumps in the Halton sequence.<br>
+          default: LEAP(1:NDIM) = (1, 1, ..., 1).<br>
+          required: 1 &lt;= LEAP(1:NDIM).
+        </li>
+        <li>
+          BASE(1:NDIM), the Halton bases.<br>
+          default: BASE(1:NDIM) = (2, 3, 5, 7, 11... ),<br>
+          required: 1 &lt; BASE(1:NDIM).
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      In some cases, it is recommended that the initial portion of
+      the sequence be skipped over.  A general suggestion is to
+      let STEP be the first power of 2 that is equal to or
+      greater than N, the number of points to generate.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/halton_dataset/halton_dataset.html">
+      HALTON_DATASET</a>,
+      a C++ program which
+      creates a Halton sequence and writes it to a file.
+    </p>
+
+    <p>
+      <a href =  "../../f_src/plot_points/plot_points.html">
+      PLOT_POINTS</a>,
+      a FORTRAN90 program which
+      can create Encapsulated PostScript
+      images (EPS) of some of the two dimensional datasets.
+    </p>
+
+    <p>
+      <a href = "../../data/table/table.html">
+      TABLE</a>,
+      a file format which 
+      is used to store the data.
+    </p>
+
+    <p>
+      <a href =  "../../f_src/table_top/table_top.html">
+      TABLE_TOP</a> 
+      a FORTRAN90 program which
+      can display pairwise
+      coordinate plots of higher dimensional datasets.
+    </p>
+
+    <h3 align = "center">
+      Example dataset:
+    </h3>
+
+    <p>
+      A typical (but small) Halton dataset looks like this:
+      <pre>
+#  halton_02_00010.txt
+#  created by HALTON_WRITE.F90
+#
+#  File generated on July 11 2004  12:58:28.788 PM
+#
+#  NDIM =            2
+#  N =              10
+#  STEP =            0
+#  SEED =            0           0
+#  LEAP =            1           1
+#  BASE =            2           3
+#  EPSILON (unit roundoff ) =   0.222045E-15
+#
+  0.000000  0.000000
+  0.500000  0.333333
+  0.250000  0.666667
+  0.750000  0.111111
+  0.125000  0.444444
+  0.625000  0.777778
+  0.375000  0.222222
+  0.875000  0.555556
+  0.062500  0.888889
+  0.562500  0.037037
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>  
+          John Halton,<br>
+          On the efficiency of certain quasi-random sequences of points
+          in evaluating multi-dimensional integrals,<br>
+          Numerische Mathematik,<br>
+          Volume 2, 1960, pages 84-90.
+        </li>
+        <li>  
+          John Halton, GB Smith,<br>
+          Algorithm 247: Radical-Inverse Quasi-Random Point Sequence,<br>
+          Communications of the ACM,<br>
+          Volume 7, 1964, pages 701-702.
+        </li>
+        <li>  
+          Ladislav Kocis, William Whiten,<br>
+          Computational Investigations of Low-Discrepancy Sequences,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 23, Number 2, June 1997, pages 266-294.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      Datasets in M = 2 dimensions, with no skipping, include:
+      <ul>
+        <li>
+          <a href = "halton_02_00010.inp">halton_02_00010.inp</a>, 
+          input to HALTON_DATASET to create the dataset.
+        </li>
+        <li>
+          <a href = "halton_02_00010.txt">halton_02_00010.txt</a>, 
+          M = 2, N = 10, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_02_00010.inp2">halton_02_00010.inp2</a>, 
+          commands to make a picture of the dataset using
+          <a href = "../../g_src/plot_points/plot_points.html">
+          PLOT_POINTS</a>.
+        </li>
+        <li>
+          <a href = "halton_02_00010.png">halton_02_00010.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset.
+        </li>
+        <li>
+          <a href = "halton_02_00100.inp">halton_02_00100.inp</a>, 
+          input to HALTON_DATASET to create the dataset.
+        </li>
+        <li>
+          <a href = "halton_02_00100.txt">halton_02_00100.txt</a>, 
+          M = 2, N = 100, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_02_00100.inp2">halton_02_00100.inp2</a>, 
+          commands to make a picture of the dataset using
+          <a href = "../../g_src/plot_points/plot_points.html">
+          PLOT_POINTS</a>.
+        </li>
+        <li>
+          <a href = "halton_02_00100.png">halton_02_00100.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset.
+        </li>
+        <li>
+          <a href = "halton_02_01000.inp">halton_02_01000.inp</a>, 
+          input to HALTON_DATASET to create the dataset.
+        </li>
+        <li>
+          <a href = "halton_02_01000.txt">halton_02_01000.txt</a>, 
+          M = 2, N = 1000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_02_01000.inp2">halton_02_01000.inp2</a>, 
+          commands to make a picture of the dataset using
+          <a href = "../../g_src/plot_points/plot_points.html">
+          PLOT_POINTS</a>.
+        </li>
+        <li>
+          <a href = "halton_02_01000.png">halton_02_01000.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset.
+        </li>
+        <li>
+          <a href = "halton_02_10000.txt">halton_02_10000.txt</a>, 
+          M = 2, N = 10000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 2 dimensions, with power of 2 skipping, include:
+      <ul>
+        <li>
+          <a href = "halton_02_00010_a.txt">halton_02_00010_a.txt</a>, 
+          M = 2, N = 10, STEP = 16, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_02_00100_a.txt">halton_02_00100_a.txt</a>, 
+          M = 2, N = 100, STEP = 128, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_02_01000_a.txt">halton_02_01000_a.txt</a>, 
+          M = 2, N = 1000, STEP = 1024, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_02_10000_a.txt">halton_02_10000_a.txt</a>, 
+          M = 2, N = 10000, STEP = 16384, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 3 dimensions, with no skipping, include:
+      <ul>
+        <li>
+          <a href = "halton_03_00010.txt">halton_03_00010.txt</a>, 
+          M = 3, N = 10, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_03_00100.txt">halton_03_00100.txt</a>, 
+          M = 3, N = 100, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_03_01000.txt">halton_03_01000.txt</a>, 
+          M = 3, N = 1000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_03_10000.txt">halton_03_10000.txt</a>, 
+          M = 3, N = 10000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 4 dimensions, with no skipping, include:
+      <ul>
+        <li>
+          <a href = "halton_04_00010.txt">halton_04_00010.txt</a>, 
+          M = 4, N = 10, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_04_00100.txt">halton_04_00100.txt</a>, 
+          M = 4, N = 100, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_04_01000.txt">halton_04_01000.txt</a>, 
+          M = 4, N = 1000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_04_10000.txt">halton_04_10000.txt</a>, 
+          M = 4, N = 10000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 5 dimensions, with no skipping, include:
+      <ul>
+        <li>
+          <a href = "halton_05_00010.txt">halton_05_00010.txt</a>, 
+          M = 5, N = 10, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_05_00100.txt">halton_05_00100.txt</a>, 
+          M = 5, N = 100, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_05_01000.txt">halton_05_01000.txt</a>, 
+          M = 5, N = 1000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_05_10000.txt">halton_05_10000.txt</a>, 
+          M = 5, N = 10000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 6 dimensions, with no skipping:
+      (number of points in datasets were chosen to match the growth
+      in size of a 6D sparse grid based on Clenshaw Curtis points)
+      <ul>
+        <li>
+          <a href = "halton_06_00001.txt">halton_06_00001.txt</a>, 
+          M = 6, N = 1, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_06_00013.txt">halton_06_00013.txt</a>, 
+          M = 6, N = 13, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_06_00085.txt">halton_06_00085.txt</a>, 
+          M = 6, N = 85, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_06_00389.txt">halton_06_00389.txt</a>, 
+          M = 6, N = 389, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_06_01457.txt">halton_06_01457.txt</a>, 
+          M = 6, N = 1457, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_06_04865.txt">halton_06_04865.txt</a>, 
+          M = 6, N = 4865, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 7 dimensions, with no skipping include:
+      <ul>
+        <li>
+          <a href = "halton_07_00010.txt">halton_07_00010.txt</a>, 
+          M = 7, N = 10, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_07_00100.txt">halton_07_00100.txt</a>, 
+          M = 7, N = 100, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_07_01000.txt">halton_07_01000.txt</a>, 
+          M = 7, N = 1000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_07_10000.txt">halton_07_10000.txt</a>, 
+          M = 7, N = 10000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 7 dimensions, with power of 2 skipping, include:
+      <ul>
+        <li>
+          <a href = "halton_07_00010_a.txt">halton_07_00010_a.txt</a>, 
+          M = 7, N = 10, STEP = 16, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_07_00100_a.txt">halton_07_00100_a.txt</a>, 
+          M = 7, N = 100, STEP = 128, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_07_01000_a.txt">halton_07_01000_a.txt</a>, 
+          M = 7, N = 1000, STEP = 1024, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_07_10000_a.txt">halton_07_10000_a.txt</a>, 
+          M = 7, N = 10000, STEP = 16384, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 10 dimensions, with no skipping:
+      (number of points in datasets were chosen to match the growth
+      in size of a 10D sparse grid based on Clenshaw Curtis points)
+      <ul>
+        <li>
+          <a href = "halton_10_00001.txt">halton_10_00001.txt</a>, 
+          M = 10, N = 1, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_10_00021.txt">halton_10_00021.txt</a>, 
+          M = 10, N = 21, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_10_00221.txt">halton_10_00221.txt</a>, 
+          M = 10, N = 221, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_10_01581.txt">halton_10_01581.txt</a>, 
+          M = 10, N = 1581, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_10_08801.txt">halton_10_08801.txt</a>, 
+          M = 10, N = 8801, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_10_41265.txt">halton_10_41265.txt</a>, 
+          M = 10, N = 41265, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 16 dimensions, with no skipping include:
+      <ul>
+        <li>
+          <a href = "halton_16_00010.txt">halton_16_00010.txt</a>, 
+          M = 16, N = 10, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_16_00100.txt">halton_16_00100.txt</a>, 
+          M = 16, N = 100, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_16_01000.txt">halton_16_01000.txt</a>, 
+          M = 16, N = 1000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_16_10000.txt">halton_16_10000.txt</a>, 
+          M = 16, N = 10000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 16 dimensions, with power of 2 skipping, include:
+      <ul>
+        <li>
+          <a href = "halton_16_00010_a.txt">halton_16_00010_a.txt</a>, 
+          M = 16, N = 10, STEP = 16, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_16_00100_a.txt">halton_16_00100_a.txt</a>, 
+          M = 16, N = 100, STEP = 128, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_16_01000_a.txt">halton_16_01000_a.txt</a>, 
+          M = 16, N = 1000, STEP = 1024, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_16_10000_a.txt">halton_16_10000_a.txt</a>, 
+          M = 16, N = 10000, STEP = 16384, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 40 dimensions, with no skipping, include:
+      <ul>
+        <li>
+          <a href = "halton_40_00010.txt">halton_40_00010.txt</a>, 
+          M = 40, N = 10, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_40_02000.inp">halton_40_02000.inp</a>, 
+          input to HALTON_DATASET to create the dataset.
+        </li>
+        <li>
+          <a href = "halton_40_02000.txt">halton_40_02000.txt</a>, 
+          M = 40, N = 2000, STEP = 0, SEED = 0, LEAP = 1, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_40_02000_3940.txt">halton_40_02000_3940.txt</a>, 
+          Columns 39 and 40 of halton_40_02000.txt, extracted by
+          <a href = 
+          "../../f_src/columns/columns.html">
+          the COLUMNS program</a>.
+        </li>
+        <li>
+          <a href = "halton_40_02000_3940.inp2">halton_40_02000_3940.inp2</a>, 
+          commands to make a picture of the 39th and 40th dimensions of 
+          the dataset using
+          <a href = "../../g_src/plot_points/plot_points.html">
+          PLOT_POINTS</a>.
+        </li>
+        <li>
+          <a href = "halton_40_02000_3940.png">halton_40_02000_3940.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 40 dimensions, a nonunit LEAP, include:
+      <ul>
+        <li>
+          <a href = "halton_40_02000_a.inp">halton_40_02000_a.inp</a>, 
+          input to HALTON_DATASET to create the dataset.
+        </li>
+        <li>
+          <a href = "halton_40_02000_a.txt">halton_40_02000_a.txt</a>, 
+          M = 40, N = 2000, STEP = 0, SEED = 0, LEAP = 179, BASE = default;
+        </li>
+        <li>
+          <a href = "halton_40_02000_3940_a.txt">halton_40_02000_3940_a.txt</a>, 
+          Columns 39 and 40 of halton_40_02000_a.txt, extracted by
+          <a href = 
+          "../../f_src/columns/columns.html">
+          the COLUMNS program</a>.
+        </li>
+        <li>
+          <a href = "halton_40_02000_3940_a.inp2">
+          halton_40_02000_3940_a.inp2</a>, 
+          commands to make a picture of the 39th and 40th dimensions of 
+          the dataset using
+          <a href = "../../g_src/plot_points/plot_points.html">
+          PLOT_POINTS</a>.
+        </li>
+        <li>
+          <a href = "halton_40_02000_3940_a.png">halton_40_02000_3940_a.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 01 August 2007.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

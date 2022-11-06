@@ -1,0 +1,16 @@
+#  cvt_16_01000_e.inp
+#
+#  This dataset is intended to be input to CVTD_DATASET,
+#  the double precision version of CVT_DATASET.
+#
+m = 16
+n = 1000
+seed = 123456789
+#
+initialize uniform
+sample_function_cvt = uniform
+sample_num_cvt = 500000
+iterate 100
+write cvt_16_01000_e.txt
+#
+quit

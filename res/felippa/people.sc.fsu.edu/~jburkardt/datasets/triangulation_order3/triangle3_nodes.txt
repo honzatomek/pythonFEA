@@ -1,0 +1,8 @@
+#  t3_nodes.txt
+#
+#  Spatial dimension M = 2
+#  Number of points N = 3
+#
+  0.000  0.000
+  1.000  0.000
+  0.500  0.866

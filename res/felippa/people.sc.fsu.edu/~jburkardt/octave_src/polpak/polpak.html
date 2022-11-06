@@ -1,0 +1,812 @@
+<html>
+
+  <head>
+    <title>
+      polpak
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      polpak
+    </h1>
+
+    <hr>
+ 
+    <p>
+      <b>polpak</b>, 
+      an Octave code which
+      evaluates a variety of mathematical functions, polynomials, and
+      sequences, including Bell, Benford, Bernoulli, Bernstein, Cardan, 
+      Catalan, Charlier, Chebyshev, Collatz, Delannoy, Euler, Fibonacci,
+      Gegenbauer, Gudermannian, Harmonic, Hermite, Hofstadter, Jacobi,
+      Krawtchouk, Laguerre, Lambert, Legendre, Lerch, Meixner, Mertens,
+      Moebius, Motzkin, Phi, Stirling, Tau, Tribonacci, Zernike.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>polpak</b> is available in
+      <a href = "../../c_src/polpak/polpak.html">a C version</a> and
+      <a href = "../../cpp_src/polpak/polpak.html">a C++ version</a> and
+      <a href = "../../f_src/polpak/polpak.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/polpak/polpak.html">a MATLAB version</a> and
+      <a href = "../../octave_src/polpak/polpak.html">an Octave version</a> and
+      <a href = "../../py_src/polpak/polpak.html">a Python version</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../octave_src/polpak_test/polpak_test.html">
+      polpak_test</a>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "agm_values.m">
+          agm_values.m</a>,
+          returns selected values of the arithmetic geometric mean function.
+        </li>
+        <li>
+          <a href = "agud.m">agud.m</a>, 
+          evaluates the inverse Gudermannian function;
+        </li>
+        <li>
+          <a href = "align_enum.m">align_enum.m</a>, 
+          counts the alignments of two sequences of M and N elements;
+        </li>
+        <li>
+          <a href = "bell.m">bell.m</a>, 
+          evaluates the Bell numbers;
+        </li>
+        <li>
+          <a href = "bell_poly_coef.m">bell_poly_coef.m</a>, 
+          returns the coefficients of a Bell polynomial;
+        </li>
+        <li>
+          <a href = "bell_values.m">bell_values.m</a>, 
+          evaluates some values of the Bell numbers;
+        </li>
+        <li>
+          <a href = "benford.m">benford.m</a>, 
+          returns the Benford probability of one or more significant digits;
+        </li>
+        <li>
+          <a href = "bernoulli_number.m">bernoulli_number.m</a>, 
+          returns the Bernoulli numbers;
+        </li>
+        <li>
+          <a href = "bernoulli_number_values.m">bernoulli_number_values.m</a>, 
+          returns some values of the Bernoulli numbers;
+        </li>
+        <li>
+          <a href = "bernoulli_number2.m">bernoulli_number2.m</a>, 
+          returns the Bernoulli numbers;
+        </li>
+        <li>
+          <a href = "bernoulli_number3.m">bernoulli_number3.m</a>, 
+          computes the Bernoulli numbers;
+        </li>
+        <li>
+          <a href = "bernoulli_poly.m">bernoulli_poly.m</a>, 
+          evaluates a Bernoulli polynomial;
+        </li>
+        <li>
+          <a href = "bernoulli_poly2.m">bernoulli_poly2.m</a>, 
+          evaluates the Nth Bernoulli polynomial at X;
+        </li>
+        <li>
+          <a href = "bernstein_poly.m">bernstein_poly.m</a>, 
+          evaluates the Bernstein polynomials at a point;
+        </li>
+        <li>
+          <a href = "bernstein_poly_01_values.m">bernstein_poly_01_values.m</a>, 
+          returns some values of the Bernstein polynomials;
+        </li>
+        <li>
+          <a href = "beta_values.m">beta_values.m</a>, 
+          returns some values of the Beta function;
+        </li>
+        <li>
+          <a href = "bpab.m">bpab.m</a>, 
+          evaluates the Bernstein polynomials defined on the interval [A,B];
+        </li>
+        <li>
+          <a href = "cardan_poly.m">cardan_poly.m</a>, 
+          evaluates the Cardan polynomials;
+        </li>
+        <li>
+          <a href = "cardan_poly_coef.m">cardan_poly_coef.m</a>, 
+          returns the coefficients of a Cardan polynomial;
+        </li>
+        <li>
+          <a href = "cardinal_cos.m">cardinal_cos.m</a>, 
+          evaluates the cardinal cosine basis functions.
+        </li>
+        <li>
+          <a href = "cardinal_sin.m">cardinal_sin.m</a>, 
+          evaluates the cardinal sine basis functions.
+        </li>
+        <li>
+          <a href = "catalan.m">catalan.m</a>, 
+          evaluates the Catalan numbers;
+        </li>
+        <li>
+          <a href = "catalan_row_next.m">catalan_row_next.m</a>, 
+          computes the next row of Catalan numbers;
+        </li>
+        <li>
+          <a href = "catalan_values.m">catalan_values.m</a>, 
+          evaluates some values of the Catalan numbers;
+        </li>
+        <li>
+          <a href = "charlier.m">charlier.m</a>, 
+          evaluates the Charlier polynomials;
+        </li>
+        <li>
+          <a href = "cheby_t_poly.m">cheby_t_poly.m</a>, 
+          evaluates the Chebyshev T polynomials;
+        </li>
+        <li>
+          <a href = "cheby_t_poly_coef.m">cheby_t_poly_coef.m</a>, 
+          returns the coefficients of the Chebyshev T polynomials;
+        </li>
+        <li>
+          <a href = "cheby_t_poly_values.m">cheby_t_values.m</a>, 
+          returns some values of the Chebyshev T polynomials;
+        </li>
+        <li>
+          <a href = "cheby_t_poly_zero.m">cheby_t_poly_zero.m</a>, 
+          returns the zeros of the Chebyshev T polynomials;
+        </li>
+        <li>
+          <a href = "cheby_u_poly.m">cheby_u_poly.m</a>, 
+          evaluates the Chebyshev U polynomials;
+        </li>
+        <li>
+          <a href = "cheby_u_poly_coef.m">cheby_u_poly_coef.m</a>, 
+          returns the coefficients of the Chebyshev U polynomials;
+        </li>
+        <li>
+          <a href = "cheby_u_poly_values.m">cheby_u_values.m</a>, 
+          returns some values of the Chebyshev U polynomials;
+        </li>
+        <li>
+          <a href = "cheby_u_poly_zero.m">cheby_u_poly_zero.m</a>, 
+          returns the zeros of the Chebyshev U polynomials;
+        </li>
+        <li>
+          <a href = "chebyshev_discrete.m">chebyshev_discrete.m</a>, 
+          evaluates the discrete Chebyshev polynomials;
+        </li>
+        <li>
+          <a href = "collatz_count.m">collatz_count.m</a>, 
+          counts the length of the Collatz sequence for a seed of N;
+        </li>
+        <li>
+          <a href = "collatz_count_max.m">collatz_count_max.m</a>, 
+          seeks the maximum Collatz count from 1 to N.
+        </li>
+        <li>
+          <a href = "collatz_count_values.m">collatz_count_values.m</a>, 
+          stores some values of the Collatz count function;
+        </li>
+        <li>
+          <a href = "comb_row_next.m">comb_row_next.m</a>, 
+          computes the next row of Pascal's triangle;
+        </li>
+        <li>
+          <a href = "commul.m">commul.m</a>, 
+          computes a multinomial coefficient;
+        </li>
+        <li>
+          <a href = "complete_symmetric_poly.m">complete_symmetric_poly.m</a>, 
+          evaluates the complete symmetric polynomial tau(n,r).
+        </li>
+        <li>
+          <a href = "cos_power_int.m">cos_power_int.m</a>, 
+          returns the value of the integral of the N-th power of 
+          the cosine function;
+        </li>
+        <li>
+          <a href = "cos_power_int_values.m">cos_power_int_values.m</a>, 
+          returns some values of the integral of the N-th power of
+          the cosine function;
+        </li>
+        <li>
+          <a href = "delannoy.m">delannoy.m</a>, 
+          computes the Delannoy numbers;
+        </li>
+        <li>
+          <a href = "domino_tiling_num.m">domino_tiling_num.m</a>, 
+          computes the the number of ways of tiling an MxN chessboard
+          with dominoes.
+        </li>
+        <li>
+          <a href = "erf_values.m">erf_values.m</a>, 
+          returns some values of the error function;
+        </li>
+        <li>
+          <a href = "erfc_estimate.m">erfc_estimate.m</a>, 
+          estimates the complementary error function using asymptotic expansion;
+        </li>
+        <li>
+          <a href = "erfc_values.m">erfc_values.m</a>, 
+          returns some values of the complementary error function;
+        </li>
+        <li>
+          <a href = "euler_mascheroni.m">euler_mascheroni.m</a>, 
+          returns the value of the Euler-Mascheroni constant;
+        </li>
+        <li>
+          <a href = "euler_number.m">euler_number.m</a>, 
+          evaluates the Euler numbers;
+        </li>
+        <li>
+          <a href = "euler_number2.m">euler_number2.m</a>, 
+          computes the Euler numbers;
+        </li>
+        <li>
+          <a href = "euler_number_values.m">euler_number_values.m</a>, 
+          returns some values of the Euler numbers;
+        </li>
+        <li>
+          <a href = "euler_poly.m">euler_poly.m</a>, 
+          evaluates the N-th Euler polynomial at X;
+        </li>
+        <li>
+          <a href = "eulerian.m">eulerian.m</a>, 
+          computes the eulerian number E(N,K);
+        </li>
+        <li>
+          <a href = "f_hofstadter.m">f_hofstadter.m</a>, 
+          computes the Hofstadter F function;
+        </li>
+        <li>
+          <a href = "fibonacci_direct.m">fibonacci_direct.m</a>, 
+          computes the N-th Fibonacci number directly;
+        </li>
+        <li>
+          <a href = "fibonacci_floor.m">fibonacci_floor.m</a>, 
+          computes the largest Fibonacci number less than or equal to N;
+        </li>
+        <li>
+          <a href = "fibonacci_recursive.m">fibonacci_recursive.m</a>, 
+          computes the first N Fibonacci numbers recursively;
+        </li>
+        <li>
+          <a href = "g_hofstadter.m">g_hofstadter.m</a>, 
+          computes the Hofstadter G function;
+        </li>
+        <li>
+          <a href = "gamma_values.m">gamma_values.m</a>, 
+          returns some values of the Gamma function;
+        </li>
+        <li>
+          <a href = "gamma_log_values.m">gamma_log_values.m</a>, 
+          returns some values of the logarithm of the Gamma function;
+        </li>
+        <li>
+          <a href = "gegenbauer_poly.m">gegenbauer_poly.m</a>, 
+          evaluates the Gegenbauer polynomials at a point;
+        </li>
+        <li>
+          <a href = "gegenbauer_poly_values.m">gegenbauer_poly_values.m</a>, 
+          returns some values of the Gegenbauer polynomials;
+        </li>
+        <li>
+          <a href = "gen_hermite_poly.m">gen_hermite_poly.m</a>, 
+          evaluates the generalized Hermite polynomials;
+        </li>
+        <li>
+          <a href = "gen_laguerre_poly.m">gen_laguerre_poly.m</a>, 
+          evaluates the generalized Laguerre polynomials;
+        </li>
+        <li>
+          <a href = "gud.m">gud.m</a>, 
+          evaluates the Gudermannian function;
+        </li>
+        <li>
+          <a href = "gud_values.m">gud_values.m</a>, 
+          returns some values of the Gudermannian function;
+        </li>
+        <li>
+          <a href = "h_hofstadter.m">h_hofstadter.m</a>, 
+          computes the Hofstadter H function;
+        </li>
+        <li>
+          <a href = "hail.m">hail.m</a>, 
+          computes the hail function;
+        </li>
+        <li>
+          <a href = "hermite_poly_phys.m">hermite_poly_phys.m</a>, 
+          evaluates the Hermite physicist polynomials;
+        </li>
+        <li>
+          <a href = "hermite_poly_coef.m">hermite_poly_coef.m</a>, 
+          evaluates the Hermite polynomial coefficients;
+        </li>
+        <li>
+          <a href = "hermite_poly_phys_values.m">hermite_poly_phys_values.m</a>, 
+          returns some values of the Hermite physicist polynomials;
+        </li>
+        <li>
+          <a href = "hyper_2f1_values.m">hyper_2f1_values.m</a>, 
+          returns some values of the 2F1 hypergeometric function.
+        </li>
+        <li>
+          <a href = "i4_factor.m">i4_factor.m</a>, 
+          factors an integer into prime factors;
+        </li>
+        <li>
+          <a href = "i4_factorial2.m">i4_factorial2.m</a>, 
+          computes the double factorial function;
+        </li>
+        <li>
+          <a href = "i4_factorial2_values.m">i4_factorial2_values.m</a>, 
+          returns some values of the double factorial function;
+        </li>
+        <li>
+          <a href = "i4_is_fibonacci.m">i4_is_fibonacci.m</a>, 
+          determines whether an integer is a Fibonacci number;
+        </li>
+        <li>
+          <a href = "i4_is_prime.m">i4_is_prime.m</a>, 
+          determines whether an integer is prime;
+        </li>
+        <li>
+          <a href = "i4_is_triangular.m">i4_is_triangular.m</a>, 
+          determines whether an integer is triangular;
+        </li>
+        <li>
+          <a href = "i4_mop.m">i4_mop.m</a>, 
+          evaluates a power of -1;
+        </li>
+        <li>
+          <a href = "i4_partition_distinct_count.m">
+          i4_partition_distinct_count_values.m</a>, 
+          computes the value of Q(N);
+        </li>
+        <li>
+          <a href = "i4_to_triangle_lower.m">i4_to_triangle_lower.m</a>, 
+          converts an integer to lower triangular coordinates;
+        </li>
+        <li>
+          <a href = "i4_to_triangle_upper.m">i4_to_triangle_upper.m</a>, 
+          converts an integer to upper triangular coordinates;
+        </li>
+        <li>
+          <a href = "i4_uniform_ab.m">i4_uniform_ab.m</a>, 
+          returns a random integer in a given range;
+        </li>
+        <li>
+          <a href = "i4mat_print.m">i4mat_print.m</a>,
+          prints an I4MAT;
+        </li>
+        <li>
+          <a href = "i4mat_print_some.m">i4mat_print_some.m</a>,
+          prints some of an I4MAT;
+        </li>
+        <li>
+          <a href = "jacobi_poly.m">jacobi_poly.m</a>, 
+          evaluates the Jacobi polynomials at a point;
+        </li>
+        <li>
+          <a href = "jacobi_poly_values.m">jacobi_poly_values.m</a>, 
+          returns some values of the Jacobi polynomials;
+        </li>
+        <li>
+          <a href = "jacobi_symbol.m">jacobi_symbol.m</a>, 
+          evaluates the Jacobi symbol (Q/P);
+        </li>
+        <li>
+          <a href = "krawtchouk.m">krawtchouk.m</a>, 
+          evaluates the Krawtchouk polynomials;
+        </li>
+        <li>
+          <a href = "laguerre_associated.m">laguerre_associated.m</a>, 
+          evaluates the associated Laguerre polynomials L(N,M)(X);
+        </li>
+        <li>
+          <a href = "laguerre_poly.m">laguerre_poly.m</a>, 
+          evaluates the Laguerre polynomials;
+        </li>
+        <li>
+          <a href = "laguerre_poly_coef.m">laguerre_poly_coef.m</a>, 
+          evaluates the Laguerre polynomial coefficients;
+        </li>
+        <li>
+          <a href = "laguerre_polynomial_values.m">laguerre_polynomial_values.m</a>, 
+          returns some values of the Laguerre polynomials;
+        </li>
+        <li>
+          <a href = "lambert_w.m">lambert_w.m</a>, 
+          evaluates the Lambert W function;
+        </li>
+        <li>
+          <a href = "lambert_w_estimate.m">lambert_w_estimate.m</a>, 
+          estimates the Lambert W function;
+        </li>
+        <li>
+          <a href = "lambert_w_values.m">lambert_w_values.m</a>, 
+          returns some values of the Lambert W function;
+        </li>
+        <li>
+          <a href = "legendre_associated.m">legendre_associated.m</a>, 
+          evaluates the associated Legendre functions P(N,M)(X);
+        </li>
+        <li>
+          <a href = "legendre_associated_values.m">
+          legendre_associated_values.m</a>, 
+          returns some values of the associated Legendre function;
+        </li>
+        <li>
+          <a href = "legendre_associated_normalized.m">
+          legendre_associated_normalized.m</a>, 
+          evaluates the associated Legendre functions P(N,M)(X),
+          normalized for use in spherical harmonic calculations;
+        </li>
+        <li>
+          <a href = "legendre_associated_normalized_sphere_values.m">
+          legendre_associated_normalized_sphere_values.m</a>, 
+          returns some values of the associated Legendre function
+          normalized for use in spherical harmonic calculations;
+        </li>
+        <li>
+          <a href = "legendre_function_q.m">legendre_function_q.m</a>, 
+          evaluates the Legendre functions Q(N)(X);
+        </li>
+        <li>
+          <a href = "legendre_function_q_values.m">
+          legendre_function_q_values.m</a>, 
+          returns some values of the Legendre Q(N) functions;
+        </li>
+        <li>
+          <a href = "legendre_poly.m">legendre_poly.m</a>, 
+          evaluates the Legendre polynomials P(N)(X);
+        </li>
+        <li>
+          <a href = "legendre_poly_coef.m">legendre_poly_coef.m</a>, 
+          evaluates the coefficients of the Legendre polynomials P(N)(X);
+        </li>
+        <li>
+          <a href = "legendre_poly_values.m">legendre_poly_values.m</a>, 
+          returns some values of the Legendre polynomials;
+        </li>
+        <li>
+          <a href = "legendre_symbol.m">legendre_symbol.m</a>, 
+          evaluates the Legendre symbol (Q/P);
+        </li>
+        <li>
+          <a href = "lerch.m">lerch.m</a>, 
+          evaluates the Lerch transcendent function;
+        </li>
+        <li>
+          <a href = "lerch_values.m">lerch_values.m</a>, 
+          returns some values of the Lerch transcendent function;
+        </li>
+        <li>
+          <a href = "lock.m">lock.m</a>, 
+          returns the number of codes for a lock with N buttons;
+        </li>
+        <li>
+          <a href = "meixner.m">meixner.m</a>, 
+          evaluates the Meixner polynomials;
+        </li>
+        <li>
+          <a href = "mertens.m">mertens.m</a>, 
+          returns the value of the Mertens function;
+        </li>
+        <li>
+          <a href = "mertens_values.m">mertens_values.m</a>, 
+          returns some tabulated values of the Mertens function;
+        </li>
+        <li>
+          <a href = "moebius.m">moebius.m</a>, 
+          returns the value of MU(N), the Moebius function of N;
+        </li>
+        <li>
+          <a href = "moebius_values.m">moebius_values.m</a>, 
+          returns some tabulated values of the Moebius function;
+        </li>
+        <li>
+          <a href = "motzkin.m">motzkin.m</a>, 
+          returns the Motzkin numbers up to order N;
+        </li>
+        <li>
+          <a href = "normal_01_cdf_inverse.m">normal_01_cdf_inverse.m</a> 
+          inverts the Normal 01 CDF.
+        </li>
+        <li>
+          <a href = "normal_01_cdf_values.m">normal_01_cdf_values.m</a> 
+          returns some values of the Normal 01 CDF.
+        </li>
+        <li>
+          <a href = "omega.m">omega.m</a>, 
+          returns the number of distinct prime divisors of an integer;
+        </li>
+        <li>
+          <a href = "omega_values.m">omega_values.m</a>, 
+          returns some values of the Omega function;
+        </li>
+        <li>
+          <a href = "partition_distinct_count_values.m">
+          partition_distinct_count_values.m</a>, 
+          returns some values of Q(N);
+        </li>
+        <li>
+          <a href = "pentagon_num.m">pentagon_num.m</a>, 
+          returns the N-th pentagonal number;
+        </li>
+        <li>
+          <a href = "phi.m">phi.m</a>, 
+          returns the number of relatively prime predecessors of an integer;
+        </li>
+        <li>
+          <a href = "phi_values.m">phi_values.m</a>, 
+          returns some values of the Phi function;
+        </li>
+        <li>
+          <a href = "plane_partition_num.m">plane_partition_num.m</a>, 
+          returns the number of plane partitions of an integer.
+        </li>
+        <li>
+          <a href = "poly_bernoulli.m">poly_bernoulli.m</a>, 
+          evaluates the poly-Bernoulli numbers of negative index;
+        </li>
+        <li>
+          <a href = "poly_coef_count.m">poly_coef_count.m</a>, 
+          counts the coefficients in a polynomial of given degree and dimension.
+        </li>
+        <li>
+          <a href = "prime.m">prime.m</a>, 
+          returns any of the first MAXPRIME primes;
+        </li>
+        <li>
+          <a href = "psi_values.m">psi_values.m</a>, 
+          returns some values of the Psi function;
+        </li>
+        <li>
+          <a href = "pyramid_num.m">pyramid_num.m</a>, 
+          returns the N-th pyramidal number;
+        </li>
+        <li>
+          <a href = "pyramid_square_num.m">pyramid_square_num.m</a>, 
+          returns the N-th pyramidal square number;
+        </li>
+        <li>
+          <a href = "r8_agm.m">r8_agm.m</a>, 
+          computes the arithmetic geometric mean of two numbers;
+        </li>
+        <li>
+          <a href = "r8_beta.m">r8_beta.m</a>, 
+          evaluates the Beta function;
+        </li>
+        <li>
+          <a href = "r8_erf.m">r8_erf.m</a>, 
+          evaluates the error function;
+        </li>
+        <li>
+          <a href = "r8_erf_inverse.m">r8_erf_inverse.m</a>, 
+          inverts the error function;
+        </li>
+        <li>
+          <a href = "r8_factorial_log.m">r8_factorial_log.m</a>, 
+          computes the logarithm of the (real) factorial function;
+        </li>
+        <li>
+          <a href = "r8_factorial_log_values.m">r8_factorial_log_values.m</a>, 
+          returns some values of the logarithm of the (real) factorial function;
+        </li>
+        <li>
+          <a href = "r8_hyper_2f1.m">r8_hyper_2f1.m</a>, 
+          evaluates the 2F1 hypergeometric function.
+        </li>
+        <li>
+          <a href = "r8_psi.m">r8_psi.m</a>, 
+          returns the Psi function;
+        </li>
+        <li>
+          <a href = "r8_uniform_01.m">r8_uniform_01.m</a>, 
+          returns a unit pseudorandom R8;
+        </li>
+        <li>
+          <a href = "r8_uniform_ab.m">r8_uniform_ab.m</a>, 
+          returns a pseudorandom R8 in [A,B];
+        </li>
+        <li>
+          <a href = "r8poly_degree.m">r8poly_degree.m</a>, 
+          returns the degree of a polynomial;
+        </li>
+        <li>
+          <a href = "r8poly_print.m">r8poly_print.m</a>, 
+          prints a polynomial;
+        </li>
+        <li>
+          <a href = "r8poly_value_horner.m">r8poly_value_horner.m</a>, 
+          evaluates a polynomial using Horner's method;
+        </li>
+        <li>
+          <a href = "r8vec_linspace.m">r8vec_linspace.m</a>, 
+          returns evenly spaced values from A to B as an R8VEC.
+        </li>
+        <li>
+          <a href = "r8vec_print.m">r8vec_print.m</a>, 
+          prints an R8VEC.
+        </li>
+        <li>
+          <a href = "s_len_trim.m">s_len_trim.m</a>, 
+          returns the length of a string to the last nonblank;
+        </li>
+        <li>
+          <a href = "sigma.m">sigma.m</a>, 
+          returns the value of SIGMA(N), the divisor sum;
+        </li>
+        <li>
+          <a href = "sigma_values.m">sigma_values.m</a>, 
+          returns some values of the Sigma function;
+        </li>
+        <li>
+          <a href = "simplex_num.m">simplex_num.m</a>
+        </li>
+        <li>
+          <a href = "sin_power_int.m">sin_power_int.m</a>, 
+          returns the value of the integral of the N-th power of 
+          the sine function;
+        </li>
+        <li>
+          <a href = "sin_power_int_values.m">sin_power_int_values.m</a>, 
+          returns some values of the integral of the N-th power of
+          the sine function;
+        </li>
+        <li>
+          <a href = "slices.m">slices.m</a>, 
+          maximum number of pieces created by a given number of slices.
+        </li>
+        <li>
+          <a href = "spherical_harmonic.m">
+          spherical_harmonic.m</a>, 
+          evaluates the spherical harmonic function;
+        </li>
+        <li>
+          <a href = "spherical_harmonic_values.m">
+          spherical_harmonic_values.m</a>, 
+          returns some values of the spherical harmonic function;
+        </li>
+        <li>
+          <a href = "stirling_estimate.m">stirling_estimate.m</a>, 
+          approximates n! using Stirling's estimate.
+        </li>
+        <li>
+          <a href = "stirling1_table.m">stirling1_table.m</a>, 
+          tabulates the Stirling numbers of the first kind;
+        </li>
+        <li>
+          <a href = "stirling2_number.m">stirling2_number.m</a>, 
+          evaluates a Stirling number of the second kind;
+        </li>
+        <li>
+          <a href = "stirling2_row.m">stirling2_row.m</a>, 
+          evaluates all the Stirling numbers of the second kind for a given n;
+        </li>
+        <li>
+          <a href = "stirling2_table.m">stirling2_table.m</a>, 
+          tabulates the Stirling numbers of the second kind;
+        </li>
+        <li>
+          <a href = "tau.m">tau.m</a>, 
+          evaluates the Tau function, the number of distinct divisors;
+        </li>
+        <li>
+          <a href = "tau_values.m">tau_values.m</a>, 
+          returns some values of the Tau function;
+        </li>
+        <li>
+          <a href = "tetrahedron_num.m">tetrahedron_num.m</a>, 
+          returns the N-th tetrahedral number;
+        </li>
+        <li>
+          <a href = "timestamp.m">timestamp.m</a>, 
+          prints the current YMDHMS date as a timestamp;
+        </li>
+        <li>
+          <a href = "triangle_num.m">triangle_num.m</a>, 
+          returns the N-th triangle number;
+        </li>
+        <li>
+          <a href = "triangle_lower_to_i4.m">triangle_lower_to_i4.m</a>, 
+          converts a lower triangular coordinate to an integer;
+        </li>
+        <li>
+          <a href = "triangle_upper_to_i4.m">triangle_upper_to_i4.m</a>, 
+          converts an upper triangular coordinate to an integer;
+        </li>
+        <li>
+          <a href = "tribonacci_direct.m">tribonacci_direct.m</a>, 
+          computes the Nth Tribonacci number directly;
+        </li>
+        <li>
+          <a href = "tribonacci_recursive.m">tribonacci_recursive.m</a>, 
+          computes the first N Tribonacci numbers recursively;
+        </li>
+        <li>
+          <a href = "tribonacci_roots.m">tribonacci_roots.m</a>, 
+          computes the roots of the Tribonacci cubic equation.
+        </li>
+        <li>
+          <a href = "trinomial.m">trinomial.m</a>, 
+          computes a trinomial coefficient;
+        </li>
+        <li>
+          <a href = "v_hofstadter.m">v_hofstadter.m</a>, 
+          computes the Hofstadter V function;
+        </li>
+        <li>
+          <a href = "vibonacci.m">vibonacci.m</a>, 
+          computes the Vibonacci numbers;
+        </li>
+        <li>
+          <a href = "zeckendorf.m">zeckendorf.m</a>, 
+          produces the Zeckendorf decomposition of a positive integer;
+        </li>
+        <li>
+          <a href = "zernike_poly.m">zernike_poly.m</a>, 
+          evaluates a Zernike polynomial;
+        </li>
+        <li>
+          <a href = "zernike_poly_coef.m">zernike_poly_coef.m</a>, 
+          returns the coefficients of a Zernike polynomial;
+        </li>
+        <li>
+          <a href = "zeta_m1.m">zeta_m1.m</a>, 
+          approximates the Riemann Zeta Minus One function;
+        </li>
+        <li>
+          <a href = "zeta_m1_values.m">zeta_m1_values.m</a>, 
+          returns some stored values of the Riemann Zeta Minus 
+          One function;
+        </li>
+        <li>
+          <a href = "zeta_naive.m">zeta_naive.m</a>, 
+          approximates the Riemann Zeta function;
+        </li>
+        <li>
+          <a href = "zeta_values.m">zeta_values.m</a>, 
+          returns some stored values of the Riemann Zeta function;
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 June 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

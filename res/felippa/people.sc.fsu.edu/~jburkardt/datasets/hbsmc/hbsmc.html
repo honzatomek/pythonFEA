@@ -1,0 +1,770 @@
+<html>
+
+  <head>
+    <title>
+      HBSMC - Harwell Boeing Sparse Matrix Collection
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      HBSMC <br>
+      Harwell Boeing <br>
+      Sparse Matrix Collection
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>HBSMC</b>
+      is a dataset directory which
+      is the Harwell Boeing Sparse Matrix Collection, a 
+      representative collection of large sparse matrices gathered 
+      from a large variety of application areas.
+    </p>
+
+    <p>
+      The matrices in <b>HBSMC</b> can be used to test, verify, and
+      compare algorithms for solving sparse systems of linear equations.
+      There are also some least squares problems and eigenvalue 
+      calculations.
+    </p>
+
+    <p>
+      The original collection contained just 36 matrices, and those
+      are directly accessible here.  For the more recent and much larger
+      collection, you need to refer to the web site.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../f_src/dlap/dlap.html">
+      DLAP</a>,
+      a FORTRAN90 library which
+      carries out the iterative solution of sparse linear systems,
+      by Anne Greenbaum and Mark Seager.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/hb_io/hb_io.html">
+      HB_IO</a>,
+      a C++ library which
+      reads and writes sparse linear systems stored in the Harwell Boeing (HB) format
+      for sparse matrices.
+    </p>
+
+    <p>
+      <a href = "../../f_src/hb_read/hb_read.html">
+      HB_READ</a>,
+      a FORTRAN90 library which
+      reads files in the Harwell Boeing (HB) sparse matrix format;
+      This is a simplified interface intended to handle only the
+      most common format, complex unsymmetric assembled (CUA)
+      or real unsymmetric assembled (RUA).
+    </p>
+
+    <p>
+      <a href = "../../m_src/hb_to_mm/hb_to_mm.html">
+      HB_TO_MM</a>,
+      a MATLAB program which
+      converts a sparse matrix from Harwell Boeing (HB) 
+      to Matrix Market (MM) format.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hb_to_msm/hb_to_msm.html">
+      HB_TO_MSM</a>,
+      a MATLAB program which
+      converts a sparse matrix stored in a
+      Harwell Boeing (HB) format to MATLAB sparse matrix format;
+    </p>
+
+    <p>
+      <a href = "../../f77_src/hb_to_st/hb_to_st.html">
+      HB_TO_ST</a>,
+      a FORTRAN77 program which
+      converts a sparse matrix from Harwell Boeing (HB) format 
+      to Sparse Triplet (ST) format.
+    </p>
+
+    <p>
+      <a href = "../../c_src/superlu/superlu.html">
+      SUPERLU</a>,
+      a C program which 
+      applies a fast direct solution method
+      to sparse linear systems, and can read a matrix that is stored in
+      the Harwell Boeing sparse matrix format.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Iain Duff, Roger Grimes, John Lewis,<br>
+          User's Guide for the Harwell-Boeing Sparse Matrix Collection,<br>
+          October 1992.
+        </li>
+        <li>
+          Iain Duff, Roger Grimes, John Lewis,<br>
+          Sparse Matrix Test Problems,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 15, pages 1-14, March 1989.
+        </li>
+        <li>
+          <a href = "http://math.nist.gov/MatrixMarket/data/Harwell-Boeing/">
+                     http://math.nist.gov/MatrixMarket/data/Harwell-Boeing/</a>
+          the Matrix Market web site.
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      <table border = "1" caption = "Files you may copy">
+      <tr>
+        <th>Code</th><th>Pattern</th><th>Max Order</th><th>Max Nonzeroes</th>
+        <th>Note</th>
+      </tr>
+      <tr>
+        <td><a href = "abb313_pra.txt">abb313_pra.txt</a></td>
+        <td>pattern rectangular assembled</td><td>313x176</td><td>1557</td>
+        <td>Sudan survey</td>
+      </tr>
+      <tr>
+        <td><a href = "add20_rua.txt">add20_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>2395x2395</td><td>17319</td>
+        <td>Steve Hamm 20 bit adder</td>
+      </tr>
+      <tr>
+        <td><a href = "arc130_rua.txt">arc130_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>85x85</td><td>304</td>
+        <td>Laser problem</td>
+      </tr>
+      <tr>
+        <td><a href = "ash85_psa.txt">ash85_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>85x85</td><td>304</td>
+        <td>Holland survey</td>
+      </tr>
+      <tr>
+        <td><a href = "ash219_pra.txt">ash219_pra.txt</a></td>
+        <td>pattern rectangular assembled</td><td>219x85</td><td>438</td>
+        <td>Survey of Holland</td>
+      </tr>
+      <tr>
+        <td><a href = "ash292_psa.txt">ash292_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>292x292</td><td>1250</td>
+        <td>UK survey</td>
+      </tr>
+      <tr>
+        <td><a href = "ash331_pra.txt">ash331_pra.txt</a></td>
+        <td>pattern rectangular assembled</td><td>331x104</td><td>662</td>
+        <td>Scotland survey</td>
+      </tr>
+      <tr>
+        <td><a href = "ash608_pra.txt">ash608_pra.txt</a></td>
+        <td>pattern rectangular assembled</td><td>608x188</td><td>1216</td>
+        <td>England survey</td>
+      </tr>
+      <tr>
+        <td><a href = "ash958_pra.txt">ash958_pra.txt</a></td>
+        <td>pattern rectangular assembled</td><td>958x292</td><td>1916</td>
+        <td>UK survey</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_0000_rua.txt">bp_0000_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>3276</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_0200_rua.txt">bp_0200_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>3802</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_0400_rua.txt">bp_0400_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>4028</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_0600_rua.txt">bp_0600_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>4172</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_0800.txt">bp_0800.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>4534</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_1000.txt">bp_1000.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>4661</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_1200.txt">bp_1200.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>4726</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_1400.txt">bp_1400.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>4790</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "bp_1600.txt">bp_1600.txt</a></td>
+        <td>real unsymmetric assembled</td><td>822x822</td><td>4841</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "cannes24_psa.txt">cannes24_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>24x24</td><td>92</td>
+        <td>Lucien Marro symmetric pattern</td>
+      </tr>
+      <tr>
+        <td><a href = "cg05_cua.txt">cg05_cua.txt</a></td>
+        <td>complex unsymmetric assembled</td><td>25x25</td><td>105</td>
+        <td>Complex test matrix for SUPERLU</td>
+      </tr>
+      <tr>
+        <td><a href = "cg10_cua.txt">cg10_cua.txt</a></td>
+        <td>complex unsymmetric assembled</td><td>100x100</td><td>460</td>
+        <td>Complex test matrix for SUPERLU</td>
+      </tr>
+      <tr>
+        <td><a href = "cg20_cua.txt">cg20_cua.txt</a></td>
+        <td>complex unsymmetric assembled</td><td>400x400</td><td>1920</td>
+        <td>Complex test matrix for SUPERLU</td>
+      </tr>
+      <tr>
+        <td><a href = "cmat_cua.txt">cmat_cua.txt</a></td>
+        <td>complex unsymmetric assembled</td><td>1280x1280</td><td>22778</td>
+        <td>Complex test matrix for SuperLU</td>
+      </tr>
+      <tr>
+        <td><a href = "curtis54_pua.txt">curtis54_pua.txt</a></td>
+        <td>pattern unsymmetric assembled</td><td>54x54</td><td>291</td>
+        <td>Stiff biochemical ODE's</td>
+      </tr>
+      <tr>
+        <td><a href = "dwg961a_cua.txt">dwg961a_cua.txt</a></td>
+        <td>complex unsymmetric assembled</td><td>961x961</td><td>3405</td>
+        <td>Dispersive waveguide structures</td>
+      </tr>
+      <tr>
+        <td><a href = "eris1176_psa.txt">eris1176_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1176x1176</td><td>9864</td>
+        <td>Electrical network</td>
+      </tr>
+      <tr>
+        <td><a href = "fs_541_1_rua.txt">fs_541_1_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>541x541</td><td>4285</td>
+        <td>Stage 1 of stiff atmospheric ODE</td>
+      </tr>
+      <tr>
+        <td><a href = "fs_541_2_rua.txt">fs_541_2_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>541x541</td><td>4285</td>
+        <td>Stage 2 of stiff atmospheric ODE</td>
+      </tr>
+      <tr>
+        <td><a href = "fs_541_3_rua.txt">fs_541_3_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>541x541</td><td>4285</td>
+        <td>Stage 3 of stiff atmospheric ODE</td>
+      </tr>
+      <tr>
+        <td><a href = "fs_541_4_rua.txt">fs_541_4_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>541x541</td><td>4285</td>
+        <td>Stage 4 of stiff atmospheric ODE</td>
+      </tr>
+      <tr>
+        <td><a href = "g05_rua.txt">g05_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>25x25</td><td>105</td>
+        <td>Real test matrix for SUPERLU</td>
+      </tr>
+      <tr>
+        <td><a href = "g10_rua.txt">g10_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>100x100</td><td>460</td>
+        <td>Real test matrix for SUPERLU</td>
+      </tr>
+      <tr>
+        <td><a href = "g20_rua.txt">g20_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>400x400</td><td>1920</td>
+        <td>Real test matrix for SUPERLU</td>
+      </tr>
+      <tr>
+        <td><a href = "gent113_pua.txt">gent113_pua.txt</a></td>
+        <td>pattern unsymmetric assembled</td><td>113x113</td><td>655</td>
+        <td>Statistical application</td>
+      </tr>
+      <tr>
+        <td><a href = "ibm32_pua.txt">ibm32_pua.txt</a></td>
+        <td>pattern unsymmetric assembled</td><td>147x147</td><td>1298</td>
+        <td>IBM conference ad</td>
+      </tr>
+      <tr>
+        <td><a href = "illc1033_rra.txt">illc1033.txt</a></td>
+        <td>real rectangular assembled</td><td>1033x320</td><td>4732</td>
+        <td>Unsymmetric least squares problem</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh1_psa.txt">jagmesh1_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>936x936</td><td>3600</td>
+        <td>George: small hole square</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh2_psa.txt">jagmesh2_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1009x1009</td><td>3937</td>
+        <td>George: graded L</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh3_psa.txt">jagmesh3_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1089x1089</td><td>4225</td>
+        <td>George: plain square</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh4_psa.txt">jagmesh4_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1440x1440</td><td>5472</td>
+        <td>George: large hole square</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh5_psa.txt">jagmesh5_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1180x1180</td><td>4465</td>
+        <td>George: plus-shaped region</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh6_psa.txt">jagmesh6_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1377x1377</td><td>5185</td>
+        <td>George: H-shaped domain</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh7_psa.txt">jagmesh7_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1138x1138</td><td>4294</td>
+        <td>George: 3 hole problem</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh8_psa.txt">jagmesh8_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1141x1141</td><td>4303</td>
+        <td>George: 6 hole problem</td>
+      </tr>
+      <tr>
+        <td><a href = "jagmesh9_psa.txt">jagmesh9_psa.txt</a></td>
+        <td>pattern symmetric assembled</td><td>1349x1349</td><td>5225</td>
+        <td>George: pinched hole problem</td>
+      </tr>
+      <tr>
+        <td><a href = "lund_a_rsa.txt">lund_a_rsa.txt</a></td>
+        <td>real symmetric assembled</td><td>147x147</td><td>1298</td>
+        <td>stiffness and mass</td>
+      </tr>
+      <tr>
+        <td><a href = "lund_b_rsa.txt">lund_b_rsa.txt</a></td>
+        <td>real symmetric assembled</td><td>147x147</td><td>1294</td>
+        <td>stiffness and mass</td>
+      </tr>
+      <tr>
+        <td><a href = "mahindas_rua.txt">mahindas_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>1258x1258</td><td>7682</td>
+        <td>Unsymmetric matrix</td>
+      </tr>
+      <tr>
+        <td><a href = "mhd1280b_cua.txt">mhd1280b_cua.txt</a></td>
+        <td>complex unsymmetric assembled</td><td>1280x1280</td><td>22778</td>
+        <td>Alfven sprectra in magnetohydrodynamics</td>
+      </tr>
+      <tr>
+        <td><a href = "shl_000_rua.txt">shl_000_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>663x663</td><td>1687</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "shl_200_rua.txt">shl_200_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>663x663</td><td>1726</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "shl_400_rua.txt">shl_400_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>663x663</td><td>1712</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "str_000_rua.txt">str_000_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>363x363</td><td>2454</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "str_200_rua.txt">str_200_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>363x363</td><td>3068</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "str_400_rua.txt">str_400_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>363x363</td><td>3157</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "str_600_rua.txt">str_600_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>363x363</td><td>3279</td>
+        <td>Simplex method basis</td>
+      </tr>
+      <tr>
+        <td><a href = "utm300_rua.txt">utm300_rua.txt</a></td>
+        <td>real unsymmetric assembled</td><td>300x300</td><td>3155</td>
+        <td>UTM</td>
+      </tr>
+      <tr>
+        <td><a href = "will57_pua.txt">will57_pua.txt</a></td>
+        <td>pattern unsymmetric assembled</td><td>57x57</td><td>281</td>
+        <td>Jacobian of a switch circuit</td>
+      </tr>
+      <tr>
+        <td><a href = "will199_pua.txt">will199_pua.txt</a></td>
+        <td>pattern unsymmetric assembled</td><td>199x199</td><td>701</td>
+        <td>Stress analysis</td>
+      </tr>
+      <tr>
+        <td><a href = "young1c_csa.txt">young1c_csa.txt</a></td>
+        <td>complex unsymmetric assembled</td><td>841x841</td><td>4089</td>
+        <td>David Young aero research matrix</td>
+      </tr>
+      </table>
+    </p>
+
+    <p>
+      The following table lists the contents of the current version 
+      of the collection.
+    </p>
+
+    <p>
+      <table border = "1" caption = "Contents of most recent HBSMC">
+      <tr>
+        <th>Code</th><th>Discipline</th><th>Matrices</th><th>Max Order</th><th>Max Nonzeroes</th>
+      </tr>
+      <tr>
+        <td>ACOUST</td><td>Acoustic scattering</td><td>4</td><td>841</td><td>4089</td>
+      </tr>
+      <tr>
+        <td>AIRTFC</td><td>Air traffic control</td><td>1</td><td>2873</td><td>15032</td>
+      </tr>
+      <tr>
+        <td>ASTROPH</td><td>Astrophysics</td><td>2</td><td>765</td><td>24382</td>
+      </tr>
+      <tr>
+        <td>BCSPWR</td><td>Power network matrices</td><td>14</td><td>5300</td><td>13571</td>
+      </tr>
+      <tr>
+        <td>BCSSTRUC1</td><td>Dynamic analysis in structural engineering</td>
+        <td>26</td><td>2003</td><td>42943</td>
+      </tr>
+      <tr>
+        <td>BCSSTRUC2</td><td>Static analysis in structural engineering</td>
+        <td>5</td><td>11948</td><td>80519</td>
+      </tr>
+      <tr>
+        <td>BCSSTRUC3</td><td>Structures, eigenproblems</td><td>22</td><td>15439</td><td>133840</td>
+      </tr>
+      <tr>
+        <td>BCSSTRUC4</td><td>Dynamic analysis in structural engineering</td>
+        <td>5</td><td>4410</td><td>111717</td>
+      </tr>
+      <tr>
+        <td>BCSSTRUC5</td><td>Structures, linear equations</td><td>36</td><td>44609</td><td>1029655</td>
+      </tr>
+      <tr>
+        <td>BCSSTRUC6</td><td>Structural engineering</td><td>2</td><td>3345</td><td>13047</td>
+      </tr>
+      <tr>
+        <td>CANNES</td><td>Finite elements in aircraft design</td><td>18</td><td>838</td><td>5424</td>
+      </tr>
+      <tr>
+        <td>CEGB</td><td>Finite elements in structural engineering</td>
+        <td>4</td><td>3306</td><td>9378</td>
+      </tr>
+      <tr>
+        <td>CHEMINP</td><td>Chemical engineering plant models</td><td>5</td><td>425</td><td>1339</td>
+      </tr>
+      <tr>
+        <td>CHEMWEST</td><td>Chemical engineering</td><td>16</td><td>2021</td><td>7353</td>
+      </tr>
+      <tr>
+        <td>CIRPHYS</td><td>Circuit physics</td><td>1</td><td>991</td><td>6027</td>
+      </tr>
+      <tr>
+        <td>COUNTERX</td><td>Counter examples, small matrices</td><td>3</td><td>11</td><td>76</td>
+      </tr>
+      <tr>
+        <td>DWT</td><td>Everstine test set, ship structures</td><td>30</td><td>2680</td><td>23853</td>
+      </tr>
+      <tr>
+        <td>ECONAUS</td><td>Australian economic models</td><td>11</td><td>2529</td><td>90158</td>
+      </tr>
+      <tr>
+        <td>ECONIEA</td><td>Economic models</td><td>9</td><td>497x507</td><td>53403</td>
+      </tr>
+      <tr>
+        <td>FACSIMILE</td><td>Chemical kinetics problems</td><td>10</td><td>760</td><td>5976</td>
+      </tr>
+      <tr>
+        <td>GEMAT</td><td>Optimal power flow problems</td><td>3</td><td>4929</td><td>47369</td>
+      </tr>
+      <tr>
+        <td>GRENOBLE</td><td>Simulation of Computer Systems</td><td>7</td><td>1107</td><td>5664</td>
+      </tr>
+      <tr>
+        <td>JAGMESH</td><td>Finite element model problem</td><td>9</td><td>1440</td><td>5472</td>
+      </tr>
+      <tr>
+        <td>LANPRO</td><td>Linear equations in structural engineering</td>
+        <td>7</td><td>960</td><td>8402</td>
+      </tr>
+      <tr>
+        <td>LAPLACE</td><td>Model PDE problems</td><td>3</td><td>900</td><td>4322</td>
+      </tr>
+      <tr>
+        <td>LAPU</td><td>Unassembled Laplace finite element matrices</td>
+        <td>1</td><td>25</td><td>64</td>
+      </tr>
+      <tr>
+        <td>LNS</td><td>Fluid flow modeling</td><td>7</td><td>3937</td><td>25407</td>
+      </tr>
+      <tr>
+        <td>LOCKHEED</td><td>Unassembled structural engineering matrices </td>
+        <td>4</td><td>3491</td><td>13507</td>
+      </tr>
+      <tr>
+        <td>LSHAPE</td><td>Graded L-shape patterns</td><td>21</td><td>3466</td><td>13681</td>
+      </tr>
+      <tr>
+        <td>LSQ</td><td>Least squares surveying problems</td><td>4</td><td>1850</td><td>10608</td>
+      </tr>
+      <tr>
+        <td>MANTEUFFEL</td><td>Unassembled finite element matrices</td><td>10</td>
+        <td>5976</td><td>15680</td>
+      </tr>
+      <tr>
+        <td>NNCENG</td><td>Flow in networks</td><td>1</td><td>434</td><td>4710</td>
+      </tr>
+      <tr>
+        <td>NUCL</td><td>Nuclear reactor core modelling</td><td>3</td><td>1374</td><td>8606</td>
+      </tr>
+      <tr>
+        <td>OILGEN</td><td>Oil reservoir modelling</td><td>19</td><td>5005</td><td>20033</td>
+      </tr>
+      <tr>
+        <td>PLATZ</td><td>Oceanography</td><td>4</td><td>1919</td><td>17159</td>
+      </tr>
+      <tr>
+        <td>PORES</td><td>Reservoir modeling</td><td>3</td><td>1224</td><td>9613</td>
+      </tr>
+      <tr>
+        <td>PSADMIT</td><td>Power system networks</td><td>4</td><td>1138</td><td>2596</td>
+      </tr>
+      <tr>
+        <td>PSMIGR</td><td>Demography</td><td>3</td><td>3140</td><td>543162</td>
+      </tr>
+      <tr>
+        <td>SAYLOR</td><td>Oil reservoir modeling</td><td>3</td><td>3564</td><td>22316</td>
+      </tr>
+      <tr>
+        <td>SHERMAN</td><td>Oil reservoir modeling</td><td>5</td><td>5005</td><td>20033</td>
+      </tr>
+      <tr>
+        <td>SMTAPE</td><td>Original Harwell test set</td><td>36</td><td>822</td><td>4841</td>
+      </tr>
+      <tr>
+        <td>STEAM</td><td>Oil recovery</td><td>3</td><td>600</td><td>13760</td>
+      </tr>
+      <tr>
+        <td>WATT</td><td>Petroleum Engineering</td><td>2</td><td>1865</td><td>11550</td>
+      </tr>
+      </table>
+    </p>
+
+
+
+    <h2>
+      <a name = "HB_Sparse_Matrix_Storage">HB Sparse Matrix Storage</a>
+    </h2>
+
+    <p>
+      The Harwell Boeing Sparse Matrix Collection uses a special
+      kind of sparse matrix storage for most of the matrices in the collection.
+    </p>
+
+    <p>
+      The standard sparse matrix format is column oriented.  That is, the 
+      matrix is represented by a sequence of columns.  Each column is held 
+      as a sparse vector, represented by a list of row indices of the 
+      entries in an integer array and a list of the corresponding values 
+      in a separate real array.  A single integer array and a single real 
+      array are used to store the row indices and the values, respectively, 
+      for all the columns.
+    </p>
+
+    <p>
+      Data for each column are stored in consecutive locations.  The columns 
+      are stored in order, and there is no space between columns.  A 
+      separate integer array holds the location of the first entry of each 
+      column, and the first free location.  For symmetric and Hermitian 
+      matrices, only the entries of the lower triangle are stored, including 
+      the diagonal.  For antisymmetric matrices, only the strict 
+      lower triangle is stored.
+    </p>
+
+    <p>
+      Here is a simple example of a 5 by 5 matrix:
+      <pre>
+        1.0 -3.0  0.0 -1.0  0.0
+        0.0  0.0 -2.0  0.0  3.0
+        2.0  0.0  0.0  0.0  0.0
+        0.0  4.0  0.0 -4.0  0.0
+        5.0  0.0 -5.0  0.0  6.0
+      </pre>
+    </p>
+
+    <p>
+      The Harwell Boeing format essentially thinks of this matrix as a
+      collection of 5 column vectors:
+      <pre>
+        1.0 -3.0 -2.0 -1.0  3.0
+        2.0  4.0 -5.0 -4.0  6.0
+        5.0
+      </pre>
+      All the entries in a column share the same column index, of course,
+      but to completely identify an entry, we will also need to remember
+      what row it belonged to.
+    </p>
+
+    <p>
+      This matrix would be stored in the arrays 
+      <ul>
+        <li>
+          <b>COLPTR</b> (the location of the first entry of each column), 
+        </li>
+        <li>
+          <b>ROWIND</b> (the row index of each entry) and 
+        </li>
+        <li>
+          <b>VALUES</b> (the numerical value of each entry) 
+        </li>
+      </ul>
+      as follows:
+      <pre>
+        Subscripts:   1    2    3    4    5    6    7    8    9   10   11
+
+        COLPTR        1    4    6    8   10   12
+        ROWIND        1    3    5    1    4    2    5    1    4    2    5
+        VALUES      1.0  2.0  5.0 -3.0  4.0 -2.0 -5.0 -1.0 -4.0  3.0  6.0
+      </pre>
+      We can recover column 5 of the original matrix, say, by observing that
+      its first entry is in position COLPTR(5)=10 of arrays ROWIND and VALUES.
+      This entry is in row ROWIND(10)=2 and has value VALUES(10)=3.0.  
+      Other entries in column 5 are found by scanning ROWIND and VALUES to
+      position COLPTR(6)-1, that is, position 11.  Thus, the only other 
+      entry in column 5 is in row ROWIND(11)=5 with value VALUES(11)=6.
+    </p>
+
+    <h2>
+      <a name = "HB_Finite_Element_Matrix_Storage">
+      HB Finite Element Matrix Storage</a>
+    </h2>
+
+    <p>
+      The Harwell Boeing finite element storage format is used for those
+      matrices derived from finite element problems.
+    </p>
+
+    <p>
+      Matrices arising in finite element applications are usually assembled from
+      numerous small elemental matrices.  The collection includes a few sparse
+      matrices in original unassembled form.  The storage of the individual
+      unassembled matrices is based on the general sparse format, which 
+      stores a matrix as a list of matrix columns.  The elemental 
+      representation stores the matrix as a list of elemental matrices.  
+      Each elemental matrix is represented by a list of the row/column 
+      indices (variables) associated with the element and by a small dense 
+      matrix giving the numerical values by columns, or in the symmetric 
+      case, only the lower triangular part.  The lists of indices are
+      held contiguously, just as for the lists of row indices in the standard
+      format.  The dense matrices are held contiguously in a separate array,
+      with each matrix held by columns.  Although there is not a one to one
+      correspondence between the arrays of integer and numerical values, the
+      representation does not hold the pointers to the beginning of the real 
+      values for each element.  These pointers can be created from the index 
+      start pointers (ELTPTR) after noting that an element with NU variables 
+      has NU*NU real values, or (NU*(NU+1))/2 in the symmetric case.
+    </p>
+
+    <p>
+      The unassembled finite element storage scheme can be illustrated
+      with a small, 5 by 5 symmetric example matrix:
+      <pre>
+        5.0  0.0  0.0  1.0  2.0
+        0.0  4.0  3.0  0.0  6.0
+        0.0  3.0  7.0  8.0  1.0
+        1.0  0.0  8.0  9.0  0.0
+        2.0  6.0  1.0  0.0 10.0
+      </pre>
+      which is to be assembled from four symmetric elemental matrices:
+      <pre>
+            1   4         1   5        2   3   5        3   4
+        1 (2.0 1.0)   1 (3.0 2.0)  2 (4.0 3.0 6.0)  3 (2.0 8.0)
+        4 (1.0 7.0)   5 (2.0 8.0)  3 (3.0 5.0 1.0)  4 (8.0 2.0)
+                                   5 (6.0 1.0 2.0)
+      </pre>
+      The variable indices are indicated by the integers marking the
+      rows and columns.  Because this matrix is symmetric, only the
+      diagonal and lower triangular elements are to be stored.  
+      Using the arrays:
+      <ul>
+        <li>
+          ELTPTR = location in VARIND of first entry for a given element;
+        </li>
+        <li>
+          VARIND = variable index = row index;
+        </li>
+        <li>
+          VALUES = numerical values,
+        </li>
+      </ul>
+      the matrix would be stored as follows:
+      <pre> 
+        Subscripts:  1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
+        ELTPTR:      1       3       5           8      10
+        VARIND:      1   4   1   5   2   3   5   3   4
+        VALUES:      2.  1.  7.  3.  2.  8.  4.  3.  6.  5.  1.  2.  2.  8.  2.
+      </pre>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 18 February 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial html skeleton created by HTMLINDEX. -->
+
+</html>

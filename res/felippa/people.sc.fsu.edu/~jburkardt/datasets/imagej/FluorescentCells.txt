@@ -1,0 +1,8 @@
+FluorescentCells.jpg
+
+The image is made from a Molecular Probes demo slide:
+
+Cells: bovine pulmonary arthery endothelial cells
+Blue: nucleus stained with DAPI
+Green: Tubulin stained with Bodipy FL goat anti-mouse IgG
+Red: F-Actin stained with Texas Red X-Phalloidin

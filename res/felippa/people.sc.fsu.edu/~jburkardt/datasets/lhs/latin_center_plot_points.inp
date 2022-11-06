@@ -1,0 +1,18 @@
+#  An input file to PLOT_POINTS
+#
+#  We want a box around the data cornered at (0,0) X (1,1)
+#
+#  We want the "shadow" of X and Y to be marked on the axes.
+#
+box
+0 0 1 1
+shadow
+#
+read latin_center.txt
+title Latin Center Square
+output latin_center_dot.eps
+dot
+output latin_center_balloon.eps
+balloon
+#
+quit

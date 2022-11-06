@@ -1,0 +1,17 @@
+# Title: Accidents in 5 weeks to 647 women working on high-explosive shells
+# 1: Number of accidents
+# 2: Observed frequency
+# 3: Poisson expected frequency
+#
+#  Reference:
+#  M Greenwood, G Yule,
+#  An inquiry into the nature of frequency-distributions of multiple happenings,
+#  Journal of the Royal Statistical Society,
+#  Volume 83, pages 255-279, 1920.
+#
+0  447  406.3
+1  132  189.0
+2   42   44.0
+3   21    6.8
+4    3    0.8
+5    2    0.1

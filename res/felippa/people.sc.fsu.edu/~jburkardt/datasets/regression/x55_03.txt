@@ -1,0 +1,29 @@
+#  x55_03.txt
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Mathematical Algorithms for Linear Regression,
+#    Academic Press, 1991, page 323,
+#    ISBN 0-12-656460-4.
+#
+#  Discussion:
+#
+#    Linear inequality constraints E * X >= H.
+#
+9 columns
+5 rows
+Index
+E1
+E2
+E3
+E4
+E5
+E6
+E7
+H
+1  1 -2  1  0  0  0  0  0
+2  0  1 -2  1  0  0  0  0
+3  0  0  1 -2  1  0  0  0
+4  0  0  0  1 -2  1  0  0
+5  0  0  0  0  1 -2  1  0

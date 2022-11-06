@@ -1,0 +1,25 @@
+# Title: Sex ratios in 6115 sibships of twelve in Saxony, 
+# 1: Number of males, p = 0.519215
+# 2: Number of females, p = 0.480785
+# 3: Expected frequency
+# 4: Observed frequency
+#
+#  Reference:
+#  A Geissler,
+#  Beitraege zur Frage des Geschlechtsverhaeltnisses der Geborenen,
+#  Z. K. Saechs. Stat. Bur, 
+#  Volume 35, pages 1-24, 1889.
+#
+12   0     2.3     0
+11   1    26.1    45
+10   2   132.8   181
+ 9   3   410.0   478
+ 8   4   854.3   829
+ 7   5  1265.6  1112
+ 6   6  1367.3  1343
+ 5   7  1085.2  1033
+ 4   8   628.1   670
+ 3   9   258.5   286
+ 2  10    71.8   104
+ 1  11    12.1    24
+ 0  12     0.9     3

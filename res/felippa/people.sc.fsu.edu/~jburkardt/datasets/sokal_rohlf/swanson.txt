@@ -1,0 +1,26 @@
+# Title: Soil ph levels at surface and subsurface
+# 1: County
+# 2: Soil type
+# 3: Surface ph
+# 4: Subsurface ph
+#
+#  Reference:
+#  C Swanson, W Latshaw, E Tague,
+#  Relation of the calcium content of some Kansas soils to soil reaction by electrometric titration,
+#  Journal of Agricultural Research,
+#  Volume 20, pages 855-868, 1921.
+#
+
+"Finney",     "Richfield silt loam",      6.57, 8.34
+"Montgomery", "Summit silty clay loam",   6.77, 6.13
+"Doniphan",   "Brown silt loam",          6.53, 6.32
+"Jewell",     "Jewell silt loam",         6.71, 8.30
+"Jewell",     "Colby silt loam",          6.72, 8.44
+"Shawnee",    "Crawford silty clay loam", 6.01, 6.80
+"Cherokee",   "Oswego silty clay loam",   4.99, 4.42
+"Greenwood",  "Summit silty clay loam",   5.49, 7.90
+"Montgomery", "Cherokee silt loam",       5.56, 5.20
+"Montgomery", "Oswego silt loam",         5.32, 5.32
+"Cherokee",   "Bates silt loam",          5.92, 5.21
+"Cherokee",   "Cherokee silt loam",       6.55, 5.66
+"Cherokee",   "Neosho silt loam",         6.53, 5.66

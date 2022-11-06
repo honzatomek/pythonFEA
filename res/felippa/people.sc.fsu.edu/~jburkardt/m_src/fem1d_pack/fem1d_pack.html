@@ -1,0 +1,223 @@
+<html>
+
+  <head>
+    <title>
+      fem1d_pack
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      fem1d_pack
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>fem1d_pack</b>,
+      a MATLAB code which
+      contains utilities for implementing the finite element method
+      in a 1D region.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>fem1d_pack</b> is available in
+      <a href = "../../c_src/fem1d_pack/fem1d_pack.html">a C version</a> and
+      <a href = "../../cpp_src/fem1d_pack/fem1d_pack.html">a C++ version</a> and
+      <a href = "../../f_src/fem1d_pack/fem1d_pack.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/fem1d_pack/fem1d_pack.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../data/fem1d/fem1d.html">
+      fem1d</a>,
+      a data directory which
+      contains examples of 1d fem files,
+      text files that describe a 1d finite element model
+      and associated nodal values.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d/fem1d.html">
+      fem1d</a>,
+      a MATLAB code which
+      applies the finite element method to a 1d linear two point
+      boundary value problem.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_adaptive/fem1d_adaptive.html">
+      fem1d_adaptive</a>,
+      a MATLAB code which
+      applies the finite element method to a 1d linear two point
+      boundary value problem
+      using adaptive refinement to improve the solution.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_bvp_linear/fem1d_bvp_linear.html">
+      fem1d_bvp_linear</a>,
+      a MATLAB code which
+      applies the finite element method, with piecewise linear elements,
+      to a two point boundary value problem in one spatial dimension.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_display/fem1d_display.html">
+      fem1d_display</a>,
+      a MATLAB code which
+      reads three files defining a 1d arbitrary degree finite element function,
+      and displays a plot.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_function_10_display/fem1d_function_10_display.html">
+      fem1d_function_10_display</a>,
+      a MATLAB code which
+      reads three files defining a 1d piecewise linear finite element function
+      and displays a plot.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_nonlinear/fem1d_nonlinear.html">
+      fem1d_nonlinear</a>,
+      a MATLAB code which
+      applies the finite element method to a 1d nonlinear two point
+      boundary value problem.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_pack_test/fem1d_pack_test.html">
+      fem1d_pack_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_pmethod/fem1d_pmethod.html">
+      fem1d_pmethod</a>,
+      a MATLAB code which
+      applies the p-method version of the finite element method to a 1d linear
+      two point boundary value problem.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_project/fem1d_project.html">
+      fem1d_project</a>,
+      a MATLAB code which
+      projects data into a finite element space, including the least squares
+      approximation of data, or the projection of a finite element solution
+      from one mesh to another.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem1d_sample/fem1d_sample.html">
+      fem1d_sample</a>,
+      a MATLAB code which
+      samples a scalar or vector finite element function of one variable,
+      defined by fem files,
+      returning interpolated values at the sample points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem2d_pack/fem2d_pack.html">
+      fem2d_pack</a>,
+      a MATLAB code which
+      contains utilities for 2d finite element calculations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem3d_pack/fem3d_pack.html">
+      fem3d_pack</a>,
+      a MATLAB code which
+      contains utilities for 3d finite element calculations.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Hans Rudolf Schwarz,<br>
+          Finite Element Methods,<br>
+          Academic Press, 1988,<br>
+          ISBN: 0126330107,<br>
+          LC: TA347.F5.S3313.
+        </li>
+        <li>
+          Gilbert Strang, George Fix,<br>
+          An Analysis of the Finite Element Method,<br>
+          Cambridge, 1973,<br>
+          ISBN: 096140888X,<br>
+          LC: TA335.S77.
+        </li>
+        <li>
+          Olgierd Zienkiewicz,<br>
+          The Finite Element Method,<br>
+          Sixth Edition,<br>
+          Butterworth-Heinemann, 2005,<br>
+          ISBN: 0750663200,<br>
+          LC: TA640.2.Z54
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "bandwidth_mesh.m">bandwidth_mesh.m</a>
+          computes the bandwidth associated with the finite element mesh;
+        </li>
+        <li>
+          <a href = "legendre_com.m">legendre_com.m</a>
+          computes abscissas and weights for Gauss-Legendre quadrature.
+        </li>
+        <li>
+          <a href = "local_basis_1d.m">local_basis_1d.m</a>
+          evaluates the basis functions in an element.
+        </li>
+        <li>
+          <a href = "local_basis_prime_1d.m">local_basis_prime_1d.m</a>
+          evaluates the basis function derivatives in an element.
+        </li>
+        <li>
+          <a href = "local_fem_1d.m">local_fem_1d.m</a>
+          evaluates a local finite element function.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 18 January 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

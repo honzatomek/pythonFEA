@@ -1,0 +1,410 @@
+<html>
+
+  <head>
+    <title>
+      cube_felippa_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      cube_felippa_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>cube_felippa_rule</b>,
+      a MATLAB code which
+      generates the points and weights of a Felippa quadrature rule over
+      the interior of a cube in 3D.
+    </p>
+
+    <p>
+      Actually, the word "cube" is meant to designate any quadrature region
+      defined by:
+      <pre>
+        A(1) <= X <= B(1)
+        A(2) <= Y <= B(2)
+        A(3) <= Z <= B(3)
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>cube_felippa_rule</b> is available in
+      <a href = "../../c_src/cube_felippa_rule/cube_felippa_rule.html">a C version</a> and
+      <a href = "../../cpp_src/cube_felippa_rule/cube_felippa_rule.html">a C++ version</a> and
+      <a href = "../../f_src/cube_felippa_rule/cube_felippa_rule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/cube_felippa_rule/cube_felippa_rule.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/annulus_rule/annulus_rule.html">
+      annulus_rule</a>,
+      a matlab code which
+      computes a quadrature rule for estimating integrals of a function 
+      over the interior of a circular annulus in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/circle_rule/circle_rule.html">
+      circle_rule</a>,
+      a matlab code which
+      computes quadrature rules 
+      over the circumference of a circle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_arbq_rule/cube_arbq_rule.html">
+      cube_arbq_rule</a>,
+      a matlab code which
+      computes quadrature rules 
+      with exactness up to total degree 15,
+      over the interior of a cube in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_exactness/cube_exactness.html">
+      cube_exactness</a>,
+      a matlab code which
+      investigates the polynomial exactness of quadrature rules
+      over the interior of a cube in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_felippa_rule_test/cube_felippa_rule_test.html">
+      cube_felippa_rule_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_grid/cube_grid.html">
+      cube_grid</a>,
+      a matlab code which
+      computes a grid of points
+      over the interior of a cube in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_integrals/cube_integrals.html">
+      cube_integrals</a>,
+      a matlab code which
+      returns the exact value of the integral of any monomial
+      over the interior of the unit cube in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_monte_carlo/cube_monte_carlo.html">
+      cube_monte_carlo</a>,
+      a matlab code which
+      applies a monte carlo method to estimate the integral of a function
+      over the interior of the unit cube in 3d;
+    </p>
+
+    <p>
+      <a href = "../../m_src/disk_rule/disk_rule.html">
+      disk_rule</a>,
+      a matlab code which
+      computes quadrature rules 
+      over the interior of a disk in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pyramid_felippa_rule/pyramid_felippa_rule.html">
+      pyramid_felippa_rule</a>,
+      a matlab code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a pyramid in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pyramid_rule/pyramid_rule.html">
+      pyramid_rule</a>,
+      a matlab code which
+      computes a quadrature rule 
+      over the interior of a pyramid in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/simplex_gm_rule/simplex_gm_rule.html">
+      simplex_gm_rule</a>,
+      a matlab code which
+      defines grundmann-moeller quadrature rules 
+      over the interior of a simplex in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/sphere_lebedev_rule/sphere_lebedev_rule.html">
+      sphere_lebedev_rule</a>,
+      a matlab code which
+      computes lebedev quadrature rules
+      on the surface of the unit sphere in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/square_arbq_rule/square_arbq_rule.html">
+      square_arbq_rule</a>,
+      a matlab code which
+      returns quadrature rules, 
+      with exactness up to total degree 20,
+      over the interior of the symmetric square in 2d,
+      by hong xiao and zydrunas gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../m_src/square_felippa_rule/square_felippa_rule.html">
+      square_felippa_rule</a>,
+      a matlab code which
+      returns the points and weights of a felippa quadrature rule
+      over the interior of a square in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/square_symq_rule/square_symq_rule.html">
+      square_symq_rule</a>,
+      a matlab code which
+      returns symmetric quadrature rules, 
+      with exactness up to total degree 20,
+      over the interior of the symmetric square in 2d,
+      by hong xiao and zydrunas gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_arbq_rule/tetrahedron_arbq_rule.html">
+      tetrahedron_arbq_rule</a>,
+      a matlab code which
+      returns quadrature rules, 
+      with exactness up to total degree 15,
+      over the interior of a tetrahedron in 3d,
+      by hong xiao and zydrunas gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_felippa_rule/tetrahedron_felippa_rule.html">
+      tetrahedron_felippa_rule</a>,
+      a matlab code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_keast_rule/tetrahedron_keast_rule.html">
+      tetrahedron_keast_rule</a>,
+      a matlab code which
+      defines ten quadrature rules, with exactness degrees 0 through 8,
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_ncc_rule/tetrahedron_ncc_rule.html">
+      tetrahedron_ncc_rule</a>,
+      a matlab code which
+      defines newton-cotes closed quadrature rules 
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_nco_rule/tetrahedron_nco_rule.html">
+      tetrahedron_nco_rule</a>,
+      a matlab code which
+      defines newton-cotes open quadrature rules 
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_dunavant_rule/triangle_dunavant_rule.html">
+      triangle_dunavant_rule</a>,
+      a matlab code which
+      defines dunavant rules for quadrature 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_fekete_rule/triangle_fekete_rule.html">
+      triangle_fekete_rule</a>,
+      a matlab code which
+      defines fekete rules for interpolation or quadrature 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_felippa_rule/triangle_felippa_rule.html">
+      triangle_felippa_rule</a>,
+      a matlab code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_lyness_rule/triangle_lyness_rule.html">
+      triangle_lyness_rule</a>,
+      a matlab code which
+      returns lyness-jespersen quadrature rules 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_monte_carlo/triangle_monte_carlo.html">
+      triangle_monte_carlo</a>,
+      a matlab code which
+      uses the monte carlo method to estimate integrals
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_ncc_rule/triangle_ncc_rule.html">
+      triangle_ncc_rule</a>,
+      a matlab code which
+      defines newton-cotes closed (ncc) quadrature rules
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_nco_rule/triangle_nco_rule.html">
+      triangle_nco_rule</a>,
+      a matlab code which
+      defines newton-cotes open (nco) quadrature rules
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_symq_rule/triangle_symq_rule.html">
+      triangle_symq_rule</a>,
+      a matlab code which
+      returns efficient symmetric quadrature rules, 
+      with exactness up to total degree 50,
+      over the interior of an arbitrary triangle in 2d,
+      by hong xiao and zydrunas gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_wandzura_rule/triangle_wandzura_rule.html">
+      triangle_wandzura_rule</a>,
+      a matlab code which
+      defines wandzura rules for quadrature
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/wedge_felippa_rule/wedge_felippa_rule.html">
+      wedge_felippa_rule</a>,
+      a matlab code which
+      returns quadratures rules for approximating integrals
+      over the interior of the unit wedge in 3d.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Carlos Felippa,<br>
+          A compendium of FEM integration formulas for symbolic work,<br>
+          Engineering Computation,<br>
+          Volume 21, Number 8, 2004, pages 867-890.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "comp_next.m">comp_next.m</a>, 
+          computes the compositions of the integer N into K parts.
+        </li>
+        <li>
+          <a href = "cube_monomial.m">cube_monomial.m</a>, 
+          returns the exact integral of a monomial in a cube in 3D;
+        </li>
+        <li>
+          <a href = "cube_monomial_test.m">cube_monomial_test.m</a>, 
+          tests CUBE_MONOMIAL.
+        </li>
+        <li>
+          <a href = "cube_quad_test.m">cube_quad_test.m</a>, 
+          tests the quadrature rules for a cube in 3D.
+        </li>
+        <li>
+          <a href = "cube_rule.m">cube_rule.m</a>, 
+          returns a quadrature rule for a cube in 3D;
+        </li>
+        <li>
+          <a href = "cube_volume.m">cube_volume.m</a>, 
+          returns the volume of a cube in 3D;
+        </li>
+        <li>
+          <a href = "line_unit_o01.m">line_unit_o01.m</a>,
+          returns a 1 point quadrature rule for the unit line.
+        </li>
+        <li>
+          <a href = "line_unit_o02.m">line_unit_o02.m</a>,
+          returns a 2 point quadrature rule for the unit line.
+        </li>
+        <li>
+          <a href = "line_unit_o03.m">line_unit_o03.m</a>,
+          returns a 3 point quadrature rule for the unit line.
+        </li>
+        <li>
+          <a href = "line_unit_o04.m">line_unit_o04.m</a>,
+          returns a 4 point quadrature rule for the unit line.
+        </li>
+        <li>
+          <a href = "line_unit_o05.m">line_unit_o05.m</a>,
+          returns a 5 point quadrature rule for the unit line.
+        </li>
+        <li>
+          <a href = "monomial_value.m">monomial_value.m</a>, 
+          evaluates a monomial.
+        </li>
+        <li>
+          <a href = "r8vec_direct_product.m">r8vec_direct_product.m</a>, 
+          creates a direct product of R8VEC's.
+        </li>
+        <li>
+          <a href = "r8vec_direct_product2.m">r8vec_direct_product2.m</a>,
+          creates a direct product of R8VEC's.
+        </li>
+        <li>
+          <a href = "subcomp_next.m">subcomp_next.m</a>, 
+          computes the next subcomposition of N into K parts.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 22 December 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

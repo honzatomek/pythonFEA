@@ -1,0 +1,335 @@
+<html>
+
+  <head>
+    <title>
+      triangle
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      triangle
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>triangle</b>,
+      a MATLAB code which
+      can compute properties, including angles, area, centroid, circumcircle,
+      edge lengths, incircle, orientation, orthocenter, and quality, 
+      of a triangle in 2D.
+    </p>
+
+    <p>
+      These properties include:
+      <ul>
+        <li>
+          Angles;
+        </li>
+        <li>
+          Area;
+        </li>
+        <li>
+          Centroid;
+        </li>
+        <li>
+          Circumcircle (center and radius);
+        </li>
+        <li>
+          Edge lengths;
+        </li>
+        <li>
+          Incircle (center and radius);
+        </li>
+        <li>
+          Orientation;
+        </li>
+        <li>
+          Orthocenter;
+        </li>
+        <li>
+          Quality: ratio of incircle radius / circumcircle radius;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>triangle</b> is available in
+     <a href = "../../c_src/triangle/triangle.html">a C version</a> and
+     <a href = "../../cpp_src/triangle/triangle.html">a C++ version</a> and
+      <a href = "../../f_src/triangle/triangle.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/triangle/triangle.html">a MATLAB version</a> and
+      <a href = "../../py_src/triangle/triangle.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/triangle_test/triangle_test.html">
+      triangle_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/ellipse/ellipse.html">
+      ellipse</a>,
+      a MATLAB code which 
+      carries out geometric calculations for ellipses and ellipsoids, including
+      area, distance to a point, eccentricity, perimeter, points along the 
+      perimeter, random sampling, conversion between standard and quadratic forms.
+    </p>
+
+    <p>
+      <a href = "../../m_src/geometry/geometry.html">
+      geometry</a>,
+      a MATLAB code which
+      performs geometric calculations in 2, 3 and n dimensional space.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypersphere/hypersphere.html">
+      hypersphere</a>,
+      a MATLAB code which
+      carries out various operations for an m-dimensional hypersphere, including 
+      converting between cartesian and spherical coordinates, 
+      stereographic projection, sampling the surface of the sphere, and
+      computing the surface area and volume.
+    </p>
+
+    <p>
+      <a href = "../../m_src/polygon/polygon.html">
+      polygon</a>,
+      a MATLAB code which
+      computes properties of an arbitrary polygon in the plane, defined
+      by a sequence of vertices, including interior angles, area, centroid,
+      containment of a point, convexity, diameter, distance to a point, 
+      inradius, lattice area, nearest point in set, outradius, uniform sampling.
+    </p>
+
+    <p>
+      <a href = "../../m_src/quadrilateral/quadrilateral.html">
+      quadrilateral</a>,
+      a MATLAB code which
+      carries out geometric calculations on quadrilaterals, including
+      angles, area, distances, nearest point, point containment, perimeter,
+      and random generation.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron/tetrahedron.html">
+      tetrahedron</a>, 
+      a MATLAB code which 
+      computes properties of a given tetrahedron.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_analyze/triangle_analyze.html">
+      triangle_analyze</a>,
+      a MATLAB code which
+      reads a triangle from a file, and then reports various properties.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_interpolate/triangle_interpolate.html">
+      triangle_interpolate</a>,
+      a MATLAB code which
+      shows how vertex data can be interpolated at any point
+      in the interior of a triangle.
+    </p>
+
+    <p>
+      <a href = "../../datasets/triangles/triangles.html">
+      triangles</a>, 
+      a dataset directory which 
+      contains examples of triangles; 
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "i4_modp.m">
+          i4_modp.m</a>,
+          returns the nonnegative remainder of integer division;
+        </li>
+        <li>
+          <a href = "i4_wrap.m">
+          i4_wrap.m</a>,
+          forces an integer to lie in a given range;
+        </li>
+        <li>
+          <a href = "line_exp_perp_2d.m">
+          line_exp_perp_2d.m</a>,
+          returns a line perpendicular to an explicit line in 2D;
+        </li>
+        <li>
+          <a href = "line_exp2imp_2d.m">
+          line_exp2imp_2d.m</a>,
+          converts an explicit line to an implicit line in 2D;
+        </li>
+        <li>
+          <a href = "lines_exp_int_2d.m">
+          lines_exp_int_2d.m</a>,
+          finds the intersection of two explicit lines in 2D;
+        </li>
+        <li>
+          <a href = "lines_imp_int_2d.m">
+          lines_imp_int_2d.m</a>,
+          finds the intersection of two implicit lines in 2D;
+        </li>
+        <li>
+          <a href = "r8mat_print.m">
+          r8mat_print.m</a>,
+          prints an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_print_some.m">
+          r8mat_print_some.m</a>,
+          prints some of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_solve.m">
+          r8mat_solve.m</a>,
+          solves an N by N linear system with multiple right hand sides.
+        </li>
+        <li>
+          <a href = "r8mat_transpose_print.m">
+          r8mat_transpose_print.m</a>,
+          prints the transpose of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8mat_transpose_print_some.m">
+          r8mat_transpose_print_some.m</a>,
+          prints some of the transpose of an R8MAT;
+        </li>
+        <li>
+          <a href = "r8vec_print.m">
+          r8vec_print.m</a>,
+          prints an R8VEC;
+        </li>
+        <li>
+          <a href = "segment_point_dist_2d.m">
+          segment_point_dist_2d.m</a>,
+          computes the distance between a point and a line segment in 2D;
+        </li>
+        <li>
+          <a href = "segment_point_near_2d.m">
+          segment_point_near_2d.m</a>,
+          returns the nearest line segment point to a point in 2D;
+        </li>
+        <li>
+          <a href = "triangle_angles.m">
+          triangle_angles.m</a>,
+          returns the angles of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_area.m">
+          triangle_area.m</a>,
+          returns the area of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_centroid.m">
+          triangle_centroid.m</a>,
+          returns the centroid of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_circumcircle.m">
+          triangle_circumcircle.m</a>,
+          returns the circumcenter of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_contains_point.m">
+          triangle_contains_point.m</a>,
+          determines if a point is in a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_edge_length.m">
+          triangle_edge_length.m</a>,
+          returns the edge lengths of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_incircle.m">
+          triangle_incircle.m</a>,
+          returns the incircle of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_orientation.m">
+          triangle_orientation.m</a>,
+          returns the orientation of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_orthocenter.m">
+          triangle_orthocenter.m</a>,
+          returns the orthocenter of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_point_dist.m">
+          triangle_point_dist.m</a>,
+          returns the distance of point to a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_point_near.m">
+          triangle_point_near.m</a>,
+          returns the nearest point on a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_quality.m">
+          triangle_quality.m</a>,
+          returns the shape quality of a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_reference_sample.m">
+          triangle_reference_sample.m</a>,
+          randomly samples a point from the reference triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_sample.m">
+          triangle_sample.m</a>,
+          randomly samples a point from a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_xsi_to_xy.m">
+          triangle_xsi_to_xy.m</a>,
+          converts barycentric to cartesian coordinates in a triangle in 2D;
+        </li>
+        <li>
+          <a href = "triangle_xy_to_xsi.m">
+          triangle_xy_to_xsi.m</a>,
+          converts cartesian to barycentric coordinates in a triangle in 2D;
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 12 January 2021.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

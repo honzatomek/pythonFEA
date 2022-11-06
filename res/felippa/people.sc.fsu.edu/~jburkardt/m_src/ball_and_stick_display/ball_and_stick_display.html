@@ -1,0 +1,186 @@
+<html>
+
+  <head>
+    <title>
+      ball_and_stick_display
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      ball_and_stick_display
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>ball_and_stick_display</b>,
+      a MATLAB code which
+      makes a 3D "ball and stick" plot.
+    </p>
+
+    <p>
+      MATLAB has many procedures for displaying numeric data in 3D using contours,
+      vector plots, surfaces and so on.  However, sometimes an illustrator needs
+      to construct a simple 3D image of points and lines.  Since the thing has
+      to show up as an illustration or a slide, the points are exaggerated to
+      balls, and the lines to sticks.
+    </p>
+
+    <p>
+      MATLAB's <b>plot3</b> command can create both kinds of objects, but
+      it helps to know how to specify the desired object properties for
+      color and size.  The MATLAB help system is not very helpful when trying
+      to find out what properties you can specify and what values they can have.
+    </p>
+
+    <p>
+      So this program may be a helpful example of how a 3D object can be
+      created with knobby balls and colored sticks.
+    </p>
+
+    <p>
+      The particular object created here is intended to illustrate the
+      Lax-Wendroff scheme for approximating the solution of a hyperbolic
+      partial differential equation.  The blue spheres represent points at
+      which data is known.  The green spheres represent points at which
+      fluxes are estimated by computing differences between neighboring values.
+      The red sphere is the locationi of the updated solution value.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>BALL_AND_STICK_DISPLAY</b> is available in
+      <a href = "../../m_src/ball_and_stick_display/ball_and_stick_display.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/ball_and_stick_display_test/ball_and_stick_display_test.html">
+      balL_and_stick_display_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/bezier_surface_display/bezier_surface_display.html">
+      bezier_surface_display</a>, 
+      a MATLAB code which
+      displays a Bezier surface;
+    </p>
+
+    <p>
+      <a href = "../../m_src/circle_grid_display/circle_grid_display.html">
+      circle_grid_display</a>,
+      a MATLAB code which reads a matrix of integers, and draws a corresponding
+      grid of circles filled with color.
+    </p>
+
+    <p>
+      <a href = "../../m_src/grid_display/grid_display.html">
+      grid_display</a>,
+      a MATLAB code which
+      can display a 2D or 3D grid or sparse grid.
+    </p>
+
+    <p>
+      <a href = "../../m_src/obj_display/obj_display.html">
+      obj_display</a>,
+      a MATLAB code which 
+      reads an OBJ 3D graphics file and displays it on the screen.
+    </p>
+
+    <p>
+      <a href = "../../m_src/polygonal_surface_display/polygonal_surface_display.html">
+      polygonal_surface_display</a>,
+      a MATLAB code which
+      displays a surface in 3D described as a set of polygons;
+    </p>
+
+    <p>
+      <a href = "../../m_src/quad_surface_display/quad_surface_display.html">
+      quad_surface_display</a>, 
+      a MATLAB code which 
+      plots piecewise bilinear data associated with a QUAD_SURFACE, that is,
+      a 3D surface defined by a quadrilateral mesh;
+    </p>
+
+    <p>
+      <a href = "../../m_src/stla_display/stla_display.html">
+      stla_display</a>,
+      a MATLAB code which 
+      reads an ASCII STL file and displays it on the screen.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tet_mesh_display/tet_mesh_display.html">
+      tet_mesh_display</a>,
+      a MATLAB code which 
+      reads in the node and tetra files defining a tet mesh and displays a wireframe
+      image.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tri_surface_display/tri_surface_display.html">
+      tri_surface_display</a>,
+      a MATLAB code which
+      displays the 3D graphics information
+      in a TRI_SURFACE file;
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "ball_and_stick_display.m">ball_and_stick_display.m</a>,
+          displays a simple ball and stick plot.
+        </li>
+        <li>
+          <a href = "first_order_display.m">first_order_display.m</a>,
+          displays a sequence of 8 images
+          illustrating a first order method for dealing with hyperbolic
+          equations.
+        </li>
+        <li>
+          <a href = "lax_wendroff_1d_display.m">lax_wendroff_1d_display.m</a>,
+          displays a sequence of images
+          illustrating the Lax-Wendroff method in 1D.
+        </li>
+        <li>
+          <a href = "lax_wendroff_2d_display.m">lax_wendroff_2d_display.m</a>,
+          displays a sequence of images
+          illustrating the Lax-Wendroff method in 2D.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 23 December 2018
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+ 

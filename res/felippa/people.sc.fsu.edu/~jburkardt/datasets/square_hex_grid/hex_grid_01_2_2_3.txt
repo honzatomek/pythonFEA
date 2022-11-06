@@ -1,0 +1,19 @@
+#  hex_grid_01_2_2_3.txt
+#  created by HEX_GRID_WRITE.F90.
+#
+#
+#  Spatial dimension DIM_NUM =            2
+#  Number of points N =             3
+#  NODES_PER_LAYER =                    2
+#  Number of rows LAYERS =              2
+#  Coordinate box X(1) =        0.00000    
+#  Coordinate box X(2) =        1.00000    
+#  Coordinate box Y(1) =        0.00000    
+#  Coordinate box Y(2) =        1.00000    
+#  Node spacing HX =            1.00000    
+#  Layer spacing HY =          0.866025    
+#  EPSILON (unit roundoff) =   0.222045E-15
+#
+      0.000000      0.000000
+      1.000000      0.000000
+      0.500000      0.866025

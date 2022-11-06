@@ -1,0 +1,52 @@
+07-Jan-2022 21:42:30
+
+hermite_rule_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test hermite_rule().
+07-Jan-2022 21:42:30
+
+HERMITE_RULE
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+
+  Compute a Gauss-Hermite rule for approximating
+    integral ( -oo < x < +oo ) f(x) rho(x) dx
+  where the weight rho(x) is:
+    exp ( - b * ( x - a )^2 ) * sqrt ( b / pi ) dx
+  using N points.
+
+  The user specifies N, A, B, SCALE, FILENAME.
+
+  N is the number of points;
+  A is the center point (typically 0).
+  B is the exponential scale factor (typically 1).
+  SCALE is 1 if the weights are to be normalized.
+  FILENAME is used to generate 3 files:
+    filename_w.txt - the weight file
+    filename_x.txt - the abscissa file.
+    filename_r.txt - the region file.
+
+  Input summary:
+
+  N = 4
+  A = 0.000000
+  B = 1.000000
+  SCALE = 0
+  FILENAME = "herm_o4".
+
+  Creating quadrature files.
+
+  "Root" file name is   "herm_o4".
+
+  Weight file will be   "herm_o4_w.txt".
+  Abscissa file will be "herm_o4_x.txt".
+  Region file will be   "herm_o4_r.txt".
+
+HERMITE_RULE:
+  Normal end of execution.
+
+07-Jan-2022 21:42:30
+
+hermite_rule_test():
+  Normal end of execution.
+
+07-Jan-2022 21:42:30

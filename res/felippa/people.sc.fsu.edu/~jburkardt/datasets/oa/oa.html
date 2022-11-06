@@ -1,0 +1,516 @@
+<html>
+
+  <head>
+    <title>
+      OA - Orthogonal Arrays
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      OA <br> Orthogonal Arrays
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>OA</b> 
+      is a dataset directory which
+      contains a collection of orthogonal arrays (<b>OA</b>'s), as 
+      computed by Art Owen (AO).
+    </p>
+
+    <p>
+      These files were copied from
+      <a href = "http://lib.stat.cmu.edu/index.php">
+                 http://lib.stat.cmu.edu/index.php</a> STATLIB.  More
+      such files are available there.  There is also 
+      <a href = "../../cpp_src/oa/oa.html">an OA library</a>
+      and a set of
+      <a href = "../../cpp_src/oa_executables/oa_executables.html">
+      OA executables</a>
+      which manipulate OA's.
+    </p>
+
+    <p>
+      The data files provided here happen to conform to the
+      <a href = "../../data/table/table.html">TABLE format</a>,
+      and there are a variety of utilities available for reading
+      and manipulating such data.
+    </p>
+
+    <h2 align = "center">
+      Orthogonal Arrays
+    </h2>
+
+    <p>
+      An orthogonal array <b>A</b> is a matrix of <b>n</b> rows and <b>k</b> 
+      columns, with every element being one of the <b>q</b> symbols
+      0 through <b>q-1</b>.  The array has <i>strength</i> <b>t</b> if, 
+      in every <b>n</b> by <b>t</b>
+      submatrix, the <b>q<sup>t</sup></b> possible distinct rows, all appear
+      the same number of times.  This number is the index
+      of the array, commonly denoted <b>lambda</b>.  Clearly, 
+      <blockquote><b>
+        lambda * q<sup>t</sup> = n
+      </b></blockquote>
+    </p>
+
+    <p>
+      Geometrically, if one were to "plot" the 
+      submatrix with one plotting axis for each of the <b>t</b> columns
+      and one point in <b>t</b> dimensional space for each row, the
+      result would be a grid of <b>q<sup>t</sup></b> distinct points.  There would
+      be <b>lambda</b> "overstrikes" at each point of the grid.
+    </p>
+
+    <p>
+      The notation for such an array is <b>OA ( n, k, q, t )</b>.
+    </p>
+
+    <p>
+      If 
+      <blockquote><b>
+        n <= q<sup>(t+1)</sup>
+      </b></blockquote>
+      then the <b>n</b> rows "should" plot as <b>n</b> distinct points in 
+      every <b>n</b> by <b>t+1</b> dimensional subarray.
+      When this fails to hold, the array has the "coincidence
+      defect".
+    </p>
+
+    <p>
+      Owen (1992,1994) describes some uses for randomized
+      orthogonal arrays, in numerical integration, computer
+      experiments and visualization of functions.  Those
+      references contain further references to the literature,
+      that provide further explanations.  A strength
+      1 randomized orthogonal array is a Latin hypercube
+      sample, essentially so or exactly so, depending on
+      the definition used for Latin hypercube sampling.
+      The arrays constructed here have strength 2 or more, it
+      being much easier to construct arrays of strength 1.
+    </p>
+
+    <p>
+      The randomization is achieved by independent
+      uniform permutation of the symbols in each column.
+    </p>
+
+    <p>
+      To investigate a function <b>f</b> of <b>d</b> variables, one
+      has to have an array with <b>k</b> greater than or equal to 
+      <b>d</b>.  One may also
+      have a maximum value of <b>n</b> in mind and a minimum value
+      for the number <b>q</b> of distinct levels to investigate.
+      It is entirely possible that there is no array of strength 
+      <b>t</b> greater than 1 that is compatible with these conditions.
+      The programs here provide some choices to pick from, hopefully
+      without too much of a compromise.
+     </p>
+
+    <p>
+      The constructions used are based on published
+      algorithms that exploit properties of Galois fields.
+      Because of this, the number of levels <b>q</b> must be
+      a prime power.  That is 
+      <blockquote><b>
+        q = p<sup>r</sup>
+      </b></blockquote>
+      where <b>p</b> is prime
+      and <b>r</b> is a positive integer.
+    </p>
+
+    <p>
+      The Galois field arithmetic for the prime powers is
+      based on tables published by Knuth and Alanen (1964).
+      The resulting fields have been tested by the
+      methods described in Appendix 2 of that paper and
+      they passed.
+    </p>
+
+    <h2 align = "center">
+      Motivation
+    </h2>
+
+    <p>
+      <i>Visualization:</i> Given a function in d dimensions, one
+      might want to run it at N points and then use interactive
+      data analysis on the output.  For example if the function
+      computes switching speed and breakdown voltage of a semiconductor
+      device given d=10 process settings one might select those points
+      with a large enough breakdown voltage and a large enough speed
+      and then make plots in lower dimensions of  the corresponding
+      process settings.   Full 10 dimensional grids are infeasible for
+      this.  Latin hypercube samples can miss settings where there
+      are strong effects in the corners.  For example if one setting
+      is oxidation temperature and another is oxidation time we expect
+      that the corners (hi,hi) and (lo,lo) will be significant.
+      It can happen that Latin hypercube samples have gaps in these
+      corners.  There are 4*C(d,2)=2d(d-1) "bivariate" corners to investigate
+      and random designs or Latin hypercube samples can easily miss
+      some of them.
+    </p>
+
+    <p>
+      <i>Integration:</i> The sum of function values over a Latin hypercube
+      sample is a good estimate of the integral over the input cube,
+      for functions that are nearly additive.   Stein shows how this
+      works.  Owen gives a central limit theorem for the estimate and
+      shows how to estimate the variance.   The sum over an orthogonal
+      array of strength 2 gives a similarly good estimate of the integral
+      for functions dominated by main effects and two factor interactions
+      among the input variables.  Owen discusses this.
+    </p>
+
+    <p>
+      <i>Computer Experiments:</i> In many computer experiments the visualization
+      methods outlined above are sufficiently informative.  Sometimes one
+      would like to find response surface models for the function, perhaps
+      for predictive purposes, or for interpolation to a finer visualization
+      data set.  Least squares regression methods can be applied here.
+      The population coefficients are determined from certain integrals
+      over the input space.  These can be estimated by the sum over a 
+      sample (independent, Latin hypercube, orthogonal array).  More
+      accurate sample integrals imply more accurately estimated response
+      surfaces.
+    </p>
+
+    <p>
+      <i>Multivariate Nonparametric Regression:</i> These arrays might
+      form good designs for fitting models like MARS, Friedman.
+    </p>
+
+
+    <h2 align = "center">
+      GF Arrays
+    </h2>
+
+    <p>
+      Suppose that q, the number of distinct values per axis,
+      is a prime or a prime raised to a power.  Then there exists
+      a Galois field with q elements, GF(q).  Using this field one
+      can construct OA( q^2,q+1,q,2 ) the orthogonal array with
+      N=q^2 rows, k=q+1 columns, q symbols and strength 2.
+      The construction is a special case of the one given in
+      Raghavarao 2.4 and appears to be very old.  Let column 1
+      be q 0's, q 1's,...,q (q-1)'s and let column 2 be q repetitions
+      of (0,1,...,q-1).   Then for 1 <= k <= q-1 column k+2 is
+      (column 1) + k * (column 2) where the addition and multiplication
+      take place in GF(q).  If q is prime these are simply addition 
+      and multiplication modulo q.  Random permutation of the labels
+      within columns preserves the orthogonality, breaks up the "planes"
+      and provides a basis for randomization inference.
+    </p>
+
+    <p>
+      The files gf.02, gf.03, gf.04 ... contain these arrays
+      with q=2,3,4,5,7,8,9,11,13,16.  Note that gf.q contains q^3+q^2 numbers
+      so files with q=17,25,27,32 come in their own shar files.
+    </p>
+
+    <p>
+      When q is not a prime power the largest attainable number of 
+      columns k can be much less than q+1.  In general if c mutually 
+      orthogonal latin squares of side q can be found, then an orthogonal 
+      array of k=c+2 columns may be constructed.  For q=6, k=3 is the limit.
+    </p>
+
+    <p>
+      These designs are q^(q-1) fractional replications of q^(q+1) 
+      factorials with resolution III.  That is they might be denoted
+      q_III^[(q+1)-(q-1)].
+    </p>
+
+    <p>
+      In practice one might use the first 5 columns of gf.16 to get
+      256 runs in 5 variables.  If some input variables only take 2
+      values (on/off say)  then they can be coded as a column of gf.q for any
+      even number q by mapping 0..q/2-1 to on and q/2..q-1 to off.
+    </p>
+
+    <p>
+      Taguchi's L9 has the same form as gf.03, L25 has the form of gf.05.
+      The array qf.32 could be called L1024.
+    </p>
+
+    <p>
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+      Files you may copy include:
+      <table border="1">
+        <tr>
+          <th>File</th><th>Levels</th><th>Runs</th><th>Variables</th>
+        </tr>
+        <tr>
+          <th><a href = "gf.02">gf.02</a></th><td>2</td><td>4</td><td>3</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.03">gf.03</a></th><td>3</td><td>9</td><td>4</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.04">gf.04</a></th><td>4</td><td>16</td><td>5</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.05">gf.05</a></th><td>5</td><td>25</td><td>6</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.07">gf.07</a></th><td>7</td><td>49</td><td>8</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.08">gf.08</a></th><td>8</td><td>64</td><td>9</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.09">gf.09</a></th><td>9</td><td>81</td><td>10</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.11">gf.11</a></th><td>11</td><td>121</td><td>12</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.13">gf.13</a></th><td>13</td><td>169</td><td>14</td>
+        </tr>
+        <tr>
+          <th><a href = "gf.16">gf.16</a></th><td>16</td><td>256</td><td>17</td>
+        </tr>
+        <tr>
+          <th>(gf.17)</th><td>17</td><td>289</td><td>18</td>
+        </tr>
+        <tr>
+          <th>(gf.25)</th><td>25</td><td>625</td><td>26</td>
+        </tr>
+        <tr>
+          <th>(gf.32)</th><td>32</td><td>1024</td><td>33</td>
+        </tr>
+      </table>
+    </p>
+
+    <h2 align = "center">
+      AK Arrays
+    </h2>
+
+    <p>
+      With N=q^2 only q+1 columns are possible.  Addelman and Kempthorne
+      show how to get 2q+1 columns in N=2q^2 rows.  As before q is a prime or
+      a power of a prime.  The files ak.02,...,ak.11 contain these designs
+      for q=2,3,5,7,9,11.  The algorithm for even q is not as easy to code,
+      but the bb2 arrays below fill that role.  The array L18 has the same
+      form as ak.03.  This array was known before Addelman and Kempthorne 
+      by Bose and Bush and is alluded to in a note added in proof to
+      Plackett and Burman.
+      These designs are OA( 2q^2,2q+1,q,2 ).
+    </p>
+
+    <p>
+      Files you may copy include:
+      <table border="1">
+        <tr>
+          <th>File</th><th>Levels</th><th>Runs</th><th>Variables</th>
+        </tr>
+        <tr>
+          <th><a href = "ak.02">ak.02</a></th><td>2</td><td>8</td><td>5</td>
+        </tr>
+        <tr>
+          <th><a href = "ak.03">ak.03</a></th><td>3</td><td>18</td><td>7</td>
+        </tr>
+        <tr>
+          <th><a href = "ak.05">ak.05</a></th><td>5</td><td>50</td><td>11</td>
+        </tr>
+        <tr>
+          <th><a href = "ak.07">ak.07</a></th><td>7</td><td>98</td><td>15</td>
+        </tr>
+        <tr>
+          <th><a href = "ak.09">ak.09</a></th><td>9</td><td>162</td><td>19</td>
+        </tr>
+        <tr>
+          <th>(ak.11)</th><td>11</td><td>242</td><td>23</td>
+        </tr>
+      </table>
+    </p>
+
+    <h2 align = "center">
+      BB Arrays
+    </h2>
+
+    <p>
+      Bose and Bush show how to construct 
+      OA( lambda x q^2, lambda x q, q, 2 ) where q is a prime
+      power and lambda is a power of the same prime.  The designs
+      bb2.02,...,bb2.16 are of this form with lambda=2, except that
+      they are augmented with a 2q+1st column using a method Bose
+      and Bush discuss.  So they are of the form
+      OA( 2q^2, 2q+1, q, 2 ) where q is a power of 2, augmenting the
+      designs available from Addelman and Kempthorne.
+    </p>
+
+    <p>
+      Files you may copy include:
+      <table border="1">
+        <tr>
+          <th>File</th><th>Levels</th><th>Runs</th><th>Variables</th>
+        </tr>
+        <tr>
+          <th><a href = "bb2.02">bb2.02</a></th><td>2</td><td>8</td><td>5</td>
+        </tr>
+        <tr>
+          <th><a href = "bb2.04">bb2.04</a></th><td>4</td><td>32</td><td>9</td>
+        </tr>
+        <tr>
+          <th><a href = "bb2.08">bb2.08</a></th><td>8</td><td>128</td><td>17</td>
+        </tr>
+        <tr>
+          <th>(bb2.16)</th><td>16</td><td>512</td><td>33</td>
+        </tr>
+      </table>
+    </p>
+
+    <h2 align = "center">
+      Extensions
+    </h2>
+
+    <p>
+      It is possible to construct arrays of strength 3.  These
+      might be useful for the same purposes as arrays of strength
+      2, but they require much larger numbers N of runs.
+    </p>
+
+    <p>
+      If you want q levels and q is not a power of a prime, the
+      MacNeish-Mann theorem might help.  If q=25*4, you can get
+      an array with 5 columns of 4 symbols (gf.04) and an array
+      with 26 columns of 25 symbols (gf.25).  Take the first 
+      5 columns of gf.25.  Then make an array of 100x5
+      symbols in which the kth column is obtained by taking each
+      element of the kth column of gf.25 and replacing it by a 
+      vector of length 16 formed by taking 4* the element of
+      gf.25 and adding the 16 values in the kth column of gf.4.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          S. Addelman and O. Kempthorne,<br>
+          Some Main-Effect Plans and Orthogonal Arrays of Strength Two,<br>
+          Annals of Mathematical Statistics,<br>
+          Volume 32, pages 1167-1176, 1961.
+        </li>
+        <li>
+          J D Alanen and D E Knuth,<br>
+          Sankhya, Series A,<br>
+          Volume 26, pages 305-328, 1964.
+        </li>
+        <li>
+          R C Bose,<br>
+          Sankhya,<br>
+          Volume 3, pages 323-338, 1938.
+        </li>
+        <li>
+          R C Bose and K A Bush,<br>
+          Orthogonal Arrays of Strength Two and Three,<br>
+          Annals of Mathematical Statistics,<br>
+          Volume 23, pages 508-524, 1952.
+        </li>
+        <li>
+          K A Bush,<br>
+          Annals of Mathematical Statistics,<br>
+          Volume 23, pages 426-434, 1952.
+        </li>
+        <li>
+          Aloke Dey,<br>
+          Orthogonal Fractional Factorial Designs,<br>
+          Halsted Press, 1985.
+        </li>
+        <li>
+          J Friedman,<br>
+          Multivariate Adaptive Regression Splines.<br>
+	  Annals of Statistics,<br>
+          Volume 19, pages 1-141, 1991.
+        </li>
+        <li>
+          M D McKay, W J Conover, R J Beckman,<br>
+          A Comparison of Three Methods for Selecting Values of Input
+          Variables in the Analysis of Output From a Computer Code,<br>
+          Technometrics,<br>
+          Volume 21, pages 239-245, 1979.
+        </li>
+        <li>
+          A B Owen,<br>
+          A central limit theorem for Latin hypercube sampling,<br>
+          Journal of the Royal Statistical Society, Series B,<br>
+          Volume 51, Number 2, pages 541-551, 1992.
+        </li>
+        <li>
+          A B Owen,<br>
+          Orthogonal Arrays for Computer Experiments, Integration and
+          Visualization,<br>
+          Statistica Sinica,<br>
+          Volume 2, Number 2, pages 439-452, 1992.
+        </li>
+        <li>
+          A B Owen,<br>
+          Lattice Sampling Revisited: Monte Carlo Variance of 
+          Means Over Randomized Orthogonal Arrays,<br>
+          Annals of Statistics,<br>
+          Volume 22, Number 2, pages 930-945, 1994.
+        </li>
+        <li>
+          H D Patterson,<br>
+          The Errors of Lattice Sampling,<br>
+          Journal of the Royal Statistical Society, Series B,<br>
+          Volume 16, pages 140-149, 1954.
+        </li>
+        <li>
+          R Plackett and J Burman,<br>
+          The Design of Optimum Multifactorial Experiments,<br>
+          Biometrika,<br>
+          Volume 33, pages 305-325, 1946.
+        </li>
+        <li>
+          D Raghavarao,<br>
+          Construction and Combinatorial Problems in Design of Experiments,<br>
+          Wiley, 1971.
+        </li>
+        <li>
+          M. Stein,<br>
+          Large-Sample Properties of Simulations using Latin
+          Hypercube Sampling,<br>
+          Technometrics,<br>
+          Volume 29, pages 143-151, 1987.
+        </li>
+        <li>
+          A copy of the original source code oa.c, and sample
+          orthogonal arrays are available from
+          <a href = "http://lib.stat.cmu.edu/index.php">
+                     http://lib.stat.cmu.edu/index.php</a>STATLIB.
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 August 2005.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

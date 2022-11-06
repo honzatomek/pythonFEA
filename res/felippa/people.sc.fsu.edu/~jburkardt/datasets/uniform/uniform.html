@@ -1,0 +1,335 @@
+<html>
+
+  <head>
+    <title>
+      UNIFORM - Uniform Quasirandom Datasets
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      UNIFORM <br> Uniform Quasirandom Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>UNIFORM</b> 
+      is a dataset directory which
+      contains points generated as part of an M-dimensional uniform random process.
+    </p>
+
+    <p>
+      The datasets are distinguished by the values of the following
+      parameters:
+      <ul>
+        <li>
+          <b>M</b>, the spatial dimension;
+        </li>
+        <li>
+          <b>N</b>, the number of points to generate;
+        </li>
+        <li>
+          <b>SEED</b>, is the initial value of the seed;
+        </li>
+      </ul>
+      The values of M and N are specified in the dataset file names.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../f_src/plot_points/plot_points.html">
+      PLOT_POINTS</a>, 
+      a FORTRAN90 program which 
+      can plot two dimensional
+      datasets, making Encapsulated PostScript images.
+    </p>
+
+    <p>
+      <a href = "../../m_src/sequence_streak_display/sequence_streak_display.html">
+      SEQUENCE_STREAK_DISPLAY</a>, 
+      a MATLAB program which
+      can make a streak plot
+      of a (one-dimensional) sequence.
+    </p>
+
+    <p>
+      <a href = "../../data/table/table.html">
+      TABLE</a>,
+      a file format which 
+      is used to store the datasets.
+    </p>
+
+    <p>
+      <a href = "../../f_src/table_top/table_top.html">
+      TABLE_TOP</a>,
+      a FORTRAN90 program which
+      can be used to analyze 
+      datasets of any dimension, by creating images of pairwise
+      coordinates.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/uniform/uniform.html">
+      UNIFORM</a>,
+      a C++ library which
+      computes elements of a uniform pseudorandom sequence.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/uniform_dataset/uniform_dataset.html">
+      UNIFORM_DATASET</a>,
+      a C++ program which
+      generates a dataset of uniform pseudorandom values and writes them to a file.
+    </p>
+
+    <h3 align = "center">
+      Example dataset:
+    </h3>
+
+    <p>
+      A typical (but small) dataset  of 10 points in 2 dimensions looks like this:
+      <pre>
+  0.218418  0.956318
+  0.829509  0.561695
+  0.415307  0.066119
+  0.257578  0.109957
+  0.043829  0.633966
+  0.061727  0.449539
+  0.401306  0.754673
+  0.797287  0.001838
+  0.897504  0.350752
+  0.094545  0.013617
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Paul Bratley, Bennett Fox, Linus Schrage,<br>
+          A Guide to Simulation,<br>
+          Springer Verlag, pages 201-202, 1983.
+        </li>
+        <li>
+          Bennett Fox,<br>
+          Algorithm 647:
+          Implementation and Relative Efficiency of Quasirandom
+          Sequence Generators,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 12, Number 4, pages 362-376, 1986.
+        </li>
+        <li>
+          Donald Knuth, <br>
+          The Art of Computer Programming,<br>
+          Volume 2: Seminumerical Algorithms,<br> 
+          Addison Wesley, 1969.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      Datasets in M = 1 dimensions include:
+      <ul>
+        <li>
+          <a href = "uniform_01_00010.txt">uniform_01_00010.txt</a>, 
+          M = 1, N = 10, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_01_00100.txt">uniform_01_00100.txt</a>, 
+          M = 1, N = 100, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_01_00100.png">uniform_01_00100.png</a>, 
+          a PNG image of
+          the dataset, created by <b>SEQUENCE_STREAK_DISPLAY</b>.
+        </li>
+        <li>
+          <a href = "uniform_02_01000.txt">uniform_01_01000.txt</a>, 
+          M = 1, N = 1000, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_02_10000.txt">uniform_01_10000.txt</a>, 
+          M = 1, N = 10000, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 2 dimensions include:
+      <ul>
+        <li>
+          <a href = "uniform_02_00010.txt">uniform_02_00010.txt</a>, 
+          M = 2, N = 10, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_02_00010.png">uniform_02_00010.png</a>, 
+          a PNG image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "uniform_02_00100.txt">uniform_02_00100.txt</a>, 
+          M = 2, N = 100, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_02_00100.png">uniform_02_00100.png</a>, 
+          a PNG image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "uniform_02_01000.txt">uniform_02_01000.txt</a>, 
+          M = 2, N = 1000, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_02_01000.png">uniform_02_01000.png</a>, 
+          a PNG image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "uniform_02_10000.txt">uniform_02_10000.txt</a>, 
+          M = 2, N = 10000, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 6 dimensions include:
+      <ul>
+        <li>
+          <a href = "uniform_06_00001.txt">uniform_06_00001.txt</a>, 
+          M = 6, N = 1, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_06_00013.txt">uniform_06_00013.txt</a>, 
+          M = 6, N = 13, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_06_00097.txt">uniform_06_00097.txt</a>, 
+          M = 6, N = 97, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_06_00545.txt">uniform_06_00545.txt</a>, 
+          M = 6, N = 545, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_06_02561.txt">uniform_06_02561.txt</a>, 
+          M = 6, N = 2561, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_06_10625.txt">uniform_06_10625.txt</a>, 
+          M = 6, N = 10625, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 7 dimensions include:
+      <ul>
+        <li>
+          <a href = "uniform_07_00010.txt">uniform_07_00010.txt</a>, 
+          M = 7, N = 10, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_07_00100.txt">uniform_07_00100.txt</a>, 
+          M = 7, N = 100, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_07_01000.txt">uniform_07_01000.txt</a>, 
+          M = 7, N = 1000, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_07_10000.txt">uniform_07_10000.txt</a>, 
+          M = 7, N = 10000, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 10 dimensions include:
+      <ul>
+        <li>
+          <a href = "uniform_10_00001.txt">uniform_10_00001.txt</a>, 
+          M = 10, N = 1, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_10_00021.txt">uniform_10_00021.txt</a>, 
+          M = 10, N = 21, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_10_00241.txt">uniform_10_00241.txt</a>, 
+          M = 10, N = 241, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_10_02001.txt">uniform_106_02001.txt</a>, 
+          M = 10, N = 2001, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_10_13441.txt">uniform_10_13441.txt</a>, 
+          M = 10, N = 13441, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_10_77505.txt">uniform_10_77505.txt</a>, 
+          M = 10, N = 77505, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 16 dimensions include:
+      <ul>
+        <li>
+          <a href = "uniform_16_00010.txt">uniform_16_00010.txt</a>, 
+          M = 16, N = 10, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_16_00100.txt">uniform_16_00100.txt</a>, 
+          M = 16, N = 100, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_16_01000.txt">uniform_16_01000.txt</a>, 
+          M = 16, N = 1000, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "uniform_16_10000.txt">uniform_16_10000.txt</a>, 
+          M = 16, N = 10000, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 01 August 2007.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

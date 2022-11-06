@@ -1,0 +1,378 @@
+<html>
+
+  <head>
+    <title>
+      tetrahedron01_monte_carlo
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      tetrahedron01_monte_carlo
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>tetrahedron01_monte_carlo</b>,
+      a MATLAB code which
+      uses the Monte Carlo method to estimate the integral of a function F(X,Y,Z)
+      over the interior of the unit tetrahedron in 3D.
+    </p>
+
+    <p>
+      The interior of the unit tetrahedron in 3D is defined by the constraints:
+      <pre>
+        0 <= X
+        0 <= Y
+        0 <= Z
+             X + Y + Z <= 1
+      </pre>
+      The functions F(X,Y,Z) are monomials, having the form
+      <pre>
+        F(X,Y,Z) = X^E(1) * Y^E(2) * Z^E(3)
+      </pre>
+      where the exponents are nonnegative integers.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>tetrahedron01_monte_carlo</b> is available in
+      <a href = "../../c_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a C version</a> and
+      <a href = "../../cpp_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a C++ version</a> and
+      <a href = "../../f_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a MATLAB version</a> and
+      <a href = "../../py_src/tetrahedron01_monte_carlo/tetrahedron01_monte_carlo.html">a Python version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/annulus_monte_carlo/annulus_monte_carlo.html">
+      annulus_monte_carlo</a>
+      a MATLAB code which
+      uses the monte carlo method to estimate the integral of a function 
+      over the interior of a circular annulus in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/ball_monte_carlo/ball_monte_carlo.html">
+      ball_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate integrals of a function
+      over the interior of the unit ball in 3d;
+    </p>
+
+    <p>
+      <a href = "../../m_src/circle_monte_carlo/circle_monte_carlo.html">
+      circle_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      on the circumference of the unit circle in 2d;
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_monte_carlo/cube_monte_carlo.html">
+      cube_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      over the interior of the unit cube in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/disk_monte_carlo/disk_monte_carlo.html">
+      disk_monte_carlo</a>, 
+      a MATLAB code which 
+      uses the monte carlo method to estimate integrals
+      over the interior of the general disk in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/disk01_monte_carlo/disk01_monte_carlo.html">
+      disk01_monte_carlo</a>, 
+      a MATLAB code which 
+      uses the monte carlo method to estimate integrals
+      over the interior of the unit disk in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/disk01_quarter_monte_carlo/disk01_quarter_monte_carlo.html">
+      disk01_quarter_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      over the interior of the unit quarter disk in 2d;
+    </p>
+
+    <p>
+      <a href = "../../m_src/ellipse_monte_carlo/ellipse_monte_carlo.html">
+      ellipse_monte_carlo</a>
+      a MATLAB code which
+      uses the monte carlo method to estimate the value of integrals
+      over the interior of an ellipse in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/ellipsoid_monte_carlo/ellipsoid_monte_carlo.html">
+      ellipsoid_monte_carlo</a>
+      a MATLAB code which
+      uses the monte carlo method to estimate the value of integrals
+      over the interior of an ellipsoid in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hyperball_monte_carlo/hyperball_monte_carlo.html">
+      hyperball_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      over the interior of the unit hyperball in m dimensions;
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypercube_monte_carlo/hypercube_monte_carlo.html">
+      hypercube_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      over the interior of the unit hypercube in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hypersphere_monte_carlo/hypersphere_monte_carlo.html">
+      hypersphere_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      on the surface of the unit sphere in m dimensions;
+    </p>
+
+    <p>
+      <a href = "../../m_src/line_monte_carlo/line_monte_carlo.html">
+      line_monte_carlo</a>,
+      a MATLAB code which
+      uses the monte carlo method to estimate integrals 
+      over the length of the unit line in 1d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/polygon_monte_carlo/polygon_monte_carlo.html">
+      polygon_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      over the interior of a polygon in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pyramid_monte_carlo/pyramid_monte_carlo.html">
+      pyramid_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate integrals of a function
+      over the interior of the unit pyramid in 3d;
+    </p>
+
+    <p>
+      <a href = "../../m_src/simplex_monte_carlo/simplex_monte_carlo.html">
+      simplex_monte_carlo</a>,
+      a MATLAB code which
+      uses the monte carlo method to estimate integrals 
+      over the interior of the unit simplex in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/sphere_monte_carlo/sphere_monte_carlo.html">
+      sphere_monte_carlo</a>,
+      a MATLAB code which
+      uses the monte carlo method to estimate integrals
+      over the surface of the unit sphere in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/sphere_triangle_monte_carlo/sphere_triangle_monte_carlo.html">
+      sphere_triangle_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      over a spherical triangle on the surface of the unit sphere in 3d;
+    </p>
+
+    <p>
+      <a href = "../../m_src/square_monte_carlo/square_monte_carlo.html">
+      square_monte_carlo</a>,
+      a MATLAB code which
+      applies a monte carlo method to estimate the integral of a function
+      over the interior of the unit square in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_arbq_rule/tetrahedron_arbq_rule.html">
+      tetrahedron_arbq_rule</a>,
+      a MATLAB code which
+      returns quadrature rules, 
+      with exactness up to total degree 15,
+      over the interior of a tetrahedron in 3d,
+      by hong xiao and zydrunas gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_exactness/tetrahedron_exactness.html">
+      tetrahedron_exactness</a>,
+      a MATLAB code which
+      investigates the monomial exactness of a quadrature rule 
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_felippa_rule/tetrahedron_felippa_rule.html">
+      tetrahedron_felippa_rule</a>,
+      a MATLAB code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_integrals/tetrahedron_integrals.html">
+      tetrahedron_integrals</a>,
+      a MATLAB code which
+      returns the exact value of the integral of any monomial
+      over the interior of the unit tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_keast_rule/tetrahedron_keast_rule.html">
+      tetrahedron_keast_rule</a>,
+      a MATLAB code which
+      defines ten quadrature rules, with exactness degrees 0 through 8,
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_ncc_rule/tetrahedron_ncc_rule.html">
+      tetrahedron_ncc_rule</a>,
+      a MATLAB code which
+      defines newton-cotes closed (ncc) quadrature rules 
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_nco_rule/tetrahedron_nco_rule.html">
+      tetrahedron_nco_rule</a>,
+      a MATLAB code which
+      defines newton-cotes open (nco) quadrature rules
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron01_monte_carlo_test/tetrahedron01_monte_carlo_test.html">
+      tetrahedron01_monte_carlo_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_monte_carlo/triangle_monte_carlo.html">
+      triangle_monte_carlo</a>,
+      a MATLAB code which
+      uses the monte carlo method to estimate integrals 
+      over the interior of a general triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle01_monte_carlo/triangle01_monte_carlo.html">
+      triangle01_monte_carlo</a>,
+      a MATLAB code which
+      uses the monte carlo method to estimate integrals 
+      over the interior of the unit triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/wedge_monte_carlo/wedge_monte_carlo.html">
+      wedge_monte_carlo</a>,
+      a MATLAB code which
+      uses the monte carlo method to estimate integrals 
+      over the interior of the unit wedge in 3d.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Claudio Rocchini, Paolo Cignoni,<br>
+          Generating Random Points in a Tetrahedron,<br>
+          Journal of Graphics Tools,<br>
+          Volume 5, Number 4, 2000, pages 9-12.
+        </li>
+        <li>
+          Reuven Rubinstein,<br>
+          Monte Carlo Optimization, Simulation and Sensitivity of
+          Queueing Networks,<br>
+          Krieger, 1992,<br>
+          ISBN: 0894647644,<br>
+          LC: QA298.R79.
+        </li>
+        <li>
+          Greg Turk,<br>
+          Generating Random Points in a Triangle,<br>
+          in Graphics Gems I,<br>
+          edited by Andrew Glassner,<br>
+          AP Professional, 1990,<br>
+          ISBN: 0122861663,<br>
+          LC: T385.G697
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "monomial_value.m">monomial_value.m</a>, 
+          evaluates a monomial.
+        </li>
+        <li>
+          <a href = "r8vec_uniform_01.m">r8vec_uniform_01.m</a>
+          returns a unit pseudorandom R8VEC.
+        </li>
+        <li>
+          <a href = "tetrahedron01_monomial.m">tetrahedron01_monomial.m</a>, 
+          monomial integrals in the interior of the unit tetrahedron in 3D.
+        </li>
+        <li>
+          <a href = "tetrahedron01_sample.m">tetrahedron01_sample.m</a>
+          samples points from the interior of the unit tetrahedron in 3D.
+        </li>
+        <li>
+          <a href = "tetrahedron01_volume.m">tetrahedron01_volume.m</a>
+          computes the volume of the unit tetrahedron in 3D.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 03 April 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

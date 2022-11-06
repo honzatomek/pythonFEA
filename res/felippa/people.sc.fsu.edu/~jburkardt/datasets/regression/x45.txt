@@ -1,0 +1,22 @@
+#  x45.txt
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Mathematical Algorithms for Linear Regression,
+#    Academic Press, 1991, page 190,
+#    ISBN 0-12-656460-4.
+#
+#  Discussion:
+#
+#    This is simply a list of the total system size,
+#    and the files that describe the subsystems.
+#
+#    In this case, the weights are ( 0.31915, 0.25532, 0.42553 ) but
+#    I haven't decide how that information is to be stored in the files.
+#
+4 columns
+12 rows
+3 subsystems
+x45_01.txt
+

@@ -1,0 +1,97 @@
+function [ p, rank ] = pruefer_successor ( n, p, rank )
+
+%*****************************************************************************80
+%
+%% pruefer_successor() computes the lexical Pruefer sequence successor.
+%
+%  Licensing:
+%
+%    This code is distributed under the GNU LGPL license.
+%
+%  Modified:
+%
+%    25 January 2011
+%
+%  Author:
+%
+%    John Burkardt
+%
+%  Reference:
+%
+%    Donald Kreher, Douglas Simpson,
+%    Combinatorial Algorithms,
+%    CRC Press, 1998,
+%    ISBN: 0-8493-3988-X,
+%    LC: QA164.K73.
+%
+%  Input:
+%
+%    Input, integer N, the number of nodes in the tree.
+%    N must be at least 3.
+%
+%    integer P(N-2), on input, the Pruefer code for a tree.
+%    and on output, its lexical successor.
+%
+%    integer RANK, the rank.
+%    If RANK = -1 on input, then the routine understands that this is
+%    the first call, and that the user wishes the routine to supply
+%    the first element in the ordering, which has RANK = 0.
+%
+%  Output:
+%
+%    integer P(N-2), on input, the Pruefer code for a tree.
+%    and on output, its lexical successor.
+%
+%    integer RANK, the rank.
+%    In general, the input value of RANK is increased by 1 for output,
+%    unless the very last element of the ordering was input, in which
+%    case the output value of RANK is 0.
+%
+
+%
+%  Return the first element.
+%
+  if ( rank == -1 )
+    p(1:n-2) = 1;
+    rank = 0;
+    return
+  end
+%
+%  Check.
+%
+  check = pruefer_check ( n, p );
+
+  if ( ~ check )
+    fprintf ( 1, '\n' );
+    fprintf ( 1, 'PRUEFER_SUCCESSOR - Fatal error!\n' );
+    fprintf ( 1, '  Input array is illegal.\n' );
+    error ( 'PRUEFER_SUCCESSOR - Fatal error!' );
+  end
+
+  j = n - 2;
+
+  while ( true )
+
+    if ( p(j) ~= n )
+      break
+    end
+
+    j = j - 1;
+
+    if ( j <= 0 )
+      break
+    end
+
+  end
+
+  if ( j ~= 0 )
+    p(j) = p(j) + 1;
+    p(j+1:n-2) = 1;
+    rank = rank + 1;
+  else
+    p(1:n-2) = 1;
+    rank = 0;
+  end
+
+  return
+end

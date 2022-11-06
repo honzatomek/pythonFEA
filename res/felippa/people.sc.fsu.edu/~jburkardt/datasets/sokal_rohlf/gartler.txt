@@ -1,0 +1,46 @@
+# Title: Milligrams of glycine per milligram of creatinine in the urine of 37 chimpanzees
+# 1: glycine/creatine
+#
+#  Reference: 
+#  S Gartler, I Firschein, T Dobzhansky,
+#  Chromatographic investigation of urinary amino-acids in the great apes,
+#  American Journal of Physical Anthropology,
+#  Volume 14, pages 41-57, 1956.
+#
+0.008
+0.018
+0.056
+0.055
+0.135
+0.052
+0.077
+0.026
+0.440
+0.300
+0.025
+0.036
+0.043
+0.100
+0.120
+0.110
+0.100
+0.350
+0.100
+0.300
+0.011
+0.060
+0.070
+0.050
+0.080
+0.110
+0.110
+0.120
+0.133
+0.100
+0.100
+0.155
+0.370
+0.019
+0.100
+0.100
+0.116

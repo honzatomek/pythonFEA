@@ -1,0 +1,160 @@
+<html>
+
+  <head>
+    <title>
+      TRIANGLE_SAMPLES - Samples from the Unit Triangle
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TRIANGLE_SAMPLES <br> Samples from the Unit Triangle
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TRIANGLE_SAMPLES</b> 
+      is a dataset directory which
+      contains sets of sample points from the unit triangle.
+    </p>
+
+    <p>
+      The unit triangle has vertices (1,0), (0,1), (0,0).
+    </p>
+
+    <p>
+      Given a function <b>rand()</b> which returns values in the interval [0,1],
+      it is easy to construct methods of sampling the unit square, cube, and
+      the general hypercube.  It is not quite so easy to deal with the triangle,
+      tetrahedron, and general simplex.
+    </p>
+
+    <p>
+      For the triangle, things are not so serious.  The simplest method involves
+      rejection, generating points in the unit square and discarding those that
+      are outside the triangle.  Another simple method simply "folds" points
+      that lie above the line x+y=1, which means no generated points are rejected.
+      Other methods work with the barycentric coordinates that can be applied
+      as well to the general triangle.
+    </p>
+
+    <p>
+      This directory collects sets of sample points of various sizes, so that
+      it is easy to find data that one can check for uniformity.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/random_data/random_data.html">
+      RANDOM_DATA</a>,
+      a C++ library which 
+      provides sample points from various regions, including triangles.
+    </p>
+
+    <p>
+      <a href = "../../datasets/tetrahedron_samples/tetrahedron_samples.html">
+      TETRAHEDRON_SAMPLES</a>, 
+      a dataset directory which 
+      contains examples of sets of sample points from the unit tetrahedron.
+    </p>
+
+    <p>
+      <a href = "../../cpp_src/triangle_histogram/triangle_histogram.html">
+      TRIANGLE_HISTOGRAM</a>,
+      a C++ library which
+      creates a kind of histogram of data on the unit triangle, which makes
+      it easy to check for uniformity of sampling.
+    </p>
+
+    <h3 align = "center">
+      Data Files:
+    </h3>
+
+    <p>
+      <b>B100</b> and its relatives are samplings based on a "bad" scheme.
+      Points tend to cluster near the centroid.
+      <ul>
+        <li>
+          <a href = "b100.txt">b100.txt</a>,
+          100 points.
+        </li>
+        <li>
+          <a href = "b1000.txt">b1000.txt</a>,
+          1,000 points.
+        </li>
+        <li>
+          <a href = "b10000.txt">b10000.txt</a>,
+          10,000 points.
+        </li>
+        <li>
+          <a href = "b100000.txt">b100000.txt</a>,
+          100,000 points.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>G100</b> and its relatives are samplings based on a "good" scheme.
+      Points are well distributed.
+      <ul>
+        <li>
+          <a href = "g100.txt">g100.txt</a>,
+          100 points.
+        </li>
+        <li>
+          <a href = "g1000.txt">g1000.txt</a>,
+          1,000 points.
+        </li>
+        <li>
+          <a href = "g10000.txt">g10000.txt</a>,
+          10,000 points.
+        </li>
+        <li>
+          <a href = "g100000.txt">g100000.txt</a>,
+          100,000 points.
+        </li>
+      </ul>
+    </p>
+ 
+    <p>
+      <b>UNIFORM_IN_TRIANGLE01_MAP</b> is a dataset created by the RANDOM_DATA program.
+      Points are well distributed.
+      <ul>
+        <li>
+          <a href = "uniform_in_triangle01_map.txt">uniform_in_triangle01_map.txt</a>,
+          2,000 points.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS page</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 13 August 2009.
+    </i>
+
+    <!-- John Burkardt -->
+ 
+  </body>
+
+</html>

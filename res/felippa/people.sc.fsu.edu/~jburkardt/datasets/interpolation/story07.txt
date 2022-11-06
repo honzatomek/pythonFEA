@@ -1,0 +1,4 @@
+This example is a "Dirac Delta" function.
+
+It has the value 1 at 0, followed by the value 0 at the next
+16 integers.  A polynomial interpolant to this data will oscillate wildly.

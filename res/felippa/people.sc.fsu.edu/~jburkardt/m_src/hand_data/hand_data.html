@@ -1,0 +1,201 @@
+<html>
+
+  <head>
+    <title>
+      hand_data
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      hand_data
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>hand_data</b>,
+      a MATLAB code which
+      carries out some numerical exercises based on data that came from
+      tracing several points on a person's hand.
+    </p>
+
+    <p>
+      The original proposer of this exercise was Cleve Moler, in the
+      textbook <i>Numerical Computing with MATLAB</i>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>hand_data</b> is available in
+      <a href = "../../m_src/hand_data/hand_data.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/convex_hull/convex_hull.html">
+      convex_hull</a>,
+      a MATLAB code which
+      demonstrates the computation of the convex hull of a set of 2D points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_area/hand_area.html">
+      hand_area</a>,
+      a MATLAB code which
+      estimates the area of a curve which outlines a person's hand.
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_data_test/hand_data_test.html">
+      hand_data_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/hand_mesh2d/hand_mesh2d.html">
+      hand_mesh2d</a>,
+      a MATLAB code which
+      reads in points which outline a human hand,
+      and calls mesh2d(), which creates a fine triangular
+      mesh of the region outlined by the points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/human_data/human_data.html">
+      human_data</a>,
+      a MATLAB code which
+      starts with an image of simple outline of a human body,
+      tabulates a sequence of points on the outline, 
+      creating numerical data defining the boundary.  It is then able
+      to fill the region with mesh points and triangulate the region.
+      This allows the region to be analyzed by the finite element method (FEM).
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_area/maple_area.html">
+      maple_area</a>,
+      a MATLAB code which
+      takes the list of pixels that form the boundary of the image
+      of a maple leaf within a picture, and uses grid, Monte Carlo,
+      and Quasi Monte Carlo sampling to estimate the area of the leaf.
+    </p>
+
+    <p>
+      <a href = "../../m_src/maple_boundary/maple_boundary.html">
+      maple_boundary</a>,
+      a MATLAB code which
+      reads an image of a maple leaf and extracts the list of pixels
+      that form the boundary.
+    </p>
+
+    <p>
+      <a href = "../../datasets/polygon/polygon.html">
+      polygon</a>,
+      a dataset directory which
+      contains examples of polygons.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangulate/triangulate.html">
+      triangulate</a>,
+      a MATLAB code which
+      triangulates a polygonal region.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          Cleve Moler,<br>
+          Numerical Computing with MATLAB,<br>
+          SIAM, 2004,<br>
+          ISBN13: 978-0-898716-60-3,<br>
+          LC: QA297.M625. 
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "hand_acquire.m">hand_acquire.m</a>
+          guides a user through the steps of recording hand data from the screen.
+        </li>
+        <li>
+          <a href = "hand_dilation.m">hand_dilation.m</a>
+          dilates the hand data.
+        </li>
+        <li>
+          <a href = "hand_hull.m">hand_hull.m</a>
+          computes the convex hull of the hand data.
+        </li>
+        <li>
+          <a href = "hand_linear.m">hand_linear.m</a>
+          applies a linear transformation to the hand data.
+        </li>
+        <li>
+          <a href = "hand_negation.m">hand_negation.m</a>
+          negates the hand data.
+        </li>
+        <li>
+          <a href = "hand_plot.m">hand_plot.m</a>
+          plots the hand data.
+        </li>
+        <li>
+          <a href = "hand_reflection.m">hand_reflection.m</a>
+          reflects the hand data.
+        </li>
+        <li>
+          <a href = "hand_rotation.m">hand_rotation.m</a>
+          rotates the hand data.
+        </li>
+        <li>
+          <a href = "hand_spline.m">hand_spline.m</a>
+          interpolates the hand data with a cubic spline.
+        </li>
+        <li>
+          <a href = "hand_star.m">hand_star.m</a>
+          shows that the hand data is "star shaped".
+        </li>
+        <li>
+          <a href = "hand_translation.m">hand_translation.m</a>
+          translates the hand data.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 29 April 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,155 @@
+<html>
+
+  <head>
+    <title>
+      obj_to_tri_surface
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      obj_to_tri_surface
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>obj_to_tri_surface</b>,
+      a MATLAB code which
+      reads data from an OBJ file describing a
+      polygonal mesh of a 3D surface, and converts it to a pair of arrays
+      describing a triangular mesh or TRI_SURFACE.
+    </p>
+
+    <p>
+      Since the faces in an OBJ file can be of any polygonal order,
+      while the faces in a TRI_SURFACE file must be triangular, the program
+      automatically uses a crude method to break up higher order faces
+      from the OBJ file into triangles.
+    </p>
+
+    <p>
+      An OBJ file is format for storing a description of the surface of
+      a 3D object, composed of triangles or higher degree polygons.
+    </p>
+
+    <p>
+      A TRI_SURFACE or triangulated mesh surface, is described by a
+      pair of arrays:
+      <ul>
+        <li>
+          a <b>node coordinate</b> array containing the 3D coordinates of nodes;
+        </li>
+        <li>
+          an <b>element  node</b> array containing triples of the indices
+          of the nodes used to form each triangle;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>obj_to_tri_surface</b> is available in
+      <a href = "../../m_src/obj_to_tri_surface/obj_to_tri_surface.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../data/obj/obj.html">
+      obj</a>,
+      a data directory which
+      contains a description and examples of OBJ files.
+    </p>
+
+    <p>
+      <a href = "../../m_src/obj_display/obj_display.html">
+      obj_display</a>,
+      a MATLAB code which
+      reads an OBJ file and displays it.
+    </p>
+
+    <p>
+      <a href = "../../m_src/obj_io/obj_io.html">
+      obj_io</a>,
+      a MATLAB code which
+      reads or writes an OBJ file.
+    </p>
+
+    <p>
+      <a href = "../../m_src/obj_to_tri_surface_test/obj_to_tri_surface_test.html">
+      obj_to_tri_surface_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/stla_to_tri_surface/stla_to_tri_surface.html">
+      stla_to_tri_surface</a>,
+      a MATLAB code which
+      reads an ASCII STL file and extracts
+      the surface mesh data as a TRI_SURFACE dataset.
+    </p>
+
+    <p>
+      <a href = "../../data/tri_surface/tri_surface.html">
+      tri_surface</a>,
+      a data directory which
+      contains examples of TRI_SURFACE files.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tri_surface_display/tri_surface_display.html">
+      tri_surface_display</a>,
+      a MATLAB code which
+      displays a TRI_SURFACE.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tri_surface_to_obj/tri_surface_to_obj.html">
+      tri_surface_to_obj</a>,
+      a MATLAB code which
+      reads a TRI_SURFACE dataset and extracts
+      the surface mesh data as an OBJ file.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "obj_to_tri_surface.m">obj_to_tri_surface.m</a>
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 23 February 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

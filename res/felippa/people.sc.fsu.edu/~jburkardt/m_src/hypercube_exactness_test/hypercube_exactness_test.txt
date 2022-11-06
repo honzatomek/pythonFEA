@@ -1,0 +1,48 @@
+07-Jan-2022 21:45:35
+
+hypercube_exactness_test():
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+  Test hypercube_exactness().
+07-Jan-2022 21:45:35
+
+HYPERCUBE_EXACTNESS
+  MATLAB/Octave version 9.8.0.1380330 (R2020a) Update 2
+
+  Investigate the polynomial exactness of a quadrature
+  rule by integrating all monomials of a given degree
+  over the [0,1] hypercube.
+
+  The rule will be adjusted to the [0,1] hypercube.
+
+HYPERCUBE_EXACTNESS: User input:
+  Quadrature rule X file = "cc_d1_o2_x.txt".
+  Quadrature rule W file = "cc_d1_o2_w.txt".
+  Quadrature rule R file = "cc_d1_o2_r.txt".
+  Maximum total degree to check = 5
+  Spatial dimension = 1
+  Number of points  = 2
+
+      Error    Degree  Exponents
+
+        0.0000000000000000    0    0
+
+        0.0000000000000000    1    1
+
+        0.5000000000000000    2    2
+
+        1.0000000000000000    3    3
+
+        1.5000000000000000    4    4
+
+        2.0000000000000000    5    5
+
+
+HYPERCUBE_EXACTNESS:
+  Normal end of execution.
+
+07-Jan-2022 21:45:35
+
+hypercube_exactness_test():
+  Normal end of execution.
+
+07-Jan-2022 21:45:35

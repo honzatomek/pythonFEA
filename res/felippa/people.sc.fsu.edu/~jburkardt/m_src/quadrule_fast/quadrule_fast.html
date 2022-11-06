@@ -1,0 +1,215 @@
+<html>
+
+  <head>
+    <title>
+      quadrule_fast
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      quadrule_fast
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>quadrule_fast</b>,
+      a MATLAB code which
+      implements fast and
+      efficient forms of several popular quadrature rules.
+    </p>
+
+    <p>
+      The quadrature rules are defined on the interval [-1,1], and
+      assume there is no additional weighting factor in the data.
+    </p>
+
+    <p>
+      The fast implementations are exhibited and discussed in 
+      the papers by Trefethen and Waldvogel.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>quadrule_fast</b> is available in
+      <a href = "../../m_src/quadrule_fast/quadrule_fast.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/clenshaw_curtis_rule/clenshaw_curtis_rule.html">
+      clenshaw_curtis_rule</a>,
+      a MATLAB code which
+      can compute Clenshaw Curtis rules
+      for 1 dimensional or multidimensional problems.
+    </p>
+
+    <p>
+      <a href = "../../m_src/product_rule/product_rule.html">
+      product_rule</a>,
+      a MATLAB code which
+      can create a multidimensional quadrature rule as a product of
+      one dimensional rules.
+    </p>
+
+    <p>
+      <a href = "../../m_src/quadrule/quadrule.html">
+      quadrule</a>,
+      a MATLAB code which
+      contains quadrature rules.
+    </p>
+
+    <p>
+      <a href = "../../m_src/quadrule_fast_test/quadrule_fast_test.html">
+      quadrule_fast_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/stroud/stroud.html">
+      stroud</a>,
+      a MATLAB code which
+      contains quadrature
+      rules for a variety of unusual areas, surfaces and volumes in 2D,
+      3D and N-dimensions.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+    
+    <p>
+      <ol>
+        <li>
+          Philip Davis, Philip Rabinowitz,<br>
+          Methods of Numerical Integration,<br>
+          Second Edition,<br>
+          Dover, 2007,<br>
+          ISBN: 0486453391,<br>
+          LC: QA299.3.D28.
+        </li>
+        <li>
+          Charles Clenshaw, Alan Curtis,<br>
+          A Method for Numerical Integration on an Automatic Computer,<br>
+          Numerische Mathematik,<br>
+          Volume 2, Number 1, December 1960, pages 197-205.
+        </li>
+        <li>
+          Lloyd Trefethen,<br>
+          Is Gauss Quadrature Better Than Clenshaw-Curtis?,<br>
+          SIAM Review,<br>
+          Volume 50, Number 1, 2008, pages 67-87.
+        </li>
+        <li>
+          Joerg Waldvogel,<br>
+          Fast Construction of the Fejer and Clenshaw-Curtis Quadrature Rules,<br>
+          BIT Numerical Mathematics,<br>
+          Volume 43, Number 1, 2003, pages 1-18.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "clenshaw_curtis_integrate.m">
+          clenshaw_curtis_integrate.m</a>
+          applies a Clenshaw Curtis quadrature rule.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_integrate_fast.m">
+          clenshaw_curtis_integrate_fast.m</a>
+          applies a Clenshaw Curtis quadrature rule, 
+          using an efficient MATLAB implementation.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_rule_compute.m">
+          clenshaw_curtis_rule_compute.m</a>
+          computes a Clenshaw Curtis quadrature rule.
+        </li>
+        <li>
+          <a href = "clenshaw_curtis_rule_set.m">clenshaw_curtis_rule_set.m</a>
+          sets a Clenshaw Curtis quadrature rule by looking it up in a table.
+        </li>
+        <li>
+          <a href = "fejer1_integrate_fast.m">
+          fejer1_integrate_fast.m</a>
+          applies a Fejer type 1 quadrature rule, 
+          using an efficient MATLAB implementation.
+        </li>
+        <li>
+          <a href = "fejer1_rule_compute.m">
+          fejer1_rule_compute.m</a>
+          computes a Fejer type 1 quadrature rule.
+        </li>
+        <li>
+          <a href = "fejer1_rule_set.m">fejer1_rule_set.m</a>
+          sets a Fejer type 1 quadrature rule by looking it up in a table.
+        </li>
+        <li>
+          <a href = "fejer2_integrate_fast.m">
+          fejer2_integrate_fast.m</a>
+          applies a Fejer type 2 quadrature rule, 
+          using an efficient MATLAB implementation.
+        </li>
+        <li>
+          <a href = "fejer2_rule_compute.m">
+          fejer2_rule_compute.m</a>
+          computes a Fejer type 2 quadrature rule.
+        </li>
+        <li>
+          <a href = "fejer2_rule_set.m">fejer2_rule_set.m</a>
+          sets a Fejer type 2 quadrature rule by looking it up in a table.
+        </li>
+        <li>
+          <a href = "gauss_legendre_integrate_fast.m">
+          gauss_legendre_integrate_fast.m</a>
+          applies a Gauss-Legendre quadrature rule, 
+          using an efficient MATLAB implementation.
+        </li>
+        <li>
+          <a href = "gauss_legendre_rule_compute.m">
+          gauss_legendre_rule_compute.m</a>
+          computes a Gauss Legendre quadrature rule.
+        </li>
+        <li>
+          <a href = "gauss_legendre_rule_set.m">gauss_legendre_rule_set.m</a>
+          sets a Gauss Legendre quadrature rule by looking it up in a table.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 February 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

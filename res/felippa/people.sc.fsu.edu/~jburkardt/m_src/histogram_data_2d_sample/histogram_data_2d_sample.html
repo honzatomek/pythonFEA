@@ -1,0 +1,168 @@
+<html>
+
+  <head>
+    <title>
+      histogram_data_2d_sample
+    </title>
+  </head>
+
+  <body bgcolor="#eeeeee" link="#cc0000" alink="#ff3300" vlink="#000055">
+
+    <h1 align = "center">
+      histogram_data_2d_sample
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>histogram_data_2d_sample</b>,
+      a MATLAB code which
+      demonstrates how to construct a Probability Density Function (PDF)
+      from a table of sample data, and then to use that PDF to create new samples.
+    </p>
+
+    <p>
+      The program presented here is hard-wired to handle a specific problem.
+      However, the ideas used in the program are easily extended to other regions
+      and other dimensions.
+    </p>
+
+    <p>
+      For the problem given here, we assume we have sample values of a function
+      <b>F(X,Y)</b> for each subregion of a region.  These values might actually
+      represent population counts, a density, the integral of some function over
+      the subregion, or simply an abstract function.  We implicitly assumed that
+      all the values are positive.
+    </p>
+
+    <p>
+      The particular region studied here is the unit square, which has been
+      broken down into a 20x20 array of equal subsquares.  
+    </p>
+
+    <p>
+      If we normalize by the sum of the data values, the result is a PDF
+      associated with each subregion.
+      By assigning an arbitrary order to the subregions, we can add the PDF
+      values up to the given subregion to get a CDF (cumulative density function)
+      for that subregion.  Now given an arbitrary random value U, we can locate
+      the subregion whose CDF value just exceeds U.  Choosing a random point
+      within this subregion gives us the sample point.  If we choose many such
+      sample points, the statistics for this sample will tend to the discrete
+      PDF that we defined from the data we were given.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>histogram_data_2d_sample</b> is available in
+      <a href = "../../c_src/histogram_data_2d_sample/histogram_data_2d_sample.html">a C version</a> and
+      <a href = "../../cpp_src/histogram_data_2d_sample/histogram_data_2d_sample.html">a C++ version</a> and
+      <a href = "../../f_src/histogram_data_2d_sample/histogram_data_2d_sample.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/histogram_data_2d_sample/histogram_data_2d_sample.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/fem1d_sample/fem1d_sample.html">
+      fem1d_sample</a>,
+      a MATLAB code which
+      samples a scalar or vector finite element function of one variable,
+      defined by FEM files,
+      returning interpolated values at the sample points.
+    </p>
+
+    <p>
+      <a href = "../../m_src/fem2d_sample/fem2d_sample.html">
+      fem2d_sample</a>,
+      a MATLAB code which
+      evaluates a finite element function defined on an order 3 or order 
+      6 triangulation.
+    </p>
+
+    <p>
+      <a href = "../../m_src/histogram_data_2d_sample_test/histogram_data_2d_sample_test.html">
+      histogram_data_2d_sample_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/histogram_pdf_2d_sample/histogram_pdf_2d_sample.html">
+      histogram_pdf_2d_sample</a>,
+      a MATLAB code which
+      demonstrates how uniform sampling of a 2D region with respect to some
+      known Probability Density Function (PDF) can be approximated by 
+      decomposing the region into rectangles, approximating the PDF by
+      a piecewise constant function, constructing a histogram for the CDF, 
+      and then sampling.
+    </p>
+
+    <p>
+      <a href = "../../m_src/prob/prob.html">
+      prob</a>,
+      a MATLAB code which
+      evaluates and inverts a number of probabilistic distributions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/random_data/random_data.html">
+      random_data</a>,
+      a MATLAB code which
+      generates sample points for 
+      various probability distributions, spatial dimensions, and geometries;
+    </p>
+
+    <p>
+      <a href = "../../m_src/rejection_sample/rejection_sample.html">
+      rejection_sample</a>,
+      a MATLAB code which
+      demonstrates acceptance/rejection sampling.
+    </p>
+
+    <p>
+      <a href = "../../m_src/walker_sample/walker_sample.html">
+      walker_sample</a>,
+      a MATLAB code which
+      efficiently samples a discrete probability vector using
+      Walker sampling.
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "histogram_data_2d_sample.m">histogram_data_2d_sample.m</a>,
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last modified on 30 January 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
+ 

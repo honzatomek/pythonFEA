@@ -1,0 +1,265 @@
+<html>
+
+  <head>
+    <title>
+      LATIN_EDGE - Latin Edge Datasets
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      LATIN_EDGE <br> Latin Edge Datasets
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>LATIN_EDGE</b> 
+      is a dataset directory which
+      contains points generated
+      by the M-dimensional Latin Edge Square process.
+    </p>
+
+    <p>
+      A Latin square, in <b>M</b> dimensional space, with <b>N</b> points,
+      can be thought of as being constructed by dividing each of the 
+      <b>M</b> coordinate dimensions into <b>N</b> equal intervals.
+      The I-th coordinates of the <b>N</b> subsquares are defined
+      by assigning each possible value exactly once to one subsquare.
+      Such a set is called a Latin Square.
+    </p>
+
+    <p>
+      If we now select at the center point from each subsquare,
+      but then remap these points to the unit hypercube so that
+      the least coordinate is 0.0 and the greatest is 1.0,
+      we have what we will term a "Latin Edge Square".
+    </p>
+
+    <p>
+      The datasets are distinguished by the values of the following
+      parameters:
+      <ul>
+        <li>
+          <b>M</b>, the spatial dimension;
+        </li>
+        <li>
+          <b>N</b>, the number of points to generate;
+        </li>
+        <li>
+          <b>SEED</b>, the initial value of the seed used for
+          UNIFORM, a portable uniform random number generator;
+        </li>
+      </ul>
+      The values of M and N are specified in the dataset file names.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/latin_edge/latin_edge.html">
+      LATIN_EDGE</a>,
+      a C++ library which
+      computes elements of a Latin Hypercube dataset, choosing edge points.
+    </p>
+
+    <p>
+      <a href = "../../f_src/latin_edge_dataset/latin_edge_dataset.html">
+      LATIN_EDGE_DATASET</a>, 
+      a FORTRAN90 program which
+      allows a user to define and compute a Latin edge dataset
+    </p>
+
+    <p>
+      <a href = "../../f_src/plot_points/plot_points.html">
+      PLOT_POINTS</a>,
+      a FORTRAN90 program which
+      can plot two dimensional
+      datasets, making Encapsulated PostScript images.
+    </p>
+
+    <p>
+      <a href = "../../data/table/table.html">
+      TABLE</a>,
+      a data format which 
+      is used to store the datasets.
+    </p>
+
+    <p>
+      <a href = "../../f_src/table_top/table_top.html">
+      TABLE_TOP</a>, 
+      a FORTRAN90 program which
+      can be used to analyze 
+      datasets of any dimension, by creating images of pairwise
+      coordinates.
+    </p>
+
+    <h3 align = "center">
+      Example dataset:
+    </h3>
+
+    <p>
+      A typical (but small) dataset looks like this:
+      <pre>
+#  latin_edge_02_00010.txt
+#  created by LATIN_EDGE_DATASET.
+#
+#  File generated on April  8 2003  10:47:39.811 AM
+#
+#  Spatial dimension M =      2
+#  Number of points N =     10
+#  Initial seed for UNIFORM =    123456789
+#
+  0.250000  0.050000
+  0.950000  0.550000
+  0.850000  0.150000
+  0.650000  0.850000
+  0.350000  0.350000
+  0.550000  0.250000
+  0.750000  0.950000
+  0.450000  0.450000
+  0.050000  0.750000
+  0.150000  0.650000
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          C J Colbourn and J H Dinitz,<br>
+          CRC Handbook of Combinatorial Design,<br>
+          CRC, 1996.
+        </li>
+        <li>
+          M D McKay, W J Conover, R J Beckman,<br>
+          A Comparison of Three Methods for Selecting Values of Input
+          Variables in the Analysis of Output From a Computer Code,<br>
+          Technometrics,<br>
+          Volume 21, pages 239-245, 1979.
+        </li>
+        <li>
+          Herbert Ryser,<br>
+          Combinatorial Mathematics,<br>
+          Mathematical Association of America, 1963.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      Datasets in M = 2 dimensions include:
+      <ul>
+        <li>
+          <a href = "latin_edge_02_00010.txt">latin_edge_02_00010.txt</a>, 
+          M = 2, N = 10, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_02_00010.png">latin_edge_02_00010.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "latin_edge_02_00100.txt">latin_edge_02_00100.txt</a>, 
+          M = 2, N = 100, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_02_00100.png">latin_edge_02_00100.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "latin_edge_02_01000.txt">latin_edge_02_01000.txt</a>, 
+          M = 2, N = 1000, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_02_01000.png">latin_edge_02_01000.png</a>, 
+          a <a href = "../../data/png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "latin_edge_02_10000.txt">latin_edge_02_10000.txt</a>, 
+          M = 2, N = 10000, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 7 dimensions include:
+      <ul>
+        <li>
+          <a href = "latin_edge_07_00010.txt">latin_edge_07_00010.txt</a>, 
+          M = 7, N = 10, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_07_00100.txt">latin_edge_07_00100.txt</a>, 
+          M = 7, N = 100, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_07_01000.txt">latin_edge_07_01000.txt</a>, 
+          M = 7, N = 1000, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_07_10000.txt">latin_edge_07_10000.txt</a>, 
+          M = 7, N = 10000, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 16 dimensions include:
+      <ul>
+        <li>
+          <a href = "latin_edge_16_00010.txt">latin_edge_16_00010.txt</a>, 
+          M = 16, N = 10, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_16_00100.txt">latin_edge_16_00100.txt</a>, 
+          M = 16, N = 100, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_16_01000.txt">latin_edge_16_01000.txt</a>, 
+          M = 16, N = 1000, SEED = 123456789;
+        </li>
+        <li>
+          <a href = "latin_edge_16_10000.txt">latin_edge_16_10000.txt</a>, 
+          M = 16, N = 10000, SEED = 123456789;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 30 October 2005.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,222 @@
+<html>
+
+  <head>
+    <title>
+      cvt_circle_nonuniform
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      cvt_circle_nonuniform
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>cvt_circle_nonuniform</b>,
+      a MATLAB code which
+      demonstrates the computation of a centroidal Voronoi Tessellation (CVT)
+      over a circular region, using a nonuniform density.
+    </p>
+
+    <p>
+      As you watch the CVT develop, for instance, you will be able to
+      guess something about the angle of intersection between the boundaries of the
+      region, and the edges of Voronoi regions.
+    </p>
+
+    <h3 algin = "center">
+      Usage:
+    </h3>
+
+    <p>
+      CVT_CIRCLE_NONUNIFORM is a MATLAB function for computing a CVT
+      in a circle with a nonuniform density.  The spatial region is the unit 
+      circle, but a nonuniform density is applied to that region.  The density
+      is implicitly defined by the sampling routine, which returns many more 
+      points near the circumference than near the center of the circle.  The 
+      result is that, during the CVT iteration, the generators arrange 
+      themselves more densely towards the outer part of the circle.
+      <blockquote>
+        [ p, t ] = cvt_circle_nonuniform ( n, sample_num, delaunay_display )
+      </blockquote>
+      <ul>
+        <li>
+          <b>N</b>, the number of generators.
+        </li>
+        <li>
+          <b>SAMPLE_NUM</b>, the number of sample points per generator.
+        </li>
+        <li>
+          <b>DELAUNAY_DISPLAY</b>, 0 to hide, 1 to show the Delaunay triangulation.
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>cvt_circle_nonuniform</b> is available in
+      <a href = "../../m_src/cvt_circle_nonuniform/cvt_circle_nonuniform.html">a MATLAB version</a>.
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/cvt_box/cvt_box.html">
+      cvt_box</a>,
+      a MATLAB code which
+      constructs a modified cvt in which some points are forced to
+      lie on the boundary.
+    </p>
+
+    <p>
+      <a href = "../../m_src/ccvt_reflect/ccvt_reflect.html">
+      ccvt_reflect</a>,
+      a MATLAB code which
+      tries to construct a modified cvt in which some points are forced to
+      lie on the boundary, using a reflection idea.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_lloyd/cvt_1d_lloyd.html">
+      cvt_1d_lloyd</a>,
+      a MATLAB code which
+      computes an n-point centroidal voronoi tessellation (cvt)
+      within the interval [0,1], under a uniform density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_nonuniform/cvt_1d_nonuniform.html">
+      cvt_1d_nonuniform</a>,
+      a MATLAB code which
+      allows the user to watch the evolution of a cvt computed over
+      a 1d interval with a nonuniform density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_1d_sampling/cvt_1d_sampling.html">
+      cvt_1d_sampling</a>,
+      a MATLAB code which
+      computes an n-point centroidal voronoi tessellation (cvt)
+      within the interval [0,1], under a uniform density,
+      using sampling to estimate the voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_2d_sampling/cvt_2d_sampling.html">
+      cvt_2d_sampling</a>,
+      a MATLAB code which
+      computes an n-point centroidal voronoi tessellation (cvt)
+      within the unit square [0,1]x[0,1], under a uniform density,
+      using sampling to estimate the voronoi regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_circle_nonuniform_test/cvt_circle_nonuniform_test.html">
+      cvt_circle_nonuniform_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_circle_uniform/cvt_circle_uniform.html">
+      cvt_circle_uniform</a>,
+      a MATLAB code which
+      calculates a centroidal voronoi tessellation (cvt) over a circle
+      with uniform density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvt_square_nonuniform/cvt_square_nonuniform.html">
+      cvt_square_nonuniform</a>,
+      a MATLAB code which
+      iteratively calculates a centroidal voronoi tessellation (cvt)
+      over a square, with a nonuniform density.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvtm_1d/cvtm_1d.html">
+      cvtm_1d</a>,
+      a MATLAB code which 
+      estimates a mirror-periodic centroidal voronoi tessellation (cvtm) in the 
+      periodic interval [0,1], using a version of lloyd's iteration.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cvtp_1d/cvtp_1d.html">
+      cvtp_1d</a>,
+      a MATLAB code which 
+      estimates a periodic centroidal voronoi tessellation (cvtp) in the 
+      periodic interval [0,1], using a version of lloyd's iteration.
+    </p>
+
+    <p>
+      <a href = "../../m_src/discrete_pdf_sample_2d/discrete_pdf_sample_2d.html">
+      discrete_pdf_sample_2d</a>,
+      a MATLAB code which
+      demonstrates how to construct a probability density function (pdf)
+      from a table of sample data, and then to use that pdf to create new samples.
+    </p>
+
+    <p>
+      <a href = "../../m_src/florida_cvt_geo/florida_cvt_geo.html">
+      florida_cvt_geo</a>,
+      a MATLAB code which
+      explores the creation of a centroidal voronoi tessellation (cvt) of
+      the state of florida, based solely on geometric considerations.
+    </p>
+
+    <p>
+      <a href = "../../m_src/test_triangulation/test_triangulation.html">
+      test_triangulation</a>,
+      a MATLAB code which
+      defines the geometry of a number of sample regions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/voronoi_plot/voronoi_plot.html">
+      voronoi_plot</a>,
+      a MATLAB code which
+      plots the voronoi neighborhoods of points using l1, l2, linfinity
+      or arbitrary lp norms;
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "cvt_circle_nonuniform.m">cvt_circle_nonuniform.m</a>,
+          the source code.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 24 December 2018.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

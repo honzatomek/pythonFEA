@@ -1,0 +1,34 @@
+# spaeth2_01.txt
+#
+#  Discussion:
+#
+#    Data matrix with 15 rows and 1 column
+#
+#    The data has been sorted in ascending order.
+#
+#  Modified:
+#
+#    29 April 2002
+#
+#  Reference:
+#
+#    Helmut Spaeth,
+#    Cluster Analysis Algorithms 
+#    for Data Reduction and Classification of Objects,
+#    Ellis Horwood, 1980, page 40.
+#
+ 0.0
+ 0.1
+ 0.2
+ 0.5
+ 2.0
+ 2.1
+ 2.5
+ 3.0
+ 3.2
+ 4.0
+ 5.0
+ 6.0
+ 8.0
+10.0
+11.0

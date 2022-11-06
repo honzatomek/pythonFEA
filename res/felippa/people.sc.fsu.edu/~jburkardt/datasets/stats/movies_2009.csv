@@ -1,0 +1,681 @@
+"Rank","Title","Release","Distributor","Genre","MPAA","Gross","Tickets","AdjGross"
+  1,"Transformers: Revenge of the Fallen","6/24/2009","Paramount Pictures","Action","PG-13",  402111870,  53614916,  423021687
+  2,"Avatar","12/18/2009","20th Century Fox","Action","PG-13",  352114898,  46948653,  370424872
+  3,"Harry Potter and the Half-Blood Prince","7/15/2009","Warner Bros.","Adventure","PG",  301959197,  40261226,  317661073
+  4,"Up","5/29/2009","Walt Disney Pictures","Adventure","PG",  293004164,  39067222,  308240382
+  5,"The Twilight Saga: New Moon","11/20/2009","Summit Entertainment","Drama","PG-13",  287954655,  38393954,  302928297
+  6,"The Hangover","6/5/2009","Warner Bros.","Comedy","R",  277322503,  36976334,  291743275
+  7,"Star Trek","5/8/2009","Paramount Pictures","Adventure","PG-13",  257730019,  34364003,  271131984
+  8,"The Blind Side","11/20/2009","Warner Bros.","Drama","PG-13",  208476067,  27796809,  219316823
+  9,"Monsters vs. Aliens","3/27/2009","Paramount Pictures","Adventure","PG",  198351526,  26446870,  208665804
+ 10,"Ice Age: Dawn of the Dinosaurs","7/1/2009","20th Century Fox","Adventure","PG",  196573705,  26209827,  206795535
+ 11,"X-Men Origins: Wolverine","5/1/2009","20th Century Fox","Action","PG-13",  179883157,  23984421,  189237082
+ 12,"Night at the Museum: Battle of the Smithsonian","5/22/2009","20th Century Fox","Comedy","PG",  177243721,  23632496,  186460393
+ 13,"The Proposal","6/19/2009","Walt Disney Pictures","Romantic Comedy","PG-13",  163958031,  21861071,  172483850
+ 14,"2012","11/13/2009","Sony Pictures","Action","PG-13",  163442129,  21792284,  171941121
+ 15,"Alvin and the Chipmunks: The Squeakquel","12/23/2009","20th Century Fox","Comedy","PG",  155916935,  20788925,  164024618
+ 16,"Fast & Furious","4/3/2009","Universal","Action","PG-13",  155064265,  20675235,  163127604
+ 17,"G.I. Joe: The Rise of Cobra","8/7/2009","Paramount Pictures","Action","PG-13",  150201498,  20026866,  158011973
+ 18,"Paul Blart: Mall Cop","1/16/2009","Sony Pictures","Comedy","PG",  146336178,  19511490,  153945656
+ 19,"Taken","1/30/2009","20th Century Fox","Thriller/Suspense","PG-13",  145000989,  19333465,  152541039
+ 20,"Sherlock Holmes","12/25/2009","Warner Bros.","Adventure","PG-13",  138715437,  18495392,  145928643
+ 21,"Gran Torino","12/12/2008","Warner Bros.","Drama","R",  138274748,  18436633,  145465034
+ 22,"Disney's A Christmas Carol","11/6/2009","Walt Disney Pictures","Drama","PG",  137443917,  18325856,  144591004
+ 23,"Angels & Demons","5/15/2009","Sony Pictures","Thriller/Suspense","PG-13",  133375846,  17783446,  140311389
+ 24,"Terminator Salvation: The Future Begins","5/21/2009","Warner Bros.","Action","PG-13",  125322469,  16709663,  131839241
+ 25,"Cloudy with a Chance of Meatballs","9/18/2009","Sony Pictures","Comedy","PG",  124264907,  16568654,  130726680
+ 26,"Inglourious Basterds","8/21/2009","Weinstein Co.","Action","R",  120774594,  16103279,  127054871
+ 27,"G-Force","7/24/2009","Walt Disney Pictures","Adventure","PG",  119436770,  15924903,  125647485
+ 28,"District 9","8/14/2009","Sony Pictures","Thriller/Suspense","R",  115646235,  15419498,  121659839
+ 29,"Slumdog Millionaire","11/12/2008","Fox Searchlight","Drama","R",  112654105,  15020547,  118512116
+ 30,"Couples Retreat","10/9/2009","Universal","Comedy","PG-13",  108511760,  14468235,  114154374
+ 31,"Paranormal Activity","9/25/2009","Paramount Pictures","Horror","R",  107854596,  14380613,  113463037
+ 32,"Watchmen","3/6/2009","Warner Bros.","Action","R",  107509799,  14334640,  113100310
+ 33,"Public Enemies","7/1/2009","Universal","Drama","R",  97104620,  12947283,  102154063
+ 34,"Julie & Julia","8/7/2009","Sony Pictures","Comedy","PG-13",  94125426,  12550057,  99019950
+ 35,"He's Just Not That Into You","2/6/2009","Warner Bros.","Romantic Comedy","PG-13",  93953653,  12527154,  98839245
+ 36,"Madea Goes To Jail","2/20/2009","Lionsgate","Comedy","PG-13",  90508336,  12067778,  95214768
+ 37,"The Ugly Truth","7/24/2009","Sony Pictures","Romantic Comedy","R",  88915214,  11855362,  93538806
+ 38,"The Princess and the Frog","11/25/2009","Walt Disney Pictures","Adventure","G",  85859339,  11447912,  90324026
+ 39,"Knowing","3/20/2009","Summit Entertainment","Thriller/Suspense","PG-13",  79957634,  10661018,  84115432
+ 40,"Hannah Montana the Movie","4/10/2009","Walt Disney Pictures","Drama","G",  79576189,  10610159,  83714155
+ 41,"Where the Wild Things Are","10/16/2009","Warner Bros.","Adventure","PG",  76566491,  10208865,  80547945
+ 42,"Zombieland","10/2/2009","Sony Pictures","Comedy","R",  75590286,  10078705,  79520982
+ 43,"Coraline","2/6/2009","Focus Features","Adventure","PG",  75286229,  10038164,  79201114
+ 44,"Hotel for Dogs","1/16/2009","Paramount Pictures","Comedy","PG",  73178547,  9757140,  76983835
+ 45,"Law Abiding Citizen","10/16/2009","Overture Films","Thriller/Suspense","R",  72928813,  9723842,  76721113
+ 46,"Michael Jackson's This Is It","10/28/2009","Sony Pictures","Documentary","PG",  72091016,  9612135,  75839745
+ 47,"I Love You, Man","3/20/2009","Paramount Pictures","Comedy","R",  72013010,  9601735,  75757689
+ 48,"Obsessed","4/24/2009","Sony Pictures","Thriller/Suspense","PG-13",  68261644,  9101553,  71811253
+ 49,"Race to Witch Mountain","3/13/2009","Walt Disney Pictures","Adventure","PG",  67172594,  8956346,  70665570
+ 50,"The Final Destination","8/28/2009","Warner Bros.","Horror","R",  66477700,  8863693,  69934538
+ 51,"The Taking of Pelham 123","6/12/2009","Sony Pictures","Action","R",  65452312,  8726975,  68855833
+ 52,"Friday the 13th","2/13/2009","Warner Bros.","Horror","R",  65002019,  8666936,  68382125
+ 53,"17 Again","4/17/2009","Warner Bros.","Comedy","PG-13",  64167069,  8555609,  67503755
+ 54,"The Time Traveler's Wife","8/14/2009","Warner Bros.","Drama","PG-13",  63414846,  8455313,  66712420
+ 55,"Brüno","7/10/2009","Universal","Comedy","R",  60054530,  8007271,  63177368
+ 56,"It's Complicated","12/25/2009","Universal","Romantic Comedy","R",  59178840,  7890512,  62256140
+ 57,"Bride Wars","1/9/2009","20th Century Fox","Comedy","PG",  58715510,  7828735,  61768719
+ 58,"The Haunting in Connecticut","3/27/2009","Lionsgate","Horror","PG-13",  55389516,  7385269,  58269772
+ 59,"Ghosts of Girlfriends Past","5/1/2009","Warner Bros.","Romantic Comedy","PG-13",  55250026,  7366670,  58123026
+ 60,"Funny People","7/31/2009","Universal","Comedy","R",  51855045,  6914006,  54551507
+ 61,"I Can Do Bad All By Myself","9/11/2009","Lionsgate","Comedy","PG-13",  51733921,  6897856,  54424084
+ 62,"My Bloody Valentine","1/16/2009","Lionsgate","Horror","R",  51545952,  6872794,  54226345
+ 63,"Land of the Lost","6/5/2009","Universal","Comedy","PG-13",  49438370,  6591783,  52009168
+ 64,"My Sister's Keeper","6/26/2009","Warner Bros.","Drama","PG-13",  49200230,  6560031,  51758645
+ 65,"The Curious Case of Benjamin Button","12/25/2008","Paramount Pictures","Drama","PG-13",  48212240,  6428299,  50719279
+ 66,"Old Dogs","11/25/2009","Walt Disney Pictures","Comedy","PG",  47239575,  6298610,  49696033
+ 67,"Underworld 3: Rise of the Lycans","1/23/2009","Sony Pictures","Action","R",  45802315,  6106975,  48184033
+ 68,"Up in the Air","12/4/2009","Paramount Pictures","Drama","R",  44375265,  5916702,  46682779
+ 69,"Confessions of a Shopaholic","2/13/2009","Walt Disney Pictures","Romantic Comedy","PG",  44277350,  5903647,  46579775
+ 70,"Precious (Based on the Novel Push by Sapphire)","11/6/2009","Lionsgate","Drama","R",  43760123,  5834683,  46035649
+ 71,"Year One","6/19/2009","Sony Pictures","Comedy","PG-13",  43337279,  5778304,  45590819
+ 72,"The Unborn","1/9/2009","Universal","Horror","PG-13",  42670410,  5689388,  44889271
+ 73,"Drag Me To Hell","5/29/2009","Universal","Horror","PG-13",  42100625,  5613417,  44289860
+ 74,"Orphan","7/24/2009","Warner Bros.","Drama","R",  41596251,  5546167,  43759258
+ 75,"Duplicity","3/20/2009","Universal","Thriller/Suspense","PG-13",  40572825,  5409710,  42682612
+ 76,"Planet 51","11/20/2009","Sony Pictures","Adventure","PG",  39570569,  5276076,  41628240
+ 77,"Surrogates","9/25/2009","Walt Disney Pictures","Action","PG-13",  38577772,  5143703,  40583817
+ 78,"Ninja Assassin","11/25/2009","Warner Bros.","Action","R",  37492774,  4999037,  39442402
+ 79,"State of Play","4/17/2009","Universal","Thriller/Suspense","PG-13",  37017955,  4935727,  38942886
+ 80,"Notorious","1/16/2009","Fox Searchlight","Drama","R",  36843682,  4912491,  38759554
+ 81,"Marley & Me","12/25/2008","20th Century Fox","Comedy","PG",  36489705,  4865294,  38387170
+ 82,"The Pink Panther 2","2/6/2009","Sony Pictures","Comedy","PG",  35922978,  4789730,  37790970
+ 83,"All About Steve","9/4/2009","20th Century Fox","Romantic Comedy","PG-13",  33862903,  4515054,  35623776
+ 84,"Halloween 2","8/28/2009","Weinstein/Dimension","Horror","R",  33392973,  4452396,  35129404
+ 85,"The Informant","9/18/2009","Warner Bros.","Thriller/Suspense","R",  33316821,  4442243,  35049297
+ 86,"The Last House on the Left","3/13/2009","Universal","Horror","R",  32752215,  4366962,  34455330
+ 87,"(500) Days of Summer","7/17/2009","Fox Searchlight","Romantic Comedy","PG-13",  32425665,  4323422,  34111800
+ 88,"The Men Who Stare at Goats","11/6/2009","Overture Films","Black Comedy","R",  32018431,  4269124,  33683388
+ 89,"earth","4/22/2009","Walt Disney Pictures","Documentary","G",  32011576,  4268210,  33676177
+ 90,"The Soloist","4/24/2009","Paramount Pictures","Drama","PG-13",  31853584,  4247145,  33509974
+ 91,"Push","2/6/2009","Summit Entertainment","Thriller/Suspense","PG-13",  31811527,  4241537,  33465727
+ 92,"9","9/9/2009","Focus Features","Adventure","PG-13",  31749894,  4233319,  33400887
+ 93,"Toy Story 3D Double Feature","10/2/2009","Walt Disney Pictures","Adventure","G",  30702446,  4093659,  32298970
+ 94,"The Reader","12/10/2008","Weinstein Co.","Drama","R",  30640829,  4085444,  32234153
+ 95,"Invictus","12/11/2009","Warner Bros.","Drama","PG-13",  30586445,  4078193,  32176943
+ 96,"The Stepfather","10/16/2009","Sony Pictures","Thriller/Suspense","PG-13",  29062561,  3875008,  30573813
+ 97,"The Uninvited","1/30/2009","Paramount Pictures","Horror","PG-13",  28596818,  3812909,  30083852
+ 98,"Defiance","12/31/2008","Paramount Vantage","Drama","R",  28444199,  3792560,  29923298
+ 99,"Saw VI","10/23/2009","Lionsgate","Horror","R",  27693292,  3692439,  29133344
+100,"Brothers","12/4/2009","Lionsgate","Drama","R",  27414913,  3655322,  28840491
+101,"Dance Flick","5/22/2009","Paramount Pictures","Comedy","PG-13",  25794018,  3439202,  27135304
+102,"The Fourth Kind","11/6/2009","Universal","Thriller/Suspense","PG-13",  25464480,  3395264,  26788633
+103,"The International","2/13/2009","Sony Pictures","Thriller/Suspense","R",  25450527,  3393404,  26773958
+104,"Did You Hear About the Morgans?","12/18/2009","Sony Pictures","Romantic Comedy","PG-13",  25312384,  3374985,  26628632
+105,"Aliens in the Attic","7/31/2009","20th Century Fox","Adventure","PG",  25200412,  3360055,  26510834
+106,"The Wrestler","12/17/2008","Fox Searchlight","Drama","R",  24914015,  3321869,  26209546
+107,"Bedtime Stories","12/25/2008","Walt Disney Pictures","Comedy","PG",  24562807,  3275041,  25840073
+108,"Observe and Report","4/10/2009","Warner Bros.","Comedy","R",  24007324,  3200977,  25255709
+109,"Fighting","4/24/2009","Universal","Action","PG-13",  23091010,  3078801,  24291740
+110,"Love Happens","9/18/2009","Universal","Drama","PG-13",  22965110,  3062015,  24159298
+111,"Revolutionary Road","12/26/2008","Paramount Vantage","Drama","R",  22951340,  3060179,  24144812
+112,"Fame","9/25/2009","MGM","Musical","PG",  22455510,  2994068,  23623197
+113,"Valkyrie","12/25/2008","United Artists","Thriller/Suspense","PG-13",  22373908,  2983188,  23537353
+114,"Shorts","8/21/2009","Warner Bros.","Adventure","PG",  20919166,  2789222,  22006962
+115,"Gamer","9/4/2009","Lionsgate","Action","R",  20534907,  2737988,  21602725
+116,"Astro Boy","10/23/2009","Summit Entertainment","Adventure","PG",  19432359,  2590981,  20442840
+117,"Under the Sea 3-D","2/13/2009","Warner Bros.","Documentary","G",  19416024,  2588803,  20425656
+118,"Jonas Brothers: The 3D Concert Experience","2/27/2009","Walt Disney Pictures","Concert/Performance","G",  19162740,  2555032,  20159202
+119,"The Fantastic Mr. Fox","11/13/2009","20th Century Fox","Adventure","PG",  19123189,  2549759,  20117599
+120,"The Invention of Lying","10/2/2009","Warner Bros.","Comedy","PG-13",  18451251,  2460167,  19410718
+121,"Yes Man","12/19/2008","Warner Bros.","Comedy","PG-13",  18183588,  2424478,  19129131
+122,"Inkheart","1/23/2009","Warner Bros.","Adventure","PG",  17303424,  2307123,  18203200
+123,"Fired Up","2/20/2009","Sony Pictures","Comedy","PG-13",  17231291,  2297505,  18127314
+124,"New in Town","1/30/2009","Lionsgate","Romantic Comedy","PG",  16734283,  2231238,  17604468
+125,"Imagine That","6/12/2009","Paramount Pictures","Comedy","PG",  16222392,  2162986,  17065960
+126,"Jennifer's Body","9/18/2009","20th Century Fox","Thriller/Suspense","R",  16204793,  2160639,  17047442
+127,"Adventureland","4/3/2009","Miramax","Black Comedy","R",  16044025,  2139203,  16878312
+128,"Twilight","11/21/2008","Summit Entertainment","Drama","PG-13",  15847004,  2112934,  16671049
+129,"Armored","12/4/2009","Sony Pictures","Thriller/Suspense","PG-13",  15815302,  2108707,  16637698
+130,"A Perfect Getaway","8/7/2009","Universal","Thriller/Suspense","R",  15515460,  2068728,  16322264
+131,"The Goods: Live Hard, Sell Hard","8/14/2009","Paramount Vantage","Comedy","R",  15122676,  2016357,  15909057
+132,"Ponyo","8/14/2009","Walt Disney Pictures","Adventure","G",  15090399,  2012053,  15875098
+133,"The Box","11/6/2009","Warner Bros.","Thriller/Suspense","PG-13",  15045676,  2006090,  15828050
+134,"I Love You, Beth Cooper","7/10/2009","20th Century Fox","Comedy","PG-13",  14800725,  1973430,  15570363
+135,"Doubt","12/12/2008","Miramax","Drama","PG-13",  14740989,  1965465,  15507519
+136,"Milk","11/26/2008","Focus Features","Drama","R",  14683305,  1957774,  15446837
+137,"Last Chance Harvey","12/25/2008","Overture Films","Drama","PG-13",  14538095,  1938413,  15294079
+138,"Capitalism: A Love Story","9/23/2009","Overture Films","Documentary","R",  14363397,  1915120,  15110297
+139,"Amelia","10/23/2009","Fox Searchlight","Drama","PG",  14224141,  1896552,  14963795
+140,"Cirque du Freak: The Vampire's Assistant","10/23/2009","Universal","Action","PG-13",  14046595,  1872879,  14777015
+141,"Nine","12/18/2009","Weinstein Co.","Musical","PG-13",  13745976,  1832797,  14460768
+142,"Crank 2: High Voltage","4/17/2009","Lionsgate","Thriller/Suspense","R",  13684249,  1824567,  14395834
+143,"Whip It","10/2/2009","Fox Searchlight","Comedy","PG-13",  13077184,  1743625,  13757201
+144,"Magnificent Desolation","9/23/2005","IMAX Films","Documentary","Not Rated",  13024828,  1736644,  13702121
+145,"The Hurt Locker","6/26/2009","Summit Entertainment","Drama","R",  12671105,  1689481,  13330005
+146,"Frost/Nixon","12/5/2008","Universal","Drama","R",  12330855,  1644114,  12972059
+147,"12 Rounds","3/27/2009","20th Century Fox","Action","PG-13",  12234694,  1631293,  12870902
+148,"Sunshine Cleaning","3/13/2009","Overture Films","Comedy","R",  12062558,  1608341,  12689810
+149,"Sorority Row","9/11/2009","Summit Entertainment","Horror","R",  11965282,  1595371,  12587477
+150,"Extract","9/4/2009","Miramax","Comedy","R",  10823158,  1443088,  11385964
+151,"De père en flic","7/8/2009","Alliance","Comedy","Not Rated",  10644453,  1419260,  11197961
+152,"Not Easily Broken","1/9/2009","Sony Pictures","Drama","PG-13",  10572742,  1409699,  11122525
+153,"Pandorum","9/25/2009","Overture Films","Horror","R",  10330853,  1377447,  10868057
+154,"Whiteout","9/11/2009","Warner Bros.","Thriller/Suspense","R",  10275638,  1370085,  10809971
+155,"Next Day Air","5/8/2009","Summit Entertainment","Comedy","R",  10027047,  1336940,  10548457
+156,"The Boondock Saints 2: All Saints Day","10/30/2009","Apparition","Action","R",  9957954,  1327727,  10475766
+157,"Seven Pounds","12/19/2008","Sony Pictures","Drama","PG-13",  9804526,  1307270,  10314360
+158,"Away We Go","6/5/2009","Focus Features","Comedy","R",  9451946,  1260259,  9943444
+159,"Dragonball Evolution","4/8/2009","20th Century Fox","Adventure","PG",  9362785,  1248371,  9849647
+160,"Everybody's Fine","12/4/2009","Miramax","Comedy","PG-13",  9208876,  1227850,  9687737
+161,"A Serious Man","10/2/2009","Focus Features","Comedy","R",  9190525,  1225403,  9668430
+162,"Street Fighter: The Legend of Chun-Li","2/27/2009","20th Century Fox","Action","PG-13",  9135036,  1218005,  9610059
+163,"My Life in Ruins","6/5/2009","Fox Searchlight","Romantic Comedy","PG-13",  8677425,  1156990,  9128651
+164,"Pirate Radio","11/13/2009","Focus Features","Comedy","R",  7994115,  1065882,  8409809
+165,"An Education","10/9/2009","Sony Pictures Classics","Drama","PG-13",  7883524,  1051137,  8293471
+166,"The Collector","7/31/2009","Freestyle Releasing","Horror","R",  7712114,  1028282,  8113145
+167,"Taking Woodstock","8/28/2009","Focus Features","Drama","R",  7460204,  994694,  7848136
+168,"The Tale of Despereaux","12/19/2008","Universal","Adventure","G",  7215370,  962049,  7590567
+169,"The Road","11/25/2009","Weinstein Co.","Drama","R",  6858313,  914442,  7214947
+170,"Post Grad","8/21/2009","20th Century Fox","Comedy","PG-13",  6382178,  850957,  6714051
+171,"Coco Before Chanel","9/25/2009","Sony Pictures Classics","Drama","PG-13",  5997682,  799691,  6309562
+172,"Whatever Works","6/19/2009","Sony Pictures Classics","Romantic Comedy","PG-13",  5306706,  707561,  5582656
+173,"Deep Sea 3-D","3/3/2006","Warner Bros.","Documentary","G",  5275270,  703369,  5549581
+174,"Bandslam","8/14/2009","Summit Entertainment","Comedy","PG",  5210988,  694798,  5481956
+175,"Moon","6/12/2009","Sony Pictures Classics","Thriller/Suspense","R",  5010163,  668022,  5270694
+176,"The Day the Earth Stood Still","12/12/2008","20th Century Fox","Adventure","PG-13",  4942722,  659030,  5199747
+177,"3 Idiots","12/23/2009","Reliance Big Pictures","Comedy","PG-13",  4757078,  634277,  5004446
+178,"Miss March","3/13/2009","20th Century Fox","Comedy","R",  4543320,  605776,  4779573
+179,"Bright Star","9/18/2009","Apparition","Drama","PG",  4444637,  592618,  4675756
+180,"Food, Inc.","6/12/2009","Magnolia Pictures","Documentary","PG",  4417674,  589023,  4647391
+181,"Good Hair","10/9/2009","Roadside Attractions","Documentary","PG-13",  4146170,  552823,  4361773
+182,"Bolt","11/21/2008","Walt Disney Pictures","Comedy","PG",  4136434,  551525,  4351532
+183,"The September Issue","8/28/2009","Roadside Attractions","Documentary","PG-13",  3817183,  508958,  4015679
+184,"The Class","1/30/2009","Sony Pictures Classics","Drama","Not Rated",  3766810,  502241,  3962681
+185,"The Brothers Bloom","5/15/2009","Summit Entertainment","Black Comedy","PG-13",  3531756,  470901,  3715409
+186,"Space Station","4/19/2002","IMAX Films","Documentary","Not Rated",  3314255,  441901,  3486599
+187,"Madagascar: Escape 2 Africa","11/7/2008","Paramount Pictures","Comedy","PG",  3158070,  421076,  3322290
+188,"Two Lovers","2/13/2009","Magnolia Pictures","Drama","R",  3149034,  419871,  3312782
+189,"Blade Runner","6/25/1982","Warner Bros.","Thriller/Suspense","R",  3016759,  402235,  3173634
+190,"Trailer Park Boys: Countdown to Liquor Day","9/25/2009","Alliance","Comedy","R",  3012677,  401690,  3169334
+191,"Australia","11/26/2008","20th Century Fox","Drama","PG-13",  2867289,  382305,  3016386
+192,"Cheri","6/26/2009","Miramax","Drama","R",  2715657,  362088,  2856874
+193,"Easy Virtue","5/22/2009","Sony Pictures Classics","Romantic Comedy","PG-13",  2656784,  354238,  2794938
+194,"My One and Only","8/21/2009","Freestyle Releasing","Comedy","PG-13",  2556558,  340874,  2689496
+195,"Quantum of Solace","11/14/2008","Sony Pictures","Action","PG-13",  2548014,  339735,  2680509
+196,"Sin Nombre","3/20/2009","Focus Features","Thriller/Suspense","R",  2536665,  338222,  2668572
+197,"Rachel Getting Married","10/3/2008","Sony Pictures Classics","Drama","R",  2489437,  331925,  2618888
+198,"The Young Victoria","12/18/2009","Apparition","Drama","PG",  2456337,  327512,  2584070
+199,"Love Aaj Kal","7/31/2009","Eros Entertainment","Romantic Comedy","Not Rated",  2430083,  324011,  2556447
+200,"In the Loop","7/24/2009","IFC Films","Black Comedy","Not Rated",  2388804,  318507,  2513020
+201,"The Dark Knight","7/18/2008","Warner Bros.","Action","PG-13",  2343780,  312504,  2465657
+202,"Sea Monsters: A Prehistoric Adventure","10/5/2007","National Geographic Entertainment","Documentary","Not Rated",  2299538,  306605,  2419113
+203,"Adam","7/29/2009","Fox Searchlight","Drama","PG-13",  2283291,  304439,  2402024
+204,"The Girl with the Dragon Tatto","3/19/2010","Alliance","Thriller/Suspense","R",  2186693,  291559,  2300401
+205,"Waltz with Bashir","12/25/2008","Sony Pictures Classics","Documentary","R",  2063408,  275121,  2170705
+206,"The Spirit","12/25/2008","Lionsgate","Action","PG-13",  2062450,  274993,  2169695
+207,"Is Anybody There?","4/17/2009","Stony Island Entertainment","Drama","PG-13",  2026756,  270234,  2132146
+208,"Broken Embraces","11/20/2009","Sony Pictures Classics","Thriller/Suspense","R",  2022655,  269687,  2127830
+209,"Dolphins and Whales Tribes of the Ocean 3D","2/15/2008","3D Entertainment","Documentary","Not Rated",  2013083,  268411,  2117763
+210,"Fly Me To the Moon","8/15/2008","Summit Entertainment","Adventure","G",  1979528,  263937,  2082463
+211,"Four Christmases","11/26/2008","Warner Bros.","Comedy","PG-13",  1956206,  260827,  2057925
+212,"Rudo y Cursi","5/8/2009","Sony Pictures Classics","Comedy","R",  1827660,  243688,  1922698
+213,"Valentino: The Last Emperor","3/18/2009","Truly Indie","Documentary","PG-13",  1755134,  234018,  1846402
+214,"Che, Part 1: The Argentine","1/9/2009","IFC Films","Drama","Not Rated",  1733532,  231138,  1823679
+215,"A Single Man","12/11/2009","Weinstein Co.","Drama","R",  1731649,  230887,  1821698
+216,"Every Little Step","4/17/2009","Sony Pictures Classics","Documentary","PG-13",  1725141,  230019,  1814850
+217,"Les doigts croches","7/31/2009","Alliance","Comedy","Not Rated",  1662485,  221665,  1748937
+218,"Battle for Terra","5/1/2009","Roadside Attractions","Adventure","PG",  1647083,  219611,  1732731
+219,"L'heure d'été","5/15/2009","IFC Films","Drama","Not Rated",  1647001,  219600,  1732644
+220,"It Might Get Loud","8/14/2009","Sony Pictures Classics","Documentary","PG",  1610163,  214688,  1693888
+221,"New York, I Love You","10/16/2009","Vivendi Entertainment","Drama","R",  1588087,  211745,  1670668
+222,"Gomorrah","12/19/2008","IFC Films","Drama","Not Rated",  1573614,  209815,  1655440
+223,"Babine","11/28/2008","Alliance","Drama","Not Rated",  1570226,  209363,  1651874
+224,"Dédé, à travers les brumes","3/13/2009","TVA Films","Drama","Not Rated",  1548858,  206514,  1629395
+225,"Departures","5/29/2009","Regent Releasing","Drama","PG-13",  1537546,  205006,  1617497
+226,"Kambakkht Ishq","7/3/2009","Eros Entertainment","Romantic Comedy","Not Rated",  1445739,  192765,  1520916
+227,"Bad Lieutenant: Port of Call New Orleans","11/20/2009","First Look","Drama","R",  1433091,  191079,  1507613
+228,"I Hope They Serve Beer in Hell","9/25/2009","Freestyle Releasing","Comedy","R",  1429299,  190573,  1503621
+229,"Polytechnique","2/6/2009","Vivafilm","Drama","Not Rated",  1418304,  189107,  1492054
+230,"X Games 3D: The Movie","8/21/2009","Walt Disney Pictures","Documentary","PG",  1391434,  185525,  1463792
+231,"Kaminey","8/14/2009","UTV Communications","Thriller/Suspense","Not Rated",  1286143,  171486,  1353025
+232,"Paper Heart","8/7/2009","Overture Films","Comedy","PG-13",  1274062,  169875,  1340314
+233,"The Secrets of Jonathan Sperry","9/18/2009","Five & Two Pictures","Drama","PG",  1167623,  155683,  1228339
+234,"Yoo-Hoo, Mrs. Goldberg","7/10/2009","International Film Circuit","Documentary","Not Rated",  1133662,  151155,  1192613
+235,"Sugar","4/3/2009","Sony Pictures Classics","Drama","R",  1081922,  144256,  1138180
+236,"5150, Rue des Ormes","10/9/2009","Alliance","NA","NA",  1053966,  140529,  1108774
+237,"The Imaginarium of Doctor Parnassus","12/25/2009","Sony Pictures Classics","Adventure","PG-13",  1029821,  137309,  1083368
+238,"New York","6/26/2009","Yash Raj Films","NA","NA",  997437,  132992,  1049307
+239,"Jumper","2/14/2008","20th Century Fox","Adventure","PG-13",  996137,  132818,  1047934
+240,"Paris","9/18/2009","Equinox","Comedy","R",  960240,  128032,  1010172
+241,"More Than a Game","10/2/2009","Lionsgate","Documentary","PG",  950675,  126757,  1000113
+242,"De Dana Dan","11/27/2009","NA","Comedy","NA",  944979,  125997,  994116
+243,"Me and Orson Welles","11/25/2009","Freestyle Releasing","Drama","PG-13",  942276,  125637,  991276
+244,"Management","5/15/2009","Samuel Goldwyn Films","Romantic Comedy","NA",  934658,  124621,  983260
+245,"Chandni Chowk to China","1/16/2009","Warner Bros.","Musical","PG-13",  921738,  122898,  969665
+246,"Cold Souls","8/7/2009","Samuel Goldwyn Films","Drama","PG-13",  905209,  120695,  952284
+247,"Tyson","4/24/2009","Sony Pictures Classics","Documentary","R",  887918,  118389,  934089
+248,"Delhi 6","2/13/2009","UTV Communications","NA","Not Rated",  879913,  117322,  925671
+249,"Goodbye Solo","3/27/2009","Roadside Attractions","Drama","R",  871445,  116193,  916763
+250,"The Cove","7/31/2009","Roadside Attractions","Documentary","PG-13",  861796,  114906,  906608
+251,"Seraphine","6/5/2009","Music Box Films","NA","NA",  857997,  114400,  902616
+252,"Paris 36","4/3/2009","Sony Pictures Classics","NA","Not Rated",  850575,  113410,  894805
+253,"I've Loved You So Long","10/24/2008","Sony Pictures Classics","Drama","Not Rated",  813326,  108443,  855615
+254,"The Boys are Back","9/25/2009","Miramax","Drama","PG-13",  809752,  107967,  851860
+255,"Echelon Conspiracy","2/27/2009","After Dark","NA","PG-13",  796716,  106229,  838147
+256,"The Wonder of it All","7/17/2009","Indican Pictures","NA","NA",  780661,  104088,  821254
+257,"Superhero Movie","3/28/2008","MGM","Comedy","PG-13",  764486,  101931,  804236
+258,"Billo Barber","2/13/2009","NA","NA","Not Rated",  754928,  100657,  794184
+259,"Wendy and Lucy","12/10/2008","Oscilloscope Pictures","Drama","R",  754366,  100582,  793592
+260,"Kurbaan","11/20/2009","UTV Communications","NA","NA",  754269,  100569,  793489
+261,"1981","9/4/2009","NA","NA","NA",  753197,  100426,  792361
+262,"The Great Buck Howard","3/20/2009","Magnolia Pictures","Drama","PG",  750587,  100078,  789615
+263,"The Cross: The Arthur Blessitt Story","3/27/2009","Gener8xion Entertainment","Documentary","PG",  741557,  98874,  780116
+264,"Ajab Prem Ki Ghazab Kahani","11/6/2009","Viva Entertainment","Comedy","NA",  741238,  98832,  779784
+265,"Beverly Hills Chihuahua","10/3/2008","Walt Disney Pictures","Comedy","PG",  735449,  98060,  773693
+266,"Wake Up Sid","10/2/2009","UTV Communications","NA","NA",  718766,  95835,  756138
+267,"Crazy Heart","12/16/2009","Fox Searchlight","Drama","R",  702188,  93625,  738701
+268,"The Girlfriend Experience","5/22/2009","Magnolia Pictures","NA","NA",  695840,  92779,  732026
+269,"Fanboys","2/6/2009","Weinstein Co.","Comedy","PG-13",  687609,  91681,  723363
+270,"Anvil! The Story of Anvil","4/10/2009","Abramorama Films","Documentary","Not Rated",  667911,  89055,  702644
+271,"The Stoning of Soraya M.","6/26/2009","Roadside Attractions","Drama","NA",  655871,  87449,  689973
+272,"The Messenger","11/13/2009","Oscilloscope Pictures","Drama","R",  654374,  87250,  688403
+273,"Play the Game","2/27/2009","Slowhand Cinema","Comedy","PG-13",  653120,  87083,  687085
+274,"2009 Oscar Shorts","2/6/2009","Shorts International","Multiple Genres","Not Rated",  644635,  85951,  678153
+275,"Let the Right One In","10/24/2008","Magnolia Pictures","Horror","R",  638173,  85090,  671360
+276,"Amreeka","9/4/2009","National Geographic Entertainment","NA","PG-13",  620618,  82749,  652890
+277,"Everlasting Moments","3/6/2009","IFC Films","NA","Not Rated",  610825,  81443,  642585
+278,"The Girl from Monaco","7/3/2009","Magnolia Pictures","Comedy","NA",  602992,  80399,  634348
+279,"The Girl Who Played with Fire","12/25/2009","Music Box Films","Thriller/Suspense","R",  598477,  79797,  629598
+280,"Role Models","11/7/2008","Universal","Comedy","R",  590530,  78737,  621235
+281,"Lemon Tree","4/17/2009","IFC Films","NA","Not Rated",  569672,  75956,  599293
+282,"American Violet","4/17/2009","Samuel Goldwyn Films","NA","PG-13",  554434,  73925,  583268
+283,"From Mexico with Love","10/9/2009","Roadside Attractions","Drama","PG-13",  548775,  73170,  577311
+284,"Roving Mars","1/27/2006","Walt Disney Pictures","Documentary","G",  545961,  72795,  574353
+285,"U2 3D","1/23/2008","National Geographic Entertainment","Concert/Performance","G",  544857,  72648,  573193
+286,"Shall We Kiss?","3/27/2009","Music Box Films","Romantic Comedy","Not Rated",  534685,  71291,  562486
+287,"Red Cliff","11/20/2009","Magnolia Pictures","Action","R",  526841,  70245,  554233
+288,"Pour toujours, les Canadiens","11/27/2009","Seville","NA","NA",  521544,  69539,  548663
+289,"Tetro","6/11/2009","American Zoetrope","Drama","R",  518522,  69136,  545483
+290,"The Polar Express","11/10/2004","Warner Bros.","Adventure","G",  517658,  69021,  544576
+291,"The Maid","10/16/2009","Elephant Eye Films","Drama","NA",  492776,  65703,  518397
+292,"Little Ashes","5/8/2009","Regent Releasing","Drama","NA",  481586,  64211,  506625
+293,"The Baader Meinhof Complex","8/21/2009","Vitagraph Films","Action","R",  476270,  63503,  501039
+294,"Crossing Over","2/27/2009","Weinstein Co.","Drama","R",  455654,  60754,  479349
+295,"The Damned United","10/9/2009","Sony Pictures Classics","Drama","R",  438836,  58511,  461652
+296,"The Limits of Control","5/1/2009","Focus Features","Thriller/Suspense","R",  426688,  56892,  448878
+297,"Lymelife","4/10/2009","Screen Media Films","Drama","R",  421307,  56174,  443213
+298,"La Danse","11/4/2009","Zipporah","NA","NA",  417932,  55724,  439662
+299,"Humpday","7/10/2009","Magnolia Pictures","Comedy","R",  407377,  54317,  428561
+300,"Tim Burton's The Nightmare Before Christmas 3D","10/20/2006","Walt Disney Pictures","Musical","PG",  406085,  54145,  427204
+301,"Antichrist","10/23/2009","IFC Films","Drama","NA",  404122,  53883,  425137
+302,"Transylmania","12/4/2009","Full Circle Releasing","NA","R",  397641,  53019,  418320
+303,"Stone of Destiny","2/21/2009","Alliance","NA","PG",  389584,  51945,  409846
+304,"Vicky Cristina Barcelona","8/15/2008","MGM","Comedy","PG-13",  386017,  51469,  406090
+305,"The Lovely Bones","12/11/2009","Paramount Pictures","Drama","PG-13",  383101,  51080,  403021
+306,"Synecdoche, New York","10/24/2008","Sony Pictures Classics","Drama","R",  377689,  50359,  397333
+307,"Luck by Chance","1/30/2009","AdLab Films","Comedy","Not Rated",  356019,  47469,  374530
+308,"Dil Bole Hadippa!","9/18/2009","Yash Raj Films","NA","NA",  351457,  46861,  369733
+309,"Tokyo!","3/6/2009","NA","Drama","Not Rated",  351059,  46808,  369315
+310,"Wanted","9/18/2009","Eros Entertainment","NA","NA",  349637,  46618,  367816
+311,"Merry Gentleman, The","5/1/2009","NA","NA","R",  347977,  46397,  366072
+312,"Lorna's Silence","7/31/2009","Sony Pictures Classics","Drama","NA",  338795,  45173,  356415
+313,"High School Musical 3: Senior Year","10/24/2008","Walt Disney Pictures","Musical","G",  335126,  44683,  352549
+314,"BLUE","10/16/2009","Viva Entertainment","Action","NA",  321640,  42885,  338363
+315,"Thirst","7/31/2009","Focus Features","Horror","R",  318574,  42477,  335144
+316,"The Informers","4/24/2009","Senator Entertainment","Thriller/Suspense","R",  315000,  42000,  331380
+317,"Unmistaken Child","6/3/2009","Oscilloscope Pictures","NA","NA",  306140,  40819,  322062
+318,"O'Horten","5/22/2009","Sony Pictures Classics","Comedy","NA",  302232,  40298,  317951
+319,"London Dreams","10/30/2009","Studio 18","Drama","NA",  300293,  40039,  315908
+320,"Adoration","5/8/2009","Sony Pictures Classics","Drama","NA",  294244,  39233,  309548
+321,"Revanche","5/1/2009","Janus Films","Drama","NA",  294122,  39216,  309414
+322,"A Woman in Berlin","7/17/2009","Strand","Drama","NA",  294014,  39202,  309304
+323,"Outrage","5/8/2009","Magnolia Pictures","NA","R",  287198,  38293,  302132
+324,"Noemie: Le Secret","12/11/2009","NA","NA","NA",  283459,  37795,  298203
+325,"Tokyo Sonata","3/13/2009","Regent Releasing","Drama","PG-13",  278356,  37114,  292829
+326,"Tera Mera Ki Rishta","4/10/2009","Eros Entertainment","Drama","Not Rated",  271942,  36259,  286084
+327,"Grande ourse - La cle des possibles","3/27/2009","Alliance","NA","Not Rated",  268143,  35752,  282083
+328,"La Bonheur de Pierre","2/27/2009","Vivafilm","NA","Not Rated",  267856,  35714,  281783
+329,"The Private Lives of Pippa Lee","11/27/2009","Screen Media Films","Drama","R",  261198,  34826,  274777
+330,"What's Your Raashee?","9/25/2009","NA","NA","NA",  257868,  34382,  271274
+331,"Blood: The Last Vampire","7/10/2009","Samuel Goldwyn Films","Action","R",  256682,  34224,  270027
+332,"The Secret Life of Bees","10/17/2008","Fox Searchlight","Drama","PG-13",  255175,  34023,  268441
+333,"Spread","8/14/2009","NA","Comedy","R",  250617,  33416,  263652
+334,"Larger than Life 3D: The Dave Matthews Band","12/11/2009","NA","NA","PG",  246042,  32806,  258839
+335,"Black Dynamite","10/16/2009","Apparition","NA","R",  242578,  32344,  255194
+336,"Ghajini","12/26/2008","AdLab Films","Thriller/Suspense","Not Rated",  237949,  31727,  250326
+337,"Big Fan","8/28/2009","First Independent Pictures","Comedy","R",  230874,  30783,  242878
+338,"(Untitled)","10/23/2009","NA","NA","R",  230600,  30747,  242594
+339,"The Beaches of Agnes","7/1/2009","Cinema Guild","Documentary","NA",  225188,  30025,  236897
+340,"World's Greatest Dad","8/21/2009","Magnolia Pictures","Black Comedy","R",  221805,  29574,  233339
+341,"Do Knot Disturb","10/2/2009","Reliance Big Pictures","NA","NA",  213525,  28470,  224628
+342,"Enlighten Up!","9/12/2008","Balcony Releasing","Documentary","Not Rated",  213423,  28456,  224518
+343,"Soul Power","7/10/2009","Sony Pictures Classics","Documentary","PG-13",  207121,  27616,  217890
+344,"Harvard Beats Yale","11/19/2008","Kino/Emerging","Documentary","Not Rated",  204458,  27261,  215089
+345,"Skin","10/30/2009","Elysian Films","NA","PG-13",  203305,  27107,  213874
+346,"Frozen River","8/1/2008","Sony Pictures Classics","Drama","R",  202328,  26977,  212849
+347,"Happy-Go-Lucky","10/10/2008","Miramax","Comedy","R",  201587,  26878,  212067
+348,"The Burning Plain","9/18/2009","Magnolia Pictures","Drama","NA",  200730,  26764,  211168
+349,"Fireproof","9/26/2008","Samuel Goldwyn Films","Drama","PG",  199773,  26636,  210158
+350,"Paa","12/4/2009","Reliance Big Pictures","NA","NA",  199228,  26564,  209590
+351,"Main Aurr Mrs. Khanna","10/16/2009","UTV Communications","NA","NA",  197183,  26291,  207436
+352,"Herb & Dorothy","6/5/2009","Arthouse Films","Documentary","NA",  194721,  25963,  204848
+353,"The Boy in the Striped Pyjamas","11/7/2008","Miramax","Drama","PG-13",  192019,  25603,  202008
+354,"Shrink","7/24/2009","Roadside Attractions","Drama","R",  189621,  25283,  199483
+355,"The Golden Boys","4/17/2009","Roadside Attractions","NA","PG",  184169,  24556,  193747
+356,"Passport to Love","10/9/2009","Variance Films/Everest Films","NA","PG-13",  173828,  23177,  182867
+357,"Fuel","11/14/2008","Blue Water Entertainment","Documentary","Not Rated",  169340,  22579,  178148
+358,"Still Walking","8/28/2009","IFC Films","NA","NA",  167047,  22273,  175734
+359,"Outlander","1/23/2009","Third Rail","Adventure","R",  166003,  22134,  174637
+360,"Rocket Singh: Salesman of the Year","12/11/2009","Yash Raj Films","NA","NA",  164649,  21953,  173209
+361,"Youssou N'Dour: I Bring What I Love","6/12/2009","Shadow","Documentary","Not Rated",  164234,  21898,  172775
+362,"Crude","9/11/2009","First Run Features","Documentary","NA",  163417,  21789,  171915
+363,"The Yes Men Fix the World","10/7/2009","Shadow","Documentary","NA",  160901,  21453,  169264
+364,"Tulpan","4/1/2009","Zeitgeist","Comedy","Not Rated",  158741,  21165,  166992
+365,"Zack and Miri Make a Porno","10/31/2008","Weinstein Co.","Comedy","R",  157136,  20951,  165303
+366,"Brothers at War","3/13/2009","NA","NA","R",  153148,  20420,  161114
+367,"Hunger","12/5/2008","IFC Films","Drama","Not Rated",  152104,  20281,  160017
+368,"The Other Man","9/11/2009","Image Entertainment","Drama","R",  149530,  19937,  157303
+369,"Flammen og Citronen","7/31/2009","IFC Films","Thriller/Suspense","NA",  148089,  19745,  155788
+370,"Only the Brave","11/10/2009","Indican Pictures","NA","R",  142403,  18987,  149807
+371,"Free Style","10/9/2009","Samuel Goldwyn Films","NA","PG-13",  141108,  18814,  148442
+372,"Art & Copy","8/21/2009","7th Art Releasing","Documentary","NA",  139418,  18589,  146667
+373,"The Horse Boy","9/11/2009","Zeitgeist","Documentary","NA",  137495,  18333,  144647
+374,"35 Shots of Rum","9/18/2009","Cinema Guild","Drama","NA",  132755,  17701,  139661
+375,"Appaloosa","9/19/2008","Warner Bros.","Western","R",  130820,  17443,  137625
+376,"Fados","3/6/2009","Zeitgeist","Drama","Not Rated",  129150,  17220,  135866
+377,"12","3/4/2009","Sony Pictures Classics","Thriller/Suspense","PG-13",  125120,  16683,  131629
+378,"War Eagle, Arkansas","6/12/2009","Empire Pictures","Drama","PG-13",  123670,  16489,  130098
+379,"Street Dreams","6/12/2009","Slowhand Cinema","NA","R",  122575,  16343,  128946
+380,"Carriers","9/4/2009","Paramount Vantage","Thriller/Suspense","NA",  120866,  16115,  127147
+381,"All the Best: Fun Begins","10/16/2009","Yash Raj Films","NA","NA",  120713,  16095,  126990
+382,"Examined Life","2/25/2009","Zeitgeist","Documentary","Not Rated",  120712,  16095,  126990
+383,"The Song of Sparrows","4/3/2009","Regent Releasing","Drama","PG",  116372,  15516,  122421
+384,"Throw Down Your Heart","3/13/2009","Argot Pictures","Documentary","Not Rated",  115778,  15437,  121798
+385,"Gentlemen Broncos","10/30/2009","Fox Searchlight","Comedy","PG-13",  115155,  15354,  121143
+386,"Ballerina","1/16/2009","First Run Features","Documentary","Not Rated",  114507,  15268,  120465
+387,"Monster Beach Party","4/10/2009","Indican Pictures","Comedy","Not Rated",  113132,  15084,  119013
+388,"Rolling","4/3/2009","Indican Pictures","Drama","Not Rated",  113132,  15084,  119013
+389,"Medicine for Melancholy","1/30/2009","IFC Films","Drama","Not Rated",  111551,  14873,  117348
+390,"Irene in Time","6/19/2009","Rainbow Releasing","Drama","PG-13",  110175,  14690,  115904
+391,"The Way We Get By","7/17/2009","International Film Circuit","Documentary","NA",  106542,  14206,  112085
+392,"Bronson","10/9/2009","Magnolia Pictures","Drama","R",  104979,  13997,  110436
+393,"Alien Trespass","4/3/2009","Roadside Attractions","Comedy","PG",  104526,  13937,  109963
+394,"Cherry Blossoms","1/16/2009","Strand","Drama","Not Rated",  104433,  13924,  109860
+395,"Gigantic","4/3/2009","First Independent Pictures","Comedy","R",  102704,  13694,  108046
+396,"Ong-Bak 2","10/23/2009","Magnolia Pictures","Action","R",  102458,  13661,  107785
+397,"Afghan Star","6/26/2009","Zeitgeist","Documentary","NA",  102115,  13615,  107422
+398,"House of the Devil, The","10/30/2009","Magnolia Pictures","Horror","R",  101215,  13495,  106476
+399,"No Impact Man","9/11/2009","Oscilloscope Pictures","Documentary","NA",  100028,  13337,  105229
+400,"Nothing Like the Holidays","12/12/2008","Overture Films","Comedy","PG-13",  97952,  13060,  103043
+401,"Into Temptation","8/28/2009","NA","NA","R",  97457,  12994,  102523
+402,"The Headless Woman","8/19/2009","Strand","Drama","NA",  95675,  12757,  100653
+403,"Made in U.S.A.","1/9/2009","Rialto Pictures","Drama","Not Rated",  95209,  12695,  100164
+404,"Motherhood","10/23/2009","Freestyle Releasing","Comedy","PG-13",  93388,  12452,  98246
+405,"Under Our Skin","6/17/2009","Shadow","NA","NA",  92022,  12270,  96810
+406,"The Little Traitor","10/16/2009","Westchester Films","Drama","NA",  88453,  11794,  93055
+407,"Cloud Nine","8/14/2009","NA","NA","NA",  87378,  11650,  91919
+408,"The White Ribbon","12/30/2009","Sony Pictures Classics","Drama","R",  85690,  11425,  90143
+409,"Igor","9/19/2008","MGM","Comedy","PG",  81381,  10851,  85614
+410,"The Mysteries of Pittsburgh","4/10/2009","Peace Arch Releasing","Drama","R",  80283,  10704,  84455
+411,"Sleep Dealer","4/17/2009","Maya Releasing","Thriller/Suspense","PG-13",  80136,  10685,  84305
+412,"Boheme, La","9/25/2009","Emerging Pictures","NA","NA",  79340,  10579,  83468
+413,"Body of Lies","10/10/2008","Warner Bros.","Thriller/Suspense","R",  79281,  10571,  83405
+414,"Che, El Ar the Argentine","9/5/2008","IFC Films","NA","R",  75238,  10032,  79152
+415,"Visual Acoustics","10/9/2009","Arthouse Films","NA","NA",  74898,  9986,  78790
+416,"Phoebe in Wonderland","3/6/2009","ThinkFilm","Drama","PG-13",  73361,  9781,  77172
+417,"Crips and Bloods: Made in America","1/23/2009","Argot Pictures","NA","Not Rated",  70219,  9363,  73874
+418,"Disgrace","9/18/2009","Paladin","Drama","R",  69705,  9294,  73330
+419,"A Christmas Tale","11/14/2008","IFC Films","Drama","Not Rated",  68870,  9183,  72454
+420,"White On Rice","9/11/2009","Variance Films","Romantic Comedy","PG-13",  67186,  8958,  70679
+421,"After Dark's Horrorfest III","1/9/2009","After Dark","Horror","Not Rated",  66456,  8861,  69913
+422,"Julia","5/8/2009","Magnolia Pictures","NA","NA",  65108,  8681,  68493
+423,"The Secrets","11/26/2008","Monterey Media","Drama","R",  64585,  8611,  67941
+424,"Serbis","1/30/2009","Regent Releasing","Drama","R",  64407,  8588,  67759
+425,"The Providence Effect","9/25/2009","NA","NA","PG",  62500,  8333,  65747
+426,"Skills Like This","3/20/2009","Shadow","Comedy","Not Rated",  62408,  8321,  65653
+427,"Lord, Save Us From Your Followers","6/13/2008","Thunderstruck Films","Documentary","PG-13",  61941,  8259,  65164
+428,"Tell No One","7/2/2008","Music Box Films","Thriller/Suspense","Not Rated",  60915,  8122,  64083
+429,"One Day You'll Understand","10/31/2008","Kino International","Drama","Not Rated",  60855,  8114,  64019
+430,"Soul Men","11/7/2008","MGM","Comedy","R",  60453,  8060,  63593
+431,"Treeless Mountain","4/22/2009","Oscilloscope Pictures","NA","Not Rated",  60336,  8045,  63475
+432,"Silent Light","1/9/2009","Pallisades Tartan","Drama","Not Rated",  60200,  8027,  63333
+433,"Jerichow","5/15/2009","Cinema Guild","Drama","NA",  60105,  8014,  63230
+434,"William Kunstler: Disturbing the Universe","11/13/2009","Arthouse Films","Documentary","NA",  57769,  7703,  60777
+435,"Collapse","11/6/2009","Vitagraph Films","Documentary","NA",  56436,  7525,  59372
+436,"The Boys: The Sherman Brothers' Story","5/22/2009","NA","NA","PG",  55513,  7402,  58402
+437,"In a Dream","4/10/2009","International Film Circuit","Documentary","Not Rated",  55270,  7369,  58141
+438,"Somers Town","7/17/2009","Film Movement","Comedy","NA",  54526,  7270,  57360
+439,"Bart Got a Room","4/3/2009","Anchor Bay Entertainment","Comedy","PG-13",  53760,  7168,  56556
+440,"Mystery Team","8/28/2009","Roadside Attractions","Comedy","R",  53741,  7165,  56532
+441,"Not Forgotten","5/15/2009","Anchor Bay Entertainment","Thriller/Suspense","NA",  53723,  7163,  56516
+442,"Opa!","10/16/2009","Cinedigm","NA","PG-13",  52453,  6994,  55183
+443,"Burma VJ","5/20/2009","Oscilloscope Pictures","NA","NA",  51672,  6890,  54362
+444,"Trucker","10/9/2009","Monterey Media","Drama","R",  51192,  6826,  53857
+445,"$9.99","6/19/2009","Regent Releasing","Comedy","R",  50782,  6771,  53423
+446,"Broken Hill","9/11/2009","Audience Alliance","Drama","PG",  50076,  6677,  52682
+447,"The Country Teacher","3/27/2009","Film Movement","Drama","Not Rated",  50072,  6676,  52674
+448,"Dalai Lama Renaissance","5/21/2008","Self Distributed","Documentary","Not Rated",  49675,  6623,  52255
+449,"Police, Adjective","12/23/2009","NA","NA","NA",  48298,  6440,  50812
+450,"Nights in Rodanthe","9/26/2008","Warner Bros.","Drama","PG-13",  48278,  6437,  50788
+451,"That Evening Sun","11/6/2009","Freestyle Releasing","NA","PG-13",  48110,  6415,  50614
+452,"Love N' Dancing","5/8/2009","Screen Media Films","Musical","PG",  47812,  6375,  50299
+453,"Killing Kasztner","10/23/2009","GR Films","NA","NA",  47552,  6340,  50023
+454,"Owl and the Sparrow","1/16/2009","Wave Releasing","Drama","PG",  47071,  6276,  49518
+455,"Dead Snow","6/19/2009","IFC Films","NA","NA",  46742,  6232,  49170
+456,"Le code a changé","2/18/2009","IFC Films","Comedy","NA",  46714,  6229,  49147
+457,"American Casino","8/14/2009","Argot Pictures","Documentary","NA",  46710,  6228,  49139
+458,"Casi Divas","8/21/2009","Maya Releasing","NA","PG-13",  46612,  6215,  49036
+459,"Brighton Rock","6/19/2009","Rialto Pictures","NA","R",  46466,  6195,  48879
+460,"Until the Light Takes Us","11/20/2009","Variance Films","NA","NA",  46285,  6171,  48689
+461,"Just Another Love Story","1/9/2009","Koch Lorber Films","Drama","Not Rated",  45835,  6111,  48216
+462,"The Sun","11/18/2009","Lorber Films","Drama","NA",  45565,  6075,  47932
+463,"A Secret","9/5/2008","Strand","Drama","Not Rated",  45507,  6068,  47877
+464,"Pressure Cooker","5/27/2009","Bev Pictures","NA","NA",  44802,  5974,  47135
+465,"We Live in Public","8/28/2009","Abramorama Films","Documentary","NA",  44344,  5913,  46654
+466,"Four Seasons Lodge","11/11/2009","NA","NA","NA",  43279,  5771,  45533
+467,"The End of Poverty?","11/13/2009","Cinema Libre","Documentary","NA",  41880,  5584,  44058
+468,"Beeswax","8/7/2009","Cinema Guild","Comedy","NA",  41439,  5525,  43592
+469,"Three Monkeys","3/27/2009","Zeitgeist","NA","Not Rated",  41343,  5512,  43490
+470,"Big Man Japan","5/15/2009","Magnolia Pictures","NA","NA",  40796,  5439,  42914
+471,"Absurdistan","2/6/2009","First Run Features","Comedy","Not Rated",  39683,  5291,  41746
+472,"The Legend of God's Gun","7/18/2008","Indican Pictures","Western","Not Rated",  39086,  5211,  41115
+473,"Eagle Eye","9/26/2008","Paramount Pictures","Thriller/Suspense","PG-13",  39048,  5206,  41075
+474,"The Slammin' Salmon","12/11/2009","Anchor Bay Entertainment","Comedy","R",  38920,  5189,  40941
+475,"How About You","11/14/2008","Strand","Drama","Not Rated",  38471,  5129,  40468
+476,"Oh My God","11/13/2009","Mitropoulos Films","Documentary","NA",  38245,  5099,  40231
+477,"Pray the Devil Back to Hell","11/7/2008","Balcony Releasing","Documentary","Not Rated",  38180,  5091,  40168
+478,"Bliss","8/7/2009","First Run Features","Drama","NA",  37493,  4999,  39442
+479,"The Most Dangerous Man in America: Daniel Ellsberg and the Pentagon Papers","1/29/2010","First Run Features","Documentary","NA",  36875,  4917,  38795
+480,"Uncertainty","11/13/2009","IFC Films","Drama","NA",  36689,  4892,  38598
+481,"Yaavarum Nalam","3/6/2009","Reliance Big Pictures","NA","Not Rated",  36594,  4879,  38495
+482,"Were the World Mine","10/31/2008","SPEAKproductions","Musical","Not Rated",  36592,  4879,  38495
+483,"The Cake Eaters","3/24/2009","NA","NA","R",  35817,  4776,  37683
+484,"Our City Dreams","2/4/2009","First Run Features","Documentary","Not Rated",  34972,  4663,  36791
+485,"Le combat dans l'île","6/12/2009","The Film Desk","Thriller/Suspense","NA",  33830,  4511,  35592
+486,"Brief Interviews with Hideous Men","9/25/2009","IFC Films","NA","NA",  33745,  4499,  35497
+487,"Rab Ne Bana Di Jodi","12/12/2008","Yash Raj Films","Drama","Not Rated",  33647,  4486,  35395
+488,"Trouble the Water","8/22/2008","Zeitgeist","Documentary","Not Rated",  33569,  4476,  35316
+489,"Tony Manero","7/3/2009","Lorber Films","Drama","NA",  33447,  4460,  35189
+490,"Beyond a Reasonable Doubt","9/11/2009","Anchor Bay Entertainment","Thriller/Suspense","PG-13",  32917,  4389,  34629
+491,"Of Time and the City","1/23/2009","Strand","Documentary","Not Rated",  32677,  4357,  34377
+492,"Changeling","10/24/2008","Universal","Thriller/Suspense","R",  32475,  4330,  34164
+493,"Super Capers","3/20/2009","Roadside Attractions","Comedy","PG",  30955,  4127,  32562
+494,"24 City","6/5/2009","Cinema Guild","NA","NA",  30799,  4107,  32404
+495,"The Betrayal","11/21/2008","Cinema Guild","Documentary","Not Rated",  30623,  4083,  32215
+496,"American Swing","3/27/2009","Magnolia Pictures","Documentary","Not Rated",  30156,  4021,  31726
+497,"Teza","9/18/2009","Mypheduh Film","NA","NA",  30071,  4009,  31631
+498,"The Windmill Movie","6/17/2009","The Film Desk","NA","NA",  30050,  4007,  31615
+499,"The Loss of a Teardrop Diamond","12/30/2009","Paladin","Drama","NA",  29750,  3967,  31300
+500,"Mancora","3/20/2009","Maya Releasing","Drama","R",  29697,  3960,  31244
+501,"Lola Montes","10/10/2008","Rialto Pictures","Drama","Not Rated",  29532,  3938,  31071
+502,"Call of the Wild 3D","6/12/2009","Vivendi Entertainment","Drama","NA",  28682,  3824,  30171
+503,"Explicit Ills","3/6/2009","Peace Arch Releasing","NA","R",  28564,  3809,  30053
+504,"An American Affair","2/27/2009","Screen Media Films","Drama","Not Rated",  28044,  3739,  29501
+505,"The Singing Revolution","12/7/2007","Abramorama Films","Documentary","Not Rated",  28025,  3737,  29485
+506,"Surveillance","6/26/2009","Magnolia Pictures","Thriller/Suspense","R",  27349,  3647,  28775
+507,"Guest of Cindy Sherman","3/27/2009","Trela","Documentary","Not Rated",  27052,  3607,  28459
+508,"The Garden","4/24/2009","Oscilloscope Pictures","Documentary","Not Rated",  26931,  3591,  28333
+509,"Earth Days","8/14/2009","Zeitgeist","Documentary","NA",  26748,  3566,  28136
+510,"The Answer Man","7/24/2009","Magnolia Pictures","Romantic Comedy","R",  26676,  3557,  28065
+511,"Ciao","12/5/2008","Regent Releasing","NA","R",  26550,  3540,  27931
+512,"Perestroika","3/20/2009","Strand","NA","Not Rated",  26064,  3475,  27418
+513,"Nursery University","4/24/2009","Variance Films","NA","Not Rated",  26042,  3472,  27394
+514,"The Last International Playboy","6/12/2009","NA","Comedy","R",  25646,  3419,  26976
+515,"Stranded: I've Come from a Plane that Crashed on the Mountains","10/22/2008","Zeitgeist","Documentary","Not Rated",  25473,  3396,  26794
+516,"Serious Moonlight","12/4/2009","Magnolia Pictures","NA","R",  25339,  3379,  26660
+517,"Gotta Dance","7/31/2009","Mitropoulos Films","NA","NA",  25107,  3348,  26416
+518,"Kal Kissne Dekha","6/12/2009","Reliance Big Pictures","NA","NA",  24625,  3283,  25903
+519,"Big Gay Musical","9/11/2009","Self Distributed","Musical","NA",  24140,  3219,  25398
+520,"Death in Love","7/17/2009","Screen Media Films","Drama","R",  23412,  3122,  24633
+521,"Downloading Nancy","6/5/2009","Strand","NA","NA",  22282,  2971,  23441
+522,"JCVD","11/7/2008","Peace Arch Releasing","Comedy","R",  21700,  2893,  22826
+523,"You, The Living","7/31/2009","Palisades","NA","NA",  21438,  2858,  22550
+524,"The Last Lullaby","5/1/2009","NA","NA","R",  21413,  2855,  22526
+525,"Not Quite Hollywood","7/31/2009","Magnet Pictures","Documentary","R",  21152,  2820,  22250
+526,"Weather Girl","7/10/2009","Self Distributed","NA","R",  20915,  2789,  22005
+527,"Walt and El Grupo","9/11/2009","Walt Disney Pictures","Documentary","PG",  20521,  2736,  21587
+528,"If I Die Tonight","7/31/2009","Indican Pictures","NA","NA",  20214,  2695,  21264
+529,"A Wink and a Smile","5/1/2009","First Run Features","Documentary","NA",  20169,  2689,  21216
+530,"The Open Road","8/28/2009","Anchor Bay Entertainment","Drama","PG-13",  19716,  2629,  20743
+531,"Donkey Punch","1/23/2009","Magnolia Pictures","Thriller/Suspense","R",  19367,  2582,  20372
+532,"Man on Wire","7/25/2008","Magnolia Pictures","Documentary","PG-13",  19252,  2567,  20254
+533,"Severed Ways: The Norse Discovery of America","3/13/2009","Magnolia Pictures","Adventure","Not Rated",  18728,  2497,  19701
+534,"Blessed is the Match: The Life and Death and Hannah Senesh","1/28/2009","Balcony Releasing","Documentary","Not Rated",  18654,  2487,  19622
+535,"Killshot","1/23/2009","Weinstein Co.","Thriller/Suspense","R",  18643,  2486,  19615
+536,"Women in Trouble","11/13/2009","Screen Media Films","Drama","R",  18521,  2469,  19480
+537,"Between Love & Goodbye","1/30/2009","Embrem Entertainment","Drama","Not Rated",  18480,  2464,  19441
+538,"Hope and Redemption: The Lena Baker Story","3/13/2009","American World Pictures","Drama","NA",  18215,  2429,  19165
+539,"Dare","11/13/2009","Image Entertainment","NA","R",  18087,  2412,  19031
+540,"Good","12/31/2008","ThinkFilm","Drama","R",  17980,  2397,  18912
+541,"Adventures of Power","10/9/2009","Variance Films","Comedy","PG-13",  17738,  2365,  18660
+542,"The New Twenty","3/20/2009","Wolfe Twenty","NA","Not Rated",  17625,  2350,  18542
+543,"A Town Called Panic","12/16/2009","Zeitgeist","Comedy","NA",  17542,  2339,  18455
+544,"Passchendaele","10/24/2008","Alliance","Drama","Not Rated",  17172,  2290,  18068
+545,"Local Color","10/19/2007","Monterey Media","Drama","R",  17151,  2287,  18044
+546,"Timecrimes","12/12/2008","Magnolia Pictures","Thriller/Suspense","R",  16633,  2218,  17500
+547,"The Wedding Song","10/9/2009","Strand","NA","NA",  16618,  2216,  17484
+548,"Splinterheads","11/6/2009","Paladin","Comedy","R",  16392,  2186,  17248
+549,"Tennessee","6/5/2009","Vivendi Entertainment","Drama","NA",  16100,  2147,  16940
+550,"Storm","10/30/2009","Film Movement","Drama","NA",  16013,  2135,  16845
+551,"Five Minutes of Heaven","8/21/2009","IFC Films","Drama","R",  15676,  2090,  16490
+552,"The Education of Charlie Banks","3/27/2009","Anchor Bay Entertainment","Drama","R",  15078,  2010,  15859
+553,"St. Trinian's","10/9/2009","NeoClassics Films","Comedy","PG-13",  15000,  2000,  15780
+554,"Chocolate","2/6/2009","Magnolia Pictures","Action","R",  14845,  1979,  15614
+555,"Lion's Den","7/3/2009","Strand","NA","NA",  14739,  1965,  15504
+556,"Daddy Cool","8/28/2009","Reliance Big Pictures","NA","NA",  14319,  1909,  15062
+557,"Carmen and Geoffrey","3/13/2009","First Run Features","NA","Not Rated",  14130,  1884,  14865
+558,"Tum Mile","11/13/2009","Viva Entertainment","Drama","NA",  13937,  1858,  14660
+559,"Laila's Birthday","5/29/2009","Kino International","Black Comedy","NA",  13689,  1825,  14399
+560,"Welcome (2009)","3/11/2009","NA","NA","NA",  13461,  1795,  14163
+561,"The Escapist","4/3/2009","ThinkFilm","Thriller/Suspense","Not Rated",  13439,  1792,  14139
+562,"Sherman's Way","3/6/2009","NA","NA","Not Rated",  13282,  1771,  13973
+563,"The Window","5/6/2009","Film Movement","Drama","NA",  12738,  1698,  13397
+564,"13B","3/6/2009","Reliance Big Pictures","NA","Not Rated",  12449,  1660,  13097
+565,"The Beautiful Truth","11/14/2008","Cinema Libre","Documentary","Not Rated",  12361,  1648,  13003
+566,"Fallen Idol: The Yuri Gagarin Conspiracy","10/2/2009","Indican Pictures","Documentary","NA",  12345,  1646,  12987
+567,"Max Payne","10/17/2008","20th Century Fox","Action","PG-13",  12164,  1622,  12798
+568,"Sex Positive","6/12/2009","Regent Releasing","Documentary","NA",  12069,  1609,  12695
+569,"Defamation","11/20/2009","First Run Features","NA","NA",  12038,  1605,  12663
+570,"Dev D","2/6/2009","UTV Communications","NA","Not Rated",  11917,  1589,  12537
+571,"Chelsea on the Rocks","10/2/2009","Aliquot Films","Documentary","R",  11799,  1573,  12411
+572,"One Peace at a Time","12/4/2009","Monterey Media","Documentary","NA",  11698,  1560,  12308
+573,"Streetballers","8/21/2009","MSK Productions","NA","NA",  11581,  1544,  12182
+574,"Taxidermia","8/14/2009","Regent Releasing","Comedy","NA",  11408,  1521,  12001
+575,"Mine","3/1/2009","Film Movement","Documentary","NA",  11283,  1504,  11867
+576,"I Hate Valentine's Day","7/3/2009","IFC Films","Romantic Comedy","PG-13",  11004,  1467,  11575
+577,"I.O.U.S.A.","8/22/2008","Roadside Attractions","Documentary","PG",  10850,  1447,  11417
+578,"Peter and Vandy","10/9/2009","Strand","NA","NA",  10761,  1435,  11322
+579,"Santa vs. The Snowman","11/6/2002","IMAX Films","Adventure","Not Rated",  10708,  1428,  11267
+580,"City of Ember","10/10/2008","20th Century Fox","Adventure","PG",  10695,  1426,  11251
+581,"Eldorado","5/1/2009","Film Movement","NA","NA",  10443,  1392,  10983
+582,"Home","11/27/2009","Lorber Films","Drama","NA",  10405,  1387,  10943
+583,"Home","4/23/2009","Monterey Media","NA","PG-13",  10405,  1387,  10943
+584,"The Art of Being Straight","6/5/2009","Regent Releasing","NA","NA",  10382,  1384,  10920
+585,"The Vanished Empire","7/10/2009","Kino International","Drama","NA",  10289,  1372,  10825
+586,"The Missing Person","11/20/2009","Strand","NA","NA",  10022,  1336,  10541
+587,"Live Fast, Die Young","10/24/2008","Riverrain","Drama","Not Rated",  10019,  1336,  10541
+588,"Act of God","7/31/2009","Zeitgeist","NA","NA",  9955,  1327,  10470
+589,"Oblivion","4/15/2009","Icarus Films","Documentary","NA",  9939,  1325,  10454
+590,"Fix","11/20/2009","Mangusta Productions","NA","R",  9890,  1319,  10407
+591,"Mammoth","11/20/2009","IFC Films","Drama","NA",  9580,  1277,  10076
+592,"Robert Blecker Wants Me Dead","2/27/2009","Atlas Media Group","NA","Not Rated",  9166,  1222,  9642
+593,"Janky Promoters","10/16/2009","Third Rail","Comedy","R",  9069,  1209,  9539
+594,"American Journey, An","10/2/2009","Lorber Films","Documentary","NA",  8868,  1182,  9326
+595,"Objectified","5/8/2009","NA","Documentary","NA",  8668,  1156,  9121
+596,"Blind Date","9/25/2009","Variance Films","NA","NA",  8449,  1127,  8892
+597,"Dillinger is Dead","7/10/2009","Janus Films","NA","NA",  8322,  1110,  8758
+598,"Winter of Frozen Dreams","4/10/2009","Monterey Media","Drama","R",  8321,  1109,  8750
+599,"Grace","8/14/2009","Anchor Bay Entertainment","NA","NA",  8297,  1106,  8726
+600,"Yonkers Joe","1/9/2009","Magnolia Pictures","Drama","R",  8286,  1105,  8718
+601,"Endgame","11/6/2009","Monterey Media","Drama","PG-13",  8238,  1098,  8663
+602,"Shadowland","7/24/2009","NA","Horror","NA",  8221,  1096,  8647
+603,"Loren Cass","7/24/2009","Kino International","Drama","NA",  8125,  1083,  8545
+604,"Spinning into Butter","3/27/2009","NA","NA","R",  8064,  1075,  8482
+605,"Reunion","3/6/2009","The Talking Pictures Company","NA","Not Rated",  8030,  1071,  8450
+606,"Eleven Minutes","2/20/2009","Regent Releasing","Documentary","R",  7986,  1065,  8403
+607,"Louise Bourgeois","6/25/2008","Zeitgeist","Documentary","Not Rated",  7868,  1049,  8277
+608,"Jazz in the Diamond District","4/24/2009","Truly Indie","NA","R",  7634,  1018,  8032
+609,"Looking for Palladin","10/30/2009","Monterey Media","Comedy","R",  7246,  966,  7622
+610,"Cowboy and Lucky","10/22/2009","Self Distributed","NA","NA",  7160,  955,  7535
+611,"I Sell the Dead","8/7/2009","IFC Films","Horror","Not Rated",  7066,  942,  7432
+612,"Munyurangabo","5/29/2009","Film Movement","NA","NA",  7001,  933,  7361
+613,"Scott Walker: 30 Century Man","2/27/2009","Oscilloscope Pictures","Documentary","Not Rated",  6840,  912,  7196
+614,"The Mutant Chronicles","4/24/2009","Magnolia Pictures","Action","R",  6820,  909,  7172
+615,"Lifelines","4/3/2009","Kanbar Entertainment","NA","Not Rated",  6793,  906,  7148
+616,"New Year Parade","10/30/2009","NA","Drama","NA",  6767,  902,  7117
+617,"The Skeptic","5/1/2009","IFC Films","Thriller/Suspense","NA",  6671,  889,  7014
+618,"The Fall","5/9/2008","Roadside Attractions","Adventure","R",  6597,  880,  6943
+619,"The Perfect Sleep","3/13/2009","Cinema Epoch","Thriller/Suspense","R",  6224,  830,  6549
+620,"The Good Soldier","11/11/2009","Artistic License","Documentary","NA",  6000,  800,  6312
+621,"The Bride & The Grooms","4/24/2009","Sumbadhat Productions","Romantic Comedy","Not Rated",  5995,  799,  6304
+622,"Waiting for Dublin","3/13/2009","Cinema Libre","Romantic Comedy","NA",  5925,  790,  6233
+623,"Lake Tahoe","7/10/2009","Film Movement","NA","NA",  5685,  758,  5981
+624,"Momma's Man","1/18/2008","ThinkFilm","Comedy","Not Rated",  5627,  750,  5918
+625,"Gogol Bordello Non-Stop","9/11/2009","Lorber Films","NA","NA",  5532,  738,  5823
+626,"Call+Response","10/10/2008","Fair Trade Pictures","Documentary","PG-13",  5364,  715,  5641
+627,"What Goes Up","5/29/2009","NA","NA","R",  5290,  705,  5562
+628,"Antarctica","8/29/2008","Regent Releasing","Romantic Comedy","R",  5133,  684,  5397
+629,"Dhoondte Reh Jaoge","3/6/2009","UTV Communications","NA","Not Rated",  5127,  684,  5397
+630,"The Strip","12/4/2009","NA","NA","NA",  5107,  681,  5373
+631,"Daytime Drinking","6/5/2009","Eleven Arts","NA","NA",  4970,  663,  5231
+632,"Gigante","12/30/2009","Film Movement","NA","NA",  4680,  624,  4923
+633,"The Death Factory Bloodletting","5/15/2009","Nocturnal Features","Horror","NA",  4638,  618,  4876
+634,"Death of a Ghost Hunter","6/12/2009","Nocturnal Features","NA","NA",  4490,  599,  4726
+635,"The Ministers","10/16/2009","Maya Releasing","NA","R",  4447,  593,  4679
+636,"Alexandra","3/28/2008","Cinema Guild","Drama","Not Rated",  4137,  552,  4355
+637,"Bob Funk","2/27/2009","Cinema Epoch","NA","R",  4085,  545,  4300
+638,"The Marc Pease Experience","8/21/2009","Paramount Vantage","Comedy","NA",  4033,  538,  4245
+639,"Eden","11/14/2008","NA","Drama","Not Rated",  3914,  522,  4119
+640,"Afterschool","10/2/2009","IFC Films","Drama","NA",  3911,  521,  4111
+641,"Pontypool","5/29/2009","IFC Films","Thriller/Suspense","NA",  3865,  515,  4063
+642,"Gooby","4/17/2009","Monterey Media","Drama","PG",  3564,  475,  3748
+643,"Otto; Or, Up with Dead People","11/7/2008","Strand","Drama","Not Rated",  3562,  475,  3748
+644,"Familiar Strangers","11/14/2008","Cavalier Films","Comedy","PG-13",  3516,  469,  3700
+645,"Ricky","12/16/2009","IFC Films","NA","NA",  3457,  461,  3637
+646,"Sandstorm","9/4/2009","Self Distributed","Drama","NA",  3444,  459,  3622
+647,"Humble Pie","11/6/2009","Monterey Media","NA","PG-13",  3359,  448,  3535
+648,"Devil Girl","9/18/2009","Nocturnal Features","NA","NA",  3244,  433,  3416
+649,"Made in Jamaica","1/23/2009","ArtMattan Productions","Documentary","Not Rated",  3149,  420,  3314
+650,"The Blue Tooth Virgin","9/25/2009","Regent Releasing","NA","NA",  2694,  359,  2833
+651,"America Betrayed","3/27/2009","First Run Features","Documentary","Not Rated",  2450,  327,  2580
+652,"Give Me Your Hand","9/11/2009","Strand","Drama","NA",  2434,  325,  2564
+653,"The Village Barbershop","1/16/2009","Monterey Media","Drama","R",  2359,  315,  2485
+654,"Confessions of a Ex-Doofus-Itchy Footed Mutha","8/21/2009","Self Distributed","Adventure","NA",  2310,  308,  2430
+655,"Breakfast with Scot","10/10/2008","Regent Releasing","Drama","PG-13",  2200,  293,  2312
+656,"Sikandar","8/21/2009","Reliance Big","NA","NA",  1954,  261,  2059
+657,"Shuttle","3/6/2009","Truly Indie","Horror","R",  1925,  257,  2028
+658,"The Canyon","10/23/2009","Truly Indie","Thriller/Suspense","R",  1785,  238,  1878
+659,"Ghosted","7/31/2009","First Run Features","NA","NA",  1780,  237,  1870
+660,"WALL-E","6/27/2008","Walt Disney Pictures","Adventure","G",  1275,  170,  1341
+661,"Incendiary","2/6/2009","Capitol Films","NA","R",  1260,  168,  1326
+662,"Love Comes Lately","6/13/2008","Kino International","Drama","Not Rated",  1207,  161,  1270
+663,"Break","5/1/2009","Cinema Epoch","Action","NA",  1191,  159,  1255
+664,"Food Beware","10/16/2009","First Run Features","Documentary","NA",  1181,  157,  1239
+665,"Tru Loved","10/17/2008","Regent Releasing","Romantic Comedy","R",  1149,  153,  1207
+666,"Shanghai Red","1/1/2010","Indican Pictures","Thriller/Suspense","NA",  1146,  153,  1207
+667,"House of the Sleeping Beauties","11/14/2008","First Run Features","Drama","Not Rated",  1122,  150,  1184
+668,"Sixty Six","8/1/2008","First Independent Pictures","Comedy","PG-13",  1088,  145,  1144
+669,"Save Me","9/5/2008","First Run Features","Drama","Not Rated",  1028,  137,  1081
+670,"I Can't Think Straight","11/21/2008","Regent Releasing","Romantic Comedy","PG-13",  987,  132,  1041
+671,"How to be a Serial Killer","7/24/2009","Monterey Media","NA","R",  899,  120,  947
+672,"Teeth","1/18/2008","Roadside Attractions","Comedy","R",  886,  118,  931
+673,"Kings of the Evening","1/1/2010","Indican Pictures","Drama","PG",  802,  107,  844
+674,"Yiddish Theater: A Love Story","11/21/2007","New Love Films","Documentary","Not Rated",  632,  84,  663
+675,"12 in a Box","8/7/2009","Cinevolve Studios","NA","NA",  553,  74,  584
+676,"Patrik, Age 1.5","8/14/2009","Here Films","Comedy","Not Rated",  408,  54,  426
+677,"El Tinte de la Fama","8/7/2009","Cinevolve Studios","Drama","NA",  341,  45,  355
+678,"The Amazing Truth About Queen Raquela","9/26/2008","Regent Releasing","Drama","R",  213,  28,  221
+679,"The Objective","2/4/2009","IFC Films","Horror","Not Rated",  95,  13,  103
+680,"Dog Eat Dog","1/23/2009","NA","NA","Not Rated",  80,  11,  87

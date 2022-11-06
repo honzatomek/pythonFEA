@@ -1,0 +1,254 @@
+<html>
+
+  <head>
+    <title>
+      NIEDERREITER2 - Niederreiter Quasirandom Datasets, Base = 2
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      NIEDERREITER2 <br> Niederreiter Quasirandom Datasets <br> Base = 2
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>NIEDERREITER2</b> 
+      is a dataset directory which
+      contains points generated
+      by the M-dimensional Niederreiter sequence using a base of 2.
+    </p>
+
+    <p>
+      The datasets are distinguished by the values of the following
+      parameters:
+      <ul>
+        <li>
+          <b>M</b>, the spatial dimension;
+        </li>
+        <li>
+          <b>N</b>, the number of points to generate;
+        </li>
+        <li>
+          <b>BASE</b>, which is always 2 for these datasets;
+        </li>
+        <li>
+          <b>SKIP</b>, the initial number of points to skip over;
+        </li>
+      </ul>
+      The values of M and N are specified in the dataset file names.
+    </p>
+
+    <p>
+      A nonzero value of <b>SKIP</b> may be specified, to allow the
+      sequence to "warm up".  In this case, a recommended value
+      is <b>BASE**12</b> = 4096.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../cpp_src/niederreiter2/niederreiter2.html">
+      NIEDERREITER2</a>,
+      a C++ library which
+      computes elements of a Niederreiter quasirandom sequence using base 2.
+    </p>
+
+    <p>
+      <a href = "../../f_src/niederreiter2_dataset/niederreiter2_dataset.html">
+      NIEDERREITER2_DATASET</a>, 
+      a FORTRAN90 program which
+      allows the user to define and compute a Niederreiter2 dataset.
+    </p>
+
+    <p>
+      <a href = "../../f_src/plot_points/plot_points.html">
+      PLOT_POINTS</a>,
+      a FORTRAN90 program which
+      can plot two dimensional
+      datasets, making Encapsulated PostScript images.
+    </p>
+
+    <p>
+      <a href = "../../data/table/table.html">
+      TABLE</a>,
+      a file format which
+      is used to store the datasets.
+    </p>
+
+    <p>
+      <a href = "../../f_src/table_top/table_top.html">
+      TABLE_TOP</a>,
+      a FORTRAN90 program which
+      can be used to analyze 
+      datasets of any dimension, by creating images of pairwise
+      coordinates.
+    </p>
+
+    <h3 align = "center">
+      Example dataset:
+    </h3>
+
+    <p>
+      A typical (but small) dataset looks like this:
+      <pre>
+#  niederreiter2_02_00010.txt
+#  created by NIEDERREITER2_DATASET.
+#
+#  File generated on March 19 2003  11:38:30.446 AM
+#
+#  Spatial dimension M =      2
+#  Number of points N =     10
+#  Base:      2
+#  Initial values skipped =   4096
+#
+  0.000366  0.470581
+  0.500366  0.970581
+  0.750366  0.220581
+  0.250366  0.720581
+  0.375366  0.095581
+  0.875366  0.595581
+  0.625366  0.345581
+  0.125366  0.845581
+  0.187866  0.158081
+  0.687866  0.658081
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>  
+          Paul Bratley, Bennett Fox, Harald Niederreiter,<br>
+          Algorithm 738: <br>
+          Programs to Generate Niederreiter's Low-Discrepancy Sequences,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 20, Number 4, pages 494-495, 1994.
+        </li>
+        <li>  
+          Harald Niederreiter,<br>
+          Low-discrepancy and low-dispersion sequences,<br>
+          Journal of Number Theory,<br>
+          Volume 30, 1988, pages 51-70.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Datasets:
+    </h3>
+
+    <p>
+      Datasets in M = 2 dimensions include:
+      <ul>
+        <li>
+          <a href = "niederreiter2_02_00010.txt">niederreiter2_02_00010.txt</a>, 
+          M = 2, N = 10, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_02_00010.png">niederreiter2_02_00010.png</a>, 
+          a <a href = "../../png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "niederreiter2_02_00100.txt">niederreiter2_02_00100.txt</a>, 
+          M = 2, N = 100, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_02_00100.png">niederreiter2_02_00100.png</a>, 
+          a <a href = "../../png/png.html">PNG</a> image of
+          the dataset;
+        </li>
+        <li>
+          <a href = "niederreiter2_02_01000.txt">niederreiter2_02_01000.txt</a>, 
+          M = 2, N = 1000, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_02_01000.png">niederreiter2_02_01000.png</a>,
+          a <a href = "../../png/png.html">PNG</a> image of
+          the dataset; 
+        </li>
+        <li>
+          <a href = "niederreiter2_02_10000.txt">niederreiter2_02_10000.txt</a>, 
+          M = 2, N = 10000, BASE = 2, SKIP = 4096;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 7 dimensions include:
+      <ul>
+        <li>
+          <a href = "niederreiter2_07_00010.txt">niederreiter2_07_00010.txt</a>, 
+          M = 7, N = 10, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_07_00100.txt">niederreiter2_07_00100.txt</a>, 
+          M = 7, N = 100, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_07_01000.txt">niederreiter2_07_01000.txt</a>, 
+          M = 7, N = 1000, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_07_10000.txt">niederreiter2_07_10000.txt</a>, 
+          M = 7, N = 10000, BASE = 2, SKIP = 4096;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Datasets in M = 16 dimensions include:
+      <ul>
+        <li>
+          <a href = "niederreiter2_16_00010.txt">niederreiter2_16_00010.txt</a>, 
+          M = 16, N = 10, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_16_00100.txt">niederreiter2_16_00100.txt</a>, 
+          M = 16, N = 100, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_16_01000.txt">niederreiter2_16_01000.txt</a>, 
+          M = 16, N = 1000, BASE = 2, SKIP = 4096;
+        </li>
+        <li>
+          <a href = "niederreiter2_16_10000.txt">niederreiter2_16_10000.txt</a>, 
+          M = 16, N = 10000, BASE = 2, SKIP = 4096;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../datasets.html">
+      the DATASETS directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 31 August 2005.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>

@@ -1,0 +1,304 @@
+<html>
+
+  <head>
+    <title>
+      tetrahedron_ncc_rule
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      tetrahedron_ncc_rule
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>tetrahedron_ncc_rule</b>,
+      a MATLAB code which 
+      defines the weights and abscisass for a sequence of
+      7 Newton-Cotes closed quadrature rules 
+      over the interior of a tetrahedron in 3D.
+    </p>
+
+    <p>
+      Newton-Cotes rules have the characteristic that the abscissas
+      are equally spaced.  For a tetrahedron, this refers to spacing
+      in the unit reference tetrahedron, or in the barycentric coordinate
+      system.  These rules may be mapped to an arbitrary tetrahedron,
+      and will still be valid.
+    </p>
+
+    <p>
+      The rules are said to be "closed" when they include points on
+      the boundary of the tetrahedron.
+    </p>
+
+    <p>
+      The use of equally spaced abscissas may be important for your
+      application.  That may how your data was collected, for instance.
+      On the other hand, the use of equally spaced abscissas carries
+      a few costs.  In particular, for a given degree of polynomial
+      accuracy, there will be rules that achieve this accuracy, but
+      use fewer abscissas than Newton-Cotes.  Moreover, the Newton-Cotes
+      approach almost always results in negative weights for some
+      abscissas.  This is generally an undesirable feature, particularly
+      when higher order quadrature rules are being used.
+    </p>
+
+    <p>
+      (Note that the first rule included in the set is not, strictly
+      speaking, a Newton-Cotes closed rule; it's just the rule that
+      uses a single point at the centroid.  However, by including
+      this rule as the first in the set, we have a rule with each
+      polynomial degree of exactness from 0 to 6.)
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+ 
+    <p>
+      The computer code and data files described and made available on this web page 
+      are distributed under
+      <a href = "https://www.gnu.org/licenses/lgpl-3.0.en.html">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Languages:
+    </h3>
+
+    <p>
+      <b>tetrahedron_ncc_rule</b> is available in
+      <a href = "../../c_src/tetrahedron_ncc_rule/tetrahedron_ncc_rule.html">a C version</a> and
+      <a href = "../../cpp_src/tetrahedron_ncc_rule/tetrahedron_ncc_rule.html">a C++ version</a> and
+      <a href = "../../f_src/tetrahedron_ncc_rule/tetrahedron_ncc_rule.html">a FORTRAN90 version</a> and
+      <a href = "../../m_src/tetrahedron_ncc_rule/tetrahedron_ncc_rule.html">a MATLAB version</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../m_src/annulus_rule/annulus_rule.html">
+      annulus_rule</a>,
+      a MATLAB code which
+      computes a quadrature rule for estimating integrals of a function 
+      over the interior of a circular annulus in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/cube_felippa_rule/cube_felippa_rule.html">
+      cube_felippa_rule</a>,
+      a MATLAB code which
+      returns the points and weights of a felippa quadrature rule
+      over the interior of a cube in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/pyramid_felippa_rule/pyramid_felippa_rule.html">
+      pyramid_felippa_rule</a>,
+      a MATLAB code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a pyramid in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/simplex_gm_rule/simplex_gm_rule.html">
+      simplex_gm_rule</a>,
+      a MATLAB code which
+      defines grundmann-moeller quadrature rules 
+      over the interior of a simplex in m dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/square_felippa_rule/square_felippa_rule.html">
+      square_felippa_rule</a>,
+      a MATLAB code which
+      returns the points and weights of a felippa quadrature rule
+      over the interior of a square in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/stroud/stroud.html">
+      stroud</a>,
+      a MATLAB code which
+      contains quadrature
+      rules for a variety of unusual areas, surfaces and volumes in 2d,
+      3d and n-dimensions.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_arbq_rule/tetrahedron_arbq_rule.html">
+      tetrahedron_arbq_rule</a>,
+      a MATLAB code which
+      returns quadrature rules, 
+      with exactness up to total degree 15,
+      over the interior of a tetrahedron in 3d,
+      by hong xiao and zydrunas gimbutas.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_exactness/tetrahedron_exactness.html">
+      tetrahedron_exactness</a>,
+      a MATLAB code which
+      investigates the monomial exactness of a quadrature rule 
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_felippa_rule/tetrahedron_felippa_rule.html">
+      tetrahedron_felippa_rule</a>,
+      a MATLAB code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_integrals/tetrahedron_integrals.html">
+      tetrahedron_integrals</a>,
+      a MATLAB code which
+      returns the exact value of the integral of any monomial
+      over the interior of the unit tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_keast_rule/tetrahedron_keast_rule.html">
+      tetrahedron_keast_rule</a>,
+      a MATLAB code which
+      defines ten quadrature rules, with exactness degrees 0 through 8,
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_monte_carlo/tetrahedron_monte_carlo.html">
+      tetrahedron_monte_carlo</a>, 
+      a MATLAB code which 
+      uses the monte carlo method to estimate integrals 
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_ncc_rule_test/tetrahedron_ncc_rule_test.html">
+      tetrahedron_ncc_rule_test</a>
+    </p>
+
+    <p>
+      <a href = "../../m_src/tetrahedron_nco_rule/tetrahedron_nco_rule.html">
+      tetrahedron_nco_rule</a>, 
+      a MATLAB code which
+      defines newton-cotes open quadrature rules 
+      over the interior of a tetrahedron in 3d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_fekete_rule/triangle_fekete_rule.html">
+      triangle_fekete_rule</a>,
+      a MATLAB code which
+      defines fekete rules for quadrature or interpolation 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_felippa_rule/triangle_felippa_rule.html">
+      triangle_felippa_rule</a>,
+      a MATLAB code which
+      returns felippa's quadratures rules for approximating integrals
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/triangle_ncc_rule/triangle_ncc_rule.html">
+      triangle_ncc_rule</a>, 
+      a MATLAB code which
+      defines newton-cotes closed quadrature rules 
+      over the interior of a triangle in 2d.
+    </p>
+
+    <p>
+      <a href = "../../m_src/wedge_felippa_rule/wedge_felippa_rule.html">
+      wedge_felippa_rule</a>,
+      a MATLAB code which
+      returns quadratures rules for approximating integrals
+      over the interior of the unit wedge in 3d.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>      
+          Peter Silvester,<br>
+          Symmetric Quadrature Formulae for Simplexes,<br>
+          Mathematics of Computation,<br>
+          Volume 24, Number 109, January 1970, pages 95-100.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Source Code:
+    </h3>
+
+    <p>
+      <ul>
+        <li>
+          <a href = "tetrahedron_ncc_degree.m">tetrahedron_ncc_degree.m</a>
+          returns the degree of a given NCC rule for the tetrahedron.
+        </li>
+        <li>
+          <a href = "tetrahedron_ncc_order_num.m">tetrahedron_ncc_order_num.m</a>
+          returns the order of a given NCC rule for the tetrahedron.
+        </li>
+        <li>
+          <a href = "tetrahedron_ncc_rule.m">tetrahedron_ncc_rule.m</a>
+          returns the points and weights of an NCC rule.
+        </li>
+        <li>
+          <a href = "tetrahedron_ncc_rule_num.m">tetrahedron_ncc_rule_num.m</a>
+          returns the number of NCC rules available.
+        </li>
+        <li>
+          <a href = "tetrahedron_ncc_suborder.m">tetrahedron_ncc_suborder.m</a>
+          returns the suborders for an NCC rule.
+        </li>
+        <li>
+          <a href = "tetrahedron_ncc_suborder_num.m">tetrahedron_ncc_suborder_num.m</a>
+          returns the number of suborders for an NCC rule.
+        </li>
+        <li>
+          <a href = "tetrahedron_ncc_subrule.m">tetrahedron_ncc_subrule.m</a>
+          returns a compressed NCC rule.
+        </li>
+        <li>
+          <a href = "r8mat_det_4d.m">r8mat_det_4d.m</a>
+          returns the determinant of a 4x4 matrix.
+        </li>
+        <li>
+          <a href = "reference_to_physical_t4.m">reference_to_physical_t4.m</a>
+          maps T4 reference points to physical points.
+        </li>
+        <li>
+          <a href = "tetrahedron_volume.m">tetrahedron_volume.m</a>
+          computes the volume of a tetrahedron.
+        </li>
+      </ul>
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 03 April 2019.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>
