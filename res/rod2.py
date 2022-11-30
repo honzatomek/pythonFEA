@@ -93,7 +93,28 @@ def rod2(xyz, E, A, rho, fx, fy, fz, gauss_points=1):
     print('Element Mass Matrix: {0}\n{1}\n'.format(Me.shape, Me))
     print('Element Volume Force Vector: {0}\n{1}\n'.format(Fe.shape, Fe))
 
-    return Ke, Me, Fe
+    # return Ke, Me, Fe
+
+    print('------------------------------------------------------ Displacements')
+    # xyz displacements at end nodes
+    u = np.array([0.,
+                  0.,
+                  0.,
+                  .001,
+                  .001,
+                  .001], dtype=float).reshape(-1, 1)
+    print('Displacements {0}\n{1}\n'.format(u.shape, u))
+
+    print('------------------------------------------------------------ Strains')
+    eps = []
+    for i in range(xi.shape[0]):
+        eps.append(dpsi_g[i] @ u)
+    eps = np.array(eps)
+    print('Strains {0}\n{1}\n'.format(eps.shape, eps))
+
+    print('----------------------------------------------------------- Stresses')
+    sig = D @ eps
+    print('Stresses {0}\n{1}\n'.format(sig.shape, sig))
 
 
 
@@ -102,7 +123,7 @@ if __name__ == '__main__':
                      [1000., 0., 0.]], dtype=float)
 
     E = 210000.0   # MPa steel
-    A = 200.       # steel
+    A = 200.      # area mm2
     rho = 9.81E-9  # steel t/mm3
 
     fx = 1.  # volumetric continuous load
