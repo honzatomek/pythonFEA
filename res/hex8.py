@@ -46,6 +46,7 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
           'Global Coordinates: {0}\n{1}'.format(psi_g.shape, psi_g))
 
     # Shape Functions Derivatives in Natural Coordinates
+    print(f'{xi = }')
     dpsi = 1 / 8 * np.array([[(eta - 1.0) * (1.0 - mu), (xi - 1) * (1 - mu), -(1 - xi) * (1 - eta)],
                              [(1 - eta) * (1 - mu), (-1 - xi) * (1 - mu), -(1 + xi) * (1 - eta)],
                              [(1 + eta) * (1 - mu), (1 + xi) * (1 - mu), -(1 + xi) * (1 + eta)],
