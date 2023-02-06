@@ -137,6 +137,76 @@ def RBE2(nodes, connectivity):
     return T[:,mDOFs], sDOFs
 
 
+def RBE2_3D(nodes, connectivity):
+    '''
+    RBE2 definition
+
+    Transformation Matrix:
+
+        [ u_s ]   [1  0  0  0  z -y]   [ u_m ]
+        [ v_s ] = [0  1  0 -z  0  x]   [ v_m ]
+        [ w_s ] = [0  0  1  y -x  0] x [ w_m ]
+        [phi_s]   [0  0  0  1  0  0]   [phi_m]
+        [psi_s]   [0  0  0  0  1  0]   [phi_m]
+        [rho_s]   [0  0  0  0  0  1]   [phi_m]
+
+        where:
+            x = x_s - x_m
+            y = y_s - y_m
+            z = z_s - z_m
+
+    In:
+        nodes        - array of node coordinates [x, y, z]
+        connectivity - array of rbe2 connectivity
+                       [[master nID, dofX, dofY, dofZ, dofPhi, dofPsi, dofRho],
+                        [slave  nID, dofX, dofY, dofZ, dofPhi, dofPsi, dofRho],
+                                     ...
+                        [slave  nID, dofX, dofY, dofZ, dofPhi, dofPsi, dofRho]]
+                        where dof? == 1 if DOF is connected, 0 otherwise
+
+    Out:
+        T            - master-slave transformation matrix u_s = T u_m
+        sDOFs        - slave DOF rows [sID, DOF] for each row of T
+    '''
+    mID = connectivity[0,0]
+    mDOF = connectivity[0,1:]
+    mXYZ = nodes[mID]
+    mDOFs = [dof for dof, i in enumerate(mDOF) if i == 1]
+    mDOFdel = [dof for dof, i in enumerate(mDOF) if i == 0]
+
+    T = np.empty((0, len(mDOFs)), dtype=float)
+    sDOFs = []
+    for i in range(1, connectivity.shape[0]):
+        sID = connectivity[i,0]
+        sDOF = connectivity[i,1:]
+        sDOFkeep = [dof for dof, j in enumerate(sDOF) if j == 1]
+        sDOFdel = [dof for dof, j in enumerate(sDOF) if j == 0]
+        sXYZ = nodes[sID]
+        x = sXYZ[0] - mXYZ[0]
+        y = sXYZ[1] - mXYZ[1]
+        z = sXYZ[2] - mXYZ[2]
+
+        Tt = np.array([[1., 0., 0., 0.,  z, -y],
+                       [0., 1., 0., -z, 0.,  x],
+                       [0., 0., 1.,  y, -x, 0.],
+                       [0., 0., 0., 1., 0., 0.],
+                       [0., 0., 0., 0., 1., 0.],
+                       [0., 0., 0., 0., 0., 1.]], dtype=float)
+
+        Tt = np.delete(Tt, mDOFdel, axis=1)
+        Tt = np.delete(Tt, sDOFdel, axis=0)
+
+        for dof in sDOFkeep:
+            sDOFs.append([sID, dof])
+
+        T = np.vstack((T, Tt))
+
+    T = np.array(T, dtype=float)
+    sDOFs = np.array(sDOFs, dtype=int)
+
+    return T, sDOFs
+
+
 def set_dofs(nodes, connectivity, rbe, spc):
     '''
     Assign DOFs to Elements
@@ -153,35 +223,71 @@ def set_dofs(nodes, connectivity, rbe, spc):
 
 
 if __name__ == '__main__':
-    # nodes
-    xz = np.array([[   0.,    0.],               # 0 - SPC 1 2
-                   [   0., 1000.],               # 1 - SPC   2
-                   [1000.,    0.],               # 2
-                   [1000., 1000.],               # 3
-                   [2000.,    0.],               # 4 - RBE2 Slave 1
-                   [2000., 1000.],               # 5 - RBE2 Slave 2
-                   [2500.,  500.]], dtype=float) # 6 - RBE2 Master
+    # # nodes
+    # xz = np.array([[   0.,    0.],               # 0 - SPC 1 2
+    #                [   0., 1000.],               # 1 - SPC   2
+    #                [1000.,    0.],               # 2
+    #                [1000., 1000.],               # 3
+    #                [2000.,    0.],               # 4 - RBE2 Slave 1
+    #                [2000., 1000.],               # 5 - RBE2 Slave 2
+    #                [2500.,  500.]], dtype=float) # 6 - RBE2 Master
 
-    # elements
-    connectivity = np.array([[0, 1],             # 0 [start, end]
-                             [0, 2],             # 1 [start, end]
-                             [1, 3],             # 2 [start, end]
-                             [0, 3],             # 3 [start, end]
-                             [2, 3],             # 4 [start, end]
-                             [2, 4],             # 5 [start, end]
-                             [3, 5],             # 6 [start, end]
-                             [2, 5],             # 7 [start, end]
-                             [4, 5]], dtype=int) # 8 [start, end]
+    # # elements
+    # connectivity = np.array([[0, 1],             # 0 [start, end]
+    #                          [0, 2],             # 1 [start, end]
+    #                          [1, 3],             # 2 [start, end]
+    #                          [0, 3],             # 3 [start, end]
+    #                          [2, 3],             # 4 [start, end]
+    #                          [2, 4],             # 5 [start, end]
+    #                          [3, 5],             # 6 [start, end]
+    #                          [2, 5],             # 7 [start, end]
+    #                          [4, 5]], dtype=int) # 8 [start, end]
 
-    # spcs
-    spc = np.array([[0, 1, 1, 0],                # [nID, dofX, dofZ, dofPhi]
-                    [1, 0, 1, 0]], dtype=int)    # [nID, dofX, dofZ, dofPhi]
+    # # spcs
+    # spc = np.array([[0, 1, 1, 0],                # [nID, dofX, dofZ, dofPhi]
+    #                 [1, 0, 1, 0]], dtype=int)    # [nID, dofX, dofZ, dofPhi]
+
+    # # rbe2
+    # rbe = np.array([[[6, 1, 1, 1],               # [master, dofX, dofZ, dofPhi]
+    #                  [4, 1, 1, 0],               # [slave, dofX, dofZ, dofPhi]
+    #                  [5, 1, 1, 0]]], dtype=int)  # [slave, dofX, dofZ, dofPhi]
+
+    # for i in range(rbe.shape[0]):
+    #     print(RBE2(xz, rbe[i]))
+
+    xyz = np.array([[   0.,      0.,    0.],               # 0 - SPC 1 2
+                    [   0.,      0., 1000.],               # 1 - SPC   2
+                    [1000.,      0.,    0.],               # 2
+                    [1000.,      0., 1000.],               # 3
+                    [2000.,   1000.,    0.],               # 4 - RBE2 Slave 1
+                    [2000.,  -1000., 1000.],               # 5 - RBE2 Slave 2
+                    [2500.,      0.,  500.]], dtype=float) # 6 - RBE2 Master
 
     # rbe2
-    rbe = np.array([[[6, 1, 1, 1],               # [master, dofX, dofZ, dofPhi]
-                     [4, 1, 1, 0],               # [slave, dofX, dofZ, dofPhi]
-                     [5, 1, 1, 0]]], dtype=int)  # [slave, dofX, dofZ, dofPhi]
+    rbe = [[[6, 1, 1, 1, 1, 1, 1],   # [master, dofX, dofY, dofZ, dofPhi, dofPsi, dofRho]
+            [4, 1, 1, 1, 0, 0, 0],   # [slave,  dofX, dofY, dofZ, dofPhi, dofPsi, dofRho]
+            [5, 1, 1, 1, 0, 0, 0]],  # [slave,  dofX, dofY, dofZ, dofPhi, dofPsi, dofRho]
+           [[6, 1, 1, 1, 1, 1, 1],
+            [4, 1, 1, 1, 1, 1, 1]],
+           [[6, 1, 1, 1, 0, 0, 0],
+            [4, 1, 1, 1, 0, 0, 0]],
+           [[6, 0, 0, 0, 1, 1, 1],
+            [4, 0, 0, 0, 1, 1, 1]]]
 
-    for i in range(rbe.shape[0]):
-        print(RBE2(xz, rbe[i]))
+    for i in range(len(rbe)):
+        mDOFs = [d for d, j in enumerate(rbe[i][0][1:]) if j == 1]
+        mDOFsdel = [d for d, j in enumerate(rbe[i][0][1:]) if j == 0]
+        print(f'{mDOFs = }')
+        T, sDOFs = RBE2_3D(xyz, np.array(rbe[i], dtype=int))
+
+        print(f'{T = }')
+        print(f'{sDOFs = }')
+
+        m = np.array([0.1, 0.3, -0.5, 0.001, -0.003, -0.0015], dtype=float).reshape(6, 1)
+        m = np.delete(m, mDOFsdel, axis=0)
+
+        print(f'{m = }')
+
+        print(f'{T @ m = }')
+
 

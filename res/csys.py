@@ -43,7 +43,7 @@ class Cartesian:
         returns the direction sine and cosine matrix transforming global
         coordinates to local ones:
 
-        x_l = T (x_g - x_o),
+        x_l = T @ (x_g - x_o),
 
         where x_o is the cylindrical CSYS origin
         '''
@@ -53,7 +53,7 @@ class Cartesian:
         '''
         Transforms a point in global cartesian CSYS to local cartesian CSYS.
 
-        x_l = T (x_g - x_o)
+        x_l = T @ (x_g - x_o)
 
         where x_o is the cylindrical CSYS origin
         '''
@@ -63,7 +63,7 @@ class Cartesian:
         '''
         Transforms a point in global cartesian CSYS to local cartesian CSYS.
 
-        x_g = T^T x_l + x_o
+        x_g = T^T @ x_l + x_o
 
         where x_o is the cylindrical CSYS origin
         '''
@@ -75,7 +75,7 @@ class Cartesian:
         coordinate system to local coordinate system whose z axis coincides
         with current coordinate system and x axis goes through the point x
 
-        x_l = Tr (x_g - x_o)
+        x_l = Tr @ (x_g - x_o)
 
         returns T
         '''

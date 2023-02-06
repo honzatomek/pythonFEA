@@ -1,5 +1,5 @@
 *Heading
- /mnt/c/HONZA/programming/pythonFEA/res/datfiles/ipe300/ipe300.inp
+ /home/honza/Programming/pythonFEA/res/datfiles/ipe300/ipe300.inp
 *NODE
 1, -75, -150, 0
 2, -3.55, -150, 0

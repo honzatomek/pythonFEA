@@ -26,7 +26,7 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
                 interpolation_weights.append(g_weights[i] * g_weights[j] * g_weights[k])
     integration_points = np.array(integration_points, dtype=float)
     interpolation_weights = np.array(interpolation_weights, dtype=float)
-    print('Gauss Integration {0}:\n{1}\nWeights:\n{2}'.format(gauss_points, integration_points, interpolation_weights))
+    print('Gauss Integration {0} {1}:\n{2}\nWeights:\n{3}'.format(gauss_points, integration_points.shape, integration_points, interpolation_weights))
 
     full_domain = np.vstack((domain, integration_points))
 
@@ -42,11 +42,11 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
 
     # Shape Functions in Global Coordinates
     psi_g = psi @ coors
-    print('Shape Functions in '
-          'Global Coordinates: {0}\n{1}'.format(psi_g.shape, psi_g))
+    # print('Shape Functions in '
+    #       'Global Coordinates: {0}\n{1}'.format(psi_g.shape, psi_g))
 
     # Shape Functions Derivatives in Natural Coordinates
-    print(f'{xi = }')
+    # print(f'{xi = }')
     dpsi = 1 / 8 * np.array([[(eta - 1.0) * (1.0 - mu), (xi - 1) * (1 - mu), -(1 - xi) * (1 - eta)],
                              [(1 - eta) * (1 - mu), (-1 - xi) * (1 - mu), -(1 + xi) * (1 - eta)],
                              [(1 + eta) * (1 - mu), (1 + xi) * (1 - mu), -(1 + xi) * (1 + eta)],
@@ -56,23 +56,23 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
                              [(1 + eta) * (1 + mu), (1 + xi) * (1 + mu), (1 + xi) * (1 + eta)],
                              [-(1 + eta) * (1 + mu), (1 - xi) * (1 + mu), (1 - xi) * (1 + eta)]])
     dpsi = dpsi.T
-    print('Shape Functions Derivatives: {0}\n{1}'.format(dpsi.shape, dpsi))
+    # print('Shape Functions Derivatives: {0}\n{1}'.format(dpsi.shape, dpsi))
 
     # Jacobian Matrix
     jacobi = dpsi @ coors
-    print('Jacobian Matrix: {0}\n{1}'.format(jacobi.shape, jacobi))
+    # print('Jacobian Matrix: {0}\n{1}'.format(jacobi.shape, jacobi))
 
     # Jacobian Determinants
     d_jacobi = np.linalg.det(jacobi)
-    print('Determinant of Jacobian: {0}\n{1}'.format(d_jacobi.shape, d_jacobi))
+    # print('Determinant of Jacobian: {0}\n{1}'.format(d_jacobi.shape, d_jacobi))
 
     # Inverse Jacobian
     i_jacobi = np.linalg.inv(jacobi)
-    print('Inverse Jacobian Matrix: {0}\n{1}'.format(i_jacobi.shape, i_jacobi))
+    # print('Inverse Jacobian Matrix: {0}\n{1}'.format(i_jacobi.shape, i_jacobi))
 
     # Shape Function Derivatives in Global Coordinates
     dpsi_g = i_jacobi @ dpsi
-    print('Shape Function Derivatives in Global Coordinates: {0}\n{1}'.format(dpsi_g.shape, dpsi_g))
+    # print('Shape Function Derivatives in Global Coordinates: {0}\n{1}'.format(dpsi_g.shape, dpsi_g))
 
     # Material Stiffness Matrix
     C = E / ((1.0 + nu) * (1.0 - 2.0 * nu)) * np.array([[1.0 - nu, nu, nu, 0.0, 0.0, 0.0],
@@ -81,13 +81,13 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
                                                         [0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0, 0.0, 0.0],
                                                         [0.0, 0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0, 0.0],
                                                         [0.0, 0.0, 0.0, 0.0, 0.0, (1.0 - 2.0 * nu) / 2.0]], dtype=float)
-    print('Material Stiffness Matrix: {0}\n{1}'.format(C.shape, C))
+    # print('Material Stiffness Matrix: {0}\n{1}'.format(C.shape, C))
 
     # Create Element Stiffness and Mass Matrix
     Ke = np.zeros((domain.size, domain.size), dtype=float)
     Me = np.zeros((domain.size, domain.size), dtype=float)
     Fe = np.zeros((domain.size, 1), dtype=float)
-    # o = np.zeros(domain.shape[0], dtype=float)
+    o = np.zeros(domain.shape[0], dtype=float)
 
     # iterate over Gauss points of domain, * means unpack values
     for i in range(integration_points.shape[0]):
@@ -106,14 +106,20 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
         dpx = dpsi_g[i,0,:]
         dpy = dpsi_g[i,1,:]
         dpz = dpsi_g[i,2,:]
-        B = np.array(
-            [[dpx[0], 0, 0, dpx[1], 0, 0, dpx[2], 0, 0, dpx[3], 0, 0],
-             [0, dpy[0], 0, 0, dpy[1], 0, 0, dpy[2], 0, 0, dpy[3], 0],
-             [0, 0, dpz[0], 0, 0, dpz[1], 0, 0, dpz[2], 0, 0, dpz[3]],
-             [dpy[0], dpx[0], 0, dpy[1], dpx[1], 0, dpy[2], dpx[2], 0, dpy[3], dpx[3], 0],
-             [0, dpz[0], dpy[0], 0, dpz[1], dpy[1], 0, dpz[2], dpy[2], 0, dpz[3], dpy[3]],
-             [dpz[0], 0, dpx[0], dpz[1], 0, dpx[1], dpz[2], 0, dpx[2], dpz[3], 0, dpx[3]]],
-             dtype=float)
+        # B = np.array(
+        #     [[dpx[0],0,0,dpx[1],0,0,dpx[2],0,0,dpx[3],0,0,dpx[4],0,0,dpx[5],0,0,dpx[6],0,0,dpx[7],0,0],
+        #      [0,dpy[0],0,0,dpy[1],0,0,dpy[2],0,0,dpy[3],0,0,dpy[4],0,0,dpy[5],0,0,dpy[6],0,0,dpy[7],0],
+        #      [0,0,dpz[0],0,0,dpz[1],0,0,dpz[2],0,0,dpz[3],0,0,dpz[4],0,0,dpz[5],0,0,dpz[6],0,0,dpz[7]],
+        #      [dpy[0],dpx[0],0,dpy[1],dpx[1],0,dpy[2],dpx[2],0,dpy[3],dpx[3],0,dpy[4],dpx[4],0,dpy[5],dpx[5],0,dpy[6],dpx[6],0,dpy[7],dpx[7],0],
+        #      [0,dpz[0],dpy[0],0,dpz[1],dpy[1],0,dpz[2],dpy[2],0,dpz[3],dpy[3],0,dpz[4],dpy[4],0,dpz[5],dpy[5],0,dpz[6],dpy[6],0,dpz[7],dpy[7]],
+        #      [dpz[0],0,dpx[0],dpz[1],0,dpx[1],dpz[2],0,dpx[2],dpz[3],0,dpx[3],dpz[4],0,dpx[4],dpz[5],0,dpx[5],dpz[6],0,dpx[6],dpz[7],0,dpx[7]]],
+        #      dtype=_FLOAT)
+        B = np.array([np.column_stack((dpx,   o,   o)).flatten(),
+                      np.column_stack((  o, dpy,   o)).flatten(),
+                      np.column_stack((  o,   o, dpz)).flatten(),
+                      np.column_stack((dpy, dpx,   o)).flatten(),
+                      np.column_stack((  o, dpz, dpy)).flatten(),
+                      np.column_stack((dpz,   o, dpx)).flatten()], dtype=float)
 
         # this is smart but arranges dofs by component, not by node
         # component-wise dof ordering (x1, .. , y1, .. y4, z1, .. , z4)
@@ -124,10 +130,14 @@ def hex8(coors: np.ndarray, E: float, nu: float, rho: float, fx: float = 0., fy:
         #   dtype=float)
 
         # node wise dof ordering (x1, y1, z1, .. , x4, y4, z4)
-        N = np.array([[psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3], 0, 0],
-                      [0, psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3], 0],
-                      [0, 0, psi[i, 0], 0, 0, psi[i, 1], 0, 0, psi[i, 2], 0, 0, psi[i, 3]]],
-                      dtype=float)
+        p = psi[i,:]
+        # N = np.array([[p[0],0,0,p[1],0,0,p[2],0,0,p[3],0,0,p[4],0,0,p[5],0,0,p[6],0,0,p[7],0,0],
+        #               [0,p[0],0,0,p[1],0,0,p[2],0,0,p[3],0,0,p[4],0,0,p[5],0,0,p[6],0,0,p[7],0],
+        #               [0,0,p[0],0,0,p[1],0,0,p[2],0,0,p[3],0,0,p[4],0,0,p[5],0,0,p[6],0,0,p[7]]],
+        #               dtype=_FLOAT)
+        N = np.array([np.column_stack((p, o, o)).flatten(),
+                      np.column_stack((o, p, o)).flatten(),
+                      np.column_stack((o, o, p)).flatten()], dtype=float)
 
         F = np.array([[fx], [fy], [fz]], dtype=float)
 
