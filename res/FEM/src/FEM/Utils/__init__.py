@@ -1,5 +1,0 @@
-"""Utilities
-"""
-
-
-from .polygonal import *

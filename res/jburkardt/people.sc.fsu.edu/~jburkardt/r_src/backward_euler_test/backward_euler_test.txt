@@ -1,9 +1,0 @@
-Wed Apr 28 14:32:38 2021 
-
-backward_euler_test()
-  R version 3.4.4 (2018-03-15) 
-  Use backward_euler() to solve an ordinary differential equation.
-
-backward_euler_test():
-  Normal end of execution.
-Wed Apr 28 14:32:38 2021 

@@ -1,8 +1,0 @@
-read halton_02_00010.txt
-box 0,0,1,1
-shadow
-title halton_02_00010.txt
-output halton_02_00010.eps
-dot
-#
-quit
